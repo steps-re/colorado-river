@@ -1,0 +1,137 @@
+<title>For AWS Water Sustainability — the highest-integrity acre-feet in the basin</title>
+<style>
+:root{--stone:#E7E1D4;--paper:#F4F0E7;--plate:#FCFAF5;--ink:#1E2B2E;--deep:#123137;--muted:#5B6A6A;
+--water:#2C7A87;--rust:#A8432B;--amber:#9C7A2E;--line:#C6BBA4;--sand:#B9885A;--good:#3E7A5E;
+--serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+--sans:-apple-system,BlinkMacSystemFont,system-ui,"Segoe UI",sans-serif;--mono:ui-monospace,"SF Mono",Menlo,monospace;}
+*{box-sizing:border-box}
+body{margin:0;background:var(--stone);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased}
+.wrap{max-width:900px;margin:0 auto;padding:0 24px} .col{max-width:66ch}
+h1,h2,h3{font-family:var(--serif);color:var(--deep);text-wrap:balance;font-weight:600;line-height:1.14}
+h2{font-size:1.85rem;margin:2rem 0 .3em} h3{font-size:1.14rem;margin:0 0 .35em} p{margin:0 0 1em}
+a{color:var(--water)} .eyebrow{font-family:var(--mono);text-transform:uppercase;letter-spacing:.14em;font-size:.72rem;color:var(--rust);margin:0 0 1em;display:block}
+.mono{font-family:var(--mono);font-variant-numeric:tabular-nums}
+header{background:var(--deep);color:var(--paper);padding:60px 0 52px;position:relative;overflow:hidden}
+header:after{content:"";position:absolute;left:0;right:0;bottom:0;height:3px;background:var(--rust);opacity:.6}
+header .eyebrow{color:#D8B49E} header h1{color:#F4F0E7;font-size:clamp(2.1rem,5.5vw,3.1rem);margin:0;max-width:24ch}
+header .dek{font-family:var(--serif);font-style:italic;color:#C9D6D6;font-size:1.28rem;margin:.7em 0 1.3em;max-width:52ch}
+.cta{display:inline-block;font-family:var(--mono);font-size:.74rem;text-transform:uppercase;letter-spacing:.06em;padding:12px 20px;border-radius:4px;text-decoration:none;margin:0 10px 8px 0}
+.cta.primary{background:var(--water);color:#fff} .cta.ghost{border:1px solid #6b8f92;color:#C9D6D6}
+section{padding:38px 0} .waterline{height:0;border-top:1px solid var(--line);box-shadow:0 2px 0 -1px rgba(168,68,43,.28);max-width:900px;margin:0 auto}
+.lede{font-family:var(--serif);font-size:1.3rem;line-height:1.5;color:var(--deep)}
+nav{position:sticky;top:0;z-index:9;background:rgba(231,225,212,.94);backdrop-filter:blur(6px);border-bottom:1px solid var(--line);font-family:var(--mono);font-size:.7rem;text-transform:uppercase;letter-spacing:.07em}
+nav .wrap{display:flex;gap:20px;padding:11px 24px;overflow-x:auto} nav a{color:var(--muted);text-decoration:none;white-space:nowrap} nav a:hover{color:var(--rust)}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(140px,1fr));gap:14px;margin:20px 0}
+.stat{background:var(--plate);border:1px solid var(--line);border-radius:4px;padding:15px 17px}
+.stat .n{font-family:var(--mono);font-size:1.5rem;color:var(--rust);line-height:1.05} .stat .l{font-size:.8rem;color:var(--muted);margin-top:6px}
+.box{background:var(--plate);border:1px solid var(--line);border-left:3px solid var(--water);border-radius:4px;padding:20px 24px;margin:14px 0}
+.box.good{border-left-color:var(--good)} .box.warn{border-left-color:var(--rust)}
+.tbl{width:100%;border-collapse:collapse;font-size:.92rem;margin:8px 0} .tbl th,.tbl td{text-align:left;padding:11px 13px;border-bottom:1px solid var(--line);vertical-align:top}
+.tbl th{font-family:var(--mono);font-size:.66rem;text-transform:uppercase;letter-spacing:.04em;color:var(--muted)}
+.tbl td.q{font-weight:600;color:var(--deep);width:38%} .tblwrap{overflow-x:auto}
+.step{display:grid;grid-template-columns:auto 1fr;gap:16px;padding:14px 0;border-bottom:1px solid #E4DCCB}
+.step .k{font-family:var(--mono);font-size:1.3rem;color:var(--water);font-weight:700} .step p{margin:0;font-size:.95rem}
+.loi{background:#14343b;color:#D8E2E2;border-radius:5px;padding:28px 30px} .loi h3{color:#F4F0E7} .loi p{color:#C9D6D6}
+.loi ul{margin:.4em 0 0;padding-left:1.1em} .loi li{margin:.3em 0}
+.foot{background:var(--deep);color:#AEC0C0;padding:38px 0;font-size:.85rem} .foot a{color:#8FD0DA}
+.key{font-family:var(--mono);font-size:.72rem;color:var(--muted)}
+:focus-visible{outline:2px solid var(--water);outline-offset:2px}
+</style>
+
+<header><div class="wrap">
+  <span class="eyebrow">Prepared for AWS Water Sustainability &middot; Draft for discussion</span>
+  <h1>The last 25% is the hardest. Here are the acre-feet your team can defend.</h1>
+  <p class="dek">A way to close AWS&rsquo;s water-positive gap in the Colorado River basin with the highest-integrity replenishment available &mdash; verified, additional, legally shepherded to Lake Mead. Already stress-tested against the objections your own engineers would raise.</p>
+  <a class="cta primary" href="#offer">The offer</a>
+  <a class="cta ghost" href="#team">What your team will ask</a>
+  <a class="cta ghost" href="#start">The first step</a>
+</div></header>
+<nav><div class="wrap">
+  <a href="#why">Why now</a><a href="#offer">The offer</a><a href="#integrity">Why it&rsquo;s real</a><a href="#team">Your team&rsquo;s questions</a><a href="#numbers">The numbers</a><a href="#start">First step</a>
+</div></nav>
+
+<section id="why"><div class="wrap col">
+  <span class="eyebrow">Why this lands on your desk now</span>
+  <p class="lede">AWS is 75% of the way to water-positive by 2030, up from 53% in 2024. The remaining quarter is the hard part &mdash; and you are building major capacity in Mesa, Laveen, and Phoenix, in the middle of the worst Colorado River hydrology on record.</p>
+  <p>The credibility bar on replenishment is rising at the same time. &ldquo;Paper water&rdquo; and weak-additionality credits are getting torn apart in public, and Arizona is starting to say no &mdash; Tucson rejected Project Blue until it went zero-water, and municipalities are imposing caps. The last thing you need is replenishment volume your critics can pick apart, or a basin moratorium that stalls a campus.</p>
+  <p>What follows is not another offset catalog. It is a way to buy <strong>real, defensible water</strong> at scale, in the basin where it matters most to AWS, and to be seen leading the fix rather than negotiating against it.</p>
+</div></section>
+<div class="waterline"></div>
+
+<section id="offer"><div class="wrap">
+  <span class="eyebrow">The offer</span>
+  <div class="col"><p class="lede">Anchor a verified consumptive-use conservation market: pay farmers to retire real, additional water use, shepherd it into Lake Mead under legal protection, and settle only on volumes measured with an uncertainty holdback and ground-truthing.</p></div>
+  <div class="stats">
+    <div class="stat"><div class="n">~$600</div><div class="l">per verified acre-foot &mdash; the conservation anchor, vs. $2,000+ for desalinated supply</div></div>
+    <div class="stat"><div class="n">2.15</div><div class="l">benefit-cost ratio on the conservation tier (water valued at avoided marginal supply)</div></div>
+    <div class="stat"><div class="n">Additional</div><div class="l">consumptive-use reduction, shepherded &amp; legally protected from re-diversion</div></div>
+    <div class="stat"><div class="n">Public</div><div class="l">measurement ledger &mdash; the branded, transparent proof layer AWS can point to</div></div>
+  </div>
+  <div class="box good"><p style="margin:0"><strong>What AWS gets that a scattered offset portfolio can&rsquo;t give you:</strong> acre-feet that survive an auditor and a journalist, at a lower cost than any new supply, in the state where your buildout faces the most water risk &mdash; plus your name on the public ledger that proves the whole basin got measurably better, not just your own gallons.</p></div>
+</div></section>
+<div class="waterline"></div>
+
+<section id="integrity"><div class="wrap col">
+  <span class="eyebrow">Why it&rsquo;s real, not paper</span>
+  <p>The difference between this and a low-quality credit is four disciplines, baked into every acre-foot before it is sold:</p>
+  <div class="box"><p style="margin:0 0 .5em"><strong>1. Consumptive use, not diversion.</strong> We pay only for water actually taken out of the system &mdash; not efficiency &ldquo;savings&rdquo; that were return flow someone downstream already used. That distinction is where most water credits quietly fail.</p></div>
+  <div class="box"><p style="margin:0 0 .5em"><strong>2. Additionality.</strong> Only reductions that would not have happened anyway. Fallowing that was coming regardless doesn&rsquo;t count.</p></div>
+  <div class="box"><p style="margin:0 0 .5em"><strong>3. Shepherding.</strong> The retired water is legally protected and delivered to Lake Mead or Powell, not left for the next diverter to pick up.</p></div>
+  <div class="box"><p style="margin:0"><strong>4. Honest measurement.</strong> Satellite ET (OpenET) flags anomalies but does not settle payments &mdash; its field-scale error is too high. Settlement is on metered flows and water-rights accounting, with a 25% uncertainty holdback on estimated volumes and funded flux-tower ground-truthing. The ledger is verification, not a black box.</p></div>
+</div></section>
+<div class="waterline"></div>
+
+<section id="team"><div class="wrap">
+  <span class="eyebrow">What your team will ask &mdash; and the answer</span>
+  <div class="col"><p>We ran this proposal through a grounded adversarial review in the voices of water-tech investors, Xylem process engineers, and the basin&rsquo;s leading hydrologists, told to find every fatal flaw. Then we rebuilt it around what they found. Here is the short version of that stress test, so your team&rsquo;s first questions already have answers.</p></div>
+  <div class="tblwrap"><table class="tbl">
+    <tr><th>The objection</th><th>Our answer</th></tr>
+    <tr><td class="q">&ldquo;Saved water isn&rsquo;t deliverable &mdash; the river&rsquo;s not a pipe.&rdquo;</td><td>Correct. AWS doesn&rsquo;t receive wet water; it funds a verified reduction shepherded to system storage and takes the replenishment credit. No claim of private delivery.</td></tr>
+    <tr><td class="q">&ldquo;Efficiency savings are double-counted return flow.&rdquo;</td><td>We pay for retired <em>consumptive use</em> only, not efficiency upgrades. That&rsquo;s the whole design.</td></tr>
+    <tr><td class="q">&ldquo;OpenET has 10&ndash;20%+ error &mdash; you can&rsquo;t settle money on it.&rdquo;</td><td>Agreed. ET flags anomalies; settlement is on metered flows and rights accounting, with a 25% holdback and ground-truthing.</td></tr>
+    <tr><td class="q">&ldquo;Tamarisk removal and cloud seeding don&rsquo;t yield water.&rdquo;</td><td>Removed from the water math entirely. USGS and the Wyoming trials are clear. They&rsquo;re habitat/research line items, not supply.</td></tr>
+    <tr><td class="q">&ldquo;54% IRR is a fantasy for water infrastructure.&rdquo;</td><td>Gone. Conservation returns a real ~2.15 BCR at ~$600/AF; the capital-heavy public goods are funded as grants, not sold as equity.</td></tr>
+    <tr><td class="q">&ldquo;This reads as Big Tech buying the river.&rdquo;</td><td>Which is why it leads with visible, local, community and tribal benefit, on a public ledger &mdash; conservation-with-community-benefit, in the open.</td></tr>
+  </table></div>
+  <p class="key">The full seven-objection review and the before/after changes are documented and available to your team on request.</p>
+</div></section>
+<div class="waterline"></div>
+
+<section id="numbers"><div class="wrap col">
+  <span class="eyebrow">The honest numbers</span>
+  <p>We are deliberately not showing you a headline that collapses under scrutiny. Here is the real shape of it:</p>
+  <div class="tblwrap"><table class="tbl">
+    <tr><th>Metric</th><th>Value</th><th>Note</th></tr>
+    <tr><td>Conservation anchor cost</td><td class="mono">~$600 / verified AF</td><td>Cheapest high-integrity replenishment available</td></tr>
+    <tr><td>Conservation benefit-cost</td><td class="mono">2.15</td><td>Water at $1,500/AF avoided supply, 5% discount, 30&nbsp;yr</td></tr>
+    <tr><td>Full package capital</td><td class="mono">~$15.7B</td><td>Ledger + conservation + ag + Glen Canyon + recharge</td></tr>
+    <tr><td>Verified water, full package</td><td class="mono">~1.0 MAF/yr</td><td>~0.6 MAF/yr shepherded to storage; balance is regional recharge</td></tr>
+    <tr><td>Public-good pieces</td><td class="mono">grant-funded</td><td>Dam retrofit, habitat &mdash; no fake private return</td></tr>
+  </table></div>
+  <p>The conservation market is where AWS money does the most good per dollar and carries the least risk. The rest of the package is what the basin needs, financed by public and philanthropic capital &mdash; AWS doesn&rsquo;t have to underwrite it to lead it.</p>
+</div></section>
+<div class="waterline"></div>
+
+<section id="start"><div class="wrap">
+  <span class="eyebrow">The first step &mdash; small, provable, non-binding</span>
+  <div class="col"><p class="lede">Nobody signs a basin-scale check on a slide. So the ask is a pilot that proves the verified acre-foot before any large commitment.</p></div>
+  <div class="step"><span class="k">1</span><p><strong>Co-fund the measurement-ledger pilot</strong> in one well-instrumented Arizona / Lower-Basin sub-basin &mdash; the transparent proof layer, branded and public.</p></div>
+  <div class="step"><span class="k">2</span><p><strong>Buy a first conservation tranche</strong> of verified, shepherded consumptive-use reduction at ~$600/AF, and watch it land in Lake Mead on the ledger.</p></div>
+  <div class="step"><span class="k">3</span><p><strong>Set the integrity standard</strong> with your team &mdash; additionality, shepherding, holdback &mdash; so AWS defines what a real replenishment acre-foot is, not just buys one.</p></div>
+  <div class="step"><span class="k">4</span><p><strong>Scale on proof.</strong> If the pilot verifies clean, AWS anchors the founding coalition and brings the other hyperscalers to the table. If it doesn&rsquo;t, you&rsquo;ve spent a pilot budget and learned something real.</p></div>
+  <div class="loi" style="margin-top:22px">
+    <h3>What we&rsquo;d be asking AWS to say yes to</h3>
+    <p>A non-binding letter of intent to:</p>
+    <ul>
+      <li>Co-fund a measurement-ledger pilot and a first conservation tranche in the Lower Basin;</li>
+      <li>Second a member of your team to help set the integrity standard;</li>
+      <li>Explore anchoring the founding coalition if the pilot verifies.</li>
+    </ul>
+    <p style="margin:.8em 0 0">No basin-scale commitment. No purchase of water AWS can&rsquo;t legally receive. Just the smallest real step that proves whether this is as good as it looks.</p>
+  </div>
+</div></section>
+
+<footer class="foot"><div class="wrap">
+  <p><strong>Prepared for AWS Water Sustainability by Steps Ventures, July 2026.</strong> A draft prospectus for discussion, grounded in the evidence and modeling at the links below. Not an offer or investment advice. Figures are illustrative and being finalized with Class 4/5 engineering estimates.</p>
+  <p><a href="./">The evidence &amp; model</a> &nbsp;&middot;&nbsp; <a href="coalition.html">The full coalition</a> &nbsp;&middot;&nbsp; <a href="stakeholders.html">Stakeholder map</a></p>
+</div></footer>
