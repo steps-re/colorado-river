@@ -1,6 +1,6 @@
 # Colorado River — The Accounting Is the Crisis
 
-Steps Ventures research for the Burnt Island Ventures water series. Four quantities computed
+Independent Steps Ventures research on the Colorado River. Four quantities computed
 from public data (reservoir evaporation, basin groundwater loss via GRACE, agricultural
 value-per-acre-foot, and Glen Canyon release temperature), ten post-2026 proposals scored
 against them, and five policy recommendations.
