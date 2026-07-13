@@ -51,6 +51,12 @@ tbody td:first-child{font-weight:600;color:var(--deep);font-family:var(--serif);
 .foot{background:var(--deep);color:#AEC0C0;padding:42px 0;font-size:.85rem} .foot a{color:#8FD0DA}
 :focus-visible{outline:2px solid var(--water);outline-offset:2px}
 @media(prefers-reduced-motion:no-preference){.reveal{opacity:0;transform:translateY(14px);transition:opacity .7s,transform .7s} .reveal.in{opacity:1;transform:none}}
+figure img{cursor:zoom-in}
+#lb{position:fixed;inset:0;z-index:99;display:none;align-items:center;justify-content:center;flex-direction:column;gap:14px;background:rgba(18,49,55,.93);padding:24px;cursor:zoom-out}
+#lb.on{display:flex}
+#lb img{max-width:96vw;max-height:90vh;box-shadow:0 12px 44px rgba(0,0,0,.55);border-radius:5px;background:var(--plate)}
+#lb .cap{color:#C9D6D6;font-family:var(--mono);font-size:.72rem;text-align:center;max-width:70ch}
+#lb .x{position:fixed;top:16px;right:22px;color:#C9D6D6;font-family:var(--mono);font-size:1.4rem;line-height:1}
 </style>
 
 <header>
@@ -441,5 +447,21 @@ buildOpts();render();
     var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)e.target.classList.add('in');});},{threshold:.12});
     document.querySelectorAll('.reveal').forEach(function(n){io.observe(n);});
   }else{document.querySelectorAll('.reveal').forEach(function(n){n.classList.add('in');});}
+})();
+(function(){
+  var lb=document.createElement('div');lb.id='lb';
+  lb.innerHTML='<span class="x">esc ✕</span><img alt=""><div class="cap"></div>';
+  document.body.appendChild(lb);
+  var im=lb.querySelector('img'),cap=lb.querySelector('.cap');
+  function open(src,txt){im.src=src;cap.textContent=txt||'';lb.classList.add('on');}
+  function close(){lb.classList.remove('on');im.removeAttribute('src');}
+  document.querySelectorAll('figure img').forEach(function(g){
+    g.setAttribute('tabindex','0');g.setAttribute('role','button');g.setAttribute('aria-label','Enlarge chart');
+    var fc=g.parentNode.querySelector('figcaption'),t=fc?fc.textContent:(g.getAttribute('alt')||'');
+    g.addEventListener('click',function(){open(g.currentSrc||g.src,t);});
+    g.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();open(g.currentSrc||g.src,t);}});
+  });
+  lb.addEventListener('click',close);
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});
 })();
 </script>
