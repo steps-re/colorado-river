@@ -1,29 +1,75 @@
 <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Methodology &amp; Assumptions | Colorado River | Steps Ventures</title>
 <style>
-.sbw{max-width:940px;margin:0 auto;padding:0 24px}
-.sbgrid{display:grid;gap:22px}@media(min-width:820px){.sbgrid{grid-template-columns:1.05fr 1fr}}
-.sbpanel{background:#FCFAF5;border:1px solid #C6BBA4;border-radius:4px;padding:18px 20px}
-.sbctrl{margin:0 0 13px}
-.sbctrl label{display:flex;justify-content:space-between;font-family:ui-monospace,Menlo,monospace;font-size:.7rem;text-transform:uppercase;letter-spacing:.05em;color:#5B6A6A;margin-bottom:4px}
-.sbctrl .v{color:#A8432B;font-weight:700}
-.sbctrl input[type=range]{width:100%;accent-color:#2C7A87}
-.sbopts{display:grid;gap:3px;margin-top:8px;max-height:320px;overflow-y:auto}
-.sbopt{display:flex;align-items:center;gap:8px;font-size:.82rem;cursor:pointer;padding:4px 5px;border-radius:3px}
-.sbopt:hover{background:#EFEADF}.sbopt input{accent-color:#2C7A87}
-.sbopt .oc{margin-left:auto;font-family:ui-monospace,Menlo,monospace;font-size:.68rem;color:#5B6A6A}
-.sbbtn{font-family:ui-monospace,Menlo,monospace;font-size:.68rem;text-transform:uppercase;letter-spacing:.06em;padding:8px 12px;border:1px solid #2C7A87;background:#2C7A87;color:#fff;border-radius:3px;cursor:pointer;margin:0 8px 8px 0}
-.sbbtn.alt{background:transparent;color:#2C7A87}
-.sbout{display:grid;grid-template-columns:1fr 1fr;gap:10px}
-.sbm{background:#fff;border:1px solid #C6BBA4;border-radius:3px;padding:11px 13px}
-.sbm .k{font-family:ui-monospace,Menlo,monospace;font-size:.58rem;text-transform:uppercase;letter-spacing:.06em;color:#5B6A6A}
-.sbm .val{font-family:ui-monospace,Menlo,monospace;font-size:1.45rem;color:#123137;font-variant-numeric:tabular-nums;line-height:1.15}
-.sbm .val.good{color:#2C7A87}.sbm .val.bad{color:#A8432B}
-.sbstake{margin-top:13px}.sbstake .row{display:flex;align-items:center;gap:8px;font-size:.7rem;margin:3px 0}
-.sbstake .lab{font-family:ui-monospace,Menlo,monospace;width:96px;color:#5B6A6A}
-.sbstake .bar{flex:1;height:7px;background:#E4DCCB;border-radius:4px;overflow:hidden}.sbstake .bar i{display:block;height:100%}
-.sbverd{font-family:"Iowan Old Style",Palatino,Georgia,serif;font-size:1.02rem;margin-top:12px;padding:10px 14px;border-radius:3px}
-.sbverd.ok{background:#DCEAE8;color:#12343b}.sbverd.no{background:#F3E0D9;color:#7a2e1a}
+:root{--stone:#E7E1D4;--paper:#F4F0E7;--plate:#FCFAF5;--ink:#1E2B2E;--deep:#123137;--muted:#5B6A6A;
+--water:#2C7A87;--rust:#A8432B;--amber:#9C7A2E;--line:#C6BBA4;
+--serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+--sans:-apple-system,BlinkMacSystemFont,system-ui,"Segoe UI",sans-serif;--mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace;}
+*{box-sizing:border-box}
+body{margin:0;background:var(--stone);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased}
+.wrap{max-width:940px;margin:0 auto;padding:0 24px} .col{max-width:80ch;margin-inline:auto}
+.col>p,.col>ul,.col>ol,.col>.key,.col>.callout{max-width:66ch} .col>p.lede{max-width:74ch}
+.chap{background:var(--deep);color:var(--paper);padding:40px 0 34px;border-top:3px solid var(--rust)}
+.chap .wrap{max-width:940px} .chap .num{font-family:var(--mono);text-transform:uppercase;letter-spacing:.18em;font-size:.72rem;color:#D8B49E;display:block;margin-bottom:.6em}
+.chap h2{color:#F4F0E7;font-size:clamp(1.7rem,4vw,2.4rem);margin:0} .chap p{color:#C9D6D6;max-width:60ch;margin:.5em 0 0;font-size:1.02rem}
+.toc{background:var(--plate);border:1px solid var(--line);border-radius:6px;padding:6px;text-transform:none;letter-spacing:normal;font-family:var(--sans)}
+.toc a{display:grid;grid-template-columns:auto minmax(0,1fr);column-gap:14px;row-gap:3px;align-items:baseline;padding:14px 15px;text-decoration:none;border-bottom:1px solid #EAE3D3}
+.toc a:last-child{border-bottom:0} .toc a:hover{background:#F0EBDF}
+.toc .tn{grid-row:1 / span 2;align-self:start;font-family:var(--mono);color:var(--rust);font-size:1.05rem;font-weight:700;padding-top:2px}
+.toc .tt{font-family:var(--serif);color:var(--deep);font-size:1.16rem;line-height:1.25}
+.toc .td{font-family:var(--sans);color:var(--muted);font-size:.9rem;line-height:1.4}
+h1,h2,h3{font-family:var(--serif);color:var(--deep);text-wrap:balance;font-weight:600;line-height:1.13}
+h2{font-size:1.72rem;margin:0 0 .25em} h3{font-size:1.28rem;margin:0 0 .35em} p{margin:0 0 1em}
+a{color:var(--water)} a.c{font-size:.62em;vertical-align:super;text-decoration:none;color:var(--water);font-family:var(--mono);margin-left:1px}
+.eyebrow{font-family:var(--mono);text-transform:uppercase;letter-spacing:.14em;font-size:.72rem;color:var(--rust);margin:0 0 1.1em;display:block}
+.mono{font-family:var(--mono);font-variant-numeric:tabular-nums}
+header{background:var(--deep);color:var(--paper);overflow:hidden;position:relative}
+#hero{display:block;width:100%;height:300px}
+.hero-txt{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:34px 24px;max-width:940px;margin:0 auto;left:0;right:0;pointer-events:none}
+.hero-txt .eyebrow{color:#D8B49E} .hero-txt h1{color:#F4F0E7;font-size:clamp(2.1rem,5.6vw,3.4rem);margin:0;max-width:18ch}
+.hero-txt .dek{font-family:var(--serif);font-style:italic;color:#C9D6D6;font-size:1.15rem;margin:.5em 0 0;max-width:46ch}
+nav{position:sticky;top:0;z-index:9;background:rgba(231,225,212,.94);backdrop-filter:blur(6px);border-bottom:1px solid var(--line);font-family:var(--mono);font-size:.7rem;text-transform:uppercase;letter-spacing:.08em}
+nav{position:sticky;top:0} nav::after{content:"\203A";position:absolute;right:6px;top:50%;transform:translateY(-50%);color:var(--rust);font-weight:700;pointer-events:none;background:linear-gradient(to right,transparent,var(--stone) 40%);padding:11px 10px 11px 26px}\nnav .wrap{display:flex;gap:20px;padding:11px 24px;overflow-x:auto;scrollbar-width:thin} nav a{color:var(--muted);text-decoration:none;white-space:nowrap} nav a:hover{color:var(--rust)}
+section{padding:54px 0} .waterline{height:0;border-top:1px solid var(--line);box-shadow:0 2px 0 -1px rgba(168,68,43,.28);max-width:940px;margin:0 auto}
+.lede{font-family:var(--serif);font-size:1.32rem;line-height:1.5;color:var(--deep)}
+#energy h3{margin-top:1.8em} #energy .col{margin-top:0} #energy figure{max-width:760px;margin:24px auto 0}
+.reading{display:grid;grid-template-columns:1fr;gap:26px;margin:0 0 8px}
+@media(min-width:760px){.reading{grid-template-columns:1.05fr 1fr;align-items:center} .reading.flip .txt{order:2}}
+.stat{font-family:var(--mono);font-variant-numeric:tabular-nums;color:var(--rust);font-size:clamp(2.5rem,6.6vw,3.8rem);line-height:.95;letter-spacing:-.02em;margin:0 0 .1em}
+.stat .u{font-size:.3em;color:var(--muted);letter-spacing:.01em;margin-left:.28em;font-weight:600;font-family:var(--sans);vertical-align:baseline}
+.stat small{display:block;font-family:var(--sans);font-size:.98rem;color:#3a4746;letter-spacing:0;margin-top:.45em;text-transform:none;line-height:1.5}
+figure{margin:0;background:var(--plate);border:1px solid var(--line);border-radius:3px;padding:12px} figure img{width:100%;height:auto;display:block}
+figcaption{font-family:var(--mono);font-size:.68rem;color:var(--muted);margin-top:8px}
+.tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:3px;background:var(--plate);margin:6px 0}
+table{border-collapse:collapse;width:100%;font-size:.82rem;min-width:640px}
+th,td{text-align:left;padding:9px 11px;border-bottom:1px solid #E4DCCB;vertical-align:top}
+thead th{font-family:var(--mono);font-size:.64rem;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);font-weight:600;background:#EFEADF}
+tbody td:first-child{font-weight:600;color:var(--deep);font-family:var(--serif);font-size:.92rem}
+.num{font-family:var(--mono);font-variant-numeric:tabular-nums;white-space:nowrap}
+.mk{font-family:var(--mono);font-weight:700} .hit{color:var(--water)} .part{color:var(--amber)} .miss{color:var(--rust)}
+.recs{display:grid;gap:2px;background:var(--line);border:1px solid var(--line);border-radius:3px;overflow:hidden}
+.rec{background:var(--paper);padding:20px 22px;display:grid;grid-template-columns:auto 1fr;gap:16px}
+.rec .n{font-family:var(--mono);font-size:1.4rem;color:var(--rust);font-weight:700} .rec p{margin:0;color:#33403f;font-size:.96rem}
+.rec .who{font-family:var(--mono);font-size:.68rem;text-transform:uppercase;letter-spacing:.05em;color:var(--water);margin-top:.6em;display:block}
+.callout{background:var(--deep);color:var(--paper);border-radius:4px;padding:26px 28px;margin:8px 0}
+.callout .big{font-family:var(--mono);font-size:clamp(1.8rem,5vw,2.6rem);color:#8FD0DA;letter-spacing:-.01em} .callout p{margin:.3em 0 0;color:#C9D6D6}
+.grid2{display:grid;gap:22px} @media(min-width:720px){.grid2{grid-template-columns:1fr 1fr}}
+.coal{background:var(--plate);border:1px solid var(--line);border-left:3px solid var(--water);border-radius:3px;padding:16px 18px}
+.coal h3{font-size:1.02rem;margin:0 0 .3em} .coal p{margin:0;font-size:.9rem;color:#3a4746} .coal .g{font-family:var(--mono);font-size:.66rem;color:var(--rust);text-transform:uppercase;letter-spacing:.05em;display:block;margin-top:.5em}
+.interro{background:#14343b;color:#C9D6D6;border-radius:4px;padding:24px 26px} .interro h3{color:#F4F0E7} .interro a{color:#8FD0DA}
+.interro ul{margin:.4em 0 0;padding-left:1.1em} .interro li{margin:.35em 0;font-size:.92rem}
+.refs{columns:2;column-gap:34px;font-size:.8rem;color:#3a4746} @media(max-width:680px){.refs{columns:1}}
+.refs div{break-inside:avoid;margin:0 0 .7em} .refs a{word-break:break-word}
+.key{font-family:var(--mono);font-size:.72rem;color:var(--muted);margin:12px 0 0}
+.foot{background:var(--deep);color:#AEC0C0;padding:42px 0;font-size:.85rem} .foot a{color:#8FD0DA}
+:focus-visible{outline:2px solid var(--water);outline-offset:2px}
+@media(prefers-reduced-motion:no-preference){.reveal{opacity:0;transform:translateY(14px);transition:opacity .7s,transform .7s} .reveal.in{opacity:1;transform:none}}
+figure img,img[src^="data:image"]{cursor:zoom-in}
+#lb{position:fixed;inset:0;z-index:99;display:none;align-items:center;justify-content:center;flex-direction:column;gap:14px;background:rgba(18,49,55,.93);padding:24px;cursor:zoom-out}
+#lb.on{display:flex}
+#lb img{max-width:96vw;max-height:90vh;box-shadow:0 12px 44px rgba(0,0,0,.55);border-radius:5px;background:var(--plate)}
+#lb .cap{color:#C9D6D6;font-family:var(--mono);font-size:.72rem;text-align:center;max-width:70ch}
+#lb .x{position:fixed;top:16px;right:22px;color:#C9D6D6;font-family:var(--mono);font-size:1.4rem;line-height:1}
 </style>
 <header style="padding:0">
   <div class="hero-txt" style="position:static;padding:48px 24px 40px">
@@ -33,27 +79,30 @@
   </div>
 </header>
 <nav><div class="wrap">
-  <a href="index.html">&larr; The evidence</a><a href="#law">Law of the River</a><a href="#method">Methodology</a><a href="#figures">Figures</a>
+  <a href="start.html" style="color:var(--rust);font-weight:700">Start here</a><a href="index.html">&larr; The evidence</a><a href="#law">Law of the River</a><a href="#method">Methodology</a><a href="#figures">Figures</a>
   <a href="proposal.html">The Proposal</a><a href="stakeholders.html">Stakeholders</a>
   <a href="https://github.com/steps-re/colorado-river" target="_blank" rel="noopener">Data &amp; code</a>
 </div></nav>
 
 <section id="law"><div class="wrap col"><h2>The Law of the River, and where it fails</h2>
 
-<p>The Colorado River is governed by a layered body of law often called the Law of the River. Its core is the 1922 Colorado River Compact, which assumed roughly 16.4 million acre-feet of annual flow and divided the river between an Upper Basin and a Lower Basin that were both treated as if that supply were reliable. In reality, long-term natural flow has been closer to 9 to 13 million acre-feet, so the compact was built on an overestimate that still shapes every shortage dispute.</p>
+<p>The Colorado River is governed by a layered body of compacts, statutes, decrees, treaties, and minutes often called the Law of the River. Its core premise is the 1922 Colorado River Compact, which divided the basin into an Upper Basin and a Lower Basin and assumed about 16.4 million acre-feet of annual flow, a figure far above the long term realized supply of roughly 9 to 13 million acre-feet. The Compact’s central apportionment was 7.5 million acre-feet to each basin, with an additional 1.5 million acre-feet for the Lower Basin, and that architecture has never fully matched the river’s hydrology.</p>
 
-<p>The Compact allocated 7.5 million acre-feet per year to the Upper Basin and 7.5 million acre-feet per year to the Lower Basin, with an additional 1.5 million acre-feet per year to Mexico later addressed in the 1944 U.S.-Mexico Water Treaty. The 1928 Boulder Canyon Project Act authorized Hoover Dam and gave the Secretary of the Interior broad contracting authority in the Lower Basin. The 1968 Colorado River Basin Project Act authorized Central Arizona Project and locked in a set of delivery and priority rules for federal operations. In <strong>Arizona v. California</strong>, the 1963 decree and later implementation orders allocated mainstream Lower Basin uses among California, Arizona, and Nevada, and confirmed the federal role in administering priorities. The 1944 Treaty was later operationalized and refined through a series of Minutes under the International Boundary and Water Commission, including Minutes 323 and 330, which created binational shortage, conservation, and restoration measures and extended cooperative management with Mexico.</p>
+<p>The Compact was implemented and refined through the 1928 Boulder Canyon Project Act and the 1968 Colorado River Basin Project Act, which authorized the major storage and delivery works that now shape operations. The 1963 Supreme Court decree in <strong>Arizona v. California</strong> quantified and enforced major Lower Basin rights, especially among Arizona, California, and Nevada, and made the river more administrable, but also more rigid. The 1944 U.S.-Mexico Water Treaty added a fixed Mexican delivery obligation of 1.5 million acre-feet, later adjusted in practice through binational agreements. Recent Minutes, especially Minute 323 and Minute 330, extended cooperative drought measures, environmental commitments, and operational flexibility across the border.</p>
 
-<p>The near-term operating framework now matters as much as the older decrees. The 2007 Interim Guidelines and the 2019 Drought Contingency Plan govern shortage sharing, reservoir operations, and coordinated releases through the end of 2026. Those rules do not resolve the next era. Post-2026 negotiations must replace them with a durable operating regime for Lake Powell and Lake Mead, clear shortage and surplus rules, explicit accounting for evaporation and system losses, a credible conservation and storage framework, and a governance structure that can function under chronic aridity rather than historical hydrology.</p>
+<p>Short term operations are currently governed by the 2007 Interim Guidelines and the 2019 Drought Contingency Plan. Both expire at the end of 2026. The post-2026 negotiation must replace them with a durable operating system for Lake Powell and Lake Mead, shortage sharing rules, release criteria, elevation triggers, hydrologic accounting, binational coordination, and a mechanism for adapting to structural aridification rather than temporary drought.</p>
 
 <h3>Structural failure modes</h3>
+
 <ul>
-  <li><strong>Reservoir evaporation and system losses are not charged to any one state allocation,</strong> so the system hides a real consumptive burden in plain sight.</li>
-  <li><strong>There is no basin-wide groundwater accounting,</strong> so surface and groundwater supplies can be substituted without a complete picture of total depletion.</li>
-  <li><strong>Use it or lose it rules still reward diversion over conservation,</strong> which discourages voluntary reductions and makes flexibility politically risky.</li>
-  <li><strong>The shepherding gap lets saved water be rediverted before it is actually protected,</strong> so conserved water can vanish before it reaches storage or instream benefit.</li>
-  <li><strong>Unquantified senior tribal rights remain outside full operational accounting,</strong> which leaves the most senior claims legally powerful but systemically unresolved.</li>
-</ul></div></section>
+  <li><strong>Reservoir evaporation and system losses</strong> are real basin-wide consumptive losses, but they are not charged against any one state’s allocation, so the accounting understates the true cost of storage and conveyance.</li>
+  <li><strong>No basin-wide groundwater accounting</strong> means pumping can offset or mask surface water shortages, while the legal system tracks most surface diversions far better than connected aquifer depletion.</li>
+  <li><strong>Use it or lose it rules</strong> can punish conservation, because users fear that unused water will be viewed as abandoned, reallocated, or reduced in future shortages.</li>
+  <li><strong>The shepherding gap</strong> allows conserved water to be re-diverted by others unless it is carefully protected, quantified, and physically or legally moved to the intended holder.</li>
+  <li><strong>Unquantified senior tribal rights</strong> remain a major source of uncertainty, because many reserved rights are senior in priority yet still incompletely measured, funded, or integrated into operating models.</li>
+</ul>
+
+<p>In practice, the Law of the River is not failing because it lacks rules. It is failing because many of its rules were built for a wetter century, while the accounting system still does not fully match the basin’s physical losses, groundwater interaction, conserved water protections, or the full scope of senior rights.</p></div></section>
 <div class="waterline"></div>
 
 <section id="method"><div class="wrap col"><h2>1. Scope and stance</h2>
@@ -118,7 +167,7 @@
   <p>Independent analysis. Numbers are decision-grade, not final engineering estimates. Human expert review is being sought. <strong style="color:#F4F0E7">Steps Ventures</strong> &middot; July 2026.</p>
   <p style="font-size:.82rem"><a href="index.html">Back to the evidence</a> &middot; <a href="https://github.com/steps-re/colorado-river" target="_blank" rel="noopener">Data &amp; code on GitHub</a></p>
 </div></footer>
-<div id="lb"><span class="x">&times;</span><img src="" alt=""><div class="cap"></div></div>
+<div id="lb"><span class="x">&times;</span><img alt=""><div class="cap"></div></div>
 <script>
 (function(){var lb=document.getElementById('lb'),im=lb.querySelector('img'),cap=lb.querySelector('.cap');
 document.querySelectorAll('figure img').forEach(function(g){g.onclick=function(){im.src=g.src;cap.textContent=g.alt;lb.classList.add('on');};});
