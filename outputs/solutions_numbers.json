@@ -1,0 +1,199 @@
+{
+  "equity_floor": 4,
+  "optimal_50B": {
+    "options": [
+      "Measurement & accounting ledger",
+      "Consumptive-use conservation market",
+      "Direct potable reuse buildout",
+      "Agricultural efficiency at scale",
+      "Phreatophyte / tamarisk control",
+      "Managed aquifer recharge",
+      "Glen Canyon temp + outlet retrofit",
+      "Cloud seeding + ASO monitoring",
+      "Desalination exchange"
+    ],
+    "additive_water_maf": 1.42,
+    "cost_B": 48.2,
+    "stakeholder_min_score": 13
+  },
+  "budget_sweep": {
+    "10": {
+      "cost": 10.0,
+      "water_maf": 0.5,
+      "options": [
+        "Measurement & accounting ledger",
+        "Consumptive-use conservation market",
+        "Phreatophyte / tamarisk control",
+        "Glen Canyon temp + outlet retrofit",
+        "Cloud seeding + ASO monitoring"
+      ],
+      "stakeholder_min": 8
+    },
+    "25": {
+      "cost": 23.8,
+      "water_maf": 0.92,
+      "options": [
+        "Measurement & accounting ledger",
+        "Consumptive-use conservation market",
+        "Agricultural efficiency at scale",
+        "Managed aquifer recharge",
+        "Glen Canyon temp + outlet retrofit",
+        "Cloud seeding + ASO monitoring",
+        "Desalination exchange"
+      ],
+      "stakeholder_min": 10
+    },
+    "50": {
+      "cost": 48.2,
+      "water_maf": 1.42,
+      "options": [
+        "Measurement & accounting ledger",
+        "Consumptive-use conservation market",
+        "Direct potable reuse buildout",
+        "Agricultural efficiency at scale",
+        "Phreatophyte / tamarisk control",
+        "Managed aquifer recharge",
+        "Glen Canyon temp + outlet retrofit",
+        "Cloud seeding + ASO monitoring",
+        "Desalination exchange"
+      ],
+      "stakeholder_min": 13
+    }
+  },
+  "no_regret_freq": {
+    "Measurement & accounting ledger": 1.0,
+    "Consumptive-use conservation market": 1.0,
+    "Agricultural efficiency at scale": 1.0,
+    "Glen Canyon temp + outlet retrofit": 1.0,
+    "Cloud seeding + ASO monitoring": 1.0,
+    "Phreatophyte / tamarisk control": 0.91,
+    "Desalination exchange": 0.9,
+    "Managed aquifer recharge": 0.84,
+    "Dust-on-snow source control": 0.53,
+    "Reservoir evap + floating solar": 0.27,
+    "Direct potable reuse buildout": 0.22,
+    "Tribal infrastructure + leasing": 0.18,
+    "Urban turf buyback + reuse": 0.1
+  },
+  "levelized_per_af": {
+    "Measurement & accounting ledger": null,
+    "Consumptive-use conservation market": 600,
+    "Urban turf buyback + reuse": 4181,
+    "Direct potable reuse buildout": 4400,
+    "Agricultural efficiency at scale": 3125,
+    "Reservoir evap + floating solar": 4183,
+    "Dust-on-snow source control": null,
+    "Phreatophyte / tamarisk control": null,
+    "Managed aquifer recharge": 2000,
+    "Glen Canyon temp + outlet retrofit": null,
+    "Tribal infrastructure + leasing": 4750,
+    "Cloud seeding + ASO monitoring": null,
+    "Desalination exchange": 2500
+  },
+  "all_options": [
+    {
+      "name": "Measurement & accounting ledger",
+      "cost10yr_B": 1.0,
+      "yield_af": 0,
+      "type": "enabling",
+      "additive_water_maf": 0.0,
+      "levelized_per_af": null
+    },
+    {
+      "name": "Consumptive-use conservation market",
+      "cost10yr_B": 3.0,
+      "yield_af": 500000,
+      "type": "demand",
+      "additive_water_maf": 0.5,
+      "levelized_per_af": 600
+    },
+    {
+      "name": "Urban turf buyback + reuse",
+      "cost10yr_B": 30.0,
+      "yield_af": 717500,
+      "type": "demand",
+      "additive_water_maf": 0.718,
+      "levelized_per_af": 4181
+    },
+    {
+      "name": "Direct potable reuse buildout",
+      "cost10yr_B": 22.0,
+      "yield_af": 500000,
+      "type": "new_supply",
+      "additive_water_maf": 0.5,
+      "levelized_per_af": 4400
+    },
+    {
+      "name": "Agricultural efficiency at scale",
+      "cost10yr_B": 3.75,
+      "yield_af": 120000,
+      "type": "demand",
+      "additive_water_maf": 0.12,
+      "levelized_per_af": 3125
+    },
+    {
+      "name": "Reservoir evap + floating solar",
+      "cost10yr_B": 30.7,
+      "yield_af": 734000,
+      "type": "loss_avoid",
+      "additive_water_maf": 0.734,
+      "levelized_per_af": 4183
+    },
+    {
+      "name": "Dust-on-snow source control",
+      "cost10yr_B": 15.0,
+      "yield_af": 0,
+      "type": "new_supply",
+      "additive_water_maf": 0.0,
+      "levelized_per_af": null
+    },
+    {
+      "name": "Phreatophyte / tamarisk control",
+      "cost10yr_B": 2.4,
+      "yield_af": 0,
+      "type": "loss_avoid",
+      "additive_water_maf": 0.0,
+      "levelized_per_af": null
+    },
+    {
+      "name": "Managed aquifer recharge",
+      "cost10yr_B": 8.0,
+      "yield_af": 400000,
+      "type": "storage",
+      "additive_water_maf": 0.12,
+      "levelized_per_af": 2000
+    },
+    {
+      "name": "Glen Canyon temp + outlet retrofit",
+      "cost10yr_B": 3.5,
+      "yield_af": 0,
+      "type": "protective",
+      "additive_water_maf": 0.0,
+      "levelized_per_af": null
+    },
+    {
+      "name": "Tribal infrastructure + leasing",
+      "cost10yr_B": 28.5,
+      "yield_af": 600000,
+      "type": "realloc",
+      "additive_water_maf": 0.6,
+      "levelized_per_af": 4750
+    },
+    {
+      "name": "Cloud seeding + ASO monitoring",
+      "cost10yr_B": 0.05,
+      "yield_af": 0,
+      "type": "new_supply",
+      "additive_water_maf": 0.0,
+      "levelized_per_af": null
+    },
+    {
+      "name": "Desalination exchange",
+      "cost10yr_B": 4.5,
+      "yield_af": 180000,
+      "type": "new_supply",
+      "additive_water_maf": 0.18,
+      "levelized_per_af": 2500
+    }
+  ]
+}

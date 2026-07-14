@@ -1,0 +1,15 @@
+{
+  "basin_area_km2": 629100.0,
+  "grid_cells": 268,
+  "tws_trend_cm_per_yr": -0.301,
+  "tws_trend_maf_per_yr": -1.53,
+  "total_tws_loss_km3_2002_2026": 46.3,
+  "total_tws_loss_maf_2002_2026": 37.6,
+  "early_half_trend_cm_yr": 0.141,
+  "late_half_trend_cm_yr": -0.49,
+  "acceleration_ratio_late_over_early": -3.46,
+  "groundwater_share_literature": 0.65,
+  "implied_groundwater_loss_maf": 24.4,
+  "published_benchmark_km3_2002_2024": 52.2,
+  "published_gw_share": 0.65
+}

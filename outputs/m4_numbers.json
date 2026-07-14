@@ -1,0 +1,16 @@
+{
+  "bass_spawn_threshold_C": 15.0,
+  "sites_with_data": [
+    "lees_ferry"
+  ],
+  "primary_series": "lees_ferry",
+  "years": [
+    1990,
+    2026
+  ],
+  "days_ge_15C_trend_per_yr": 1.8,
+  "summer_mean_trend_C_per_decade": 1.6,
+  "mean_days_ge_15C_pre2015": 2.3,
+  "mean_days_ge_15C_2015plus": 40.6,
+  "lees_ferry_2022_days_ge_16C": 130
+}

@@ -1,0 +1,9 @@
+matplotlib
+netCDF4
+numpy
+openpyxl
+pandas
+python-dotenv
+requests
+scipy
+xarray

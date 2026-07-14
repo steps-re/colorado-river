@@ -1,0 +1,146 @@
+{
+  "m1_m4_thermal_evaporation_feedback": {
+    "description": "Coupled thermodynamic model of Lake Mead evaporation increases due to warmer Glen Canyon discharge temperatures.",
+    "lake_mead_baseline_evap_af": 800000.0,
+    "clausius_clapeyron_sensitivity_at_22C": "An increase of 1 degC in reservoir surface temperature translates to a ~6.8% increase in saturated vapor pressure and evaporative loss.",
+    "feedback_scenarios": [
+      {
+        "glen_canyon_warming_discharge_delta_C": 0.5,
+        "lake_mead_evaporation_increase_pct": 3.09,
+        "additional_water_lost_to_atmosphere_af": 24707.6,
+        "additional_water_lost_to_atmosphere_maf": 0.0247
+      },
+      {
+        "glen_canyon_warming_discharge_delta_C": 1.0,
+        "lake_mead_evaporation_increase_pct": 6.26,
+        "additional_water_lost_to_atmosphere_af": 50078.9,
+        "additional_water_lost_to_atmosphere_maf": 0.0501
+      },
+      {
+        "glen_canyon_warming_discharge_delta_C": 2.0,
+        "lake_mead_evaporation_increase_pct": 12.86,
+        "additional_water_lost_to_atmosphere_af": 102873.0,
+        "additional_water_lost_to_atmosphere_maf": 0.1029
+      },
+      {
+        "glen_canyon_warming_discharge_delta_C": 3.0,
+        "lake_mead_evaporation_increase_pct": 19.81,
+        "additional_water_lost_to_atmosphere_af": 158505.3,
+        "additional_water_lost_to_atmosphere_maf": 0.1585
+      },
+      {
+        "glen_canyon_warming_discharge_delta_C": 4.0,
+        "lake_mead_evaporation_increase_pct": 27.14,
+        "additional_water_lost_to_atmosphere_af": 217103.6,
+        "additional_water_lost_to_atmosphere_maf": 0.2171
+      },
+      {
+        "glen_canyon_warming_discharge_delta_C": 4.5,
+        "lake_mead_evaporation_increase_pct": 30.94,
+        "additional_water_lost_to_atmosphere_af": 247556.0,
+        "additional_water_lost_to_atmosphere_maf": 0.2476
+      }
+    ]
+  },
+  "m2_volumetric_crop_mismatch_and_portfolio_curves": {
+    "description": "Portfolio shift curves modeling water savings and GDP retention from targeted forage land dry-year fallow programs.",
+    "structural_deficit_maf_yr": 0.8,
+    "crop_allocations": {
+      "forage": {
+        "crops": [
+          "Alfalfa",
+          "Hay",
+          "Irrigated Pasture"
+        ],
+        "consumptive_use_maf_yr": 5.5,
+        "gross_value_usd_per_af": 360.0,
+        "gdp_share_pct": 8.0
+      },
+      "produce": {
+        "crops": [
+          "Lettuce",
+          "Melons",
+          "Onions",
+          "Brassicas"
+        ],
+        "consumptive_use_maf_yr": 0.9,
+        "gross_value_usd_per_af": 3750.0,
+        "gdp_share_pct": 92.0
+      }
+    },
+    "portfolio_scenarios": [
+      {
+        "forage_fallow_fraction": 0.0,
+        "forage_fallow_percentage": 0.0,
+        "water_yield_returned_to_river_maf_yr": 0.0,
+        "national_agricultural_gdp_loss_usd_millions": 0.0,
+        "regional_agricultural_gdp_retention_percentage": 100.0,
+        "system_deficit_solved_percentage": 0.0
+      },
+      {
+        "forage_fallow_fraction": 0.05,
+        "forage_fallow_percentage": 5.0,
+        "water_yield_returned_to_river_maf_yr": 0.275,
+        "national_agricultural_gdp_loss_usd_millions": 0.0,
+        "regional_agricultural_gdp_retention_percentage": 98.15,
+        "system_deficit_solved_percentage": 34.4
+      },
+      {
+        "forage_fallow_fraction": 0.1,
+        "forage_fallow_percentage": 10.0,
+        "water_yield_returned_to_river_maf_yr": 0.55,
+        "national_agricultural_gdp_loss_usd_millions": 0.0,
+        "regional_agricultural_gdp_retention_percentage": 96.3,
+        "system_deficit_solved_percentage": 68.8
+      },
+      {
+        "forage_fallow_fraction": 0.15,
+        "forage_fallow_percentage": 15.0,
+        "water_yield_returned_to_river_maf_yr": 0.825,
+        "national_agricultural_gdp_loss_usd_millions": 0.0,
+        "regional_agricultural_gdp_retention_percentage": 94.45,
+        "system_deficit_solved_percentage": 103.1
+      },
+      {
+        "forage_fallow_fraction": 0.2,
+        "forage_fallow_percentage": 20.0,
+        "water_yield_returned_to_river_maf_yr": 1.1,
+        "national_agricultural_gdp_loss_usd_millions": 0.0,
+        "regional_agricultural_gdp_retention_percentage": 92.61,
+        "system_deficit_solved_percentage": 137.5
+      },
+      {
+        "forage_fallow_fraction": 0.25,
+        "forage_fallow_percentage": 25.0,
+        "water_yield_returned_to_river_maf_yr": 1.375,
+        "national_agricultural_gdp_loss_usd_millions": 0.0,
+        "regional_agricultural_gdp_retention_percentage": 90.76,
+        "system_deficit_solved_percentage": 171.9
+      },
+      {
+        "forage_fallow_fraction": 0.3,
+        "forage_fallow_percentage": 30.0,
+        "water_yield_returned_to_river_maf_yr": 1.65,
+        "national_agricultural_gdp_loss_usd_millions": 0.0,
+        "regional_agricultural_gdp_retention_percentage": 88.91,
+        "system_deficit_solved_percentage": 206.2
+      },
+      {
+        "forage_fallow_fraction": 0.4,
+        "forage_fallow_percentage": 40.0,
+        "water_yield_returned_to_river_maf_yr": 2.2,
+        "national_agricultural_gdp_loss_usd_millions": 0.0,
+        "regional_agricultural_gdp_retention_percentage": 85.21,
+        "system_deficit_solved_percentage": 275.0
+      },
+      {
+        "forage_fallow_fraction": 0.5,
+        "forage_fallow_percentage": 50.0,
+        "water_yield_returned_to_river_maf_yr": 2.75,
+        "national_agricultural_gdp_loss_usd_millions": 0.0,
+        "regional_agricultural_gdp_retention_percentage": 81.51,
+        "system_deficit_solved_percentage": 343.8
+      }
+    ]
+  }
+}

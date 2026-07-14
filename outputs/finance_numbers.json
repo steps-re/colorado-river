@@ -1,0 +1,232 @@
+{
+  "blue_bond": {
+    "package_capex_B": 15.7,
+    "revenue_backed_capex_B": 12.2,
+    "assessment_backed_capex_B": 3.5,
+    "social_benefit_B_yr_context_only": 1.88,
+    "by_rate": {
+      "r4": {
+        "total_debt_service_B_yr": 0.91,
+        "assessment_surcharge_per_af": 16,
+        "social_benefit_to_debt_service_ratio": 2.07
+      },
+      "r5": {
+        "total_debt_service_B_yr": 1.02,
+        "assessment_surcharge_per_af": 18,
+        "social_benefit_to_debt_service_ratio": 1.84
+      },
+      "r6": {
+        "total_debt_service_B_yr": 1.14,
+        "assessment_surcharge_per_af": 20,
+        "social_benefit_to_debt_service_ratio": 1.65
+      }
+    }
+  },
+  "blue_bond_assumptions": {
+    "basin_consumptive_use_maf": 13.0,
+    "term_yr": 30,
+    "note": "revenue-backed = capex of options with a direct cash flow (water sales/leasing/fees), self-funding; assessment-backed = public-good options repaid by a per-AF surcharge that requires a basin authority with assessment power (does not yet exist). Social benefit is context only, not collectible revenue."
+  },
+  "assumptions": {
+    "horizon_yr": 30,
+    "water_value_per_af": {
+      "low_800": 800,
+      "central_1500": 1500,
+      "high_2500": 2500
+    },
+    "discount": {
+      "d3": 0.03,
+      "d5": 0.05,
+      "d7": 0.07
+    },
+    "note": "water freed valued at avoided marginal supply; co-benefits per option; grounded cost priors"
+  },
+  "per_option": [
+    {
+      "option": "Measurement & accounting ledger",
+      "capex_B": 0.1,
+      "investable": true,
+      "irr_central": "n/a",
+      "npv_5pct_central_B": -1.6,
+      "bcr": {
+        "low_800": 0.0,
+        "central_1500": 0.0,
+        "high_2500": 0.0
+      },
+      "bcr_by_discount_central_wval": {
+        "d3": 0.0,
+        "d5": 0.0,
+        "d7": 0.0
+      }
+    },
+    {
+      "option": "Consumptive-use conservation market",
+      "capex_B": 0.3,
+      "investable": true,
+      "irr_central": 87.7,
+      "npv_5pct_central_B": 5.6,
+      "bcr": {
+        "low_800": 1.15,
+        "central_1500": 2.15,
+        "high_2500": 3.58
+      },
+      "bcr_by_discount_central_wval": {
+        "d3": 2.21,
+        "d5": 2.15,
+        "d7": 2.09
+      }
+    },
+    {
+      "option": "Agricultural efficiency at scale",
+      "capex_B": 3.75,
+      "investable": true,
+      "irr_central": -5.4,
+      "npv_5pct_central_B": -2.5,
+      "bcr": {
+        "low_800": 0.25,
+        "central_1500": 0.46,
+        "high_2500": 0.77
+      },
+      "bcr_by_discount_central_wval": {
+        "d3": 0.54,
+        "d5": 0.46,
+        "d7": 0.4
+      }
+    },
+    {
+      "option": "Glen Canyon temp + outlet retrofit",
+      "capex_B": 3.5,
+      "investable": false,
+      "irr_central": 3.0,
+      "npv_5pct_central_B": -0.6,
+      "bcr": {
+        "low_800": 0.86,
+        "central_1500": 0.86,
+        "high_2500": 0.86
+      },
+      "bcr_by_discount_central_wval": {
+        "d3": 1.0,
+        "d5": 0.86,
+        "d7": 0.74
+      }
+    },
+    {
+      "option": "Cloud seeding + snow monitoring",
+      "capex_B": 0.05,
+      "investable": false,
+      "irr_central": "n/a",
+      "npv_5pct_central_B": -0.8,
+      "bcr": {
+        "low_800": 0.0,
+        "central_1500": 0.0,
+        "high_2500": 0.0
+      },
+      "bcr_by_discount_central_wval": {
+        "d3": 0.0,
+        "d5": 0.0,
+        "d7": 0.0
+      }
+    },
+    {
+      "option": "Phreatophyte / tamarisk control",
+      "capex_B": 2.4,
+      "investable": false,
+      "irr_central": "n/a",
+      "npv_5pct_central_B": -3.2,
+      "bcr": {
+        "low_800": 0.17,
+        "central_1500": 0.17,
+        "high_2500": 0.17
+      },
+      "bcr_by_discount_central_wval": {
+        "d3": 0.19,
+        "d5": 0.17,
+        "d7": 0.15
+      }
+    },
+    {
+      "option": "Dust-on-snow source control",
+      "capex_B": 15.0,
+      "investable": false,
+      "irr_central": "n/a",
+      "npv_5pct_central_B": -14.6,
+      "bcr": {
+        "low_800": 0.07,
+        "central_1500": 0.07,
+        "high_2500": 0.07
+      },
+      "bcr_by_discount_central_wval": {
+        "d3": 0.08,
+        "d5": 0.07,
+        "d7": 0.06
+      }
+    },
+    {
+      "option": "Desalination exchange",
+      "capex_B": 4.5,
+      "investable": true,
+      "irr_central": "n/a",
+      "npv_5pct_central_B": -4.9,
+      "bcr": {
+        "low_800": 0.19,
+        "central_1500": 0.35,
+        "high_2500": 0.59
+      },
+      "bcr_by_discount_central_wval": {
+        "d3": 0.4,
+        "d5": 0.35,
+        "d7": 0.32
+      }
+    },
+    {
+      "option": "Managed aquifer recharge",
+      "capex_B": 8.0,
+      "investable": true,
+      "irr_central": -3.0,
+      "npv_5pct_central_B": -4.5,
+      "bcr": {
+        "low_800": 0.32,
+        "central_1500": 0.59,
+        "high_2500": 0.99
+      },
+      "bcr_by_discount_central_wval": {
+        "d3": 0.68,
+        "d5": 0.59,
+        "d7": 0.52
+      }
+    },
+    {
+      "option": "Tribal infrastructure + leasing",
+      "capex_B": 28.5,
+      "investable": true,
+      "irr_central": -2.7,
+      "npv_5pct_central_B": -12.9,
+      "bcr": {
+        "low_800": 0.28,
+        "central_1500": 0.45,
+        "high_2500": 0.7
+      },
+      "bcr_by_discount_central_wval": {
+        "d3": 0.55,
+        "d5": 0.45,
+        "d7": 0.38
+      }
+    }
+  ],
+  "package": {
+    "options": [
+      "Measurement & accounting ledger",
+      "Consumptive-use conservation market",
+      "Agricultural efficiency at scale",
+      "Glen Canyon temp + outlet retrofit",
+      "Managed aquifer recharge"
+    ],
+    "total_capex_B": 15.7,
+    "verified_water_afy": 1020000,
+    "to_storage_afy": 620000,
+    "npv_water_only_5pct_B": -3.5,
+    "irr_pct": 2.2,
+    "bcr_water_only_central": 0.87,
+    "levelized_cost_per_verified_af": 2062
+  }
+}

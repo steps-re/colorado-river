@@ -1,0 +1,43 @@
+{
+  "transmission_headroom_MW": 3551,
+  "by_node": {
+    "Hoover (Mead) 230kV -> LA/Vegas": 776,
+    "Glen Canyon 345/230kV -> Phoenix": 485,
+    "Davis + Parker (Parker-Davis)": 40,
+    "Navajo (NGS) 500kV -> Phoenix & Vegas": 2250
+  },
+  "design": {
+    "pv_ac_MW": 5149,
+    "pv_dc_MW": 6694,
+    "bess_MW": 3551,
+    "bess_MWh": 21306,
+    "pv_to_poi_ratio": 1.45,
+    "line_capacity_factor": 0.55
+  },
+  "annual_energy_TWh": 17.1,
+  "capex_B": {
+    "pv": 7.0,
+    "bess": 4.8,
+    "total": 11.8,
+    "note": "transmission reused = $0"
+  },
+  "energy_cascade_TWh": {
+    "hydro_backfill": 4.573,
+    "datacenter_load": 6.0,
+    "available_for_water": 6.5
+  },
+  "water_energy_ceiling_AF_yr": 2970781,
+  "water_realistic_AF_yr": 900000,
+  "water_note": "energy is NOT the binding constraint - surplus energy could desalinate ~3 MAF, but brine disposal, capital, and source availability bound the realistic add/free to ~0.5-1.0 MAF/yr",
+  "jobs": {
+    "construction_job_years": 28319,
+    "permanent": 1820
+  },
+  "co2_avoided_MtCO2_yr": 6.8,
+  "gas_purchases_avoided_B_yr": 0.77,
+  "seasonality": {
+    "winter_min_cf": 0.38,
+    "spring_max_cf": 0.69,
+    "monsoon_dip": "Jul-Aug afternoon clouds cut ~15-20% vs May peak"
+  }
+}

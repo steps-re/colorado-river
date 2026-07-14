@@ -1,0 +1,32 @@
+{
+  "value_at_risk_annual_B": {
+    "Glen Canyon hydropower value": {
+      "low": 0.15,
+      "high": 0.3
+    },
+    "Agricultural output at risk (basin)": {
+      "low": 5.0,
+      "high": 5.0
+    },
+    "Recreation / tourism (Grand Canyon etc.)": {
+      "low": 1.0,
+      "high": 1.1
+    }
+  },
+  "directly_attributable_annual_var_B": [
+    6.2,
+    6.4
+  ],
+  "severe_year_activity_B": 143.0,
+  "severe_year_jobs_M": 1.6,
+  "activity_per_maf_shortfall_B": 102.0,
+  "package_activity_buffered_B": 104.0,
+  "natural_capital_annual_B": [
+    69.2,
+    496.4
+  ],
+  "package_debt_service_B_yr": 1.02,
+  "insurance_ratio_vs_annual_var": 0.159,
+  "insurance_ratio_vs_severe_year": 0.0071,
+  "note": "gross economic-activity and asset figures with wide ranges; framed as insurance (cost vs damages averted), not net benefit"
+}

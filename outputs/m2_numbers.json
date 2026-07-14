@@ -1,0 +1,24 @@
+{
+  "cdl_source": "live",
+  "counties": [
+    "Imperial_CA",
+    "Yuma_AZ",
+    "La_Paz_AZ",
+    "Riverside_CA"
+  ],
+  "forage_acres_lowerbasin_sample": 352780,
+  "forage_consumptive_use_maf": 2.046,
+  "value_per_af": {
+    "Alfalfa": 362,
+    "Cotton": 357,
+    "Lettuce": 3750,
+    "Grapes": 3429,
+    "Oranges": 2500
+  },
+  "benchmarks_per_af": {
+    "System conservation payment": 400,
+    "Urban M&I (SNWA/CAP)": 1200,
+    "Desalination (new supply)": 2500
+  },
+  "alfalfa_vs_produce_value_ratio": 10.4
+}

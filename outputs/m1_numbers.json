@@ -1,0 +1,44 @@
+{
+  "supply_since_2000_maf": 12.4,
+  "paper_allocation_maf": 16.5,
+  "reconstructed_reservoir_evap_maf": 1.204,
+  "loss_terms_maf": {
+    "reservoir_evaporation": 1.2,
+    "glen_canyon_seepage": 0.15,
+    "system_riparian_ET": 0.2
+  },
+  "total_unpriced_losses_maf": 1.55,
+  "structural_gap_vs_paper_maf": 5.65,
+  "required_stabilizing_cut_maf": 3.0,
+  "who_pays_by_rule": {
+    "status_quo_storage": {
+      "upper_basin": 0,
+      "california": 0,
+      "arizona": 0,
+      "nevada": 0,
+      "mexico": 0,
+      "reservoir_drawdown": 3.0
+    },
+    "charge_evap_to_lower": {
+      "california": 1.248,
+      "arizona": 1.669,
+      "nevada": 0.114,
+      "mexico": 0.269,
+      "upper_basin": 0
+    },
+    "pro_rata_all": {
+      "upper_basin": 0.9,
+      "california": 0.75,
+      "arizona": 0.66,
+      "nevada": 0.09,
+      "mexico": 0.6
+    },
+    "priority_junior_first": {
+      "arizona": 1.9,
+      "nevada": 0.3,
+      "california": 0.3,
+      "mexico": 0.5,
+      "upper_basin": 0.0
+    }
+  }
+}

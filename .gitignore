@@ -1,0 +1,19 @@
+# secrets — never
+.env
+*.env
+*credentials*.json
+*token*.json
+*.pem
+# internal-only material (kept out of the public repo by design)
+recs/
+research/
+outreach/
+llm_router.py
+# large raw data lives at its public source, fetched via data/fetch_data.py
+data/grace_mascon.nc
+*.nc
+*.nc4
+# junk
+__pycache__/
+*.pyc
+.DS_Store
