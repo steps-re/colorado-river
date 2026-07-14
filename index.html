@@ -68,7 +68,7 @@ figure img{cursor:zoom-in}
   </div>
 </header>
 <nav><div class="wrap">
-  <a href="#move">The move</a><a href="#summary">Summary</a><a href="#findings">The evidence</a><a href="#fiftyyr">50-yr ledger</a><a href="#proposals">What proposals miss</a><a href="#basin2">Basin 2.0</a><a href="#solutions">Ten solutions</a><a href="#energy">Energy&ndash;water</a><a href="#tradeoffs">Who loses</a>
+  <a href="#move">The move</a><a href="#summary">Summary</a><a href="#findings">The evidence</a><a href="#fiftyyr">50-yr ledger</a><a href="#proposals">What proposals miss</a><a href="#basin2">Basin 2.0</a><a href="#pbuild">Build it</a><a href="#solutions">Ten solutions</a><a href="#energy">Energy&ndash;water</a><a href="#tradeoffs">Who loses</a>
   <a href="#opportunity">ROI &amp; blue bonds</a><a href="#sandbox">Build your own</a><a href="#stress">Stress test</a><a href="#prior">Prior art</a><a href="#coalition">Coalition</a><a href="#private">Private path</a><a href="proposal.html">The Proposal</a><a href="aws.html">For AWS</a><a href="coalition.html">Coalition</a><a href="stakeholders.html">Stakeholders</a><a href="#reviewers">Review</a><a href="#verify">Interrogate this</a><a href="#refs">Sources</a>
 </div></nav>
 
@@ -213,6 +213,57 @@ figure img{cursor:zoom-in}
 </div></section>
 <div class="waterline"></div>
 
+<section id="pbuild"><div class="wrap col">
+  <span class="eyebrow">Interactive &middot; build the portfolio</span>
+  <h2>Build your own path to stabilization</h2>
+  <p>Move the sliders. Each lever frees water at a different cost. Watch the total against the deficit and Kloos&rsquo;s ~4 MAF stabilization target, the annual cost, and the insurance premium against the basin&rsquo;s $1.5 trillion economy.</p>
+</div><div class="wrap"><div style="background:var(--plate);border:1px solid var(--line);border-radius:6px;padding:22px 24px">
+  <div id="pbrows"></div>
+  <div style="height:22px;background:var(--stone);border-radius:11px;overflow:hidden;margin:18px 0 6px;position:relative">
+    <div id="pbfill" style="height:100%;width:0;background:var(--rust);transition:width .12s"></div>
+    <div style="position:absolute;left:37.5%;top:0;bottom:0;border-left:2px dashed var(--deep)"></div>
+  </div>
+  <div style="display:flex;justify-content:space-between;font-family:var(--mono);font-size:.66rem;color:var(--muted)"><span>0</span><span>deficit ~1.5 MAF</span><span style="margin-left:auto">4 MAF target</span></div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:14px;margin-top:20px">
+    <div><div style="font-family:var(--mono);font-size:1.7rem;color:var(--rust)" id="pbtot">0</div><div style="font-size:.8rem;color:var(--muted)">MAF/yr freed or made</div></div>
+    <div><div style="font-family:var(--mono);font-size:1.7rem;color:var(--water)" id="pbcost">$0</div><div style="font-size:.8rem;color:var(--muted)">annual cost</div></div>
+    <div><div style="font-family:var(--mono);font-size:1.7rem;color:var(--deep)" id="pbprem">0%</div><div style="font-size:.8rem;color:var(--muted)">of the $1.5T basin economy</div></div>
+    <div><div style="font-family:var(--mono);font-size:1.7rem" id="pbavg">$0</div><div style="font-size:.8rem;color:var(--muted)">blended $/AF</div></div>
+  </div>
+  <p style="font-family:var(--mono);font-size:.7rem;color:var(--muted);margin-top:14px">Cheap conservation gets you to the deficit near a 0.1% premium. Leaning on reuse and desal buys more water but costs more. That tradeoff is the whole design problem.</p>
+</div></div></section>
+<div class="waterline"></div>
+<script>
+(function(){
+  var L=[["Compensated ag fallowing",1300,2500,400],["Ag efficiency / deficit irrigation",450,800,600],
+   ["Municipal turf + leak reduction",400,600,700],["Advanced reuse (OCWD model)",800,1300,1500],
+   ["Brackish desalination",350,500,1000],["Groundwater management / ASR banking",400,800,500],
+   ["Coastal seawater exchange",900,2000,2800]];
+  var host=document.getElementById("pbrows");
+  L.forEach(function(l,i){
+    var r=document.createElement("div");
+    r.style.cssText="display:grid;grid-template-columns:1fr 160px 92px;gap:12px;align-items:center;padding:7px 0;border-bottom:1px solid #E4DCCB";
+    r.innerHTML='<span style="font-size:.9rem;color:var(--ink)">'+l[0]+' <span style="color:var(--muted);font-family:var(--mono);font-size:.72rem">~$'+l[3]+'/AF</span></span>'+
+     '<input type="range" min="0" max="'+l[1]+'" value="'+l[1]+'" data-c="'+l[3]+'" style="width:100%">'+
+     '<span class="pbv" style="font-family:var(--mono);font-size:.8rem;color:var(--rust);text-align:right"></span>';
+    host.appendChild(r);
+  });
+  var S=host.querySelectorAll('input[type=range]');
+  function fmt(n){return n>=1000?'$'+(n/1000).toFixed(1)+'B':'$'+n.toFixed(0)+'M';}
+  function upd(){
+    var maf=0,cost=0;
+    S.forEach(function(s){var v=+s.value/1000,c=+s.dataset.c;maf+=v;cost+=v*c;
+      s.parentNode.querySelector('.pbv').textContent=v.toFixed(2)+' MAF';});
+    document.getElementById("pbtot").textContent=maf.toFixed(2);
+    document.getElementById("pbcost").textContent=fmt(cost);
+    document.getElementById("pbprem").textContent=(cost/1000/1500*100).toFixed(2)+'%';
+    document.getElementById("pbavg").textContent=maf>0?'$'+Math.round(cost*1e6/(maf*1e6)):'$0';
+    var f=document.getElementById("pbfill");f.style.width=Math.min(100,maf/4*100)+'%';
+    f.style.background=maf>=1.5?'var(--good)':'var(--rust)';
+  }
+  S.forEach(function(s){s.addEventListener("input",upd);});upd();
+})();
+</script>
 <section id="solutions"><div class="wrap col">
   <span class="eyebrow">Ten solutions &middot; each under $50B</span>
   <h2>The menu, costed from real projects</h2>
