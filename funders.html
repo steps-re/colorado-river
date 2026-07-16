@@ -1,0 +1,203 @@
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Who Pays Now: The Hyperscaler Bridge | Colorado River | Steps Ventures</title>
+<style>
+:root{--stone:#E7E1D4;--paper:#F4F0E7;--plate:#FCFAF5;--ink:#1E2B2E;--deep:#123137;--muted:#5B6A6A;
+--water:#2C7A87;--rust:#A8432B;--amber:#9C7A2E;--line:#C6BBA4;
+--serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+--sans:-apple-system,BlinkMacSystemFont,system-ui,"Segoe UI",sans-serif;--mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace;}
+*{box-sizing:border-box}
+body{margin:0;background:var(--stone);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased}
+.wrap{max-width:940px;margin:0 auto;padding:0 24px} .col{max-width:80ch;margin-inline:auto}
+.col>p,.col>ul,.col>ol,.col>.key,.col>.callout{max-width:66ch} .col>p.lede{max-width:74ch}
+.chap{background:var(--deep);color:var(--paper);padding:40px 0 34px;border-top:3px solid var(--rust)}
+.chap .wrap{max-width:940px} .chap .num{font-family:var(--mono);text-transform:uppercase;letter-spacing:.18em;font-size:.72rem;color:#D8B49E;display:block;margin-bottom:.6em}
+.chap h2{color:#F4F0E7;font-size:clamp(1.7rem,4vw,2.4rem);margin:0} .chap p{color:#C9D6D6;max-width:60ch;margin:.5em 0 0;font-size:1.02rem}
+.toc{background:var(--plate);border:1px solid var(--line);border-radius:6px;padding:6px;text-transform:none;letter-spacing:normal;font-family:var(--sans)}
+.toc a{display:grid;grid-template-columns:auto minmax(0,1fr);column-gap:14px;row-gap:3px;align-items:baseline;padding:14px 15px;text-decoration:none;border-bottom:1px solid #EAE3D3}
+.toc a:last-child{border-bottom:0} .toc a:hover{background:#F0EBDF}
+.toc .tn{grid-row:1 / span 2;align-self:start;font-family:var(--mono);color:var(--rust);font-size:1.05rem;font-weight:700;padding-top:2px}
+.toc .tt{font-family:var(--serif);color:var(--deep);font-size:1.16rem;line-height:1.25}
+.toc .td{font-family:var(--sans);color:var(--muted);font-size:.9rem;line-height:1.4}
+h1,h2,h3{font-family:var(--serif);color:var(--deep);text-wrap:balance;font-weight:600;line-height:1.13}
+h2{font-size:1.72rem;margin:0 0 .25em} h3{font-size:1.28rem;margin:0 0 .35em} p{margin:0 0 1em}
+a{color:var(--water)} a.c{font-size:.62em;vertical-align:super;text-decoration:none;color:var(--water);font-family:var(--mono);margin-left:1px}
+.eyebrow{font-family:var(--mono);text-transform:uppercase;letter-spacing:.14em;font-size:.72rem;color:var(--rust);margin:0 0 1.1em;display:block}
+.mono{font-family:var(--mono);font-variant-numeric:tabular-nums}
+header{background:var(--deep);color:var(--paper);overflow:hidden;position:relative}
+#hero{display:block;width:100%;height:300px}
+.hero-txt{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:34px 24px;max-width:940px;margin:0 auto;left:0;right:0;pointer-events:none}
+.hero-txt .eyebrow{color:#D8B49E} .hero-txt h1{color:#F4F0E7;font-size:clamp(2.1rem,5.6vw,3.4rem);margin:0;max-width:18ch}
+.hero-txt .dek{font-family:var(--serif);font-style:italic;color:#C9D6D6;font-size:1.15rem;margin:.5em 0 0;max-width:46ch}
+.heroctas{pointer-events:auto;display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.herocta{background:var(--water);color:#fff;font-family:var(--mono);font-size:.74rem;text-transform:uppercase;letter-spacing:.06em;padding:12px 20px;border-radius:4px;text-decoration:none;white-space:nowrap} .herocta:hover{background:#25646f}
+.herocta.ghost{background:transparent;border:1px solid #7fa3a6;color:#E7EEEE} .herocta.ghost:hover{background:rgba(255,255,255,.08)}
+nav{position:sticky;top:0;z-index:9;background:rgba(231,225,212,.94);backdrop-filter:blur(6px);border-bottom:1px solid var(--line);font-family:var(--mono);font-size:.7rem;text-transform:uppercase;letter-spacing:.08em}
+nav{position:sticky;top:0} nav::after{content:"";position:absolute;right:0;top:0;bottom:0;width:34px;pointer-events:none;background:linear-gradient(to right,transparent,var(--stone))}\nnav .wrap{display:flex;gap:20px;padding:11px 24px;overflow-x:auto;scrollbar-width:thin} nav a{color:var(--muted);text-decoration:none;white-space:nowrap} nav a:hover{color:var(--rust)}
+section{padding:54px 0} .waterline{height:0;border-top:1px solid var(--line);box-shadow:0 2px 0 -1px rgba(168,68,43,.28);max-width:940px;margin:0 auto}
+.lede{font-family:var(--serif);font-size:1.32rem;line-height:1.5;color:var(--deep)}
+#energy h3{margin-top:1.8em} #energy .col{margin-top:0} #energy figure{max-width:760px;margin:24px auto 0}
+.reading{display:grid;grid-template-columns:1fr;gap:26px;margin:0 0 8px}
+@media(min-width:760px){.reading{grid-template-columns:1.05fr 1fr;align-items:center} .reading.flip .txt{order:2}}
+.stat{font-family:var(--mono);font-variant-numeric:tabular-nums;color:var(--rust);font-size:clamp(2.5rem,6.6vw,3.8rem);line-height:.95;letter-spacing:-.02em;margin:0 0 .1em}
+.stat .u{font-size:.3em;color:var(--muted);letter-spacing:.01em;margin-left:.28em;font-weight:600;font-family:var(--sans);vertical-align:baseline}
+.stat small{display:block;font-family:var(--sans);font-size:.98rem;color:#3a4746;letter-spacing:0;margin-top:.45em;text-transform:none;line-height:1.5}
+figure{margin:0;background:var(--plate);border:1px solid var(--line);border-radius:3px;padding:12px} figure img{width:100%;height:auto;display:block}
+figcaption{font-family:var(--mono);font-size:.68rem;color:var(--muted);margin-top:8px}
+.tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:3px;background:var(--plate);margin:6px 0}
+table{border-collapse:collapse;width:100%;font-size:.82rem;min-width:640px}
+th,td{text-align:left;padding:9px 11px;border-bottom:1px solid #E4DCCB;vertical-align:top}
+thead th{font-family:var(--mono);font-size:.64rem;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);font-weight:600;background:#EFEADF}
+tbody td:first-child{font-weight:600;color:var(--deep);font-family:var(--serif);font-size:.92rem}
+.num{font-family:var(--mono);font-variant-numeric:tabular-nums;white-space:nowrap}
+.mk{font-family:var(--mono);font-weight:700} .hit{color:var(--water)} .part{color:var(--amber)} .miss{color:var(--rust)}
+.recs{display:grid;gap:2px;background:var(--line);border:1px solid var(--line);border-radius:3px;overflow:hidden}
+.rec{background:var(--paper);padding:20px 22px;display:grid;grid-template-columns:auto 1fr;gap:16px}
+.rec .n{font-family:var(--mono);font-size:1.4rem;color:var(--rust);font-weight:700} .rec p{margin:0;color:#33403f;font-size:.96rem}
+.rec .who{font-family:var(--mono);font-size:.68rem;text-transform:uppercase;letter-spacing:.05em;color:var(--water);margin-top:.6em;display:block}
+.callout{background:var(--deep);color:var(--paper);border-radius:4px;padding:26px 28px;margin:8px 0}
+.callout .big{font-family:var(--mono);font-size:clamp(1.8rem,5vw,2.6rem);color:#8FD0DA;letter-spacing:-.01em} .callout p{margin:.3em 0 0;color:#C9D6D6}
+.grid2{display:grid;gap:22px} @media(min-width:720px){.grid2{grid-template-columns:1fr 1fr}}
+.coal{background:var(--plate);border:1px solid var(--line);border-left:3px solid var(--water);border-radius:3px;padding:16px 18px}
+.coal h3{font-size:1.02rem;margin:0 0 .3em} .coal p{margin:0;font-size:.9rem;color:#3a4746} .coal .g{font-family:var(--mono);font-size:.66rem;color:var(--rust);text-transform:uppercase;letter-spacing:.05em;display:block;margin-top:.5em}
+.interro{background:#14343b;color:#C9D6D6;border-radius:4px;padding:24px 26px} .interro h3{color:#F4F0E7} .interro a{color:#8FD0DA}
+.interro ul{margin:.4em 0 0;padding-left:1.1em} .interro li{margin:.35em 0;font-size:.92rem}
+.refs{columns:2;column-gap:34px;font-size:.8rem;color:#3a4746} @media(max-width:680px){.refs{columns:1}}
+.refs div{break-inside:avoid;margin:0 0 .7em} .refs .rn{font-family:var(--mono);color:var(--rust);font-weight:700;margin-right:5px} .refs a{word-break:break-word}
+.key{font-family:var(--mono);font-size:.72rem;color:var(--muted);margin:12px 0 0}
+.foot{background:var(--deep);color:#AEC0C0;padding:42px 0;font-size:.85rem} .foot a{color:#8FD0DA}
+:focus-visible{outline:2px solid var(--water);outline-offset:2px}
+@media(prefers-reduced-motion:no-preference){.reveal{opacity:0;transform:translateY(14px);transition:opacity .7s,transform .7s} .reveal.in{opacity:1;transform:none}}
+figure img,img[src^="data:image"]{cursor:zoom-in}
+#lb{position:fixed;inset:0;z-index:99;display:none;align-items:center;justify-content:center;flex-direction:column;gap:14px;background:rgba(18,49,55,.93);padding:24px;cursor:zoom-out}
+#lb.on{display:flex}
+#lb img{max-width:96vw;max-height:90vh;box-shadow:0 12px 44px rgba(0,0,0,.55);border-radius:5px;background:var(--plate)}
+#lb .cap{color:#C9D6D6;font-family:var(--mono);font-size:.72rem;text-align:center;max-width:70ch}
+#lb .x{position:fixed;top:16px;right:22px;color:#C9D6D6;font-family:var(--mono);font-size:1.4rem;line-height:1}
+</style>
+<style>
+.statgrid{display:grid;gap:26px;margin:20px 0 6px}
+@media(min-width:760px){.statgrid{grid-template-columns:repeat(4,1fr)}}
+.statgrid .stat{font-size:clamp(1.7rem,3.4vw,2.3rem)}
+.rankwrap{display:grid;gap:14px;margin:22px 0 6px}
+.rank{border:1px solid var(--line);border-radius:10px;padding:16px 18px;background:var(--plate)}
+.rank.top{border-left:4px solid var(--rust)}
+.rank .rk{font-family:ui-monospace,Menlo,monospace;font-size:.72rem;text-transform:uppercase;letter-spacing:.06em;color:var(--muted)}
+.rank h3{margin:.15em 0 .3em;font-size:1.12rem}
+.rank .score{font-family:ui-monospace,Menlo,monospace;font-size:.8rem;color:var(--water);font-weight:700}
+.verdict{display:grid;gap:12px;margin:18px 0}
+@media(min-width:760px){.verdict{grid-template-columns:repeat(3,1fr)}}
+.vcard{border:1px solid var(--line);border-radius:10px;padding:14px 16px;background:var(--plate)}
+.vcard .lab{font-family:ui-monospace,Menlo,monospace;font-size:.66rem;text-transform:uppercase;letter-spacing:.05em;padding:3px 9px;border-radius:20px;display:inline-block;margin-bottom:8px}
+.vcard.clean .lab{background:#1c5a4a;color:#fff}
+.vcard.cond .lab{background:var(--amber);color:#fff}
+.vcard.weak .lab{background:#6b6b6b;color:#fff}
+td.sm{font-size:.78rem;color:#33403f}
+.srctag{font-family:ui-monospace,Menlo,monospace;font-size:.62rem;text-transform:uppercase;letter-spacing:.04em;color:var(--muted);white-space:nowrap}
+sup.cite a{font-size:.62rem;color:var(--water);text-decoration:none;font-weight:700}
+.notes{font-size:.8rem;color:var(--muted);border-top:1px solid var(--line);margin-top:26px;padding-top:16px}
+.notes li{margin-bottom:7px}
+</style>
+<header style="padding:0">
+  <div class="hero-txt" style="position:static;padding:48px 24px 40px">
+    <span class="eyebrow">Steps Ventures Research &middot; Who pays now</span>
+    <h1 style="font-size:clamp(2rem,5vw,3rem)">The basin's biggest new water users are its most motivated funders.</h1>
+    <p class="dek">Every hyperscaler in the desert Southwest has a water-positive-by-2030 pledge and a standard that credits verified conservation and reuse. The accounting already exists. Here are the projects they could fund now that also move real acre-feet toward the basin's 3 to 3.5 MAF gap.</p>
+  </div>
+</header>
+<nav><div class="wrap">
+  <a href="start.html" style="color:var(--rust);font-weight:700">Start here</a><a href="index.html">&larr; The evidence</a><a href="#thesis">The bridge</a><a href="#reuse">Real reuse projects</a><a href="#rank">The ranked menu</a><a href="#verdict">The honest verdict</a>
+  <a href="records.html">The record</a><a href="proposal.html">The Proposal</a><a href="https://github.com/steps-re/colorado-river" target="_blank" rel="noopener">Data &amp; code</a>
+</div></nav>
+
+<section id="thesis"><div class="wrap col">
+  <span class="eyebrow">The bridge &middot; consumers become funders</span>
+  <h2>The accounting is already built</h2>
+  <p>The AI buildout is landing in the driest basin in the country. Phoenix-area data-center water use is projected to climb toward 3.7 billion gallons a year. Southern Nevada data centers used over 716 million gallons in 2024, drawn almost entirely from the Colorado River. That looks like the basin's newest problem. It is also its best-funded opportunity.<sup class="cite"><a href="#s9">[9]</a></sup></p>
+  <p>Every major operator has answered the backlash the same way. AWS is water positive by 2030 and about 75% of the way there.<sup class="cite"><a href="#s1">[1]</a></sup> Microsoft replenished more than it consumed in fiscal 2025.<sup class="cite"><a href="#s2">[2]</a></sup> Google has committed over $500 million to water infrastructure.<sup class="cite"><a href="#s3">[3]</a></sup> Meta targets 200% restoration in stressed regions and already funds Colorado River Indian Tribes conservation into Lake Mead.<sup class="cite"><a href="#s4">[4]</a></sup> They all settle on one standard, Volumetric Water Benefit Accounting, written by WRI and LimnoTech.<sup class="cite"><a href="#s5">[5]</a></sup></p>
+  <p>That standard is the bridge. It credits the cleanest benefit for two things: verified consumptive-use conservation and recycled water that offsets a fresh diversion. Both are wet water. And the price a funder would pay is not a guess. It is on this project's own transaction record.</p>
+</div><div class="wrap">
+  <div class="statgrid">
+    <p class="stat">$325<span class="u">/AF</span><small>Reclamation&rsquo;s 2026 system-conservation price, on the record in 2 board actions</small></p>
+    <p class="stat">$400<span class="u">/AF</span><small>The 2024&ndash;25 federal fallowing payment, across 7 MWD board actions</small></p>
+    <p class="stat">&gt;1<span class="u">MAF</span><small>Freed by a 5% cut on Lower Basin feed crops alone, the largest fundable block</small></p>
+    <p class="stat">75<span class="u">%</span><small>How far AWS is toward water-positive by 2030. The last quarter is the hardest.</small></p>
+  </div>
+  <p class="key">The full priced record is on <a href="records.html">the documented record</a>. These are the numbers boards actually vote, not model prices.</p>
+</div></section>
+<div class="waterline"></div>
+
+<section id="reuse"><div class="wrap col">
+  <span class="eyebrow">The reuse anchor &middot; real, named, capital-hungry</span>
+  <h2>Reuse is not a category. It is these projects.</h2>
+  <p>The strongest reuse play is not an abstract idea. It is a slate of existing basin projects with a capacity, a cost, a funding gap, an operator, and a data-center cluster next door. A funder buys a slice, a treatment train or a pump station or a pipeline segment, and takes a clean credit for the diversion it offsets. Every project below is real and public.<sup class="cite"><a href="#s6">[6]</a></sup></p>
+</div><div class="wrap">
+  <div class="tablewrap" role="region" aria-label="Named basin reuse projects" tabindex="0"><table>
+    <thead><tr><th>Project</th><th>Capacity</th><th>Status</th><th>Cost / gap</th><th>Nearest cluster</th><th>Why the credit is clean</th></tr></thead>
+    <tbody>
+<tr><td><strong>Pure Water Southern California</strong><br><span class="srctag">MWD SoCal + LA County Sanitation</span></td><td class="num">~150 MGD (~168,000 AFY)</td><td class="sm">Demo operating. Final EIR certified early 2026. Deliveries ~2032.</td><td class="sm">$4.8-9B total, multi-billion gap</td><td class="sm">Inland Empire</td><td class="sm">Offsets Colorado River and State Water Project imports. Clean wet-water credit.</td></tr>
+<tr><td><strong>Pure Water San Diego</strong><br><span class="srctag">City of San Diego</span></td><td class="num">83 MGD (~93,000 AFY)</td><td class="sm">Phase 1 ~85% built. Phase 2 planning.</td><td class="sm">$5B through 2035, plus $130M overrun</td><td class="sm">San Diego</td><td class="sm">San Diego is 85% imported water. Reuse offsets the Colorado River share.</td></tr>
+<tr><td><strong>Phoenix Advanced Water Purification</strong><br><span class="srctag">City of Phoenix</span></td><td class="num">~14,000 AFY combined</td><td class="sm">Design phase. Online early next decade.</td><td class="sm">$179M funded, ~$926M planned (verify)</td><td class="sm">Phoenix metro</td><td class="sm">New local potable supply offsets river diversions and groundwater.</td></tr>
+<tr><td><strong>Scottsdale Water Campus</strong><br><span class="srctag">Scottsdale Water</span></td><td class="num">up to 20 MGD (~22,400 AFY)</td><td class="sm">Operating since ~1999. Upgrade needed.</td><td class="sm">~$51M immediate compliance need</td><td class="sm">Phoenix metro</td><td class="sm">Potable reuse plus recharge. Direct offset, already proven.</td></tr>
+<tr><td><strong>Tucson potable-reuse demo</strong><br><span class="srctag">Tucson Water</span></td><td class="num">2.5 MGD (~2,800 AFY)</td><td class="sm">Council approved Jan 2025. Online early 2030s.</td><td class="sm">$86.7M funded. Scale-up needs more.</td><td class="sm">Tucson</td><td class="sm">New local supply offsets Colorado River demand.</td></tr>
+<tr><td><strong>SNWA return-flow model</strong><br><span class="srctag">Southern Nevada Water Authority</span></td><td class="num">~99% indoor water recycled to Lake Mead</td><td class="sm">Operating for decades</td><td class="sm">Ongoing opex and upgrades</td><td class="sm">AWS North Las Vegas ~8 mi</td><td class="sm">Every gallon returned lets Nevada withdraw another above its 300,000 AF.</td></tr>
+<tr><td><strong>Aurora Prairie Waters</strong><br><span class="srctag">Aurora Water</span></td><td class="num">10,000 AFY now, 50,000 AFY ultimate</td><td class="sm">Operating since 2010. Expansion planned.</td><td class="sm">$653M built. ~$6.5M expansion gap.</td><td class="sm">Denver-Aurora</td><td class="sm">Indirect potable reuse. Drought-resilient offset.</td></tr>
+<tr><td><strong>Gila River Indian Community reuse</strong><br><span class="srctag">Gila River Indian Community</span></td><td class="num">~20,000 AFY reclaimed, +125,000 AFY conserved</td><td class="sm">Federal agreements signed</td><td class="sm">$83M pipeline plus conservation funds</td><td class="sm">South of Phoenix</td><td class="sm">Direct river conservation and reuse, with tribal water-security co-benefit.</td></tr>
+    </tbody></table></div>
+  <p class="key">Ranked by fundability, basin impact, and proximity: Arizona&rsquo;s Phoenix, Scottsdale, and Tucson purification projects sit in the densest cluster and the most stressed lower-basin state, and Scottsdale has an immediate need near $51M. Pure Water Southern California is the largest volume and the largest gap. SNWA&rsquo;s return-flow model is 8 miles from AWS North Las Vegas and is the cleanest proof that reuse means wet water put back. Figures are agency- and press-reported. Read the source before you quote a number.</p>
+</div></section>
+<div class="waterline"></div>
+
+<section id="rank"><div class="wrap col">
+  <span class="eyebrow">The ranked menu &middot; fund it now</span>
+  <h2>Seven project types, scored and ranked</h2>
+  <p>Each project type scored one to five on how fundable it is by a hyperscaler water team, how many acre-feet it moves, and how ready it is to contract now. The product sorts them. The top three are the fund-it-now plays.<sup class="cite"><a href="#s7">[7]</a></sup><sup class="cite"><a href="#s8">[8]</a></sup></p>
+  <div class="rankwrap">
+<div class="rank top"><span class="rk">Rank 1 &middot; fund x impact x readiness</span><h3>A. Verified ag conservation / fallowing-for-benefit</h3><span class="score">5 x 5 x 5 = 125</span><p style="margin:.5em 0 0">Cleanest possible credit. Pay farmers to cut measured consumptive use, shepherd the water to Lake Mead. Ag is about 75% of human use, so a 5% cut on feed crops alone is over 1 MAF a year. The price is already on the record at $325 to $400 an acre-foot.</p></div>
+<div class="rank top"><span class="rk">Rank 2 &middot; fund x impact x readiness</span><h3>F. Measurement and monitoring infrastructure</h3><span class="score">5 x 3 x 5 = 75</span><p style="margin:.5em 0 0">The cheapest, most on-brand play for AI and data companies. It does not save water by itself. It verifies every other credit and lowers the cost of the whole market. OpenET is already the standard USBR and the Upper Colorado River Commission use.</p></div>
+<div class="rank top"><span class="rk">Rank 3 &middot; fund x impact x readiness</span><h3>C. Municipal and industrial reuse and recycling</h3><span class="score">4 x 4 x 4 = 64</span><p style="margin:.5em 0 0">Fund infrastructure in your own backyard. Recycled water offsets a fresh river diversion, metered and clean under the accounting. The named projects below are shovel-ready and capital-hungry, sitting next to the data-center clusters.</p></div>
+<div class="rank"><span class="rk">Rank 4 &middot; fund x impact x readiness</span><h3>B. On-farm and canal efficiency</h3><span class="score">4 x 4 x 3 = 48</span><p style="margin:.5em 0 0">Tangible and popular, but credit only the net basin-wide reduction, never the gross savings. Seepage from an earthen canal is often someone&#x27;s return flow. Meta and CRIT already ran the model.</p></div>
+<div class="rank"><span class="rk">Rank 5 &middot; fund x impact x readiness</span><h3>D. Groundwater recharge and aquifer storage</h3><span class="score">3 x 4 x 3 = 36</span><p style="margin:.5em 0 0">Vast storage. Arizona has banked over 4.4 MAF. But it is storage, not new supply, and it does not cut the structural deficit unless the recovered water retires other demand.</p></div>
+<div class="rank"><span class="rk">Rank 6 &middot; fund x impact x readiness</span><h3>G. Watershed and forest restoration</h3><span class="score">4 x 2 x 3 = 24</span><p style="margin:.5em 0 0">Real resilience value, wrong instrument for a volumetric portfolio. The downstream yield is diffuse, slow, and model-estimated.</p></div>
+<div class="rank"><span class="rk">Rank 7 &middot; fund x impact x readiness</span><h3>E. Phreatophyte and tamarisk removal</h3><span class="score">3 x 2 x 3 = 18</span><p style="margin:.5em 0 0">Contested science and, in Colorado, salvaged water belongs to the river under priority. It was removed from the water math in the funder brief for exactly this reason.</p></div>
+  </div>
+</div></section>
+<div class="waterline"></div>
+
+<section id="verdict"><div class="wrap col">
+  <span class="eyebrow">The honest verdict &middot; what the credit is worth</span>
+  <h2>Be precise about the credit</h2>
+  <p>The claim is narrow on purpose, because a credit a critic can pick apart is worse than none. Arizona already says no to weak-additionality paper water. Tucson rejected the Project Blue data center until it went to zero-water cooling. So here is the honest split.</p>
+  <div class="verdict">
+    <div class="vcard clean"><span class="lab">Clean credit</span><p><strong>Conservation and reuse.</strong> Verified consumptive-use conservation paid on measured ET and shepherded, and recycled water that offsets a fresh diversion. Both are wet water. Fund without asterisks.</p></div>
+    <div class="vcard cond"><span class="lab">Conditional</span><p><strong>Efficiency and recharge.</strong> Efficiency counts only the net basin-wide reduction, never gross savings. Recharge counts the avoided diversion when stored water is used in a shortage, not the act of storing. Fund with monitoring.</p></div>
+    <div class="vcard weak"><span class="lab">Weak</span><p><strong>Removal and restoration.</strong> Phreatophyte removal and forest restoration have real co-benefits and diffuse, slow, hard-to-measure water yield. Wrong instrument for a volumetric portfolio.</p></div>
+  </div>
+  <p>Put it together. The basin&rsquo;s biggest new water consumers are its most motivated funders. The standard to pay them exists. The price is on the record. And the named projects are shovel-ready, next to their own data centers. Each company offsetting only its own gallons does not close a 3 to 3.5 MAF gap. Pooled, at scale, and verified in public, it can.</p>
+  <ul class="notes">
+    <li>This is independent policy and analysis, not an offer, not investment advice, and not affiliated with any named company.</li>
+    <li>Sources are agency reports, company sustainability disclosures, and reputable press. Data-center water projections and total project costs are order-of-magnitude and some carry a verify flag in the underlying analysis.</li>
+    <li>Prices are from this project&rsquo;s own transaction record on <a href="records.html">the documented record</a>, harvested from public board packets.</li>
+  </ul>
+</div></section>
+<div class="waterline"></div>
+
+<section><div class="wrap col">
+  <span class="eyebrow">Sources</span>
+  <h2>Every claim, one link</h2>
+  <ul class="notes" style="border-top:none;padding-top:0">
+<li id="s1"><span class="srctag">[1]</span> AWS water stewardship: <a href="https://sustainability.aboutamazon.com/products-services/aws-cloud/water-stewardship" target="_blank" rel="noopener">https://sustainability.aboutamazon.com/products-services/aws-cloud/water-stewardship</a></li>
+<li id="s2"><span class="srctag">[2]</span> Microsoft water positive: <a href="https://www.microsoft.com/en-us/corporate-responsibility/sustainability/water" target="_blank" rel="noopener">https://www.microsoft.com/en-us/corporate-responsibility/sustainability/water</a></li>
+<li id="s3"><span class="srctag">[3]</span> Google water sustainability: <a href="https://sustainability.google/operating-sustainably/water/" target="_blank" rel="noopener">https://sustainability.google/operating-sustainably/water/</a></li>
+<li id="s4"><span class="srctag">[4]</span> Meta water: <a href="https://sustainability.atmeta.com/water/" target="_blank" rel="noopener">https://sustainability.atmeta.com/water/</a></li>
+<li id="s5"><span class="srctag">[5]</span> WRI VWBA standard: <a href="https://www.wri.org/research/volumetric-water-benefit-accounting-vwba" target="_blank" rel="noopener">https://www.wri.org/research/volumetric-water-benefit-accounting-vwba</a></li>
+<li id="s6"><span class="srctag">[6]</span> USBR Colorado River conservation: <a href="https://www.usbr.gov/lc/region/programs/crbsc.html" target="_blank" rel="noopener">https://www.usbr.gov/lc/region/programs/crbsc.html</a></li>
+<li id="s7"><span class="srctag">[7]</span> OpenET: <a href="https://openetdata.org/" target="_blank" rel="noopener">https://openetdata.org/</a></li>
+<li id="s8"><span class="srctag">[8]</span> Arizona Water Banking Authority: <a href="https://waterbank.az.gov/" target="_blank" rel="noopener">https://waterbank.az.gov/</a></li>
+<li id="s9"><span class="srctag">[9]</span> WRI data centers water use: <a href="https://www.wri.org/insights/data-centers-water-use" target="_blank" rel="noopener">https://www.wri.org/insights/data-centers-water-use</a></li>
+  </ul>
+</div></section>
+
+<footer class="foot"><div class="wrap col">
+  <p>Independent analysis, compiled by AI from public records and spot-checked. Corrections welcome: <a href="mailto:mike@stepsventures.com">mike@stepsventures.com</a>. <strong style="color:#F4F0E7">Steps Ventures</strong> &middot; July 2026.</p>
+  <p style="font-size:.82rem"><a href="index.html">Back to the evidence</a> &middot; <a href="records.html">The documented record</a> &middot; <a href="https://github.com/steps-re/colorado-river" target="_blank" rel="noopener">Data &amp; code on GitHub</a></p>
+</div></footer>
