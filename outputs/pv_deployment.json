@@ -12,9 +12,9 @@
     "bess_MW": 3551,
     "bess_MWh": 21306,
     "pv_to_poi_ratio": 1.45,
-    "line_capacity_factor": 0.55
+    "line_capacity_factor": 0.41
   },
-  "annual_energy_TWh": 17.1,
+  "annual_energy_TWh": 12.8,
   "capex_B": {
     "pv": 7.0,
     "bess": 4.8,
@@ -24,20 +24,20 @@
   "energy_cascade_TWh": {
     "hydro_backfill": 4.573,
     "datacenter_load": 6.0,
-    "available_for_water": 6.5
+    "available_for_water": 2.2
   },
-  "water_energy_ceiling_AF_yr": 2970781,
-  "water_realistic_AF_yr": 900000,
-  "water_note": "energy is NOT the binding constraint - surplus energy could desalinate ~3 MAF, but brine disposal, capital, and source availability bound the realistic add/free to ~0.5-1.0 MAF/yr",
+  "water_energy_ceiling_AF_yr": 991260,
+  "water_realistic_AF_yr": 400000,
+  "water_note": "at the corrected ~13 TWh/yr the surplus could desalinate ~1.0 MAF (down from the earlier ~3 MAF ceiling); brine disposal, capital, and source availability bound the realistic add/free to ~0.3-0.5 MAF/yr",
   "jobs": {
     "construction_job_years": 28319,
-    "permanent": 1820
+    "permanent": 1810
   },
-  "co2_avoided_MtCO2_yr": 6.8,
-  "gas_purchases_avoided_B_yr": 0.77,
+  "co2_avoided_MtCO2_yr": 5.1,
+  "gas_purchases_avoided_B_yr": 0.57,
   "seasonality": {
-    "winter_min_cf": 0.38,
-    "spring_max_cf": 0.69,
+    "winter_min_cf": 0.29,
+    "spring_max_cf": 0.51,
     "monsoon_dip": "Jul-Aug afternoon clouds cut ~15-20% vs May peak"
   }
 }

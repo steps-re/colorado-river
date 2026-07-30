@@ -22,10 +22,10 @@ HEADROOM=sum(m for _,m in NODES)     # MW total ~3551
 PV_TO_POI=1.45         # PV(AC) nameplate per MW of interconnection
 DC_AC=1.30             # DC:AC ratio
 BESS_HOURS=6           # storage duration at POI power
-LINE_CF=0.55           # resulting transmission utilization (vs ~0.29 PV-alone)  [grounded to research]
+LINE_CF=0.41           # line utilization achievable from PV_TO_POI(1.45) x ~0.29 PV CF + 6h BESS, net of clipping/round-trip losses
 # seasonality: desert SW monthly capacity factor (Page/Phoenix/Vegas), monsoon dip Jul-Aug
 MONTH_CF=np.array([0.20,0.24,0.29,0.33,0.34,0.33,0.28,0.27,0.30,0.28,0.22,0.19])
-MONTH_CF=MONTH_CF/ MONTH_CF.mean()*0.55   # scale so annual mean = LINE_CF
+MONTH_CF=MONTH_CF/ MONTH_CF.mean()*LINE_CF   # scale so annual mean = LINE_CF
 
 pv_ac=HEADROOM*PV_TO_POI; pv_dc=pv_ac*DC_AC
 bess_mw=HEADROOM; bess_mwh=bess_mw*BESS_HOURS
@@ -44,7 +44,7 @@ water_energy=max(0,annual_gwh/1000-hydro_backfill-dc_load)   # TWh left for wate
 # water manufactured from the remainder (blend: brackish/drainage desal ~2500 kWh/AF, reuse/MAR cheaper)
 BLEND_KWH_AF=2200
 water_ceiling_af=water_energy*1e9/BLEND_KWH_AF   # if ALL surplus energy -> desal
-water_realistic_af=900_000   # bounded by brine disposal, capital, and water-source availability (see PV_WATER_NEXUS)
+water_realistic_af=400_000   # ~0.4 MAF: with the corrected ~13 TWh, the energy ceiling (~1.0 MAF) is now nearly co-binding with brine disposal, capital, and water-source availability (see PV_WATER_NEXUS)
 water_af=water_realistic_af
 
 # --- jobs / economics / CO2 ---
@@ -60,7 +60,7 @@ res={"transmission_headroom_MW":HEADROOM,"by_node":{n:m for n,m in NODES},
  "capex_B":{"pv":round(capex_pv,1),"bess":round(capex_bess,1),"total":round(capex,1),"note":"transmission reused = $0"},
  "energy_cascade_TWh":{"hydro_backfill":hydro_backfill,"datacenter_load":dc_load,"available_for_water":round(water_energy,1)},
  "water_energy_ceiling_AF_yr":round(water_ceiling_af),"water_realistic_AF_yr":water_realistic_af,
- "water_note":"energy is NOT the binding constraint - surplus energy could desalinate ~3 MAF, but brine disposal, capital, and source availability bound the realistic add/free to ~0.5-1.0 MAF/yr",
+ "water_note":"at the corrected ~13 TWh/yr the surplus could desalinate ~1.0 MAF (down from the earlier ~3 MAF ceiling); brine disposal, capital, and source availability bound the realistic add/free to ~0.3-0.5 MAF/yr",
  "jobs":{"construction_job_years":round(constr_jobyears),"permanent":round(om_jobs)},
  "co2_avoided_MtCO2_yr":round(co2_avoided,1),"gas_purchases_avoided_B_yr":round(gas_avoided_bn,2),
  "seasonality":{"winter_min_cf":round(MONTH_CF.min(),2),"spring_max_cf":round(MONTH_CF.max(),2),
@@ -79,6 +79,6 @@ ax1.legend(fontsize=8)
 casc=[hydro_backfill,dc_load,water_energy]; labs=["Backfill\nlost hydro","Datacenter\nload","Manufacture\nwater"]
 ax2.bar(labs,casc,color=[SAND,DEEP,WATER])
 for i,v in enumerate(casc): ax2.text(i,v+0.2,f"{v:.1f} TWh",ha="center",fontsize=9)
-ax2.set_ylabel("TWh / yr"); ax2.set_title(f"Where {round(annual_gwh/1000,1)} TWh goes  (~0.5-1.0M AF of water)")
+ax2.set_ylabel("TWh / yr"); ax2.set_title(f"Where {round(annual_gwh/1000,1)} TWh goes  (~0.3-0.5M AF of water)")
 plt.tight_layout(); plt.savefig(FIG/"pv_deploy.png",dpi=140); plt.close()
 print("[done] figures/pv_deploy.png + outputs/pv_deployment.json")
