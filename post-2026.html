@@ -310,6 +310,36 @@ measure. The real number is very likely lower and we cannot see it.</li>
 <li>The Record of Decision. Everything here keys off a Final EIS read second-hand.</li>
 </ul>
 
+
+<h2>Sources</h2>
+<p>Grouped by how far we can vouch for each. The first two we used or checked directly.
+The last two we have not read, and those are the ones to verify before relying on anything
+here that rests on them.</p>
+<p><b>Data used directly.</b> Landsat 8 and 9 Collection 2 Level 2 surface temperature
+(<code>LANDSAT/LC08/C02/T1_L2</code>, <code>LC09</code>) with QA_PIXEL cloud and water
+flags. Sentinel-2 Level-2A (<code>COPERNICUS/S2_SR_HARMONIZED</code>). gridMET reference
+ET (<code>IDAHO_EPSCOR/GRIDMET</code>), Abatzoglou, J. T. (2013), <i>International Journal
+of Climatology</i> 33(1) 121 to 131, doi:10.1002/joc.3413. PVGIS v5.2 with the PVGIS-NSRDB
+radiation database, returned in UTC. USGS gages 09380000 at Lees Ferry (instantaneous) and
+09421500 below Hoover Dam (daily only), returned in local standard time. CAISO day-ahead
+prices at node TH_SP15_GEN-APND. Measured crop consumptive use from OpenET.</p>
+<p><b>Literature, citations checked.</b> Rosenlieb, E., Rivers, M. and Levine, A. (2025),
+"Floating photovoltaic technical potential: a novel geospatial approach on federally
+controlled reservoirs in the United States", <i>Solar Energy</i> 287. McKuin, B. et al.
+(2021), "Energy and water co-benefits from covering canals with solar panels",
+<i>Nature Sustainability</i> 4, 609 to 617.</p>
+<p><b>Named but not read by us.</b> Reclamation's Post-2026 Operational Guidelines Final
+EIS, FERC Order 845 and WAPA's surplus interconnection business practice, Reclamation
+Manual LND 08-01, 43 U.S.C. 485h(c), 54 U.S.C. 100902, the Glen Canyon LTEMP Record of
+Decision, and the Intentionally Created Surplus rules.</p>
+<p><b>Secondary reporting, not independently verified.</b> Navajo Generating Station
+retirement, transmission and water allocation. The proposed Page data-centre campus and the
+nearby pumped-storage preliminary permit. Data-centre load realisation rates. Prices paid
+for conserved water in 2025 and 2026. Data-centre cooling intensities, where published
+figures disagree by about a factor of two and both are carried rather than one chosen. One
+point we did check directly: the public record shows no operating US floating array above
+10 MW.</p>
+
 <h2>The code</h2>
 <div class=codelinks>
 <a href="https://github.com/steps-re/colorado-river/blob/main/analysis/post2026_impacts.py">post2026_impacts.py</a>
