@@ -1,0 +1,187 @@
+<!doctype html><html lang=en><head><meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<title>What the Post-2026 rules change</title>
+<style>
+:root{--paper:#F4F0E7;--stone:#E7E1D4;--ink:#1E2B2E;--deep:#123137;--muted:#5B6A6A;
+--water:#2C7A87;--rust:#A8432B;--amber:#9C7A2E;--line:#C6BBA4}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);
+font:16px/1.58 "Helvetica Neue",Helvetica,Arial,sans-serif}
+.wrap{max-width:840px;margin:0 auto;padding:30px 20px 70px}
+.tag{display:inline-block;background:var(--deep);color:var(--paper);font-size:11px;padding:2px 8px;border-radius:10px;letter-spacing:.05em}
+h1{font-size:30px;line-height:1.14;color:var(--deep);margin:.3em 0 .1em}
+h2{font-size:20px;color:var(--deep);margin:1.9em 0 .3em;border-bottom:2px solid var(--line);padding-bottom:5px}
+h3{font-size:16px;color:var(--deep);margin:1.3em 0 .2em}
+.lede{font-size:17px;color:var(--muted);margin:.3em 0 0}
+table{border-collapse:collapse;width:100%;font-size:14px;margin:.6em 0}
+th{text-align:left;background:var(--stone);color:var(--deep);padding:7px 9px;border:1px solid var(--line);font-size:12.5px}
+td{padding:7px 9px;border:1px solid var(--line);vertical-align:top}
+ul{margin:.4em 0 .5em 1.1em}li{margin:.3em 0}
+a{color:var(--water)} small{color:var(--muted)}
+.card{background:#fff;border:1px solid var(--line);border-radius:8px;padding:16px 18px;margin:1em 0}
+.kbox{background:var(--deep);color:var(--paper);border-radius:8px;padding:16px 18px;margin:1.1em 0}
+.kbox b{color:#fff} .kbox a{color:#8fd3dd}
+.warn{background:#fff;border:1px solid var(--line);border-left:4px solid var(--rust);border-radius:6px;padding:11px 14px;margin:.7em 0}
+.codelinks a{display:inline-block;background:var(--stone);border:1px solid var(--line);border-radius:5px;padding:4px 9px;margin:3px 4px 3px 0;font-size:13px;font-family:ui-monospace,Menlo,monospace}
+.crumb{font-size:13px;margin-bottom:8px}
+</style></head><body><div class=wrap>
+
+<div class=crumb><a href="https://steps-re.github.io/colorado-river/">&larr; Colorado River: Basin 2.0</a></div>
+<span class=tag>STEPS VENTURES &middot; BASIN 2.0 &middot; UPDATED 4 AUGUST 2026</span>
+<h1>What the Post-2026 rules change</h1>
+<p class=lede>Reclamation released the Final Environmental Impact Statement on 31 July 2026.
+The seven states missed both consensus deadlines, so Interior advanced its own preferred
+alternative. Operations under it begin 1 January 2027. This page re-runs the analysis
+already on this site against the new numbers.</p>
+
+<div class=kbox>
+<b>The short version.</b> The new framework is adaptive rather than fixed: rules re-set
+every two years inside sideboards, instead of a twenty-year schedule. Lake Powell releases
+are bounded between 5.0 and 12.0 million acre-feet. Lower Basin shortages of up to 3.0 maf
+a year are permitted. Conservation storage accounts are enlarged to 8.0 maf in Powell and
+3.0 maf in Mead. Three consequences follow that were not obvious before: a 3.0 maf shortage
+<b>cannot be bought</b> out of Lower Basin agriculture at any sane price; the release
+sideboards alone swing Glen Canyon's output by more than a third; and the storage accounts
+are now far larger than the water anyone can plausibly free up to fill them.</div>
+
+<div class=warn><b>Sourcing note.</b> The Final EIS figures on this page came from a
+grounded research pass on 4 August 2026, not from reading the document itself. They should
+be checked against the EIS and the forthcoming Record of Decision before anyone relies on
+them. Everything else here is measured or modelled from public data, and the code is linked.</div>
+
+<h2>1. What actually changed</h2>
+<ul>
+<li><b>Adaptive, not fixed.</b> Detailed operating rules are issued in roughly two-year
+intervals starting with 2027&ndash;28, rather than locked for a decade.</li>
+<li><b>Powell releases: 5.0 to 12.0 maf.</b> For 2027&ndash;28, 8.0 maf if Powell is at or
+above 3,540 ft on 1 October, otherwise 7.0 maf.</li>
+<li><b>Lower Basin shortages up to 3.0 maf/yr</b>, roughly 40% of the Lower Basin's
+apportionment. Beyond 1.5 maf, reductions revert toward prior appropriation, which puts
+junior rights &mdash; the Central Arizona Project above all &mdash; in front of California's
+senior claims.</li>
+<li><b>Conservation storage</b> of up to 8.0 maf in Powell and 3.0 maf in Mead.</li>
+<li><b>Upper Basin</b>: no mandatory cuts, a voluntary target of up to 200,000 AF/yr.</li>
+</ul>
+<p>A Record of Decision is expected around October 2026.</p>
+
+<h2>2. A 3.0 maf shortage cannot be bought</h2>
+<p>This site already published a <a href="measured-conservation.html">measured demand curve</a>
+for Lower Basin agricultural water: satellite-measured consumptive use across four counties,
+allocated over the crop map and priced by gross output per acre-foot. Walking up that curve,
+buying the cheapest water first:</p>
+<table><tr><th>Shortage to cover</th><th>Water available</th><th>Average $/AF</th>
+<th>Marginal $/AF</th><th>Annual cost</th></tr><tr><td>0.5 maf</td><td>0.50 maf</td><td>$274</td><td>$320</td><td>$0.14B</td></tr><tr><td>1.0 maf</td><td>1.00 maf</td><td>$310</td><td>$362</td><td>$0.31B</td></tr><tr><td>1.5 maf</td><td>1.50 maf</td><td>$327</td><td>$362</td><td>$0.49B</td></tr><tr><td>2.0 maf</td><td>2.00 maf</td><td>$336</td><td>$362</td><td>$0.67B</td></tr><tr><td>3.0 maf</td><td>2.92 maf</td><td>$565</td><td>$4,231</td><td>$1.65B</td></tr></table>
+<p>The first 1.5 maf is genuinely cheap, because it is wheat, hay and the low-value end of
+alfalfa. Past roughly 2.7 maf the curve runs out of sub-$400 water entirely, and the next
+acre-foot costs thousands, because what remains is lettuce, grapes and carrots.</p>
+<div class=card><b>The finding.</b> The measured four-county pool is 2.92 maf in
+total. A 3.0 maf shortage is larger than all the agricultural water in those counties.
+It cannot be met by buying out farming there at any price, which means the new rules
+contemplate shortages that conservation markets alone cannot absorb.</div>
+
+<h2>3. The release sideboards swing the power</h2>
+<p>Glen Canyon's generation scales with release volume. Running the measured 2015 hourly
+release shape, scaled to each volume with the LTEMP minimum flows preserved:</p>
+<table><tr><th>Annual release</th><th>Generation</th><th>Energy value at $30&ndash;60/MWh</th></tr><tr><td>5.0 maf</td><td>2.58 TWh</td><td>$77M &ndash; $155M</td></tr><tr><td>6.0 maf</td><td>3.09 TWh</td><td>$93M &ndash; $185M</td></tr><tr><td>7.0 maf</td><td>3.61 TWh</td><td>$108M &ndash; $216M</td></tr><tr><td>8.0 maf</td><td>4.12 TWh</td><td>$124M &ndash; $247M</td></tr><tr><td>8.23 maf</td><td>4.24 TWh</td><td>$127M &ndash; $254M</td></tr><tr><td>10.0 maf</td><td>5.15 TWh</td><td>$155M &ndash; $309M</td></tr><tr><td>12.0 maf</td><td>6.18 TWh</td><td>$185M &ndash; $371M</td></tr></table>
+<p>The sideboards alone swing output by about 3.6 TWh a year. That is the Colorado River
+Storage Project Basin Fund's exposure, and under the new framework it is set biennially by
+a discretionary federal decision, not by hydrology alone. Any revenue model that shares
+that interconnection inherits the same exposure.</p>
+
+<h2>4. The storage accounts are bigger than the water</h2>
+<p>Eleven million acre-feet of conservation storage is now authorised across the two
+reservoirs. The entire measured agricultural pool in the four counties studied is
+2.92 maf, and acquiring all of it would cost roughly $1.6B at measured gross values.</p>
+<div class=card><b>The finding.</b> Storage is no longer the binding constraint.
+Acquisition is. That is an argument for supply-side measures that add water without taking
+it from someone, and against assuming demand-side conservation can fill the accounts.</div>
+
+<h2>5. Floating solar, re-tested against the water question</h2>
+<p>Our <a href="reservoir-solar.html">earlier floating-solar page</a> found the idea is
+energy-led and bounded by the transmission tie at about 1 GW per dam. The new rules make
+the water side worth stating precisely, using measured reservoir areas and Reclamation
+evaporation rates.</p>
+<table><tr><th>Reservoir</th><th>Total evaporation</th><th>Water saved per GWp</th>
+<th>Surface covered per GWp</th></tr><tr><td>Lake Powell</td><td>343,741 AF/yr</td><td>11,007 AF/yr</td><td>4.3%</td></tr><tr><td>Lake Mead</td><td>456,402 AF/yr</td><td>11,934 AF/yr</td><td>3.5%</td></tr></table>
+<div class=kbox><b>Water and energy scale in opposite directions.</b> At the deployment the
+grid can absorb &mdash; about 1 GW per dam &mdash; the arrays save roughly
+23,344 acre-feet a year. That is 0.78% of a
+3.0 maf shortage. Reaching 300,000 AF/yr would take roughly 26 GWp and about 50% coverage
+of both lakes, 13 times what the ties carry. The water benefit only becomes material
+at a scale the grid cannot absorb.</div>
+<p>There is a harder problem underneath. Mainstem reservoir evaporation is a <i>system
+loss</i>: it is not charged against Arizona's, California's or Nevada's apportionment.
+Intentionally Created Surplus and system conservation both require a verifiable reduction
+in otherwise beneficial consumptive use &mdash; a foregone diversion at a headgate. No
+non-diversion measure has ever been credited. So suppressed evaporation raises the pool for
+everyone and earns whoever paid for it nothing. Valued at the $400/AF Reclamation and IID
+actually paid in 2025&ndash;26, the water from 2 GWp is worth about $7.6M a year against
+roughly $2.5B of capital, a return of about 0.3%.</p>
+<p>That is not an argument against doing it. It is an argument that it is public
+infrastructure, not a private project &mdash; and that the accounting rule, not the physics,
+is what currently makes it unfinanceable.</p>
+
+<h2>6. Poking a hole in our own work with the satellite</h2>
+<p>We set out to test a suspicion: that a moored array has to stay afloat through the whole
+operating range, so the shallow margins that go dry on drawdown are not buildable, and every
+coverage fraction quoted against current surface area is therefore too generous. We measured
+the <b>persistently inundated</b> area &mdash; pixels wet in every summer from 2019 to 2026.</p>
+<table><tr><th>Reservoir</th><th>Max extent (any year)</th><th>Current (2026)</th>
+<th>Persistent (every year)</th><th>Persistent share of current</th></tr><tr><td>Lake Mead</td><td>82,312</td><td>66,590</td><td><b>65,410</b></td><td>98%</td></tr><tr><td>Lake Powell</td><td>91,362</td><td>44,766</td><td><b>41,722</b></td><td>93%</td></tr></table>
+<p><b>The suspicion was wrong, and that is worth saying plainly.</b> Persistent water is
+93&ndash;98% of today's surface at both reservoirs. Both lakes have already drawn down so
+far that what remains is deep and stable, so the buildable footprint is not the binding
+constraint. The transmission tie still is. At 10&ndash;20% of persistent water the deployable
+array would be 4.3&ndash;8.7 GWp,
+against ties that carry about 2 GWp and a 300,000 AF/yr target that needs roughly
+26 GWp.</p>
+<p>One real caveat did survive. Powell's persistent water is only 46% of its maximum extent
+since 2019. The constraint binds on the <i>upside</i>: an array sited on today's shoreline is
+safe, but half of Powell's historic footprint is now intermittent, so a recovery scenario is
+where mooring design gets expensive.</p>
+
+<h3>The cross-check that did find something</h3>
+<p>The same run pulled gridMET reference evapotranspiration over each lake and converted it
+to an open-water estimate. It disagreed sharply with a published evaporation rate we had
+been using for Powell, and the disagreement went against us:</p>
+<ul>
+<li>gridMET-derived open-water evaporation: Powell 5.4&ndash;6.4 ft/yr, Mead 6.6&ndash;7.9 ft/yr.</li>
+<li>Reclamation's reported Powell loss volume divided by measured area: 6.1&ndash;6.8 ft/yr.</li>
+<li>The 3.8&ndash;4.0 ft/yr figure we started from: not supported by either.</li>
+</ul>
+<p>We had reconciled the gap by assuming a large bank-storage residual seeping into the
+Navajo sandstone. With the corrected rate no residual is needed, so that explanation was
+probably wrong too. Powell's evaporation and the water an array there could save are both
+about 50% higher than we first published. <b>The headline conclusion did not move</b>: at
+the interconnection limit the arrays still save under 1% of a 3.0 maf shortage, which is the
+useful thing to know about a finding that survives a 50% error in one of its main inputs.</p>
+<p><small>Sentinel-2 summer median MNDWI at 30 m; gridMET reference ET x an arid open-water
+coefficient of 1.05&ndash;1.25. Persistent water is necessary but not sufficient for siting:
+it says nothing about depth, anchoring, navigation, intake exclusion zones or Park Service
+restrictions, all of which subtract further.</small></p>
+
+
+<h2>What would change our mind</h2>
+<ul>
+<li>A measured evaporation-suppression relationship from a real array in an arid climate,
+which is exactly what a field campaign would produce. Suppression efficiency and the
+open-water offset are the weakest-constrained numbers in the whole chain and they multiply
+through everything above.</li>
+<li>A ruling or rulemaking that makes non-diversion conservation creditable. That single
+change would convert the water benefit from a public good into a financeable asset.</li>
+<li>Confirmation of the switchyard and transmission-rights position at Glen Canyon. We
+assume floating solar can use the full unused generator nameplate; if it cannot, the
+1 GW ceiling is lower still.</li>
+<li>The Record of Decision. Everything here keys off a Final EIS read second-hand.</li>
+</ul>
+
+<h2>The code</h2>
+<div class=codelinks>
+<a href="https://github.com/steps-re/colorado-river/blob/main/analysis/post2026_impacts.py">post2026_impacts.py</a>
+<a href="https://github.com/steps-re/colorado-river/blob/main/analysis/fpv_water_benefit.py">fpv_water_benefit.py</a>
+<a href="https://github.com/steps-re/colorado-river/blob/main/analysis/fpv_forward_mc.py">fpv_forward_mc.py</a>
+<a href="https://github.com/steps-re/colorado-river/blob/main/analysis/ee_fpv_envelope.py">ee_fpv_envelope.py</a>
+<a href="https://github.com/steps-re/colorado-river/blob/main/analysis/hourly_fpv_hydro.py">hourly_fpv_hydro.py</a>
+</div>
+<p><small>Steps Ventures. Measured where possible, modelled where not, and labelled
+either way. Figures derived from a Final EIS read second-hand are flagged above.</small></p>
+</div></body></html>

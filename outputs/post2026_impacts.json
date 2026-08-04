@@ -1,0 +1,100 @@
+{
+ "final_eis": {
+  "powell_sideboards_maf": [
+   5.0,
+   12.0
+  ],
+  "powell_tiers_2027_28": {
+   ">=3540ft": 8.0,
+   "<3540ft": 7.0
+  },
+  "max_lb_shortage_maf": 3.0,
+  "conservation_storage_maf": {
+   "Lake Powell": 8.0,
+   "Lake Mead": 3.0
+  },
+  "ub_voluntary_kaf": 200
+ },
+ "measured_pool_maf": 2.916325,
+ "shortage_costs": {
+  "shortage_0.5maf": {
+   "acquired_af": 500000.0,
+   "short_af": 0.0,
+   "total_cost": 136849836.0,
+   "avg_per_af": 273.699672,
+   "marginal_per_af": 320.0
+  },
+  "shortage_1.0maf": {
+   "acquired_af": 1000000.0,
+   "short_af": 0.0,
+   "total_cost": 309812299.0,
+   "avg_per_af": 309.812299,
+   "marginal_per_af": 362.0
+  },
+  "shortage_1.5maf": {
+   "acquired_af": 1500000.0,
+   "short_af": 0.0,
+   "total_cost": 490812299.0,
+   "avg_per_af": 327.2081993333333,
+   "marginal_per_af": 362.0
+  },
+  "shortage_2.0maf": {
+   "acquired_af": 2000000.0,
+   "short_af": 0.0,
+   "total_cost": 671812299.0,
+   "avg_per_af": 335.9061495,
+   "marginal_per_af": 362.0
+  },
+  "shortage_3.0maf": {
+   "acquired_af": 2916325.0,
+   "short_af": 83675.0,
+   "total_cost": 1649003642.0,
+   "avg_per_af": 565.4389143871139,
+   "marginal_per_af": 4231.0
+  }
+ },
+ "fpv_contribution_af": 23343.76108456923,
+ "glen_canyon_by_release": {
+  "5.0maf": {
+   "twh": 2.576091464257544,
+   "value_musd_lo": 77.28274392772632,
+   "value_musd_hi": 154.56548785545263
+  },
+  "6.0maf": {
+   "twh": 3.0913097571090535,
+   "value_musd_lo": 92.73929271327161,
+   "value_musd_hi": 185.47858542654322
+  },
+  "7.0maf": {
+   "twh": 3.6065280499605614,
+   "value_musd_lo": 108.19584149881685,
+   "value_musd_hi": 216.3916829976337
+  },
+  "8.0maf": {
+   "twh": 4.121746342812071,
+   "value_musd_lo": 123.65239028436214,
+   "value_musd_hi": 247.30478056872428
+  },
+  "8.23maf": {
+   "twh": 4.240246550167918,
+   "value_musd_lo": 127.20739650503755,
+   "value_musd_hi": 254.4147930100751
+  },
+  "10.0maf": {
+   "twh": 5.152182928515088,
+   "value_musd_lo": 154.56548785545263,
+   "value_musd_hi": 309.13097571090526
+  },
+  "12.0maf": {
+   "twh": 6.182436743248915,
+   "value_musd_lo": 185.47310229746748,
+   "value_musd_hi": 370.94620459493495
+  }
+ },
+ "caveats": [
+  "Final EIS figures came from grounded research, not the document itself. Verify before publication.",
+  "Demand curve prices are GROSS crop output per acre-foot, an upper bound on the reservation price; net margin is lower, so real acquisition may be cheaper.",
+  "Scope is four measured Lower Basin ag counties, not the whole basin.",
+  "Generation scales the 2015 hourly release shape; it ignores head effects, which would reduce output further at low pool."
+ ]
+}

@@ -1,0 +1,65 @@
+{
+ "Lake Mead": {
+  "persistent_acres": 65410.394665770444,
+  "max_acres": 82311.70666721545,
+  "current_2026_acres": 66590.30143328142,
+  "persistent_frac_of_max": 0.7946669716158764,
+  "persistent_frac_of_current": 0.9822811018704705,
+  "gridmet_eto_ft_by_year": {
+   "2019": 6.316428230355066,
+   "2020": 6.711318716502732,
+   "2021": 6.612344816955132,
+   "2022": 6.64176912125456,
+   "2023": 6.353240066666473,
+   "2024": 6.736279508651823,
+   "2025": 6.692488820726366,
+   "2026": 4.439437507803539
+  },
+  "gridmet_eto_ft_mean": 6.312913348614462,
+  "open_water_evap_ft_range": [
+   6.628559016045185,
+   7.891141685768077
+  ],
+  "reclamation_static_ft": 6.3
+ },
+ "Lake Powell": {
+  "persistent_acres": 41722.02576801197,
+  "max_acres": 91361.93352863443,
+  "current_2026_acres": 44766.03413876511,
+  "persistent_frac_of_max": 0.45666749987220395,
+  "persistent_frac_of_current": 0.9320018306442476,
+  "gridmet_eto_ft_by_year": {
+   "2019": 5.110714781838452,
+   "2020": 5.548011520219453,
+   "2021": 5.2888605051466175,
+   "2022": 5.280513283690162,
+   "2023": 5.214188249626674,
+   "2024": 5.35834238339829,
+   "2025": 5.537877037827516,
+   "2026": 3.6768772278178745
+  },
+  "gridmet_eto_ft_mean": 5.12692312369563,
+  "open_water_evap_ft_range": [
+   5.3832692798804125,
+   6.408653904619538
+  ],
+  "reclamation_static_ft": 3.9
+ },
+ "_summary": {
+  "persistent_acres_both": 107132.42043378242,
+  "current_acres_both": 111356.33557204653,
+  "acres_per_gwp": 2471.0,
+  "gwp_at_10pct_persistent": 4.335589657376869,
+  "gwp_at_20pct_persistent": 8.671179314753738,
+  "method": [
+   "Sentinel-2 summer median MNDWI>0 water masks, 2019-2026, 30 m.",
+   "Persistent = wet in EVERY year; max = wet in ANY year.",
+   "gridMET grass-reference ET summed annually, x an open-water coefficient of 1.05-1.25 for an arid climate."
+  ],
+  "caveats": [
+   "Persistent water is a necessary but not sufficient condition for siting: it does not test depth, anchoring, navigation, recreation zones, intake exclusion areas or NPS restrictions, all of which subtract further.",
+   "MNDWI at 30 m under-detects narrow canyon arms at Powell.",
+   "Reference ET times an open-water coefficient is a screening estimate, not an energy-balance evaporation model."
+  ]
+ }
+}

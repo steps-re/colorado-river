@@ -1,0 +1,44 @@
+{
+ "measured_area_acres_2026": {
+  "Lake Powell": 57342.333333333336,
+  "Lake Mead": 70306.33333333333
+ },
+ "per_lake": {
+  "Lake Powell": {
+   "total_evap_af": 343740.651455768,
+   "af_per_gw_p10": 8197.335276287018,
+   "af_per_gw_p50": 11007.098563074363,
+   "af_per_gw_p90": 15186.41063841773,
+   "coverage_pct_per_gw_p50": 4.308569724780638
+  },
+  "Lake Mead": {
+   "total_evap_af": 456401.9545285362,
+   "af_per_gw_p10": 8982.600648116751,
+   "af_per_gw_p50": 11933.7802962537,
+   "af_per_gw_p90": 16258.411047788299,
+   "coverage_pct_per_gw_p50": 3.5142279083796355
+  }
+ },
+ "at_tie_limit": {
+  "gw_per_dam": 1.0,
+  "dams": 2,
+  "af_per_yr_p10": 18871.616166821594,
+  "af_per_yr_p50": 23343.76108456923,
+  "af_per_yr_p90": 29401.58014229996,
+  "pct_of_basin_use": 0.17956739295822485,
+  "pct_of_3maf_shortage": 0.7781253694856409
+ },
+ "for_300kaf": {
+  "coverage_pct_p50": 50.373084358025565,
+  "gwp_required_p50": 25.702799045250295
+ },
+ "cost_per_af": {
+  "full_attribution": 4283.799840039587
+ },
+ "caveats": [
+  "Surface areas measured by Earth Engine; evaporation rates are Reclamation-style priors with uncertainty, not gauged pan data for the modelled year.",
+  "Suppression efficiency is over the COVERED area. The open-water offset term is poorly constrained empirically -- this is exactly what Tempe Town Lake would measure.",
+  "Assumes saved water stays in the reservoir. Whether it becomes a creditable conserved-water asset, and to whom, is a legal question, not a physical one.",
+  "Ignores the negative feedback where higher pool raises surface area and hence evaporation, which slightly reduces net savings."
+ ]
+}
