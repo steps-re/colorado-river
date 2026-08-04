@@ -1,0 +1,46 @@
+{
+ "per_gw": {
+  "evaporative (18,400 gal/day/MW)": {
+   "af_per_mw_yr": 20.610647197645548,
+   "af_yr_at_1gw": 20610.647197645547,
+   "net_af_yr": -9610.647197645547
+  },
+  "evaporative (1.8 L/kWh)": {
+   "af_per_mw_yr": 10.23065693430657,
+   "af_yr_at_1gw": 10230.65693430657,
+   "net_af_yr": 769.3430656934306
+  },
+  "hybrid (0.5 L/kWh)": {
+   "af_per_mw_yr": 2.8418491484184916,
+   "af_yr_at_1gw": 2841.8491484184915,
+   "net_af_yr": 8158.1508515815085
+  },
+  "closed-loop / dry": {
+   "af_per_mw_yr": 0.3,
+   "af_yr_at_1gw": 300.0,
+   "net_af_yr": 10700.0
+  }
+ },
+ "breakeven": {
+  "af_per_mw_yr": 11.0,
+  "l_per_kwh": 1.935359589041096
+ },
+ "ngs": {
+  "retired_allocation_af_yr": 34100.0,
+  "share_needed_1gw_evaporative": 0.6044178063825674
+ },
+ "pue_loop": {
+  "pue_evap": 1.15,
+  "pue_closed": 1.5,
+  "load_mw_closed_loop": 1304.3478260869565,
+  "extra_mw": 304.3478260869565,
+  "extra_water_saved_af_yr": 3347.8260869565215
+ },
+ "caveats": [
+  "Cooling intensities are published ranges that disagree by ~2x. Both carried.",
+  "FPV_SAVED_PER_GWP comes from fpv_water_benefit.py and inherits its uncertainty on suppression efficiency and the open-water offset.",
+  "NGS allocation and transmission figures are secondary-sourced, not verified against Reclamation or SRP documents.",
+  "Assumes the load is matched 1:1 with array nameplate. Real siting would size the array to the load's actual profile, which a 24/7 load makes harder, not easier.",
+  "Ignores whether the water right could legally follow the load at all."
+ ]
+}
