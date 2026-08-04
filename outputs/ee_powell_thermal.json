@@ -1,0 +1,166 @@
+{
+ "by_zone": {
+  "forebay": {
+   "2014": {
+    "c": 31.22,
+    "pixels": 625,
+    "usable": true
+   },
+   "2015": {
+    "c": 29.5,
+    "pixels": 657,
+    "usable": true
+   },
+   "2016": {
+    "c": 31.2,
+    "pixels": 668,
+    "usable": true
+   },
+   "2017": {
+    "c": 31.72,
+    "pixels": 688,
+    "usable": true
+   },
+   "2018": {
+    "c": 32.05,
+    "pixels": 603,
+    "usable": true
+   },
+   "2019": {
+    "c": 31.84,
+    "pixels": 642,
+    "usable": true
+   },
+   "2020": {
+    "c": 31.27,
+    "pixels": 604,
+    "usable": true
+   },
+   "2021": {
+    "c": 32.65,
+    "pixels": 527,
+    "usable": true
+   },
+   "2022": {
+    "c": 34.13,
+    "pixels": 471,
+    "usable": true
+   },
+   "2023": {
+    "c": 31.79,
+    "pixels": 567,
+    "usable": true
+   },
+   "2024": {
+    "c": 31.98,
+    "pixels": 592,
+    "usable": true
+   },
+   "2025": {
+    "c": 32.27,
+    "pixels": 537,
+    "usable": true
+   },
+   "2026": {
+    "c": 34.18,
+    "pixels": 408,
+    "usable": true
+   }
+  },
+  "midlake": {
+   "2014": {
+    "c": 32.14,
+    "pixels": 2945,
+    "usable": true
+   },
+   "2015": {
+    "c": 31.15,
+    "pixels": 3096,
+    "usable": true
+   },
+   "2016": {
+    "c": 32.9,
+    "pixels": 3087,
+    "usable": true
+   },
+   "2017": {
+    "c": 32.95,
+    "pixels": 3247,
+    "usable": true
+   },
+   "2018": {
+    "c": 32.74,
+    "pixels": 2926,
+    "usable": true
+   },
+   "2019": {
+    "c": 32.72,
+    "pixels": 2887,
+    "usable": true
+   },
+   "2020": {
+    "c": 31.69,
+    "pixels": 2846,
+    "usable": true
+   },
+   "2021": {
+    "c": 33.01,
+    "pixels": 2482,
+    "usable": true
+   },
+   "2022": {
+    "c": 34.18,
+    "pixels": 2190,
+    "usable": true
+   },
+   "2023": {
+    "c": 32.83,
+    "pixels": 2806,
+    "usable": true
+   },
+   "2024": {
+    "c": 32.85,
+    "pixels": 2880,
+    "usable": true
+   },
+   "2025": {
+    "c": 32.54,
+    "pixels": 2561,
+    "usable": true
+   },
+   "2026": {
+    "c": 33.11,
+    "pixels": 1970,
+    "usable": true
+   }
+  }
+ },
+ "summary": {
+  "forebay": {
+   "n_usable_years": 13,
+   "theil_sen_c_per_decade": 2.06,
+   "mean_c": 31.98
+  },
+  "midlake": {
+   "n_usable_years": 13,
+   "theil_sen_c_per_decade": 0.41,
+   "mean_c": 32.68
+  }
+ },
+ "verdict": {
+  "forebay_minus_midlake_c_per_decade": 1.65,
+  "reads_as": "forebay warming faster than open water"
+ },
+ "method": [
+  "Landsat 8/9 C2 L2, 15 Jun to 15 Sep, scene CLOUD_COVER < 40%.",
+  "QA_PIXEL bit mask: drop dilated cloud, cirrus, cloud, cloud shadow, snow. Keep the water bit only.",
+  "Temperatures outside 12.0-40.0 C discarded as unphysical.",
+  "Years with fewer than 400 valid 120 m pixels marked unusable.",
+  "Trend by Theil-Sen (median pairwise slope), not least squares."
+ ],
+ "caveats": [
+  "Skin temperature only. This cannot see epilimnion depth or the temperature at the penstock intakes, which is what the white paper's claim is actually about.",
+  "A warming surface is consistent with the claim but does not establish it.",
+  "The forebay polygon shrinks as the pool drops, so some apparent change may be the sampled area moving rather than the water warming."
+ ]
+}

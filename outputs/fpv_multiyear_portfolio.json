@@ -1,0 +1,323 @@
+{
+ "dams": {
+  "Glen Canyon": {
+   "cap_mw": 1320.0,
+   "intraday": "measured"
+  },
+  "Hoover": {
+   "cap_mw": 2080.0,
+   "intraday": "synthetic-load-following"
+  }
+ },
+ "years": [
+  2015,
+  2017,
+  2019,
+  2021,
+  2023
+ ],
+ "solar_year_held_fixed": 2015,
+ "results": {
+  "Glen Canyon": {
+   "2015": {
+    "provenance": "measured sub-daily gage",
+    "mean_release_cfs": 12319.79109589041,
+    "frac_release_energy_driven": 0.47345692516690624,
+    "hydro_twh": 4.595361561290322,
+    "corr_fpv_vs_hydro": -0.01623167407534417,
+    "sweep": {
+     "0.5": {
+      "fpv_twh": 0.863,
+      "curtail_pct": 0.0,
+      "export_twh": 0.863
+     },
+     "1.0": {
+      "fpv_twh": 1.725,
+      "curtail_pct": 1.8,
+      "export_twh": 1.694
+     },
+     "2.0": {
+      "fpv_twh": 3.451,
+      "curtail_pct": 31.4,
+      "export_twh": 2.366
+     },
+     "3.0": {
+      "fpv_twh": 5.176,
+      "curtail_pct": 50.0,
+      "export_twh": 2.589
+     }
+    }
+   },
+   "2017": {
+    "provenance": "measured sub-daily gage",
+    "mean_release_cfs": 12241.191780821919,
+    "frac_release_energy_driven": 0.4694604982951118,
+    "hydro_twh": 4.566043509677419,
+    "corr_fpv_vs_hydro": -0.06804577173659605,
+    "sweep": {
+     "0.5": {
+      "fpv_twh": 0.863,
+      "curtail_pct": 0.0,
+      "export_twh": 0.863
+     },
+     "1.0": {
+      "fpv_twh": 1.725,
+      "curtail_pct": 1.5,
+      "export_twh": 1.7
+     },
+     "2.0": {
+      "fpv_twh": 3.451,
+      "curtail_pct": 30.6,
+      "export_twh": 2.395
+     },
+     "3.0": {
+      "fpv_twh": 5.176,
+      "curtail_pct": 49.2,
+      "export_twh": 2.627
+     }
+    }
+   },
+   "2019": {
+    "provenance": "measured sub-daily gage",
+    "mean_release_cfs": 12700.598458904109,
+    "frac_release_energy_driven": 0.4884250119716925,
+    "hydro_twh": 4.7374051645161295,
+    "corr_fpv_vs_hydro": 0.01374349768360807,
+    "sweep": {
+     "0.5": {
+      "fpv_twh": 0.863,
+      "curtail_pct": 0.0,
+      "export_twh": 0.863
+     },
+     "1.0": {
+      "fpv_twh": 1.725,
+      "curtail_pct": 2.4,
+      "export_twh": 1.684
+     },
+     "2.0": {
+      "fpv_twh": 3.451,
+      "curtail_pct": 32.7,
+      "export_twh": 2.322
+     },
+     "3.0": {
+      "fpv_twh": 5.176,
+      "curtail_pct": 50.9,
+      "export_twh": 2.541
+     }
+    }
+   },
+   "2021": {
+    "provenance": "measured sub-daily gage",
+    "mean_release_cfs": 10816.845129375952,
+    "frac_release_energy_driven": 0.4051627012647876,
+    "hydro_twh": 4.034753019354839,
+    "corr_fpv_vs_hydro": -0.006941466896530816,
+    "sweep": {
+     "0.5": {
+      "fpv_twh": 0.863,
+      "curtail_pct": 0.0,
+      "export_twh": 0.863
+     },
+     "1.0": {
+      "fpv_twh": 1.725,
+      "curtail_pct": 0.7,
+      "export_twh": 1.713
+     },
+     "2.0": {
+      "fpv_twh": 3.451,
+      "curtail_pct": 27.6,
+      "export_twh": 2.5
+     },
+     "3.0": {
+      "fpv_twh": 5.176,
+      "curtail_pct": 46.7,
+      "export_twh": 2.76
+     }
+    }
+   },
+   "2023": {
+    "provenance": "measured sub-daily gage",
+    "mean_release_cfs": 12115.053652968036,
+    "frac_release_energy_driven": 0.47157009746827105,
+    "hydro_twh": 4.4921258516129035,
+    "corr_fpv_vs_hydro": 0.06899905303449312,
+    "sweep": {
+     "0.5": {
+      "fpv_twh": 0.863,
+      "curtail_pct": 1.0,
+      "export_twh": 0.854
+     },
+     "1.0": {
+      "fpv_twh": 1.725,
+      "curtail_pct": 5.9,
+      "export_twh": 1.623
+     },
+     "2.0": {
+      "fpv_twh": 3.451,
+      "curtail_pct": 33.1,
+      "export_twh": 2.31
+     },
+     "3.0": {
+      "fpv_twh": 5.176,
+      "curtail_pct": 51.1,
+      "export_twh": 2.529
+     }
+    }
+   }
+  },
+  "Hoover": {
+   "2015": {
+    "provenance": "SYNTHETIC intraday shape on real daily volume",
+    "mean_release_cfs": 13003.86301369863,
+    "frac_release_energy_driven": 0.6924528833501146,
+    "hydro_twh": 4.835526269387755,
+    "corr_fpv_vs_hydro": 0.11298725950445916,
+    "sweep": {
+     "0.5": {
+      "fpv_twh": 0.89,
+      "curtail_pct": 0.0,
+      "export_twh": 0.89
+     },
+     "1.0": {
+      "fpv_twh": 1.78,
+      "curtail_pct": 0.0,
+      "export_twh": 1.78
+     },
+     "2.0": {
+      "fpv_twh": 3.559,
+      "curtail_pct": 2.2,
+      "export_twh": 3.48
+     },
+     "3.0": {
+      "fpv_twh": 5.339,
+      "curtail_pct": 19.0,
+      "export_twh": 4.326
+     }
+    }
+   },
+   "2017": {
+    "provenance": "SYNTHETIC intraday shape on real daily volume",
+    "mean_release_cfs": 12058.493150684932,
+    "frac_release_energy_driven": 0.668418440963653,
+    "hydro_twh": 4.483987591836734,
+    "corr_fpv_vs_hydro": 0.12052011522151423,
+    "sweep": {
+     "0.5": {
+      "fpv_twh": 0.89,
+      "curtail_pct": 0.0,
+      "export_twh": 0.89
+     },
+     "1.0": {
+      "fpv_twh": 1.78,
+      "curtail_pct": 0.0,
+      "export_twh": 1.78
+     },
+     "2.0": {
+      "fpv_twh": 3.559,
+      "curtail_pct": 1.4,
+      "export_twh": 3.509
+     },
+     "3.0": {
+      "fpv_twh": 5.339,
+      "curtail_pct": 17.4,
+      "export_twh": 4.41
+     }
+    }
+   },
+   "2019": {
+    "provenance": "SYNTHETIC intraday shape on real daily volume",
+    "mean_release_cfs": 11762.7397260274,
+    "frac_release_energy_driven": 0.6658572902693297,
+    "hydro_twh": 4.374010775510205,
+    "corr_fpv_vs_hydro": 0.12957643087392856,
+    "sweep": {
+     "0.5": {
+      "fpv_twh": 0.89,
+      "curtail_pct": 0.0,
+      "export_twh": 0.89
+     },
+     "1.0": {
+      "fpv_twh": 1.78,
+      "curtail_pct": 0.0,
+      "export_twh": 1.78
+     },
+     "2.0": {
+      "fpv_twh": 3.559,
+      "curtail_pct": 1.1,
+      "export_twh": 3.521
+     },
+     "3.0": {
+      "fpv_twh": 5.339,
+      "curtail_pct": 17.2,
+      "export_twh": 4.421
+     }
+    }
+   },
+   "2021": {
+    "provenance": "SYNTHETIC intraday shape on real daily volume",
+    "mean_release_cfs": 12630.328767123288,
+    "frac_release_energy_driven": 0.6835110839264967,
+    "hydro_twh": 4.69662641632653,
+    "corr_fpv_vs_hydro": 0.12416649091994089,
+    "sweep": {
+     "0.5": {
+      "fpv_twh": 0.89,
+      "curtail_pct": 0.0,
+      "export_twh": 0.89
+     },
+     "1.0": {
+      "fpv_twh": 1.78,
+      "curtail_pct": 0.0,
+      "export_twh": 1.78
+     },
+     "2.0": {
+      "fpv_twh": 3.559,
+      "curtail_pct": 1.9,
+      "export_twh": 3.49
+     },
+     "3.0": {
+      "fpv_twh": 5.339,
+      "curtail_pct": 18.5,
+      "export_twh": 4.353
+     }
+    }
+   },
+   "2023": {
+    "provenance": "SYNTHETIC intraday shape on real daily volume",
+    "mean_release_cfs": 10284.328767123288,
+    "frac_release_energy_driven": 0.6125821852205947,
+    "hydro_twh": 3.824259134693878,
+    "corr_fpv_vs_hydro": 0.1164268856603123,
+    "sweep": {
+     "0.5": {
+      "fpv_twh": 0.89,
+      "curtail_pct": 0.0,
+      "export_twh": 0.89
+     },
+     "1.0": {
+      "fpv_twh": 1.78,
+      "curtail_pct": 0.0,
+      "export_twh": 1.78
+     },
+     "2.0": {
+      "fpv_twh": 3.559,
+      "curtail_pct": 0.7,
+      "export_twh": 3.535
+     },
+     "3.0": {
+      "fpv_twh": 5.339,
+      "curtail_pct": 14.8,
+      "export_twh": 4.549
+     }
+    }
+   }
+  }
+ },
+ "caveats": [
+  "Glen Canyon uses a measured sub-daily gage. Hoover does not exist at sub-daily resolution publicly, so its intraday shape is synthetic load-following fitted to real daily volumes.",
+  "Headroom is nameplate minus hydro output, which is PHYSICAL headroom and not available transfer capability. See the WAPA note in fpv_forward_mc.py. Every curtailment figure here is an upper bound on what could actually be delivered.",
+  "Hoover's q_at_cap and minimum flows are approximate.",
+  "PVGIS is UTC and USGS is local standard time. The solar series is shifted by 7 hours before alignment. An earlier run without this shift reported a positive solar-hydro correlation, which was an artifact.",
+  "Solar is held at the 2015 irradiance year across all release years, both because PVGIS-NSRDB coverage ends there and because it isolates hydrology as the variable under test."
+ ]
+}
