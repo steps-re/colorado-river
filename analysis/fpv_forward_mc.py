@@ -18,6 +18,23 @@ Structure (reduced form, screening grade -- NOT a production-cost model):
   4. Dam           Lake Powell annual release (maf) -> hourly release -> hydro MW ->
                    tie headroom for FPV. Release scenarios follow the Post-2026
                    Final EIS (31 Jul 2026) sideboards.
+
+                   IMPORTANT CAVEAT (added 2026-08-04 after checking the actual
+                   transmission position): "headroom" here is PHYSICAL headroom,
+                   nameplate minus hydro output. It is NOT available transfer
+                   capability. WAPA owns the Glen Canyon switchyard and the outgoing
+                   345 kV / 230 kV lines, and its firm-electric-service preference
+                   customers hold contractual Existing Transmission Commitments on
+                   them even in hours when the dam is generating far below nameplate,
+                   because WAPA must be able to deliver when water IS released.
+                   ATC = TTC - ETC - TRM - CBM, and on a fully subscribed CRSP system
+                   the real number available to a new injector is plausibly near zero
+                   without a negotiated arrangement. The named pathway is Surplus
+                   Interconnection Service under FERC Order 845, which WAPA has adopted
+                   and processes out-of-queue -- but Glen Canyon predates modern LGIAs,
+                   so it needs a bespoke multi-party agreement between Reclamation,
+                   WAPA merchant, WAPA transmission and the developer.
+                   Treat every tie-limited number in this model as an UPPER BOUND.
   5. Economics     FPV export limited by headroom, economic curtailment below $0,
                    optional co-located BESS, energy + capacity (RA) revenue,
                    capex/O&M/ITC -> NPV and IRR over the asset life.
