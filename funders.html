@@ -1,4 +1,73 @@
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<nav class="sitenav" aria-label="Site"><div class="nbwrap"><a href="index.html" class="nb-home">Colorado River</a><a href="start.html" class="nb-start">Start here</a><a href="technical.html">The evidence</a><a href="proposal.html">The fix</a><a href="water-capital.html" class="on">Who pays</a><a href="reservoir-solar-explorer.html">Reservoir solar</a><a href="https://github.com/steps-re/colorado-river" target="_blank" rel="noopener">Data &amp; code</a></div></nav><div class="secstrip"><span class="secttl">Who pays</span><a href="water-capital.html">Where capital can go</a><a href="funders.html" class=here>Who pays now</a><a href="data-centers.html">Data centres</a><a href="aws.html">The hyperscaler overlap</a><a href="coalition.html">The coalition</a></div><div class="secstrip"><span class="secttl">Who pays</span><a href="water-capital.html">Where capital can go</a><a href="funders.html" class=here>Who pays now</a><a href="data-centers.html">Data centres</a><a href="aws.html">The hyperscaler overlap</a><a href="coalition.html">The coalition</a></div>
+<style>
+/* ---- shared chrome: navigation ---- */
+.sitenav{position:sticky;top:0;z-index:40;background:var(--deep,#123137);
+-webkit-backdrop-filter:saturate(140%) blur(6px);backdrop-filter:saturate(140%) blur(6px)}
+.nbwrap{max-width:1100px;margin:0 auto;padding:0 16px;display:flex;flex-wrap:wrap;
+align-items:center;gap:2px}
+.sitenav a{display:inline-block;padding:11px 12px;color:#CFE0E2;text-decoration:none;
+font-size:13.5px;line-height:1;border-bottom:2px solid transparent}
+.sitenav a:hover{color:#fff;border-bottom-color:#3E8E9C}
+.sitenav a.on{color:#fff;border-bottom-color:var(--rust,#A8432B);font-weight:600}
+.sitenav a.nb-home{font-weight:700;color:#fff;padding-left:0}
+.sitenav a.nb-start{color:#F0B49A}
+.sitenav a:focus-visible{outline:2px solid #8FD3DE;outline-offset:-2px}
+@media(max-width:640px){.sitenav a{padding:9px 8px;font-size:12.5px}}
+
+/* ---- shared chrome: section strip ---- */
+.secstrip{max-width:1100px;margin:0 auto;padding:9px 16px;display:flex;flex-wrap:wrap;
+align-items:baseline;gap:4px 14px;border-bottom:1px solid var(--line,#C6BBA4);
+background:var(--stone,#E7E1D4)}
+.secttl{font-size:11px;text-transform:uppercase;letter-spacing:.07em;color:var(--muted,#5B6A6A);
+font-weight:700;margin-right:4px}
+.secstrip a{font-size:13px;color:var(--water,#2C7A87);text-decoration:none}
+.secstrip a:hover{text-decoration:underline}
+.secstrip a.here{color:var(--deep,#123137);font-weight:700}
+
+/* ---- shared chrome: figures ---- */
+figure.fig{margin:1.5em 0;background:#fff;border:1px solid var(--line,#C6BBA4);
+border-radius:6px;padding:10px}
+figure.fig .zoom{display:block;position:relative;cursor:zoom-in}
+figure.fig img{width:100%;max-width:100%;height:auto;display:block;border-radius:3px}
+figure.fig .zoomhint{position:absolute;right:8px;bottom:8px;background:rgba(18,49,55,.82);
+color:#fff;font-size:10.5px;letter-spacing:.04em;padding:3px 8px;border-radius:3px;opacity:0;
+transition:opacity .15s;pointer-events:none}
+figure.fig .zoom:hover .zoomhint,figure.fig .zoom:focus-visible .zoomhint{opacity:1}
+figure.fig figcaption{font-size:12.5px;color:var(--muted,#5B6A6A);margin-top:8px;line-height:1.5}
+
+/* ---- shared chrome: lightbox ---- */
+#lbox{position:fixed;inset:0;z-index:100;background:rgba(10,22,25,.93);display:none;
+align-items:center;justify-content:center;padding:24px;cursor:zoom-out}
+#lbox.open{display:flex}
+#lbox img{max-width:100%;max-height:100%;object-fit:contain;border-radius:4px;
+box-shadow:0 12px 48px rgba(0,0,0,.5)}
+#lbox .lbclose{position:absolute;top:14px;right:18px;color:#fff;background:none;border:0;
+font-size:30px;line-height:1;cursor:pointer;padding:6px 12px}
+#lbox .lbclose:focus-visible{outline:2px solid #8FD3DE}
+@media (prefers-reduced-motion:reduce){figure.fig .zoomhint{transition:none}}
+</style>
+<script>
+/* Click any figure to open the full-resolution original. Escape or click closes. */
+document.addEventListener('DOMContentLoaded',function(){
+  var box=document.createElement('div'); box.id='lbox';
+  box.innerHTML='<button class="lbclose" aria-label="Close">&times;</button><img alt="">';
+  document.body.appendChild(box);
+  var img=box.querySelector('img');
+  function close(){box.classList.remove('open');img.src='';document.body.style.overflow='';}
+  box.addEventListener('click',close);
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});
+  document.querySelectorAll('a.zoom').forEach(function(a){
+    a.addEventListener('click',function(e){
+      e.preventDefault();
+      img.src=a.getAttribute('href');
+      img.alt=(a.querySelector('img')||{}).alt||'';
+      box.classList.add('open'); document.body.style.overflow='hidden';
+      box.querySelector('.lbclose').focus();
+    });
+  });
+});
+</script>
+<div class="secstrip"><span class="secttl">Who pays</span><a href="water-capital.html">Where capital can go</a><a href="funders.html" class=here>Who pays now</a><a href="data-centers.html">Data centres</a><a href="aws.html">The hyperscaler overlap</a><a href="coalition.html">The coalition</a></div><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Who Pays Now: The Hyperscaler Bridge | Colorado River | Steps Ventures</title>
 <style>
 :root{--stone:#E7E1D4;--paper:#F4F0E7;--plate:#FCFAF5;--ink:#1E2B2E;--deep:#123137;--muted:#5B6A6A;
@@ -101,13 +170,10 @@ sup.cite a{font-size:.62rem;color:var(--water);text-decoration:none;font-weight:
   <div class="hero-txt" style="position:static;padding:48px 24px 40px">
     <span class="eyebrow">Steps Ventures Research &middot; Who pays now</span>
     <h1 style="font-size:clamp(2rem,5vw,3rem)">The basin's biggest new water users are its most motivated funders.</h1>
-    <p class="dek">Every hyperscaler in the desert Southwest has a water-positive-by-2030 pledge and a standard that credits verified conservation and reuse. The accounting already exists. Here are the projects they could fund now that also move real acre-feet toward the basin&rsquo;s ~3 to 3.5 MAF/yr stabilizing cut, the basin-wide reduction Reclamation says is needed to hold the reservoirs.</p>
+    <p class="dek">Every hyperscaler in the desert Southwest has a water-positive-by-2030 pledge and a standard that credits verified conservation and reuse. The accounting already exists. Here are the projects they could fund now that also move real acre-feet toward the basin's 3 to 3.5 MAF gap.</p>
   </div>
 </header>
-<nav><div class="wrap">
-  <a href="start.html" style="color:var(--rust);font-weight:700">Start here</a><a href="index.html">&larr; The evidence</a><a href="#thesis">The bridge</a><a href="#reuse">Real reuse projects</a><a href="#rank">The ranked menu</a><a href="#verdict">The honest verdict</a><a href="#instrument">The instrument</a>
-  <a href="records.html">The record</a><a href="proposal.html">The Proposal</a><a href="https://github.com/steps-re/colorado-river" target="_blank" rel="noopener">Data &amp; code</a>
-</div></nav>
+
 
 <section id="thesis"><div class="wrap col">
   <span class="eyebrow">The bridge &middot; consumers become funders</span>
@@ -119,7 +185,7 @@ sup.cite a{font-size:.62rem;color:var(--water);text-decoration:none;font-weight:
   <div class="statgrid">
     <p class="stat">$325<span class="u">/AF</span><small>Reclamation&rsquo;s 2026 system-conservation price, on the record in 2 board actions</small></p>
     <p class="stat">$400<span class="u">/AF</span><small>The 2023&ndash;26 federal fallowing price, documented repeatedly in MWD board actions</small></p>
-    <p class="stat">&gt;1<span class="u">MAF</span><small>Freed by a ~10% cut in basin agricultural consumptive use, the largest fundable block</small></p>
+    <p class="stat">&gt;1<span class="u">MAF</span><small>Freed by a 5% cut on Lower Basin feed crops alone, the largest fundable block</small></p>
     <p class="stat">75<span class="u">%</span><small>How far AWS is toward water-positive by 2030. The last quarter is the hardest.</small></p>
   </div>
   <p class="key">The full priced record is on <a href="records.html">the documented record</a>. These are the numbers boards actually vote, not model prices.</p>
@@ -136,7 +202,7 @@ sup.cite a{font-size:.62rem;color:var(--water);text-decoration:none;font-weight:
     <tbody>
 <tr><td><strong>Pure Water Southern California</strong><br><span class="srctag">MWD SoCal + LA County Sanitation</span></td><td class="num">~150 MGD (~168,000 AFY)</td><td class="sm">Demo operating. Final EIR certified early 2026. Deliveries ~2032.</td><td class="sm">$4.8-9B total, multi-billion gap</td><td class="sm">Inland Empire</td><td class="sm">Offsets Colorado River and State Water Project imports. Clean wet-water credit.</td></tr>
 <tr><td><strong>Pure Water San Diego</strong><br><span class="srctag">City of San Diego</span></td><td class="num">83 MGD (~93,000 AFY)</td><td class="sm">Phase 1 ~85% built. Phase 2 planning.</td><td class="sm">$5B through 2035, plus $130M overrun</td><td class="sm">San Diego</td><td class="sm">San Diego is 85% imported water. Reuse offsets the Colorado River share.</td></tr>
-<tr><td><strong>Phoenix Advanced Water Purification</strong><br><span class="srctag">City of Phoenix</span></td><td class="num">~14,000 AFY combined</td><td class="sm">Design phase. Online early next decade.</td><td class="sm">$179M funded, ~$926M planned (reported)</td><td class="sm">Phoenix metro</td><td class="sm">New local potable supply offsets river diversions and groundwater.</td></tr>
+<tr><td><strong>Phoenix Advanced Water Purification</strong><br><span class="srctag">City of Phoenix</span></td><td class="num">~14,000 AFY combined</td><td class="sm">Design phase. Online early next decade.</td><td class="sm">$179M funded, ~$926M planned (verify)</td><td class="sm">Phoenix metro</td><td class="sm">New local potable supply offsets river diversions and groundwater.</td></tr>
 <tr><td><strong>Scottsdale Water Campus</strong><br><span class="srctag">Scottsdale Water</span></td><td class="num">up to 20 MGD (~22,400 AFY)</td><td class="sm">Operating since ~1999. Upgrade needed.</td><td class="sm">~$51M immediate compliance need</td><td class="sm">Phoenix metro</td><td class="sm">Potable reuse plus recharge. Direct offset, already proven.</td></tr>
 <tr><td><strong>Tucson potable-reuse demo</strong><br><span class="srctag">Tucson Water</span></td><td class="num">2.5 MGD (~2,800 AFY)</td><td class="sm">Council approved Jan 2025. Online early 2030s.</td><td class="sm">$86.7M funded. Scale-up needs more.</td><td class="sm">Tucson</td><td class="sm">New local supply offsets Colorado River demand.</td></tr>
 <tr><td><strong>SNWA return-flow model</strong><br><span class="srctag">Southern Nevada Water Authority</span></td><td class="num">~99% indoor water recycled to Lake Mead</td><td class="sm">Operating for decades</td><td class="sm">Ongoing opex and upgrades</td><td class="sm">AWS North Las Vegas ~8 mi</td><td class="sm">Every gallon returned lets Nevada withdraw another above its 300,000 AF.</td></tr>
@@ -152,7 +218,7 @@ sup.cite a{font-size:.62rem;color:var(--water);text-decoration:none;font-weight:
   <h2>Seven project types, scored and ranked</h2>
   <p>Each project type scored one to five on how fundable it is by a hyperscaler water team, how many acre-feet it moves, and how ready it is to contract now. The product sorts them. The top three are the fund-it-now plays.<sup class="cite"><a href="#s7">[7]</a></sup><sup class="cite"><a href="#s8">[8]</a></sup></p>
   <div class="rankwrap">
-<div class="rank top"><span class="rk">Rank 1 &middot; fund x impact x readiness</span><h3>A. Verified ag conservation / fallowing-for-benefit</h3><span class="score">5 x 5 x 5 = 125</span><p style="margin:.5em 0 0">Cleanest possible credit. Pay farmers to cut measured consumptive use, shepherd the water to Lake Mead. Ag is about 75% of human use, so a ~10% cut in agricultural consumptive use is about 1 MAF a year. The price is already on the record at $325 to $400 an acre-foot.</p></div>
+<div class="rank top"><span class="rk">Rank 1 &middot; fund x impact x readiness</span><h3>A. Verified ag conservation / fallowing-for-benefit</h3><span class="score">5 x 5 x 5 = 125</span><p style="margin:.5em 0 0">Cleanest possible credit. Pay farmers to cut measured consumptive use, shepherd the water to Lake Mead. Ag is about 75% of human use, so a 5% cut on feed crops alone is over 1 MAF a year. The price is already on the record at $325 to $400 an acre-foot.</p></div>
 <div class="rank top"><span class="rk">Rank 2 &middot; fund x impact x readiness</span><h3>F. Measurement and monitoring infrastructure</h3><span class="score">5 x 3 x 5 = 75</span><p style="margin:.5em 0 0">The cheapest, most on-brand play for AI and data companies. It does not save water by itself. It verifies every other credit and lowers the cost of the whole market. OpenET is already the standard USBR and the Upper Colorado River Commission use.</p></div>
 <div class="rank top"><span class="rk">Rank 3 &middot; fund x impact x readiness</span><h3>C. Municipal and industrial reuse and recycling</h3><span class="score">4 x 4 x 4 = 64</span><p style="margin:.5em 0 0">Fund infrastructure in your own backyard. Recycled water offsets a fresh river diversion, metered and clean under the accounting. The named projects below are shovel-ready and capital-hungry, sitting next to the data-center clusters.</p></div>
 <div class="rank"><span class="rk">Rank 4 &middot; fund x impact x readiness</span><h3>B. On-farm and canal efficiency</h3><span class="score">4 x 4 x 3 = 48</span><p style="margin:.5em 0 0">Tangible and popular, but credit only the net basin-wide reduction, never the gross savings. Seepage from an earthen canal is often someone&#x27;s return flow. Meta and CRIT already ran the model.</p></div>
@@ -172,46 +238,12 @@ sup.cite a{font-size:.62rem;color:var(--water);text-decoration:none;font-weight:
     <div class="vcard cond"><span class="lab">Conditional</span><p><strong>Efficiency and recharge.</strong> Efficiency counts only the net basin-wide reduction, never gross savings. Recharge counts the avoided diversion when stored water is used in a shortage, not the act of storing. Fund with monitoring.</p></div>
     <div class="vcard weak"><span class="lab">Weak</span><p><strong>Removal and restoration.</strong> Phreatophyte removal and forest restoration have real co-benefits and diffuse, slow, hard-to-measure water yield. Wrong instrument for a volumetric portfolio.</p></div>
   </div>
-  <p>Put it together. The basin&rsquo;s biggest new water consumers are its most motivated funders. The standard to pay them exists. The price is on the record. And the named projects are shovel-ready, next to their own data centers. Each company offsetting only its own gallons does not close a ~3 to 3.5 MAF/yr basin stabilizing cut. Pooled, at scale, and verified in public, it can.</p>
+  <p>Put it together. The basin&rsquo;s biggest new water consumers are its most motivated funders. The standard to pay them exists. The price is on the record. And the named projects are shovel-ready, next to their own data centers. Each company offsetting only its own gallons does not close a 3 to 3.5 MAF gap. Pooled, at scale, and verified in public, it can.</p>
   <ul class="notes">
     <li>This is independent policy and analysis, not an offer, not investment advice, and not affiliated with any named company.</li>
     <li>Sources are agency reports, company sustainability disclosures, and reputable press. Data-center water projections and total project costs are order-of-magnitude and some carry a verify flag in the underlying analysis.</li>
     <li>Prices are from this project&rsquo;s own transaction record on <a href="records.html">the documented record</a>, harvested from public board packets.</li>
   </ul>
-</div></section>
-<div class="waterline"></div>
-
-<section id="instrument"><div class="wrap col">
-  <span class="eyebrow">The instrument &middot; water&rsquo;s missing contract</span>
-  <h2>The bankable acre-foot</h2>
-  <p>The basin does not have a technology problem. It has a missing contract. A financeable deal needs three things, verifiable water, a credit-worthy counterparty, and a long-dated offtake. Two of the three already exist. The third is the whole opportunity.</p>
-</div><div class="wrap">
-  <div class="tablewrap" role="region" aria-label="The three legs of a bankable acre-foot" tabindex="0"><table>
-    <thead><tr><th>Leg</th><th>Status</th><th>The evidence</th></tr></thead>
-    <tbody>
-    <tr><td><strong>1. Verifiable water</strong>, a saved acre-foot that is measured, not a paper claim</td><td class="mk hit">Built</td><td class="sm">Field-level satellite ET (OpenET) gives measured consumptive use, not diversions. Imperial alone is ~1.4 MAF/yr, measured, and not falling despite two decades of efficiency spend. See <a href="ee-measured.html">the measured layer</a>.</td></tr>
-    <tr><td><strong>2. Credit-worthy counterparty</strong></td><td class="mk hit">Exists</td><td class="sm">MWD, IID, SNWA, and the federal government are all investment-grade. Not the constraint.</td></tr>
-    <tr><td><strong>3. Long-dated contract</strong></td><td class="mk miss">The gap</td><td class="sm">No one has written the multi-year, financeable water-for-water offtake. Every deal today is a one-year panic buy. This is the entire opportunity.</td></tr>
-    </tbody>
-  </table></div>
-  <h3 style="margin-top:1.6em">The instrument that closes it: a federal water option</h3>
-  <p>Structured as an advance market commitment. The federal government buys an option from a holder like Metropolitan to keep up to 1 MAF behind Lake Mead. It earns the premium whether or not it is exercised, and the water has to be financeable, something the feds can count on, not a discretionary &ldquo;we will leave it if we feel like it.&rdquo;</p>
-  <div class="grid2">
-    <div class="coal"><h3>Term-sheet sketch</h3><p><strong>Underlying:</strong> up to 1 MAF held in Lake Mead, verified by lake elevation.<br><strong>Buyer:</strong> Reclamation, a credit-worthy offtaker.<br><strong>Seller:</strong> MWD or another holder of conserved water.<br><strong>Premium:</strong> annual $/AF, paid on the option, not the full volume.<br><strong>Trigger:</strong> an elevation threshold, exercisable, not discretionary.<br><strong>Term:</strong> 10 to 20 years, the missing tenor.</p></div>
-    <div class="coal"><h3>Why it is financeable now</h3><p>The strike is observable, lake elevation, not a paper right (leg 1). The price is already set: Reclamation is paying MWD <strong>$325/AF</strong> (up to $65M) to keep conserved water in Lake Mead this year, and <strong>$400/AF</strong> on the 2023 to 2026 fallowing agreements. The proof works. It just needs the durable tenor instead of a one-year buy.</p></div>
-  </div>
-  <h3 style="margin-top:1.6em">The arbitrage, and the real cost</h3>
-  <p>The spread is the biggest in the basin, and the fact that capital cannot trade across it is what is broken.</p>
-  <div class="tablewrap" role="region" aria-label="The conserved-water arbitrage" tabindex="0"><table>
-    <thead><tr><th>Water</th><th>$/AF</th><th>Note</th></tr></thead>
-    <tbody>
-    <tr><td>Imperial fallowing, paid to the user</td><td class="num">~$700</td><td class="sm">federal payment, single year</td></tr>
-    <tr><td>Conserved water, all-in</td><td class="num">~$600&ndash;1,000</td><td class="sm">plus measurement, verification, and shepherding, still the cheapest real supply</td></tr>
-    <tr><td>Reclamation to MWD, in Lake Mead</td><td class="num">$325&ndash;400</td><td class="sm">$325/AF in 2026 (up to $65M); $400/AF on 2023 to 2026 fallowing</td></tr>
-    <tr><td>San Diego seawater desal (Carlsbad)</td><td class="num">~$3,500</td><td class="sm">the manufactured-water ceiling</td></tr>
-    </tbody>
-  </table></div>
-  <p class="key">Conserved water clears at roughly one-fifth the cost of seawater desal. The option above is how a financier captures that spread with a bankable contract instead of a spot purchase. The full priced series, 26 documented transactions from ~$220 to ~$965/AF, is on <a href="records.html">the documented record</a>.</p>
 </div></section>
 <div class="waterline"></div>
 

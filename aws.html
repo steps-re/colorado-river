@@ -1,4 +1,73 @@
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<nav class="sitenav" aria-label="Site"><div class="nbwrap"><a href="index.html" class="nb-home">Colorado River</a><a href="start.html" class="nb-start">Start here</a><a href="technical.html">The evidence</a><a href="proposal.html">The fix</a><a href="water-capital.html" class="on">Who pays</a><a href="reservoir-solar-explorer.html">Reservoir solar</a><a href="https://github.com/steps-re/colorado-river" target="_blank" rel="noopener">Data &amp; code</a></div></nav><div class="secstrip"><span class="secttl">Who pays</span><a href="water-capital.html">Where capital can go</a><a href="funders.html">Who pays now</a><a href="data-centers.html">Data centres</a><a href="aws.html" class=here>The hyperscaler overlap</a><a href="coalition.html">The coalition</a></div><div class="secstrip"><span class="secttl">Who pays</span><a href="water-capital.html">Where capital can go</a><a href="funders.html">Who pays now</a><a href="data-centers.html">Data centres</a><a href="aws.html" class=here>The hyperscaler overlap</a><a href="coalition.html">The coalition</a></div>
+<style>
+/* ---- shared chrome: navigation ---- */
+.sitenav{position:sticky;top:0;z-index:40;background:var(--deep,#123137);
+-webkit-backdrop-filter:saturate(140%) blur(6px);backdrop-filter:saturate(140%) blur(6px)}
+.nbwrap{max-width:1100px;margin:0 auto;padding:0 16px;display:flex;flex-wrap:wrap;
+align-items:center;gap:2px}
+.sitenav a{display:inline-block;padding:11px 12px;color:#CFE0E2;text-decoration:none;
+font-size:13.5px;line-height:1;border-bottom:2px solid transparent}
+.sitenav a:hover{color:#fff;border-bottom-color:#3E8E9C}
+.sitenav a.on{color:#fff;border-bottom-color:var(--rust,#A8432B);font-weight:600}
+.sitenav a.nb-home{font-weight:700;color:#fff;padding-left:0}
+.sitenav a.nb-start{color:#F0B49A}
+.sitenav a:focus-visible{outline:2px solid #8FD3DE;outline-offset:-2px}
+@media(max-width:640px){.sitenav a{padding:9px 8px;font-size:12.5px}}
+
+/* ---- shared chrome: section strip ---- */
+.secstrip{max-width:1100px;margin:0 auto;padding:9px 16px;display:flex;flex-wrap:wrap;
+align-items:baseline;gap:4px 14px;border-bottom:1px solid var(--line,#C6BBA4);
+background:var(--stone,#E7E1D4)}
+.secttl{font-size:11px;text-transform:uppercase;letter-spacing:.07em;color:var(--muted,#5B6A6A);
+font-weight:700;margin-right:4px}
+.secstrip a{font-size:13px;color:var(--water,#2C7A87);text-decoration:none}
+.secstrip a:hover{text-decoration:underline}
+.secstrip a.here{color:var(--deep,#123137);font-weight:700}
+
+/* ---- shared chrome: figures ---- */
+figure.fig{margin:1.5em 0;background:#fff;border:1px solid var(--line,#C6BBA4);
+border-radius:6px;padding:10px}
+figure.fig .zoom{display:block;position:relative;cursor:zoom-in}
+figure.fig img{width:100%;max-width:100%;height:auto;display:block;border-radius:3px}
+figure.fig .zoomhint{position:absolute;right:8px;bottom:8px;background:rgba(18,49,55,.82);
+color:#fff;font-size:10.5px;letter-spacing:.04em;padding:3px 8px;border-radius:3px;opacity:0;
+transition:opacity .15s;pointer-events:none}
+figure.fig .zoom:hover .zoomhint,figure.fig .zoom:focus-visible .zoomhint{opacity:1}
+figure.fig figcaption{font-size:12.5px;color:var(--muted,#5B6A6A);margin-top:8px;line-height:1.5}
+
+/* ---- shared chrome: lightbox ---- */
+#lbox{position:fixed;inset:0;z-index:100;background:rgba(10,22,25,.93);display:none;
+align-items:center;justify-content:center;padding:24px;cursor:zoom-out}
+#lbox.open{display:flex}
+#lbox img{max-width:100%;max-height:100%;object-fit:contain;border-radius:4px;
+box-shadow:0 12px 48px rgba(0,0,0,.5)}
+#lbox .lbclose{position:absolute;top:14px;right:18px;color:#fff;background:none;border:0;
+font-size:30px;line-height:1;cursor:pointer;padding:6px 12px}
+#lbox .lbclose:focus-visible{outline:2px solid #8FD3DE}
+@media (prefers-reduced-motion:reduce){figure.fig .zoomhint{transition:none}}
+</style>
+<script>
+/* Click any figure to open the full-resolution original. Escape or click closes. */
+document.addEventListener('DOMContentLoaded',function(){
+  var box=document.createElement('div'); box.id='lbox';
+  box.innerHTML='<button class="lbclose" aria-label="Close">&times;</button><img alt="">';
+  document.body.appendChild(box);
+  var img=box.querySelector('img');
+  function close(){box.classList.remove('open');img.src='';document.body.style.overflow='';}
+  box.addEventListener('click',close);
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});
+  document.querySelectorAll('a.zoom').forEach(function(a){
+    a.addEventListener('click',function(e){
+      e.preventDefault();
+      img.src=a.getAttribute('href');
+      img.alt=(a.querySelector('img')||{}).alt||'';
+      box.classList.add('open'); document.body.style.overflow='hidden';
+      box.querySelector('.lbclose').focus();
+    });
+  });
+});
+</script>
+<div class="secstrip"><span class="secttl">Who pays</span><a href="water-capital.html">Where capital can go</a><a href="funders.html">Who pays now</a><a href="data-centers.html">Data centres</a><a href="aws.html" class=here>The hyperscaler overlap</a><a href="coalition.html">The coalition</a></div><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>For AWS Water Sustainability — the highest-integrity acre-feet in the basin</title>
 <style>
 :root{--stone:#E7E1D4;--paper:#F4F0E7;--plate:#FCFAF5;--ink:#1E2B2E;--deep:#123137;--muted:#5B6A6A;
@@ -47,9 +116,7 @@ nav .wrap{display:flex;gap:20px;padding:11px 24px;overflow-x:auto} nav a{color:v
   <a class="cta ghost" href="#team">What your team will ask</a>
   <a class="cta ghost" href="#start">The first step</a>
 </div></header>
-<nav><div class="wrap">
-  <a href="#why">Why now</a><a href="#offer">The offer</a><a href="#integrity">Why it&rsquo;s real</a><a href="#team">Your team&rsquo;s questions</a><a href="#numbers">The numbers</a><a href="#start">First step</a>
-</div></nav>
+
 
 <section id="why"><div class="wrap col">
   <span class="eyebrow">Why this lands on your desk now</span>
@@ -63,7 +130,7 @@ nav .wrap{display:flex;gap:20px;padding:11px 24px;overflow-x:auto} nav a{color:v
   <span class="eyebrow">The offer</span>
   <div class="col"><p class="lede">Anchor a verified consumptive-use conservation market: pay farmers to retire real, additional water use, shepherd it into Lake Mead under legal protection, and settle only on volumes measured with an uncertainty holdback and ground-truthing.</p></div>
   <div class="stats">
-    <div class="stat"><div class="n">$600&ndash;1k</div><div class="l">all-in per verified, shepherded acre-foot delivered ($400 to the farmer plus measurement and shepherding), vs. $2,000+ for desalinated supply</div></div>
+    <div class="stat"><div class="n">~$400</div><div class="l">per verified acre-foot, the conservation anchor, vs. $2,000+ for desalinated supply</div></div>
     <div class="stat"><div class="n">2.15</div><div class="l">benefit-cost ratio on the conservation tier (water valued at avoided marginal supply)</div></div>
     <div class="stat"><div class="n">Additional</div><div class="l">consumptive-use reduction, shepherded &amp; legally protected from re-diversion</div></div>
     <div class="stat"><div class="n">Public</div><div class="l">measurement ledger, the branded, transparent proof layer AWS can point to</div></div>
@@ -100,7 +167,7 @@ nav .wrap{display:flex;gap:20px;padding:11px 24px;overflow-x:auto} nav a{color:v
     <tr><td class="q">&ldquo;Efficiency savings are double-counted return flow.&rdquo;</td><td>We pay for retired <em>consumptive use</em> only, not efficiency upgrades. That&rsquo;s the whole design.</td></tr>
     <tr><td class="q">&ldquo;OpenET has 10&ndash;20%+ error, you can&rsquo;t settle money on it.&rdquo;</td><td>Agreed. ET flags anomalies. Settlement is on metered flows and rights accounting, with a 25% holdback and ground-truthing.</td></tr>
     <tr><td class="q">&ldquo;Tamarisk removal and cloud seeding don&rsquo;t yield water.&rdquo;</td><td>Removed from the water math entirely. USGS and the Wyoming trials are clear. They&rsquo;re habitat/research line items, not supply.</td></tr>
-    <tr><td class="q">&ldquo;54% IRR is a fantasy for water infrastructure.&rdquo;</td><td>Gone. Conservation still returns the best benefit-cost in the set at its all-in $600&ndash;1,000/AF. The capital-heavy public goods are funded as grants, not sold as equity.</td></tr>
+    <tr><td class="q">&ldquo;54% IRR is a fantasy for water infrastructure.&rdquo;</td><td>Gone. Conservation returns a real benefit-cost above 2 at ~$400/AF. The capital-heavy public goods are funded as grants, not sold as equity.</td></tr>
     <tr><td class="q">&ldquo;This reads as Big Tech buying the river.&rdquo;</td><td>Which is why it leads with visible, local, community and tribal benefit, on a public ledger, conservation-with-community-benefit, in the open.</td></tr>
   </table></div>
   <p class="key">The full seven-objection review and the before/after changes are documented and available to your team on request.</p>
@@ -112,7 +179,7 @@ nav .wrap{display:flex;gap:20px;padding:11px 24px;overflow-x:auto} nav a{color:v
   <p>We are deliberately not showing you a headline that collapses under scrutiny. Here is the real shape of it:</p>
   <div class="tblwrap"><table class="tbl">
     <tr><th>Metric</th><th>Value</th><th>Note</th></tr>
-    <tr><td>Conservation anchor cost</td><td class="mono">$600&ndash;1k / verified AF all-in</td><td>Cheapest high-integrity replenishment available</td></tr>
+    <tr><td>Conservation anchor cost</td><td class="mono">~$400 / verified AF</td><td>Cheapest high-integrity replenishment available</td></tr>
     <tr><td>Conservation benefit-cost</td><td class="mono">2.15</td><td>Water at $1,500/AF avoided supply, 5% discount, 30&nbsp;yr</td></tr>
     <tr><td>Full package capital</td><td class="mono">~$15.7B</td><td>Ledger + conservation + ag + Glen Canyon + recharge</td></tr>
     <tr><td>Verified water, full package</td><td class="mono">~1.0 MAF/yr</td><td>~0.6 MAF/yr shepherded to storage. Balance is regional recharge</td></tr>
@@ -126,7 +193,7 @@ nav .wrap{display:flex;gap:20px;padding:11px 24px;overflow-x:auto} nav a{color:v
   <span class="eyebrow">The first step, small, provable, non-binding</span>
   <div class="col"><p class="lede">Nobody signs a basin-scale check on a slide. So the ask is a pilot that proves the verified acre-foot before any large commitment.</p></div>
   <div class="step"><span class="k">1</span><p><strong>Co-fund the measurement-ledger pilot</strong> in one well-instrumented Arizona / Lower-Basin sub-basin, the transparent proof layer, branded and public.</p></div>
-  <div class="step"><span class="k">2</span><p><strong>Buy a first conservation tranche</strong> of verified, shepherded consumptive-use reduction at its all-in ~$600&ndash;1,000/AF ($400 to the farmer plus measurement and shepherding), and watch it land in Lake Mead on the ledger.</p></div>
+  <div class="step"><span class="k">2</span><p><strong>Buy a first conservation tranche</strong> of verified, shepherded consumptive-use reduction at ~$400/AF, and watch it land in Lake Mead on the ledger.</p></div>
   <div class="step"><span class="k">3</span><p><strong>Set the integrity standard</strong> with your team, additionality, shepherding, holdback, so AWS defines what a real replenishment acre-foot is, not just buys one.</p></div>
   <div class="step"><span class="k">4</span><p><strong>Scale on proof.</strong> If the pilot verifies clean, AWS anchors the founding coalition and brings the other hyperscalers to the table. If it doesn&rsquo;t, you&rsquo;ve spent a pilot budget and learned something real.</p></div>
   <div class="loi" style="margin-top:22px">

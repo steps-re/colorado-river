@@ -1,4 +1,73 @@
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<nav class="sitenav" aria-label="Site"><div class="nbwrap"><a href="index.html" class="nb-home">Colorado River</a><a href="start.html" class="nb-start">Start here</a><a href="technical.html">The evidence</a><a href="proposal.html" class="on">The fix</a><a href="water-capital.html">Who pays</a><a href="reservoir-solar-explorer.html">Reservoir solar</a><a href="https://github.com/steps-re/colorado-river" target="_blank" rel="noopener">Data &amp; code</a></div></nav><div class="secstrip"><span class="secttl">The fix</span><a href="proposal.html" class=here>The proposal</a><a href="governance.html">Law of the River</a><a href="post-2026.html">After 2026</a><a href="manufactured-water.html">Making water</a><a href="objections.html">Objections answered</a></div><div class="secstrip"><span class="secttl">The fix</span><a href="proposal.html" class=here>The proposal</a><a href="governance.html">Law of the River</a><a href="post-2026.html">After 2026</a><a href="manufactured-water.html">Making water</a><a href="objections.html">Objections answered</a></div>
+<style>
+/* ---- shared chrome: navigation ---- */
+.sitenav{position:sticky;top:0;z-index:40;background:var(--deep,#123137);
+-webkit-backdrop-filter:saturate(140%) blur(6px);backdrop-filter:saturate(140%) blur(6px)}
+.nbwrap{max-width:1100px;margin:0 auto;padding:0 16px;display:flex;flex-wrap:wrap;
+align-items:center;gap:2px}
+.sitenav a{display:inline-block;padding:11px 12px;color:#CFE0E2;text-decoration:none;
+font-size:13.5px;line-height:1;border-bottom:2px solid transparent}
+.sitenav a:hover{color:#fff;border-bottom-color:#3E8E9C}
+.sitenav a.on{color:#fff;border-bottom-color:var(--rust,#A8432B);font-weight:600}
+.sitenav a.nb-home{font-weight:700;color:#fff;padding-left:0}
+.sitenav a.nb-start{color:#F0B49A}
+.sitenav a:focus-visible{outline:2px solid #8FD3DE;outline-offset:-2px}
+@media(max-width:640px){.sitenav a{padding:9px 8px;font-size:12.5px}}
+
+/* ---- shared chrome: section strip ---- */
+.secstrip{max-width:1100px;margin:0 auto;padding:9px 16px;display:flex;flex-wrap:wrap;
+align-items:baseline;gap:4px 14px;border-bottom:1px solid var(--line,#C6BBA4);
+background:var(--stone,#E7E1D4)}
+.secttl{font-size:11px;text-transform:uppercase;letter-spacing:.07em;color:var(--muted,#5B6A6A);
+font-weight:700;margin-right:4px}
+.secstrip a{font-size:13px;color:var(--water,#2C7A87);text-decoration:none}
+.secstrip a:hover{text-decoration:underline}
+.secstrip a.here{color:var(--deep,#123137);font-weight:700}
+
+/* ---- shared chrome: figures ---- */
+figure.fig{margin:1.5em 0;background:#fff;border:1px solid var(--line,#C6BBA4);
+border-radius:6px;padding:10px}
+figure.fig .zoom{display:block;position:relative;cursor:zoom-in}
+figure.fig img{width:100%;max-width:100%;height:auto;display:block;border-radius:3px}
+figure.fig .zoomhint{position:absolute;right:8px;bottom:8px;background:rgba(18,49,55,.82);
+color:#fff;font-size:10.5px;letter-spacing:.04em;padding:3px 8px;border-radius:3px;opacity:0;
+transition:opacity .15s;pointer-events:none}
+figure.fig .zoom:hover .zoomhint,figure.fig .zoom:focus-visible .zoomhint{opacity:1}
+figure.fig figcaption{font-size:12.5px;color:var(--muted,#5B6A6A);margin-top:8px;line-height:1.5}
+
+/* ---- shared chrome: lightbox ---- */
+#lbox{position:fixed;inset:0;z-index:100;background:rgba(10,22,25,.93);display:none;
+align-items:center;justify-content:center;padding:24px;cursor:zoom-out}
+#lbox.open{display:flex}
+#lbox img{max-width:100%;max-height:100%;object-fit:contain;border-radius:4px;
+box-shadow:0 12px 48px rgba(0,0,0,.5)}
+#lbox .lbclose{position:absolute;top:14px;right:18px;color:#fff;background:none;border:0;
+font-size:30px;line-height:1;cursor:pointer;padding:6px 12px}
+#lbox .lbclose:focus-visible{outline:2px solid #8FD3DE}
+@media (prefers-reduced-motion:reduce){figure.fig .zoomhint{transition:none}}
+</style>
+<script>
+/* Click any figure to open the full-resolution original. Escape or click closes. */
+document.addEventListener('DOMContentLoaded',function(){
+  var box=document.createElement('div'); box.id='lbox';
+  box.innerHTML='<button class="lbclose" aria-label="Close">&times;</button><img alt="">';
+  document.body.appendChild(box);
+  var img=box.querySelector('img');
+  function close(){box.classList.remove('open');img.src='';document.body.style.overflow='';}
+  box.addEventListener('click',close);
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});
+  document.querySelectorAll('a.zoom').forEach(function(a){
+    a.addEventListener('click',function(e){
+      e.preventDefault();
+      img.src=a.getAttribute('href');
+      img.alt=(a.querySelector('img')||{}).alt||'';
+      box.classList.add('open'); document.body.style.overflow='hidden';
+      box.querySelector('.lbclose').focus();
+    });
+  });
+});
+</script>
+<div class="secstrip"><span class="secttl">The fix</span><a href="proposal.html" class=here>The proposal</a><a href="governance.html">Law of the River</a><a href="post-2026.html">After 2026</a><a href="manufactured-water.html">Making water</a><a href="objections.html">Objections answered</a></div><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>The Basin Compact — a $100B proposal to turn energy abundance into water security</title>
 <style>
 :root{--stone:#E7E1D4;--paper:#F4F0E7;--plate:#FCFAF5;--ink:#1E2B2E;--deep:#123137;--muted:#5B6A6A;
@@ -52,14 +121,12 @@ nav .wrap{display:flex;gap:20px;padding:11px 24px;overflow-x:auto} nav a{color:v
   <a class="cta ghost" href="#thesis">The thesis</a>
   <a class="cta ghost" href="#ask">The first step</a>
 </div></header>
-<nav><div class="wrap">
-  <a href="#thesis">Thesis</a><a href="#problem">The problem</a><a href="#stack">The $100B stack</a><a href="#how">How it works</a><a href="#build">Buildability</a><a href="#delivers">What it delivers</a><a href="#who">Who&rsquo;s in, who loses</a><a href="#finance">Financing</a><a href="#real">Why it&rsquo;s real</a><a href="#odds">Honest odds</a><a href="#ask">The ask</a>
-</div></nav>
+
 
 <section id="thesis"><div class="wrap col">
   <span class="eyebrow">The thesis in one line</span>
-  <p class="flow">Pair <b>solar and storage</b> with the derating Colorado River dams and the new <b>data-center load</b> &rarr; that power <b>backfills the dams</b>, runs the <b>data centers</b>, and <b>manufactures water</b> &rarr; the water and the goodwill refill the basin.</p>
-  <p>The Lower Basin runs a structural deficit of about 1.5 million acre-feet a year, and the river&rsquo;s rulebook expires in 2026. The hyperscalers are pouring $100B+ of water-hungry infrastructure into Arizona and Nevada at exactly the wrong moment, and the backlash has started. But they hold something no one else does: the balance sheet, the 2030 water pledges, and a reason to act, and the desert throws off more sun than they can use. Energy and water are substitutes at the margin. Cheap, abundant, carbon-free power is the bridge between what these companies need and what the basin needs.</p>
+  <p class="flow">Fill the <b>stranded transmission</b> at the Colorado River dams with <b>solar and storage</b> &rarr; that power <b>backfills the dams</b>, runs the <b>data centers</b>, and <b>manufactures water</b> &rarr; the water and the goodwill refill the basin.</p>
+  <p>The Colorado River is short about 1.5 million acre-feet a year and its rulebook expires in 2026. The hyperscalers are pouring $100B+ of water-hungry infrastructure into Arizona and Nevada at exactly the wrong moment, and the backlash has started. But they hold something no one else does: the balance sheet, the 2030 water pledges, and a reason to act, and the desert throws off more sun than they can use. Energy and water are substitutes at the margin. Cheap, abundant, carbon-free power is the bridge between what these companies need and what the basin needs.</p>
 </div></section>
 <div class="waterline"></div>
 
@@ -69,7 +136,7 @@ nav .wrap{display:flex;gap:20px;padding:11px 24px;overflow-x:auto} nav a{color:v
   <div class="stats">
     <div class="stat"><div class="n">1.2&ndash;1.5</div><div class="l">MAF/yr lost to reservoir evaporation, charged to no one</div></div>
     <div class="stat"><div class="n">&minus;1.5</div><div class="l">MAF/yr of storage gone since 2002, reservoirs, soil, and unmeasured groundwater</div></div>
-    <div class="stat"><div class="n">$400</div><div class="l">paid to the farmer per verified acre-foot ($600&ndash;1,000 all-in delivered), the cheapest real water there is</div></div>
+    <div class="stat"><div class="n">$400</div><div class="l">per verified acre-foot, conservation, the cheapest real water there is</div></div>
     <div class="stat"><div class="n">months</div><div class="l">each year the Glen Canyon release now exceeds the bass-spawning line, vs near-never before</div></div>
   </div>
   <p>Full derivations, the interactive model, and an adversarial technical review are at the <a href="./">evidence site</a>. The short version: the crisis is an <em>accounting</em> problem as much as a hydrology one, and every current proposal prices evaporation while ignoring groundwater and the ecological cliff.</p>
@@ -82,9 +149,9 @@ nav .wrap{display:flex;gap:20px;padding:11px 24px;overflow-x:auto} nav a{color:v
   <p>Not one mega-project, a stacked program where the energy layer pays for itself and the companies&rsquo; own build-out powers the rest. Illustrative capital over ten years:</p>
 </div><div class="wrap">
   <div class="layers">
-    <div class="layer"><span class="k">1</span><div><h3>Energy: solar + storage, backfill plus new build</h3><p>~1 GW backfills the derating dams on the interconnection the shrinking hydropower frees. The larger build, ~5 GW (~$12B, ~13 TWh/yr) scaling toward ~12&ndash;15 GW (~50 TWh/yr), co-locates with the data-center load on new or repurposed interconnection. The dams&rsquo; lines are firm-contracted through 2057, so grid access on a real queue, not free headroom, is the hard part.</p></div><span class="sz">~$30B</span></div>
-    <div class="layer"><span class="k">2</span><div><h3>Water production: reuse, desal, recharge</h3><p>Wastewater reuse-to-recharge (the Orange County model), brackish and ag-drainage desalination, and aquifer storage. About 250,000&ndash;350,000 AF/yr is buildable by 2035, scaling toward 1.5&ndash;3 MAF/yr over 15&ndash;20 years, powered by layer 1.</p></div><span class="sz">~$35B</span></div>
-    <div class="layer"><span class="k">3</span><div><h3>Conservation, measurement &amp; the dam</h3><p>A verified consumptive-use conservation market ($400/AF to the farmer, ~$600&ndash;1,000 all-in delivered), a public measurement ledger, and the Glen Canyon temperature retrofit, the honest core that survived adversarial review.</p></div><span class="sz">~$20B</span></div>
+    <div class="layer"><span class="k">1</span><div><h3>Energy: solar + storage on stranded transmission</h3><p>Fill ~3.5 GW of idle interconnection at Hoover, Glen Canyon, and the retired Navajo Generating Station&rsquo;s 500-kV lines to Phoenix and Vegas. Scale toward ~12&ndash;15 GW. ~17&rarr;50 TWh/yr of clean power via <em>existing</em> wires.</p></div><span class="sz">~$30B</span></div>
+    <div class="layer"><span class="k">2</span><div><h3>Water production: reuse, desal, recharge</h3><p>Wastewater reuse-to-recharge (the Orange County model), brackish and ag-drainage desalination, and aquifer storage, 1.5&ndash;3 MAF/yr of drought-proof water, powered by layer 1.</p></div><span class="sz">~$35B</span></div>
+    <div class="layer"><span class="k">3</span><div><h3>Conservation, measurement &amp; the dam</h3><p>A verified consumptive-use conservation market ($400/AF), a public measurement ledger, and the Glen Canyon temperature retrofit, the honest core that survived adversarial review.</p></div><span class="sz">~$20B</span></div>
     <div class="layer"><span class="k">4</span><div><h3>Grid: interconnection &amp; firming</h3><p>FERC surplus-interconnection to reuse the wires, batteries to firm the variable solar, and selective new transmission where the headroom runs out.</p></div><span class="sz">~$10B</span></div>
     <div class="layer"><span class="k">5</span><div><h3>Just transition &amp; community benefit</h3><p>Navajo and Hopi jobs, revenue, and water infrastructure on the reclaimed coal land the buildout reuses, the goodwill core, not an afterthought.</p></div><span class="sz">~$5B</span></div>
   </div>
@@ -96,7 +163,7 @@ nav .wrap{display:flex;gap:20px;padding:11px 24px;overflow-x:auto} nav a{color:v
   <span class="eyebrow">How it works</span>
   <h2>The mechanisms already exist. We connect them.</h2>
   <div class="grid2">
-    <div class="card"><h3>Reuse the wires (FERC Order 845)</h3><p>The dams&rsquo; lines are firm-contracted through 2057, not idle. But as they derate, the shrinking hydropower frees ~1 GW of interconnection that solar can backfill on an expedited surplus-interconnection study, months rather than the 5-year queue. It&rsquo;s non-firm, and anything past the backfill needs new interconnection or co-location with the load.</p></div>
+    <div class="card"><h3>Reuse the wires (FERC Order 845)</h3><p>As the dams derate, the transmission built for them strands ~3.5 GW of capacity pointed at Phoenix and Las Vegas. Surplus interconnection puts solar+storage on it in months, not the 5+ year queue.</p></div>
     <div class="card"><h3>An Advance Market Commitment for water</h3><p>Frontier did it for carbon, LEAF for forests. The coalition pre-buys verified, additional, shepherded consumptive-use reduction at a floor price, the first AMC for water, the demand signal that makes the market real.</p></div>
     <div class="card"><h3>Manufacture water with the surplus</h3><p>After backfilling the dams and powering the data centers, the surplus electrons desalinate, treat, and recharge, reuse-led and drought-proof. Energy stops being the constraint.</p></div>
     <div class="card"><h3>Water as the seasonal battery</h3><p>Batteries smooth the day, not the season. Recharge and pumping bank summer&rsquo;s solar surplus underground as water, covering winter&rsquo;s deficit no battery can.</p></div>
@@ -133,9 +200,9 @@ nav .wrap{display:flex;gap:20px;padding:11px 24px;overflow-x:auto} nav a{color:v
   <h2>The outcomes, honestly bounded</h2>
   <div class="tblwrap"><table class="tbl">
     <tr><th>Dimension</th><th>Result</th><th>Note</th></tr>
-    <tr><td>Verified water freed (conservation core)</td><td class="n">~0.6&ndash;1 MAF/yr</td><td>additional, shepherded, ~$600&ndash;1,000/AF all-in ($400 to the farmer)</td></tr>
-    <tr><td>Water made/saved (reuse + desal + efficiency)</td><td class="n">0.25&ndash;0.35 &rarr; 1.5&ndash;3</td><td>MAF/yr: ~0.3 buildable by 2035, 1.5&ndash;3 over 15&ndash;20 yrs. Reuse-led, bounded by capture &amp; brine, not energy</td></tr>
-    <tr><td>Clean energy delivered</td><td class="n">13&rarr;50 TWh/yr</td><td>backfills the dams, powers the data centers, runs the water</td></tr>
+    <tr><td>Verified water freed (conservation core)</td><td class="n">~0.6&ndash;1 MAF/yr</td><td>additional, shepherded, at ~$400/AF</td></tr>
+    <tr><td>Water made/saved (reuse + desal + efficiency)</td><td class="n">1.5&ndash;3 MAF/yr</td><td>reuse-led, drought-proof. Bounded by capture &amp; brine, not energy</td></tr>
+    <tr><td>Clean energy through existing lines</td><td class="n">17&rarr;50 TWh/yr</td><td>backfills the dams, powers the data centers, runs the water</td></tr>
     <tr><td>Dam operations</td><td class="n">decoupled</td><td>releases freed for temperature &amp; ecology, no power penalty</td></tr>
     <tr><td>Jobs</td><td class="n">~28,000+</td><td>construction job-years + permanent O&amp;M, Native-hire priority</td></tr>
     <tr><td>Carbon avoided</td><td class="n">3&ndash;7 MtCO<sub>2</sub>/yr</td><td>displacing market gas. More as it scales</td></tr>
@@ -189,7 +256,7 @@ nav .wrap{display:flex;gap:20px;padding:11px 24px;overflow-x:auto} nav a{color:v
   <ol style="max-width:66ch">
     <li><strong>A counterparty exists.</strong> An AMC needs an entity to contract with and a registry to settle on. The basin finance authority is the long pole, and it has to move in parallel.</li>
     <li><strong>The verification is borrowed, not invented.</strong> Anchor on OpenET, VWBA, and a partner like Bonneville that already has the registry and the corporate relationships, so the &ldquo;unclean claim&rdquo; objection dies.</li>
-    <li><strong>The energy layer stands alone.</strong> Sell it to the infrastructure teams on speed-to-market via surplus interconnection at the derated dams. It pencils without the water story.</li>
+    <li><strong>The energy layer stands alone.</strong> Sell it to the infrastructure teams on speed-to-market via stranded transmission. It pencils without the water story.</li>
     <li><strong>One anchor, not a committee.</strong> One company&rsquo;s yes (AWS or Microsoft) de-risks the rest. Coalitions of competitors move slowly.</li>
     <li><strong>It&rsquo;s pitched as a pilot, not a $100B ask.</strong> Nobody signs the program. They sign the first tranche.</li>
   </ol>
@@ -197,10 +264,9 @@ nav .wrap{display:flex;gap:20px;padding:11px 24px;overflow-x:auto} nav a{color:v
   <h3 style="margin-top:1.6em">What a hostile room already threw at this, and our answers</h3>
   <p>We ran the proposal past twenty opponents and experts. Four objections landed hard. Here they are, answered straight.</p>
   <div class="box"><p style="margin:0"><strong>1. The transmission is no shortcut, and public-land solar faces a hostile federal posture.</strong> True on both counts. The retired Navajo Generating Station 500-kV lines are co-owned by APS, SRP, TEP, NV Energy, and Reclamation, and a 12 to 15 GW build needs real interconnection studies and upgrades, not a plug-and-play claim. And with the current administration cool to solar on federal land, greenfield BLM permits are a poor bet. That is exactly why the plan leads with <strong>tribal and reclaimed coal land</strong>, which is sovereign or private rather than BLM, and reuses <strong>existing</strong> transmission under multi-year owner agreements. Phase one is sized to what can actually be studied and built.</p></div>
-  <div class="box"><p style="margin:0"><strong>2. The water cost stack was understated.</strong> Agreed. We drop the single blended dollar-per-acre-foot and unbundle the delivered cost by type: conservation near $600 to $1,000/AF all-in ($400 to the farmer), reuse $1,500 to $2,200, brackish desal near $900 to $1,100, seawater exchange $2,800 to $4,000, plus conveyance, brine, and debt service. Priced like infrastructure, not a slogan.</p></div>
+  <div class="box"><p style="margin:0"><strong>2. The water cost stack was understated.</strong> Agreed. We drop the single blended dollar-per-acre-foot and unbundle the delivered cost by type: conservation near $400/AF, reuse $1,500 to $2,200, brackish desal near $900 to $1,100, seawater exchange $2,800 to $4,000, plus conveyance, brine, and debt service. Priced like infrastructure, not a slogan.</p></div>
   <div class="box"><p style="margin:0"><strong>3. Brine disposal is the real inland-desal constraint, and it is solvable where the geology allows.</strong> One million acre-feet of desal product makes roughly 170,000 acre-feet of brine. The proven template is <strong>El Paso&rsquo;s Kay Bailey Hutchison plant</strong>: deep-well injection 22 miles out into isolated 4,000-foot formations, 30,800 acre-feet a year of fresh water at about $489/AF. So brine is a core line item, and inland desal is capped to sites with a credible injection sink, not claimed everywhere.</p></div>
   <div class="box"><p style="margin:0"><strong>4. Manufactured water is not yet a basin credit, but the window to fix that is open.</strong> Reuse and desal water is a creature of state law. Today it reduces a state&rsquo;s own demand and cannot float as an interstate credit without a new accounting rule. The honest move is to say so, and to make that rule one of the coalition&rsquo;s policy asks. The post-2026 renegotiation of the operating guidelines is the once-in-a-generation opening to establish crediting for verified new supply, and it is far more winnable now, mid-crisis, than it has ever been.</p></div>
-  <p class="key" style="margin-top:16px">The fuller set, governance and the missing counterparty, tribal seniority, brine at scale, the energy opportunity cost, and who claims manufactured water across state lines, is answered on the <a href="objections.html">objections page</a>.</p>
 </div></section>
 <div class="waterline"></div>
 
@@ -216,5 +282,5 @@ nav .wrap{display:flex;gap:20px;padding:11px 24px;overflow-x:auto} nav a{color:v
 
 <footer class="foot"><div class="wrap">
   <p><strong>The Basin Compact, a $100B proposal.</strong> Prepared by Steps Ventures, independent analysis, July 2026. A draft prospectus for discussion, not an offer or investment advice. All figures are illustrative and being finalized with Class 4/5 engineering estimates. Every number traces to the public evidence and modeling at the links above.</p>
-  <p><a href="./">Evidence &amp; model</a> &nbsp;&middot;&nbsp; <a href="coalition.html">Coalition</a> &nbsp;&middot;&nbsp; <a href="aws.html">For AWS</a> &nbsp;&middot;&nbsp; <a href="./#tradeoffs">Who loses</a> &nbsp;&middot;&nbsp; <a href="objections.html">Objections</a> &nbsp;&middot;&nbsp; <a href="governance.html">Law of the River</a></p>
+  <p><a href="./">Evidence &amp; model</a> &nbsp;&middot;&nbsp; <a href="coalition.html">Coalition</a> &nbsp;&middot;&nbsp; <a href="aws.html">For AWS</a> &nbsp;&middot;&nbsp; <a href="./#tradeoffs">Who loses</a></p>
 </div></footer>

@@ -1,4 +1,73 @@
-<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<nav class="sitenav" aria-label="Site"><div class="nbwrap"><a href="index.html" class="nb-home">Colorado River</a><a href="start.html" class="nb-start">Start here</a><a href="technical.html" class="on">The evidence</a><a href="proposal.html">The fix</a><a href="water-capital.html">Who pays</a><a href="reservoir-solar-explorer.html">Reservoir solar</a><a href="https://github.com/steps-re/colorado-river" target="_blank" rel="noopener">Data &amp; code</a></div></nav><div class="secstrip"><span class="secttl">The evidence</span><a href="technical.html" class=here>Methodology</a><a href="records.html">The priced record</a><a href="ee-measured.html">Measured from orbit</a><a href="measured-conservation.html">Measured conservation</a><a href="stakeholders.html">Who is affected</a></div><div class="secstrip"><span class="secttl">The evidence</span><a href="technical.html" class=here>Methodology</a><a href="records.html">The priced record</a><a href="ee-measured.html">Measured from orbit</a><a href="measured-conservation.html">Measured conservation</a><a href="stakeholders.html">Who is affected</a></div>
+<style>
+/* ---- shared chrome: navigation ---- */
+.sitenav{position:sticky;top:0;z-index:40;background:var(--deep,#123137);
+-webkit-backdrop-filter:saturate(140%) blur(6px);backdrop-filter:saturate(140%) blur(6px)}
+.nbwrap{max-width:1100px;margin:0 auto;padding:0 16px;display:flex;flex-wrap:wrap;
+align-items:center;gap:2px}
+.sitenav a{display:inline-block;padding:11px 12px;color:#CFE0E2;text-decoration:none;
+font-size:13.5px;line-height:1;border-bottom:2px solid transparent}
+.sitenav a:hover{color:#fff;border-bottom-color:#3E8E9C}
+.sitenav a.on{color:#fff;border-bottom-color:var(--rust,#A8432B);font-weight:600}
+.sitenav a.nb-home{font-weight:700;color:#fff;padding-left:0}
+.sitenav a.nb-start{color:#F0B49A}
+.sitenav a:focus-visible{outline:2px solid #8FD3DE;outline-offset:-2px}
+@media(max-width:640px){.sitenav a{padding:9px 8px;font-size:12.5px}}
+
+/* ---- shared chrome: section strip ---- */
+.secstrip{max-width:1100px;margin:0 auto;padding:9px 16px;display:flex;flex-wrap:wrap;
+align-items:baseline;gap:4px 14px;border-bottom:1px solid var(--line,#C6BBA4);
+background:var(--stone,#E7E1D4)}
+.secttl{font-size:11px;text-transform:uppercase;letter-spacing:.07em;color:var(--muted,#5B6A6A);
+font-weight:700;margin-right:4px}
+.secstrip a{font-size:13px;color:var(--water,#2C7A87);text-decoration:none}
+.secstrip a:hover{text-decoration:underline}
+.secstrip a.here{color:var(--deep,#123137);font-weight:700}
+
+/* ---- shared chrome: figures ---- */
+figure.fig{margin:1.5em 0;background:#fff;border:1px solid var(--line,#C6BBA4);
+border-radius:6px;padding:10px}
+figure.fig .zoom{display:block;position:relative;cursor:zoom-in}
+figure.fig img{width:100%;max-width:100%;height:auto;display:block;border-radius:3px}
+figure.fig .zoomhint{position:absolute;right:8px;bottom:8px;background:rgba(18,49,55,.82);
+color:#fff;font-size:10.5px;letter-spacing:.04em;padding:3px 8px;border-radius:3px;opacity:0;
+transition:opacity .15s;pointer-events:none}
+figure.fig .zoom:hover .zoomhint,figure.fig .zoom:focus-visible .zoomhint{opacity:1}
+figure.fig figcaption{font-size:12.5px;color:var(--muted,#5B6A6A);margin-top:8px;line-height:1.5}
+
+/* ---- shared chrome: lightbox ---- */
+#lbox{position:fixed;inset:0;z-index:100;background:rgba(10,22,25,.93);display:none;
+align-items:center;justify-content:center;padding:24px;cursor:zoom-out}
+#lbox.open{display:flex}
+#lbox img{max-width:100%;max-height:100%;object-fit:contain;border-radius:4px;
+box-shadow:0 12px 48px rgba(0,0,0,.5)}
+#lbox .lbclose{position:absolute;top:14px;right:18px;color:#fff;background:none;border:0;
+font-size:30px;line-height:1;cursor:pointer;padding:6px 12px}
+#lbox .lbclose:focus-visible{outline:2px solid #8FD3DE}
+@media (prefers-reduced-motion:reduce){figure.fig .zoomhint{transition:none}}
+</style>
+<script>
+/* Click any figure to open the full-resolution original. Escape or click closes. */
+document.addEventListener('DOMContentLoaded',function(){
+  var box=document.createElement('div'); box.id='lbox';
+  box.innerHTML='<button class="lbclose" aria-label="Close">&times;</button><img alt="">';
+  document.body.appendChild(box);
+  var img=box.querySelector('img');
+  function close(){box.classList.remove('open');img.src='';document.body.style.overflow='';}
+  box.addEventListener('click',close);
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});
+  document.querySelectorAll('a.zoom').forEach(function(a){
+    a.addEventListener('click',function(e){
+      e.preventDefault();
+      img.src=a.getAttribute('href');
+      img.alt=(a.querySelector('img')||{}).alt||'';
+      box.classList.add('open'); document.body.style.overflow='hidden';
+      box.querySelector('.lbclose').focus();
+    });
+  });
+});
+</script>
+<div class="secstrip"><span class="secttl">The evidence</span><a href="technical.html" class=here>Methodology</a><a href="records.html">The priced record</a><a href="ee-measured.html">Measured from orbit</a><a href="measured-conservation.html">Measured conservation</a><a href="stakeholders.html">Who is affected</a></div><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
 <title>Methodology &amp; Assumptions | Colorado River | Steps Ventures</title>
 <style>
 :root{--stone:#E7E1D4;--paper:#F4F0E7;--plate:#FCFAF5;--ink:#1E2B2E;--deep:#123137;--muted:#5B6A6A;
@@ -78,11 +147,7 @@ figure img,img[src^="data:image"]{cursor:zoom-in}
     <p class="dek">Every finding, model, and assumption behind the analysis, with a ledger of what is verified, what is estimated, and what is aspirational.</p>
   </div>
 </header>
-<nav><div class="wrap">
-  <a href="start.html" style="color:var(--rust);font-weight:700">Start here</a><a href="index.html">&larr; The evidence</a><a href="#law">Law of the River</a><a href="#method">Methodology</a><a href="#figures">Figures</a>
-  <a href="proposal.html">The Proposal</a><a href="stakeholders.html">Stakeholders</a>
-  <a href="https://github.com/steps-re/colorado-river" target="_blank" rel="noopener">Data &amp; code</a>
-</div></nav>
+
 
 <section id="law"><div class="wrap col"><h2>The Law of the River, and where it fails</h2>
 
@@ -115,15 +180,6 @@ figure img,img[src^="data:image"]{cursor:zoom-in}
 <p><strong>Data source.</strong> Public Colorado River accounting records, reservoir evaporation estimates, Glen Canyon seepage estimates, and published riparian evapotranspiration terms.</p>
 <p><strong>Method.</strong> We reconstruct a basin-level loss stack from the public numbers, then compare those losses with paper allocations and realized supply since 2000. The point is not to claim every loss is measured with the same precision. The point is to show that the structural gap is large enough that unpriced losses matter to operations and policy.</p>
 <p><strong>Headline number.</strong> Since 2000, supply is 12.4 MAF against a paper allocation of 16.5 MAF. Reconstructed reservoir evaporation is 1.204 MAF. The loss stack used here is 1.2 MAF of reservoir evaporation, 0.15 MAF of Glen Canyon seepage, and 0.2 MAF of system riparian ET, for total unpriced losses of 1.55 MAF. The structural gap versus paper allocation is 5.65 MAF. The stabilizing cut used in the accounting exercise is 3.0 MAF.</p>
- <p id="shortfall"><strong>Three ways to measure the shortfall.</strong> The three deficit numbers that appear across this site are three rungs of the same ladder, not competing claims. Which one a page cites depends on the question it is answering.</p>
- <div class="tablewrap" role="region" aria-label="Three ways to measure the Colorado River shortfall" tabindex="0"><table>
-   <thead><tr><th>Metric</th><th>Value</th><th>What it measures</th><th>Where we use it</th></tr></thead>
-   <tbody>
-   <tr><td>Lower Basin structural deficit</td><td class="num">~1.2&ndash;1.5 MAF/yr</td><td>What Lake Mead loses each year at status quo, Lower Basin consumptive use plus reservoir evaporation minus inflow. The classic figure.</td><td class="sm">The proposal and evidence pages. It sizes the dent the conservation core targets.</td></tr>
-   <tr><td>Basin stabilizing cut</td><td class="num">~3&ndash;3.5 MAF/yr</td><td>Reclamation&rsquo;s planning range for the basin-wide consumptive-use reduction needed to stop the reservoirs from falling, given post-2000 supply. Larger than the LB deficit because it spans both basins and carries a margin.</td><td class="sm">The funders page, as the total addressable demand for conservation.</td></tr>
-   <tr><td>Gap versus the paper Law of the River</td><td class="num">~5.65 MAF/yr</td><td>Paper allocation (16.5) plus unpriced losses (1.55) minus physical supply since 2000 (12.4). The widest framing.</td><td class="sm">Here, in the accounting exercise, to show the paper promise the physical river cannot keep.</td></tr>
-   </tbody>
- </table></div>
 <p><strong>Key uncertainty.</strong> The biggest uncertainty is attribution. Evaporation, seepage, and riparian ET are real. How much of each should be charged to which entity is a rule choice, not a physical measurement alone.</p>
 <h3>M2. Water value per acre-foot</h3>
 <p><strong>Data source.</strong> The valuation scenarios in the financial model and the option-level capital and benefit estimates in the repository.</p>
@@ -145,13 +201,9 @@ figure img,img[src^="data:image"]{cursor:zoom-in}
 <p>We model a consumptive-use conservation market that pays for verified water savings.</p>
 <p>Verification is done with satellite ET, shepherding, and a holdback. The holdback is about 25 percent to cover underperformance and measurement risk. The method is conservative on purpose. Savings must be visible in the remote sensing record or in linked field accounting before they count as bankable.</p>
 <p>The economics are tested against the water value range and the discount rates in the assumptions ledger. Under the central case, the conservation market is the only option in the set that clears robustly across the valuation range.</p>
-<h3>PV-plus-storage buildout: dam backfill plus new interconnection</h3>
-<p>We model a PV plus storage buildout that uses the interconnection the derating dams&rsquo; shrinking hydropower frees (~1 GW, not free capacity, an earlier version overstated this as ~3.5 GW of stranded transmission), plus a larger build co-located with load on new or repurposed interconnection. The deployment model starts from available interconnection and transmission capacity, then fills that headroom with projects sized to the remaining margin. A head-based backtest checks whether the implied deployment is consistent with observed or inferred headroom constraints. The purpose is not to forecast a utility plan. The purpose is to test whether the physical envelope can support the buildout.</p>
+<h3>PV-plus-storage buildout filling stranded transmission</h3>
+<p>We model a PV plus storage buildout that uses stranded transmission headroom. The deployment model starts from available interconnection and transmission capacity, then fills that headroom with projects sized to the remaining margin. A head-based backtest checks whether the implied deployment is consistent with observed or inferred headroom constraints. The purpose is not to forecast a utility plan. The purpose is to test whether the physical envelope can support the buildout.</p>
 <p>The package level finance result is shown in the blue bond section. At the package level, capex is 15.7 B. Revenue-backed capex is 12.2 B. Assessment-backed capex is 3.5 B. The model then tests debt service coverage across water values and discount rates.</p>
-<h3>Behind-the-meter solar at the canals</h3>
-<p>The interconnection queue is the binding constraint on the energy layer, so the cleanest version of it may skip the queue entirely. The basin&rsquo;s largest canals are also among its largest electricity users, and their pumping load sits right next to open right-of-way. The Central Arizona Project lifts water nearly 2,900 feet across fourteen pumping plants and draws roughly 2.5 to 2.8 million MWh a year, the single largest power user in Arizona. The Metropolitan Water District&rsquo;s Colorado River Aqueduct lifts water about 1,617 feet and uses on the order of 2.4 million MWh a year. Ground-mounted solar built alongside those canals to serve the pumps behind the meter needs no interconnection study, because the load and the generation share a point of use.</p>
-<p>Two adjacent ideas are real but narrower. Solar built <em>over</em> the canal shades the water and cuts evaporation, but the spanning structures carry a 20 to 50 percent capital premium over ground-mount, and the evaporation savings alone rarely pencil against that cost; where canal solar does pencil (McKuin et al. 2021 model 20 to 50 percent higher NPV), it is on power self-consumption and co-benefits, not evaporation. California&rsquo;s Project Nexus, the first US canal-top pilot on the Turlock Irrigation District at about 1.6 MW, is still validating actual evaporation results, and the widely quoted basin-scale savings are modeled projections rather than measurements. Floating solar on regulating ponds and reservoirs is better established for evaporation, cutting it 30 to 70 percent over the covered surface, at a 10 to 25 percent cost premium.</p>
-<p class="key">Net: behind-the-meter siting along the CAP and MWD pumping corridors is the strongest way to add clean supply without waiting in the interconnection queue. Over-canal and floating solar are premium, niche additions, not the core of the energy layer.</p>
 <h2>4. Assumptions ledger</h2>
 <div class="tablewrap"><table><thead><tr><th>Quantity</th><th>Value used</th><th>Basis</th><th>Verified / Estimated / Aspirational</th></tr></thead><tbody><tr><td>Water value per acre-foot, low</td><td>800</td><td>Scenario input in finance model</td><td>Estimated</td></tr><tr><td>Water value per acre-foot, central</td><td>1500</td><td>Scenario input in finance model</td><td>Estimated</td></tr><tr><td>Water value per acre-foot, high</td><td>2500</td><td>Scenario input in finance model</td><td>Estimated</td></tr><tr><td>Discount rate, low</td><td>0.03</td><td>Scenario input in finance model</td><td>Verified</td></tr><tr><td>Discount rate, central</td><td>0.05</td><td>Scenario input in finance model</td><td>Verified</td></tr><tr><td>Discount rate, high</td><td>0.07</td><td>Scenario input in finance model</td><td>Verified</td></tr><tr><td>Conservation market capex</td><td>0.3 B</td><td>Option model input</td><td>Verified</td></tr><tr><td>Conservation market cost per acre-foot</td><td>697</td><td>Breakeven water value per acre-foot</td><td>Estimated</td></tr><tr><td>Deficit magnitude, structural gap versus paper allocation</td><td>5.65 MAF</td><td>16.5 MAF paper allocation minus 12.4 MAF supply and related accounting terms</td><td>Estimated</td></tr><tr><td>Stabilizing cut used in accounting exercise</td><td>3.0 MAF</td><td>Scenario input in loss accounting rule set</td><td>Estimated</td></tr><tr><td>Transmission headroom</td><td>Not assigned a value here</td><td>Must come from the deployment model and head-based backtest in the repo</td><td>Aspirational</td></tr><tr><td>Basin consumptive use</td><td>13.0 MAF</td><td>Blue bond assumption set</td><td>Verified</td></tr><tr><td>Blue bond package capex</td><td>15.7 B</td><td>Finance model package total</td><td>Verified</td></tr><tr><td>Revenue-backed capex</td><td>12.2 B</td><td>Finance model split</td><td>Verified</td></tr><tr><td>Assessment-backed capex</td><td>3.5 B</td><td>Finance model split</td><td>Verified</td></tr><tr><td>Assessment surcharge per AF, r4</td><td>16</td><td>Finance model assumption</td><td>Verified</td></tr><tr><td>Assessment surcharge per AF, r5</td><td>18</td><td>Finance model assumption</td><td>Verified</td></tr><tr><td>Assessment surcharge per AF, r6</td><td>20</td><td>Finance model assumption</td><td>Verified</td></tr><tr><td>Social benefit per year, context only</td><td>1.88 B per yr</td><td>Context only, not collectible revenue</td><td>Verified</td></tr><tr><td>Glen Canyon bass threshold</td><td>15.0 C</td><td>Temperature analysis threshold</td><td>Verified</td></tr><tr><td>Lees Ferry days at or above 15 C trend</td><td>1.8 days per year</td><td>Time series trend</td><td>Verified</td></tr><tr><td>Summer mean temperature trend</td><td>1.6 C per decade</td><td>Time series trend</td><td>Verified</td></tr><tr><td>GRACE and GLDAS basin area</td><td>629100 km2</td><td>Basin geometry used in model</td><td>Verified</td></tr><tr><td>GRACE and GLDAS grid cells</td><td>268</td><td>Model grid</td><td>Verified</td></tr><tr><td>TWS trend</td><td>-0.301 cm per year</td><td>Satellite storage estimate</td><td>Verified</td></tr><tr><td>TWS loss 2002 to 2026</td><td>37.6 MAF</td><td>Satellite storage estimate</td><td>Verified</td></tr><tr><td>Groundwater share</td><td>0.65</td><td>Literature based share</td><td>Estimated</td></tr><tr><td>Implied groundwater loss</td><td>24.4 MAF</td><td>Derived from TWS loss and groundwater share</td><td>Estimated</td></tr><tr><td>Reservoir evaporation</td><td>1.2 MAF</td><td>Reconstructed loss term</td><td>Estimated</td></tr><tr><td>Glen Canyon seepage</td><td>0.15 MAF</td><td>Reconstructed loss term</td><td>Estimated</td></tr><tr><td>System riparian ET</td><td>0.2 MAF</td><td>Reconstructed loss term</td><td>Estimated</td></tr></tbody></table></div>
 <h2>5. What we got wrong and corrected</h2>
@@ -172,8 +224,8 @@ figure img,img[src^="data:image"]{cursor:zoom-in}
 
 <section id="figures"><div class="wrap">
   <div class="col"><span class="eyebrow">Figures</span><h2>Every chart, reproducible</h2>
-  <p>Each figure is generated by a script in <a href="https://github.com/steps-re/colorado-river/tree/main/analysis" target="_blank" rel="noopener">analysis/</a> from the data in the repo. Click to enlarge. The satellite-derived figures (GRACE storage, OpenET consumptive use, Sentinel-2 reservoir extent, MODIS snowpack) were computed on <a href="https://earthengine.google.com/" target="_blank" rel="noopener">Google Earth Engine</a> (<a href="https://doi.org/10.1016/j.rse.2017.06.031" target="_blank" rel="noopener">Gorelick et al. 2017</a>); full per-dataset citations are on <a href="ee-measured.html">the measured layer</a>.</p></div>
-  <div class="grid2" style="margin-top:22px"><figure><img src="figures/m1_waterfall.png" alt="M1. Where the water goes, and the ~1 MAF of loss the accounting does not assign." loading="lazy"><figcaption>M1. Where the water goes, and the ~1 MAF of loss the accounting does not assign.</figcaption></figure><figure><img src="figures/m2_value_per_af.png" alt="M2. Marginal value per acre-foot by use. Low-value forage dominates the consumptive base." loading="lazy"><figcaption>M2. Marginal value per acre-foot by use. Low-value forage dominates the consumptive base.</figcaption></figure><figure><img src="figures/m3_grace_tws.png" alt="M3. GRACE terrestrial water storage decline across the basin." loading="lazy"><figcaption>M3. GRACE terrestrial water storage decline across the basin.</figcaption></figure><figure><img src="figures/m4_thermal.png" alt="M4. Glen Canyon release temperature versus reservoir head." loading="lazy"><figcaption>M4. Glen Canyon release temperature versus reservoir head.</figcaption></figure><figure><img src="figures/lcras_use_vs_hydrology.png" alt="Lower Basin consumptive use against realized hydrology, 1971-2024." loading="lazy"><figcaption>Lower Basin consumptive use against realized hydrology, 1971-2024.</figcaption></figure><figure><img src="figures/fin_bcr_irr.png" alt="Benefit-cost and return by portfolio component. Conservation clears, capital public goods do not sell as equity." loading="lazy"><figcaption>Benefit-cost and return by portfolio component. Conservation clears, capital public goods do not sell as equity.</figcaption></figure><figure><img src="figures/pv_deploy.png" alt="Solar-plus-storage deployment sized to the interconnection the derating dams free plus new capacity." loading="lazy"><figcaption>Solar-plus-storage deployment sized to the dams’ freed interconnection (~1–2 GW) plus new capacity at the basin dams.</figcaption></figure><figure><img src="figures/portfolio_4maf.png" alt="A stacked ~4 MAF portfolio. No single sector delivers the scale." loading="lazy"><figcaption>A stacked ~4 MAF portfolio. No single sector delivers the scale.</figcaption></figure></div>
+  <p>Each figure is generated by a script in <a href="https://github.com/steps-re/colorado-river/tree/main/analysis" target="_blank" rel="noopener">analysis/</a> from the data in the repo. Click to enlarge.</p></div>
+  <div class="grid2" style="margin-top:22px"><figure><img src="figures/m1_waterfall.png" alt="M1. Where the water goes, and the ~1 MAF of loss the accounting does not assign." loading="lazy"><figcaption>M1. Where the water goes, and the ~1 MAF of loss the accounting does not assign.</figcaption></figure><figure><img src="figures/m2_value_per_af.png" alt="M2. Marginal value per acre-foot by use. Low-value forage dominates the consumptive base." loading="lazy"><figcaption>M2. Marginal value per acre-foot by use. Low-value forage dominates the consumptive base.</figcaption></figure><figure><img src="figures/m3_grace_tws.png" alt="M3. GRACE terrestrial water storage decline across the basin." loading="lazy"><figcaption>M3. GRACE terrestrial water storage decline across the basin.</figcaption></figure><figure><img src="figures/m4_thermal.png" alt="M4. Glen Canyon release temperature versus reservoir head." loading="lazy"><figcaption>M4. Glen Canyon release temperature versus reservoir head.</figcaption></figure><figure><img src="figures/lcras_use_vs_hydrology.png" alt="Lower Basin consumptive use against realized hydrology, 1971-2024." loading="lazy"><figcaption>Lower Basin consumptive use against realized hydrology, 1971-2024.</figcaption></figure><figure><img src="figures/fin_bcr_irr.png" alt="Benefit-cost and return by portfolio component. Conservation clears, capital public goods do not sell as equity." loading="lazy"><figcaption>Benefit-cost and return by portfolio component. Conservation clears, capital public goods do not sell as equity.</figcaption></figure><figure><img src="figures/pv_deploy.png" alt="Solar-plus-storage deployment filling stranded transmission at the basin dams." loading="lazy"><figcaption>Solar-plus-storage deployment filling stranded transmission at the basin dams.</figcaption></figure><figure><img src="figures/portfolio_4maf.png" alt="A stacked ~4 MAF portfolio. No single sector delivers the scale." loading="lazy"><figcaption>A stacked ~4 MAF portfolio. No single sector delivers the scale.</figcaption></figure></div>
 </div></section>
 
 <footer class="foot"><div class="wrap col">
