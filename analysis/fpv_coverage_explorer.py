@@ -36,7 +36,10 @@ OUT.mkdir(exist_ok=True); CACHE.mkdir(exist_ok=True)
 SOLAR_YEAR = 2015           # PVGIS-NSRDB radiation year used across the repo
 PRICE_YEAR = 2024           # SP15 hourly LMP year already pulled into outputs/
 MW_PER_KM2 = 120.0          # FPV areal density (repo-wide constant)
-SUPPRESS = 0.90             # evaporation suppressed over the COVERED area
+SUPPRESS = 0.75             # evaporation suppressed over the COVERED area. Cut from 0.90 after
+                            # both external reviewers flagged it: edge exchange, altered albedo and
+                            # reduced wind mixing pull the basin-wide net below the directly-shaded
+                            # figure. Range 0.60-0.90. Must stay in step with the page's JS.
 AF_PER_KM2_PER_FT = 1e6 * 0.3048 / 1233.48   # 1 km2 x 1 ft -> AF
 ACRE_KM2 = 0.00404686
 
@@ -343,7 +346,7 @@ def main():
             "solar(t): PVGIS-NSRDB per-MW at each reservoir's lat/lon with a floating cooling uplift.",
             "headroom(t) = nameplate - dam generation(t) + on-site load(t).",
             "export(t) = min(solar(t), headroom(t)); a rational merchant curtails negative-price hours.",
-            "Evaporation saved = coverage x 0.90 suppression x open-water rate x surface area.",
+            "Evaporation saved = coverage x 0.75 suppression x open-water rate x surface area (range 0.60-0.90).",
         ],
         caveats=[
             "Curtailment here is the SHARED-LINE ceiling only. It assumes the dam's full nameplate "

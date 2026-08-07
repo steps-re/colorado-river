@@ -1,0 +1,205 @@
+<!doctype html><html lang=en><head><meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<title>Reservoir solar: methods, sources and review</title>
+<style>
+:root{--paper:#F4F0E7;--stone:#E7E1D4;--ink:#1E2B2E;--deep:#123137;--muted:#5B6A6A;
+--water:#2C7A87;--rust:#A8432B;--amber:#9C7A2E;--line:#C6BBA4}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);
+font:16px/1.58 "Helvetica Neue",Helvetica,Arial,sans-serif}
+.wrap{max-width:960px;margin:0 auto;padding:30px 20px 70px}
+.tag{display:inline-block;background:var(--deep);color:var(--paper);font-size:11px;padding:2px 8px;border-radius:10px;letter-spacing:.05em}
+h1{font-size:30px;line-height:1.14;color:var(--deep);margin:.3em 0 .1em}
+h2{font-size:20px;color:var(--deep);margin:1.9em 0 .3em;border-bottom:2px solid var(--line);padding-bottom:5px}
+h3{font-size:15px;color:var(--deep);margin:1.2em 0 .3em}
+.lede{font-size:17px;color:var(--muted);margin:.3em 0 0}
+.crumb{font-size:13px;margin-bottom:8px}
+a{color:var(--water)}small{color:var(--muted)}
+table{border-collapse:collapse;width:100%;font-size:14px;margin:.6em 0}
+th{text-align:left;background:var(--stone);color:var(--deep);padding:7px 9px;border:1px solid var(--line);font-size:12.5px}
+td{padding:7px 9px;border:1px solid var(--line);vertical-align:top}
+ul{margin:.4em 0 .5em 1.1em}li{margin:.3em 0}
+.card{background:#fff;border:1px solid var(--line);border-radius:8px;padding:16px 18px;margin:1em 0}
+.kbox{background:var(--deep);color:var(--paper);border-radius:8px;padding:16px 18px;margin:1.1em 0}
+.kbox b{color:#fff}.kbox a{color:#8FD3DE}
+
+/* ---- explorer ---- */
+.explorer{background:#fff;border:1px solid var(--line);border-radius:10px;padding:18px;margin:1.2em 0}
+.pick{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px}
+.pick button{font:inherit;font-size:13px;padding:6px 11px;border:1px solid var(--line);background:var(--paper);
+color:var(--deep);border-radius:16px;cursor:pointer}
+.pick button:hover{border-color:var(--water)}
+.pick button[aria-pressed=true]{background:var(--deep);color:var(--paper);border-color:var(--deep)}
+.exgrid{display:grid;grid-template-columns:minmax(0,300px) minmax(0,1fr);gap:20px;align-items:start}
+@media(max-width:720px){.exgrid{grid-template-columns:1fr}}
+.lakebox{text-align:center}
+.lakebox svg{width:100%;height:auto;max-height:300px}
+.lakecap{font-size:12px;color:var(--muted);margin-top:6px}
+.sliderrow{margin:2px 0 14px}
+.sliderrow label{display:block;font-size:13px;color:var(--muted);margin-bottom:5px}
+input[type=range]{width:100%;accent-color:var(--water)}
+.cov{font-size:34px;font-weight:700;color:var(--deep);line-height:1}
+.cov span{font-size:15px;font-weight:400;color:var(--muted)}
+.presets{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 0}
+.presets button{font:inherit;font-size:12px;padding:4px 9px;border:1px solid var(--line);background:var(--stone);
+color:var(--deep);border-radius:5px;cursor:pointer}
+.presets button:hover{border-color:var(--water)}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(122px,1fr));gap:8px;margin:14px 0 0}
+.stat{background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:8px 10px}
+.stat .k{font-size:10.5px;color:var(--muted);text-transform:uppercase;letter-spacing:.04em}
+.stat .v{font-size:19px;font-weight:700;color:var(--deep);line-height:1.25}
+.stat .u{font-size:11px;color:var(--muted)}
+.stat.warn .v{color:var(--rust)}
+.stat.good .v{color:var(--water)}
+.chart{margin-top:16px}
+.chart svg{width:100%;height:auto;display:block}
+.note{font-size:13px;color:var(--ink);background:var(--paper);border-left:3px solid var(--amber);
+padding:9px 12px;margin:12px 0 0;border-radius:0 5px 5px 0}
+.prov{font-size:11.5px;color:var(--muted);margin-top:10px}
+.prov b{color:var(--deep)}
+.est{color:var(--rust);font-weight:700}
+.codelinks a{display:inline-block;background:var(--stone);border:1px solid var(--line);border-radius:5px;
+padding:4px 9px;margin:3px 4px 3px 0;font-size:13px;font-family:ui-monospace,Menlo,monospace}
+.legend{display:flex;flex-wrap:wrap;gap:14px;font-size:12px;color:var(--muted);margin-top:6px}
+.legend i{display:inline-block;width:18px;height:3px;vertical-align:middle;margin-right:5px}
+.assump{margin-top:18px;padding-top:14px;border-top:1px dashed var(--line);
+display:grid;grid-template-columns:1fr 1fr;gap:22px}
+@media(max-width:720px){.assump{grid-template-columns:1fr}}
+.assumprow label{display:block;font-size:13px;color:var(--muted);margin-bottom:5px}
+.assumprow label b{color:var(--deep);font-size:15px}
+.hint{font-size:11.5px;color:var(--muted);margin:8px 0 0;line-height:1.5}
+details.adv{margin-top:16px;border-top:1px dashed var(--line);padding-top:10px}
+details.adv summary{cursor:pointer;font-size:13px;color:var(--water);font-weight:600;list-style:revert}
+details.adv .assump{margin-top:12px;border-top:none;padding-top:0}
+</style></head><body><div class=wrap>
+
+<div class=crumb><a href="./">&larr; Colorado River</a> &middot;
+<a href="reservoir-solar-explorer.html">Coverage explorer</a></div>
+<span class=tag>METHODS &amp; REVIEW</span>
+<h1>Reservoir solar: methods, sources and review</h1>
+<p class=lede>How the coverage explorer was built, every number it uses, and what two independent
+reviewers said is wrong with it.</p>
+
+<div class=kbox>
+<b>Both reviewers rated this model unsound.</b> It was drafted with AI assistance and then attacked by two
+models from different vendors (Google Gemini, grounded; and Azure OpenAI), neither from the family that
+wrote it. Their findings are below in full, including the ones still unfixed. Treat the explorer as a
+screening estimate with known defects.
+</div>
+
+<h2>How the model works</h2>
+<ul><li>Hourly full-year sim per reservoir on the dam's own interconnection.</li><li>solar(t): PVGIS-NSRDB per-MW at each reservoir's lat/lon with a floating cooling uplift.</li><li>headroom(t) = nameplate - dam generation(t) + on-site load(t).</li><li>export(t) = min(solar(t), headroom(t)); a rational merchant curtails negative-price hours.</li><li>Evaporation saved = coverage x 0.75 suppression x open-water rate x surface area (range 0.60-0.90).</li></ul>
+
+<h2>What it does not do</h2>
+<ul><li>Curtailment here is the SHARED-LINE ceiling only. It assumes the dam's full nameplate is available to solar whenever the dam is not using it, which is generous: those lines carry firm hydropower contracts through 2057 and the region is a net importer at low water.</li><li>Upper Basin evaporation rates (Flaming Gorge, Navajo, Blue Mesa) are screening estimates, not measurements. Reclamation and the UCRC are instrumenting them now.</li><li>Only Glen Canyon has a measured sub-daily generation shape. The rest use a documented load-following profile scaled to published annual energy.</li><li>Nothing here prices firm capacity, ancillary services, or avoided replacement power, which is where the real value of a dam-coupled array sits.</li><li>No legal path currently exists to lease federal reservoir surface for private solar. That gate is institutional and is not modelled.</li></ul>
+
+<h2>Every parameter, and where it came from</h2>
+<div style="overflow-x:auto">
+<table>
+<tr><th>Reservoir</th><th>Interconnection</th><th>Surface area</th><th>Evaporation</th>
+<th>Dam generation shape</th><th>Surface management</th></tr>
+<tr><td><b>Lake Mead</b><br><small>Hoover Dam</small></td><td>2,080 MW<br><small>4,000 GWh/yr, CF 0.22</small></td><td>69,593 ac<br><small>MEASURED: Sentinel-2 MNDWI summer water extent, 2024-2026 mean, clipped to the reservoir's own footprint (analysis/ee_reservoir_areas.py). Used in preference to published areas so all seven reservoirs use one method and one recent period.</small><br><small>published: 83,634 ac (-17%) &mdash; Reclamation HDB 2017-2021 average surface area (LCR Evaporation Report 2023, Table 7)</small></td><td>6.22 ft/yr<br><small>USGS DIRECT FLUX (eddy covariance + energy balance, Moreo & Swancar; Earp & Moreo 2021): 1,896 mm/yr = 6.22 ft/yr. This is a measured DEPTH, independent of surface area, so it is valid to apply to a separately-measured area. Reclamation HDB 2017-2021 implies 6.21 ft/yr over their larger area, which agrees.</small></td><td><small>synthetic load-following (no public sub-daily tailrace gage below Hoover)</small></td><td><small>NPS Lake Mead National Recreation Area</small></td></tr><tr><td><b>Lake Powell</b><br><small>Glen Canyon Dam</small></td><td>1,320 MW<br><small>2,777 GWh/yr, CF 0.24</small></td><td>56,497 ac<br><small>MEASURED: Sentinel-2 MNDWI summer water extent, 2024-2026 mean, clipped to the reservoir's own footprint (analysis/ee_reservoir_areas.py). Used in preference to published areas so all seven reservoirs use one method and one recent period.</small></td><td>5.83 ft/yr<br><small>~70 in/yr, Reclamation/DRI measured programme (coloradoriverscience.org); our gridMET open-water screen gives 5.4-6.4 ft/yr</small></td><td><small>MEASURED: USGS 09380000 15-min release below Glen Canyon, 2015, aggregated hourly</small></td><td><small>NPS Glen Canyon National Recreation Area</small></td></tr><tr><td><b>Lake Mohave</b><br><small>Davis Dam</small></td><td>240 MW<br><small>1,148 GWh/yr, CF 0.55</small></td><td>25,665 ac<br><small>MEASURED: Sentinel-2 MNDWI summer water extent, 2024-2026 mean, clipped to the reservoir's own footprint (analysis/ee_reservoir_areas.py). Used in preference to published areas so all seven reservoirs use one method and one recent period.</small><br><small>published: 27,022 ac (-5%) &mdash; Reclamation LCRAS 2017-2021 average (LCR Evaporation Report 2023, Table 9)</small></td><td>5.64 ft/yr<br><small>USGS DIRECT FLUX (eddy covariance, same programme as Lake Mead): 1,718 mm/yr = 5.64 ft/yr. A measured depth, area-independent. Supersedes the LCRAS area-quotient (140,735 AF / 27,022 ac = 5.21 ft/yr) which is NOT area-independent and should not be applied to a different area.</small></td><td><small>synthetic load-following (no public sub-daily tailrace gage below Davis)</small></td><td><small>NPS Lake Mead National Recreation Area</small></td></tr><tr><td><b>Lake Havasu</b><br><small>Parker Dam</small></td><td>120 MW<br><small>457 GWh/yr, CF 0.43</small></td><td>15,330 ac<br><small>MEASURED: Sentinel-2 MNDWI summer water extent, 2024-2026 mean, clipped to the reservoir's own footprint (analysis/ee_reservoir_areas.py). Used in preference to published areas so all seven reservoirs use one method and one recent period.</small><br><small>published: 18,864 ac (-19%) &mdash; Reclamation LCRAS 2017-2021 average (LCR Evaporation Report 2023, Table 10)</small></td><td>5.21 ft/yr<br><small>WEAKEST RATE IN THE SET. No direct flux measurement exists for Havasu. This is an AREA QUOTIENT (LCRAS 98,246 AF / 18,864 ac), so it is only valid over the area it was derived from -- applying it to our smaller measured open water mixes denominators, and the true open-water depth is probably higher. Reclamation's alternative HDB figure (7.40 ft/yr) still uses 1950s pan coefficients and runs ~35% high by their own Table 10. Bracket Havasu as 5.2-7.4 ft/yr, not a point value.</small></td><td><small>synthetic load-following (no public sub-daily tailrace gage below Parker)</small></td><td><small>BLM / Arizona State Parks (NOT a National Park Service unit)</small></td></tr><tr><td><b>Flaming Gorge</b><br><small>Flaming Gorge Dam</small></td><td>152 MW<br><small>457 GWh/yr, CF 0.34</small></td><td>33,510 ac<br><small>MEASURED: Sentinel-2 MNDWI summer water extent, 2024-2026 mean, clipped to the reservoir's own footprint (analysis/ee_reservoir_areas.py). Used in preference to published areas so all seven reservoirs use one method and one recent period.</small><br><small>published: 42,020 ac (-20%) &mdash; Reclamation: surface area at normal water-surface elevation</small></td><td>3.3 ft/yr <span class=est>(screening estimate, not measured)</span><br><small>SCREENING ESTIMATE (elevation ~6,040 ft, cool high-desert climate). Not measured: Upper Basin reservoir evaporation is only now being instrumented under the UCRC/Reclamation Reservoir Evaporation Project.</small></td><td><small>synthetic load-following (no public sub-daily tailrace gage)</small></td><td><small>USFS Flaming Gorge National Recreation Area</small></td></tr><tr><td><b>Navajo Reservoir</b><br><small>Navajo Dam</small></td><td>30 MW<br><small>90 GWh/yr, CF 0.34</small></td><td>9,830 ac<br><small>MEASURED: Sentinel-2 MNDWI summer water extent, 2024-2026 mean, clipped to the reservoir's own footprint (analysis/ee_reservoir_areas.py). Used in preference to published areas so all seven reservoirs use one method and one recent period.</small><br><small>published: 15,610 ac (-37%) &mdash; Reclamation: surface area when filled</small></td><td>3.6 ft/yr <span class=est>(screening estimate, not measured)</span><br><small>SCREENING ESTIMATE (elevation ~6,085 ft). Not measured; part of the UCRC/Reclamation Upper Basin evaporation study.</small></td><td><small>synthetic load-following (no public sub-daily tailrace gage)</small></td><td><small>New Mexico / Colorado state parks</small></td></tr><tr><td><b>Blue Mesa</b><br><small>Blue Mesa Dam</small></td><td>86 MW<br><small>239 GWh/yr, CF 0.32</small></td><td>5,895 ac<br><small>MEASURED: Sentinel-2 MNDWI summer water extent, 2024-2026 mean, clipped to the reservoir's own footprint (analysis/ee_reservoir_areas.py). Used in preference to published areas so all seven reservoirs use one method and one recent period.</small><br><small>published: 9,180 ac (-36%) &mdash; Reclamation: surface area at maximum water-surface elevation</small></td><td>2.8 ft/yr <span class=est>(screening estimate, not measured)</span><br><small>SCREENING ESTIMATE (elevation ~7,520 ft, coldest reservoir in the set). Not measured; part of the UCRC/Reclamation Upper Basin evaporation study.</small></td><td><small>synthetic load-following (no public sub-daily tailrace gage)</small></td><td><small>NPS Curecanti National Recreation Area</small></td></tr>
+</table>
+</div>
+
+<h3>Surface areas</h3>
+<p>Measured, not quoted: a summer Sentinel-2 composite, water picked out by MNDWI at 30 m, averaged over
+2024&ndash;2026, clipped to each reservoir's own footprint rather than a bounding box (Lake Mead's box
+otherwise swallows the head of Lake Mohave below Hoover Dam). Published figures mix conventions &mdash;
+Reclamation five-year operating averages in the Lower Basin, full pool in the Upper Basin &mdash; and full
+pool badly overstates reservoirs drawn down for years. Both are shown above.</p>
+
+<h3>Evaporation rates</h3>
+<p>Lake Mead (6.22 ft/yr) and Lake Mohave (5.64 ft/yr) are USGS direct eddy-covariance flux measurements:
+measured depths, independent of surface area, so applying them to a separately measured area is valid.
+Lake Powell's ~70 in/yr is likewise a measured flux. Lake Havasu is the weakest rate in the set &mdash; no
+direct measurement exists, and the figure is an area quotient, so it should be read as a bracket of
+5.2&ndash;7.4 ft/yr. Reclamation's alternative HDB figure for Havasu still uses 1950s pan coefficients and
+runs about 35% high by their own comparison. Upper Basin rates are screening estimates; those three
+reservoirs are only now being instrumented by Reclamation and the Upper Colorado River Commission.</p>
+
+<h3>Shorelines</h3>
+<p>Real water polygons from OpenStreetMap, simplified. Drawn at full pool, so they show each reservoir's
+shape rather than today's water level &mdash; Lake Powell in particular is far smaller now than its outline
+suggests, having fallen 52% since 2019. The shaded panel band is not drawn by eye: each polygon is
+scanlined so the band's intersection with the water is exactly the stated share of the reservoir's area,
+verified to within a quarter of a percentage point against an independent raster.</p>
+
+<h3>Cover comparison</h3>
+<p>Every capital cost is anchored to a real deployment or a published quote, never an estimate. Shade balls
+are Los Angeles's actual 2015 project ($34.5M over 175 acres, 96 million balls, ten-year life). The
+floating-cover figure is the same utility's own quote for the same reservoir ($250M over 175 acres). A
+research pass had estimated floating covers at $140,000 per acre, ten times too low, which would have
+inverted the ranking. Options are annualised at 7% over their own service lives; dividing undiscounted
+lifetime totals, as that pass did, understates capital-heavy long-lived options roughly threefold.</p>
+
+<h2>What two independent reviewers said is wrong with this</h2>
+<p>Findings both reviewers reached independently, in substance as written:</p>
+<ol>
+<li><b>Suppressed evaporation cannot be monetised (fatal).</b> There is no mechanism under the 1922 Compact
+or the Arizona v. California decree for a private party to own or sell water salvaged from evaporation on a
+mainstream federal reservoir. It becomes system water. Every dollar-per-acre-foot figure is therefore a
+public cost-effectiveness number, not project revenue.</li>
+<li><b>Headroom is not an interconnection study (fatal, unfixed).</b> Nameplate minus dam output ignores the
+generator step-up transformer, switchyard and breaker ratings, N-1 criteria, protection, reactive
+capability and reserved capacity. The line-share control is a crude stand-in, not a substitute. Only a
+reservoir-specific interconnection study would settle it.</li>
+<li><b>One California price node cannot price seven reservoirs (unfixed).</b> SP15 carries California's duck
+curve. Flaming Gorge sits in PacifiCorp East, Navajo in PNM, Blue Mesa in WAPA Rocky Mountain. Using SP15
+overstates midday price collapse for the Upper Basin and understates its capture. Per-node data is being
+collected.</li>
+<li><b>Evaporation rates and measured areas used mismatched denominators.</b> Corrected where possible: the
+rates that are direct flux measurements are area-independent and valid; Lake Mohave's was an area quotient
+wrongly applied and has been replaced; Havasu's is flagged as a bracket.</li>
+<li><b>The Havasu claim was overstated.</b> Treating the full ~300 MW of pumping load as available in every
+daylight hour is not demonstrated: it is seasonal and delivery-driven, and not necessarily behind the same
+metering point. The model now counts half by default, which takes the site from 539 MW to 316 MW. One
+reviewer argued the pumping deliberately runs off-peak at night; that appears out of date, since Arizona in
+2026 treats midday as the cheap window and is actively shifting load into it.</li>
+<li><b>Capex is probably light for Mead and Powell.</b> No commercial floating solar has been moored in
+300+ feet of water with 100-foot annual level swings, and the Lower Basin's quagga mussel infestation would
+foul floats, lines and anchors. One reviewer put honest capex at $2.00&ndash;2.50/W against the $1.23/W
+baseline. Both are now selectable.</li>
+<li><b>90% evaporation suppression was too high.</b> Edge exchange, altered albedo and reduced wind mixing
+pull the basin-wide net below the directly-shaded figure. Now 75%, range 60&ndash;90%.</li>
+<li><b>The battery dispatch flatters storage.</b> It has perfect price foresight within each day and models
+no degradation, cycle limit, minimum state of charge or reserve holdback.</li>
+</ol>
+
+<p><b>The strongest counterargument they raised</b>, which we think is fair: if the federal government funds
+these arrays as drought infrastructure rather than as a merchant energy play, then price nodes, transmission
+access and cost of capital all stop being the binding questions, and the institutional gates can be
+legislated away. That is a policy scenario this model does not represent.</p>
+
+<h2>Code</h2>
+<p>Everything above is reproducible from public data. No private or licensed inputs.</p>
+<div class=codelinks>
+<a href="https://github.com/steps-re/colorado-river/blob/main/analysis/fpv_coverage_explorer.py">fpv_coverage_explorer.py</a>
+<a href="https://github.com/steps-re/colorado-river/blob/main/analysis/fpv_reservoir_outlines.py">fpv_reservoir_outlines.py</a>
+<a href="https://github.com/steps-re/colorado-river/blob/main/analysis/ee_reservoir_areas.py">ee_reservoir_areas.py</a>
+<a href="https://github.com/steps-re/colorado-river/blob/main/analysis/evap_cover_comparison.py">evap_cover_comparison.py</a>
+<a href="https://github.com/steps-re/colorado-river/blob/main/analysis/fig_water_cost_ladder.py">fig_water_cost_ladder.py</a>
+<a href="https://github.com/steps-re/colorado-river/blob/main/analysis/fetch_nodal_prices.py">fetch_nodal_prices.py</a>
+<a href="https://github.com/steps-re/colorado-river/blob/main/analysis/hourly_fpv_hydro.py">hourly_fpv_hydro.py</a>
+<a href="https://github.com/steps-re/colorado-river/blob/main/analysis/fpv_revenue_hourly.py">fpv_revenue_hourly.py</a>
+<a href="https://github.com/steps-re/colorado-river/blob/main/analysis/fpv_roi.py">fpv_roi.py</a>
+</div>
+
+<h2>Sources</h2>
+<ul>
+<li>Reclamation, <i>Lower Colorado River Mainstream Evaporation and Riparian Evapotranspiration Losses</i>
+(2023) &mdash; LCRAS and HDB datasets, reservoir areas and evaporation volumes.</li>
+<li>USGS Nevada Water Science Center &mdash; eddy-covariance evaporation study, Lake Mead and Lake Mohave.</li>
+<li>Reclamation and WAPA &mdash; powerplant capacities and average annual energy.</li>
+<li>Copernicus Sentinel-2 via Google Earth Engine &mdash; water-surface extent.</li>
+<li>OpenStreetMap &mdash; reservoir shorelines.</li>
+<li>PVGIS (PVGIS-NSRDB) &mdash; hourly solar resource.</li>
+<li>USGS NWIS &mdash; sub-daily release below Glen Canyon Dam.</li>
+<li>CAISO OASIS &mdash; hourly day-ahead prices.</li>
+<li>Los Angeles Department of Water and Power &mdash; shade-ball deployment cost and floating-cover quote.</li>
+</ul>
+
+<div class=kbox>
+Steps Ventures &middot; independent analysis, not affiliated with any agency, district, utility or investor
+&middot; <a href="mailto:mike@stepsventures.com">mike@stepsventures.com</a>
+</div>
+</div></body></html>
