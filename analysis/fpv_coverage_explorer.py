@@ -18,7 +18,7 @@ METHOD (per reservoir, hourly, full year)
              energy. Provenance is carried per reservoir into the output and shown on the page.
   headroom(t)= tie_MW - hydro(t) + onsite_load(t)   [only Havasu has a real on-site load]
   export(t)  = min(solar(t), headroom(t));  curtail(t) = solar(t) - export(t)
-  price(t)   CAISO SP15 day-ahead LMP (Desert-SW proxy). A rational merchant curtails at
+  price(t)   CAISO day-ahead LMP at the Palo Verde hub. A rational merchant curtails at
              negative prices, so revenue counts only positive-price hours.
   evap       coverage x suppression x open-water evaporation rate x surface area.
 
@@ -283,7 +283,7 @@ def run(p, solar, keys, price) -> dict:
         deliverable = np.minimum(fpv, headroom)
         tx_curtailed = gross - deliverable.sum()
         # (2) ECONOMIC curtailment: deliverable energy a rational merchant declines to sell
-        #     because SP15 is negative in that hour. Separate phenomenon, separate number --
+        #     because the hub price is negative in that hour. Separate phenomenon, separate number --
         #     lumping the two would let a market artefact masquerade as a transmission limit.
         export = np.where(price > 0, deliverable, 0.0)
         exported = export.sum()
@@ -357,7 +357,7 @@ def run(p, solar, keys, price) -> dict:
 def main():
     out: dict = {}
     out["meta"] = dict(
-        solar_year=SOLAR_YEAR, price_year=PRICE_YEAR, price_node="TH_SP15_GEN-APND",
+        solar_year=SOLAR_YEAR, price_year=PRICE_YEAR, price_node=PRICE_NODE,
         mw_per_km2=MW_PER_KM2, evap_suppression=SUPPRESS,
         capex_per_w=CAPEX_PER_W, om_per_mw_yr=OM_PER_MW_YR, wacc=WACC, life_yr=LIFE,
         method=[
@@ -365,6 +365,11 @@ def main():
             "solar(t): PVGIS-NSRDB per-MW at each reservoir's lat/lon with a floating cooling uplift.",
             "headroom(t) = nameplate - dam generation(t) + on-site load(t).",
             "export(t) = min(solar(t), headroom(t)); a rational merchant curtails negative-price hours.",
+            "Prices are day-ahead LMP at Palo Verde, the Desert Southwest hub. The three Upper Basin "
+            "reservoirs use it as an acknowledged proxy: their balancing authorities (PacifiCorp East, "
+            "PNM, WAPA Rocky Mountain) do not publish hourly nodal prices.",
+            "Wheeling and basis costs of moving power from each dam to a trading hub are NOT modelled, "
+            "so the revenue side is optimistic.",
             "Evaporation saved = coverage x 0.75 suppression x open-water rate x surface area (range 0.60-0.90).",
         ],
         caveats=[
