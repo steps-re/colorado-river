@@ -40,8 +40,23 @@ PRICE_YEAR = 2024
 # default. CAISO OASIS exposes it as a real intertie, but the Upper Basin balancing authorities
 # (PacifiCorp East, PNM, WAPA Rocky Mountain) are not public there, so Flaming Gorge, Navajo and
 # Blue Mesa still use Palo Verde as an ACKNOWLEDGED proxy rather than their own market.
-PRICE_NODE = "PALOVERDE"
-UPPER_BASIN_PROXY = {"Flaming Gorge", "Navajo Reservoir", "Blue Mesa"}
+# Per-reservoir price node, assigned to the balancing authority the dam actually sits in.
+# Found via CAISO's APNode atlas (queryname=ATL_APNODE); the EDAM load aggregation points
+# "ELAP_*" carry real prices for external balancing authorities, unlike the EIM intertie names.
+# AZPS, NEVP and PNM measure within $0.30/MWh of each other over 2024, so the choice among
+# them is immaterial; Palo Verde is the outlier, running $7.91/MWh LOWER at midday with a third
+# more negative-price hours, which is why using it basin-wide was wrong.
+PRICE_NODE_BY_RESERVOIR = {
+    "Lake Mead":        "NEVP",              # Hoover, southern Nevada
+    "Lake Mohave":      "AZPS",              # Davis, AZ/NV border
+    "Lake Havasu":      "AZPS",              # Parker, Arizona
+    "Lake Powell":      "AZPS",              # Glen Canyon, Arizona
+    "Navajo Reservoir": "PNM",               # Navajo Dam, New Mexico
+    "Flaming Gorge":    "PACE_transferred",  # PacifiCorp East, shape-transferred
+    "Blue Mesa":        "SWPW_transferred",  # SPP RTO West, shape-transferred
+}
+# Series that are shape-transferred rather than measured, and must be labelled as such.
+TRANSFERRED = {"PACE_transferred", "SWPW_transferred"}
 MW_PER_KM2 = 120.0          # FPV areal density (repo-wide constant)
 SUPPRESS = 0.75             # evaporation suppressed over the COVERED area. Cut from 0.90 after
                             # both external reviewers flagged it: edge exchange, altered albedo and
@@ -171,28 +186,41 @@ def pvgis_per_mw(lat, lon, year=SOLAR_YEAR):
     return per_mw, keys
 
 
-def hub_prices(keys):
-    """Hourly day-ahead LMP at Palo Verde, falling back to SP15 only if the pull is incomplete.
-    Missing hours take the hour-of-day median so a partial pull cannot silently zero revenue."""
-    px, src = {}, None
-    nodal = OUT / f"nodal_prices_{PRICE_YEAR}.json"
-    if nodal.exists():
-        d = json.loads(nodal.read_text()).get(PRICE_NODE, {})
-        if len(d) > 8000:
-            for k, v in d.items():
-                m, dd, h = k.split("-")
-                px[(int(m), int(dd), int(h))] = v
-            src = f"CAISO OASIS day-ahead LMP at Palo Verde ({PRICE_NODE}), {PRICE_YEAR}"
-    if not px:
-        with open(OUT / f"sp15_{PRICE_YEAR}_hourly.csv") as f:
-            for row in csv.reader(f):
-                if len(row) < 4:
-                    continue
-                try:
-                    px[(int(row[0]), int(row[1]), int(row[2]))] = float(row[3])
-                except ValueError:
-                    continue
-        src = f"CAISO SP15 hub, {PRICE_YEAR} (Palo Verde pull incomplete)"
+def load_price_series():
+    """Every available price series, keyed by node label."""
+    out = {}
+    p1 = OUT / f"nodal_prices_{PRICE_YEAR}.json"
+    if p1.exists():
+        for node, d in json.loads(p1.read_text()).items():
+            if len(d) > 8000:
+                out[node] = d
+    p2 = OUT / "nodal_prices_upper.json"
+    if p2.exists():
+        for node, d in json.loads(p2.read_text()).items():
+            if isinstance(d, dict) and len(d.get("series", {})) > 8000:
+                out[node] = d["series"]
+                out[node + "__meta"] = {k: v for k, v in d.items() if k != "series"}
+    return out
+
+
+SERIES = load_price_series()
+
+
+def hub_prices(keys, reservoir):
+    """Hourly day-ahead LMP for this reservoir's own balancing authority.
+
+    Falls back to Palo Verde only if the assigned node is unavailable, and says so, because a
+    silent fallback is exactly how the wrong price ended up on seven reservoirs the first time.
+    """
+    want = PRICE_NODE_BY_RESERVOIR.get(reservoir)
+    node = want if want in SERIES else ("PALOVERDE" if "PALOVERDE" in SERIES else None)
+    if node is None:
+        raise RuntimeError("no price series available; run analysis/fetch_nodal_prices.py")
+    raw = SERIES[node]
+    px = {}
+    for k, v in raw.items():
+        m, d_, h = k.split("-")
+        px[(int(m), int(d_), int(h))] = v
     byhour = {}
     for (m, d_, h), v in px.items():
         byhour.setdefault(h, []).append(v)
@@ -203,7 +231,17 @@ def hub_prices(keys):
             out.append(px[(m, d_, h)])
         else:
             out.append(med.get(h, 0.0)); miss += 1
-    return np.array(out), miss, len(px), src
+    transferred = node in TRANSFERRED
+    meta = SERIES.get(node + "__meta", {})
+    if transferred:
+        src = (f"{node}: hour-of-day ratio from measured local prices over "
+               f"{meta.get('reference','a reference node')} applied to a full {PRICE_YEAR} year. "
+               "SHAPE-TRANSFERRED, not measured.")
+    elif node != want:
+        src = f"{node} (FALLBACK: {want} unavailable)"
+    else:
+        src = f"CAISO day-ahead LMP, {node} balancing authority, {PRICE_YEAR}"
+    return np.array(out), miss, len(px), src, transferred
 
 
 def glen_canyon_hydro(keys, tie_mw, annual_gwh):
@@ -357,7 +395,7 @@ def run(p, solar, keys, price) -> dict:
 def main():
     out: dict = {}
     out["meta"] = dict(
-        solar_year=SOLAR_YEAR, price_year=PRICE_YEAR, price_node=PRICE_NODE,
+        solar_year=SOLAR_YEAR, price_year=PRICE_YEAR, price_nodes=PRICE_NODE_BY_RESERVOIR,
         mw_per_km2=MW_PER_KM2, evap_suppression=SUPPRESS,
         capex_per_w=CAPEX_PER_W, om_per_mw_yr=OM_PER_MW_YR, wacc=WACC, life_yr=LIFE,
         method=[
@@ -398,12 +436,12 @@ def main():
                 "reservoir's own footprint (analysis/ee_reservoir_areas.py). Used in preference to "
                 "published areas so all seven reservoirs use one method and one recent period.")
         solar, keys = pvgis_per_mw(p["lat"], p["lon"])
-        price, miss, have, price_src = hub_prices(keys)
+        price, miss, have, price_src, price_transferred = hub_prices(keys, name)
         if not price_reported:
-            print(f"PRICES: {price_src} | {have} priced hours, {miss} filled from hour-of-day median")
             price_reported = True
+        print(f"  price: {price_src[:96]}" + (f" | {miss} h gap-filled" if miss else ""))
         p["_price_src"] = price_src
-        p["_price_proxy"] = name in UPPER_BASIN_PROXY
+        p["_price_proxy"] = price_transferred
         r = run(p, solar, keys, price)
         out[name] = r
         row3 = next(x for x in r["rows"] if abs(x["coverage_pct"] - 3.0) < 0.13)

@@ -26,10 +26,21 @@ YEAR = 2024
 # Candidate nodes per region, tried in order. First that resolves wins.
 # Prioritised: Palo Verde covers four of the seven reservoirs and is the one that matters
 # most; PACE gives the Upper Basin contrast. OASIS throttles hard, so keep the list short.
+# Resolved from CAISO's APNode atlas (queryname=ATL_APNODE). The EIM "_ASR-APND" intertie
+# names return nothing; the EDAM load aggregation points "ELAP_*" are the ones that carry
+# real prices for the external balancing authorities.
 REGIONS = {
-    "PALOVERDE": ["PALOVRDE_ASR-APND"],           # Lower Basin desert SW hub
-    "PACE":      ["PACE_ASR-APND"],               # PacifiCorp East (Flaming Gorge)
+    "PALOVERDE": ["PALOVRDE_ASR-APND"],   # Desert Southwest hub: Mead, Mohave, Havasu, Powell
+    "PNM":       ["ELAP_PNM-APND"],       # New Mexico: Navajo Reservoir. Full 2024 available.
+    "AZPS":      ["ELAP_AZPS-APND"],      # Arizona, for cross-checking Palo Verde
+    "NEVP":      ["ELAP_NEVP-APND"],      # Nevada, likewise
 }
+# PacifiCorp East (Flaming Gorge) only entered CAISO's day-ahead market with EDAM in mid-2026,
+# so no full year exists. Pulled separately over whatever window is available and used to
+# MEASURE the bias in using Palo Verde as its proxy rather than to replace the series.
+PARTIAL = {"PACE": ("ELAP_PACE-APND", 2026, 6, 8)}
+# Blue Mesa sits in PSCo/WACM, which are in SPP's Western Energy Imbalance Service, not CAISO.
+# SPP publishes WEIS prices separately (marketplace.spp.org).
 
 
 def pull_span(node, s, e):
@@ -104,11 +115,35 @@ def main():
         else:
             report[region] = "UNRESOLVED"
             print(f"{region:11} UNRESOLVED", flush=True)
+    # partial-year pulls for markets that only recently joined a day-ahead market
+    for region, (node, yr, m0, m1) in PARTIAL.items():
+        key = f"{region}_{yr}"
+        if key in data and len(data[key]) > 500:
+            print(f"{region:11} cached {len(data[key])} h"); continue
+        got = dict(data.get(key, {}))
+        cur = dt.datetime(yr, m0, 1)
+        end = dt.datetime(yr, m1, 1)
+        print(f"{region:11} partial pull {node} {yr}-{m0:02d}..{yr}-{m1:02d}", flush=True)
+        while cur < end:
+            nxt = min(cur + dt.timedelta(days=7), end)
+            px, err = pull_span(node, cur, nxt)
+            if px:
+                got.update(px)
+                print(f"  {cur:%m-%d}: +{len(px)} -> {len(got)} h", flush=True)
+            else:
+                print(f"  {cur:%m-%d}: {str(err)[:60]}", flush=True)
+            data[key] = got; path.write_text(json.dumps(data))
+            cur = nxt
+            time.sleep(40)
+        report[region] = f"{node}: {len(got)} h (partial {yr})"
+
     path.write_text(json.dumps(data))
     (OUT / f"nodal_prices_{YEAR}_report.json").write_text(json.dumps(report, indent=1))
     print("\n" + json.dumps(report, indent=1))
     for k, v in data.items():
         vals = list(v.values())
+        if not vals:                      # an unresolved node leaves an empty dict
+            print(f"{k:11} no data"); continue
         neg = sum(1 for x in vals if x < 0)
         print(f"{k:11} n={len(vals):5}  mean=${sum(vals)/len(vals):6.2f}  neg_hours={neg}")
 

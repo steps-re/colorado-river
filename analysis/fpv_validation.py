@@ -13,6 +13,7 @@ import numpy as np
 
 ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / "outputs"
+PRICE_YEAR = 2024
 model = json.loads((OUT / "fpv_coverage_explorer.json").read_text())
 
 ACRE_KM2 = 0.00404686
@@ -82,8 +83,14 @@ check("Hoover annual generation", gwh, 4000,
 # 7. Price series against the independently reported Palo Verde annual average.
 h = model["Lake Mead"]["hourly"]
 px = dec(h["price_b64"], h["price_scale"])
-check("Palo Verde annual average day-ahead price", float(px.mean()), 33.31,
-      "Computed independently from the raw OASIS pull (outputs/nodal_prices_2024.json), full year",
+# Lake Mead now prices off its own balancing authority (NEVP), so the reference is that node's
+# independently computed mean, not Palo Verde's. The test failed until it was repointed, which is
+# the suite working: it caught a per-reservoir price reassignment automatically.
+_np = json.loads((OUT / "nodal_prices_2024.json").read_text())
+_mead_node = "NEVP"
+_ref_mean = float(np.mean(list(_np[_mead_node].values())))
+check(f"{_mead_node} annual average day-ahead price (Lake Mead's node)", float(px.mean()), _ref_mean,
+      f"Computed independently from the raw OASIS pull for {_mead_node}, full year {PRICE_YEAR}",
       3, "$/MWh", kind="internal", note="Round-trip test of the Int16 quantisation used to embed prices in the page. An earlier "
       "version of this test used 29.56, which is the mean over only the hours the older SP15 "
       "series also covered; the test correctly failed until the reference was put on the same "

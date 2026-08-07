@@ -38,9 +38,9 @@
    "p90": 21232.1
   },
   "usd_per_af": {
-   "p10": 12699.1,
-   "p50": 17316.6,
-   "p90": 24497.7
+   "p10": 11935.5,
+   "p50": 16463.3,
+   "p90": 23548.7
   },
   "sensitivity_prcc": {
    "right_sized_mw": {
@@ -55,13 +55,13 @@
     "wacc": 0.004
    },
    "usd_per_af": {
-    "density": 0.889,
-    "suppression": -0.813,
-    "capex": 0.792,
-    "wacc": 0.744,
-    "evaporation": -0.657,
-    "om_multiplier": 0.602,
-    "line_share": 0.049,
+    "density": 0.886,
+    "suppression": -0.809,
+    "capex": 0.803,
+    "wacc": 0.756,
+    "evaporation": -0.65,
+    "om_multiplier": 0.615,
+    "line_share": 0.055,
     "capacity_value": -0.013,
     "load_coincidence": -0.009
    }
@@ -80,9 +80,9 @@
    "p90": 11434.0
   },
   "usd_per_af": {
-   "p10": 13683.8,
-   "p50": 18658.5,
-   "p90": 26232.2
+   "p10": 12996.5,
+   "p50": 17859.3,
+   "p90": 25302.7
   },
   "sensitivity_prcc": {
    "right_sized_mw": {
@@ -97,15 +97,15 @@
     "capacity_value": 0.001
    },
    "usd_per_af": {
-    "density": 0.878,
-    "suppression": -0.796,
-    "evaporation": -0.784,
-    "capex": 0.752,
-    "wacc": 0.729,
-    "om_multiplier": 0.584,
+    "density": 0.875,
+    "suppression": -0.791,
+    "evaporation": -0.779,
+    "capex": 0.762,
+    "wacc": 0.739,
+    "om_multiplier": 0.594,
     "capacity_value": 0.016,
-    "line_share": -0.003,
-    "load_coincidence": 0.002
+    "load_coincidence": 0.001,
+    "line_share": -0.0
    }
   },
   "n": 2000
@@ -122,9 +122,9 @@
    "p90": 649.6
   },
   "usd_per_af": {
-   "p10": 14048.3,
-   "p50": 19299.7,
-   "p90": 26458.8
+   "p10": 13217.5,
+   "p50": 18400.0,
+   "p90": 25533.7
   },
   "sensitivity_prcc": {
    "right_sized_mw": {
@@ -139,15 +139,15 @@
     "suppression": 0.0
    },
    "usd_per_af": {
-    "density": 0.889,
-    "suppression": -0.808,
-    "capex": 0.769,
-    "wacc": 0.742,
-    "evaporation": -0.622,
-    "om_multiplier": 0.598,
-    "capacity_value": -0.04,
-    "load_coincidence": -0.023,
-    "line_share": -0.013
+    "density": 0.885,
+    "suppression": -0.803,
+    "capex": 0.781,
+    "wacc": 0.752,
+    "evaporation": -0.616,
+    "om_multiplier": 0.607,
+    "capacity_value": -0.039,
+    "load_coincidence": -0.019,
+    "line_share": -0.016
    }
   },
   "n": 2000
@@ -164,9 +164,9 @@
    "p90": 5078.7
   },
   "usd_per_af": {
-   "p10": 12177.9,
-   "p50": 17027.9,
-   "p90": 24323.6
+   "p10": 11483.9,
+   "p50": 16261.9,
+   "p90": 23433.8
   },
   "sensitivity_prcc": {
    "right_sized_mw": {
@@ -181,15 +181,15 @@
     "suppression": -0.002
    },
    "usd_per_af": {
-    "density": 0.878,
-    "evaporation": -0.858,
-    "suppression": -0.811,
-    "capex": 0.77,
-    "wacc": 0.751,
-    "om_multiplier": 0.593,
-    "line_share": 0.032,
-    "load_coincidence": -0.009,
-    "capacity_value": 0.006
+    "density": 0.874,
+    "evaporation": -0.854,
+    "suppression": -0.806,
+    "capex": 0.78,
+    "wacc": 0.761,
+    "om_multiplier": 0.605,
+    "line_share": 0.029,
+    "capacity_value": 0.006,
+    "load_coincidence": -0.003
    }
   },
   "n": 2000
@@ -206,9 +206,9 @@
    "p90": 649.6
   },
   "usd_per_af": {
-   "p10": 20850.7,
-   "p50": 33693.8,
-   "p90": 62103.8
+   "p10": 20912.2,
+   "p50": 33788.1,
+   "p90": 62256.1
   },
   "sensitivity_prcc": {
    "right_sized_mw": {
@@ -224,13 +224,13 @@
    },
    "usd_per_af": {
     "evaporation": -0.956,
-    "density": 0.77,
-    "suppression": -0.63,
-    "capex": 0.597,
+    "density": 0.771,
+    "suppression": -0.631,
+    "capex": 0.596,
     "wacc": 0.565,
     "om_multiplier": 0.393,
     "capacity_value": 0.031,
-    "line_share": 0.015,
+    "line_share": 0.016,
     "load_coincidence": -0.011
    }
   },
@@ -248,9 +248,9 @@
    "p90": 114.6
   },
   "usd_per_af": {
-   "p10": 19096.5,
-   "p50": 30896.1,
-   "p90": 55048.5
+   "p10": 18123.8,
+   "p50": 29560.0,
+   "p90": 53238.8
   },
   "sensitivity_prcc": {
    "right_sized_mw": {
@@ -265,14 +265,14 @@
     "load_coincidence": -0.002
    },
    "usd_per_af": {
-    "evaporation": -0.958,
-    "density": 0.772,
-    "suppression": -0.671,
-    "capex": 0.613,
-    "wacc": 0.58,
-    "om_multiplier": 0.426,
-    "capacity_value": 0.042,
-    "load_coincidence": -0.018,
+    "evaporation": -0.957,
+    "density": 0.764,
+    "suppression": -0.663,
+    "capex": 0.622,
+    "wacc": 0.59,
+    "om_multiplier": 0.433,
+    "capacity_value": 0.043,
+    "load_coincidence": -0.017,
     "line_share": 0.004
    }
   },
@@ -290,9 +290,9 @@
    "p90": 349.7
   },
   "usd_per_af": {
-   "p10": 24565.1,
-   "p50": 40256.4,
-   "p90": 70499.0
+   "p10": 22914.1,
+   "p50": 37984.4,
+   "p90": 66883.7
   },
   "sensitivity_prcc": {
    "right_sized_mw": {
@@ -307,15 +307,15 @@
     "evaporation": -0.0
    },
    "usd_per_af": {
-    "evaporation": -0.957,
-    "density": 0.769,
-    "suppression": -0.653,
-    "capex": 0.59,
-    "wacc": 0.558,
-    "om_multiplier": 0.409,
-    "load_coincidence": -0.023,
+    "evaporation": -0.954,
+    "density": 0.759,
+    "suppression": -0.642,
+    "capex": 0.603,
+    "wacc": 0.57,
+    "om_multiplier": 0.419,
+    "load_coincidence": -0.021,
     "capacity_value": 0.011,
-    "line_share": -0.011
+    "line_share": -0.005
    }
   },
   "n": 2000

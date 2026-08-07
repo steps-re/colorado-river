@@ -97,15 +97,15 @@
    "note": "CIRCULAR: normalised to this figure. Round-trip check only."
   },
   {
-   "test": "Palo Verde annual average day-ahead price",
+   "test": "NEVP annual average day-ahead price (Lake Mead's node)",
    "kind": "internal",
-   "modelled": 33.342,
-   "reference": 33.31,
+   "modelled": 36.652,
+   "reference": 36.617,
    "unit": "$/MWh",
    "error_pct": 0.1,
    "tolerance_pct": 3,
    "passed": true,
-   "reference_source": "Computed independently from the raw OASIS pull (outputs/nodal_prices_2024.json), full year",
+   "reference_source": "Computed independently from the raw OASIS pull for NEVP, full year 2024",
    "note": "Round-trip test of the Int16 quantisation used to embed prices in the page. An earlier version of this test used 29.56, which is the mean over only the hours the older SP15 series also covered; the test correctly failed until the reference was put on the same 8,784-hour basis as the model."
   },
   {

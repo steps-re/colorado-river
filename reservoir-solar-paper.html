@@ -96,14 +96,14 @@ commonly specify 15&ndash;20% surface coverage, on the reasoning that suppressed
 generated electricity are complementary benefits. We test that specification with an hourly,
 full-year model of seven reservoirs, each on its own dam's interconnection, using measured surface
 areas from Sentinel-2, direct eddy-covariance evaporation fluxes where they exist, and day-ahead
-prices at the Palo Verde hub. We find the two benefits do not scale together: suppressed
+prices at each reservoir's own balancing authority. We find the two benefits do not scale together: suppressed
 evaporation is linear in coverage, while deliverable energy saturates at a coverage bound set by
 the dam's export capacity. That bound is reservoir-specific and spans more than an order of
 magnitude, from about 0.75% at Navajo to about 8.5% at Havasu, and 15&ndash;20% exceeds it at every
 reservoir studied. Propagating uncertainty across ten parameters
 (2,000 draws), the median cost of water suppressed is
-$17,317 per acre-foot at Lake Mead
-(P10&ndash;P90 $12,699&ndash;24,498),
+$16,463 per acre-foot at Lake Mead
+(P10&ndash;P90 $11,936&ndash;23,549),
 against roughly $325&ndash;700 per acre-foot to purchase conserved water from irrigators. That
 benchmark is institutionally heterogeneous &mdash; it spans fallowing contracts, efficiency
 retrofits and delivered transfers with different reliability and shepherding &mdash; so the
@@ -153,10 +153,23 @@ coordinates, converted to AC output per installed MW with a floating cooling adj
 temperature rise scaled to 0.82 of a ground mount, power coefficient &minus;0.35%/&deg;C), which
 averages a 1.01 uplift and is immaterial to any conclusion.</p>
 
-<p><b>Prices.</b> CAISO day-ahead LMP at the Palo Verde hub, full year 2024, 8,784 hours, no
-gap-filling. Palo Verde is the Desert Southwest trading hub. The three Upper Basin reservoirs sit
-in PacifiCorp East, PNM and WAPA Rocky Mountain, none of which publish hourly nodal prices; they
-use Palo Verde as an acknowledged proxy.</p>
+<p><b>Prices.</b> Day-ahead locational marginal prices at each reservoir's own balancing authority,
+full year 2024, 8,784 hours, no gap-filling. Lake Mead prices off Nevada Power, the Arizona dams off
+Arizona Public Service, and Navajo off PNM. Nodes were identified from CAISO's APNode atlas; the
+EDAM load aggregation points carry prices for external balancing authorities, while the
+imbalance-market intertie names do not.</p>
+<p>Flaming Gorge and Blue Mesa sit in markets that began publishing day-ahead prices only in 2026:
+PacifiCorp East when CAISO's Extended Day-Ahead Market went live, and the SPP West footprint when
+SPP RTO West replaced the Western Energy Imbalance Service, which was real-time imbalance only and
+had no day-ahead product. For these two, the hour-of-day ratio of measured local prices to a
+reference node over the overlapping window is applied to the reference node's full year. The result
+is shape-transferred, not measured, and is treated as such throughout. Blue Mesa's ratio is computed
+from Colorado River Storage Project settlement points, the delivery locations for the power that
+dam actually generates.</p>
+<p>The measured differences matter. Against the Desert Southwest nodes, the Palo Verde hub runs
+$7.91/MWh lower at midday with a third more negative-price hours; against Blue Mesa's own market it
+runs 26% lower at midday. Pricing the basin off a single hub understated revenue at every
+reservoir.</p>
 
 <p><b>Dam generation.</b> Glen Canyon uses measured sub-daily USGS discharge below the dam. The
 remaining plants have no public sub-daily tailrace gauge and use a load-following diurnal and
@@ -201,7 +214,7 @@ constant against published bounds. 11 of
 (16 of 16 overall).</p>
 <div style="overflow-x:auto"><table>
 <tr><th>Test</th><th>Kind</th><th>Model</th><th>Reference</th><th>Error</th><th>Tolerance</th><th></th></tr>
-<tr><td>Lake Mead total open-water evaporation</td><td>external</td><td>432,869.49</td><td>519,313.00</td><td>-16.6%</td><td>&plusmn;25%</td><td>pass</td></tr><tr><td>Lake Mohave total open-water evaporation</td><td>external</td><td>144,750.94</td><td>151,722.00</td><td>-4.6%</td><td>&plusmn;15%</td><td>pass</td></tr><tr><td>Lake Mohave surface area</td><td>external</td><td>25,665.00</td><td>27,022.00</td><td>-5.0%</td><td>&plusmn;12%</td><td>pass</td></tr><tr><td>Lake Mead solar capacity factor</td><td>external</td><td>0.21</td><td>0.21</td><td>-1.7%</td><td>&plusmn;20%</td><td>pass</td></tr><tr><td>Lake Powell solar capacity factor</td><td>external</td><td>0.20</td><td>0.21</td><td>-4.8%</td><td>&plusmn;20%</td><td>pass</td></tr><tr><td>Glen Canyon annual generation</td><td>circular</td><td>2,776.99</td><td>2,777.00</td><td>-0.0%</td><td>&plusmn;3%</td><td>pass</td></tr><tr><td>Hoover annual generation</td><td>circular</td><td>4,000.01</td><td>4,000.00</td><td>+0.0%</td><td>&plusmn;3%</td><td>pass</td></tr><tr><td>Palo Verde annual average day-ahead price</td><td>internal</td><td>33.34</td><td>33.31</td><td>+0.1%</td><td>&plusmn;3%</td><td>pass</td></tr><tr><td>Evaporation saved, Mead at 3% coverage</td><td>internal</td><td>9,740.00</td><td>9,739.56</td><td>+0.0%</td><td>&plusmn;1%</td><td>pass</td></tr><tr><td>FPV areal density</td><td>range</td><td>120.00</td><td>120.00</td><td>+0.0%</td><td>&plusmn;35%</td><td>pass</td></tr><tr><td>Lake Mead OSM full-pool outline vs measured water</td><td>external</td><td>335.20</td><td>281.60</td><td>+19.0%</td><td>&plusmn;60%</td><td>pass</td></tr><tr><td>Lake Havasu OSM full-pool outline vs measured water</td><td>external</td><td>69.90</td><td>62.00</td><td>+12.7%</td><td>&plusmn;60%</td><td>pass</td></tr><tr><td>Blue Mesa OSM full-pool outline vs measured water</td><td>external</td><td>36.10</td><td>23.90</td><td>+51.0%</td><td>&plusmn;60%</td><td>pass</td></tr><tr><td>Flaming Gorge OSM full-pool outline vs measured water</td><td>external</td><td>166.20</td><td>135.60</td><td>+22.6%</td><td>&plusmn;60%</td><td>pass</td></tr><tr><td>Lake Mead measured area vs area-capacity expectation</td><td>external</td><td>69,593.00</td><td>70,500.00</td><td>-1.3%</td><td>&plusmn;10%</td><td>pass</td></tr><tr><td>Lower Basin three-reservoir surface, summed</td><td>external</td><td>110,588.00</td><td>129,520.00</td><td>-14.6%</td><td>&plusmn;25%</td><td>pass</td></tr>
+<tr><td>Lake Mead total open-water evaporation</td><td>external</td><td>432,869.49</td><td>519,313.00</td><td>-16.6%</td><td>&plusmn;25%</td><td>pass</td></tr><tr><td>Lake Mohave total open-water evaporation</td><td>external</td><td>144,750.94</td><td>151,722.00</td><td>-4.6%</td><td>&plusmn;15%</td><td>pass</td></tr><tr><td>Lake Mohave surface area</td><td>external</td><td>25,665.00</td><td>27,022.00</td><td>-5.0%</td><td>&plusmn;12%</td><td>pass</td></tr><tr><td>Lake Mead solar capacity factor</td><td>external</td><td>0.21</td><td>0.21</td><td>-1.7%</td><td>&plusmn;20%</td><td>pass</td></tr><tr><td>Lake Powell solar capacity factor</td><td>external</td><td>0.20</td><td>0.21</td><td>-4.8%</td><td>&plusmn;20%</td><td>pass</td></tr><tr><td>Glen Canyon annual generation</td><td>circular</td><td>2,776.99</td><td>2,777.00</td><td>-0.0%</td><td>&plusmn;3%</td><td>pass</td></tr><tr><td>Hoover annual generation</td><td>circular</td><td>4,000.01</td><td>4,000.00</td><td>+0.0%</td><td>&plusmn;3%</td><td>pass</td></tr><tr><td>NEVP annual average day-ahead price (Lake Mead's node)</td><td>internal</td><td>36.65</td><td>36.62</td><td>+0.1%</td><td>&plusmn;3%</td><td>pass</td></tr><tr><td>Evaporation saved, Mead at 3% coverage</td><td>internal</td><td>9,740.00</td><td>9,739.56</td><td>+0.0%</td><td>&plusmn;1%</td><td>pass</td></tr><tr><td>FPV areal density</td><td>range</td><td>120.00</td><td>120.00</td><td>+0.0%</td><td>&plusmn;35%</td><td>pass</td></tr><tr><td>Lake Mead OSM full-pool outline vs measured water</td><td>external</td><td>335.20</td><td>281.60</td><td>+19.0%</td><td>&plusmn;60%</td><td>pass</td></tr><tr><td>Lake Havasu OSM full-pool outline vs measured water</td><td>external</td><td>69.90</td><td>62.00</td><td>+12.7%</td><td>&plusmn;60%</td><td>pass</td></tr><tr><td>Blue Mesa OSM full-pool outline vs measured water</td><td>external</td><td>36.10</td><td>23.90</td><td>+51.0%</td><td>&plusmn;60%</td><td>pass</td></tr><tr><td>Flaming Gorge OSM full-pool outline vs measured water</td><td>external</td><td>166.20</td><td>135.60</td><td>+22.6%</td><td>&plusmn;60%</td><td>pass</td></tr><tr><td>Lake Mead measured area vs area-capacity expectation</td><td>external</td><td>69,593.00</td><td>70,500.00</td><td>-1.3%</td><td>&plusmn;10%</td><td>pass</td></tr><tr><td>Lower Basin three-reservoir surface, summed</td><td>external</td><td>110,588.00</td><td>129,520.00</td><td>-14.6%</td><td>&plusmn;25%</td><td>pass</td></tr>
 </table></div>
 <p>The Lake Mead evaporation test reads 16.6% low by construction: our surface is a 2024&ndash;2026
 measurement and Reclamation's volume is a 2017&ndash;2021 average over a larger lake. Lake Mohave,
@@ -222,14 +235,14 @@ would understate the tails.</p>
 <div style="overflow-x:auto"><table>
 <tr><th>Reservoir</th><th>MW P10</th><th>MW P50</th><th>MW P90</th><th>AF/yr saved (P50)</th>
 <th>$/AF P10</th><th>$/AF P50</th><th>$/AF P90</th></tr>
-<tr><td>Lake Mead</td><td>414</td><td><b>1,272</b></td><td>2,149</td><td>12,146</td><td>$12,699</td><td><b>$17,317</b></td><td>$24,498</td></tr><tr><td>Lake Powell</td><td>228</td><td><b>719</b></td><td>1,222</td><td>6,383</td><td>$13,684</td><td><b>$18,658</b></td><td>$26,232</td></tr><tr><td>Lake Mohave</td><td>0</td><td><b>34</b></td><td>73</td><td>286</td><td>$14,048</td><td><b>$19,300</b></td><td>$26,459</td></tr><tr><td>Lake Havasu</td><td>195</td><td><b>337</b></td><td>469</td><td>3,213</td><td>$12,178</td><td><b>$17,028</b></td><td>$24,324</td></tr><tr><td>Flaming Gorge</td><td>0</td><td><b>50</b></td><td>112</td><td>262</td><td>$20,851</td><td><b>$33,694</b></td><td>$62,104</td></tr><tr><td>Navajo Reservoir</td><td>0</td><td><b>11</b></td><td>20</td><td>52</td><td>$19,096</td><td><b>$30,896</b></td><td>$55,048</td></tr><tr><td>Blue Mesa</td><td>14</td><td><b>42</b></td><td>71</td><td>167</td><td>$24,565</td><td><b>$40,256</b></td><td>$70,499</td></tr>
+<tr><td>Lake Mead</td><td>414</td><td><b>1,272</b></td><td>2,149</td><td>12,146</td><td>$11,936</td><td><b>$16,463</b></td><td>$23,549</td></tr><tr><td>Lake Powell</td><td>228</td><td><b>719</b></td><td>1,222</td><td>6,383</td><td>$12,996</td><td><b>$17,859</b></td><td>$25,303</td></tr><tr><td>Lake Mohave</td><td>0</td><td><b>34</b></td><td>73</td><td>286</td><td>$13,218</td><td><b>$18,400</b></td><td>$25,534</td></tr><tr><td>Lake Havasu</td><td>195</td><td><b>337</b></td><td>469</td><td>3,213</td><td>$11,484</td><td><b>$16,262</b></td><td>$23,434</td></tr><tr><td>Flaming Gorge</td><td>0</td><td><b>50</b></td><td>112</td><td>262</td><td>$20,912</td><td><b>$33,788</b></td><td>$62,256</td></tr><tr><td>Navajo Reservoir</td><td>0</td><td><b>11</b></td><td>20</td><td>52</td><td>$18,124</td><td><b>$29,560</b></td><td>$53,239</td></tr><tr><td>Blue Mesa</td><td>14</td><td><b>42</b></td><td>71</td><td>167</td><td>$22,914</td><td><b>$37,984</b></td><td>$66,884</td></tr>
 </table></div>
 <h3>5.1 Variance attribution</h3>
 <p>Partial rank correlation coefficients, computed on the same sample. These identify which inputs
 drive the spread in each output.</p>
 <div style="overflow-x:auto"><table>
 <tr><th>Reservoir</th><th>Drivers of cost per acre-foot</th><th>Drivers of array size</th></tr>
-<tr><td>Lake Mead</td><td>density +0.89, suppression -0.81, capex +0.79, wacc +0.74</td><td>line share +1.00, density -0.19, evaporation -0.03</td></tr><tr><td>Lake Powell</td><td>density +0.88, suppression -0.80, evaporation -0.78, capex +0.75</td><td>line share +1.00, density -0.19, evaporation +0.03</td></tr><tr><td>Lake Mohave</td><td>density +0.89, suppression -0.81, capex +0.77, wacc +0.74</td><td>line share +0.95, density +0.04, evaporation +0.03</td></tr><tr><td>Lake Havasu</td><td>density +0.88, evaporation -0.86, suppression -0.81, capex +0.77</td><td>load coincidence +1.00, line share +0.96, density -0.14</td></tr><tr><td>Flaming Gorge</td><td>evaporation -0.96, density +0.77, suppression -0.63, capex +0.60</td><td>line share +0.95, capex +0.02, load coincidence +0.02</td></tr><tr><td>Navajo Reservoir</td><td>evaporation -0.96, density +0.77, suppression -0.67, capex +0.61</td><td>line share +0.90, density +0.03, capacity value +0.03</td></tr><tr><td>Blue Mesa</td><td>evaporation -0.96, density +0.77, suppression -0.65, capex +0.59</td><td>line share +0.99, density -0.14, wacc +0.04</td></tr>
+<tr><td>Lake Mead</td><td>density +0.89, suppression -0.81, capex +0.80, wacc +0.76</td><td>line share +1.00, density -0.19, evaporation -0.03</td></tr><tr><td>Lake Powell</td><td>density +0.88, suppression -0.79, evaporation -0.78, capex +0.76</td><td>line share +1.00, density -0.19, evaporation +0.03</td></tr><tr><td>Lake Mohave</td><td>density +0.89, suppression -0.80, capex +0.78, wacc +0.75</td><td>line share +0.95, density +0.04, evaporation +0.03</td></tr><tr><td>Lake Havasu</td><td>density +0.87, evaporation -0.85, suppression -0.81, capex +0.78</td><td>load coincidence +1.00, line share +0.96, density -0.14</td></tr><tr><td>Flaming Gorge</td><td>evaporation -0.96, density +0.77, suppression -0.63, capex +0.60</td><td>line share +0.95, capex +0.02, load coincidence +0.02</td></tr><tr><td>Navajo Reservoir</td><td>evaporation -0.96, density +0.76, suppression -0.66, capex +0.62</td><td>line share +0.90, density +0.03, capacity value +0.03</td></tr><tr><td>Blue Mesa</td><td>evaporation -0.95, density +0.76, suppression -0.64, capex +0.60</td><td>line share +0.99, density -0.14, wacc +0.04</td></tr>
 </table></div>
 <p>Two patterns matter. Areal density is the strongest driver of cost per acre-foot at every
 reservoir, which means layout efficiency, not module price, is where the cost uncertainty lives.
@@ -283,7 +296,7 @@ seventeenth the size, because roughly 300 MW of Central Arizona Project pumping 
 shoreline. Its surface is also administered by BLM and Arizona State Parks rather than the National
 Park Service. Load coincidence is consequently the parameter that decides that site.</p>
 
-<p><b>6.4 Cost of suppressed water.</b> Median $17,317 per
+<p><b>6.4 Cost of suppressed water.</b> Median $16,463 per
 acre-foot at Lake Mead and higher elsewhere, against $325&ndash;700 to purchase conserved
 agricultural water and $2,500&ndash;3,500 for seawater desalination. Non-generating covers are
 cheaper than FPV but do not close the gap:</p>
@@ -307,8 +320,8 @@ against a 58% Hoover derate (2.32 TWh/yr), arrays fill 40&ndash;57% of the hourl
 (up to 3.4 GW with 2 GW/8 hr). We did not find a configuration that exceeds it, and the physical
 reason is clear &mdash; a capacity derate is a continuous loss while solar is diurnal and seasonal &mdash; but this is a
 bound observed over the configurations modelled, not a proof. Seasonal storage, demand response or
-a hybrid firm resource would raise it. Break-even energy price falls from $105 to $77/MWh when 1,000 MW of four-hour storage is
-added, against a merchant capture of about $25/MWh. Eight-hour storage over-invests. The residual
+a hybrid firm resource would raise it. Break-even energy price falls from $92 to $72/MWh when 1,000 MW of four-hour storage is
+added, against a merchant capture of $24 to $32/MWh depending on the market. Eight-hour storage over-invests. The residual
 gap is a question of contracted value for avoided replacement power, not of dispatch. Two caveats
 are material: hydrology is cyclical, so a derate may reverse and return the capacity to the dam;
 and wheeling and basis costs from each dam to a trading hub are not modelled.</p>
@@ -322,7 +335,9 @@ limitation and the reason no result here establishes feasibility at a specific s
 <li><b>Evaporation suppression is treated as linear in coverage.</b> Heat not lost as latent flux
 mixes into the bulk water and raises evaporation on the surrounding open surface, making suppression
 sub-linear at high coverage. The magnitude is unmeasured at reservoir scale.</li>
-<li><b>Upper Basin evaporation rates are unmeasured</b> and Upper Basin prices are proxied.</li>
+<li><b>Upper Basin evaporation rates are unmeasured.</b> Flaming Gorge and Blue Mesa prices are
+shape-transferred from a partial local record rather than measured over a full year, because their
+markets did not produce day-ahead prices before 2026.</li>
 <li><b>Storage dispatch has perfect intraday price foresight</b>, which flatters storage.</li>
 <li><b>Solar receives no firm capacity credit</b>, which is conservative rather than correct.</li>
 <li><b>Wheeling and basis costs are omitted</b>, which flatters revenue.</li>
@@ -377,8 +392,10 @@ February 2012.</i> USGS Scientific Investigations Report, 2013.</li>
 (PVGIS)</i>, PVGIS-NSRDB radiation database.</li>
 <li>Copernicus Sentinel-2 surface reflectance, accessed via Google Earth Engine.</li>
 <li>OpenStreetMap contributors. Reservoir water polygons, retrieved via the Overpass API.</li>
-<li>California Independent System Operator. OASIS day-ahead locational marginal prices, Palo Verde
-intertie, 2024.</li>
+<li>California Independent System Operator. OASIS day-ahead locational marginal prices and APNode
+atlas (queryname ATL_APNODE), 2024 and 2026.</li>
+<li>Southwest Power Pool. RTO West day-ahead locational marginal prices by settlement location,
+2026. Colorado River Storage Project settlement points.</li>
 <li>US Geological Survey National Water Information System. Discharge below Glen Canyon Dam, gauge
 09380000.</li>
 <li>Los Angeles Department of Water and Power. Los Angeles Reservoir shade-ball deployment (2015)

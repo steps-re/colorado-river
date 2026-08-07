@@ -144,13 +144,21 @@ public cost-effectiveness number, not project revenue.</li>
 generator step-up transformer, switchyard and breaker ratings, N-1 criteria, protection, reactive
 capability and reserved capacity. The line-share control is a crude stand-in, not a substitute. Only a
 reservoir-specific interconnection study would settle it.</li>
-<li><b>One California price node cannot price seven reservoirs (fixed for the Lower Basin).</b> The model
-now uses real day-ahead prices at Palo Verde, the Desert Southwest hub, for the full year with no
-gap-filling. The measured difference from the old California series is smaller than the objection implied:
-midday averages $6.20 rather than $3.56/MWh, with 954 negative hours rather than 1,164. Flaming Gorge,
-Navajo and Blue Mesa sit in PacifiCorp East, PNM and WAPA Rocky Mountain, none of which publish hourly
-nodal prices, so those three still use Palo Verde as an acknowledged proxy. Separately, wheeling and basis
-costs of moving power from each dam to a trading hub are not modelled, which flatters revenue.</li>
+<li><b>One California price node cannot price seven reservoirs (FIXED).</b> Every reservoir now prices
+off its own balancing authority. Lake Mead uses Nevada Power, the Arizona dams use Arizona Public Service,
+Navajo uses PNM &mdash; all full-year 2024 measured day-ahead prices with no gap-filling. Flaming Gorge and
+Blue Mesa sit in markets that only began publishing day-ahead prices in 2026 (PacifiCorp East when CAISO's
+EDAM went live, and the SPP West footprint when it replaced an imbalance-only market that had no day-ahead
+product at all), so those two use a series built by taking the hour-of-day ratio of their measured local
+prices against a reference node over the overlapping window and applying it to a full year. That is
+shape-transferred, not measured, and is labelled so in the table above.
+<br>An earlier version of this page reported that Upper Basin prices were not public. That was wrong. They
+were found by querying CAISO's node atlas rather than guessing node names, and Blue Mesa's own Colorado
+River Storage Project settlement points turned out to be published. The correction matters: the old
+Palo Verde proxy ran $7.91/MWh <i>low</i> at midday against the true Desert Southwest nodes, and 26% low
+against Blue Mesa's actual market, so it understated revenue everywhere.
+<br>Wheeling and basis costs of moving power from each dam to a trading hub are still not modelled, which
+flatters revenue.</li>
 <li><b>Evaporation rates and measured areas used mismatched denominators.</b> Corrected where possible: the
 rates that are direct flux measurements are area-independent and valid; Lake Mohave's was an area quotient
 wrongly applied and has been replaced; Havasu's is flagged as a bracket.</li>
