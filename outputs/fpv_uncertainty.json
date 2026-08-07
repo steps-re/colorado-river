@@ -1,0 +1,323 @@
+{
+ "meta": {
+  "draws": 2000,
+  "seed": 20260807,
+  "note": [
+   "Right-sized array = largest whose spill (inverter clipping plus line) stays under 5% for that draw.",
+   "usd_per_af is a PUBLIC cost-effectiveness shadow cost net of power sales, not project revenue: suppressed evaporation cannot be owned or sold.",
+   "Distributions are stated in the module docstring. Line share carries the largest single uncertainty and stands in for the interconnection study this model lacks."
+  ],
+  "distributions": {
+   "suppression": "triangular(0.60, 0.75, 0.90)",
+   "density_mw_km2": "triangular(80, 120, 160)",
+   "capex_per_w": "triangular(1.23, 1.50, 2.50)",
+   "om_multiplier": "triangular(1.0, 1.3, 3.0)",
+   "wacc": "uniform(0.06, 0.09)",
+   "capacity_value_kw_yr": "uniform(51, 176)",
+   "line_share": "uniform(0.10, 1.00)",
+   "load_coincidence": "uniform(0.25, 1.00)",
+   "evaporation": "flux sites normal(mu, 5-8%); Havasu uniform(5.2, 7.4); Upper Basin normal(mu, 30%)"
+  },
+  "correlations": {
+   "capex-om": 0.75,
+   "capex-density": -0.35,
+   "capex-wacc": 0.25,
+   "supp-evap": 0.2
+  },
+  "correlation_note": "Parameters are NOT drawn independently. A Gaussian copula links capex to O&M (rho 0.75, since a deep, storm-exposed, mussel-infested site raises both), capex to areal density (rho -0.35, since wide mooring corridors lower density and raise cost per watt together), capex to WACC (rho 0.25, perceived project risk), and suppression to evaporation rate (rho 0.20). Independent draws would understate the tails."
+ },
+ "Lake Mead": {
+  "right_sized_mw": {
+   "p10": 413.6,
+   "p50": 1271.6,
+   "p90": 2149.4
+  },
+  "evap_saved_af": {
+   "p10": 3965.0,
+   "p50": 12145.5,
+   "p90": 21232.1
+  },
+  "usd_per_af": {
+   "p10": 12699.1,
+   "p50": 17316.6,
+   "p90": 24497.7
+  },
+  "sensitivity_prcc": {
+   "right_sized_mw": {
+    "line_share": 0.999,
+    "density": -0.194,
+    "evaporation": -0.034,
+    "load_coincidence": 0.028,
+    "suppression": -0.012,
+    "capacity_value": 0.007,
+    "capex": 0.006,
+    "om_multiplier": -0.005,
+    "wacc": 0.004
+   },
+   "usd_per_af": {
+    "density": 0.889,
+    "suppression": -0.813,
+    "capex": 0.792,
+    "wacc": 0.744,
+    "evaporation": -0.657,
+    "om_multiplier": 0.602,
+    "line_share": 0.049,
+    "capacity_value": -0.013,
+    "load_coincidence": -0.009
+   }
+  },
+  "n": 2000
+ },
+ "Lake Powell": {
+  "right_sized_mw": {
+   "p10": 228.0,
+   "p50": 719.4,
+   "p90": 1222.4
+  },
+  "evap_saved_af": {
+   "p10": 2015.3,
+   "p50": 6383.2,
+   "p90": 11434.0
+  },
+  "usd_per_af": {
+   "p10": 13683.8,
+   "p50": 18658.5,
+   "p90": 26232.2
+  },
+  "sensitivity_prcc": {
+   "right_sized_mw": {
+    "line_share": 0.998,
+    "density": -0.187,
+    "evaporation": 0.025,
+    "wacc": -0.007,
+    "suppression": -0.005,
+    "capex": -0.004,
+    "load_coincidence": -0.004,
+    "om_multiplier": 0.001,
+    "capacity_value": 0.001
+   },
+   "usd_per_af": {
+    "density": 0.878,
+    "suppression": -0.796,
+    "evaporation": -0.784,
+    "capex": 0.752,
+    "wacc": 0.729,
+    "om_multiplier": 0.584,
+    "capacity_value": 0.016,
+    "line_share": -0.003,
+    "load_coincidence": 0.002
+   }
+  },
+  "n": 2000
+ },
+ "Lake Mohave": {
+  "right_sized_mw": {
+   "p10": 0.0,
+   "p50": 34.5,
+   "p90": 73.3
+  },
+  "evap_saved_af": {
+   "p10": 0.0,
+   "p50": 285.9,
+   "p90": 649.6
+  },
+  "usd_per_af": {
+   "p10": 14048.3,
+   "p50": 19299.7,
+   "p90": 26458.8
+  },
+  "sensitivity_prcc": {
+   "right_sized_mw": {
+    "line_share": 0.946,
+    "density": 0.04,
+    "evaporation": 0.03,
+    "wacc": -0.027,
+    "om_multiplier": -0.015,
+    "capex": 0.012,
+    "load_coincidence": -0.011,
+    "capacity_value": -0.007,
+    "suppression": 0.0
+   },
+   "usd_per_af": {
+    "density": 0.889,
+    "suppression": -0.808,
+    "capex": 0.769,
+    "wacc": 0.742,
+    "evaporation": -0.622,
+    "om_multiplier": 0.598,
+    "capacity_value": -0.04,
+    "load_coincidence": -0.023,
+    "line_share": -0.013
+   }
+  },
+  "n": 2000
+ },
+ "Lake Havasu": {
+  "right_sized_mw": {
+   "p10": 194.7,
+   "p50": 336.8,
+   "p90": 469.1
+  },
+  "evap_saved_af": {
+   "p10": 1785.9,
+   "p50": 3213.2,
+   "p90": 5078.7
+  },
+  "usd_per_af": {
+   "p10": 12177.9,
+   "p50": 17027.9,
+   "p90": 24323.6
+  },
+  "sensitivity_prcc": {
+   "right_sized_mw": {
+    "load_coincidence": 0.997,
+    "line_share": 0.956,
+    "density": -0.136,
+    "om_multiplier": 0.029,
+    "wacc": 0.02,
+    "capex": -0.018,
+    "capacity_value": 0.009,
+    "evaporation": -0.007,
+    "suppression": -0.002
+   },
+   "usd_per_af": {
+    "density": 0.878,
+    "evaporation": -0.858,
+    "suppression": -0.811,
+    "capex": 0.77,
+    "wacc": 0.751,
+    "om_multiplier": 0.593,
+    "line_share": 0.032,
+    "load_coincidence": -0.009,
+    "capacity_value": 0.006
+   }
+  },
+  "n": 2000
+ },
+ "Flaming Gorge": {
+  "right_sized_mw": {
+   "p10": 0.0,
+   "p50": 50.2,
+   "p90": 112.1
+  },
+  "evap_saved_af": {
+   "p10": 0.0,
+   "p50": 261.8,
+   "p90": 649.6
+  },
+  "usd_per_af": {
+   "p10": 20850.7,
+   "p50": 33693.8,
+   "p90": 62103.8
+  },
+  "sensitivity_prcc": {
+   "right_sized_mw": {
+    "line_share": 0.955,
+    "capex": 0.022,
+    "load_coincidence": 0.022,
+    "wacc": 0.017,
+    "density": 0.007,
+    "evaporation": -0.003,
+    "suppression": 0.003,
+    "om_multiplier": 0.002,
+    "capacity_value": 0.001
+   },
+   "usd_per_af": {
+    "evaporation": -0.956,
+    "density": 0.77,
+    "suppression": -0.63,
+    "capex": 0.597,
+    "wacc": 0.565,
+    "om_multiplier": 0.393,
+    "capacity_value": 0.031,
+    "line_share": 0.015,
+    "load_coincidence": -0.011
+   }
+  },
+  "n": 2000
+ },
+ "Navajo Reservoir": {
+  "right_sized_mw": {
+   "p10": 0.0,
+   "p50": 11.2,
+   "p90": 19.9
+  },
+  "evap_saved_af": {
+   "p10": 0.0,
+   "p50": 51.9,
+   "p90": 114.6
+  },
+  "usd_per_af": {
+   "p10": 19096.5,
+   "p50": 30896.1,
+   "p90": 55048.5
+  },
+  "sensitivity_prcc": {
+   "right_sized_mw": {
+    "line_share": 0.895,
+    "density": 0.032,
+    "capacity_value": 0.029,
+    "evaporation": -0.026,
+    "suppression": 0.018,
+    "capex": 0.011,
+    "wacc": -0.011,
+    "om_multiplier": -0.009,
+    "load_coincidence": -0.002
+   },
+   "usd_per_af": {
+    "evaporation": -0.958,
+    "density": 0.772,
+    "suppression": -0.671,
+    "capex": 0.613,
+    "wacc": 0.58,
+    "om_multiplier": 0.426,
+    "capacity_value": 0.042,
+    "load_coincidence": -0.018,
+    "line_share": 0.004
+   }
+  },
+  "n": 2000
+ },
+ "Blue Mesa": {
+  "right_sized_mw": {
+   "p10": 13.6,
+   "p50": 42.2,
+   "p90": 71.1
+  },
+  "evap_saved_af": {
+   "p10": 49.4,
+   "p50": 167.0,
+   "p90": 349.7
+  },
+  "usd_per_af": {
+   "p10": 24565.1,
+   "p50": 40256.4,
+   "p90": 70499.0
+  },
+  "sensitivity_prcc": {
+   "right_sized_mw": {
+    "line_share": 0.995,
+    "density": -0.143,
+    "wacc": 0.042,
+    "capex": -0.036,
+    "capacity_value": 0.036,
+    "om_multiplier": 0.026,
+    "load_coincidence": 0.018,
+    "suppression": -0.013,
+    "evaporation": -0.0
+   },
+   "usd_per_af": {
+    "evaporation": -0.957,
+    "density": 0.769,
+    "suppression": -0.653,
+    "capex": 0.59,
+    "wacc": 0.558,
+    "om_multiplier": 0.409,
+    "load_coincidence": -0.023,
+    "capacity_value": 0.011,
+    "line_share": -0.011
+   }
+  },
+  "n": 2000
+ }
+}

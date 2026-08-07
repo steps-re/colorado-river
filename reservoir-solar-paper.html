@@ -1,0 +1,400 @@
+<!doctype html><html lang=en><head><meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1">
+<title>Bounds on floating photovoltaics at Colorado River reservoirs</title>
+<style>
+:root{--paper:#F4F0E7;--stone:#E7E1D4;--ink:#1E2B2E;--deep:#123137;--muted:#5B6A6A;
+--water:#2C7A87;--rust:#A8432B;--amber:#9C7A2E;--line:#C6BBA4}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);
+font:16px/1.58 "Helvetica Neue",Helvetica,Arial,sans-serif}
+.wrap{max-width:960px;margin:0 auto;padding:30px 20px 70px}
+.tag{display:inline-block;background:var(--deep);color:var(--paper);font-size:11px;padding:2px 8px;border-radius:10px;letter-spacing:.05em}
+h1{font-size:30px;line-height:1.14;color:var(--deep);margin:.3em 0 .1em}
+h2{font-size:20px;color:var(--deep);margin:1.9em 0 .3em;border-bottom:2px solid var(--line);padding-bottom:5px}
+h3{font-size:15px;color:var(--deep);margin:1.2em 0 .3em}
+.lede{font-size:17px;color:var(--muted);margin:.3em 0 0}
+.crumb{font-size:13px;margin-bottom:8px}
+a{color:var(--water)}small{color:var(--muted)}
+table{border-collapse:collapse;width:100%;font-size:14px;margin:.6em 0}
+th{text-align:left;background:var(--stone);color:var(--deep);padding:7px 9px;border:1px solid var(--line);font-size:12.5px}
+td{padding:7px 9px;border:1px solid var(--line);vertical-align:top}
+ul{margin:.4em 0 .5em 1.1em}li{margin:.3em 0}
+.card{background:#fff;border:1px solid var(--line);border-radius:8px;padding:16px 18px;margin:1em 0}
+.kbox{background:var(--deep);color:var(--paper);border-radius:8px;padding:16px 18px;margin:1.1em 0}
+.kbox b{color:#fff}.kbox a{color:#8FD3DE}
+
+/* ---- explorer ---- */
+.explorer{background:#fff;border:1px solid var(--line);border-radius:10px;padding:18px;margin:1.2em 0}
+.pick{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:14px}
+.pick button{font:inherit;font-size:13px;padding:6px 11px;border:1px solid var(--line);background:var(--paper);
+color:var(--deep);border-radius:16px;cursor:pointer}
+.pick button:hover{border-color:var(--water)}
+.pick button[aria-pressed=true]{background:var(--deep);color:var(--paper);border-color:var(--deep)}
+.exgrid{display:grid;grid-template-columns:minmax(0,300px) minmax(0,1fr);gap:20px;align-items:start}
+@media(max-width:720px){.exgrid{grid-template-columns:1fr}}
+.lakebox{text-align:center}
+.lakebox svg{width:100%;height:auto;max-height:300px}
+.lakecap{font-size:12px;color:var(--muted);margin-top:6px}
+.sliderrow{margin:2px 0 14px}
+.sliderrow label{display:block;font-size:13px;color:var(--muted);margin-bottom:5px}
+input[type=range]{width:100%;accent-color:var(--water)}
+.cov{font-size:34px;font-weight:700;color:var(--deep);line-height:1}
+.cov span{font-size:15px;font-weight:400;color:var(--muted)}
+.presets{display:flex;flex-wrap:wrap;gap:6px;margin:10px 0 0}
+.presets button{font:inherit;font-size:12px;padding:4px 9px;border:1px solid var(--line);background:var(--stone);
+color:var(--deep);border-radius:5px;cursor:pointer}
+.presets button:hover{border-color:var(--water)}
+.stats{display:grid;grid-template-columns:repeat(auto-fit,minmax(122px,1fr));gap:8px;margin:14px 0 0}
+.stat{background:var(--paper);border:1px solid var(--line);border-radius:6px;padding:8px 10px}
+.stat .k{font-size:10.5px;color:var(--muted);text-transform:uppercase;letter-spacing:.04em}
+.stat .v{font-size:19px;font-weight:700;color:var(--deep);line-height:1.25}
+.stat .u{font-size:11px;color:var(--muted)}
+.stat.warn .v{color:var(--rust)}
+.stat.good .v{color:var(--water)}
+.chart{margin-top:16px}
+.chart svg{width:100%;height:auto;display:block}
+.note{font-size:13px;color:var(--ink);background:var(--paper);border-left:3px solid var(--amber);
+padding:9px 12px;margin:12px 0 0;border-radius:0 5px 5px 0}
+.prov{font-size:11.5px;color:var(--muted);margin-top:10px}
+.prov b{color:var(--deep)}
+.est{color:var(--rust);font-weight:700}
+.codelinks a{display:inline-block;background:var(--stone);border:1px solid var(--line);border-radius:5px;
+padding:4px 9px;margin:3px 4px 3px 0;font-size:13px;font-family:ui-monospace,Menlo,monospace}
+.legend{display:flex;flex-wrap:wrap;gap:14px;font-size:12px;color:var(--muted);margin-top:6px}
+.legend i{display:inline-block;width:18px;height:3px;vertical-align:middle;margin-right:5px}
+.assump{margin-top:18px;padding-top:14px;border-top:1px dashed var(--line);
+display:grid;grid-template-columns:1fr 1fr;gap:22px}
+@media(max-width:720px){.assump{grid-template-columns:1fr}}
+.assumprow label{display:block;font-size:13px;color:var(--muted);margin-bottom:5px}
+.assumprow label b{color:var(--deep);font-size:15px}
+.hint{font-size:11.5px;color:var(--muted);margin:8px 0 0;line-height:1.5}
+details.adv{margin-top:16px;border-top:1px dashed var(--line);padding-top:10px}
+details.adv summary{cursor:pointer;font-size:13px;color:var(--water);font-weight:600;list-style:revert}
+details.adv .assump{margin-top:12px;border-top:none;padding-top:0}
+
+.paper{max-width:820px} .paper h2{margin-top:2.2em}
+.abstract{background:#fff;border:1px solid var(--line);border-left:4px solid var(--water);
+padding:16px 18px;border-radius:0 6px 6px 0;margin:1.4em 0}
+.eq{background:var(--stone);border:1px solid var(--line);border-radius:5px;padding:10px 14px;
+font-family:ui-monospace,Menlo,monospace;font-size:13px;margin:.8em 0;overflow-x:auto}
+ol.refs li{margin:.5em 0;font-size:14px}
+</style></head><body><div class="wrap paper">
+
+<div class=crumb><a href="./">&larr; Colorado River</a> &middot;
+<a href="reservoir-solar-explorer.html">Coverage explorer</a> &middot;
+<a href="reservoir-solar-method.html">Methods &amp; review</a></div>
+<span class=tag>TECHNICAL PAPER &middot; PREPRINT</span>
+<h1>Coverage bounds on floating photovoltaics at Colorado River reservoirs</h1>
+<p class=lede>An hourly analysis of seven reservoirs, with uncertainty propagated and outputs
+validated against independent measurements.</p>
+<p><small>Steps Ventures &middot; independent analysis, not affiliated with any agency, district,
+utility or investor &middot; correspondence: mike@stepsventures.com &middot; code and data:
+<a href="https://github.com/steps-re/colorado-river">github.com/steps-re/colorado-river</a></small></p>
+
+<div class=abstract>
+<b>Abstract.</b> Proposals to deploy floating photovoltaics (FPV) on Colorado River reservoirs
+commonly specify 15&ndash;20% surface coverage, on the reasoning that suppressed evaporation and
+generated electricity are complementary benefits. We test that specification with an hourly,
+full-year model of seven reservoirs, each on its own dam's interconnection, using measured surface
+areas from Sentinel-2, direct eddy-covariance evaporation fluxes where they exist, and day-ahead
+prices at the Palo Verde hub. We find the two benefits do not scale together: suppressed
+evaporation is linear in coverage, while deliverable energy saturates at a coverage bound set by
+the dam's export capacity. That bound is reservoir-specific and spans more than an order of
+magnitude, from about 0.75% at Navajo to about 8.5% at Havasu, and 15&ndash;20% exceeds it at every
+reservoir studied. Propagating uncertainty across ten parameters
+(2,000 draws), the median cost of water suppressed is
+$17,317 per acre-foot at Lake Mead
+(P10&ndash;P90 $12,699&ndash;24,498),
+against roughly $325&ndash;700 per acre-foot to purchase conserved water from irrigators. That
+benchmark is institutionally heterogeneous &mdash; it spans fallowing contracts, efficiency
+retrofits and delivered transfers with different reliability and shepherding &mdash; so the
+comparison should be read as an order-of-magnitude ranking rather than a like-for-like price. No cover technology
+that has been demonstrated at reservoir scale approaches that benchmark; the one option that is
+cheaper per acre-foot on paper, a chemical monolayer film, has repeatedly failed in field
+conditions and is not a counter-example. We conclude
+that FPV at these reservoirs cannot be justified as a water measure, and that its defensible case
+is as an energy measure backfilling hydropower capacity lost to declining reservoir elevation, with
+evaporation suppression as a co-benefit. <b>The principal limitation is that export capacity is
+represented by a scalar bound rather than a generator interconnection study; no conclusion here
+establishes project feasibility at any specific site.</b>
+</div>
+
+<h2>1. Motivation</h2>
+<p>Reservoir evaporation on the Colorado River is a large and poorly instrumented loss. Lake Mead
+alone loses on the order of half a million acre-feet a year, comparable to a mid-sized state's
+municipal demand. Covering water with photovoltaic modules is an appealing response because it
+appears to address supply and generation simultaneously, and coverage targets of 15&ndash;20% have
+entered the policy conversation.</p>
+<p>Such a target is only meaningful if both benefits scale with coverage. This paper tests whether
+they do, and asks what bounds the answer.</p>
+
+<h2>2. Study sites and data</h2>
+<p>Seven Reclamation reservoirs with hydroelectric generation. Asterisk marks an evaporation rate
+that is a screening estimate rather than a measurement.</p>
+<div style="overflow-x:auto"><table>
+<tr><th>Reservoir</th><th>Dam</th><th>Capacity (MW)</th><th>Energy (GWh/yr)</th><th>CF</th>
+<th>Surface (acres)</th><th>Evap (ft/yr)</th><th>On-shore load (MW)</th></tr>
+<tr><td>Lake Mead</td><td>Hoover Dam</td><td>2,080</td><td>4,000</td><td>0.22</td><td>69,593</td><td>6.22</td><td>0</td></tr><tr><td>Lake Powell</td><td>Glen Canyon Dam</td><td>1,320</td><td>2,777</td><td>0.24</td><td>56,497</td><td>5.83</td><td>0</td></tr><tr><td>Lake Mohave</td><td>Davis Dam</td><td>240</td><td>1,148</td><td>0.55</td><td>25,665</td><td>5.64</td><td>0</td></tr><tr><td>Lake Havasu</td><td>Parker Dam</td><td>120</td><td>457</td><td>0.43</td><td>15,330</td><td>5.21</td><td>300</td></tr><tr><td>Flaming Gorge</td><td>Flaming Gorge Dam</td><td>152</td><td>457</td><td>0.34</td><td>33,510</td><td>3.3*</td><td>0</td></tr><tr><td>Navajo Reservoir</td><td>Navajo Dam</td><td>30</td><td>90</td><td>0.34</td><td>9,830</td><td>3.6*</td><td>0</td></tr><tr><td>Blue Mesa</td><td>Blue Mesa Dam</td><td>86</td><td>239</td><td>0.32</td><td>5,895</td><td>2.8*</td><td>0</td></tr>
+</table></div>
+
+<p><b>Surface area.</b> Sentinel-2 surface reflectance, summer composites 2024&ndash;2026, water
+classified by MNDWI &gt; 0 at 30 m, reduced within each reservoir's own OpenStreetMap polygon
+rather than a bounding box. Published areas mix conventions (Reclamation operating averages in the
+Lower Basin, full pool in the Upper Basin); measuring all seven identically avoids that.</p>
+
+<p><b>Evaporation.</b> Lake Mead (6.22 ft/yr) and Lake Mohave (5.64 ft/yr) use USGS eddy-covariance
+and energy-balance flux measurements. These are measured depths and are independent of surface
+area, so they may validly be applied to a separately measured area. Lake Powell uses the
+Reclamation/DRI measured programme. Lake Havasu has no direct measurement; its figure is an area
+quotient and is treated as a bracket of 5.2&ndash;7.4 ft/yr. Upper Basin rates are screening
+estimates; those reservoirs are only now being instrumented.</p>
+
+<p><b>Solar resource.</b> PVGIS-NSRDB hourly irradiance and temperature at each reservoir's
+coordinates, converted to AC output per installed MW with a floating cooling adjustment (cell
+temperature rise scaled to 0.82 of a ground mount, power coefficient &minus;0.35%/&deg;C), which
+averages a 1.01 uplift and is immaterial to any conclusion.</p>
+
+<p><b>Prices.</b> CAISO day-ahead LMP at the Palo Verde hub, full year 2024, 8,784 hours, no
+gap-filling. Palo Verde is the Desert Southwest trading hub. The three Upper Basin reservoirs sit
+in PacifiCorp East, PNM and WAPA Rocky Mountain, none of which publish hourly nodal prices; they
+use Palo Verde as an acknowledged proxy.</p>
+
+<p><b>Dam generation.</b> Glen Canyon uses measured sub-daily USGS discharge below the dam. The
+remaining plants have no public sub-daily tailrace gauge and use a load-following diurnal and
+seasonal shape normalised to published annual energy.</p>
+
+<h2>3. Methods</h2>
+<p>For each reservoir and each coverage fraction <i>c</i>, at hourly resolution over a full year:</p>
+<div class=eq>
+array capacity      P(c) = c &middot; A &middot; &rho;<br>
+inverter rating     P_ac = min(P(c), T&middot;&lambda; + L)<br>
+export headroom     H(t) = max(0, T &minus; G(t)) &middot; &lambda; + L&middot;&kappa;&middot;1[daylight]<br>
+delivered           D(t) = min( min(S(t)&middot;P(c), P_ac), H(t) )<br>
+revenue             R = &Sigma; D(t)&middot;p(t) for p(t) &gt; 0<br>
+evaporation saved   E(c) = c &middot; &sigma; &middot; A &middot; e
+</div>
+<p>where <i>A</i> is measured surface area, <i>&rho;</i> areal density, <i>T</i> plant nameplate,
+<i>G(t)</i> dam generation, <i>&lambda;</i> the share of idle line available to solar, <i>L</i>
+on-shore load, <i>&kappa;</i> its coincidence with solar, <i>S(t)</i> per-MW solar output,
+<i>p(t)</i> price, <i>&sigma;</i> evaporation suppression and <i>e</i> the evaporation rate.
+Energy not delivered is partitioned into inverter clipping, line spill, negative-price withholding,
+storage round-trip loss and stranded charge; the partition is verified to close to
+&lt;10<sup>&minus;11</sup> of gross generation across 448 parameter combinations.</p>
+<p>Where storage is modelled, dispatch is a day-ahead greedy: charge from energy the line cannot
+carry or that would sell at a negative price, discharge into the day's best-priced hours with
+remaining headroom, subject to a 10% state-of-charge reserve, 0.88 average lifetime capacity fade
+and 365 full-equivalent cycles per year. Dispatch has perfect price foresight within each day,
+which flatters storage.</p>
+<p>Costs are annualised with a capital recovery factor. Capital expenditure is split into a DC term
+scaling with array size and an AC term scaling with the inverter rating, so oversizing an array past
+its export limit incurs only DC cost. Suppressed evaporation is <b>not</b> monetised: no mechanism
+exists under the 1922 Compact or the <i>Arizona v. California</i> decree for a private party to own
+or sell water salvaged from evaporation on a mainstream federal reservoir. Cost per acre-foot is
+therefore reported as a public cost-effectiveness measure net of power sales.</p>
+
+<h2>4. Validation</h2>
+<p>Tests are labelled by what they can establish. Only <b>external</b> tests validate anything:
+they compare a model output against a value produced independently, by a different method.
+<b>Circular</b> tests compare against figures the model was normalised to and prove only that the
+scaling arithmetic is correct. <b>Internal</b> tests are round-trips, and <b>range</b> tests check a
+constant against published bounds. 11 of
+11 external validations pass
+(16 of 16 overall).</p>
+<div style="overflow-x:auto"><table>
+<tr><th>Test</th><th>Kind</th><th>Model</th><th>Reference</th><th>Error</th><th>Tolerance</th><th></th></tr>
+<tr><td>Lake Mead total open-water evaporation</td><td>external</td><td>432,869.49</td><td>519,313.00</td><td>-16.6%</td><td>&plusmn;25%</td><td>pass</td></tr><tr><td>Lake Mohave total open-water evaporation</td><td>external</td><td>144,750.94</td><td>151,722.00</td><td>-4.6%</td><td>&plusmn;15%</td><td>pass</td></tr><tr><td>Lake Mohave surface area</td><td>external</td><td>25,665.00</td><td>27,022.00</td><td>-5.0%</td><td>&plusmn;12%</td><td>pass</td></tr><tr><td>Lake Mead solar capacity factor</td><td>external</td><td>0.21</td><td>0.21</td><td>-1.7%</td><td>&plusmn;20%</td><td>pass</td></tr><tr><td>Lake Powell solar capacity factor</td><td>external</td><td>0.20</td><td>0.21</td><td>-4.8%</td><td>&plusmn;20%</td><td>pass</td></tr><tr><td>Glen Canyon annual generation</td><td>circular</td><td>2,776.99</td><td>2,777.00</td><td>-0.0%</td><td>&plusmn;3%</td><td>pass</td></tr><tr><td>Hoover annual generation</td><td>circular</td><td>4,000.01</td><td>4,000.00</td><td>+0.0%</td><td>&plusmn;3%</td><td>pass</td></tr><tr><td>Palo Verde annual average day-ahead price</td><td>internal</td><td>33.34</td><td>33.31</td><td>+0.1%</td><td>&plusmn;3%</td><td>pass</td></tr><tr><td>Evaporation saved, Mead at 3% coverage</td><td>internal</td><td>9,740.00</td><td>9,739.56</td><td>+0.0%</td><td>&plusmn;1%</td><td>pass</td></tr><tr><td>FPV areal density</td><td>range</td><td>120.00</td><td>120.00</td><td>+0.0%</td><td>&plusmn;35%</td><td>pass</td></tr><tr><td>Lake Mead OSM full-pool outline vs measured water</td><td>external</td><td>335.20</td><td>281.60</td><td>+19.0%</td><td>&plusmn;60%</td><td>pass</td></tr><tr><td>Lake Havasu OSM full-pool outline vs measured water</td><td>external</td><td>69.90</td><td>62.00</td><td>+12.7%</td><td>&plusmn;60%</td><td>pass</td></tr><tr><td>Blue Mesa OSM full-pool outline vs measured water</td><td>external</td><td>36.10</td><td>23.90</td><td>+51.0%</td><td>&plusmn;60%</td><td>pass</td></tr><tr><td>Flaming Gorge OSM full-pool outline vs measured water</td><td>external</td><td>166.20</td><td>135.60</td><td>+22.6%</td><td>&plusmn;60%</td><td>pass</td></tr><tr><td>Lake Mead measured area vs area-capacity expectation</td><td>external</td><td>69,593.00</td><td>70,500.00</td><td>-1.3%</td><td>&plusmn;10%</td><td>pass</td></tr><tr><td>Lower Basin three-reservoir surface, summed</td><td>external</td><td>110,588.00</td><td>129,520.00</td><td>-14.6%</td><td>&plusmn;25%</td><td>pass</td></tr>
+</table></div>
+<p>The Lake Mead evaporation test reads 16.6% low by construction: our surface is a 2024&ndash;2026
+measurement and Reclamation's volume is a 2017&ndash;2021 average over a larger lake. Lake Mohave,
+held on a seasonal guide curve so that its area is stable between the two periods, agrees to 4.6%
+and is the tighter test. Outline tests are directional: full-pool shorelines should exceed a
+drawn-down measured surface.</p>
+
+<h2>5. Uncertainty</h2>
+<p>Monte Carlo propagation, 2,000 draws, seed 20260807. Parameters are
+<b>not</b> drawn independently: a Gaussian copula links capital cost to O&amp;M
+(&rho;&nbsp;0.75, since a deep, storm-exposed, mussel-infested site raises both), capital cost to
+areal density (&rho;&nbsp;&minus;0.35, since wide mooring corridors lower density and raise cost per
+watt together), capital cost to discount rate (&rho;&nbsp;0.25), and suppression to evaporation rate
+(&rho;&nbsp;0.20). Achieved rank correlations match the targets to within 0.015. Independent draws
+would understate the tails.</p>
+<table><tr><th>Parameter</th><th>Distribution</th></tr><tr><td>suppression</td><td>triangular(0.60, 0.75, 0.90)</td></tr><tr><td>density mw km2</td><td>triangular(80, 120, 160)</td></tr><tr><td>capex per w</td><td>triangular(1.23, 1.50, 2.50)</td></tr><tr><td>om multiplier</td><td>triangular(1.0, 1.3, 3.0)</td></tr><tr><td>wacc</td><td>uniform(0.06, 0.09)</td></tr><tr><td>capacity value kw yr</td><td>uniform(51, 176)</td></tr><tr><td>line share</td><td>uniform(0.10, 1.00)</td></tr><tr><td>load coincidence</td><td>uniform(0.25, 1.00)</td></tr><tr><td>evaporation</td><td>flux sites normal(mu, 5-8%); Havasu uniform(5.2, 7.4); Upper Basin normal(mu, 30%)</td></tr></table>
+<p>Results. Right-sized array is the largest whose spill stays under 5% for that draw.</p>
+<div style="overflow-x:auto"><table>
+<tr><th>Reservoir</th><th>MW P10</th><th>MW P50</th><th>MW P90</th><th>AF/yr saved (P50)</th>
+<th>$/AF P10</th><th>$/AF P50</th><th>$/AF P90</th></tr>
+<tr><td>Lake Mead</td><td>414</td><td><b>1,272</b></td><td>2,149</td><td>12,146</td><td>$12,699</td><td><b>$17,317</b></td><td>$24,498</td></tr><tr><td>Lake Powell</td><td>228</td><td><b>719</b></td><td>1,222</td><td>6,383</td><td>$13,684</td><td><b>$18,658</b></td><td>$26,232</td></tr><tr><td>Lake Mohave</td><td>0</td><td><b>34</b></td><td>73</td><td>286</td><td>$14,048</td><td><b>$19,300</b></td><td>$26,459</td></tr><tr><td>Lake Havasu</td><td>195</td><td><b>337</b></td><td>469</td><td>3,213</td><td>$12,178</td><td><b>$17,028</b></td><td>$24,324</td></tr><tr><td>Flaming Gorge</td><td>0</td><td><b>50</b></td><td>112</td><td>262</td><td>$20,851</td><td><b>$33,694</b></td><td>$62,104</td></tr><tr><td>Navajo Reservoir</td><td>0</td><td><b>11</b></td><td>20</td><td>52</td><td>$19,096</td><td><b>$30,896</b></td><td>$55,048</td></tr><tr><td>Blue Mesa</td><td>14</td><td><b>42</b></td><td>71</td><td>167</td><td>$24,565</td><td><b>$40,256</b></td><td>$70,499</td></tr>
+</table></div>
+<h3>5.1 Variance attribution</h3>
+<p>Partial rank correlation coefficients, computed on the same sample. These identify which inputs
+drive the spread in each output.</p>
+<div style="overflow-x:auto"><table>
+<tr><th>Reservoir</th><th>Drivers of cost per acre-foot</th><th>Drivers of array size</th></tr>
+<tr><td>Lake Mead</td><td>density +0.89, suppression -0.81, capex +0.79, wacc +0.74</td><td>line share +1.00, density -0.19, evaporation -0.03</td></tr><tr><td>Lake Powell</td><td>density +0.88, suppression -0.80, evaporation -0.78, capex +0.75</td><td>line share +1.00, density -0.19, evaporation +0.03</td></tr><tr><td>Lake Mohave</td><td>density +0.89, suppression -0.81, capex +0.77, wacc +0.74</td><td>line share +0.95, density +0.04, evaporation +0.03</td></tr><tr><td>Lake Havasu</td><td>density +0.88, evaporation -0.86, suppression -0.81, capex +0.77</td><td>load coincidence +1.00, line share +0.96, density -0.14</td></tr><tr><td>Flaming Gorge</td><td>evaporation -0.96, density +0.77, suppression -0.63, capex +0.60</td><td>line share +0.95, capex +0.02, load coincidence +0.02</td></tr><tr><td>Navajo Reservoir</td><td>evaporation -0.96, density +0.77, suppression -0.67, capex +0.61</td><td>line share +0.90, density +0.03, capacity value +0.03</td></tr><tr><td>Blue Mesa</td><td>evaporation -0.96, density +0.77, suppression -0.65, capex +0.59</td><td>line share +0.99, density -0.14, wacc +0.04</td></tr>
+</table></div>
+<p>Two patterns matter. Areal density is the strongest driver of cost per acre-foot at every
+reservoir, which means layout efficiency, not module price, is where the cost uncertainty lives.
+And in the Upper Basin the evaporation rate dominates
+(&rho;&nbsp;&minus;0.96 at all three sites) because those rates have never been measured. The
+Reclamation and Upper Colorado River Commission instrumentation programme now underway would
+therefore resolve most of the Upper Basin uncertainty on its own.</p>
+
+<h3>5.2 Is the Lake Havasu result an artifact of the export proxy?</h3>
+<p>Havasu's advantage could plausibly be an artifact of the assumed line share rather than a
+property of the site. Sweeping that parameter across its full range and ranking reservoirs by
+capacity retained relative to their own unconstrained case:</p>
+<table>
+<tr><th>Line share</th><th>Havasu rank</th><th>Havasu retention</th><th>Mead retention</th></tr>
+<tr><td>0.05</td><td>1</td><td>0.71</td><td>0.04</td></tr><tr><td>0.25</td><td>1</td><td>0.77</td><td>0.25</td></tr><tr><td>0.50</td><td>1</td><td>0.82</td><td>0.50</td></tr><tr><td>0.75</td><td>1</td><td>0.94</td><td>0.75</td></tr><tr><td>0.95</td><td>1</td><td>1.00</td><td>0.96</td></tr>
+</table>
+<p>Havasu ranks first at <b>19/19 constrained line-share values (line share < 1.0)</b>. At a line share of 1.0 no reservoir is
+constrained, every site retains 100%, and the ranking is a tie carrying no information; that case is
+excluded. The finding is therefore robust to the parameter the objection targets.</p>
+<p>It is <b>not</b> robust to load coincidence, which is the assumption that actually decides it:</p>
+<table>
+<tr><th>Coincidence</th><th>Havasu rank</th><th>Havasu MW</th><th>Mead MW</th></tr>
+<tr><td>0.10</td><td>4</td><td>56</td><td>591</td></tr><tr><td>0.25</td><td>1</td><td>130</td><td>591</td></tr><tr><td>0.50</td><td>1</td><td>242</td><td>591</td></tr><tr><td>0.75</td><td>1</td><td>354</td><td>591</td></tr><tr><td>1.00</td><td>1</td><td>465</td><td>591</td></tr>
+</table>
+<p>Below roughly 25% coincidence the advantage disappears entirely. How much Central Arizona
+Project pumping is genuinely simultaneous with solar output, and genuinely dispatchable to it, is
+therefore the measurement that would settle this site &mdash; not the transmission question.</p>
+
+<p>The spread on array size is dominated by the share of idle line assumed available, which is the
+parameter standing in for the interconnection study this analysis lacks. The spread on cost per
+acre-foot is dominated by capital cost and O&amp;M, reflecting genuine disagreement about mooring in
+deep, strongly fluctuating water and about biofouling by quagga mussels in the Lower Basin.</p>
+
+<h2>6. Results</h2>
+<p><b>6.1 The benefits do not scale together.</b> Suppressed evaporation is linear in coverage by
+construction and remains so to first order. Deliverable energy saturates: once array capacity
+exceeds available headroom, additional modules generate energy that cannot leave. A single
+coverage target therefore cannot be optimal for both objectives.</p>
+
+<p><b>6.2 The coverage bound is reservoir-specific and spans an order of magnitude.</b> Taking the
+coverage at which line spill first exceeds 10%: Havasu 8.5%, Mead 8.0%, Powell 5.75%, Blue Mesa
+3.25%, Mohave 1.25%, Flaming Gorge 1.0%, Navajo 0.75%. A 15&ndash;20% target exceeds the bound at every reservoir studied
+<i>under the export assumption used here</i>; since that assumption is a scalar proxy rather than an
+interconnection study, the ranking between reservoirs is more robust than the absolute bound. Reservoirs with large surfaces behind small powerplants are the worst
+candidates, which is the opposite of what a surface-area-driven screen selects.</p>
+
+<p><b>6.3 On-shore load, not transmission, distinguishes the best site.</b> Lake Havasu retains
+337 MW at median against
+1,272 MW at Lake Mead, despite a transmission line one
+seventeenth the size, because roughly 300 MW of Central Arizona Project pumping load sits on its
+shoreline. Its surface is also administered by BLM and Arizona State Parks rather than the National
+Park Service. Load coincidence is consequently the parameter that decides that site.</p>
+
+<p><b>6.4 Cost of suppressed water.</b> Median $17,317 per
+acre-foot at Lake Mead and higher elsewhere, against $325&ndash;700 to purchase conserved
+agricultural water and $2,500&ndash;3,500 for seawater desalination. Non-generating covers are
+cheaper than FPV but do not close the gap:</p>
+<table>
+<tr><th>Option</th><th>Capex per acre</th><th>Life (yr)</th><th>Suppression</th><th>$/acre-foot</th></tr>
+<tr><td>Chemical monolayer (cetyl alcohol film)</td><td>$200</td><td>1</td><td>20%</td><td>$172</td></tr><tr><td>Shade balls (hollow HDPE spheres)</td><td>$197,143</td><td>10</td><td>90%</td><td>$5,014</td></tr><tr><td>Floating PV (this model, baseline cost)</td><td>$597,317</td><td>25</td><td>75%</td><td>$13,590</td></tr><tr><td>Floating modular cover / geomembrane</td><td>$1,428,571</td><td>20</td><td>90%</td><td>$24,446</td></tr><tr><td>Floating PV (reviewers' harsh cost case)</td><td>$1,214,058</td><td>25</td><td>75%</td><td>$30,139</td></tr>
+</table>
+<p>The chemical monolayer is the only entry cheaper per acre-foot than purchased conservation, and
+it is not a counter-example: wind disperses the film continuously, field suppression falls far
+below laboratory values, and it has been trialled and abandoned repeatedly on open water. Among
+options demonstrated at scale, none approaches the conservation benchmark.</p>
+
+<p>Desalination outperforms every cover because suppression yield is bounded by physics: an acre of
+covered water saves only the depth that would have evaporated, about 5.6 acre-feet a year in the
+Lower Basin, whereas a desalination plant's output per unit footprint has no such ceiling. Covers
+distribute industrial capital cost across large areas to harvest a thin layer.</p>
+
+<p><b>6.5 Backfilling lost hydropower capacity.</b> An array sized to replace generation a dam can
+no longer produce is not competing for export capacity, because the derate releases it. Modelled
+against a 58% Hoover derate (2.32 TWh/yr), arrays fill 40&ndash;57% of the hourly deficit across the array and storage combinations examined
+(up to 3.4 GW with 2 GW/8 hr). We did not find a configuration that exceeds it, and the physical
+reason is clear &mdash; a capacity derate is a continuous loss while solar is diurnal and seasonal &mdash; but this is a
+bound observed over the configurations modelled, not a proof. Seasonal storage, demand response or
+a hybrid firm resource would raise it. Break-even energy price falls from $105 to $77/MWh when 1,000 MW of four-hour storage is
+added, against a merchant capture of about $25/MWh. Eight-hour storage over-invests. The residual
+gap is a question of contracted value for avoided replacement power, not of dispatch. Two caveats
+are material: hydrology is cyclical, so a derate may reverse and return the capacity to the dam;
+and wheeling and basis costs from each dam to a trading hub are not modelled.</p>
+
+<h2>7. Limitations</h2>
+<ol>
+<li><b>Export capacity is a scalar, not an interconnection study.</b> Plant nameplate minus dam
+output, scaled by an assumed share, omits the generator step-up transformer, switchyard and breaker
+ratings, N-1 contingency, reactive capability and existing firm reservations. This is the dominant
+limitation and the reason no result here establishes feasibility at a specific site.</li>
+<li><b>Evaporation suppression is treated as linear in coverage.</b> Heat not lost as latent flux
+mixes into the bulk water and raises evaporation on the surrounding open surface, making suppression
+sub-linear at high coverage. The magnitude is unmeasured at reservoir scale.</li>
+<li><b>Upper Basin evaporation rates are unmeasured</b> and Upper Basin prices are proxied.</li>
+<li><b>Storage dispatch has perfect intraday price foresight</b>, which flatters storage.</li>
+<li><b>Solar receives no firm capacity credit</b>, which is conservative rather than correct.</li>
+<li><b>Wheeling and basis costs are omitted</b>, which flatters revenue.</li>
+<li><b>The conservation benchmark is heterogeneous.</b> Published conservation prices cover
+fallowing, efficiency and delivered transfers, which differ in reliability, shepherding losses and
+permanence. The comparison supports an order-of-magnitude ranking, not a like-for-like price.</li>
+<li><b>Institutional feasibility is assumed, not assessed.</b> No leasing path currently exists for
+private solar on federal reservoir surface, and most of these surfaces are National Recreation
+Areas.</li>
+</ol>
+
+<h2>8. Conclusion</h2>
+<p>Coverage targets in the 15&ndash;20% range exceed the export-limited bound at every reservoir
+studied, and the bound varies by more than tenfold between sites, so a basin-wide coverage figure is
+not a useful specification. Floating photovoltaics cannot be justified at these reservoirs as a
+water measure: the cost per acre-foot of suppressed evaporation exceeds purchased agricultural
+conservation by roughly an order of magnitude under every parameter combination sampled, and no
+alternative cover technology closes that gap. The defensible case is as an energy measure,
+backfilling hydropower capacity that declining reservoir elevation is removing, at sites where load
+sits on the shoreline. Establishing whether any particular site is buildable requires interconnection
+studies that are not publicly available.</p>
+
+<h2>9. Reproducibility</h2>
+<p>All inputs are public. Monte Carlo results are seeded. Code:</p>
+<div class=codelinks>
+<a href="https://github.com/steps-re/colorado-river/blob/main/analysis/fpv_coverage_explorer.py">fpv_coverage_explorer.py</a>
+<a href="https://github.com/steps-re/colorado-river/blob/main/analysis/fpv_uncertainty.py">fpv_uncertainty.py</a>
+<a href="https://github.com/steps-re/colorado-river/blob/main/analysis/fpv_validation.py">fpv_validation.py</a>
+<a href="https://github.com/steps-re/colorado-river/blob/main/analysis/fpv_havasu_robustness.py">fpv_havasu_robustness.py</a>
+<a href="https://github.com/steps-re/colorado-river/blob/main/analysis/ee_reservoir_areas.py">ee_reservoir_areas.py</a>
+<a href="https://github.com/steps-re/colorado-river/blob/main/analysis/fpv_reservoir_outlines.py">fpv_reservoir_outlines.py</a>
+<a href="https://github.com/steps-re/colorado-river/blob/main/analysis/evap_cover_comparison.py">evap_cover_comparison.py</a>
+<a href="https://github.com/steps-re/colorado-river/blob/main/analysis/fetch_nodal_prices.py">fetch_nodal_prices.py</a>
+</div>
+
+<h2>References</h2>
+<ol class=refs>
+<li>Bureau of Reclamation. <i>Lower Colorado River Mainstream Evaporation and Riparian
+Evapotranspiration Losses.</i> 2023. LCRAS and HDB datasets; reservoir areas and evaporation
+volumes (Tables 7&ndash;10).</li>
+<li>Earp, K. and Moreo, M. <i>Evaporation from Lake Mead and Lake Mohave, Nevada and Arizona,
+2010&ndash;2019.</i> US Geological Survey Open-File Report, 2021. Eddy-covariance and energy-balance
+flux measurements.</li>
+<li>Moreo, M. and Swancar, A. <i>Evaporation from Lake Mead, Nevada and Arizona, March 2010 through
+February 2012.</i> USGS Scientific Investigations Report, 2013.</li>
+<li>Western Area Power Administration. <i>Colorado River Storage Project regional fact sheet.</i>
+2026. Plant capacities and average annual energy.</li>
+<li>Bureau of Reclamation. Hoover Dam frequently asked questions: generation and capacity.</li>
+<li>Upper Colorado River Commission and Bureau of Reclamation. <i>Reservoir Evaporation Project</i>
+(Flaming Gorge, Blue Mesa, Navajo), in progress.</li>
+<li>European Commission Joint Research Centre. <i>Photovoltaic Geographical Information System
+(PVGIS)</i>, PVGIS-NSRDB radiation database.</li>
+<li>Copernicus Sentinel-2 surface reflectance, accessed via Google Earth Engine.</li>
+<li>OpenStreetMap contributors. Reservoir water polygons, retrieved via the Overpass API.</li>
+<li>California Independent System Operator. OASIS day-ahead locational marginal prices, Palo Verde
+intertie, 2024.</li>
+<li>US Geological Survey National Water Information System. Discharge below Glen Canyon Dam, gauge
+09380000.</li>
+<li>Los Angeles Department of Water and Power. Los Angeles Reservoir shade-ball deployment (2015)
+and floating-cover cost comparison.</li>
+<li>Ramasamy, V. and Margolis, R. <i>Floating Photovoltaic System Cost Benchmark.</i> National
+Renewable Energy Laboratory, 2021.</li>
+<li>Gadzanku, S., Lee, N. and Dyreson, A. <i>Enabling Floating Solar Photovoltaic Deployment:
+Exploring Hydropower-Floating PV Hybrids.</i> NREL/TP, 2022.</li>
+<li>National Renewable Energy Laboratory. <i>Cost Projections for Utility-Scale Battery Storage,
+2025 update.</i></li>
+</ol>
+
+<div class=kbox>
+<b>Status.</b> Preprint. Not peer reviewed by a journal. It has been reviewed adversarially by
+independent language models from two vendors across three rounds; their findings, including those
+still unresolved, are published at
+<a href="reservoir-solar-method.html">methods and review</a>.
+</div>
+</div></body></html>

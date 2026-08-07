@@ -1,0 +1,345 @@
+{
+ "question": "Does Havasu's advantage survive across the full range of the export proxy?",
+ "metric": "Capacity retained relative to each reservoir's own generous (100% line) case.",
+ "havasu_rank_first_in": "19/19 constrained line-share values (line share < 1.0)",
+ "havasu_rank_range_constrained": [
+  1,
+  1
+ ],
+ "degenerate_note": "At line share 1.0 no reservoir is constrained, so all retain 100% and the ranking is a tie carrying no information. Excluded from the verdict.",
+ "verdict": "ROBUST to the export proxy: Havasu ranks first on capacity retained at every constrained line share tested. It is NOT robust to load coincidence: below roughly 25% coincidence the advantage disappears.",
+ "line_share_sweep": [
+  {
+   "line_share": 0.05,
+   "havasu_rank_by_retention": 1,
+   "havasu_retention": 0.706,
+   "mead_retention": 0.036,
+   "mw": {
+    "Lake Mead": 84,
+    "Lake Powell": 69,
+    "Lake Mohave": 0,
+    "Lake Havasu": 223,
+    "Flaming Gorge": 0,
+    "Navajo Reservoir": 0,
+    "Blue Mesa": 0
+   }
+  },
+  {
+   "line_share": 0.1,
+   "havasu_rank_by_retention": 1,
+   "havasu_retention": 0.706,
+   "mead_retention": 0.071,
+   "mw": {
+    "Lake Mead": 169,
+    "Lake Powell": 137,
+    "Lake Mohave": 0,
+    "Lake Havasu": 223,
+    "Flaming Gorge": 0,
+    "Navajo Reservoir": 0,
+    "Blue Mesa": 7
+   }
+  },
+  {
+   "line_share": 0.15,
+   "havasu_rank_by_retention": 1,
+   "havasu_retention": 0.706,
+   "mead_retention": 0.143,
+   "mw": {
+    "Lake Mead": 338,
+    "Lake Powell": 206,
+    "Lake Mohave": 0,
+    "Lake Havasu": 223,
+    "Flaming Gorge": 0,
+    "Navajo Reservoir": 0,
+    "Blue Mesa": 7
+   }
+  },
+  {
+   "line_share": 0.2,
+   "havasu_rank_by_retention": 1,
+   "havasu_retention": 0.765,
+   "mead_retention": 0.179,
+   "mw": {
+    "Lake Mead": 422,
+    "Lake Powell": 274,
+    "Lake Mohave": 0,
+    "Lake Havasu": 242,
+    "Flaming Gorge": 0,
+    "Navajo Reservoir": 0,
+    "Blue Mesa": 14
+   }
+  },
+  {
+   "line_share": 0.25,
+   "havasu_rank_by_retention": 1,
+   "havasu_retention": 0.765,
+   "mead_retention": 0.25,
+   "mw": {
+    "Lake Mead": 591,
+    "Lake Powell": 343,
+    "Lake Mohave": 0,
+    "Lake Havasu": 242,
+    "Flaming Gorge": 0,
+    "Navajo Reservoir": 0,
+    "Blue Mesa": 14
+   }
+  },
+  {
+   "line_share": 0.3,
+   "havasu_rank_by_retention": 1,
+   "havasu_retention": 0.765,
+   "mead_retention": 0.286,
+   "mw": {
+    "Lake Mead": 676,
+    "Lake Powell": 412,
+    "Lake Mohave": 0,
+    "Lake Havasu": 242,
+    "Flaming Gorge": 41,
+    "Navajo Reservoir": 0,
+    "Blue Mesa": 21
+   }
+  },
+  {
+   "line_share": 0.35,
+   "havasu_rank_by_retention": 1,
+   "havasu_retention": 0.824,
+   "mead_retention": 0.357,
+   "mw": {
+    "Lake Mead": 845,
+    "Lake Powell": 480,
+    "Lake Mohave": 31,
+    "Lake Havasu": 261,
+    "Flaming Gorge": 41,
+    "Navajo Reservoir": 0,
+    "Blue Mesa": 29
+   }
+  },
+  {
+   "line_share": 0.4,
+   "havasu_rank_by_retention": 1,
+   "havasu_retention": 0.824,
+   "mead_retention": 0.393,
+   "mw": {
+    "Lake Mead": 929,
+    "Lake Powell": 549,
+    "Lake Mohave": 31,
+    "Lake Havasu": 261,
+    "Flaming Gorge": 41,
+    "Navajo Reservoir": 0,
+    "Blue Mesa": 29
+   }
+  },
+  {
+   "line_share": 0.45,
+   "havasu_rank_by_retention": 1,
+   "havasu_retention": 0.824,
+   "mead_retention": 0.429,
+   "mw": {
+    "Lake Mead": 1014,
+    "Lake Powell": 617,
+    "Lake Mohave": 31,
+    "Lake Havasu": 261,
+    "Flaming Gorge": 41,
+    "Navajo Reservoir": 12,
+    "Blue Mesa": 36
+   }
+  },
+  {
+   "line_share": 0.5,
+   "havasu_rank_by_retention": 1,
+   "havasu_retention": 0.824,
+   "mead_retention": 0.5,
+   "mw": {
+    "Lake Mead": 1183,
+    "Lake Powell": 686,
+    "Lake Mohave": 31,
+    "Lake Havasu": 261,
+    "Flaming Gorge": 41,
+    "Navajo Reservoir": 12,
+    "Blue Mesa": 36
+   }
+  },
+  {
+   "line_share": 0.55,
+   "havasu_rank_by_retention": 1,
+   "havasu_retention": 0.882,
+   "mead_retention": 0.536,
+   "mw": {
+    "Lake Mead": 1267,
+    "Lake Powell": 754,
+    "Lake Mohave": 31,
+    "Lake Havasu": 279,
+    "Flaming Gorge": 41,
+    "Navajo Reservoir": 12,
+    "Blue Mesa": 43
+   }
+  },
+  {
+   "line_share": 0.6,
+   "havasu_rank_by_retention": 1,
+   "havasu_retention": 0.882,
+   "mead_retention": 0.607,
+   "mw": {
+    "Lake Mead": 1436,
+    "Lake Powell": 823,
+    "Lake Mohave": 31,
+    "Lake Havasu": 279,
+    "Flaming Gorge": 81,
+    "Navajo Reservoir": 12,
+    "Blue Mesa": 43
+   }
+  },
+  {
+   "line_share": 0.65,
+   "havasu_rank_by_retention": 1,
+   "havasu_retention": 0.882,
+   "mead_retention": 0.643,
+   "mw": {
+    "Lake Mead": 1521,
+    "Lake Powell": 892,
+    "Lake Mohave": 62,
+    "Lake Havasu": 279,
+    "Flaming Gorge": 81,
+    "Navajo Reservoir": 12,
+    "Blue Mesa": 50
+   }
+  },
+  {
+   "line_share": 0.7,
+   "havasu_rank_by_retention": 1,
+   "havasu_retention": 0.941,
+   "mead_retention": 0.714,
+   "mw": {
+    "Lake Mead": 1690,
+    "Lake Powell": 960,
+    "Lake Mohave": 62,
+    "Lake Havasu": 298,
+    "Flaming Gorge": 81,
+    "Navajo Reservoir": 12,
+    "Blue Mesa": 57
+   }
+  },
+  {
+   "line_share": 0.75,
+   "havasu_rank_by_retention": 1,
+   "havasu_retention": 0.941,
+   "mead_retention": 0.75,
+   "mw": {
+    "Lake Mead": 1774,
+    "Lake Powell": 1029,
+    "Lake Mohave": 62,
+    "Lake Havasu": 298,
+    "Flaming Gorge": 81,
+    "Navajo Reservoir": 12,
+    "Blue Mesa": 57
+   }
+  },
+  {
+   "line_share": 0.8,
+   "havasu_rank_by_retention": 1,
+   "havasu_retention": 0.941,
+   "mead_retention": 0.786,
+   "mw": {
+    "Lake Mead": 1859,
+    "Lake Powell": 1097,
+    "Lake Mohave": 62,
+    "Lake Havasu": 298,
+    "Flaming Gorge": 81,
+    "Navajo Reservoir": 12,
+    "Blue Mesa": 64
+   }
+  },
+  {
+   "line_share": 0.85,
+   "havasu_rank_by_retention": 1,
+   "havasu_retention": 0.941,
+   "mead_retention": 0.857,
+   "mw": {
+    "Lake Mead": 2028,
+    "Lake Powell": 1166,
+    "Lake Mohave": 62,
+    "Lake Havasu": 298,
+    "Flaming Gorge": 81,
+    "Navajo Reservoir": 12,
+    "Blue Mesa": 64
+   }
+  },
+  {
+   "line_share": 0.9,
+   "havasu_rank_by_retention": 1,
+   "havasu_retention": 1.0,
+   "mead_retention": 0.893,
+   "mw": {
+    "Lake Mead": 2112,
+    "Lake Powell": 1235,
+    "Lake Mohave": 62,
+    "Lake Havasu": 316,
+    "Flaming Gorge": 122,
+    "Navajo Reservoir": 24,
+    "Blue Mesa": 72
+   }
+  },
+  {
+   "line_share": 0.95,
+   "havasu_rank_by_retention": 1,
+   "havasu_retention": 1.0,
+   "mead_retention": 0.964,
+   "mw": {
+    "Lake Mead": 2281,
+    "Lake Powell": 1303,
+    "Lake Mohave": 62,
+    "Lake Havasu": 316,
+    "Flaming Gorge": 122,
+    "Navajo Reservoir": 24,
+    "Blue Mesa": 72
+   }
+  },
+  {
+   "line_share": 1.0,
+   "havasu_rank_by_retention": 4,
+   "havasu_retention": 1.0,
+   "mead_retention": 1.0,
+   "mw": {
+    "Lake Mead": 2366,
+    "Lake Powell": 1372,
+    "Lake Mohave": 93,
+    "Lake Havasu": 316,
+    "Flaming Gorge": 122,
+    "Navajo Reservoir": 24,
+    "Blue Mesa": 79
+   }
+  }
+ ],
+ "coincidence_sweep": [
+  {
+   "coincidence": 0.1,
+   "havasu_rank": 4,
+   "havasu_mw": 56,
+   "mead_mw": 591
+  },
+  {
+   "coincidence": 0.25,
+   "havasu_rank": 1,
+   "havasu_mw": 130,
+   "mead_mw": 591
+  },
+  {
+   "coincidence": 0.5,
+   "havasu_rank": 1,
+   "havasu_mw": 242,
+   "mead_mw": 591
+  },
+  {
+   "coincidence": 0.75,
+   "havasu_rank": 1,
+   "havasu_mw": 354,
+   "mead_mw": 591
+  },
+  {
+   "coincidence": 1.0,
+   "havasu_rank": 1,
+   "havasu_mw": 465,
+   "mead_mw": 591
+  }
+ ]
+}

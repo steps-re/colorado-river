@@ -1,0 +1,208 @@
+{
+ "summary": {
+  "total": 16,
+  "passed": 16,
+  "failed": 0,
+  "external_total": 11,
+  "external_passed": 11,
+  "note": "Only the EXTERNAL tests validate anything. Circular tests compare against values the model was normalised to and prove only that the scaling arithmetic is right; internal tests are round-trips; range tests check a constant against published bounds."
+ },
+ "note": [
+  "Tests 1, 2, 3, 5, 6, 7 compare against numbers published or computed by others. Tests 8 and 9 are internal-consistency or range checks and are labelled as such.",
+  "Test 10 deliberately expects disagreement in a known direction: full-pool outlines should exceed a drawn-down measured surface."
+ ],
+ "tests": [
+  {
+   "test": "Lake Mead total open-water evaporation",
+   "kind": "external",
+   "modelled": 432869.488,
+   "reference": 519313,
+   "unit": "AF/yr",
+   "error_pct": -16.6,
+   "tolerance_pct": 25,
+   "passed": true,
+   "reference_source": "Reclamation HDB 2017-2021 average (LCR Evaporation Report 2023, Table 7)",
+   "note": "Our figure uses a 2024-2026 measured surface; Reclamation's is a 2017-2021 average over a larger lake, so ours should read lower. Direction of the difference is the check."
+  },
+  {
+   "test": "Lake Mohave total open-water evaporation",
+   "kind": "external",
+   "modelled": 144750.944,
+   "reference": 151722,
+   "unit": "AF/yr",
+   "error_pct": -4.6,
+   "tolerance_pct": 15,
+   "passed": true,
+   "reference_source": "Reclamation HDB 2017-2021 with 2021 USGS coefficients (Table 8)",
+   "note": "Level held on a seasonal guide curve, so surface area is comparable between periods."
+  },
+  {
+   "test": "Lake Mohave surface area",
+   "kind": "external",
+   "modelled": 25665,
+   "reference": 27022,
+   "unit": "acres",
+   "error_pct": -5.0,
+   "tolerance_pct": 12,
+   "passed": true,
+   "reference_source": "Reclamation LCRAS 2017-2021 average surface area (Table 9)",
+   "note": "Sentinel-2 water mask vs Reclamation's area-capacity tables: independent methods."
+  },
+  {
+   "test": "Lake Mead solar capacity factor",
+   "kind": "external",
+   "modelled": 0.206,
+   "reference": 0.21,
+   "unit": "fraction",
+   "error_pct": -1.7,
+   "tolerance_pct": 20,
+   "passed": true,
+   "reference_source": "Typical fixed-tilt utility PV capacity factor, US Desert Southwest (EIA/NREL range 0.19-0.23)",
+   "note": "Sanity check on the PVGIS resource model at these coordinates."
+  },
+  {
+   "test": "Lake Powell solar capacity factor",
+   "kind": "external",
+   "modelled": 0.2,
+   "reference": 0.21,
+   "unit": "fraction",
+   "error_pct": -4.8,
+   "tolerance_pct": 20,
+   "passed": true,
+   "reference_source": "Typical fixed-tilt utility PV capacity factor, US Desert Southwest (EIA/NREL range 0.19-0.23)",
+   "note": "Sanity check on the PVGIS resource model at these coordinates."
+  },
+  {
+   "test": "Glen Canyon annual generation",
+   "kind": "circular",
+   "modelled": 2776.994,
+   "reference": 2777,
+   "unit": "GWh/yr",
+   "error_pct": -0.0,
+   "tolerance_pct": 3,
+   "passed": true,
+   "reference_source": "WAPA CRSP 2026 fact sheet, average annual energy",
+   "note": "CIRCULAR: the hourly series is normalised to this published figure, so agreement is guaranteed. Retained only as a round-trip check on the scaling arithmetic."
+  },
+  {
+   "test": "Hoover annual generation",
+   "kind": "circular",
+   "modelled": 4000.008,
+   "reference": 4000,
+   "unit": "GWh/yr",
+   "error_pct": 0.0,
+   "tolerance_pct": 3,
+   "passed": true,
+   "reference_source": "Reclamation, Hoover Dam average annual generation ~4 TWh",
+   "note": "CIRCULAR: normalised to this figure. Round-trip check only."
+  },
+  {
+   "test": "Palo Verde annual average day-ahead price",
+   "kind": "internal",
+   "modelled": 33.342,
+   "reference": 33.31,
+   "unit": "$/MWh",
+   "error_pct": 0.1,
+   "tolerance_pct": 3,
+   "passed": true,
+   "reference_source": "Computed independently from the raw OASIS pull (outputs/nodal_prices_2024.json), full year",
+   "note": "Round-trip test of the Int16 quantisation used to embed prices in the page. An earlier version of this test used 29.56, which is the mean over only the hours the older SP15 series also covered; the test correctly failed until the reference was put on the same 8,784-hour basis as the model."
+  },
+  {
+   "test": "Evaporation saved, Mead at 3% coverage",
+   "kind": "internal",
+   "modelled": 9740,
+   "reference": 9739.563,
+   "unit": "AF/yr",
+   "error_pct": 0.0,
+   "tolerance_pct": 1,
+   "passed": true,
+   "reference_source": "Closed-form identity: coverage x suppression x rate x area",
+   "note": "Internal consistency, not external validation."
+  },
+  {
+   "test": "FPV areal density",
+   "kind": "range",
+   "modelled": 120.0,
+   "reference": 120,
+   "unit": "MW/km2",
+   "error_pct": 0.0,
+   "tolerance_pct": 35,
+   "passed": true,
+   "reference_source": "Published utility FPV gross density, roughly 80-160 MW/km2 depending on layout",
+   "note": "Range check on a constant, not a validation of any model output."
+  },
+  {
+   "test": "Lake Mead OSM full-pool outline vs measured water",
+   "kind": "external",
+   "modelled": 335.2,
+   "reference": 281.6,
+   "unit": "km2",
+   "error_pct": 19.0,
+   "tolerance_pct": 60,
+   "passed": true,
+   "reference_source": "Sentinel-2 measured 2024-2026 mean",
+   "note": "OSM outlines are full pool and should read HIGHER than a drawn-down measured surface. Directional: full-pool outlines should exceed a drawn-down measured surface. Confirms the correct water body, not agreement."
+  },
+  {
+   "test": "Lake Havasu OSM full-pool outline vs measured water",
+   "kind": "external",
+   "modelled": 69.9,
+   "reference": 62.0,
+   "unit": "km2",
+   "error_pct": 12.7,
+   "tolerance_pct": 60,
+   "passed": true,
+   "reference_source": "Sentinel-2 measured 2024-2026 mean",
+   "note": "OSM outlines are full pool and should read HIGHER than a drawn-down measured surface. Directional: full-pool outlines should exceed a drawn-down measured surface. Confirms the correct water body, not agreement."
+  },
+  {
+   "test": "Blue Mesa OSM full-pool outline vs measured water",
+   "kind": "external",
+   "modelled": 36.1,
+   "reference": 23.9,
+   "unit": "km2",
+   "error_pct": 51.0,
+   "tolerance_pct": 60,
+   "passed": true,
+   "reference_source": "Sentinel-2 measured 2024-2026 mean",
+   "note": "OSM outlines are full pool and should read HIGHER than a drawn-down measured surface. Directional: full-pool outlines should exceed a drawn-down measured surface. Confirms the correct water body, not agreement."
+  },
+  {
+   "test": "Flaming Gorge OSM full-pool outline vs measured water",
+   "kind": "external",
+   "modelled": 166.2,
+   "reference": 135.6,
+   "unit": "km2",
+   "error_pct": 22.6,
+   "tolerance_pct": 60,
+   "passed": true,
+   "reference_source": "Sentinel-2 measured 2024-2026 mean",
+   "note": "OSM outlines are full pool and should read HIGHER than a drawn-down measured surface. Directional: full-pool outlines should exceed a drawn-down measured surface. Confirms the correct water body, not agreement."
+  },
+  {
+   "test": "Lake Mead measured area vs area-capacity expectation",
+   "kind": "external",
+   "modelled": 69593,
+   "reference": 70500,
+   "unit": "acres",
+   "error_pct": -1.3,
+   "tolerance_pct": 10,
+   "passed": true,
+   "reference_source": "Reclamation Lake Mead area-capacity tables (2009) evaluated at recent elevation",
+   "note": "Sentinel-2 water mask vs a bathymetric elevation-area relationship: fully independent methods."
+  },
+  {
+   "test": "Lower Basin three-reservoir surface, summed",
+   "kind": "external",
+   "modelled": 110588,
+   "reference": 129520,
+   "unit": "acres",
+   "error_pct": -14.6,
+   "tolerance_pct": 25,
+   "passed": true,
+   "reference_source": "Reclamation LCRAS/HDB 2017-2021 averages summed",
+   "note": "Expected low: our surfaces are 2024-2026 and the lakes have fallen since 2017-2021."
+  }
+ ]
+}
