@@ -1,0 +1,75 @@
+{
+ "method": [
+  "Annualised at 7% WACC over each option's own service life, so a 10-year shade ball and a 25-year array are directly comparable.",
+  "Evaporation 6.22 ft/yr (Lake Mead, USGS direct eddy-covariance flux).",
+  "Cost per acre-foot ignores revenue. Only FPV has any; see the FPV net figure.",
+  "Undiscounted lifetime division, which a research agent used, understates capital-heavy long-lived options by roughly 3x. Not used here."
+ ],
+ "benchmarks": {
+  "pay a farmer to conserve": "325-700 $/AF",
+  "desalination": "2500-3500 $/AF",
+  "FPV net of power sales (our hourly model, best-value sizing at Lake Mead)": "~10,900 $/AF"
+ },
+ "options": [
+  {
+   "name": "Chemical monolayer (cetyl alcohol film)",
+   "capex_per_acre": 200,
+   "life_yr": 1,
+   "suppression_pct": 20,
+   "annual_cost_per_acre": 214,
+   "af_per_acre_yr": 1.24,
+   "usd_per_af": 172,
+   "basis": "ESTIMATE, not verified against a large deployment.",
+   "caveat": "Wind disperses the film continuously so it needs constant reapplication, and field suppression is far below laboratory values. Repeatedly trialled and repeatedly abandoned on open reservoirs.",
+   "verdict": "Cheapest per acre-foot on paper and the least likely to work at scale."
+  },
+  {
+   "name": "Shade balls (hollow HDPE spheres)",
+   "capex_per_acre": 197143,
+   "life_yr": 10,
+   "suppression_pct": 90,
+   "annual_cost_per_acre": 28069,
+   "af_per_acre_yr": 5.6,
+   "usd_per_af": 5014,
+   "basis": "VERIFIED DEPLOYMENT: LADWP Los Angeles Reservoir 2015. 96 million balls at $0.36 each = $34.5M over 175 acres = $197,143/acre. 10-year life, minimal maintenance.",
+   "caveat": "The project was for BROMATE CONTROL, not evaporation: sunlight reacting with naturally occurring bromide and chlorine forms a carcinogen. Evaporation was a side benefit that got the press. LADWP has since moved away from them. Scale is the killer: LA Reservoir is 175 acres and sheltered; Lake Mead is ~69,600 acres, 400x larger, with heavy wind fetch, 100-ft level swings, boating and navigation, and quagga mussels. Covering Mead would take on the order of 38 billion balls.",
+   "verdict": "Cheapest credible cover, but never demonstrated beyond a small sheltered drinking-water reservoir."
+  },
+  {
+   "name": "Floating PV (this model, baseline cost)",
+   "capex_per_acre": 597317,
+   "life_yr": 25,
+   "suppression_pct": 75,
+   "annual_cost_per_acre": 63397,
+   "af_per_acre_yr": 4.67,
+   "usd_per_af": 13590,
+   "basis": "Our own model: $1.23/W at 120 MW/km2 = 0.486 MW/acre, $25k/MW-yr O&M.",
+   "caveat": "Unlike every other option here it earns power revenue, which is netted separately below. Suppression is 75%, lower than a solid cover.",
+   "verdict": "Only option with revenue. Still expensive per acre-foot."
+  },
+  {
+   "name": "Floating modular cover / geomembrane",
+   "capex_per_acre": 1428571,
+   "life_yr": 20,
+   "suppression_pct": 90,
+   "annual_cost_per_acre": 136847,
+   "af_per_acre_yr": 5.6,
+   "usd_per_af": 24446,
+   "basis": "VERIFIED QUOTE: LADWP priced a floating cover for the same 175-acre reservoir at $250M = $1.43M/acre, which is why they chose balls instead.",
+   "caveat": "A grounded research agent estimated $140,000/acre for this, ten times too low. The real number makes it the MOST expensive option here, not the cheapest.",
+   "verdict": "Real technology, but priced for small potable-water reservoirs. Not a large-reservoir option."
+  },
+  {
+   "name": "Floating PV (reviewers' harsh cost case)",
+   "capex_per_acre": 1214058,
+   "life_yr": 25,
+   "suppression_pct": 75,
+   "annual_cost_per_acre": 140601,
+   "af_per_acre_yr": 4.67,
+   "usd_per_af": 30139,
+   "basis": "Deep dynamic mooring in 300+ ft of water with 100-ft swings, plus quagga mussel fouling of floats, lines and anchors: $2.50/W and 3x O&M.",
+   "caveat": "No commercial FPV has been moored in these conditions anywhere.",
+   "verdict": "If the reviewers are right about mooring and fouling, FPV is the worst option."
+  }
+ ]
+}
