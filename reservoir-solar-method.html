@@ -165,6 +165,32 @@ pull the basin-wide net below the directly-shaded figure. Now 75%, range 60&ndas
 no degradation, cycle limit, minimum state of charge or reserve holdback.</li>
 </ol>
 
+<p>A third round of review, run after the fixes above, raised these:</p>
+<ol start=9>
+<li><b>A derate is not permanent (fatal).</b> Hydrology is cyclical. If the reservoir recovers, the
+turbines come back and the headroom an array was sized into reverts to the dam. Sizing to a derate is a bet
+that it persists, and needs a contract covering what happens when the water returns.</li>
+<li><b>Wheeling and basis are not modelled.</b> None of these reservoirs sit at the Palo Verde hub whose
+prices are used. Moving power from Hoover, Davis or Parker to a liquid trading point costs money and
+carries basis risk, so the revenue side here is optimistic.</li>
+<li><b>Whole-lake thermal advection (fatal).</b> Suppressing evaporation over part of a reservoir traps
+heat that would have left as latent heat; it mixes into the bulk water and raises evaporation on the open
+surface around the array. Suppression is therefore sub-linear in coverage, and the 75% figure is a
+screening value, not a measurement at this scale.</li>
+<li><b>Crediting firm capacity to the battery only understates the array.</b> Solar carries some capacity
+value of its own, even in a duck-curve market. Zero is conservative rather than correct.</li>
+<li><b>The floating cooling uplift is not calibrated.</b> It compares modelled cell temperature over water
+against a ground mount (cell temperature scaled by 0.82 of the ground-mount rise, with a
+&minus;0.35%/&deg;C power coefficient) and averages around 1.01. It is a modelled delta, not a measured
+one, and it is small enough not to drive any conclusion.</li>
+<li><b>The interconnection gap is the finding that matters (fatal, both reviewers, all three rounds).</b>
+The curtailment knees are an artifact of a scalar headroom assumption. Only a generator interconnection
+study at each specific bus &mdash; transformer and switchyard ratings, N-1 contingency, reactive
+capability, and existing firm reservations &mdash; can establish what can actually be exported. That data
+is not public. This model can show the shape of the trade-off and rule out the largest proposals; it cannot
+establish that any project is feasible.</li>
+</ol>
+
 <p><b>The strongest counterargument they raised</b>, which we think is fair: if the federal government funds
 these arrays as drought infrastructure rather than as a merchant energy play, then price nodes, transmission
 access and cost of capital all stop being the binding questions, and the institutional gates can be
