@@ -143,10 +143,13 @@ public cost-effectiveness number, not project revenue.</li>
 generator step-up transformer, switchyard and breaker ratings, N-1 criteria, protection, reactive
 capability and reserved capacity. The line-share control is a crude stand-in, not a substitute. Only a
 reservoir-specific interconnection study would settle it.</li>
-<li><b>One California price node cannot price seven reservoirs (unfixed).</b> SP15 carries California's duck
-curve. Flaming Gorge sits in PacifiCorp East, Navajo in PNM, Blue Mesa in WAPA Rocky Mountain. Using SP15
-overstates midday price collapse for the Upper Basin and understates its capture. Per-node data is being
-collected.</li>
+<li><b>One California price node cannot price seven reservoirs (fixed for the Lower Basin).</b> The model
+now uses real day-ahead prices at Palo Verde, the Desert Southwest hub, for the full year with no
+gap-filling. The measured difference from the old California series is smaller than the objection implied:
+midday averages $6.20 rather than $3.56/MWh, with 954 negative hours rather than 1,164. Flaming Gorge,
+Navajo and Blue Mesa sit in PacifiCorp East, PNM and WAPA Rocky Mountain, none of which publish hourly
+nodal prices, so those three still use Palo Verde as an acknowledged proxy. Separately, wheeling and basis
+costs of moving power from each dam to a trading hub are not modelled, which flatters revenue.</li>
 <li><b>Evaporation rates and measured areas used mismatched denominators.</b> Corrected where possible: the
 rates that are direct flux measurements are area-independent and valid; Lake Mohave's was an area quotient
 wrongly applied and has been replaced; Havasu's is flagged as a bracket.</li>
