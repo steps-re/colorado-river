@@ -146,7 +146,7 @@ document.addEventListener('DOMContentLoaded',function(){
   });
 });
 </script>
-</head><body><nav class="sitenav" aria-label="Site"><div class="nbwrap"><a href="index.html" class="nb-home">Colorado River</a><a href="start.html" class="nb-start">Start here</a><a href="technical.html">The evidence</a><a href="proposal.html">The fix</a><a href="water-capital.html">Who pays</a><a href="reservoir-solar-explorer.html" class="on">Reservoir solar</a><a href="https://github.com/steps-re/colorado-river" target="_blank" rel="noopener">Data &amp; code</a></div></nav><div class="secstrip"><span class="secttl">Reservoir solar</span><a href="reservoir-solar-explorer.html">Coverage explorer</a><a href="reservoir-solar.html">What the numbers say</a><a href="reservoir-solar-paper.html" class=here>Technical paper</a><a href="reservoir-solar-method.html">Methods and review</a></div><div class="secstrip"><span class="secttl">Reservoir solar</span><a href="reservoir-solar-explorer.html">Coverage explorer</a><a href="reservoir-solar.html">What the numbers say</a><a href="reservoir-solar-paper.html" class=here>Technical paper</a><a href="reservoir-solar-method.html">Methods and review</a></div><div class="wrap paper">
+</head><body><nav class="sitenav" aria-label="Site"><div class="nbwrap"><a href="index.html" class="nb-home">Colorado River</a><a href="start.html" class="nb-start">Start here</a><a href="technical.html">The evidence</a><a href="proposal.html">The fix</a><a href="water-capital.html">Who pays</a><a href="reservoir-solar-explorer.html" class="on">Reservoir solar</a><a href="https://github.com/steps-re/colorado-river" target="_blank" rel="noopener">Data &amp; code</a></div></nav><div class="secstrip"><span class="secttl">Reservoir solar</span><a href="reservoir-solar-explorer.html">Coverage explorer</a><a href="reservoir-solar.html">What the numbers say</a><a href="reservoir-solar-paper.html" class=here>Technical paper</a><a href="reservoir-solar-method.html">Methods and review</a></div><div class="wrap paper">
 
 
 <span class=tag>TECHNICAL PAPER &middot; PREPRINT</span>
@@ -434,6 +434,37 @@ and wheeling and basis costs from each dam to a trading hub are not modelled.</p
 output, scaled by an assumed share, omits the generator step-up transformer, switchyard and breaker
 ratings, N-1 contingency, reactive capability and existing firm reservations. This is the dominant
 limitation and the reason no result here establishes feasibility at a specific site.</li>
+<li><b>This is an interconnection screen, not a reservoir operations model.</b> A
+hydroclimatologist reviewing it made that distinction and it is the right one. The dam's
+generation enters only as a claim on the shared line, hour by hour. Nothing here represents rule
+curves, storage targets, the 2007 Interim Guidelines, or the fact that a dam's releases are
+decided by water obligations rather than by power prices. Any question about how FPV would change
+reservoir operation, or how operation would change FPV, is outside what this can answer.</li>
+
+<li><b>A flat annual evaporation depth carries no seasonal information, and the seasonality runs
+against the co-benefit story.</b> We apply a measured annual depth times coverage. That is
+defensible for an annual total and says nothing about timing. It matters because deep reservoirs
+like Mead and Powell store heat through the summer and release it as latent flux into the autumn
+and winter, so their evaporation does not peak when the sun does. Solar output peaks in June. The
+water benefit peaks months later. Neither this model nor the coverage argument depends on the two
+coinciding, but anyone reasoning that shading and generating are naturally complementary in time
+should know that on these reservoirs they are not.</li>
+
+<li><b>Surface area is a summer composite, and these reservoirs are not static.</b> Areas come
+from a May-September median over 2024-2026. Colorado River reservoirs move tens of feet within a
+year on operating rule curves, and area moves with elevation. The right treatment is a stage-area
+curve driven by daily elevations, which we have not done. For scale, Lake Mead's measured surface
+is 17% below the published operating average it is most often quoted at. Coverage percentages are
+therefore percentages of a particular summer surface, not of a fixed lake.</li>
+
+<li><b>Salvaged evaporation is not delivered water.</b> An acre-foot not evaporated at Flaming
+Gorge or Navajo sits hundreds of river miles above where Lower Basin demand is, and reaches it
+only after channel losses, further reservoir evaporation downstream, and whatever the operating
+rules do with it in between. We report a change in one reservoir's mass balance and call it
+suppressed evaporation, which is what it is. Treating it as usable yield at a demand node would
+require a routing study we have not done, and would reduce the Upper Basin numbers rather than
+raise them.</li>
+
 <li><b>The export bound is the assumption that most constrains the answer, and a developer
 could buy their way out of it.</b> Every array here is sized against whatever the dam's existing
 line is not already using. That is the right frame for a project that wants to avoid capital it
