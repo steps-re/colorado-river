@@ -158,7 +158,7 @@ screening estimate with known defects.
 <ul><li>Hourly full-year sim per reservoir on the dam's own interconnection.</li><li>solar(t): PVGIS-NSRDB per-MW at each reservoir's lat/lon with a floating cooling uplift.</li><li>headroom(t) = nameplate - dam generation(t) + on-site load(t).</li><li>export(t) = min(solar(t), headroom(t)); a rational merchant curtails negative-price hours.</li><li>Prices are day-ahead LMP at Palo Verde, the Desert Southwest hub. The three Upper Basin reservoirs use it as an acknowledged proxy: their balancing authorities (PacifiCorp East, PNM, WAPA Rocky Mountain) do not publish hourly nodal prices.</li><li>Wheeling and basis costs of moving power from each dam to a trading hub are NOT modelled, so the revenue side is optimistic.</li><li>Evaporation saved = coverage x 0.75 suppression x open-water rate x surface area (range 0.60-0.90).</li></ul>
 
 <h2>What it does not do</h2>
-<ul><li>Curtailment here is the SHARED-LINE ceiling only. It assumes the dam's full nameplate is available to solar whenever the dam is not using it, which is generous: those lines carry firm hydropower contracts through 2057 and the region is a net importer at low water.</li><li>Upper Basin evaporation rates (Flaming Gorge, Navajo, Blue Mesa) are screening estimates, not measurements. Reclamation and the UCRC are instrumenting them now.</li><li>Only Glen Canyon has a measured sub-daily generation shape. The rest use a documented load-following profile scaled to published annual energy.</li><li>Nothing here prices firm capacity, ancillary services, or avoided replacement power, which is where the real value of a dam-coupled array sits.</li><li>No legal path currently exists to lease federal reservoir surface for private solar. That gate is institutional and is not modelled.</li></ul>
+<ul><li>Curtailment here is the SHARED-LINE ceiling only. It assumes the dam's full nameplate is available to solar whenever the dam is not using it, which is generous: those lines carry firm hydropower contracts through 2057 and the region is a net importer at low water.</li><li>Upper Basin evaporation rates (Flaming Gorge, Navajo, Blue Mesa) are screening estimates, not measurements. Reclamation and the UCRC are instrumenting them now.</li><li>Only Glen Canyon has a measured sub-daily generation shape. The rest use a documented load-following profile scaled to published annual energy.</li><li>Firm capacity is priced on the BATTERY only, at a CAISO resource-adequacy proxy. The solar array receives no capacity credit, and no ancillary services or avoided replacement power are priced anywhere. At the capacity values used, a four-hour battery covers its own cost from capacity payments alone, so combined figures must be read alongside the array-only figures rather than instead of them.</li><li>No legal path currently exists to lease federal reservoir surface for private solar. That gate is institutional and is not modelled.</li></ul>
 
 <h2>Every parameter, and where it came from</h2>
 <div style="overflow-x:auto">
@@ -289,6 +289,21 @@ was too quick: a payer could contract for a measured service without holding tit
 system conservation payments already work. The page now separates the property-rights point from the
 contracting point and says what is actually missing, which is an instrument and a measurement rather
 than a legal impossibility.</li>
+</ol>
+
+<p>A second pass over the corrected pages found the fixes correct but caught a larger problem
+underneath them:</p>
+<ol start=17>
+<li><b>The battery was flattering the solar (critical).</b> The headline said storage pulls
+break-even from $92 to $63/MWh. It does, but at the capacity values used the battery earns about
+$105M a year against roughly $67M of its own annualised capital, so it is profitable standing
+alone and was simply offsetting the array's losses. The model now reports the array's economics
+separately from the battery's, and the page says plainly that at these dams the battery is the
+investable asset and the solar is not. The effect disappears at the bottom of the capacity-value
+range.</li>
+<li><b>A stale caveat contradicted the model.</b> The methodology said nothing here prices firm
+capacity, which stopped being true when the battery capacity credit was added. Corrected: capacity
+is priced on the battery only, and never on the array.</li>
 </ol>
 
 <p><b>The strongest counterargument they raised</b>, which we think is fair: if the federal government funds
