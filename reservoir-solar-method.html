@@ -155,7 +155,7 @@ screening estimate with known defects.
 </div>
 
 <h2>How the model works</h2>
-<ul><li>Hourly full-year sim per reservoir on the dam's own interconnection.</li><li>solar(t): PVGIS-NSRDB per-MW at each reservoir's lat/lon with a floating cooling uplift.</li><li>headroom(t) = nameplate - dam generation(t) + on-site load(t).</li><li>export(t) = min(solar(t), headroom(t)); a rational merchant curtails negative-price hours.</li><li>Prices are day-ahead LMP at Palo Verde, the Desert Southwest hub. The three Upper Basin reservoirs use it as an acknowledged proxy: their balancing authorities (PacifiCorp East, PNM, WAPA Rocky Mountain) do not publish hourly nodal prices.</li><li>Wheeling and basis costs of moving power from each dam to a trading hub are NOT modelled, so the revenue side is optimistic.</li><li>Evaporation saved = coverage x 0.75 suppression x open-water rate x surface area (range 0.60-0.90).</li></ul>
+<ul><li>Hourly full-year sim per reservoir on the dam's own interconnection.</li><li>solar(t): PVGIS-NSRDB per-MW at each reservoir's lat/lon with a floating cooling uplift.</li><li>headroom(t) = nameplate - dam generation(t) + on-site load(t).</li><li>export(t) = min(solar(t), headroom(t)); a rational merchant curtails negative-price hours.</li><li>Prices are day-ahead LMP at EACH RESERVOIR'S OWN balancing authority: Lake Mead on NEVP, the Arizona dams on AZPS, Navajo on PNM, all measured full-year. Flaming Gorge and Blue Mesa use a series SHAPE-TRANSFERRED from a June-July 2026 hour-of-day ratio against a reference node, because their markets produced no day-ahead prices before 2026. Those two are modelled, not measured, and winter is the least reliable part.</li><li>Wheeling is NOT applicable: transmission access charges in these markets are billed to load rather than generators, and nodal prices already carry congestion and losses. Generator interconnection and local network upgrades ARE modelled, from Berkeley Lab project data, defaulting to the $30/kW median for completed projects.</li><li>Evaporation saved = coverage x 0.75 suppression x open-water rate x surface area (range 0.60-0.90).</li></ul>
 
 <h2>What it does not do</h2>
 <ul><li>Curtailment here is the SHARED-LINE ceiling only. It assumes the dam's full nameplate is available to solar whenever the dam is not using it, which is generous: those lines carry firm hydropower contracts through 2057 and the region is a net importer at low water.</li><li>Upper Basin evaporation rates (Flaming Gorge, Navajo, Blue Mesa) are screening estimates, not measurements. Reclamation and the UCRC are instrumenting them now.</li><li>Only Glen Canyon has a measured sub-daily generation shape. The rest use a documented load-following profile scaled to published annual energy.</li><li>Firm capacity is priced on the BATTERY only, at a CAISO resource-adequacy proxy. The solar array receives no capacity credit, and no ancillary services or avoided replacement power are priced anywhere. At the capacity values used, a four-hour battery covers its own cost from capacity payments alone, so combined figures must be read alongside the array-only figures rather than instead of them.</li><li>No legal path currently exists to lease federal reservoir surface for private solar. That gate is institutional and is not modelled.</li></ul>
@@ -318,6 +318,31 @@ Lab's project-level data: $30/kW median for completed projects, with solar avera
 and recent completions $194/kW. It is a control, because the distribution is heavily right-skewed.
 It moves the array's break-even at Lake Mead from $92 to between $94 and $104.</li>
 </ol>
+
+<p>A final end-to-end pass reviewed the whole chain from satellite imagery to published sentence,
+in four slices across both vendors. Every slice returned unsound. Four findings were real:</p>
+<ol start=20>
+<li><b>A sampled parameter was never used (critical).</b> The Monte Carlo drew a capacity value
+across a range and passed it to the sensitivity analysis without ever using it in any cost or
+revenue term, so it was reported as a driver of an output it could not touch. That simulation sizes
+solar-only arrays and credits capacity to storage only, so the parameter should never have been
+there. Removed.</li>
+<li><b>The model's own metadata still described the old pricing (critical).</b> It said prices came
+from a single hub with the Upper Basin as a proxy, and that wheeling was unmodelled. Both had
+stopped being true. Anyone reading the machine-readable output would have been told the wrong
+method. Corrected.</li>
+<li><b>The floating-cover cost prices the wrong product.</b> The anchor is a utility's quote for a
+potable-water cover, which is sealed, tensioned and food-grade. An evaporation cover on a raw
+reservoir is a different and cheaper thing. That row is now labelled a ceiling and flagged as
+unresolved. We applied this scrutiny to the shade-ball figure and should have applied it here at the
+same time.</li>
+<li><b>The pages disagreed on the coverage ceilings.</b> The paper gave every reservoir's figure
+while this page rounded several to "at or near 1%". The full table is now on both.</li>
+</ol>
+<p>One criticism did not survive checking: a reviewer argued the price shape-transfer is invalid
+because a multiplicative ratio breaks down for a variable that crosses zero. That is true in general
+and worth taking seriously, but the hourly means used here are positive at every hour of the day,
+and the resulting ratios run 0.54 to 1.18 and 0.59 to 1.79 with no sign changes.</p>
 
 <p><b>The strongest counterargument they raised</b>, which we think is fair: if the federal government funds
 these arrays as drought infrastructure rather than as a merchant energy play, then price nodes, transmission
