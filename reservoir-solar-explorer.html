@@ -386,19 +386,21 @@ the evening ramp; it does not cover the overnight trough or a January lull. Sola
 roughly half a derate. Something firm covers the rest.</p>
 
 <p><b>Storage helps, and four hours beats eight.</b> Adding 1,000 MW of four-hour storage to a 1,690 MW
-array pulls the break-even energy price from $92 down to about $72/MWh, because it moves output out of the
-negative-price midday and earns capacity revenue. Eight-hour storage over-invests and the break-even climbs
-back towards $95.</p>
+array pulls the break-even energy price from $92 down to about $63/MWh, because it moves output out of the
+negative-price midday, earns capacity revenue, and is the only part of the project that still
+qualifies for a federal tax credit. Eight-hour storage over-invests and the break-even climbs back
+towards $81.</p>
 
-<p><b>And there is no tax credit coming to close it.</b> The federal solar investment credit ended
-for anything placed in service after 2027 unless construction had already begun by July 2026. No
+<p><b>The array gets no tax credit. The battery does.</b> The federal credit for solar ended for
+anything placed in service after 2027 unless construction had already begun by July 2026, and no
 project here could have met that: none has a lease on the water, a finished environmental review or
-an interconnection study, and reservoir arrays take five to ten years to build. The subsidy that
-makes most American solar work is simply not available to this, so the numbers above are what a
-project would actually face rather than a pessimistic case.</p>
+an interconnection study, and reservoir arrays take five to ten years to build. Energy storage was
+deliberately spared the same cut and keeps a 30% credit into the 2030s, so the battery figures above
+are net of it. That asymmetry matters: it makes the storage half of a hybrid materially cheaper than
+the generating half, which is the opposite of how these projects are usually pitched.</p>
 
 <p><b>The remaining gap is a contract question, not an engineering one.</b> Break-even sits around
-$72&ndash;95/MWh; the array captures $24&ndash;32/MWh selling into the midday market, depending on which
+$63&ndash;92/MWh; the array captures $24&ndash;32/MWh selling into the midday market, depending on which
 market the dam sells into. That gap does not
 close through better dispatch. It closes on what the power is worth to the dam's customers &mdash; when the
 dam cannot deliver, its firm contracted power gets bought on the market instead. Anyone underwriting this
@@ -476,6 +478,11 @@ var MIN_SOC = 0.10;                    // reserve holdback, never discharged
 var FADE_AVG = 0.88;                   // mean usable capacity over 25 yr at ~2%/yr fade
 var CYCLE_LIMIT = 365;                 // full-equivalent cycles per year (warranty-typical)
 var BESS_PER_KWH = 280;                // $/kWh installed, 4-hr LFP (NREL 2025 bench $334; US EPC $230-320)
+/* The One Big Beautiful Bill cut section 48E for SOLAR AND WIND but deliberately spared energy
+   STORAGE, which keeps the full 30% credit through 2033 with no accelerated construction-start
+   deadline. So the array gets nothing and the battery gets 30%. An earlier version of this page
+   said no credit applied to either, which was wrong. */
+var STORAGE_ITC = 0.30;
 var CAP_VALUE_KW_YR = 105;             // $/kW-yr firm capacity. CAISO RA for batteries ran
                                        // ~$8.77/kW-month in H1 2025 (range ~$4.3-14.7). Desert
                                        // Southwest is not CAISO, so this is a proxy.
@@ -613,7 +620,8 @@ function simulate(name, covPct){
 
   var stranded = soc;                            // charged but never placed, by year end
   var evapTotal = areaKm2 * p.evap_ft * AF_PER_KM2_PER_FT;
-  var capex = (mw*1e6*DC_PER_W + acMw*1e6*AC_PER_W)*capexMult + bE*1000*BESS_PER_KWH;
+  var capex = (mw*1e6*DC_PER_W + acMw*1e6*AC_PER_W)*capexMult
+            + bE*1000*BESS_PER_KWH*(1-STORAGE_ITC);
   var cost = capex*CRF + mw*D.meta.om_per_mw_yr*omMult;
   var capRev = bessMW*1000*CAP_VALUE_KW_YR;      // firm capacity credited to the battery only
   return {

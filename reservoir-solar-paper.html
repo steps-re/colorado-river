@@ -230,7 +230,11 @@ PacifiCorp East when CAISO's Extended Day-Ahead Market went live, and the SPP We
 SPP RTO West replaced the Western Energy Imbalance Service, which was real-time imbalance only and
 had no day-ahead product. For these two, the hour-of-day ratio of measured local prices to a
 reference node over the overlapping window is applied to the reference node's full year. The result
-is shape-transferred, not measured, and is treated as such throughout. Blue Mesa's ratio is computed
+is shape-transferred, not measured, and is treated as such throughout. <b>The overlap window is
+June and July only</b>, because those markets launched in 2026, so the ratio is a summer ratio.
+Summer and winter diurnal price shapes differ materially in both regions, driven by cooling load and
+solar penetration, so winter revenue at these two reservoirs is the least reliable number in this
+study. Neither reservoir's result should be read as a measured annual price. Blue Mesa's ratio is computed
 from Colorado River Storage Project settlement points, the delivery locations for the power that
 dam actually generates.</p>
 <p>The measured differences matter. Against the Desert Southwest nodes, the Palo Verde hub runs
@@ -387,8 +391,10 @@ against a 58% Hoover derate (2.32 TWh/yr), arrays fill 40&ndash;57% of the hourl
 (up to 3.4 GW with 2 GW/8 hr). We did not find a configuration that exceeds it, and the physical
 reason is clear &mdash; a capacity derate is a continuous loss while solar is diurnal and seasonal &mdash; but this is a
 bound observed over the configurations modelled, not a proof. Seasonal storage, demand response or
-a hybrid firm resource would raise it. Break-even energy price falls from $92 to $72/MWh when 1,000 MW of four-hour storage is
-added, against a merchant capture of $24 to $32/MWh depending on the market. Eight-hour storage over-invests. The residual
+a hybrid firm resource would raise it. Break-even energy price falls from $92/MWh with no storage to $63/MWh at 1,000 MW of four-hour
+storage, against a merchant capture of $24 to $32/MWh depending on the market. Eight-hour storage
+over-invests and returns to $81. Storage capital is net of the 30% credit it still qualifies for; the array
+itself receives none. Eight-hour storage over-invests. The residual
 gap is a question of contracted value for avoided replacement power, not of dispatch. Two caveats
 are material: hydrology is cyclical, so a derate may reverse and return the capacity to the dam;
 and wheeling and basis costs from each dam to a trading hub are not modelled.</p>
@@ -402,6 +408,11 @@ limitation and the reason no result here establishes feasibility at a specific s
 <li><b>Evaporation suppression is treated as linear in coverage.</b> Heat not lost as latent flux
 mixes into the bulk water and raises evaporation on the surrounding open surface, making suppression
 sub-linear at high coverage. The magnitude is unmeasured at reservoir scale.</li>
+<li><b>The Upper Basin price transfer rests on a summer window.</b> Flaming Gorge and Blue Mesa
+prices come from a June-July 2026 hour-of-day ratio applied to a full year. Price shapes are
+seasonal, so this misprices winter by an unknown amount. Both external reviewers identified it as
+the weakest step in the analysis. It cannot be resolved until those markets have published a full
+year.</li>
 <li><b>Upper Basin evaporation rates are unmeasured.</b> Flaming Gorge and Blue Mesa prices are
 shape-transferred from a partial local record rather than measured over a full year, because their
 markets did not produce day-ahead prices before 2026.</li>
