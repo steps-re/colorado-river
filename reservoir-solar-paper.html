@@ -170,8 +170,8 @@ dam's export capacity. That bound is reservoir-specific and spans more than an o
 magnitude, from about 0.75% at Navajo to about 8.5% at Havasu, and 15&ndash;20% exceeds it at every
 reservoir studied. Propagating uncertainty across eight parameters
 (2,000 draws), the median cost of water suppressed is
-$16,486 per acre-foot at Lake Mead
-(P10&ndash;P90 $11,939&ndash;23,568),
+$19,102 per acre-foot at Lake Mead
+(P10&ndash;P90 $13,155&ndash;30,629),
 against roughly $325&ndash;700 per acre-foot to purchase conserved water from irrigators. That
 benchmark is institutionally heterogeneous &mdash; it spans fallowing contracts, efficiency
 retrofits and delivered transfers with different reliability and shepherding &mdash; so the
@@ -179,9 +179,13 @@ comparison should be read as an order-of-magnitude ranking rather than a like-fo
 that has been demonstrated at reservoir scale approaches that benchmark; the one option that is
 cheaper per acre-foot on paper, a chemical monolayer film, has repeatedly failed in field
 conditions and is not a counter-example. We conclude
-that FPV at these reservoirs cannot be justified as a water measure, and that its defensible case
-is as an energy measure backfilling hydropower capacity lost to declining reservoir elevation, with
-evaporation suppression as a co-benefit. <b>The principal limitation is that export capacity is
+that FPV at these reservoirs cannot be justified as a water measure. We do not conclude that it is
+justified as anything else. An earlier version of this paper recommended it as an energy measure
+backfilling hydropower capacity lost to declining reservoir elevation; that recommendation went
+beyond what we tested and has been withdrawn to a hypothesis. Nothing in this model represents
+capacity, ramping, inertia, frequency response or black start, all of which is what a hydro plant
+sells and none of which solar supplies without storage, so "backfilling capacity" with solar
+energy conflates two different products. <b>The principal limitation is that export capacity is
 represented by a scalar bound rather than a generator interconnection study; no conclusion here
 establishes project feasibility at any specific site.</b>
 </div>
@@ -317,19 +321,19 @@ areal density (&rho;&nbsp;&minus;0.35, since wide mooring corridors lower densit
 watt together), capital cost to discount rate (&rho;&nbsp;0.25), and suppression to evaporation rate
 (&rho;&nbsp;0.20). Achieved rank correlations match the targets to within 0.015. Independent draws
 would understate the tails.</p>
-<table><tr><th>Parameter</th><th>Distribution</th></tr><tr><td>suppression</td><td>triangular(0.60, 0.75, 0.90)</td></tr><tr><td>density mw km2</td><td>triangular(80, 120, 160)</td></tr><tr><td>capex per w</td><td>triangular(1.23, 1.50, 2.50)</td></tr><tr><td>om multiplier</td><td>triangular(1.0, 1.3, 3.0)</td></tr><tr><td>wacc</td><td>uniform(0.06, 0.09)</td></tr><tr><td>line share</td><td>uniform(0.10, 1.00)</td></tr><tr><td>load coincidence</td><td>uniform(0.25, 1.00)</td></tr><tr><td>evaporation</td><td>flux sites normal(mu, 5-8%); Havasu uniform(5.2, 7.4); Upper Basin normal(mu, 30%)</td></tr></table>
+<table><tr><th>Parameter</th><th>Distribution</th></tr><tr><td>suppression</td><td>triangular(0.30, 0.75, 0.90); mode is a design assumption, not a measurement. Instrumented field results are scarce and cluster lower</td></tr><tr><td>density mw km2</td><td>triangular(80, 120, 160)</td></tr><tr><td>capex per w</td><td>triangular(1.23, 1.50, 2.50)</td></tr><tr><td>om multiplier</td><td>triangular(1.0, 1.3, 3.0)</td></tr><tr><td>wacc</td><td>uniform(0.06, 0.09)</td></tr><tr><td>line share</td><td>uniform(0.10, 1.00)</td></tr><tr><td>load coincidence</td><td>uniform(0.25, 1.00)</td></tr><tr><td>evaporation</td><td>flux sites normal(mu, 5-8%); Havasu uniform(5.2, 7.4); Upper Basin normal(mu, 30%)</td></tr></table>
 <p>Results. Right-sized array is the largest whose spill stays under 5% for that draw.</p>
 <div style="overflow-x:auto"><table>
 <tr><th>Reservoir</th><th>MW P10</th><th>MW P50</th><th>MW P90</th><th>AF/yr saved (P50)</th>
 <th>$/AF P10</th><th>$/AF P50</th><th>$/AF P90</th></tr>
-<tr><td>Lake Mead</td><td>391</td><td><b>1,253</b></td><td>2,164</td><td>11,845</td><td>$11,939</td><td><b>$16,486</b></td><td>$23,568</td></tr><tr><td>Lake Powell</td><td>223</td><td><b>730</b></td><td>1,214</td><td>6,400</td><td>$12,725</td><td><b>$17,903</b></td><td>$25,358</td></tr><tr><td>Lake Mohave</td><td>0</td><td><b>35</b></td><td>74</td><td>291</td><td>$12,872</td><td><b>$18,018</b></td><td>$25,470</td></tr><tr><td>Lake Havasu</td><td>192</td><td><b>332</b></td><td>464</td><td>3,164</td><td>$11,402</td><td><b>$16,150</b></td><td>$23,411</td></tr><tr><td>Flaming Gorge</td><td>0</td><td><b>49</b></td><td>112</td><td>258</td><td>$21,293</td><td><b>$34,339</b></td><td>$61,421</td></tr><tr><td>Navajo Reservoir</td><td>0</td><td><b>11</b></td><td>21</td><td>53</td><td>$17,193</td><td><b>$28,823</b></td><td>$53,625</td></tr><tr><td>Blue Mesa</td><td>13</td><td><b>42</b></td><td>72</td><td>167</td><td>$21,056</td><td><b>$35,074</b></td><td>$64,342</td></tr>
+<tr><td>Lake Mead</td><td>391</td><td><b>1,253</b></td><td>2,164</td><td>9,899</td><td>$13,155</td><td><b>$19,102</b></td><td>$30,629</td></tr><tr><td>Lake Powell</td><td>223</td><td><b>730</b></td><td>1,214</td><td>5,530</td><td>$13,760</td><td><b>$20,684</b></td><td>$33,071</td></tr><tr><td>Lake Mohave</td><td>0</td><td><b>35</b></td><td>74</td><td>272</td><td>$13,923</td><td><b>$21,086</b></td><td>$33,336</td></tr><tr><td>Lake Havasu</td><td>192</td><td><b>332</b></td><td>464</td><td>2,697</td><td>$12,367</td><td><b>$18,756</b></td><td>$30,151</td></tr><tr><td>Flaming Gorge</td><td>0</td><td><b>49</b></td><td>112</td><td>225</td><td>$23,460</td><td><b>$39,589</b></td><td>$79,710</td></tr><tr><td>Navajo Reservoir</td><td>0</td><td><b>11</b></td><td>21</td><td>43</td><td>$19,048</td><td><b>$33,458</b></td><td>$68,656</td></tr><tr><td>Blue Mesa</td><td>13</td><td><b>42</b></td><td>72</td><td>141</td><td>$22,891</td><td><b>$40,883</b></td><td>$79,885</td></tr>
 </table></div>
 <h3>5.1 Variance attribution</h3>
 <p>Partial rank correlation coefficients, computed on the same sample. These identify which inputs
 drive the spread in each output.</p>
 <div style="overflow-x:auto"><table>
 <tr><th>Reservoir</th><th>Drivers of cost per acre-foot</th><th>Drivers of array size</th></tr>
-<tr><td>Lake Mead</td><td>density +0.89, suppression -0.81, capex +0.80, wacc +0.76</td><td>line share +1.00, density -0.20, om multiplier +0.04</td></tr><tr><td>Lake Powell</td><td>density +0.88, suppression -0.80, evaporation -0.78, capex +0.78</td><td>line share +1.00, density -0.19, suppression +0.02</td></tr><tr><td>Lake Mohave</td><td>density +0.88, suppression -0.81, capex +0.78, wacc +0.76</td><td>line share +0.94, suppression +0.02, evaporation -0.02</td></tr><tr><td>Lake Havasu</td><td>density +0.89, evaporation -0.86, suppression -0.81, capex +0.79</td><td>load coincidence +1.00, line share +0.96, density -0.12</td></tr><tr><td>Flaming Gorge</td><td>evaporation -0.96, density +0.76, suppression -0.64, wacc +0.57</td><td>line share +0.95, density -0.02, evaporation -0.02</td></tr><tr><td>Navajo Reservoir</td><td>evaporation -0.96, density +0.78, suppression -0.67, capex +0.64</td><td>line share +0.90, capex +0.04, om multiplier -0.03</td></tr><tr><td>Blue Mesa</td><td>evaporation -0.95, density +0.73, capex +0.61, suppression -0.60</td><td>line share +0.99, density -0.10, capex +0.06</td></tr>
+<tr><td>Lake Mead</td><td>suppression -0.93, density +0.81, capex +0.70, wacc +0.63</td><td>line share +1.00, density -0.20, om multiplier +0.04</td></tr><tr><td>Lake Powell</td><td>suppression -0.92, density +0.80, evaporation -0.67, capex +0.67</td><td>line share +1.00, density -0.19, suppression +0.02</td></tr><tr><td>Lake Mohave</td><td>suppression -0.92, density +0.79, capex +0.66, wacc +0.63</td><td>line share +0.94, suppression +0.02, evaporation -0.02</td></tr><tr><td>Lake Havasu</td><td>suppression -0.93, density +0.81, evaporation -0.78, capex +0.68</td><td>load coincidence +1.00, line share +0.96, density -0.12</td></tr><tr><td>Flaming Gorge</td><td>evaporation -0.94, suppression -0.86, density +0.68, wacc +0.49</td><td>line share +0.95, density -0.02, evaporation -0.02</td></tr><tr><td>Navajo Reservoir</td><td>evaporation -0.94, suppression -0.88, density +0.71, capex +0.56</td><td>line share +0.90, capex +0.04, om multiplier -0.03</td></tr><tr><td>Blue Mesa</td><td>evaporation -0.93, suppression -0.84, density +0.67, capex +0.54</td><td>line share +0.99, density -0.10, capex +0.06</td></tr>
 </table></div>
 <p>Two patterns matter. Areal density is the strongest driver of cost per acre-foot at every
 reservoir, which means layout efficiency, not module price, is where the cost uncertainty lives.
@@ -393,7 +397,7 @@ seventeenth the size, because roughly 300 MW of Central Arizona Project pumping 
 shoreline. Its surface is also administered by BLM and Arizona State Parks rather than the National
 Park Service. Load coincidence is consequently the parameter that decides that site.</p>
 
-<p><b>6.4 Cost of suppressed water.</b> Median $16,486 per
+<p><b>6.4 Cost of suppressed water.</b> Median $19,102 per
 acre-foot at Lake Mead and higher elsewhere, against $325&ndash;700 to purchase conserved
 agricultural water and $2,500&ndash;3,500 for seawater desalination. Non-generating covers are
 cheaper than FPV but do not close the gap:</p>
@@ -544,10 +548,18 @@ studied, and the bound varies by more than tenfold between sites, so a basin-wid
 not a useful specification. Floating photovoltaics cannot be justified at these reservoirs as a
 water measure: the cost per acre-foot of suppressed evaporation exceeds purchased agricultural
 conservation by roughly an order of magnitude under every parameter combination sampled, and no
-alternative cover technology closes that gap. The defensible case is as an energy measure,
-backfilling hydropower capacity that declining reservoir elevation is removing, at sites where load
-sits on the shoreline. Establishing whether any particular site is buildable requires interconnection
-studies that are not publicly available.</p>
+alternative cover technology closes that gap. What remains is a hypothesis rather than a
+finding, and we state it as one because two independent reviewers pointed out that we had never
+tested it. Declining reservoir elevation is removing hydropower capability from these dams, and
+that leaves room on lines that were built for full plants. Solar can occupy some of that room.
+Whether it should is a different question from the one this paper answers, and answering it needs
+things absent here: a representation of what the plant can still produce as a function of head, a
+capacity and ancillary-services market rather than energy alone, and storage sized against what
+hydro actually provides. Until that work exists, the honest statement is that reservoir solar is
+not a water project, that its economics are least bad where load sits on the shoreline, and that
+whether it is a good energy project at these sites is untested. Establishing whether any
+particular site is buildable additionally requires interconnection studies that are not publicly
+available.</p>
 
 <h2>9. Reproducibility</h2>
 <p>All inputs are public. Monte Carlo results are seeded. Code:</p>
