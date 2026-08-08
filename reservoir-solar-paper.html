@@ -146,7 +146,7 @@ document.addEventListener('DOMContentLoaded',function(){
   });
 });
 </script>
-</head><body><nav class="sitenav" aria-label="Site"><div class="nbwrap"><a href="index.html" class="nb-home">Colorado River</a><a href="start.html" class="nb-start">Start here</a><a href="technical.html">The evidence</a><a href="proposal.html">The fix</a><a href="water-capital.html">Who pays</a><a href="reservoir-solar-explorer.html" class="on">Reservoir solar</a><a href="https://github.com/steps-re/colorado-river" target="_blank" rel="noopener">Data &amp; code</a></div></nav><div class="secstrip"><span class="secttl">Reservoir solar</span><a href="reservoir-solar-explorer.html">Coverage explorer</a><a href="reservoir-solar.html">What the numbers say</a><a href="reservoir-solar-paper.html" class=here>Technical paper</a><a href="reservoir-solar-method.html">Methods and review</a></div><div class="secstrip"><span class="secttl">Reservoir solar</span><a href="reservoir-solar-explorer.html">Coverage explorer</a><a href="reservoir-solar.html">What the numbers say</a><a href="reservoir-solar-paper.html" class=here>Technical paper</a><a href="reservoir-solar-method.html">Methods and review</a></div><div class="wrap paper">
+</head><body><nav class="sitenav" aria-label="Site"><div class="nbwrap"><a href="index.html" class="nb-home">Colorado River</a><a href="start.html" class="nb-start">Start here</a><a href="technical.html">The evidence</a><a href="proposal.html">The fix</a><a href="water-capital.html">Who pays</a><a href="reservoir-solar-explorer.html" class="on">Reservoir solar</a><a href="https://github.com/steps-re/colorado-river" target="_blank" rel="noopener">Data &amp; code</a></div></nav><div class="secstrip"><span class="secttl">Reservoir solar</span><a href="reservoir-solar-explorer.html">Coverage explorer</a><a href="reservoir-solar.html">What the numbers say</a><a href="reservoir-solar-paper.html" class=here>Technical paper</a><a href="reservoir-solar-method.html">Methods and review</a></div><div class="wrap paper">
 
 
 <span class=tag>TECHNICAL PAPER &middot; PREPRINT</span>
@@ -168,7 +168,7 @@ evaporation rises in proportion to coverage, which we model as strictly linear a
 upper bound on the benefit, while deliverable energy saturates at a coverage bound set by the
 dam's export capacity. That bound is reservoir-specific and spans more than an order of
 magnitude, from about 0.75% at Navajo to about 8.5% at Havasu, and 15&ndash;20% exceeds it at every
-reservoir studied. Propagating uncertainty across ten parameters
+reservoir studied. Propagating uncertainty across eight parameters
 (2,000 draws), the median cost of water suppressed is
 $16,486 per acre-foot at Lake Mead
 (P10&ndash;P90 $11,939&ndash;23,568),
@@ -218,7 +218,9 @@ arms of Powell and Flaming Gorge it is vulnerable to terrain shadow and to mixed
 steep banks, where a single 30 m pixel is part rock and part water. The OpenStreetMap polygon is
 buffered outward 300 m before reducing, which prevents a coarse shoreline from clipping real
 water but means the result is not strictly bounded by that polygon and could admit adjacent
-water. The Lake Mead check against Reclamation's bathymetric area-capacity relation agrees to
+water. Only the largest closed ring of each water body is used, so islands are not subtracted and
+any detached arm mapped as a separate polygon is not added; the first inflates the envelope and
+the second deflates it, and we have not characterised either. The Lake Mead check against Reclamation's bathymetric area-capacity relation agrees to
 1.3%, which is the strongest evidence any of this is sound, but it is one reservoir and it is the
 one with the simplest shoreline of the seven.</p>
 
@@ -432,6 +434,12 @@ and wheeling and basis costs from each dam to a trading hub are not modelled.</p
 output, scaled by an assumed share, omits the generator step-up transformer, switchyard and breaker
 ratings, N-1 contingency, reactive capability and existing firm reservations. This is the dominant
 limitation and the reason no result here establishes feasibility at a specific site.</li>
+<li><b>Two thousand draws is enough for the cost figure and marginal for the capacity one.</b>
+Re-running the whole Monte Carlo under three additional seeds moves Lake Mead's median cost per
+acre-foot by about 1% and its P90 by about 4%, but moves the median right-sized capacity by about
+6%. The cost conclusion is not sampling noise. Any capacity figure quoted to three significant
+digits is, which is a further reason to read the interval rather than the median.</li>
+
 <li><b>The weather year and the price year are not the same year.</b> Hourly solar output comes
 from a 2015 radiation year and dam discharge from 2015 gauge records, while prices are 2024. The
 diurnal shape of both survives that, but the pairing of any particular cloudy day to any
