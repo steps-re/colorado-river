@@ -319,6 +319,38 @@ and recent completions $194/kW. It is a control, because the distribution is hea
 It moves the array's break-even at Lake Mead from $92 to between $94 and $104.</li>
 </ol>
 
+<p>A second end-to-end pass, run after those fixes and told what had changed so it would not
+re-litigate them, found four more. One changed a published number:</p>
+<ol start=24>
+<li><b>The Upper Basin price series was three hours out of alignment (critical).</b> Two markets
+publish timestamps differently. The California ISO stamps the START of each hour in GMT. The
+Southwest Power Pool stamps the END of each hour in Central time. We were reading the second as
+though it were the first, which slid the entire Blue Mesa price shape three hours against the solar
+shape it multiplies: two hours of timezone and one of end-versus-start. Solar output was being
+valued at the wrong hours' prices. Blue Mesa's capture price moves from $14.95 to $19.85 per MWh
+and its value factor from 0.40 to 0.58. No other reservoir is affected, because only Blue Mesa's
+prices came through that market. Nothing about the coverage conclusion changes, but the number was
+wrong and is now right.</li>
+<li><b>A failed satellite measurement was being recorded as zero.</b> If Earth Engine returned no
+value for a reservoir's water area, the code wrote 0 km&sup2; and carried on. A reservoir with no
+surface is not an implausible-looking output, it is a plausible one, and it would have flowed into
+every area, coverage and evaporation figure downstream. It now refuses and stops.</li>
+<li><b>Sensitivity was reported for a parameter that could not act.</b> Six of the seven reservoirs
+have no load on their shoreline, so the share of that load available to the array multiplies zero
+and can move nothing. A small coefficient was still being computed and printed for it, which is
+sampling noise presented as a dependence. This is the conditional version of the unused-parameter
+defect found in the previous round, which is why it survived that round.</li>
+<li><b>Two different floating-solar costs sat next to each other unlabelled.</b> One is the cover
+alone before power revenue, the other is Lake Mead net of power sales with the array sized against
+Hoover's real line. Both are correct and they are not comparable. Now labelled, with the gap
+between them explained.</li>
+</ol>
+<p>One earlier finding was itself wrong and worth recording. A reviewer said the model's own
+metadata still listed a parameter we had deleted. It did. The parameter was gone from the code but
+the published file had not been regenerated, so the reviewer was reading a stale artefact and was
+right about what it said. Fixing source without re-running output has now caused three separate
+errors in this project.</p>
+
 <p>A final end-to-end pass reviewed the whole chain from satellite imagery to published sentence,
 in four slices across both vendors. Every slice returned unsound. Four findings were real:</p>
 <ol start=20>
