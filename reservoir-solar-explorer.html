@@ -250,6 +250,18 @@ Where that happens is different at every reservoir. Move the slider and watch th
       quagga mussel fouling of floats and anchors.</p>
     </div>
     <div class=assumprow>
+      <label>Interconnection cost <b id=icval>$30/kW</b></label>
+      <div class=presets>
+        <button data-ic="30">$30/kW (median)</button>
+        <button data-ic="167">$167/kW (solar average)</button>
+        <button data-ic="194">$194/kW (recent completed)</button>
+      </div>
+      <p class=hint>What a generator pays for its own interconnection facilities and local network
+      upgrades, from Berkeley Lab's project-level data. Heavily right-skewed, so the median and the
+      average are far apart. Transmission access charges are billed to load, not generators, so
+      there is no separate wheeling charge on top.</p>
+    </div>
+    <div class=assumprow>
       <label>How densely panels pack the covered area <b id=densval>120 MW/km&sup2;</b></label>
       <div class=presets>
         <button data-dn="80">80 (wide mooring lanes)</button>
@@ -386,13 +398,13 @@ the evening ramp; it does not cover the overnight trough or a January lull. Sola
 roughly half a derate. Something firm covers the rest.</p>
 
 <p><b>Storage helps less than the headline suggests.</b> Adding 1,000 MW of four-hour storage
-pulls the <i>combined</i> break-even from $92 to about $63/MWh. But most of that is not the solar
+pulls the <i>combined</i> break-even from $94 to about $65/MWh. But most of that is not the solar
 getting better. At the capacity values used here the battery earns roughly $105M a year in capacity
 payments against about $67M a year of its own annualised capital, net of the tax credit it still
 qualifies for, so it is <b>profitable standing alone, before it stores a single megawatt-hour of
 solar</b>. Bundling the two simply lets that profit offset the array's losses.</p>
 
-<p>Held apart, the array's own break-even goes from <b>$92 to $83/MWh</b> with 1,000 MW of storage
+<p>Held apart, the array's own break-even goes from <b>$94 to $84/MWh</b> with 1,000 MW of storage
 attached. That five-to-nine dollar improvement is the real benefit, and it comes from the battery
 absorbing output the line could not take or that would have sold at a negative price. The rest of
 the apparent gain is the battery's own profit, about $52M a year, being credited to the solar.</p>
@@ -413,7 +425,7 @@ are net of it. That asymmetry matters: it makes the storage half of a hybrid mat
 the generating half, which is the opposite of how these projects are usually pitched.</p>
 
 <p><b>The remaining gap is a contract question, not an engineering one.</b> Break-even sits around
-$63&ndash;92/MWh; the array captures $24&ndash;32/MWh selling into the midday market, depending on which
+$65&ndash;94/MWh; the array captures $24&ndash;32/MWh selling into the midday market, depending on which
 market the dam sells into. That gap does not
 close through better dispatch. It closes on what the power is worth to the dam's customers &mdash; when the
 dam cannot deliver, its firm contracted power gets bought on the market instead. Anyone underwriting this
@@ -496,6 +508,15 @@ var BESS_PER_KWH = 280;                // $/kWh installed, 4-hr LFP (NREL 2025 b
    deadline. So the array gets nothing and the battery gets 30%. An earlier version of this page
    said no credit applied to either, which was wrong. */
 var STORAGE_ITC = 0.30;
+/* Interconnection cost. A referee objected that wheeling and basis were unmodelled. Checking it,
+   wheeling does NOT apply the way that objection assumed: in these markets the transmission access
+   charge is billed to LOAD, not to generators, and a generator selling at its own node is already
+   paid a location-specific price that carries congestion and losses. What a generator DOES pay is
+   100% of its interconnection facilities and local network upgrades, and that was genuinely
+   missing. Lawrence Berkeley National Laboratory's project-level data puts the median for
+   completed projects at about $30/kW, with solar averaging nearer $167/kW and completed projects
+   from 2018-2024 averaging $194/kW. The distribution is heavily right-skewed, so both ends matter. */
+var INTERCONNECT_PER_KW = 30;
 var CAP_VALUE_KW_YR = 105;             // $/kW-yr firm capacity. CAISO RA for batteries ran
                                        // ~$8.77/kW-month in H1 2025 (range ~$4.3-14.7). Desert
                                        // Southwest is not CAISO, so this is a proxy.
@@ -637,7 +658,8 @@ function simulate(name, covPct){
      four-hour battery earns more in capacity payments than it costs, so bundling the two lets an
      independently profitable battery drag the combined break-even down for reasons that have
      nothing to do with the solar. Both are reported. */
-  var capexArray = (mw*1e6*DC_PER_W + acMw*1e6*AC_PER_W)*capexMult;
+  var capexArray = (mw*1e6*DC_PER_W + acMw*1e6*AC_PER_W)*capexMult
+                 + acMw*1000*INTERCONNECT_PER_KW;   // interconnection scales with the AC rating
   var capexBess  = bE*1000*BESS_PER_KWH*(1-STORAGE_ITC);
   var capex = capexArray + capexBess;
   var cost = capex*CRF + mw*D.meta.om_per_mw_yr*omMult;
@@ -677,7 +699,7 @@ function simulate(name, covPct){
 /* sweep cache, invalidated whenever an assumption changes */
 var _sweep = null, _sweepKey = '';
 function sweep(){
-  var key = [cur,lineFrac,onsiteMW,deratePct,bessMW,bessHours,capexMult,omMult,coincFrac,MW_PER_KM2].join('|');
+  var key = [cur,lineFrac,onsiteMW,deratePct,bessMW,bessHours,capexMult,omMult,coincFrac,MW_PER_KM2,INTERCONNECT_PER_KW].join('|');
   if (_sweepKey === key) return _sweep;
   var rows = [];
   for (var i=0;i<=100;i++) rows.push(simulate(cur, i*0.25));
@@ -901,6 +923,11 @@ function setBess(v){
   render();
 }
 function setBessHours(v){ bessHours = parseFloat(v); render(); }
+function setInterconnect(v){
+  INTERCONNECT_PER_KW = parseFloat(v);
+  document.getElementById('icval').textContent = '$'+INTERCONNECT_PER_KW+'/kW';
+  render();
+}
 function setDensity(v){
   MW_PER_KM2 = parseFloat(v);
   document.getElementById('densval').textContent = MW_PER_KM2+' MW/km\u00B2';
@@ -942,6 +969,7 @@ document.addEventListener('DOMContentLoaded', function(){
       else if (b.dataset.k !== undefined) setCost(b.dataset.k, b.dataset.om || 1);
       else if (b.dataset.cf !== undefined) setCoinc(b.dataset.cf);
       else if (b.dataset.dn !== undefined) setDensity(b.dataset.dn);
+      else if (b.dataset.ic !== undefined) setInterconnect(b.dataset.ic);
     });
   });
   render();
