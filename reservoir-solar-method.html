@@ -139,7 +139,7 @@ document.addEventListener('DOMContentLoaded',function(){
   });
 });
 </script>
-</head><body><nav class="sitenav" aria-label="Site"><div class="nbwrap"><a href="index.html" class="nb-home">Colorado River</a><a href="start.html" class="nb-start">Start here</a><a href="technical.html">The evidence</a><a href="proposal.html">The fix</a><a href="water-capital.html">Who pays</a><a href="reservoir-solar-explorer.html" class="on">Reservoir solar</a><a href="https://github.com/steps-re/colorado-river" target="_blank" rel="noopener">Data &amp; code</a></div></nav><div class="secstrip"><span class="secttl">Reservoir solar</span><a href="reservoir-solar-explorer.html">Coverage explorer</a><a href="reservoir-solar.html">What the numbers say</a><a href="reservoir-solar-paper.html">Technical paper</a><a href="reservoir-solar-method.html" class=here>Methods and review</a></div><div class="secstrip"><span class="secttl">Reservoir solar</span><a href="reservoir-solar-explorer.html">Coverage explorer</a><a href="reservoir-solar.html">What the numbers say</a><a href="reservoir-solar-paper.html">Technical paper</a><a href="reservoir-solar-method.html" class=here>Methods and review</a></div><div class="secstrip"><span class="secttl">Reservoir solar</span><a href="reservoir-solar-explorer.html">Coverage explorer</a><a href="reservoir-solar.html">What the numbers say</a><a href="reservoir-solar-paper.html">Technical paper</a><a href="reservoir-solar-method.html" class=here>Methods and review</a></div><div class=wrap>
+</head><body><nav class="sitenav" aria-label="Site"><div class="nbwrap"><a href="index.html" class="nb-home">Colorado River</a><a href="start.html" class="nb-start">Start here</a><a href="technical.html">The evidence</a><a href="proposal.html">The fix</a><a href="water-capital.html">Who pays</a><a href="reservoir-solar-explorer.html" class="on">Reservoir solar</a><a href="https://github.com/steps-re/colorado-river" target="_blank" rel="noopener">Data &amp; code</a></div></nav><div class="secstrip"><span class="secttl">Reservoir solar</span><a href="reservoir-solar-explorer.html">Coverage explorer</a><a href="reservoir-solar.html">What the numbers say</a><a href="reservoir-solar-paper.html">Technical paper</a><a href="reservoir-solar-method.html" class=here>Methods and review</a></div><div class=wrap>
 
 
 <span class=tag>METHODS &amp; REVIEW</span>
@@ -318,6 +318,47 @@ Lab's project-level data: $30/kW median for completed projects, with solar avera
 and recent completions $194/kW. It is a control, because the distribution is heavily right-skewed.
 It moves the array's break-even at Lake Mead from $92 to between $94 and $104.</li>
 </ol>
+
+<p>A fifth round changed tactics. Four rounds of the same four questions had flattened out, so
+this one attacked from four angles none of them used: a hydroclimatologist rather than a code
+reviewer, an advocate trying to show the negative conclusion was assumed rather than found, a
+reproducibility audit, and a pure units-and-dimensions check. The units check came back clean. The
+other three did not, and the advocate's angle produced the most useful criticism of the whole
+exercise.</p>
+<ol start=34>
+<li><b>The conclusion is narrower than we were stating it (critical).</b> Every array here is
+sized against whatever the dam's existing line is not already using. Asked to show where the
+negative result had been assumed rather than discovered, a reviewer pointed at exactly that: a
+developer willing to pay for network upgrades, a different interconnection point, or a dedicated
+line is not represented anywhere in the model. Nothing here demonstrates that floating solar fails
+under a paid-for interconnection. It demonstrates that it does not fit inside the interconnection
+that already exists. That is a narrower claim and a cheaper one, and the paper now says so. The
+coverage bounds are bounds on the free option.</li>
+<li><b>A validation test could not fail in the direction that matters (critical).</b> Four tests
+compare a reservoir's full-pool outline against its measured water surface. Full pool is the most
+water the basin can hold, so measured water cannot exceed it. The test allowed 60% either way, so a
+measured surface 60% larger than full pool would have passed, and that is not a near miss: it is
+the signature of a water mask picking up water outside the reservoir, which is precisely the
+failure the 300 m buffer could cause. The test could not catch the thing it existed to catch. Now
+enforced one-sided.</li>
+<li><b>A file every published price depends on had no way to regenerate it.</b> A reproducibility
+audit found that the full-year 2024 price archive was read by two scripts and written by none, so
+a third party could not rebuild it. Everything needed already existed in the code and had never
+been wired to a full-year pull. There is now a documented command that regenerates it, kept out of
+the normal run because a re-fetch would move every published price without anyone deciding it
+should.</li>
+<li><b>Several value streams are counted at zero, and the design space is narrow.</b> The array
+earns energy revenue and, with storage, capacity. It gets nothing for resilience, local
+reliability, deferred distribution investment, or the capacity value of the solar itself. One
+module density and one mooring concept are modelled. None of this closes a tenfold gap, but the
+tally is deliberately narrow and a reader should be told rather than left to assume it is
+complete.</li>
+</ol>
+<p>One finding did not survive checking: that cost per acre-foot divides gross cost by water saved
+and ignores power revenue, which would guarantee the answer. It nets revenue explicitly, one line
+above the division. Being pushed from the opposite direction was still the most valuable round of
+the five, because every earlier round asked whether the negative result was correct and none asked
+whether it had been made inevitable.</p>
 
 <p>A fourth pass returned two critical findings. One was real, one was not, and the difference is
 worth showing because it is the first round where checking a finding mattered more than acting on
