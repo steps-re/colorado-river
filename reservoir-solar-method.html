@@ -319,6 +319,40 @@ and recent completions $194/kW. It is a control, because the distribution is hea
 It moves the array's break-even at Lake Mead from $92 to between $94 and $104.</li>
 </ol>
 
+<p>A third pass, again told what the first two had fixed and asked explicitly to say so if it
+found nothing rather than manufacture a finding, still found four. Two of them were the most
+substantive of any round:</p>
+<ol start=28>
+<li><b>A table on this page was typed, not computed, and its numbers were wrong (critical).</b>
+The array-size table claimed three reservoirs drop to no viable array once the shared line is
+constrained. A reviewer derived from the model's own headroom equation that this is impossible.
+Where a reservoir has no load on its shoreline, headroom is proportional to the line and output is
+proportional to the array, so only their ratio matters and the largest acceptable array must scale
+exactly linearly with the line. Zero is not a reachable answer. Recomputing from the model
+confirmed it: Mohave is 24 MW at a quarter line, not zero; Navajo is 7 MW, not zero. The table is
+now computed from the model at build time, which is why the error survived three rounds of review
+in the first place. The corrected version makes the argument better, because Havasu is now visibly
+the only reservoir that breaks the proportionality, and it breaks it for a reason.</li>
+<li><b>A causal explanation we had just published was invented (critical).</b> Explaining why the
+site-specific water cost exceeds the generic one, we wrote that the export limit costs more than
+the power revenue returns. A reviewer pointed out that revenue can only reduce a cost, so the
+explanation cannot be the reason. The real reason is duller: one is a median over sampled capital
+costs reaching the harsh mooring case, the other holds capital at one baseline. The sentence was
+written in the course of fixing an earlier finding, which is a reminder that fixes need reviewing
+as much as originals.</li>
+<li><b>The price ratio divided a one-third sample by a full population.</b> The Upper Basin scrape
+samples every third day; the reference node covered every day in the window. Any weather or outage
+falling unevenly across the sampled days appeared in the ratio as a structural difference between
+two markets. The reference is now restricted to exactly the days sampled, which moves Blue Mesa's
+midday ratio from 2.25 to 2.11 and its capture price from $19.85 to $18.87.</li>
+<li><b>The weather year and the price year are different years.</b> Solar and dam output come from
+2015 records, prices from 2024. The daily shape of each survives, but the pairing of a given
+cloudy day to a given price day is arbitrary. We bounded what that is worth: destroying day-to-day
+variation entirely moves Lake Mead's capture price about 10%, and a correctly paired year would
+likely sit on the lower side, because low-output days are high-price days. Now stated in the paper
+with that figure.</li>
+</ol>
+
 <p>A second end-to-end pass, run after those fixes and told what had changed so it would not
 re-litigate them, found four more. One changed a published number:</p>
 <ol start=24>
