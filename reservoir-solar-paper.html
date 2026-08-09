@@ -571,6 +571,51 @@ and wheeling and basis costs from each dam to a trading hub are not modelled.</p
 output, scaled by an assumed share, omits the generator step-up transformer, switchyard and breaker
 ratings, N-1 contingency, reactive capability and existing firm reservations. This is the dominant
 limitation and the reason no result here establishes feasibility at a specific site.</li>
+<h2>7b. The same question at other reservoir elevations</h2>
+
+<p>Every area in this paper is historical, and a twenty-five year asset is not. Reclamation
+publishes projected elevations in its 24-Month Study, but only as PDF, and lifting numbers out of
+PDF tables is the kind of step that fails quietly. It is also unnecessary. The hypsometry fitted
+to recover surface area, V = a(h &minus; h<sub>0</sub>)<sup>b</sup>, gives area at any elevation in
+closed form, so the model can simply be evaluated at whatever pool level the question calls for.
+That answers more than one projection would: minimum power pool, dead pool, the 2007 shortage
+tiers, or any elevation a reader wants to supply.</p>
+
+<div style="overflow-x:auto"><table>
+<tr><th>Lake Mead</th><th class=num>Elevation</th><th class=num>Surface</th><th class=num>MW at today's ceiling</th></tr>
+<tr><td>2024 operating mean</td><td class=num>1,076 ft</td><td class=num>76,444</td><td class=num>2,691 MW</td></tr><tr><td>1,075 ft shortage tier 1</td><td class=num>1,075 ft</td><td class=num>81,105</td><td class=num>2,856 MW</td></tr><tr><td>1,025 ft shortage tier 3</td><td class=num>1,025 ft</td><td class=num>63,518</td><td class=num>2,236 MW</td></tr><tr><td>950 ft minimum power pool</td><td class=num>950 ft</td><td class=num>37,774</td><td class=num>1,330 MW</td></tr><tr><td>895 ft dead pool</td><td class=num>895 ft</td><td class=num>19,608</td><td class=num>690 MW</td></tr>
+<tr><th>Lake Powell</th><th class=num>Elevation</th><th class=num>Surface</th><th class=num>MW at today's ceiling</th></tr>
+<tr><td>2024 operating mean</td><td class=num>3,582 ft</td><td class=num>75,566</td><td class=num>1,560 MW</td></tr><tr><td>3,525 ft target</td><td class=num>3,525 ft</td><td class=num>58,844</td><td class=num>1,214 MW</td></tr><tr><td>3,490 ft minimum power pool</td><td class=num>3,490 ft</td><td class=num>43,640</td><td class=num>901 MW</td></tr><tr><td>3,370 ft dead pool</td><td class=num>3,370 ft</td><td class=num>12,330</td><td class=num>254 MW</td></tr>
+</table></div>
+
+<p>Read the last column as what the same coverage percentage buys as the lake shrinks, not as a
+revised bound. It moves a long way: at minimum power pool Lake Mead's surface is half what it is
+now, and Powell's is well under half. Two effects run in opposite directions and only one is in
+this table. A falling reservoir offers less surface to cover, which shrinks the array. It also
+produces less hydro, which frees room on the shared line and would let a larger share of whatever
+is built actually sell. Anyone using these numbers for a real decision needs both, and that is a
+reservoir-operations question rather than an interconnection screen.</p>
+
+<p>The dead-pool rows are extrapolation. Those elevations sit 130 ft and 170 ft below anything in
+the record the hypsometry was fitted to, so they indicate a direction rather than a quantity.</p>
+
+<h2>7c. How much of the inflow is actually gauged</h2>
+
+<p>Adding bank storage took the Powell water balance from broken to half-closed, and what remained
+was ungauged inflow and gauging error. USGS daily discharge lets that be stated rather than
+gestured at. Against Reclamation's published inflow, the main tributary gauges account for
+100% at Powell,
+76% at Flaming Gorge,
+71% at Blue Mesa and
+46% at Navajo. The remainder is side
+canyons, small tributaries, groundwater and gauge error.</p>
+
+<p>One caveat limits how hard this can be pushed, and it is the reason the Powell figure is so
+close to unity: Reclamation's published inflow is itself partly computed from these same gauges,
+so agreement is closer to a consistency check than to an independent measurement of what is
+missing. The reservoirs where the fraction is low, Navajo especially, are the ones where the
+statement means something.</p>
+
 <li><b>Dam output is shaped by measured daily releases, not an assumed seasonal pattern.</b>
 Six of the seven reservoirs previously used a load-following shape with a summer-heavy seasonal
 weight, on the reasoning that power demand peaks then. Rule-curve reservoirs do not work that way:
