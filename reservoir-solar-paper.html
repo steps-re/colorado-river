@@ -362,6 +362,27 @@ collapses on narrow linear water, because a canal is one to six pixels across at
 every pixel is a mixture of water and bank. Confirming canal widths needs 1 m imagery, not
 Sentinel-2.</p>
 
+<p>A third source bounds the canal figure from the other side. The National Hydrography
+Dataset carries surveyed polygons for water wide enough to map as area, with an area attribute
+attached, so for those reaches canal surface is measured rather than inferred. Across the basin it
+returns 260 canal polygons totalling
+<b>10,858 acres</b>, against the
+37,057 acres our centreline-times-width estimate gives for the whole
+network. These are not competing measurements of the same thing. NHD polygonises only the wide
+reaches and leaves everything narrower as a line, so its total is a measured lower bound; ours
+covers the full network at an assumed width. Read together they say the canal surface is uncertain
+by roughly a factor of three, and that the assumed 12 m default is almost certainly too narrow for
+the large conveyances and too wide for the laterals. Nothing in this paper's conclusion turns on
+which is right, but a canal-solar case would.</p>
+
+<p>The same dataset is a useful check in a way that is easy to misread. Its reservoir polygons
+correspond to full pool rather than current level: it puts Navajo at
+15,363 acres against a published full-pool
+figure of 15,610 and against the 11,269 acres Reclamation's elevation record gives as the recent
+operating mean. All three are correct about different questions. It is a reminder that a mapped
+water body and an operating water surface are not the same object, and that our own areas had to
+come from the elevation record for exactly that reason.</p>
+
 <p>That failure also explains the reservoir result earlier in this paper, and turns an assertion
 into evidence. Our satellite areas came in low by 4.6% at Mohave and 25.9% at Powell, and we
 attributed the gap to mixed pixels in narrow canyon arms. The canal test is the controlled version
