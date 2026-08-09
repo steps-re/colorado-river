@@ -301,9 +301,13 @@ therefore reported as a public cost-effectiveness measure net of power sales.</p
 
 <h2>3b. What drives the evaporation, and what a canal does not fix</h2>
 
-<p>The first substantive objection this work received was that reservoir evaporation is driven as
-much by vapour pressure deficit as by incoming radiation, and that a model multiplying one annual
-depth by one area cannot speak to it. That is correct, so we built the daily physics. Eleven years
+<p>The argument that prompted this section was not made against reservoir floats. It was made
+for them. Reviewing an earlier draft, Upmanu Lall argued that canal solar "does not compute in
+terms of economics or potential water savings", because the usual truss-and-shade design "leaves
+the aerodynamic pathways for evaporation fully open, and the evaporation is driven as much if not
+more by vapor pressure deficit as it is by incoming radiation", while floating systems on
+reservoirs "reduce the edge effect and can dramatically reduce the evaporation". We could not
+evaluate either half of that with one annual depth and one area, so we built the daily physics. Eleven years
 of daily weather at each reservoir's own coordinates, from the ERA5-based reanalysis archive, run
 through the Penman open-water combination equation rather than FAO-56 reference ET. The
 distinction matters: reference ET is defined for short grass with a fixed canopy resistance and an
@@ -327,7 +331,24 @@ leaves the aerodynamic one substantially open. On these numbers that caps what s
 recover at roughly the radiative share, whereas a cover floating on still water suppresses both
 paths. Published modelling of California canals reports 20 to 82% evaporation savings, and Project
 Nexus is measuring it in the field. Our contribution is only the decomposition: shading and
-suppressing are not interchangeable, and the gap between them is the aerodynamic share.</p>
+suppressing are not interchangeable, and the gap between them is the aerodynamic share. On this
+specific point the physics supports Lall's position rather than ours.</p>
+
+<p>We then checked whether transferring the reservoir decomposition to canals was legitimate,
+by running the same physics at the canals' own coordinates, resolved from the mapped centrelines
+rather than assumed. It is: All-American 44%, Central Arizona Project 40%, Coachella 41%, Gila Gravity 43%, against 42% across the Lower Basin reservoirs. The
+atmospheric demand over the Imperial and Yuma valleys is not meaningfully different from the
+demand over Mead and Mohave, which is unsurprising given they share a climate.</p>
+
+<p>One limit survives that check. This is atmospheric demand at canal locations, not canal
+geometry. A canal has a fetch of metres rather than kilometres, the water moves, and many reaches
+are lined and sunk below grade, so the wind field over a narrow channel is not the wind field over
+open water. The share is therefore location-appropriate and geometry-naive, and a real canal
+number needs the field measurement Project Nexus is taking. And Lall's stronger claim, that
+float systems cost the same as or less than ground-mount because US labour dominates and float
+manufacture scales, runs against the benchmark this paper uses, which puts floating capital above
+ground-mount. That disagreement is unresolved here and it moves the answer more than the
+evaporation physics does.</p>
 
 <p>Two checks came out of the same daily series. First, our Penman totals run 30% to 93% above
 measured evaporation. That is not a defect to be hidden but the documented behaviour of any
@@ -338,12 +359,24 @@ survives the bias. Second, we tested whether multiplying an annual mean area by 
 depth misstates evaporation, since both vary within the year and their covariance is discarded.
 The error is under 2.3% at every reservoir, so the annual product stands.</p>
 
-<p>One thing we tried and could not make work: recovering evaporation as the residual of
-Reclamation's own daily water balance, from gauged inflow, release and the change in storage.
-It would have been an evaporation measurement entirely independent of the meteorology. The
-residual returns 0.1 to 1.0 ft/yr against expected values of 2.8 to 6.2, because bank storage and
-ungauged inflow are larger than the evaporation signal at these reservoirs. We report it as a
-failed check rather than omit it.</p>
+<p>We also tried to recover evaporation as the residual of Reclamation's own daily water
+balance, from gauged inflow, release and the change in storage. It would be an evaporation
+measurement entirely independent of the meteorology. The first attempt returned 1.25 ft/yr at Lake
+Powell against an expected 5.83, which is a failure rather than a measurement.</p>
+
+<p>The reason turned out to be a term Reclamation publishes and we had ignored. Powell holds
+roughly 4.9 million acre-feet in bank storage, water held in the sandstone around the reservoir
+rather than in it, against annual evaporation nearer 450 thousand acre-feet. Daily movement in and
+out of the banks is therefore an order of magnitude larger than the quantity being solved for.
+Adding the published bank-storage series takes Powell's residual from 1.25 to 3.07 ft/yr, or from
+21% of the expected value to 53%. Flaming Gorge barely moves, 1.68 to 1.74, which is consistent:
+its banks hold 0.13 maf against Powell's 4.9.</p>
+
+<p>So the balance is now half-closed rather than broken, and what remains bounds ungauged inflow
+and gauging error. It is worth naming what cannot substitute here: satellite gravimetry measures
+total water storage at a resolution of roughly 300 km, and Lake Powell sits inside a single
+footprint, so it cannot separate a reservoir's banks from its basin. Bank storage at this scale is
+available because Reclamation computes and publishes it, and for no other reason.</p>
 
 <h2>4. Validation</h2>
 <p>Tests are labelled by what they can establish. Only <b>external</b> tests validate anything:
