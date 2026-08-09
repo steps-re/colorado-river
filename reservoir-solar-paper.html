@@ -146,7 +146,7 @@ document.addEventListener('DOMContentLoaded',function(){
   });
 });
 </script>
-</head><body><nav class="sitenav" aria-label="Site"><div class="nbwrap"><a href="index.html" class="nb-home">Colorado River</a><a href="start.html" class="nb-start">Start here</a><a href="technical.html">The evidence</a><a href="proposal.html">The fix</a><a href="water-capital.html">Who pays</a><a href="reservoir-solar-explorer.html" class="on">Reservoir solar</a><a href="https://github.com/steps-re/colorado-river" target="_blank" rel="noopener">Data &amp; code</a></div></nav><div class="secstrip"><span class="secttl">Reservoir solar</span><a href="reservoir-solar-explorer.html">Coverage explorer</a><a href="reservoir-solar.html">What the numbers say</a><a href="reservoir-solar-paper.html" class=here>Technical paper</a><a href="reservoir-solar-method.html">Methods and review</a></div><div class="wrap paper">
+</head><body><nav class="sitenav" aria-label="Site"><div class="nbwrap"><a href="index.html" class="nb-home">Colorado River</a><a href="start.html" class="nb-start">Start here</a><a href="technical.html">The evidence</a><a href="proposal.html">The fix</a><a href="water-capital.html">Who pays</a><a href="reservoir-solar-explorer.html" class="on">Reservoir solar</a><a href="https://github.com/steps-re/colorado-river" target="_blank" rel="noopener">Data &amp; code</a></div></nav><div class="secstrip"><span class="secttl">Reservoir solar</span><a href="reservoir-solar-explorer.html">Coverage explorer</a><a href="reservoir-solar.html">What the numbers say</a><a href="reservoir-solar-paper.html" class=here>Technical paper</a><a href="reservoir-solar-method.html">Methods and review</a></div><div class="secstrip"><span class="secttl">Reservoir solar</span><a href="reservoir-solar-explorer.html">Coverage explorer</a><a href="reservoir-solar.html">What the numbers say</a><a href="reservoir-solar-paper.html" class=here>Technical paper</a><a href="reservoir-solar-method.html">Methods and review</a></div><div class="wrap paper">
 
 
 <span class=tag>TECHNICAL PAPER &middot; PREPRINT</span>
@@ -511,8 +511,7 @@ exceeds available headroom, additional modules generate energy that cannot leave
 coverage target therefore cannot be optimal for both objectives.</p>
 
 <p><b>6.2 The coverage bound is reservoir-specific and spans an order of magnitude.</b> Taking the
-coverage at which line spill first exceeds 10%: Havasu 8.5%, Mead 8.0%, Powell 5.75%, Blue Mesa
-3.25%, Mohave 1.25%, Flaming Gorge 1.0%, Navajo 0.75%. A 15&ndash;20% target exceeds the bound at every reservoir studied
+coverage at which line spill first exceeds 10%: Havasu 8.5%, Mead 7.25%, Powell 4.25%, Blue Mesa 2.5%, Mohave 1%, Flaming Gorge 1%, Navajo 0.5%. A 15&ndash;20% target exceeds the bound at every reservoir studied
 <i>under the export assumption used here</i>; since that assumption is a scalar proxy rather than an
 interconnection study, the ranking between reservoirs is more robust than the absolute bound. Reservoirs with large surfaces behind small powerplants are the worst
 candidates, which is the opposite of what a surface-area-driven screen selects.</p>
@@ -643,12 +642,14 @@ water benefit peaks months later. Neither this model nor the coverage argument d
 coinciding, but anyone reasoning that shading and generating are naturally complementary in time
 should know that on these reservoirs they are not.</li>
 
-<li><b>Surface area is a summer composite, and these reservoirs are not static.</b> Areas come
-from a May-September median over 2024-2026. Colorado River reservoirs move tens of feet within a
-year on operating rule curves, and area moves with elevation. The right treatment is a stage-area
-curve driven by daily elevations, which we have not done. For scale, Lake Mead's measured surface
-is 17% below the published operating average it is most often quoted at. Coverage percentages are
-therefore percentages of a particular summer surface, not of a fixed lake.</li>
+<li><b>Surface areas move within the year and evaporation uses an annual mean.</b> Areas now
+come from a stage-area curve driven by Reclamation's daily elevations, so they follow the reservoir
+rather than freezing it at a summer composite. Within 2024 the surface varied by 21.5% at Powell,
+18.2% at Blue Mesa and 7.1% at Mead. Evaporation nonetheless multiplies an annual mean area by an
+annual depth. We checked what that discards: the covariance between area and evaporation rate
+within the year is worth under 2.4% at every reservoir, so the annual product stands. A fixed array
+against a moving surface is the larger unmodelled issue, since an array is built once and the
+fraction it covers changes as the lake does.</li>
 
 <li><b>Salvaged evaporation is not delivered water.</b> An acre-foot not evaporated at Flaming
 Gorge or Navajo sits hundreds of river miles above where Lower Basin demand is, and reaches it

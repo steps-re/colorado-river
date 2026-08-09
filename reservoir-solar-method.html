@@ -319,6 +319,34 @@ and recent completions $194/kW. It is a control, because the distribution is hea
 It moves the array's break-even at Lake Mead from $92 to between $94 and $104.</li>
 </ol>
 
+<p>A seventh round reviewed the new material specifically, since replacing every surface area and
+reshaping dam output at six reservoirs had not been looked at by anyone. All four slices returned
+unsound, and the most serious finding was not about the physics.</p>
+<ol start=45>
+<li><b>The paper had become strata of successive corrections (critical).</b> Two reviewers,
+independently, said the text described the previous model in places. They were right and it was
+worse than they could see: the paper carried a hand-typed list of coverage ceilings of which five
+of seven were stale, an abstract quoting a Navajo bound that had moved, and a limitation still
+saying that a stage-area curve driven by daily elevations was "the right treatment, which we have
+not done" when that is precisely what the model now uses. A reader could not have told what the
+model currently was. The ceilings are now computed at build time, which is the third table on this
+site to be moved from typed to computed for exactly the same reason.</li>
+<li><b>The clear-sky proxy in the evaporation physics is climate-dependent.</b> The net longwave
+term uses the 95th percentile of the whole shortwave record to stand in for clear-sky radiation,
+so it depends on the site's own climate distribution and on how long the record is. It affects the
+annual total more than the radiative-aerodynamic ratio the paper actually quotes, but it is a real
+weakness and is now stated.</li>
+<li><b>The 12 m canal default is too narrow for the big conveyances, and NHD proves it.</b> A
+reviewer pointed out that the surveyed polygons are themselves the evidence that the assumed width
+understates the major canals. That is right, and it is why the paper reports both figures and calls
+the canal surface uncertain by a factor of three rather than picking one.</li>
+</ol>
+<p>Two criticisms did not survive checking. The wind conversion was called inconsistent: the code
+multiplies by 3.6 and then divides by 3.6, which looks wrong but round-trips exactly to the
+standard 10 m to 2 m factor of 0.748. And bank storage was called a calibrated free parameter
+introduced to move the residual toward the expected answer; it is a quantity Reclamation computes
+and publishes daily, and it was applied without any tuning.</p>
+
 <p><b>The largest correction came from a question, not a review round.</b> Mike asked why the water
 side of the model ran on annual averages when the energy side ran hourly. It did, and closing that
 gap turned up something bigger than the resolution itself.</p>
