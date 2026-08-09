@@ -761,10 +761,53 @@ available.</p>
 <a href="https://github.com/steps-re/colorado-river/blob/main/analysis/fpv_reservoir_outlines.py">fpv_reservoir_outlines.py</a>
 <a href="https://github.com/steps-re/colorado-river/blob/main/analysis/evap_cover_comparison.py">evap_cover_comparison.py</a>
 <a href="https://github.com/steps-re/colorado-river/blob/main/analysis/fetch_nodal_prices.py">fetch_nodal_prices.py</a>
+<a href="https://github.com/steps-re/colorado-river/blob/main/analysis/fetch_upper_basin_overlap.py">fetch_upper_basin_overlap.py</a>
+<a href="https://github.com/steps-re/colorado-river/blob/main/analysis/fetch_basin_daily.py">fetch_basin_daily.py</a>
+<a href="https://github.com/steps-re/colorado-river/blob/main/analysis/basin_weather_evap.py">basin_weather_evap.py</a>
+<a href="https://github.com/steps-re/colorado-river/blob/main/analysis/basin_canals.py">basin_canals.py</a>
+<a href="https://github.com/steps-re/colorado-river/blob/main/analysis/basin_nhd_water.py">basin_nhd_water.py</a>
+<a href="https://github.com/steps-re/colorado-river/blob/main/analysis/basin_forward_scenarios.py">basin_forward_scenarios.py</a>
 </div>
+
+<p>Two things about rerunning this that are easy to get wrong. The full-year 2024 price archive is
+an input rather than an output: it is regenerated with
+<code>fetch_upper_basin_overlap.py --rebuild-base</code>, deliberately outside the normal run,
+because a re-fetch moves every published price without anyone deciding it should. And the weather
+fetch will refuse to write if any reservoir fails or if a result is non-physical, after an episode
+where rate limiting produced a valid-looking file containing no reservoirs at all.</p>
 
 <h2>References</h2>
 <ol class=refs>
+<li>Bureau of Reclamation, Upper Colorado Region. <i>Reservoir daily data.</i>
+usbr.gov/uc/water/hydrodata. Daily pool elevation, storage, total release, inflow and bank
+storage, per site. The source of every surface area, the dam-output shape at six reservoirs, and
+the bank-storage term that half-closed the water balance.</li>
+<li>Bureau of Reclamation. <i>RISE.</i> data.usbr.gov. Daily elevation and storage for Lake
+Havasu, which the Upper Colorado service does not carry.</li>
+<li>NASA Langley Research Center. <i>POWER daily agroclimatology</i> (MERRA-2 based),
+power.larc.nasa.gov. Temperature, humidity, wind, shortwave radiation and precipitation at each
+reservoir's own coordinates, 2015&ndash;2026. Replaced an ERA5-based archive that reached its
+quota; the two disagree on the aerodynamic share by three points and both figures are reported.</li>
+<li>Penman, H. L. Natural evaporation from open water, bare soil and grass. <i>Proceedings of the
+Royal Society A</i> 193 (1948) 120&ndash;145. The open-water combination equation used here, as
+distinct from FAO-56 reference ET, which assumes a grass canopy.</li>
+<li>McJannet, D. et al. Comparison of techniques for estimating evaporation from an irrigation
+water storage. <i>Water Resources Research</i> 49 (2013). Open-water evaporation method
+comparison.</li>
+<li>Global lake evaporation by the Penman method with an equilibrium temperature approach.
+<i>Journal of Hydrometeorology</i> (2025). Reports combination equations without a heat-storage
+term overestimating by 24&ndash;36%, which is the behaviour seen here and the reason evaporation
+levels come from measured flux rather than from the physics.</li>
+<li>US Geological Survey and US Environmental Protection Agency. <i>National Hydrography
+Dataset,</i> hydro.nationalmap.gov. Surveyed water polygons with area attributes; the measured
+lower bound on canal surface, and the check that showed mapped water bodies are full pool rather
+than operating level.</li>
+<li>US Geological Survey National Water Information System. Daily discharge at the main
+tributary gauges above Powell, Flaming Gorge, Blue Mesa and Navajo. Used to state the gauged
+fraction of reservoir inflow.</li>
+<li>McKuin, B. et al. Energy and water co-benefits from covering canals with solar panels.
+<i>Nature Sustainability</i> 4 (2021) 609&ndash;617. The canal-solar evaporation-savings estimate
+this work compares against.</li>
 <li>Bureau of Reclamation. <i>Lower Colorado River Mainstream Evaporation and Riparian
 Evapotranspiration Losses.</i> 2023. LCRAS and HDB datasets; reservoir areas and evaporation
 volumes (Tables 7&ndash;10).</li>
