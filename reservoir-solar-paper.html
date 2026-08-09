@@ -146,7 +146,7 @@ document.addEventListener('DOMContentLoaded',function(){
   });
 });
 </script>
-</head><body><nav class="sitenav" aria-label="Site"><div class="nbwrap"><a href="index.html" class="nb-home">Colorado River</a><a href="start.html" class="nb-start">Start here</a><a href="technical.html">The evidence</a><a href="proposal.html">The fix</a><a href="water-capital.html">Who pays</a><a href="reservoir-solar-explorer.html" class="on">Reservoir solar</a><a href="https://github.com/steps-re/colorado-river" target="_blank" rel="noopener">Data &amp; code</a></div></nav><div class="secstrip"><span class="secttl">Reservoir solar</span><a href="reservoir-solar-explorer.html">Coverage explorer</a><a href="reservoir-solar.html">What the numbers say</a><a href="reservoir-solar-paper.html" class=here>Technical paper</a><a href="reservoir-solar-method.html">Methods and review</a></div><div class="secstrip"><span class="secttl">Reservoir solar</span><a href="reservoir-solar-explorer.html">Coverage explorer</a><a href="reservoir-solar.html">What the numbers say</a><a href="reservoir-solar-paper.html" class=here>Technical paper</a><a href="reservoir-solar-method.html">Methods and review</a></div><div class="wrap paper">
+</head><body><nav class="sitenav" aria-label="Site"><div class="nbwrap"><a href="index.html" class="nb-home">Colorado River</a><a href="start.html" class="nb-start">Start here</a><a href="technical.html">The evidence</a><a href="proposal.html">The fix</a><a href="water-capital.html">Who pays</a><a href="reservoir-solar-explorer.html" class="on">Reservoir solar</a><a href="https://github.com/steps-re/colorado-river" target="_blank" rel="noopener">Data &amp; code</a></div></nav><div class="secstrip"><span class="secttl">Reservoir solar</span><a href="reservoir-solar-explorer.html">Coverage explorer</a><a href="reservoir-solar.html">What the numbers say</a><a href="reservoir-solar-paper.html" class=here>Technical paper</a><a href="reservoir-solar-method.html">Methods and review</a></div><div class="wrap paper">
 
 
 <span class=tag>TECHNICAL PAPER &middot; PREPRINT</span>
@@ -298,6 +298,52 @@ its export limit incurs only DC cost. Suppressed evaporation is <b>not</b> monet
 exists under the 1922 Compact or the <i>Arizona v. California</i> decree for a private party to own
 or sell water salvaged from evaporation on a mainstream federal reservoir. Cost per acre-foot is
 therefore reported as a public cost-effectiveness measure net of power sales.</p>
+
+<h2>3b. What drives the evaporation, and what a canal does not fix</h2>
+
+<p>The first substantive objection this work received was that reservoir evaporation is driven as
+much by vapour pressure deficit as by incoming radiation, and that a model multiplying one annual
+depth by one area cannot speak to it. That is correct, so we built the daily physics. Eleven years
+of daily weather at each reservoir's own coordinates, from the ERA5-based reanalysis archive, run
+through the Penman open-water combination equation rather than FAO-56 reference ET. The
+distinction matters: reference ET is defined for short grass with a fixed canopy resistance and an
+albedo of 0.23, and a lake has no stomata and an albedo near 0.06.</p>
+
+<p>Splitting each day into its radiative and aerodynamic parts settles the question quantitatively.
+Across the three Lower Basin reservoirs the aerodynamic term, the one carrying vapour pressure
+deficit and wind, is <b>44%</b> of total evaporative demand. It ranges from 23% at Blue Mesa
+to 47% at Mohave. So radiation remains the larger single term, and the objection is nonetheless
+substantially right: something close to half of what leaves these reservoirs leaves through a
+pathway that shading alone does not touch.</p>
+
+<p>That distinction decides the canal comparison. We mapped the basin's conveyance network from
+OpenStreetMap: <b>19,787 km</b> of canals, ditches and drains inside the
+main-stem corridor, carrying about <b>37,057 acres</b> of open water
+against 251,258 acres across the seven reservoirs. Canals
+are therefore roughly 13% of the combined surface, and
+around 211,783 AF/yr is at stake on them. The usual canal-solar
+design is a truss-mounted array spanning the channel, which removes the radiative pathway and
+leaves the aerodynamic one substantially open. On these numbers that caps what shading a canal can
+recover at roughly the radiative share, whereas a cover floating on still water suppresses both
+paths. Published modelling of California canals reports 20 to 82% evaporation savings, and Project
+Nexus is measuring it in the field. Our contribution is only the decomposition: shading and
+suppressing are not interchangeable, and the gap between them is the aerodynamic share.</p>
+
+<p>Two checks came out of the same daily series. First, our Penman totals run 30% to 93% above
+measured evaporation. That is not a defect to be hidden but the documented behaviour of any
+combination equation without a heat-storage term, which overestimates in the warm season and
+underestimates in the cold, with published overestimates of 24 to 36%. It is why the levels in this
+paper come from measured flux, and why the physics above is used only for the ratio, which largely
+survives the bias. Second, we tested whether multiplying an annual mean area by an annual mean
+depth misstates evaporation, since both vary within the year and their covariance is discarded.
+The error is under 2.3% at every reservoir, so the annual product stands.</p>
+
+<p>One thing we tried and could not make work: recovering evaporation as the residual of
+Reclamation's own daily water balance, from gauged inflow, release and the change in storage.
+It would have been an evaporation measurement entirely independent of the meteorology. The
+residual returns 0.1 to 1.0 ft/yr against expected values of 2.8 to 6.2, because bank storage and
+ungauged inflow are larger than the evaporation signal at these reservoirs. We report it as a
+failed check rather than omit it.</p>
 
 <h2>4. Validation</h2>
 <p>Tests are labelled by what they can establish. Only <b>external</b> tests validate anything:
