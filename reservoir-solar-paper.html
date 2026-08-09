@@ -340,7 +340,32 @@ rather than assumed. It is: All-American 44%, Central Arizona Project 40%, Coach
 atmospheric demand over the Imperial and Yuma valleys is not meaningfully different from the
 demand over Mead and Mohave, which is unsurprising given they share a climate.</p>
 
-<p>One limit survives that check. This is atmospheric demand at canal locations, not canal
+<p>We also tried to confirm the canal widths from satellite, since OpenStreetMap tags width on
+only 1% of segments and everything else rests on a conservative 12 m default. It does not work, and
+the way it fails is informative. Measuring water inside a corridor around each mapped centreline
+and dividing by length returns:</p>
+
+<div style="overflow-x:auto"><table>
+<tr><th>Canal</th><th class=num>Mapped length</th><th class=num>Width from Sentinel-2</th></tr>
+<tr><td>All-American</td><td class=num>101</td><td class=num>5.9 m</td></tr><tr><td>Central Arizona Project</td><td class=num>513</td><td class=num>0.8 m</td></tr><tr><td>Coachella</td><td class=num>196</td><td class=num>2.0 m</td></tr><tr><td>Gila Gravity</td><td class=num>25</td><td class=num>1.0 m</td></tr>
+</table></div>
+
+<p>The All-American Canal is 60 to 70 m wide in its main reaches. A measurement returning 5.9 m is
+not an imprecise answer, it is a failed one, recovering roughly a tenth of the water actually
+there. A positive control settles why: the identical recipe run over Lake Havasu returns 18,994
+acres against a published figure near 19,000. The method is excellent on wide open water and
+collapses on narrow linear water, because a canal is one to six pixels across at 10 m and nearly
+every pixel is a mixture of water and bank. Confirming canal widths needs 1 m imagery, not
+Sentinel-2.</p>
+
+<p>That failure also explains the reservoir result earlier in this paper, and turns an assertion
+into evidence. Our satellite areas came in low by 4.6% at Mohave and 25.9% at Powell, and we
+attributed the gap to mixed pixels in narrow canyon arms. The canal test is the controlled version
+of exactly that: water narrower than a few pixels goes undetected. The ordering of the reservoir
+errors follows shoreline complexity, and Powell, whose surface is largely drowned side canyons,
+is the extreme case.</p>
+
+<p>One limit survives the location check. This is atmospheric demand at canal locations, not canal
 geometry. A canal has a fetch of metres rather than kilometres, the water moves, and many reaches
 are lined and sunk below grade, so the wind field over a narrow channel is not the wind field over
 open water. The share is therefore location-appropriate and geometry-naive, and a real canal
