@@ -1,0 +1,84 @@
+{
+ "meta": {
+  "reuse_source": "UCLA Institute of the Environment and Sustainability with the Natural Resources Defense Council, 'Can water reuse save the Colorado River?', published 2 April 2025, analysing 2022 data from publicly owned treatment works above 1 MGD across the seven basin states.",
+  "reuse_caveat": "The authors describe a data desert. Most states do not systematically track reuse and the researchers contacted treatment plants individually; only California maintains an open data portal. These are the best available figures, not a measurement system, and the state-level percentages should be read as survey estimates.",
+  "fpv_source": "This project's own hourly model, at each reservoir's computed coverage bound.",
+  "comparison_caveat": "The two quantities are not interchangeable. Suppressed evaporation stays in the reservoir and has no owner under the Law of the River; reused effluent is a supply a utility can contract for. The comparison is of scale and cost, not of legal equivalence."
+ },
+ "fpv": {
+  "reservoirs": [
+   {
+    "reservoir": "Lake Mead",
+    "coverage_pct": 7.25,
+    "array_mw": 2691,
+    "evap_saved_af": 25854,
+    "usd_per_af_p50": 19126
+   },
+   {
+    "reservoir": "Lake Powell",
+    "coverage_pct": 4.25,
+    "array_mw": 1560,
+    "evap_saved_af": 14043,
+    "usd_per_af_p50": 20731
+   },
+   {
+    "reservoir": "Lake Mohave",
+    "coverage_pct": 1.0,
+    "array_mw": 131,
+    "evap_saved_af": 1138,
+    "usd_per_af_p50": 19086
+   },
+   {
+    "reservoir": "Lake Havasu",
+    "coverage_pct": 8.5,
+    "array_mw": 633,
+    "evap_saved_af": 6841,
+    "usd_per_af_p50": 18829
+   },
+   {
+    "reservoir": "Flaming Gorge",
+    "coverage_pct": 1.0,
+    "array_mw": 188,
+    "evap_saved_af": 957,
+    "usd_per_af_p50": 39377
+   },
+   {
+    "reservoir": "Navajo Reservoir",
+    "coverage_pct": 0.5,
+    "array_mw": 27,
+    "evap_saved_af": 152,
+    "usd_per_af_p50": 30754
+   },
+   {
+    "reservoir": "Blue Mesa",
+    "coverage_pct": 2.5,
+    "array_mw": 86,
+    "evap_saved_af": 372,
+    "usd_per_af_p50": 41308
+   }
+  ],
+  "total_evap_saved_af": 49357,
+  "total_array_mw": 5316
+ },
+ "reuse": {
+  "state_pct": {
+   "Nevada": 85,
+   "Arizona": 52,
+   "California": 22,
+   "New Mexico": 18,
+   "Colorado": 3.6,
+   "Wyoming": 3.3,
+   "Utah": 0.9
+  },
+  "basin_pct": 26,
+  "headroom_af": {
+   "40": 900000,
+   "50": 1300000
+  }
+ },
+ "shortfall_af": 3000000,
+ "ratios": {
+  "reuse50_over_fpv": 26.3,
+  "fpv_share_of_shortfall": 0.01645
+ }
+}

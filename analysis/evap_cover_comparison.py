@@ -25,7 +25,11 @@ ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / "outputs"; OUT.mkdir(exist_ok=True)
 
 WACC = 0.07
-EVAP_FT = 6.22          # Lake Mead, USGS direct eddy-covariance flux
+# Lake Mead's USGS eddy-covariance depth, read from the model rather than retyped. It was a
+# literal 6.22 here, a second copy of a number that lives in fpv_coverage_explorer. A copy that
+# nothing reconciles is the same defect as a hardcoded table: when the depth moves (USGS publish
+# 2024-2025 within months) this file would have quietly kept the old one.
+EVAP_FT = json.loads((OUT / "fpv_coverage_explorer.json").read_text())["Lake Mead"]["params"]["evap_ft"]
 MW_PER_ACRE = 120.0 * 0.00404686 / 1000 * 1000   # 120 MW/km2 -> MW per acre = 0.4856
 
 
@@ -53,12 +57,19 @@ OPTIONS = [
         name="Floating modular cover / geomembrane",
         capex_per_acre=250_000_000 / 175,     # VERIFIED: LADWP's own published alternative quote
         life=20, suppression=0.90, om_per_acre=2_000,
-        basis="VERIFIED QUOTE: LADWP priced a floating cover for the same 175-acre reservoir at "
-              "$250M = $1.43M/acre, which is why they chose balls instead.",
-        caveat="A grounded research agent estimated $140,000/acre for this, ten times too low. "
-               "The real number makes it the MOST expensive option here, not the cheapest.",
-        verdict="Real technology, but priced for small potable-water reservoirs. Not a "
-                "large-reservoir option.",
+        basis="UPPER BOUND, and the weakest anchor in this table. LADWP priced a floating cover "
+              "for the same 175-acre reservoir at $250M = $1.43M/acre, which is why they chose "
+              "balls instead. But that quote is for a POTABLE-WATER cover: sealed, tensioned, "
+              "food-grade, engineered to keep a treated drinking supply isolated. An evaporation "
+              "cover on a raw-water reservoir is a different and cheaper product. Treat $1.43M/acre "
+              "as a ceiling on this row, not as its price.",
+        caveat="Two estimates for this row have now been wrong in opposite directions. A research "
+               "agent put it at $140,000/acre, ten times too low. The verified quote is for a "
+               "higher-specification product than the application needs, so it is too high. No "
+               "published cost for a raw-water evaporation cover at reservoir scale was found. "
+               "This row should be read as unresolved rather than as a measurement.",
+        verdict="Real technology, cost genuinely uncertain. The published anchor prices a "
+                "potable-water product and overstates what raw-water evaporation cover would cost.",
     ),
     dict(
         name="Floating PV (this model, baseline cost)",

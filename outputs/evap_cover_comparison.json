@@ -55,9 +55,9 @@
    "annual_cost_per_acre": 136847,
    "af_per_acre_yr": 5.6,
    "usd_per_af": 24446,
-   "basis": "VERIFIED QUOTE: LADWP priced a floating cover for the same 175-acre reservoir at $250M = $1.43M/acre, which is why they chose balls instead.",
-   "caveat": "A grounded research agent estimated $140,000/acre for this, ten times too low. The real number makes it the MOST expensive option here, not the cheapest.",
-   "verdict": "Real technology, but priced for small potable-water reservoirs. Not a large-reservoir option."
+   "basis": "UPPER BOUND, and the weakest anchor in this table. LADWP priced a floating cover for the same 175-acre reservoir at $250M = $1.43M/acre, which is why they chose balls instead. But that quote is for a POTABLE-WATER cover: sealed, tensioned, food-grade, engineered to keep a treated drinking supply isolated. An evaporation cover on a raw-water reservoir is a different and cheaper product. Treat $1.43M/acre as a ceiling on this row, not as its price.",
+   "caveat": "Two estimates for this row have now been wrong in opposite directions. A research agent put it at $140,000/acre, ten times too low. The verified quote is for a higher-specification product than the application needs, so it is too high. No published cost for a raw-water evaporation cover at reservoir scale was found. This row should be read as unresolved rather than as a measurement.",
+   "verdict": "Real technology, cost genuinely uncertain. The published anchor prices a potable-water product and overstates what raw-water evaporation cover would cost."
   },
   {
    "name": "Floating PV (reviewers' harsh cost case)",
