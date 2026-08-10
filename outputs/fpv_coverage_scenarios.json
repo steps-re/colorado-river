@@ -30,9 +30,9 @@
     "usd_per_af_deterministic": 9868,
     "share_of_lake_pct": 7.3,
     "usd_per_af_mc": {
-     "p10": 14380,
-     "p50": 21014,
-     "p90": 32859
+     "p10": 14348,
+     "p50": 21118,
+     "p90": 32904
     },
     "reuse_af_for_same_spend": {
      "at_2500_usd_af": 102040,
@@ -59,16 +59,16 @@
      "usd_per_af_deterministic": 11921,
      "share_of_lake_pct": 21.3,
      "usd_per_af_mc": {
-      "p10": 15842,
-      "p50": 22659,
-      "p90": 35214
+      "p10": 15797,
+      "p50": 22624,
+      "p90": 35272
      },
      "reuse_af_for_same_spend": {
       "at_2500_usd_af": 361360,
       "at_3500_usd_af": 258114
      },
      "cost_ratio_vs_reuse": {
-      "at_2500_usd_af": 9.1,
+      "at_2500_usd_af": 9.0,
       "at_3500_usd_af": 6.5
      }
     },
@@ -87,9 +87,9 @@
      "usd_per_af_deterministic": 12425,
      "share_of_lake_pct": 32.0,
      "usd_per_af_mc": {
-      "p10": 16156,
-      "p50": 22936,
-      "p90": 35676
+      "p10": 16127,
+      "p50": 23000,
+      "p90": 35636
      },
      "reuse_af_for_same_spend": {
       "at_2500_usd_af": 567160,
@@ -115,16 +115,16 @@
      "usd_per_af_deterministic": 12687,
      "share_of_lake_pct": 42.5,
      "usd_per_af_mc": {
-      "p10": 16314,
-      "p50": 23100,
-      "p90": 35874
+      "p10": 16300,
+      "p50": 23197,
+      "p90": 35993
      },
      "reuse_af_for_same_spend": {
       "at_2500_usd_af": 769120,
       "at_3500_usd_af": 549371
      },
      "cost_ratio_vs_reuse": {
-      "at_2500_usd_af": 9.2,
+      "at_2500_usd_af": 9.3,
       "at_3500_usd_af": 6.6
      }
     }
@@ -149,9 +149,9 @@
     "usd_per_af_deterministic": 10835,
     "share_of_lake_pct": 4.3,
     "usd_per_af_mc": {
-     "p10": 15388,
-     "p50": 22632,
-     "p90": 35747
+     "p10": 15379,
+     "p50": 22692,
+     "p90": 36260
     },
     "reuse_af_for_same_spend": {
      "at_2500_usd_af": 60840,
@@ -178,17 +178,17 @@
      "usd_per_af_deterministic": 13352,
      "share_of_lake_pct": 21.2,
      "usd_per_af_mc": {
-      "p10": 17131,
-      "p50": 24621,
-      "p90": 38913
+      "p10": 17142,
+      "p50": 24735,
+      "p90": 38909
      },
      "reuse_af_for_same_spend": {
       "at_2500_usd_af": 375000,
       "at_3500_usd_af": 267857
      },
      "cost_ratio_vs_reuse": {
-      "at_2500_usd_af": 9.8,
-      "at_3500_usd_af": 7.0
+      "at_2500_usd_af": 9.9,
+      "at_3500_usd_af": 7.1
      }
     },
     "15pct_of_full_pool": {
@@ -206,16 +206,16 @@
      "usd_per_af_deterministic": 13684,
      "share_of_lake_pct": 32.0,
      "usd_per_af_mc": {
-      "p10": 17311,
-      "p50": 24783,
-      "p90": 39091
+      "p10": 17331,
+      "p50": 25001,
+      "p90": 39243
      },
      "reuse_af_for_same_spend": {
       "at_2500_usd_af": 578720,
       "at_3500_usd_af": 413371
      },
      "cost_ratio_vs_reuse": {
-      "at_2500_usd_af": 9.9,
+      "at_2500_usd_af": 10.0,
       "at_3500_usd_af": 7.1
      }
     },
@@ -234,9 +234,9 @@
      "usd_per_af_deterministic": 13865,
      "share_of_lake_pct": 42.7,
      "usd_per_af_mc": {
-      "p10": 17420,
-      "p50": 24914,
-      "p90": 39321
+      "p10": 17412,
+      "p50": 25109,
+      "p90": 39449
      },
      "reuse_af_for_same_spend": {
       "at_2500_usd_af": 783400,
@@ -244,7 +244,7 @@
      },
      "cost_ratio_vs_reuse": {
       "at_2500_usd_af": 10.0,
-      "at_3500_usd_af": 7.1
+      "at_3500_usd_af": 7.2
      }
     }
    }

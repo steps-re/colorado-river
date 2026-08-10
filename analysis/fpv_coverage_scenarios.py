@@ -65,60 +65,28 @@ def mc_sampler(name, n=2000):
     evaluated in the same sampled worlds. Paired draws matter here: the finding is how $/AF moves
     WITH coverage, and independent draws would bury that under sampling noise.
 
-    The published p50 is not directly comparable to any of this. fpv_uncertainty.run_reservoir
-    RIGHT-SIZES the array, searching upward until spill exceeds 5%, so its $19,038/AF is the cost
-    of a spill-constrained array rather than the cost at a stated coverage. Evaluating at a fixed
-    coverage is a different question and needs its own run.
+    This used to hand-copy fpv_uncertainty's cost and revenue arithmetic, which meant a change to
+    the cost terms there would silently not reach the paper's scenario table. It now calls the same
+    sampler and the same kernel, so the two cannot drift.
+
+    The published p50 is still not the same quantity. fpv_uncertainty.run_reservoir RIGHT-SIZES the
+    array, searching upward until spill exceeds 5%, so it prices a spill-constrained array rather
+    than a stated coverage. Evaluating at a fixed coverage is a different question.
     """
     import fpv_uncertainty as Q
     Q.RNG = np.random.default_rng(20260807)          # reseed: identical draws for every reservoir
-    p = Q.model[name]["params"]
-    h = Q.model[name]["hourly"]
-    U = Q.correlated_uniforms(n)
-    kind, spec = Q.EVAP_UNC[name]
-    if kind == "bracket":
-        evap = spec[0] + U["evap"] * (spec[1] - spec[0])
-    else:
-        from scipy.special import erfinv
-        evap = p["evap_ft"] * (1 + spec * np.sqrt(2)
-                               * erfinv(2 * np.clip(U["evap"], 1e-9, 1 - 1e-9) - 1))
-    wacc = 0.06 + U["wacc"] * 0.03
-    return dict(
-        p=p, n=n,
-        solar=Q.dec(h["solar_b64"], h["solar_scale"]),
-        hydro=Q.dec(h["hydro_b64"], h["hydro_scale"]),
-        price=Q.dec(h["price_b64"], h["price_scale"]),
-        day=Q.dec(h["daylight_b64"], 1),
-        area_km2=p["surface_acres"] * Q.ACRE_KM2,
-        evap=evap,
-        supp=Q.inv_tri(U["supp"], 0.30, 0.75, 0.90),
-        dens=Q.inv_tri(U["density"], 80, 120, 160),
-        capex_w=Q.inv_tri(U["capex"], 1.23, 1.50, 2.50),
-        om_mult=Q.inv_tri(U["om"], 1.0, 1.3, 3.0),
-        wacc=wacc,
-        crf=wacc * (1 + wacc) ** 25 / ((1 + wacc) ** 25 - 1),
-        linef=Q.RNG.uniform(0.10, 1.00, n),
-        coinc=Q.RNG.uniform(0.25, 1.00, n),
-        af_per=Q.AF_PER_KM2_PER_FT,
-    )
+    return Q.sample(name, n)
 
 
 def mc_at_coverage(s, cov_frac):
     """Cost per acre-foot at a FIXED coverage, net of power sales, across the sampled draws.
-    Same cost and revenue terms as fpv_uncertainty, with the spill constraint removed: the whole
-    point of the high-coverage scenarios is that they breach it."""
-    p, n = s["p"], s["n"]
-    usd_af = np.empty(n)
-    for i in range(n):
-        load = p["onsite_load_mw"] * s["coinc"][i]
-        head = np.maximum(0, p["tie_mw"] - s["hydro"]) * s["linef"][i] + np.where(s["day"] > 0, load, 0)
-        mw = cov_frac * s["area_km2"] * s["dens"][i]
-        ac = min(mw, p["tie_mw"] * s["linef"][i] + load)
-        deliv = np.minimum(np.minimum(s["solar"] * mw, ac), head)
-        af = cov_frac * s["supp"][i] * s["area_km2"] * s["evap"][i] * s["af_per"]
-        rev = float((np.where(s["price"] > 0, deliv, 0) * s["price"]).sum())
-        cost = mw * 1e6 * s["capex_w"][i] * s["crf"][i] + mw * 25_000 * s["om_mult"][i]
-        usd_af[i] = (cost - rev) / af if af > 0 else np.nan
+    The spill constraint is simply not applied: the whole point of the high-coverage scenarios is
+    that they breach it."""
+    import fpv_uncertainty as Q
+    usd_af = np.empty(s["n"])
+    for i in range(s["n"]):
+        _mw, af, net, _spill = Q.evaluate(s, i, cov_frac)
+        usd_af[i] = net / af if af > 0 else np.nan
     a = usd_af[np.isfinite(usd_af)]
     return {f"p{q}": round(float(np.percentile(a, q))) for q in (10, 50, 90)} if len(a) else None
 
