@@ -1,0 +1,253 @@
+{
+ "meta": {
+  "what": "FPV evaporation and cost under two sizing conventions, same hourly model",
+  "why": "collaborators sizing off full pool with no transmission bound land 3-6x higher on FPV area; this separates the two causes and prices both",
+  "convention_a": "coverage at the transmission knee, on the measured drawn-down surface",
+  "convention_b": "(10, 15, 20) percent of published full pool, expressed as coverage of the real lake and run through the same hourly simulation",
+  "cost_basis": "DETERMINISTIC central case, net of power sales. The published site quotes the Monte Carlo p50, which is roughly twice this because it widens suppression, line share and capex. Ratios between rows are the finding, not the absolute level.",
+  "reuse_source": "analysis/reuse_resource.py: reuse or desalination 2,500-3,500 $/AF. OCWD delivers at 487-1,073 $/AF, so this is the expensive end of reuse.",
+  "reuse_headroom_af": 1300000,
+  "grid": "coverage 0 to 45% in 0.25% steps",
+  "notes": []
+ },
+ "scenarios": {
+  "Lake Mead": {
+   "measured_acres": 76444,
+   "full_pool_acres": 162700,
+   "full_pool_over_measured": 2.13,
+   "transmission_bounded": {
+    "coverage_of_real_lake_pct": 7.25,
+    "fpv_acres": 5543,
+    "array_gw": 2.69,
+    "export_twh": 3.46,
+    "curtail_tx_pct": 10.2,
+    "curtail_econ_pct": 18.6,
+    "capture_usd_mwh": 27.78,
+    "gross_cost_musd": 351.4,
+    "power_revenue_musd": 96.2,
+    "net_cost_musd": 255.1,
+    "evap_saved_af": 25854,
+    "usd_per_af_deterministic": 9868,
+    "share_of_lake_pct": 7.3,
+    "usd_per_af_mc": {
+     "p10": 14380,
+     "p50": 21014,
+     "p90": 32859
+    },
+    "reuse_af_for_same_spend": {
+     "at_2500_usd_af": 102040,
+     "at_3500_usd_af": 72886
+    },
+    "cost_ratio_vs_reuse": {
+     "at_2500_usd_af": 8.4,
+     "at_3500_usd_af": 6.0
+    }
+   },
+   "full_pool_convention": {
+    "10pct_of_full_pool": {
+     "coverage_of_real_lake_pct": 21.25,
+     "fpv_acres": 16245,
+     "array_gw": 7.89,
+     "export_twh": 4.38,
+     "curtail_tx_pct": 62.3,
+     "curtail_econ_pct": 7.0,
+     "capture_usd_mwh": 28.85,
+     "gross_cost_musd": 1029.8,
+     "power_revenue_musd": 126.5,
+     "net_cost_musd": 903.4,
+     "evap_saved_af": 75780,
+     "usd_per_af_deterministic": 11921,
+     "share_of_lake_pct": 21.3,
+     "usd_per_af_mc": {
+      "p10": 15842,
+      "p50": 22659,
+      "p90": 35214
+     },
+     "reuse_af_for_same_spend": {
+      "at_2500_usd_af": 361360,
+      "at_3500_usd_af": 258114
+     },
+     "cost_ratio_vs_reuse": {
+      "at_2500_usd_af": 9.1,
+      "at_3500_usd_af": 6.5
+     }
+    },
+    "15pct_of_full_pool": {
+     "coverage_of_real_lake_pct": 32.0,
+     "fpv_acres": 24461,
+     "array_gw": 11.88,
+     "export_twh": 4.55,
+     "curtail_tx_pct": 74.1,
+     "curtail_econ_pct": 4.7,
+     "capture_usd_mwh": 29.22,
+     "gross_cost_musd": 1550.8,
+     "power_revenue_musd": 132.9,
+     "net_cost_musd": 1417.9,
+     "evap_saved_af": 114116,
+     "usd_per_af_deterministic": 12425,
+     "share_of_lake_pct": 32.0,
+     "usd_per_af_mc": {
+      "p10": 16156,
+      "p50": 22936,
+      "p90": 35676
+     },
+     "reuse_af_for_same_spend": {
+      "at_2500_usd_af": 567160,
+      "at_3500_usd_af": 405114
+     },
+     "cost_ratio_vs_reuse": {
+      "at_2500_usd_af": 9.2,
+      "at_3500_usd_af": 6.6
+     }
+    },
+    "20pct_of_full_pool": {
+     "coverage_of_real_lake_pct": 42.5,
+     "fpv_acres": 32489,
+     "array_gw": 15.78,
+     "export_twh": 4.65,
+     "curtail_tx_pct": 80.2,
+     "curtail_econ_pct": 3.6,
+     "capture_usd_mwh": 29.46,
+     "gross_cost_musd": 2059.7,
+     "power_revenue_musd": 136.9,
+     "net_cost_musd": 1922.8,
+     "evap_saved_af": 151560,
+     "usd_per_af_deterministic": 12687,
+     "share_of_lake_pct": 42.5,
+     "usd_per_af_mc": {
+      "p10": 16314,
+      "p50": 23100,
+      "p90": 35874
+     },
+     "reuse_af_for_same_spend": {
+      "at_2500_usd_af": 769120,
+      "at_3500_usd_af": 549371
+     },
+     "cost_ratio_vs_reuse": {
+      "at_2500_usd_af": 9.2,
+      "at_3500_usd_af": 6.6
+     }
+    }
+   }
+  },
+  "Lake Powell": {
+   "measured_acres": 75566,
+   "full_pool_acres": 161390,
+   "full_pool_over_measured": 2.14,
+   "transmission_bounded": {
+    "coverage_of_real_lake_pct": 4.25,
+    "fpv_acres": 3212,
+    "array_gw": 1.56,
+    "export_twh": 1.93,
+    "curtail_tx_pct": 10.3,
+    "curtail_econ_pct": 19.2,
+    "capture_usd_mwh": 26.72,
+    "gross_cost_musd": 203.6,
+    "power_revenue_musd": 51.5,
+    "net_cost_musd": 152.1,
+    "evap_saved_af": 14043,
+    "usd_per_af_deterministic": 10835,
+    "share_of_lake_pct": 4.3,
+    "usd_per_af_mc": {
+     "p10": 15388,
+     "p50": 22632,
+     "p90": 35747
+    },
+    "reuse_af_for_same_spend": {
+     "at_2500_usd_af": 60840,
+     "at_3500_usd_af": 43457
+    },
+    "cost_ratio_vs_reuse": {
+     "at_2500_usd_af": 9.1,
+     "at_3500_usd_af": 6.5
+    }
+   },
+   "full_pool_convention": {
+    "10pct_of_full_pool": {
+     "coverage_of_real_lake_pct": 21.25,
+     "fpv_acres": 16057,
+     "array_gw": 7.8,
+     "export_twh": 2.81,
+     "curtail_tx_pct": 74.9,
+     "curtail_econ_pct": 4.5,
+     "capture_usd_mwh": 28.7,
+     "gross_cost_musd": 1018.0,
+     "power_revenue_musd": 80.6,
+     "net_cost_musd": 937.5,
+     "evap_saved_af": 70213,
+     "usd_per_af_deterministic": 13352,
+     "share_of_lake_pct": 21.2,
+     "usd_per_af_mc": {
+      "p10": 17131,
+      "p50": 24621,
+      "p90": 38913
+     },
+     "reuse_af_for_same_spend": {
+      "at_2500_usd_af": 375000,
+      "at_3500_usd_af": 267857
+     },
+     "cost_ratio_vs_reuse": {
+      "at_2500_usd_af": 9.8,
+      "at_3500_usd_af": 7.0
+     }
+    },
+    "15pct_of_full_pool": {
+     "coverage_of_real_lake_pct": 32.0,
+     "fpv_acres": 24182,
+     "array_gw": 11.74,
+     "export_twh": 2.94,
+     "curtail_tx_pct": 82.7,
+     "curtail_econ_pct": 3.0,
+     "capture_usd_mwh": 29.28,
+     "gross_cost_musd": 1533.0,
+     "power_revenue_musd": 86.2,
+     "net_cost_musd": 1446.8,
+     "evap_saved_af": 105732,
+     "usd_per_af_deterministic": 13684,
+     "share_of_lake_pct": 32.0,
+     "usd_per_af_mc": {
+      "p10": 17311,
+      "p50": 24783,
+      "p90": 39091
+     },
+     "reuse_af_for_same_spend": {
+      "at_2500_usd_af": 578720,
+      "at_3500_usd_af": 413371
+     },
+     "cost_ratio_vs_reuse": {
+      "at_2500_usd_af": 9.9,
+      "at_3500_usd_af": 7.1
+     }
+    },
+    "20pct_of_full_pool": {
+     "coverage_of_real_lake_pct": 42.75,
+     "fpv_acres": 32304,
+     "array_gw": 15.69,
+     "export_twh": 3.02,
+     "curtail_tx_pct": 86.7,
+     "curtail_econ_pct": 2.3,
+     "capture_usd_mwh": 29.64,
+     "gross_cost_musd": 2048.0,
+     "power_revenue_musd": 89.5,
+     "net_cost_musd": 1958.5,
+     "evap_saved_af": 141252,
+     "usd_per_af_deterministic": 13865,
+     "share_of_lake_pct": 42.7,
+     "usd_per_af_mc": {
+      "p10": 17420,
+      "p50": 24914,
+      "p90": 39321
+     },
+     "reuse_af_for_same_spend": {
+      "at_2500_usd_af": 783400,
+      "at_3500_usd_af": 559571
+     },
+     "cost_ratio_vs_reuse": {
+      "at_2500_usd_af": 10.0,
+      "at_3500_usd_af": 7.1
+     }
+    }
+   }
+  }
+ }
+}

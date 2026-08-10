@@ -659,6 +659,46 @@ plants had to be contacted individually. Neither point changes the ranking. An o
 times larger and several times cheaper does not lose to a smaller, dearer one because its
 accounting is imperfect.</p>
 
+<h3>Does that ranking survive a different sizing convention?</h3>
+
+<p>It should be tested, because the bound above is ours. Other groups working on the same question
+arrive at floating-solar areas several times larger, and the difference is two conventions
+multiplying rather than a disagreement about the lake. They size against <b>full pool</b> rather
+than the drawn-down surface the reservoirs actually hold, which is 2.1x at both Mead and Powell,
+and they apply a <b>10 to 20% cover</b> target with no transmission bound, which is roughly another
+2x on top. A reader is entitled to suspect that a paper which bounds coverage at the tie and then
+reports a small number has assumed its own conclusion.</p>
+
+<p>So the table below removes our bound entirely. It expresses the full-pool convention as coverage
+of the real lake and runs it back through the same hourly simulation, at Mead and Powell combined.</p>
+
+<div style="overflow-x:auto">
+<table>
+<tr><th>Sizing convention</th><th>Array<br>(GW)</th><th>Water suppressed<br>(AF/yr)</th>
+<th>Transmission<br>spill</th><th>Cost per AF<br>(p50)</th><th>Against<br>reuse</th></tr>
+<tr><td>This paper: bounded by the existing tie</td><td class=num>4.2</td><td class=num>39,897</td><td class=num>10-10%</td><td class=num>$21,014&ndash;$22,632</td><td class=num>6.0&ndash;6.5x</td></tr><tr><td>10% of full pool, no transmission bound</td><td class=num>15.7</td><td class=num>145,993</td><td class=num>62-75%</td><td class=num>$22,659&ndash;$24,621</td><td class=num>6.5&ndash;7.0x</td></tr><tr><td>15% of full pool, no transmission bound</td><td class=num>23.6</td><td class=num>219,848</td><td class=num>74-83%</td><td class=num>$22,936&ndash;$24,783</td><td class=num>6.6&ndash;7.1x</td></tr><tr><td>20% of full pool, no transmission bound</td><td class=num>31.5</td><td class=num>292,812</td><td class=num>80-87%</td><td class=num>$23,100&ndash;$24,914</td><td class=num>6.6&ndash;7.1x</td></tr>
+</table>
+</div>
+<p class=note>Mead and Powell only, the two reservoirs where a full-pool convention is the likely
+source of the difference. Spill and cost ranges span the two. Cost is the Monte Carlo p50 at a
+fixed coverage, net of power sales, against reuse at $3,500/AF, the expensive end of the range in
+<a href="https://github.com/steps-re/colorado-river/blob/main/analysis/reuse_resource.py">reuse_resource.py</a>. Computed by
+<a href="https://github.com/steps-re/colorado-river/blob/main/analysis/fpv_coverage_scenarios.py">fpv_coverage_scenarios.py</a>.</p>
+
+<p>The larger convention does suppress substantially more water, and that is the honest half of the
+disagreement. It is also not free, and the direction of the cost is the finding: an acre-foot gets
+<i>dearer</i> as coverage grows, because gross cost scales with the array while revenue saturates
+against a fixed tie. Transmission spill climbs from about a tenth to over four-fifths. You buy six
+times the panel to get six times the water and throw away most of the electricity that was supposed
+to pay for it.</p>
+
+<p>The ranking therefore does not depend on our bound. Reuse is several times cheaper per acre-foot
+at the tie-limited size and <i>further</i> ahead at the larger one. Two qualifications keep this
+honest. The comparison assumes the other convention means 10 to 20% of full pool rather than of the
+current surface, which is an inference. And a build on this scale is not a modelling detail: 15% of
+full pool across both lakes is over 20 GW of floating solar, against roughly 10 GW installed
+worldwide to date.</p>
+
 <h2>7b. The same question at other reservoir elevations</h2>
 
 <p>Every area in this paper is historical, and a twenty-five year asset is not. Reclamation
