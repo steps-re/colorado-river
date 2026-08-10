@@ -1,10 +1,10 @@
 {
  "summary": {
-  "total": 16,
-  "passed": 16,
+  "total": 22,
+  "passed": 22,
   "failed": 0,
-  "external_total": 11,
-  "external_passed": 11,
+  "external_total": 16,
+  "external_passed": 16,
   "note": "Only the EXTERNAL tests validate anything. Circular tests compare against values the model was normalised to and prove only that the scaling arithmetic is right; internal tests are round-trips; range tests check a constant against published bounds."
  },
  "note": [
@@ -15,11 +15,12 @@
   {
    "test": "Lake Mead total open-water evaporation",
    "kind": "external",
-   "modelled": 432869.488,
+   "modelled": 475482.809,
    "reference": 519313,
    "unit": "AF/yr",
-   "error_pct": -16.6,
+   "error_pct": -8.4,
    "tolerance_pct": 25,
+   "direction": "two-sided",
    "passed": true,
    "reference_source": "Reclamation HDB 2017-2021 average (LCR Evaporation Report 2023, Table 7)",
    "note": "Our figure uses a 2024-2026 measured surface; Reclamation's is a 2017-2021 average over a larger lake, so ours should read lower. Direction of the difference is the check."
@@ -27,11 +28,12 @@
   {
    "test": "Lake Mohave total open-water evaporation",
    "kind": "external",
-   "modelled": 144750.944,
+   "modelled": 151682.52,
    "reference": 151722,
    "unit": "AF/yr",
-   "error_pct": -4.6,
+   "error_pct": -0.0,
    "tolerance_pct": 15,
+   "direction": "two-sided",
    "passed": true,
    "reference_source": "Reclamation HDB 2017-2021 with 2021 USGS coefficients (Table 8)",
    "note": "Level held on a seasonal guide curve, so surface area is comparable between periods."
@@ -39,11 +41,12 @@
   {
    "test": "Lake Mohave surface area",
    "kind": "external",
-   "modelled": 25665,
+   "modelled": 26894,
    "reference": 27022,
    "unit": "acres",
-   "error_pct": -5.0,
+   "error_pct": -0.5,
    "tolerance_pct": 12,
+   "direction": "two-sided",
    "passed": true,
    "reference_source": "Reclamation LCRAS 2017-2021 average surface area (Table 9)",
    "note": "Sentinel-2 water mask vs Reclamation's area-capacity tables: independent methods."
@@ -56,6 +59,7 @@
    "unit": "fraction",
    "error_pct": -1.7,
    "tolerance_pct": 20,
+   "direction": "two-sided",
    "passed": true,
    "reference_source": "Typical fixed-tilt utility PV capacity factor, US Desert Southwest (EIA/NREL range 0.19-0.23)",
    "note": "Sanity check on the PVGIS resource model at these coordinates."
@@ -68,6 +72,7 @@
    "unit": "fraction",
    "error_pct": -4.8,
    "tolerance_pct": 20,
+   "direction": "two-sided",
    "passed": true,
    "reference_source": "Typical fixed-tilt utility PV capacity factor, US Desert Southwest (EIA/NREL range 0.19-0.23)",
    "note": "Sanity check on the PVGIS resource model at these coordinates."
@@ -80,6 +85,7 @@
    "unit": "GWh/yr",
    "error_pct": -0.0,
    "tolerance_pct": 3,
+   "direction": "two-sided",
    "passed": true,
    "reference_source": "WAPA CRSP 2026 fact sheet, average annual energy",
    "note": "CIRCULAR: the hourly series is normalised to this published figure, so agreement is guaranteed. Retained only as a round-trip check on the scaling arithmetic."
@@ -87,11 +93,12 @@
   {
    "test": "Hoover annual generation",
    "kind": "circular",
-   "modelled": 4000.008,
+   "modelled": 4000.003,
    "reference": 4000,
    "unit": "GWh/yr",
    "error_pct": 0.0,
    "tolerance_pct": 3,
+   "direction": "two-sided",
    "passed": true,
    "reference_source": "Reclamation, Hoover Dam average annual generation ~4 TWh",
    "note": "CIRCULAR: normalised to this figure. Round-trip check only."
@@ -104,6 +111,7 @@
    "unit": "$/MWh",
    "error_pct": 0.1,
    "tolerance_pct": 3,
+   "direction": "two-sided",
    "passed": true,
    "reference_source": "Computed independently from the raw OASIS pull for NEVP, full year 2024",
    "note": "Round-trip test of the Int16 quantisation used to embed prices in the page. An earlier version of this test used 29.56, which is the mean over only the hours the older SP15 series also covered; the test correctly failed until the reference was put on the same 8,784-hour basis as the model."
@@ -111,11 +119,12 @@
   {
    "test": "Evaporation saved, Mead at 3% coverage",
    "kind": "internal",
-   "modelled": 9740,
-   "reference": 9739.563,
+   "modelled": 10698,
+   "reference": 10698.363,
    "unit": "AF/yr",
-   "error_pct": 0.0,
+   "error_pct": -0.0,
    "tolerance_pct": 1,
+   "direction": "two-sided",
    "passed": true,
    "reference_source": "Closed-form identity: coverage x suppression x rate x area",
    "note": "Internal consistency, not external validation."
@@ -128,21 +137,62 @@
    "unit": "MW/km2",
    "error_pct": 0.0,
    "tolerance_pct": 35,
+   "direction": "two-sided",
    "passed": true,
    "reference_source": "Published utility FPV gross density, roughly 80-160 MW/km2 depending on layout",
    "note": "Range check on a constant, not a validation of any model output."
   },
   {
+   "test": "Lake Mead evaporation depth vs LCRAS accounting",
+   "kind": "external",
+   "modelled": 6.22,
+   "reference": 5.815,
+   "unit": "ft/yr",
+   "error_pct": 7.0,
+   "tolerance_pct": 15,
+   "direction": "two-sided",
+   "passed": true,
+   "reference_source": "Reclamation LCRAS reservoir evaporation volume 2019-2024 over measured area",
+   "note": "Independent of the USGS flux campaigns: this reservoir's rate comes from measured eddy-covariance flux and owes nothing to LCRAS."
+  },
+  {
+   "test": "Lake Mohave evaporation depth vs LCRAS accounting",
+   "kind": "external",
+   "modelled": 5.64,
+   "reference": 5.418,
+   "unit": "ft/yr",
+   "error_pct": 4.1,
+   "tolerance_pct": 15,
+   "direction": "two-sided",
+   "passed": true,
+   "reference_source": "Reclamation LCRAS reservoir evaporation volume 2019-2024 over measured area",
+   "note": "Independent of the USGS flux campaigns: this reservoir's rate comes from measured eddy-covariance flux and owes nothing to LCRAS."
+  },
+  {
+   "test": "Lake Havasu evaporation depth vs LCRAS accounting",
+   "kind": "circular",
+   "modelled": 7.0,
+   "reference": 7.009,
+   "unit": "ft/yr",
+   "error_pct": -0.1,
+   "tolerance_pct": 15,
+   "direction": "two-sided",
+   "passed": true,
+   "reference_source": "Reclamation LCRAS reservoir evaporation volume 2019-2024 over measured area",
+   "note": "CIRCULAR AND LABELLED AS SUCH. Havasu has no flux measurement, so its rate is itself an LCRAS volume divided by an area. Comparing it back against that quotient cannot fail. Retained only to show the arithmetic is consistent, and it validates nothing."
+  },
+  {
    "test": "Lake Mead OSM full-pool outline vs measured water",
    "kind": "external",
    "modelled": 335.2,
-   "reference": 281.6,
+   "reference": 309.4,
    "unit": "km2",
-   "error_pct": 19.0,
+   "error_pct": 8.3,
    "tolerance_pct": 60,
+   "direction": "above",
    "passed": true,
    "reference_source": "Sentinel-2 measured 2024-2026 mean",
-   "note": "OSM outlines are full pool and should read HIGHER than a drawn-down measured surface. Directional: full-pool outlines should exceed a drawn-down measured surface. Confirms the correct water body, not agreement."
+   "note": "OSM outlines are full pool and should read HIGHER than a drawn-down measured surface. Directional: full-pool outlines should exceed a drawn-down measured surface. Confirms the correct water body, not agreement. Enforced one-sided: measured water exceeding full pool would mean the mask is picking up water outside the reservoir, which a symmetric tolerance would have passed."
   },
   {
    "test": "Lake Havasu OSM full-pool outline vs measured water",
@@ -152,54 +202,98 @@
    "unit": "km2",
    "error_pct": 12.7,
    "tolerance_pct": 60,
+   "direction": "above",
    "passed": true,
    "reference_source": "Sentinel-2 measured 2024-2026 mean",
-   "note": "OSM outlines are full pool and should read HIGHER than a drawn-down measured surface. Directional: full-pool outlines should exceed a drawn-down measured surface. Confirms the correct water body, not agreement."
+   "note": "OSM outlines are full pool and should read HIGHER than a drawn-down measured surface. Directional: full-pool outlines should exceed a drawn-down measured surface. Confirms the correct water body, not agreement. Enforced one-sided: measured water exceeding full pool would mean the mask is picking up water outside the reservoir, which a symmetric tolerance would have passed."
   },
   {
    "test": "Blue Mesa OSM full-pool outline vs measured water",
    "kind": "external",
    "modelled": 36.1,
-   "reference": 23.9,
+   "reference": 28.7,
    "unit": "km2",
-   "error_pct": 51.0,
+   "error_pct": 25.8,
    "tolerance_pct": 60,
+   "direction": "above",
    "passed": true,
    "reference_source": "Sentinel-2 measured 2024-2026 mean",
-   "note": "OSM outlines are full pool and should read HIGHER than a drawn-down measured surface. Directional: full-pool outlines should exceed a drawn-down measured surface. Confirms the correct water body, not agreement."
+   "note": "OSM outlines are full pool and should read HIGHER than a drawn-down measured surface. Directional: full-pool outlines should exceed a drawn-down measured surface. Confirms the correct water body, not agreement. Enforced one-sided: measured water exceeding full pool would mean the mask is picking up water outside the reservoir, which a symmetric tolerance would have passed."
   },
   {
    "test": "Flaming Gorge OSM full-pool outline vs measured water",
    "kind": "external",
    "modelled": 166.2,
-   "reference": 135.6,
+   "reference": 156.5,
    "unit": "km2",
-   "error_pct": 22.6,
+   "error_pct": 6.2,
    "tolerance_pct": 60,
+   "direction": "above",
    "passed": true,
    "reference_source": "Sentinel-2 measured 2024-2026 mean",
-   "note": "OSM outlines are full pool and should read HIGHER than a drawn-down measured surface. Directional: full-pool outlines should exceed a drawn-down measured surface. Confirms the correct water body, not agreement."
+   "note": "OSM outlines are full pool and should read HIGHER than a drawn-down measured surface. Directional: full-pool outlines should exceed a drawn-down measured surface. Confirms the correct water body, not agreement. Enforced one-sided: measured water exceeding full pool would mean the mask is picking up water outside the reservoir, which a symmetric tolerance would have passed."
   },
   {
-   "test": "Lake Mead measured area vs area-capacity expectation",
+   "test": "Flaming Gorge fitted hypsometry extrapolated to full pool",
    "kind": "external",
-   "modelled": 69593,
-   "reference": 70500,
+   "modelled": 44325,
+   "reference": 42020,
    "unit": "acres",
-   "error_pct": -1.3,
-   "tolerance_pct": 10,
+   "error_pct": 5.5,
+   "tolerance_pct": 12,
+   "direction": "two-sided",
    "passed": true,
-   "reference_source": "Reclamation Lake Mead area-capacity tables (2009) evaluated at recent elevation",
-   "note": "Sentinel-2 water mask vs a bathymetric elevation-area relationship: fully independent methods."
+   "reference_source": "Reclamation published full-pool surface area",
+   "note": "Storage-elevation hypsometry fitted only to operating-range data, then evaluated at full pool. Published full-pool area never enters the fit, so this is a genuine out-of-sample test. Mead and Powell are excluded: full pool sits 130 ft and 64 ft above any level in the record, so it is extrapolation rather than validation."
+  },
+  {
+   "test": "Blue Mesa fitted hypsometry extrapolated to full pool",
+   "kind": "external",
+   "modelled": 9638,
+   "reference": 9180,
+   "unit": "acres",
+   "error_pct": 5.0,
+   "tolerance_pct": 12,
+   "direction": "two-sided",
+   "passed": true,
+   "reference_source": "Reclamation published full-pool surface area",
+   "note": "Storage-elevation hypsometry fitted only to operating-range data, then evaluated at full pool. Published full-pool area never enters the fit, so this is a genuine out-of-sample test. Mead and Powell are excluded: full pool sits 130 ft and 64 ft above any level in the record, so it is extrapolation rather than validation."
+  },
+  {
+   "test": "Navajo Reservoir fitted hypsometry extrapolated to full pool",
+   "kind": "external",
+   "modelled": 16774,
+   "reference": 15610,
+   "unit": "acres",
+   "error_pct": 7.5,
+   "tolerance_pct": 12,
+   "direction": "two-sided",
+   "passed": true,
+   "reference_source": "Reclamation published full-pool surface area",
+   "note": "Storage-elevation hypsometry fitted only to operating-range data, then evaluated at full pool. Published full-pool area never enters the fit, so this is a genuine out-of-sample test. Mead and Powell are excluded: full pool sits 130 ft and 64 ft above any level in the record, so it is extrapolation rather than validation."
+  },
+  {
+   "test": "Lake Mohave fitted hypsometry extrapolated to full pool",
+   "kind": "external",
+   "modelled": 26906,
+   "reference": 28260,
+   "unit": "acres",
+   "error_pct": -4.8,
+   "tolerance_pct": 12,
+   "direction": "two-sided",
+   "passed": true,
+   "reference_source": "Reclamation published full-pool surface area",
+   "note": "Storage-elevation hypsometry fitted only to operating-range data, then evaluated at full pool. Published full-pool area never enters the fit, so this is a genuine out-of-sample test. Mead and Powell are excluded: full pool sits 130 ft and 64 ft above any level in the record, so it is extrapolation rather than validation."
   },
   {
    "test": "Lower Basin three-reservoir surface, summed",
    "kind": "external",
-   "modelled": 110588,
+   "modelled": 118668,
    "reference": 129520,
    "unit": "acres",
-   "error_pct": -14.6,
+   "error_pct": -8.4,
    "tolerance_pct": 25,
+   "direction": "below",
    "passed": true,
    "reference_source": "Reclamation LCRAS/HDB 2017-2021 averages summed",
    "note": "Expected low: our surfaces are 2024-2026 and the lakes have fallen since 2017-2021."
