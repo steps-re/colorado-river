@@ -1,0 +1,120 @@
+{
+  "meta": {
+    "what": "USGS Lake Mead evaporation, monthly, from eddy covariance at land-based station 360500114465601 with an energy-balance correction",
+    "why": "extends the Earp & Moreo (2021) 2010-2019 record the model's Mead depth rests on",
+    "record_years": [
+      2015,
+      2023
+    ],
+    "complete_years": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2019,
+      2020,
+      2021,
+      2022,
+      2023
+    ],
+    "source_note": "USGS confirmed (personal communication, 2026-08-10) that no new Lake Mohave data are being collected, that no Lake Havasu flux measurement exists though one is in planning, and that 2024-2025 Mead data should publish within months.",
+    "releases": [
+      {
+        "period": "2015-2020",
+        "title": "Evaporation data from Lake Mead, Nevada and Arizona",
+        "citation": "Orozco-Whitaker, E.L., 2022, Evaporation data from Lake Mead, Nevada and Arizona: U.S. Geological Survey data release, https://doi.org/10.5066/P99GWPPG.",
+        "sciencebase": "https://www.sciencebase.gov/catalog/item/618579f2d34ec04fc9c1bd5f",
+        "file": "LakeMead_Evaporation_201501-202012.ods",
+        "months": 72
+      },
+      {
+        "period": "2021-2023",
+        "title": "Evaporation data from Lake Mead, Nevada and Arizona, 2021-2023",
+        "citation": "Gonzales, J.M., and Earp, K.J., 2026, Evaporation data from Lake Mead, Nevada and Arizona, 2021-2023: U.S. Geological Survey data release, https://doi.org/10.5066/P15HFPHB.",
+        "sciencebase": "https://www.sciencebase.gov/catalog/item/68af8573d4be02645f9ab55b",
+        "file": "LakeMead_Evaporation_202101-202312_v3.ods",
+        "months": 36
+      }
+    ]
+  },
+  "annual_ft": {
+    "2015": {
+      "measured": 6.55,
+      "corrected": 6.43,
+      "ebr_adjusted": 6.3,
+      "months": 12,
+      "estimated_months": 0
+    },
+    "2016": {
+      "measured": 6.78,
+      "corrected": 6.44,
+      "ebr_adjusted": 6.12,
+      "months": 12,
+      "estimated_months": 0
+    },
+    "2017": {
+      "measured": 6.37,
+      "corrected": 6.37,
+      "ebr_adjusted": 6.31,
+      "months": 12,
+      "estimated_months": 0
+    },
+    "2018": {
+      "measured": 6.2,
+      "corrected": 6.2,
+      "ebr_adjusted": 6.13,
+      "months": 12,
+      "estimated_months": 0
+    },
+    "2019": {
+      "measured": 5.39,
+      "corrected": 4.94,
+      "ebr_adjusted": 4.45,
+      "months": 12,
+      "estimated_months": 6
+    },
+    "2020": {
+      "measured": 6.28,
+      "corrected": 6.28,
+      "ebr_adjusted": 6.28,
+      "months": 12,
+      "estimated_months": 0
+    },
+    "2021": {
+      "measured": 5.975,
+      "corrected": 6.102,
+      "ebr_adjusted": 6.225,
+      "months": 12,
+      "estimated_months": 1
+    },
+    "2022": {
+      "measured": 5.988,
+      "corrected": 6.323,
+      "ebr_adjusted": 6.655,
+      "months": 12,
+      "estimated_months": 0
+    },
+    "2023": {
+      "measured": 5.93,
+      "corrected": 5.845,
+      "ebr_adjusted": 5.756,
+      "months": 12,
+      "estimated_months": 3
+    }
+  },
+  "period_mean_ft": {
+    "measured": 6.163,
+    "corrected": 6.103,
+    "ebr_adjusted": 6.025
+  },
+  "published_depth_check": {
+    "model_uses_ft": 6.22,
+    "model_source": "Earp & Moreo 2021, OFR 2021-1022 (2010-2019), 1,896 mm/yr",
+    "recomputed_corrected_ft": 6.103,
+    "delta_ft": -0.117,
+    "delta_pct": -1.88,
+    "flux_uncertainty_pct": 8.0,
+    "corroborates": true,
+    "verdict": "The extended record sits inside the flux uncertainty the model already carries, so it corroborates the published depth rather than replacing it."
+  }
+}

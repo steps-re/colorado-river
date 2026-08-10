@@ -21,6 +21,8 @@ import matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
 import numpy as np
+import sys, os; sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from crstyle import apply, WATER, RUST, DEEP, SAND, MUTED, AMBER; apply()
 
 ROOT = Path(__file__).resolve().parent.parent
 FIG = ROOT / "figures"; OUT = ROOT / "outputs"; REC = ROOT / "recs"
@@ -89,40 +91,51 @@ RULES = ["status_quo_storage", "charge_evap_to_lower", "pro_rata_all", "priority
 who = {r: who_pays(r) for r in RULES}
 
 # ---------- Figure 1: water-balance waterfall ----------
-fig, ax = plt.subplots(figsize=(9, 5))
-steps = [("Paper allocation", paper_demand, "#3b6ea5"),
-         ("+ Evaporation", EVAP, "#c0504d"),
-         ("+ Seepage", SEEPAGE_GLEN_CANYON, "#c0504d"),
-         ("+ System/riparian", SYSTEM_RIPARIAN, "#c0504d"),
-         ("Physical supply\n(since 2000)", -(paper_demand+TOTAL_LOSSES-supply), "#77933c")]
-cum = 0; xs = []
+fig, ax = plt.subplots(figsize=(10, 5.6))
+steps = [("Paper allocation\n(Law of the River)", paper_demand, WATER),
+         ("+ Reservoir\nevaporation", EVAP, RUST),
+         ("+ Seepage", SEEPAGE_GLEN_CANYON, RUST),
+         ("+ Canal &\nriparian losses", SYSTEM_RIPARIAN, RUST),
+         ("Actual physical supply\n(river flow since 2000)", -(paper_demand+TOTAL_LOSSES-supply), DEEP)]
+cum = 0
 for i, (label, val, color) in enumerate(steps):
-    if label.startswith("Physical"):
-        ax.bar(i, supply, color="#4f6228"); ax.text(i, supply+0.15, f"{supply}", ha="center", fontsize=9)
+    if label.startswith("Actual"):
+        ax.bar(i, supply, color=DEEP)
+        ax.text(i, supply+0.2, f"{supply:.1f}", ha="center", fontsize=11, fontweight="bold", color=DEEP)
     else:
         ax.bar(i, val, bottom=cum, color=color)
-        ax.text(i, cum+val+0.15, f"{val:.2f}", ha="center", fontsize=9); cum += val
-ax.axhline(supply, ls="--", c="#4f6228", lw=1)
-ax.annotate(f"structural gap ≈ {gap_vs_paper:.1f} MAF/yr",
-            xy=(2, (supply+cum)/2), fontsize=11, color="#c0504d", fontweight="bold", ha="center")
-ax.set_xticks(range(len(steps))); ax.set_xticklabels([s[0] for s in steps], fontsize=8)
-ax.set_ylabel("MAF / year"); ax.set_title("Colorado River water balance: paper promise vs. physical supply (2026)")
-plt.tight_layout(); plt.savefig(FIG/"m1_waterfall.png", dpi=140); plt.close()
+        ax.text(i, cum+val+0.2, f"{val:.2f}", ha="center", fontsize=11, fontweight="bold", color=DEEP); cum += val
+ax.axhline(supply, ls="--", c=DEEP, lw=1.2)
+ax.annotate(f"structural gap ≈ {gap_vs_paper:.1f} million\nacre-feet per year",
+            xy=(2, (supply+cum)/2), fontsize=13, color=RUST, fontweight="bold", ha="center")
+ax.set_xticks(range(len(steps))); ax.set_xticklabels([s[0] for s in steps], fontsize=10.5)
+ax.set_ylabel("Water volume (million acre-feet per year)", fontsize=12)
+ax.set_ylim(0, 19)
+ax.set_title("Colorado River water balance: paper promises vs. the water that actually arrives (2026)",
+             fontsize=14, loc="left")
+plt.tight_layout(); plt.savefig(FIG/"m1_waterfall.png", dpi=160, bbox_inches="tight"); plt.close()
 
 # ---------- Figure 2: who pays under each accounting rule ----------
 parties = ["upper_basin", "california", "arizona", "nevada", "mexico", "reservoir_drawdown"]
-colors = {"upper_basin":"#4472c4","california":"#ed7d31","arizona":"#a5a5a5",
-          "nevada":"#ffc000","mexico":"#70ad47","reservoir_drawdown":"#c00000"}
-fig, ax = plt.subplots(figsize=(10, 5.5))
+party_labels = {"upper_basin":"Upper Basin states","california":"California","arizona":"Arizona",
+                "nevada":"Nevada","mexico":"Mexico","reservoir_drawdown":"Reservoir drawdown (deferred, not paid)"}
+colors = {"upper_basin":WATER,"california":RUST,"arizona":SAND,
+          "nevada":AMBER,"mexico":DEEP,"reservoir_drawdown":MUTED}
+fig, ax = plt.subplots(figsize=(10.5, 6))
 x = np.arange(len(RULES)); bottom = np.zeros(len(RULES))
 for p in parties:
     vals = [who[r].get(p, 0) for r in RULES]
-    ax.bar(x, vals, bottom=bottom, label=p.replace("_"," "), color=colors[p])
+    ax.bar(x, vals, bottom=bottom, label=party_labels[p], color=colors[p], width=0.62)
     bottom += np.array(vals)
-ax.set_xticks(x); ax.set_xticklabels(["Status quo\n(drawdown)","Charge evap\nto Lower","Pro-rata\nall","Priority\n(junior first)"])
-ax.set_ylabel("Cut absorbed (MAF/yr)"); ax.legend(ncol=3, fontsize=8, loc="upper center", bbox_to_anchor=(0.5,-0.08))
-ax.set_title("Who absorbs the ~3 MAF cut, by accounting rule")
-plt.tight_layout(); plt.savefig(FIG/"m1_whopays.png", dpi=140, bbox_inches="tight"); plt.close()
+ax.set_xticks(x)
+ax.set_xticklabels(["Status quo\n(drain the reservoirs)","Charge evaporation\nto the Lower Basin",
+                    "Share cut equally\n(pro-rata, all users)","Water-rights priority\n(newest rights cut first)"],
+                   fontsize=10.5)
+ax.set_ylabel("Water cut each party absorbs\n(million acre-feet per year)", fontsize=12)
+ax.legend(ncol=3, fontsize=9.5, loc="upper center", bbox_to_anchor=(0.5,-0.12))
+ax.set_title("Who absorbs the roughly 3 million acre-feet of cuts, under four accounting rules",
+             fontsize=14, loc="left")
+plt.tight_layout(); plt.savefig(FIG/"m1_whopays.png", dpi=160, bbox_inches="tight"); plt.close()
 
 # ---------- Numbers + recommendation ----------
 numbers = {"supply_since_2000_maf": supply, "paper_allocation_maf": paper_demand,
@@ -145,9 +158,12 @@ the crash.
 
 **Why it is a mispricing, not just a shortage.** Evaporation is a real, physical, measurable
 loss. Leaving it off every user's ledger is equivalent to a subsidy paid out of shared
-storage until the storage is gone. The current Lake Mead evaporation record lags to 2023 and
-there is no current gauged Lake Powell series, so the term is under-measured exactly where it
-is most consequential.
+storage until the storage is gone. The gauged Lake Mead record ends in 2023 (USGS data releases
+doi:10.5066/P99GWPPG and doi:10.5066/P15HFPHB; 2024-2025 are not yet published), Lake Mohave has
+not been remeasured since 2019, and there is no current gauged Lake Powell series, so the term is
+under-measured exactly where it is most consequential. USGS has also flagged that Mead's rate is
+itself expected to move as the pool falls and inflows from Powell warm, which is an argument for
+funding the measurement rather than carrying a fixed historical depth forward.
 
 **Recommendation.**
 1. Explicitly allocate reservoir + system evaporation and transit/seepage losses in the

@@ -17,7 +17,12 @@ METHOD (per reservoir, hourly, full year)
              use a documented load-following shape scaled to the plant's published average annual
              energy. Provenance is carried per reservoir into the output and shown on the page.
   headroom(t)= tie_MW - hydro(t) + onsite_load(t)   [only Havasu has a real on-site load]
-  export(t)  = min(solar(t), headroom(t));  curtail(t) = solar(t) - export(t)
+             tie_MW is the powerplant nameplate, used as a proxy for the rating of the line
+             leaving the dam. The two are usually close because the line was built for the
+             plant, but they are not the same number and we have no public line rating.
+  export(t)  = min(solar(t) x array_MW, headroom(t));  curtail(t) = solar(t) x array_MW - export(t)
+             solar(t) is per installed MW, so it MUST be multiplied by array size before being
+             compared with headroom in MW. The code does this; this line used to omit it.
   price(t)   CAISO day-ahead LMP at the Palo Verde hub. A rational merchant curtails at
              negative prices, so revenue counts only positive-price hours.
   evap       coverage x suppression x open-water evaporation rate x surface area.
@@ -66,6 +71,15 @@ AF_PER_KM2_PER_FT = 1e6 * 0.3048 / 1233.48   # 1 km2 x 1 ft -> AF
 ACRE_KM2 = 0.00404686
 
 # Economics (repo-consistent; see analysis/fpv_roi.py)
+#
+# NO INVESTMENT TAX CREDIT IS APPLIED, and that is a finding rather than an omission.
+# The One Big Beautiful Bill Act (enacted 4 July 2025) terminates the section 48E credit for
+# solar placed in service after 31 December 2027, with a carve-out only for projects that began
+# construction on or before 4 July 2026. That window has closed. Reservoir FPV has no federal
+# surface-leasing path, no completed NEPA review and no interconnection study at any of these
+# sites, so no such project began construction before the deadline, and none could be placed in
+# service inside 2027 against a 5-10 year development timeline. Modelling a 30-50% ITC here
+# would credit these projects with money the law no longer makes available to them.
 CAPEX_PER_W = 1.23          # ground-mount ~$1.10/W + ~$0.13/W float+mooring adder (WoodMac 2024)
 OM_PER_MW_YR = 25_000.0
 WACC, LIFE = 0.07, 25
@@ -79,7 +93,7 @@ RES = {
         dam="Hoover Dam", lat=36.016, lon=-114.737, tie_mw=2080.0,
         annual_gwh=4000.0,
         surface_acres=83634, surface_src="Reclamation HDB 2017-2021 average surface area (LCR Evaporation Report 2023, Table 7)",
-        evap_ft=6.22, evap_src="USGS DIRECT FLUX (eddy covariance + energy balance, Moreo & Swancar; Earp & Moreo 2021): 1,896 mm/yr = 6.22 ft/yr. This is a measured DEPTH, independent of surface area, so it is valid to apply to a separately-measured area. Reclamation HDB 2017-2021 implies 6.21 ft/yr over their larger area, which agrees.",
+        evap_ft=6.22, evap_src="USGS DIRECT FLUX (eddy covariance + energy balance, Moreo & Swancar; Earp & Moreo 2021): 1,896 mm/yr = 6.22 ft/yr. This is a measured DEPTH, independent of surface area, so it is valid to apply to a separately-measured area. Reclamation HDB 2017-2021 implies 6.21 ft/yr over their larger area, which agrees. Corroborated 2026-08-10 against the two later USGS data releases (2015-2020 and 2021-2023, ScienceBase doi:10.5066/P99GWPPG and doi:10.5066/P15HFPHB), which extend the record from 2019 to 2023: nine complete years give an energy-balance-corrected mean of 6.10 ft/yr, 1.9% below the published depth and well inside the 5-8% flux uncertainty already carried. The published depth is kept because a peer-reviewed OFR value is stronger provenance than a mean we recompute off a data release; see outputs/usgs_mead_evap.json (analysis/usgs_mead_evap.py).",
         evap_measured=True, hydro_provenance="synthetic load-following (no public sub-daily tailrace gage below Hoover)",
         onsite_load_mw=0.0,
         surface_status="NPS Lake Mead National Recreation Area",
@@ -112,7 +126,7 @@ RES = {
         dam="Parker Dam", lat=34.30, lon=-114.14, tie_mw=120.0,
         annual_gwh=457.0,
         surface_acres=18864, surface_src="Reclamation LCRAS 2017-2021 average (LCR Evaporation Report 2023, Table 10)",
-        evap_ft=5.21, evap_src="WEAKEST RATE IN THE SET. No direct flux measurement exists for Havasu. This is an AREA QUOTIENT (LCRAS 98,246 AF / 18,864 ac), so it is only valid over the area it was derived from -- applying it to our smaller measured open water mixes denominators, and the true open-water depth is probably higher. Reclamation's alternative HDB figure (7.40 ft/yr) still uses 1950s pan coefficients and runs ~35% high by their own Table 10. Bracket Havasu as 5.2-7.4 ft/yr, not a point value.",
+        evap_ft=7.00, evap_src="LCRAS quotient, corrected 2026-08-09. The previous rate of 5.21 ft/yr was derived from an LCRAS volume of 98,246 AF that does NOT appear anywhere in Reclamation's own 1971-2024 accounting series, which runs 126,000-135,000 AF with a mean of 130,664 and is validated against Decree Accounting. The 2019-2024 mean of 131,992 AF over 18,864 acres gives 7.00 ft/yr. Still a quotient rather than a flux measurement, and still the weakest rate in the set, but it now sits on a figure the source actually contains. Note the direction: a higher evaporation depth means MORE water saved per acre covered, so this correction improves Havasu rather than penalising it.",
         evap_measured=True, hydro_provenance="synthetic load-following (no public sub-daily tailrace gage below Parker)",
         onsite_load_mw=300.0,
         onsite_load_src="CAP Mark Wilmer Pumping Plant: six 66,000 hp pumps, ~50 MW each, drawing from Lake Havasu; ~80% of CAP's ~2.8M MWh/yr. MWD's Whitsett Pumping Plant draws from the same reservoir.",
@@ -255,6 +269,48 @@ def glen_canyon_hydro(keys, tie_mw, annual_gwh):
     return np.clip(gen * scale, 0, tie_mw), float(scale)
 
 
+def measured_release_hydro(keys, tie_mw, annual_gwh, name):
+    """Generation shape driven by Reclamation's MEASURED daily releases.
+
+    The synthetic shape below assumes a seasonal weight, summer-heavy, on the reasoning that
+    power demand peaks then. Rule-curve reservoirs do not work that way: releases are set by
+    water obligations, equalisation tiers and downstream orders, not by power prices, so the
+    months when the shared line is busy are an operational fact rather than something to assume.
+    Reclamation publishes daily release for six of the seven reservoirs here, so the seasonal and
+    day-to-day pattern is now measured and only the within-day shape is still modelled. That is
+    the right division: there is no public sub-daily tailrace gage except below Glen Canyon.
+
+    Uses the average release for each calendar day across 2015-2026, so a single wet or dry year
+    does not set the pattern.
+    """
+    f = OUT / "basin_daily.json"
+    if not f.exists():
+        return None
+    B = json.loads(f.read_text())["reservoirs"].get(name)
+    if not B:
+        return None
+    rel = B["daily"].get("release_cfs") or []
+    dates = B["daily"]["date"]
+    acc = {}
+    for dt, v in zip(dates, rel):
+        if v is None or not np.isfinite(v) or v < 0:
+            continue
+        acc.setdefault((int(dt[5:7]), int(dt[8:10])), []).append(v)
+    if len(acc) < 300:
+        return None
+    daily = {k: float(np.mean(v)) for k, v in acc.items()}
+    med = float(np.median(list(daily.values()))) or 1.0
+    w_day = np.array([daily.get((k[0], k[1]), med) for k in keys], dtype=float)
+    diurnal = np.array([0.55, 0.50, 0.48, 0.47, 0.50, 0.60, 0.80, 0.95, 1.00, 0.95, 0.90, 0.88,
+                        0.88, 0.90, 0.98, 1.10, 1.30, 1.55, 1.65, 1.55, 1.30, 1.05, 0.80, 0.65])
+    hours = np.array([k[2] for k in keys])
+    w = w_day * diurnal[hours]
+    if not np.isfinite(w).all() or w.sum() <= 0:
+        return None
+    gen = w / w.sum() * (annual_gwh * 1000.0)
+    return np.clip(gen, 0, tie_mw)
+
+
 def synthetic_hydro(keys, tie_mw, annual_gwh):
     """Load-following generation shape for dams with no public sub-daily tailrace gage.
 
@@ -296,13 +352,57 @@ def measured_areas(recent_from=2024):
 
 MEASURED = measured_areas()
 
+def bathymetric_areas(window=("2024", "2025", "2026")):
+    """Daily surface area from Reclamation's own elevation and storage records.
+
+    Supersedes the satellite composite as the model's area of record. The satellite reads LOW at
+    every reservoir, by 4.6% at Mohave up to 25.9% at Powell, because MNDWI at 30 m loses narrow
+    canyon arms, shadowed banks and mixed shoreline pixels, and Powell has the most convoluted
+    shoreline in the set. Six rounds of review suspected this and none measured it.
+
+    Returns mean area over the same May-September window the composite used, so the comparison is
+    like for like, plus the annual mean and the within-year swing. Havasu is excluded: it is held
+    within 4 ft, so its hypsometry cannot be recovered and its published area stands.
+    """
+    f = OUT / "basin_daily.json"
+    if not f.exists():
+        return {}
+    B = json.loads(f.read_text())["reservoirs"]
+    out = {}
+    for name, r in B.items():
+        if not r["stage_area"]["reliable"]:
+            continue
+        d = r["daily"]
+        summer = [a for dt, a in zip(d["date"], d["area_acres"])
+                  if dt[:4] in window and "05" <= dt[5:7] <= "09"]
+        annual = [a for dt, a in zip(d["date"], d["area_acres"]) if dt[:4] in window]
+        if not summer or not annual:
+            continue
+        out[name] = dict(summer_mean=round(sum(summer) / len(summer)),
+                         annual_mean=round(sum(annual) / len(annual)),
+                         swing_pct=r["area_acres"]["intra_2024_swing_pct"],
+                         hypsometry=r["stage_area"]["hypsometry"])
+    return out
+
+
+BATHY = bathymetric_areas()
+
+
 
 def run(p, solar, keys, price) -> dict:
     area_km2 = p["surface_acres"] * ACRE_KM2
     if p["hydro_provenance"].startswith("MEASURED"):
         hydro, _ = glen_canyon_hydro(keys, p["tie_mw"], p["annual_gwh"])
     else:
-        hydro, _ = synthetic_hydro(keys, p["tie_mw"], p["annual_gwh"])
+        meas = measured_release_hydro(keys, p["tie_mw"], p["annual_gwh"], p["_name"])
+        if meas is not None:
+            hydro = meas
+            p["hydro_provenance"] = (
+                "MEASURED daily release (Reclamation, 2015-2026 per-calendar-day mean) shaping "
+                "the seasonal and day-to-day pattern; within-day shape still modelled as "
+                "load-following, since no public sub-daily tailrace gage exists here.")
+        else:
+            hydro, _ = synthetic_hydro(keys, p["tie_mw"], p["annual_gwh"])
     onsite = p.get("onsite_load_mw", 0.0)
     # On-site pumping is not flat, but it is heavily daytime-weighted and is dispatchable
     # around the canal's own needs. Modelled as available in daylight hours only.
@@ -374,6 +474,8 @@ def run(p, solar, keys, price) -> dict:
             annual_gwh=p["annual_gwh"],
             hydro_cf=round(p["annual_gwh"] * 1000 / (p["tie_mw"] * 8760), 3),
             surface_acres=p["surface_acres"], surface_km2=round(area_km2, 1),
+            satellite_acres=p.get("satellite_acres"), satellite_gap_pct=p.get("satellite_gap_pct"),
+            area_swing_pct=p.get("area_swing_pct"),
             surface_src=p["surface_src"],
             published_acres=p.get("published_acres"), published_src=p.get("published_src"),
             evap_ft=p["evap_ft"], evap_src=p["evap_src"], evap_measured=p["evap_measured"],
@@ -400,14 +502,35 @@ def main():
         capex_per_w=CAPEX_PER_W, om_per_mw_yr=OM_PER_MW_YR, wacc=WACC, life_yr=LIFE,
         method=[
             "Hourly full-year sim per reservoir on the dam's own interconnection.",
+            "area: DAILY surface from Reclamation elevation and storage, with area taken as the "
+            "derivative of a fitted hypsometry V=a(h-h0)^b. Supersedes our own Sentinel-2 "
+            "composite, which read low at every reservoir (Mohave -4.6% to Powell -25.9%) because "
+            "a 30 m water mask loses narrow canyon arms. Lake Havasu keeps a published static "
+            "area: it is held within 4 ft so its hypsometry cannot be recovered.",
+            "hydro(t): shaped by MEASURED daily release (Reclamation, per-calendar-day mean "
+            "2015-2026) at six reservoirs, so the seasonal and day-to-day pattern is operational "
+            "fact rather than an assumed summer-heavy weight. Only the within-day shape is still "
+            "modelled. Glen Canyon uses its measured 15-minute record. Havasu has no published "
+            "release series and keeps a modelled shape.",
+            "evaporation drivers: Penman open-water decomposition on NASA POWER daily weather "
+            "puts the aerodynamic term at 44-47% of demand depending on reanalysis. Levels still "
+            "come from measured flux, because combination equations without a heat-storage term "
+            "overestimate by a documented 24-36%.",
             "solar(t): PVGIS-NSRDB per-MW at each reservoir's lat/lon with a floating cooling uplift.",
-            "headroom(t) = nameplate - dam generation(t) + on-site load(t).",
-            "export(t) = min(solar(t), headroom(t)); a rational merchant curtails negative-price hours.",
-            "Prices are day-ahead LMP at Palo Verde, the Desert Southwest hub. The three Upper Basin "
-            "reservoirs use it as an acknowledged proxy: their balancing authorities (PacifiCorp East, "
-            "PNM, WAPA Rocky Mountain) do not publish hourly nodal prices.",
-            "Wheeling and basis costs of moving power from each dam to a trading hub are NOT modelled, "
-            "so the revenue side is optimistic.",
+            "headroom(t) = nameplate - dam generation(t) + on-site load(t). Nameplate is the "
+            "powerplant rating used as a proxy for the line out of the dam; no public line rating exists.",
+            "export(t) = min(solar(t) x array_MW, headroom(t)); solar(t) is per installed MW and must be "
+            "scaled by array size before comparison with headroom in MW. A rational merchant "
+            "curtails negative-price hours.",
+            "Prices are day-ahead LMP at EACH RESERVOIR'S OWN balancing authority: Lake Mead on "
+            "NEVP, the Arizona dams on AZPS, Navajo on PNM, all measured full-year. Flaming Gorge "
+            "and Blue Mesa use a series SHAPE-TRANSFERRED from a June-July 2026 hour-of-day ratio "
+            "against a reference node, because their markets produced no day-ahead prices before "
+            "2026. Those two are modelled, not measured, and winter is the least reliable part.",
+            "Wheeling is NOT applicable: transmission access charges in these markets are billed to "
+            "load rather than generators, and nodal prices already carry congestion and losses. "
+            "Generator interconnection and local network upgrades ARE modelled, from Berkeley Lab "
+            "project data, defaulting to the $30/kW median for completed projects.",
             "Evaporation saved = coverage x 0.75 suppression x open-water rate x surface area (range 0.60-0.90).",
         ],
         caveats=[
@@ -418,23 +541,41 @@ def main():
             "not measurements. Reclamation and the UCRC are instrumenting them now.",
             "Only Glen Canyon has a measured sub-daily generation shape. The rest use a documented "
             "load-following profile scaled to published annual energy.",
-            "Nothing here prices firm capacity, ancillary services, or avoided replacement power, "
-            "which is where the real value of a dam-coupled array sits.",
+            "Firm capacity is priced on the BATTERY only, at a CAISO resource-adequacy proxy. The solar "
+            "array receives no capacity credit, and no ancillary services or avoided "
+            "replacement power are priced anywhere. At the capacity values used, a four-hour "
+            "battery covers its own cost from capacity payments alone, so combined figures must "
+            "be read alongside the array-only figures rather than instead of them.",
             "No legal path currently exists to lease federal reservoir surface for private solar. "
             "That gate is institutional and is not modelled.",
         ])
     price_reported = False
     for name, p in RES.items():
+        p["_name"] = name
         # Prefer the measured surface; keep the published figure for the provenance panel so
         # the difference stays visible rather than being quietly swapped in.
         p["published_acres"] = p["surface_acres"]
         p["published_src"] = p["surface_src"]
         if name in MEASURED:
+            p["satellite_acres"] = MEASURED[name]
+        if name in BATHY:
+            b = BATHY[name]
+            p["surface_acres"] = b["annual_mean"]
+            p["area_swing_pct"] = b["swing_pct"]
+            p["satellite_gap_pct"] = (round(p["satellite_acres"] / b["summer_mean"] * 100 - 100, 1)
+                                      if p.get("satellite_acres") else None)
+            p["surface_src"] = (
+                "MEASURED: annual mean of daily surface area 2024-2026, from Reclamation daily "
+                "elevation and storage with area taken as the derivative of a fitted hypsometry "
+                "V = a(h-h0)^b (analysis/fetch_basin_daily.py). Supersedes our own Sentinel-2 "
+                "composite, which reads low at every reservoir because a 30 m water mask loses "
+                "narrow canyon arms and shadowed banks.")
+        elif name in MEASURED:
             p["surface_acres"] = MEASURED[name]
             p["surface_src"] = (
-                "MEASURED: Sentinel-2 MNDWI summer water extent, 2024-2026 mean, clipped to the "
-                "reservoir's own footprint (analysis/ee_reservoir_areas.py). Used in preference to "
-                "published areas so all seven reservoirs use one method and one recent period.")
+                "MEASURED: Sentinel-2 MNDWI summer water extent, 2024-2026 mean. Retained here "
+                "because this reservoir is held within a few feet, so its hypsometry cannot be "
+                "recovered from the elevation record.")
         solar, keys = pvgis_per_mw(p["lat"], p["lon"])
         price, miss, have, price_src, price_transferred = hub_prices(keys, name)
         if not price_reported:
