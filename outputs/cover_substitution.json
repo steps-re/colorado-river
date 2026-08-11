@@ -1,0 +1,68 @@
+{
+ "meta": {
+  "question": "If a reservoir is covered anyway for thermal or biodiversity reasons, FPV substitutes for that cover and the avoided cost accrues to FPV. How much would the avoided cover have to cost to change FPV's answer?",
+  "raised_by": "Upmanu Lall, ASU, personal communication 2026-08-11",
+  "basis": "Gross of power revenue, annualised at 7% WACC over each option's own life, identical to analysis/evap_cover_comparison.py so the rows are comparable.",
+  "evaporation_ft": 6.22,
+  "fpv_annual_cost_per_acre": 63397,
+  "fpv_suppression": 0.75,
+  "cover_suppression": 0.9,
+  "published_cover_anchor_capex_per_acre": 1428571,
+  "published_cover_anchor_annual_per_acre": 136847,
+  "caveats": [
+   "The cover anchor is LADWP's published quote for a POTABLE-WATER floating cover on a 175-acre reservoir. evap_cover_comparison.py already labels it a ceiling, not a price. A raw-water evaporation or thermal cover is a different and cheaper product, and no published cost for one at reservoir scale was found.",
+   "Substituting FPV for a solid cover LOSES suppression: 75% against 90%. The trade is cheaper surface plus power revenue in exchange for less water saved per acre.",
+   "The credit only applies to surface that would have been covered anyway. Covering 7% of Mead for power is not the same intervention, or the same placement, as covering it for temperature control, and nothing here establishes that the two coincide.",
+   "No cover programme is funded or announced. This is a conditional, not a forecast."
+  ],
+  "thermal_context": "Site-internal and already cited: as Powell fell, Glen Canyon released warmer water, bass-suitable days rose from about 2 to about 41 a year, and smallmouth bass reached the last humpback-chub stronghold. Cool-mix flows work and are contested by hydropower."
+ },
+ "scenarios": [
+  {
+   "scenario": "no cover avoided (status quo)",
+   "avoided_annual_per_acre": 0,
+   "fpv_usd_per_af": 13590
+  },
+  {
+   "scenario": "cover at 25% of the published anchor",
+   "avoided_annual_per_acre": 34212,
+   "fpv_usd_per_af": 6256
+  },
+  {
+   "scenario": "cover at 50% of the published anchor",
+   "avoided_annual_per_acre": 68424,
+   "fpv_usd_per_af": -1078
+  },
+  {
+   "scenario": "cover at the published anchor (LADWP potable-water quote)",
+   "avoided_annual_per_acre": 136847,
+   "fpv_usd_per_af": -15745
+  }
+ ],
+ "breakevens": {
+  "cheapest_credible_cover_shade_balls": {
+   "target_usd_per_af": 5014,
+   "avoided_annual_per_acre_required": 40006,
+   "implied_cover_capex_per_acre": 402639,
+   "share_of_published_anchor": 0.29
+  },
+  "reuse_high_end": {
+   "target_usd_per_af": 3500,
+   "avoided_annual_per_acre_required": 47069,
+   "implied_cover_capex_per_acre": 477463,
+   "share_of_published_anchor": 0.34
+  },
+  "reuse_low_end": {
+   "target_usd_per_af": 2500,
+   "avoided_annual_per_acre_required": 51734,
+   "implied_cover_capex_per_acre": 526884,
+   "share_of_published_anchor": 0.38
+  },
+  "free": {
+   "target_usd_per_af": 0.0,
+   "avoided_annual_per_acre_required": 63397,
+   "implied_cover_capex_per_acre": 650437,
+   "share_of_published_anchor": 0.46
+  }
+ }
+}
