@@ -170,8 +170,8 @@ dam's export capacity. That bound is reservoir-specific and spans more than an o
 magnitude, from about 0.5% at Navajo to about 8.5% at Havasu, and 15&ndash;20% exceeds it at every
 reservoir studied. Propagating uncertainty across 12 parameters
 (2,000 draws), the median cost of water suppressed is
-$19,126 per acre-foot at Lake Mead
-(P10&ndash;P90 $12,978&ndash;30,613),
+$19,139 per acre-foot at Lake Mead
+(P10&ndash;P90 $12,980&ndash;30,587),
 against roughly $325&ndash;700 per acre-foot to purchase conserved water from irrigators. That
 benchmark is institutionally heterogeneous &mdash; it spans fallowing contracts, efficiency
 retrofits and delivered transfers with different reliability and shepherding &mdash; so the
@@ -523,19 +523,19 @@ areal density (&rho;&nbsp;&minus;0.35, since wide mooring corridors lower densit
 watt together), capital cost to discount rate (&rho;&nbsp;0.25), and suppression to evaporation rate
 (&rho;&nbsp;0.20). Achieved rank correlations match the targets to within 0.015. Independent draws
 would understate the tails.</p>
-<table><tr><th>Parameter</th><th>Distribution</th></tr><tr><td>suppression</td><td>triangular(0.30, 0.75, 0.90); mode is a design assumption, not a measurement. Instrumented field results are scarce and cluster lower</td></tr><tr><td>density mw km2</td><td>triangular(80, 120, 160)</td></tr><tr><td>capex per w</td><td>triangular(1.23, 1.50, 2.50)</td></tr><tr><td>om multiplier</td><td>triangular(1.0, 1.3, 3.0)</td></tr><tr><td>wacc</td><td>uniform(0.06, 0.09)</td></tr><tr><td>line share</td><td>uniform(0.10, 1.00)</td></tr><tr><td>load coincidence</td><td>uniform(0.25, 1.00)</td></tr><tr><td>evaporation</td><td>flux sites normal(mu, 5-8%); Havasu uniform(5.2, 7.4); Upper Basin normal(mu, 30%)</td></tr><tr><td>surface area</td><td>normal(1.00, 6%) on the modelled surface, 4% where the area is a static published figure. Sigma is this model's own out-of-sample error against published full-pool area (+5.5, +5.0, +7.5, -4.8% at the four testable reservoirs). Added 2026-08-10; previously treated as exact</td></tr><tr><td>solar resource</td><td>normal(1.00, 4%), interannual variability of annual irradiance against the single PVGIS year</td></tr><tr><td>price level</td><td>normal(1.00, 20%), or 30% where the price shape is transferred from another node (Flaming Gorge, Blue Mesa). One traded year stands in for a 25-year asset</td></tr><tr><td>asset life</td><td>triangular(20, 25, 30) years; was a fixed 25</td></tr></table>
+<table><tr><th>Parameter</th><th>Distribution</th></tr><tr><td>suppression</td><td>triangular(0.30, 0.75, 0.90); mode is a design assumption, not a measurement. Instrumented field results are scarce and cluster lower</td></tr><tr><td>density mw km2</td><td>triangular(80, 120, 160)</td></tr><tr><td>capex per w</td><td>triangular(1.23, 1.50, 2.50)</td></tr><tr><td>om multiplier</td><td>triangular(1.0, 1.3, 3.0)</td></tr><tr><td>wacc</td><td>uniform(0.06, 0.09)</td></tr><tr><td>line share</td><td>uniform(0.10, 1.00)</td></tr><tr><td>load coincidence</td><td>uniform(0.25, 1.00)</td></tr><tr><td>evaporation</td><td>flux sites normal(mu, 5-8%); Havasu uniform(5.2, 7.4); Upper Basin normal(mu, 30%)</td></tr><tr><td>surface area</td><td>normal(0.968, 6%) on the modelled surface, 4% where the area is a static published figure. Both the centre and the spread come from this model's own out-of-sample error against published full-pool area (+5.5, +5.0, +7.5, -4.8% at the four testable reservoirs): those average +3.3%, so the fitted hypsometry reads area high and the distribution is centred to remove that bias rather than at 1.0. Added 2026-08-10, re-centred after adversarial round 13</td></tr><tr><td>solar resource</td><td>normal(1.00, 4%), interannual variability of annual irradiance against the single PVGIS year</td></tr><tr><td>price level</td><td>normal(1.00, 20%), or 30% where the price shape is transferred from another node (Flaming Gorge, Blue Mesa). One traded year stands in for a 25-year asset</td></tr><tr><td>asset life</td><td>triangular(20, 25, 30) years; was a fixed 25</td></tr></table>
 <p>Results. Right-sized array is the largest whose spill stays under 5% for that draw.</p>
 <div style="overflow-x:auto"><table>
 <tr><th>Reservoir</th><th>MW P10</th><th>MW P50</th><th>MW P90</th><th>AF/yr saved (P50)</th>
 <th>$/AF P10</th><th>$/AF P50</th><th>$/AF P90</th></tr>
-<tr><td>Lake Mead</td><td>388</td><td><b>1,234</b></td><td>2,126</td><td>9,673</td><td>$12,978</td><td><b>$19,126</b></td><td>$30,613</td></tr><tr><td>Lake Powell</td><td>208</td><td><b>739</b></td><td>1,227</td><td>5,425</td><td>$13,658</td><td><b>$20,731</b></td><td>$32,749</td></tr><tr><td>Lake Mohave</td><td>0</td><td><b>0</b></td><td>0</td><td>0</td><td>$13,497</td><td><b>$19,086</b></td><td>$27,102</td></tr><tr><td>Lake Havasu</td><td>189</td><td><b>332</b></td><td>472</td><td>2,638</td><td>$12,227</td><td><b>$18,829</b></td><td>$31,059</td></tr><tr><td>Flaming Gorge</td><td>0</td><td><b>48</b></td><td>98</td><td>200</td><td>$22,787</td><td><b>$39,377</b></td><td>$79,164</td></tr><tr><td>Navajo Reservoir</td><td>0</td><td><b>0</b></td><td>11</td><td>0</td><td>$17,408</td><td><b>$30,754</b></td><td>$62,495</td></tr><tr><td>Blue Mesa</td><td>9</td><td><b>33</b></td><td>59</td><td>108</td><td>$23,088</td><td><b>$41,308</b></td><td>$81,668</td></tr>
+<tr><td>Lake Mead</td><td>390</td><td><b>1,218</b></td><td>2,112</td><td>9,660</td><td>$12,980</td><td><b>$19,139</b></td><td>$30,587</td></tr><tr><td>Lake Powell</td><td>208</td><td><b>750</b></td><td>1,219</td><td>5,453</td><td>$13,645</td><td><b>$20,748</b></td><td>$32,747</td></tr><tr><td>Lake Mohave</td><td>0</td><td><b>0</b></td><td>23</td><td>0</td><td>$13,706</td><td><b>$18,846</b></td><td>$27,972</td></tr><tr><td>Lake Havasu</td><td>192</td><td><b>333</b></td><td>471</td><td>2,640</td><td>$12,230</td><td><b>$18,850</b></td><td>$31,156</td></tr><tr><td>Flaming Gorge</td><td>0</td><td><b>48</b></td><td>98</td><td>201</td><td>$22,793</td><td><b>$39,383</b></td><td>$79,349</td></tr><tr><td>Navajo Reservoir</td><td>0</td><td><b>0</b></td><td>11</td><td>0</td><td>$17,354</td><td><b>$31,811</b></td><td>$61,672</td></tr><tr><td>Blue Mesa</td><td>9</td><td><b>33</b></td><td>59</td><td>108</td><td>$23,064</td><td><b>$41,360</b></td><td>$81,104</td></tr>
 </table></div>
 <h3>5.1 Variance attribution</h3>
 <p>Partial rank correlation coefficients, computed on the same sample. These identify which inputs
 drive the spread in each output.</p>
 <div style="overflow-x:auto"><table>
 <tr><th>Reservoir</th><th>Drivers of cost per acre-foot</th><th>Drivers of array size</th></tr>
-<tr><td>Lake Mead</td><td>suppression -0.93, density +0.80, capex +0.68, wacc +0.61</td><td>line share +1.00, solar resource -0.79, density -0.15</td></tr><tr><td>Lake Powell</td><td>suppression -0.92, density +0.79, evaporation -0.68, capex +0.66</td><td>line share +1.00, solar resource -0.67, density -0.16</td></tr><tr><td>Lake Mohave</td><td>suppression -0.89, capex +0.73, density +0.64, wacc +0.57</td><td>line share +0.43, density -0.27, surface area -0.13</td></tr><tr><td>Lake Havasu</td><td>suppression -0.92, density +0.79, evaporation -0.76, capex +0.66</td><td>load coincidence +1.00, line share +0.94, solar resource -0.82</td></tr><tr><td>Flaming Gorge</td><td>evaporation -0.93, suppression -0.85, density +0.68, capex +0.49</td><td>line share +0.93, solar resource -0.17, evaporation -0.03</td></tr><tr><td>Navajo Reservoir</td><td>evaporation -0.92, suppression -0.85, density +0.61, capex +0.55</td><td>line share +0.53, density -0.26, surface area -0.13</td></tr><tr><td>Blue Mesa</td><td>evaporation -0.92, suppression -0.84, density +0.62, price level -0.57</td><td>line share +0.99, solar resource -0.50, density -0.10</td></tr>
+<tr><td>Lake Mead</td><td>suppression -0.93, density +0.80, capex +0.68, wacc +0.61</td><td>line share +1.00, solar resource -0.79, density -0.13</td></tr><tr><td>Lake Powell</td><td>suppression -0.92, density +0.79, evaporation -0.68, capex +0.66</td><td>line share +1.00, solar resource -0.69, density -0.12</td></tr><tr><td>Lake Mohave</td><td>suppression -0.90, capex +0.69, density +0.64, wacc +0.60</td><td>line share +0.49, density -0.29, surface area -0.15</td></tr><tr><td>Lake Havasu</td><td>suppression -0.92, density +0.79, evaporation -0.76, capex +0.66</td><td>load coincidence +1.00, line share +0.94, solar resource -0.81</td></tr><tr><td>Flaming Gorge</td><td>evaporation -0.94, suppression -0.85, density +0.69, capex +0.50</td><td>line share +0.94, solar resource -0.22, density -0.03</td></tr><tr><td>Navajo Reservoir</td><td>evaporation -0.92, suppression -0.85, density +0.63, capex +0.56</td><td>line share +0.57, density -0.27, surface area -0.14</td></tr><tr><td>Blue Mesa</td><td>evaporation -0.92, suppression -0.84, density +0.62, price level -0.57</td><td>line share +0.99, solar resource -0.48, density -0.09</td></tr>
 </table></div>
 <p>Two patterns matter. Areal density is the strongest driver of cost per acre-foot at every
 reservoir, which means layout efficiency, not module price, is where the cost uncertainty lives.
@@ -586,10 +586,10 @@ interconnection study, the ranking between reservoirs is more robust than the ab
 candidates, which is the opposite of what a surface-area-driven screen selects.</p>
 
 <p><b>6.3 On-shore load, not transmission, distinguishes the best site.</b> Lake Havasu retains
-332 MW at median
-(P10&ndash;P90 189&ndash;472)
-against 1,234 MW at Lake Mead
-(P10&ndash;P90 388&ndash;2,126).
+333 MW at median
+(P10&ndash;P90 192&ndash;471)
+against 1,218 MW at Lake Mead
+(P10&ndash;P90 390&ndash;2,112).
 Read those spreads before reading the medians: Mead's spans more than five to one, so its point
 estimate carries little weight on its own. The comparison that survives the uncertainty is
 relative to each line rather than absolute. Havasu's array is several times its own
@@ -598,7 +598,7 @@ seventeenth the size, because roughly 300 MW of Central Arizona Project pumping 
 shoreline. Its surface is also administered by BLM and Arizona State Parks rather than the National
 Park Service. Load coincidence is consequently the parameter that decides that site.</p>
 
-<p><b>6.4 Cost of suppressed water.</b> Median $19,126 per
+<p><b>6.4 Cost of suppressed water.</b> Median $19,139 per
 acre-foot at Lake Mead and higher elsewhere, against $325&ndash;700 to purchase conserved
 agricultural water and $2,500&ndash;3,500 for seawater desalination. Non-generating covers are
 cheaper than FPV but do not close the gap:</p>
@@ -673,11 +673,23 @@ reports a small number has assumed its own conclusion.</p>
 <p>So the table below removes our bound entirely. It expresses the full-pool convention as coverage
 of the real lake and runs it back through the same hourly simulation, at Mead and Powell combined.</p>
 
+<p><b>Two assumptions in that test are contestable, and both favour our conclusion, so they belong
+here rather than in a footnote.</b> The first is that "10 to 20% cover" means of <i>full pool</i>
+rather than of the surface the reservoir currently holds. That reading roughly doubles the implied
+array, and we have not confirmed it with the groups who use the figure. If it means the current
+surface instead, the gap between the two conventions is about half what is shown. The second is
+that the transmission tie stays fixed while the array grows. That is precisely the assumption a
+proponent of the larger convention disputes, because their design pairs the array with pumped
+storage, behind-the-meter load, or hydro rescheduling specifically to relax it. This model contains
+none of those. So the rows below do not show what a 20%-cover design would cost as its proponents
+would build it. They show what it costs on the interconnection that exists today, which is a bound
+on the free option and not a refutation of the design.</p>
+
 <div style="overflow-x:auto">
 <table>
 <tr><th>Sizing convention</th><th>Array<br>(GW)</th><th>Water suppressed<br>(AF/yr)</th>
 <th>Transmission<br>spill</th><th>Cost per AF<br>(p50)</th><th>Against<br>reuse</th></tr>
-<tr><td>This paper: bounded by the existing tie</td><td class=num>4.2</td><td class=num>39,897</td><td class=num>10-10%</td><td class=num>$21,118&ndash;$22,692</td><td class=num>6.0&ndash;6.5x</td></tr><tr><td>10% of full pool, no transmission bound</td><td class=num>15.7</td><td class=num>145,993</td><td class=num>62-75%</td><td class=num>$22,624&ndash;$24,735</td><td class=num>6.5&ndash;7.1x</td></tr><tr><td>15% of full pool, no transmission bound</td><td class=num>23.6</td><td class=num>219,848</td><td class=num>74-83%</td><td class=num>$23,000&ndash;$25,001</td><td class=num>6.6&ndash;7.1x</td></tr><tr><td>20% of full pool, no transmission bound</td><td class=num>31.5</td><td class=num>292,812</td><td class=num>80-87%</td><td class=num>$23,197&ndash;$25,109</td><td class=num>6.6&ndash;7.2x</td></tr>
+<tr><td>This paper: bounded by the existing tie</td><td class=num>4.2</td><td class=num>39,897</td><td class=num>10-10%</td><td class=num>$21,060&ndash;$22,652</td><td class=num>6.0&ndash;6.5x</td></tr><tr><td>10% of full pool, no transmission bound</td><td class=num>15.7</td><td class=num>145,993</td><td class=num>62-75%</td><td class=num>$22,596&ndash;$24,705</td><td class=num>6.5&ndash;7.1x</td></tr><tr><td>15% of full pool, no transmission bound</td><td class=num>23.6</td><td class=num>219,848</td><td class=num>74-83%</td><td class=num>$22,974&ndash;$24,980</td><td class=num>6.6&ndash;7.1x</td></tr><tr><td>20% of full pool, no transmission bound</td><td class=num>31.5</td><td class=num>292,812</td><td class=num>80-87%</td><td class=num>$23,180&ndash;$25,101</td><td class=num>6.6&ndash;7.2x</td></tr>
 </table>
 </div>
 <p class=note>Mead and Powell only, the two reservoirs where a full-pool convention is the likely
@@ -693,10 +705,13 @@ against a fixed tie. Transmission spill climbs from about a tenth to over four-f
 times the panel to get six times the water and throw away most of the electricity that was supposed
 to pay for it.</p>
 
-<p>The ranking therefore does not depend on our bound. Reuse is several times cheaper per acre-foot
-at the tie-limited size and <i>further</i> ahead at the larger one. Two qualifications keep this
-honest. The comparison assumes the other convention means 10 to 20% of full pool rather than of the
-current surface, which is an inference. And a build on this scale is not a modelling detail: 15% of
+<p>Within those assumptions the ranking does not depend on where we set the coverage bound. Reuse is
+several times cheaper per acre-foot at the tie-limited size and <i>further</i> ahead at the larger
+one, because the marginal panel earns less as spill grows. That is a narrower claim than
+&ldquo;floating solar loses&rdquo;, and it is the one the model supports: relax the tie and the
+cost side of this comparison has to be rebuilt, not merely rescaled.</p>
+
+<p>One thing does not depend on any of it. A build on this scale is not a modelling detail: 15% of
 full pool across both lakes is over 20 GW of floating solar, against roughly 10 GW installed
 worldwide to date.</p>
 
@@ -892,7 +907,7 @@ actually produces.</p>
 <div style="overflow-x:auto"><table>
 <tr><th>Quantity</th><th class=num>Value</th><th>Source</th><th>Method</th><th>Uncertainty</th>
 <th>Status</th><th>Checked by</th></tr>
-<tr><td><b>Reservoir surface area</b></td><td class=num>76,444 ac at Lake Mead</td><td>Reclamation daily elevation and storage</td><td>Area as the derivative of a fitted hypsometry V=a(h-h0)^b</td><td>Estimator window changes the result 0.1% at Mead, under 7.5% elsewhere</td><td>DERIVED from measured inputs</td><td>Validated out-of-sample at 4 reservoirs</td></tr><tr><td><b>Evaporation depth, Mead and Mohave</b></td><td class=num>6.22 ft/yr at Mead</td><td>USGS eddy covariance with energy balance, 2010-2019 at Mead, record now extended to 2023</td><td>Direct turbulent flux measurement, Bowen-ratio cross-check</td><td>Not restated by us; see USGS. The gauged years give a corrected mean of 6.10 ft/yr, 1.9% under the published depth and inside the flux uncertainty</td><td>MEASURED</td><td>Independent of this work</td></tr><tr><td><b>Evaporation depth, Lake Havasu</b></td><td class=num>5.2 to 7.4 ft/yr, unresolved</td><td>Reclamation LCRAS accounting volume over an area</td><td>Quotient, not a flux measurement</td><td>Denominator unpublished, so the quotient carries an unknown area ratio</td><td>INFERRED, weakest input in the model</td><td>USGS confirms no Havasu flux measurement exists and that one is in planning, so the bracket cannot close yet</td></tr><tr><td><b>Coverage bound per reservoir</b></td><td class=num>0.5% to 8.5%</td><td>This model, hourly, full year</td><td>Coverage at which transmission spill first exceeds 10%</td><td>Bound on the EXISTING interconnection, not on the technology</td><td>MODELLED</td><td>13 review rounds, 2 external vendors</td></tr><tr><td><b>Cost per acre-foot suppressed</b></td><td class=num>$19,126/AF median at Mead</td><td>This model, Monte Carlo over 12 parameters</td><td>Net of power revenue; gross figure also published</td><td>P10-P90 $12,978 to $30,613</td><td>MODELLED</td><td>Netting flagged as unfinanceable by an investment reviewer</td></tr><tr><td><b>Water at stake, all seven reservoirs</b></td><td class=num>49,357 AF/yr</td><td>This model, summed at each reservoir's bound</td><td>Coverage bound times area times suppression</td><td>Carries every uncertainty above, including Havasu</td><td>MODELLED</td><td>Seven reservoirs, not the basin</td></tr><tr><td><b>Reuse headroom</b></td><td class=num>1,300,000 AF/yr at 50% reuse</td><td>UCLA IoES with NRDC, 2022 POTW data</td><td>Plant-by-plant survey above 1 MGD</td><td>Authors describe a data desert; most states do not track reuse</td><td>THIRD-PARTY SURVEY</td><td>Not independently checked by us</td></tr><tr><td><b>Aerodynamic share of evaporation</b></td><td class=num>25% to 47% across reservoirs</td><td>NASA POWER daily weather</td><td>Penman open-water decomposition</td><td>Reanalysis choice moves the Lower Basin figure 44% to 47%</td><td>MODELLED</td><td>Both figures published</td></tr>
+<tr><td><b>Reservoir surface area</b></td><td class=num>76,444 ac at Lake Mead</td><td>Reclamation daily elevation and storage</td><td>Area as the derivative of a fitted hypsometry V=a(h-h0)^b</td><td>Estimator window changes the result 0.1% at Mead, under 7.5% elsewhere</td><td>DERIVED from measured inputs</td><td>Validated out-of-sample at 4 reservoirs</td></tr><tr><td><b>Evaporation depth, Mead and Mohave</b></td><td class=num>6.22 ft/yr at Mead</td><td>USGS eddy covariance with energy balance, 2010-2019 at Mead, record now extended to 2023</td><td>Direct turbulent flux measurement, Bowen-ratio cross-check</td><td>Not restated by us; see USGS. The gauged years give a corrected mean of 6.10 ft/yr, 1.9% under the published depth and inside the flux uncertainty</td><td>MEASURED</td><td>Independent of this work</td></tr><tr><td><b>Evaporation depth, Lake Havasu</b></td><td class=num>5.2 to 7.4 ft/yr, unresolved</td><td>Reclamation LCRAS accounting volume over an area</td><td>Quotient, not a flux measurement</td><td>Denominator unpublished, so the quotient carries an unknown area ratio</td><td>INFERRED, weakest input in the model</td><td>USGS confirms no Havasu flux measurement exists and that one is in planning, so the bracket cannot close yet</td></tr><tr><td><b>Coverage bound per reservoir</b></td><td class=num>0.5% to 8.5%</td><td>This model, hourly, full year</td><td>Coverage at which transmission spill first exceeds 10%</td><td>Bound on the EXISTING interconnection, not on the technology</td><td>MODELLED</td><td>13 review rounds, 2 external vendors</td></tr><tr><td><b>Cost per acre-foot suppressed</b></td><td class=num>$19,139/AF median at Mead</td><td>This model, Monte Carlo over 12 parameters</td><td>Net of power revenue; gross figure also published</td><td>P10-P90 $12,980 to $30,587</td><td>MODELLED</td><td>Netting flagged as unfinanceable by an investment reviewer</td></tr><tr><td><b>Water at stake, all seven reservoirs</b></td><td class=num>49,357 AF/yr</td><td>This model, summed at each reservoir's bound</td><td>Coverage bound times area times suppression</td><td>Carries every uncertainty above, including Havasu</td><td>MODELLED</td><td>Seven reservoirs, not the basin</td></tr><tr><td><b>Reuse headroom</b></td><td class=num>1,300,000 AF/yr at 50% reuse</td><td>UCLA IoES with NRDC, 2022 POTW data</td><td>Plant-by-plant survey above 1 MGD</td><td>Authors describe a data desert; most states do not track reuse</td><td>THIRD-PARTY SURVEY</td><td>Not independently checked by us</td></tr><tr><td><b>Aerodynamic share of evaporation</b></td><td class=num>25% to 47% across reservoirs</td><td>NASA POWER daily weather</td><td>Penman open-water decomposition</td><td>Reanalysis choice moves the Lower Basin figure 44% to 47%</td><td>MODELLED</td><td>Both figures published</td></tr>
 </table></div>
 
 <p>The status column is the important one. <b>Measured</b> means an instrument recorded it.

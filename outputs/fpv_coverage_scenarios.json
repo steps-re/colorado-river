@@ -30,9 +30,9 @@
     "usd_per_af_deterministic": 9868,
     "share_of_lake_pct": 7.3,
     "usd_per_af_mc": {
-     "p10": 14348,
-     "p50": 21118,
-     "p90": 32904
+     "p10": 14299,
+     "p50": 21060,
+     "p90": 32828
     },
     "reuse_af_for_same_spend": {
      "at_2500_usd_af": 102040,
@@ -59,9 +59,9 @@
      "usd_per_af_deterministic": 11921,
      "share_of_lake_pct": 21.3,
      "usd_per_af_mc": {
-      "p10": 15797,
-      "p50": 22624,
-      "p90": 35272
+      "p10": 15765,
+      "p50": 22596,
+      "p90": 35202
      },
      "reuse_af_for_same_spend": {
       "at_2500_usd_af": 361360,
@@ -87,9 +87,9 @@
      "usd_per_af_deterministic": 12425,
      "share_of_lake_pct": 32.0,
      "usd_per_af_mc": {
-      "p10": 16127,
-      "p50": 23000,
-      "p90": 35636
+      "p10": 16093,
+      "p50": 22974,
+      "p90": 35583
      },
      "reuse_af_for_same_spend": {
       "at_2500_usd_af": 567160,
@@ -115,9 +115,9 @@
      "usd_per_af_deterministic": 12687,
      "share_of_lake_pct": 42.5,
      "usd_per_af_mc": {
-      "p10": 16300,
-      "p50": 23197,
-      "p90": 35993
+      "p10": 16269,
+      "p50": 23180,
+      "p90": 35956
      },
      "reuse_af_for_same_spend": {
       "at_2500_usd_af": 769120,
@@ -149,9 +149,9 @@
     "usd_per_af_deterministic": 10835,
     "share_of_lake_pct": 4.3,
     "usd_per_af_mc": {
-     "p10": 15379,
-     "p50": 22692,
-     "p90": 36260
+     "p10": 15329,
+     "p50": 22652,
+     "p90": 36233
     },
     "reuse_af_for_same_spend": {
      "at_2500_usd_af": 60840,
@@ -178,9 +178,9 @@
      "usd_per_af_deterministic": 13352,
      "share_of_lake_pct": 21.2,
      "usd_per_af_mc": {
-      "p10": 17142,
-      "p50": 24735,
-      "p90": 38909
+      "p10": 17125,
+      "p50": 24705,
+      "p90": 38893
      },
      "reuse_af_for_same_spend": {
       "at_2500_usd_af": 375000,
@@ -206,9 +206,9 @@
      "usd_per_af_deterministic": 13684,
      "share_of_lake_pct": 32.0,
      "usd_per_af_mc": {
-      "p10": 17331,
-      "p50": 25001,
-      "p90": 39243
+      "p10": 17328,
+      "p50": 24980,
+      "p90": 39218
      },
      "reuse_af_for_same_spend": {
       "at_2500_usd_af": 578720,
@@ -234,9 +234,9 @@
      "usd_per_af_deterministic": 13865,
      "share_of_lake_pct": 42.7,
      "usd_per_af_mc": {
-      "p10": 17412,
-      "p50": 25109,
-      "p90": 39449
+      "p10": 17403,
+      "p50": 25101,
+      "p90": 39423
      },
      "reuse_af_for_same_spend": {
       "at_2500_usd_af": 783400,

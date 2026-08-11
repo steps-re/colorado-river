@@ -12,49 +12,49 @@
     "coverage_pct": 7.25,
     "array_mw": 2691,
     "evap_saved_af": 25854,
-    "usd_per_af_p50": 19126
+    "usd_per_af_p50": 19139
    },
    {
     "reservoir": "Lake Powell",
     "coverage_pct": 4.25,
     "array_mw": 1560,
     "evap_saved_af": 14043,
-    "usd_per_af_p50": 20731
+    "usd_per_af_p50": 20748
    },
    {
     "reservoir": "Lake Mohave",
     "coverage_pct": 1.0,
     "array_mw": 131,
     "evap_saved_af": 1138,
-    "usd_per_af_p50": 19086
+    "usd_per_af_p50": 18846
    },
    {
     "reservoir": "Lake Havasu",
     "coverage_pct": 8.5,
     "array_mw": 633,
     "evap_saved_af": 6841,
-    "usd_per_af_p50": 18829
+    "usd_per_af_p50": 18850
    },
    {
     "reservoir": "Flaming Gorge",
     "coverage_pct": 1.0,
     "array_mw": 188,
     "evap_saved_af": 957,
-    "usd_per_af_p50": 39377
+    "usd_per_af_p50": 39383
    },
    {
     "reservoir": "Navajo Reservoir",
     "coverage_pct": 0.5,
     "array_mw": 27,
     "evap_saved_af": 152,
-    "usd_per_af_p50": 30754
+    "usd_per_af_p50": 31811
    },
    {
     "reservoir": "Blue Mesa",
     "coverage_pct": 2.5,
     "array_mw": 86,
     "evap_saved_af": 372,
-    "usd_per_af_p50": 41308
+    "usd_per_af_p50": 41360
    }
   ],
   "total_evap_saved_af": 49357,

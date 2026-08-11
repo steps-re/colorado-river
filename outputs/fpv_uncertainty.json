@@ -16,7 +16,7 @@
    "line_share": "uniform(0.10, 1.00)",
    "load_coincidence": "uniform(0.25, 1.00)",
    "evaporation": "flux sites normal(mu, 5-8%); Havasu uniform(5.2, 7.4); Upper Basin normal(mu, 30%)",
-   "surface_area": "normal(1.00, 6%) on the modelled surface, 4% where the area is a static published figure. Sigma is this model's own out-of-sample error against published full-pool area (+5.5, +5.0, +7.5, -4.8% at the four testable reservoirs). Added 2026-08-10; previously treated as exact",
+   "surface_area": "normal(0.968, 6%) on the modelled surface, 4% where the area is a static published figure. Both the centre and the spread come from this model's own out-of-sample error against published full-pool area (+5.5, +5.0, +7.5, -4.8% at the four testable reservoirs): those average +3.3%, so the fitted hypsometry reads area high and the distribution is centred to remove that bias rather than at 1.0. Added 2026-08-10, re-centred after adversarial round 13",
    "solar_resource": "normal(1.00, 4%), interannual variability of annual irradiance against the single PVGIS year",
    "price_level": "normal(1.00, 20%), or 30% where the price shape is transferred from another node (Flaming Gorge, Blue Mesa). One traded year stands in for a 25-year asset",
    "asset_life": "triangular(20, 25, 30) years; was a fixed 25"
@@ -31,118 +31,118 @@
  },
  "Lake Mead": {
   "right_sized_mw": {
-   "p10": 388.1,
-   "p50": 1233.7,
-   "p90": 2126.0
+   "p10": 390.1,
+   "p50": 1217.6,
+   "p90": 2112.4
   },
   "evap_saved_af": {
-   "p10": 2962.7,
-   "p50": 9672.9,
-   "p90": 19228.6
+   "p10": 3028.8,
+   "p50": 9660.4,
+   "p90": 19037.3
   },
   "usd_per_af": {
-   "p10": 12978.4,
-   "p50": 19126.0,
-   "p90": 30612.6
+   "p10": 12979.8,
+   "p50": 19139.0,
+   "p90": 30586.8
   },
   "sensitivity_prcc": {
    "right_sized_mw": {
     "line_share": 0.998,
-    "solar_resource": -0.786,
-    "density": -0.155,
-    "surface_area": -0.048,
-    "evaporation": 0.039,
-    "suppression": -0.023,
-    "price_level": -0.023,
-    "asset_life": -0.02,
-    "om_multiplier": -0.009,
-    "capex": 0.007,
-    "wacc": -0.002
+    "solar_resource": -0.788,
+    "density": -0.133,
+    "surface_area": -0.087,
+    "om_multiplier": -0.034,
+    "capex": 0.027,
+    "wacc": -0.022,
+    "asset_life": -0.018,
+    "price_level": -0.014,
+    "evaporation": 0.013,
+    "suppression": 0.003
    },
    "usd_per_af": {
     "suppression": -0.925,
     "density": 0.797,
     "capex": 0.682,
-    "wacc": 0.61,
+    "wacc": 0.609,
     "evaporation": -0.513,
     "price_level": -0.481,
     "om_multiplier": 0.46,
     "asset_life": -0.319,
-    "solar_resource": -0.142,
+    "solar_resource": -0.141,
     "surface_area": -0.027,
     "line_share": -0.007
    },
    "evap_saved_af": {
-    "line_share": 0.977,
-    "suppression": 0.84,
-    "density": -0.673,
-    "evaporation": 0.362,
-    "solar_resource": -0.299,
-    "om_multiplier": -0.05,
-    "capex": 0.032,
-    "surface_area": -0.032,
-    "price_level": -0.012,
-    "asset_life": -0.007,
-    "wacc": -0.006
+    "line_share": 0.978,
+    "suppression": 0.845,
+    "density": -0.677,
+    "evaporation": 0.363,
+    "solar_resource": -0.303,
+    "om_multiplier": -0.054,
+    "surface_area": -0.041,
+    "capex": 0.034,
+    "wacc": -0.01,
+    "price_level": -0.007,
+    "asset_life": -0.004
    }
   },
   "n": 2000
  },
  "Lake Powell": {
   "right_sized_mw": {
-   "p10": 208.3,
-   "p50": 739.4,
-   "p90": 1226.6
+   "p10": 208.0,
+   "p50": 750.4,
+   "p90": 1219.3
   },
   "evap_saved_af": {
-   "p10": 1552.7,
-   "p50": 5425.3,
-   "p90": 10439.5
+   "p10": 1551.2,
+   "p50": 5452.6,
+   "p90": 10518.5
   },
   "usd_per_af": {
-   "p10": 13657.5,
-   "p50": 20731.1,
-   "p90": 32748.8
+   "p10": 13645.2,
+   "p50": 20747.6,
+   "p90": 32746.9
   },
   "sensitivity_prcc": {
    "right_sized_mw": {
     "line_share": 0.996,
-    "solar_resource": -0.674,
-    "density": -0.156,
-    "surface_area": -0.08,
-    "price_level": 0.045,
-    "suppression": 0.034,
-    "evaporation": 0.024,
-    "om_multiplier": 0.023,
-    "wacc": 0.022,
-    "capex": -0.018,
-    "asset_life": -0.01
+    "solar_resource": -0.686,
+    "density": -0.123,
+    "surface_area": -0.061,
+    "om_multiplier": -0.048,
+    "capex": 0.046,
+    "wacc": -0.026,
+    "evaporation": 0.019,
+    "asset_life": -0.018,
+    "suppression": -0.007,
+    "price_level": -0.005
    },
    "usd_per_af": {
     "suppression": -0.916,
     "density": 0.793,
-    "evaporation": -0.676,
-    "capex": 0.656,
-    "wacc": 0.631,
+    "evaporation": -0.677,
+    "capex": 0.657,
+    "wacc": 0.63,
     "om_multiplier": 0.437,
     "price_level": -0.425,
     "asset_life": -0.308,
     "solar_resource": -0.108,
-    "line_share": 0.015,
-    "surface_area": -0.011
+    "line_share": 0.016,
+    "surface_area": -0.01
    },
    "evap_saved_af": {
-    "line_share": 0.968,
-    "suppression": 0.8,
-    "density": -0.631,
-    "evaporation": 0.46,
-    "solar_resource": -0.278,
-    "wacc": -0.028,
-    "capex": -0.008,
-    "price_level": -0.008,
-    "om_multiplier": 0.006,
-    "asset_life": 0.006,
-    "surface_area": -0.005
+    "line_share": 0.969,
+    "suppression": 0.803,
+    "density": -0.632,
+    "evaporation": 0.469,
+    "solar_resource": -0.286,
+    "wacc": -0.044,
+    "price_level": -0.024,
+    "om_multiplier": -0.017,
+    "capex": 0.012,
+    "surface_area": -0.004,
+    "asset_life": -0.0
    }
   },
   "n": 2000
@@ -151,119 +151,119 @@
   "right_sized_mw": {
    "p10": 0.0,
    "p50": 0.0,
-   "p90": 0.0
+   "p90": 23.1
   },
   "evap_saved_af": {
    "p10": 0.0,
    "p50": 0.0,
-   "p90": 0.0
+   "p90": 155.1
   },
   "usd_per_af": {
-   "p10": 13496.8,
-   "p50": 19085.9,
-   "p90": 27101.7
+   "p10": 13706.0,
+   "p50": 18846.4,
+   "p90": 27972.1
   },
   "sensitivity_prcc": {
    "right_sized_mw": {
-    "line_share": 0.435,
-    "density": -0.272,
-    "surface_area": -0.133,
-    "solar_resource": -0.07,
-    "evaporation": 0.031,
-    "wacc": 0.025,
-    "price_level": 0.014,
-    "suppression": 0.012,
-    "asset_life": -0.009,
-    "om_multiplier": -0.008,
-    "capex": 0.005
+    "line_share": 0.49,
+    "density": -0.287,
+    "surface_area": -0.15,
+    "solar_resource": -0.079,
+    "evaporation": 0.034,
+    "wacc": 0.03,
+    "asset_life": 0.016,
+    "om_multiplier": -0.01,
+    "price_level": 0.01,
+    "suppression": 0.008,
+    "capex": 0.002
    },
    "usd_per_af": {
-    "suppression": -0.894,
-    "capex": 0.731,
-    "density": 0.644,
-    "wacc": 0.569,
-    "evaporation": -0.517,
-    "price_level": -0.46,
-    "om_multiplier": 0.381,
-    "asset_life": -0.259,
-    "solar_resource": -0.105,
-    "surface_area": 0.025,
-    "line_share": -0.019
+    "suppression": -0.9,
+    "capex": 0.69,
+    "density": 0.637,
+    "wacc": 0.597,
+    "evaporation": -0.481,
+    "price_level": -0.455,
+    "om_multiplier": 0.408,
+    "asset_life": -0.231,
+    "solar_resource": -0.056,
+    "surface_area": -0.009,
+    "line_share": -0.003
    },
    "evap_saved_af": {
-    "line_share": 0.433,
-    "density": -0.278,
-    "surface_area": -0.131,
-    "solar_resource": -0.071,
-    "evaporation": 0.034,
-    "suppression": 0.025,
-    "wacc": 0.025,
-    "price_level": 0.016,
-    "asset_life": -0.012,
-    "capex": 0.008,
-    "om_multiplier": -0.008
+    "line_share": 0.487,
+    "density": -0.299,
+    "surface_area": -0.148,
+    "solar_resource": -0.08,
+    "evaporation": 0.04,
+    "wacc": 0.032,
+    "suppression": 0.03,
+    "om_multiplier": -0.011,
+    "price_level": 0.011,
+    "asset_life": 0.008,
+    "capex": 0.005
    }
   },
   "n": 2000
  },
  "Lake Havasu": {
   "right_sized_mw": {
-   "p10": 189.2,
-   "p50": 332.1,
-   "p90": 471.8
+   "p10": 192.3,
+   "p50": 332.8,
+   "p90": 471.0
   },
   "evap_saved_af": {
-   "p10": 1367.5,
-   "p50": 2637.7,
-   "p90": 4556.3
+   "p10": 1390.6,
+   "p50": 2640.0,
+   "p90": 4558.7
   },
   "usd_per_af": {
-   "p10": 12226.7,
-   "p50": 18829.0,
-   "p90": 31059.4
+   "p10": 12230.2,
+   "p50": 18850.0,
+   "p90": 31156.1
   },
   "sensitivity_prcc": {
    "right_sized_mw": {
     "load_coincidence": 0.996,
-    "line_share": 0.941,
-    "solar_resource": -0.817,
-    "density": -0.125,
-    "surface_area": -0.038,
-    "evaporation": -0.037,
-    "capex": -0.029,
-    "wacc": 0.023,
-    "om_multiplier": 0.015,
-    "price_level": -0.015,
-    "asset_life": -0.015,
-    "suppression": -0.007
+    "line_share": 0.942,
+    "solar_resource": -0.813,
+    "density": -0.116,
+    "price_level": -0.037,
+    "suppression": -0.034,
+    "surface_area": -0.032,
+    "wacc": 0.02,
+    "capex": -0.017,
+    "asset_life": -0.011,
+    "evaporation": -0.008,
+    "om_multiplier": -0.007
    },
    "usd_per_af": {
     "suppression": -0.92,
     "density": 0.786,
-    "evaporation": -0.757,
+    "evaporation": -0.756,
     "capex": 0.655,
-    "wacc": 0.636,
-    "price_level": -0.505,
+    "wacc": 0.635,
+    "price_level": -0.504,
     "om_multiplier": 0.476,
     "asset_life": -0.307,
-    "solar_resource": -0.099,
+    "solar_resource": -0.098,
     "surface_area": -0.019,
-    "line_share": -0.015,
-    "load_coincidence": 0.005
+    "line_share": -0.014,
+    "load_coincidence": 0.004
    },
    "evap_saved_af": {
     "load_coincidence": 0.949,
     "suppression": 0.881,
-    "density": -0.726,
-    "evaporation": 0.679,
-    "line_share": 0.598,
-    "solar_resource": -0.324,
-    "capex": 0.036,
-    "om_multiplier": -0.034,
-    "asset_life": -0.017,
-    "wacc": 0.015,
+    "density": -0.727,
+    "evaporation": 0.683,
+    "line_share": 0.6,
+    "solar_resource": -0.314,
+    "capex": 0.037,
+    "om_multiplier": -0.037,
+    "asset_life": -0.018,
+    "wacc": 0.017,
     "surface_area": -0.014,
-    "price_level": 0.014
+    "price_level": 0.007
    }
   },
   "n": 2000
@@ -271,58 +271,58 @@
  "Flaming Gorge": {
   "right_sized_mw": {
    "p10": 0.0,
-   "p50": 48.4,
-   "p90": 98.0
+   "p50": 47.7,
+   "p90": 98.5
   },
   "evap_saved_af": {
    "p10": 0.0,
-   "p50": 200.2,
-   "p90": 504.4
+   "p50": 201.2,
+   "p90": 512.0
   },
   "usd_per_af": {
-   "p10": 22786.6,
-   "p50": 39377.2,
-   "p90": 79163.5
+   "p10": 22793.1,
+   "p50": 39383.1,
+   "p90": 79348.9
   },
   "sensitivity_prcc": {
    "right_sized_mw": {
-    "line_share": 0.933,
-    "solar_resource": -0.175,
-    "evaporation": -0.029,
-    "om_multiplier": -0.025,
-    "surface_area": -0.02,
-    "wacc": -0.015,
-    "density": -0.012,
-    "suppression": -0.007,
-    "price_level": -0.004,
-    "asset_life": -0.002,
-    "capex": -0.001
+    "line_share": 0.937,
+    "solar_resource": -0.218,
+    "density": -0.03,
+    "wacc": -0.029,
+    "suppression": -0.021,
+    "asset_life": -0.015,
+    "surface_area": -0.014,
+    "capex": 0.013,
+    "evaporation": -0.011,
+    "om_multiplier": -0.005,
+    "price_level": 0.0
    },
    "usd_per_af": {
-    "evaporation": -0.934,
+    "evaporation": -0.935,
     "suppression": -0.852,
-    "density": 0.684,
-    "capex": 0.494,
-    "wacc": 0.467,
+    "density": 0.687,
+    "capex": 0.498,
+    "wacc": 0.468,
     "price_level": -0.379,
-    "om_multiplier": 0.321,
-    "asset_life": -0.225,
-    "solar_resource": -0.098,
-    "line_share": 0.021,
+    "om_multiplier": 0.323,
+    "asset_life": -0.227,
+    "solar_resource": -0.099,
+    "line_share": 0.023,
     "surface_area": -0.009
    },
    "evap_saved_af": {
-    "line_share": 0.887,
-    "evaporation": 0.542,
-    "suppression": 0.381,
-    "density": -0.357,
-    "solar_resource": -0.133,
-    "surface_area": -0.054,
-    "wacc": 0.019,
-    "om_multiplier": -0.01,
-    "price_level": 0.008,
-    "capex": -0.004,
-    "asset_life": 0.0
+    "line_share": 0.892,
+    "evaporation": 0.558,
+    "suppression": 0.377,
+    "density": -0.367,
+    "solar_resource": -0.16,
+    "surface_area": -0.049,
+    "price_level": 0.012,
+    "wacc": 0.01,
+    "asset_life": -0.009,
+    "capex": 0.007,
+    "om_multiplier": -0.001
    }
   },
   "n": 2000
@@ -331,116 +331,116 @@
   "right_sized_mw": {
    "p10": 0.0,
    "p50": 0.0,
-   "p90": 10.6
+   "p90": 10.8
   },
   "evap_saved_af": {
    "p10": 0.0,
    "p50": 0.0,
-   "p90": 43.8
+   "p90": 49.8
   },
   "usd_per_af": {
-   "p10": 17408.2,
-   "p50": 30754.3,
-   "p90": 62495.4
+   "p10": 17354.4,
+   "p50": 31810.6,
+   "p90": 61672.0
   },
   "sensitivity_prcc": {
    "right_sized_mw": {
-    "line_share": 0.533,
-    "density": -0.262,
-    "surface_area": -0.13,
-    "solar_resource": -0.129,
-    "wacc": -0.035,
-    "price_level": -0.023,
-    "om_multiplier": -0.02,
-    "capex": 0.013,
-    "evaporation": 0.01,
-    "suppression": 0.009,
-    "asset_life": 0.001
+    "line_share": 0.568,
+    "density": -0.271,
+    "surface_area": -0.135,
+    "solar_resource": -0.128,
+    "suppression": 0.035,
+    "wacc": -0.032,
+    "price_level": -0.024,
+    "capex": 0.016,
+    "om_multiplier": -0.009,
+    "asset_life": -0.004,
+    "evaporation": -0.0
    },
    "usd_per_af": {
-    "evaporation": -0.92,
-    "suppression": -0.847,
-    "density": 0.614,
-    "capex": 0.553,
-    "wacc": 0.432,
+    "evaporation": -0.924,
+    "suppression": -0.846,
+    "density": 0.632,
+    "capex": 0.563,
+    "wacc": 0.451,
     "price_level": -0.347,
-    "om_multiplier": 0.253,
-    "asset_life": -0.13,
-    "solar_resource": -0.089,
-    "line_share": -0.058,
-    "surface_area": -0.04
+    "om_multiplier": 0.251,
+    "asset_life": -0.158,
+    "solar_resource": -0.082,
+    "line_share": -0.043,
+    "surface_area": -0.03
    },
    "evap_saved_af": {
-    "line_share": 0.533,
-    "density": -0.28,
-    "surface_area": -0.13,
-    "solar_resource": -0.125,
-    "wacc": -0.036,
-    "evaporation": 0.035,
-    "suppression": 0.027,
-    "price_level": -0.025,
-    "om_multiplier": -0.019,
-    "capex": 0.014,
-    "asset_life": -0.0
+    "line_share": 0.567,
+    "density": -0.295,
+    "surface_area": -0.14,
+    "solar_resource": -0.124,
+    "suppression": 0.058,
+    "evaporation": 0.034,
+    "wacc": -0.034,
+    "price_level": -0.024,
+    "capex": 0.018,
+    "om_multiplier": -0.011,
+    "asset_life": -0.005
    }
   },
   "n": 2000
  },
  "Blue Mesa": {
   "right_sized_mw": {
-   "p10": 8.8,
-   "p50": 32.7,
-   "p90": 59.0
+   "p10": 8.7,
+   "p50": 32.9,
+   "p90": 58.6
   },
   "evap_saved_af": {
-   "p10": 31.1,
-   "p50": 107.5,
-   "p90": 259.1
+   "p10": 30.9,
+   "p50": 107.7,
+   "p90": 257.7
   },
   "usd_per_af": {
-   "p10": 23087.5,
-   "p50": 41308.5,
-   "p90": 81668.0
+   "p10": 23063.7,
+   "p50": 41360.4,
+   "p90": 81104.3
   },
   "sensitivity_prcc": {
    "right_sized_mw": {
-    "line_share": 0.989,
-    "solar_resource": -0.496,
-    "density": -0.097,
-    "asset_life": 0.045,
-    "surface_area": -0.041,
-    "capex": -0.017,
-    "price_level": 0.017,
-    "om_multiplier": 0.011,
-    "suppression": 0.003,
-    "wacc": 0.001,
-    "evaporation": -0.0
+    "line_share": 0.99,
+    "solar_resource": -0.482,
+    "density": -0.094,
+    "surface_area": -0.04,
+    "wacc": 0.024,
+    "suppression": 0.023,
+    "capex": -0.019,
+    "asset_life": 0.018,
+    "evaporation": 0.012,
+    "price_level": 0.011,
+    "om_multiplier": 0.002
    },
    "usd_per_af": {
     "evaporation": -0.917,
     "suppression": -0.842,
-    "density": 0.619,
-    "price_level": -0.573,
+    "density": 0.62,
+    "price_level": -0.574,
     "capex": 0.524,
-    "wacc": 0.501,
-    "om_multiplier": 0.325,
-    "asset_life": -0.235,
-    "solar_resource": -0.095,
-    "line_share": 0.033,
-    "surface_area": -0.031
+    "wacc": 0.502,
+    "om_multiplier": 0.326,
+    "asset_life": -0.236,
+    "solar_resource": -0.093,
+    "line_share": 0.034,
+    "surface_area": -0.027
    },
    "evap_saved_af": {
     "line_share": 0.94,
-    "evaporation": 0.783,
-    "suppression": 0.673,
-    "density": -0.455,
-    "solar_resource": -0.157,
-    "wacc": -0.044,
-    "om_multiplier": 0.016,
-    "surface_area": -0.01,
-    "capex": 0.009,
-    "price_level": -0.007,
-    "asset_life": 0.0
+    "evaporation": 0.784,
+    "suppression": 0.676,
+    "density": -0.451,
+    "solar_resource": -0.136,
+    "wacc": -0.035,
+    "asset_life": -0.015,
+    "om_multiplier": 0.014,
+    "surface_area": -0.011,
+    "price_level": -0.009,
+    "capex": 0.007
    }
   },
   "n": 2000

@@ -32,16 +32,26 @@ Parameters treated as uncertain, with the reason:
   asset life         20-30 years. Was fixed at 25. Floats and mooring in a mussel-infested
                      reservoir are exactly where a life assumption should not be a constant.
 
-Note on area, corrected after measuring it. It multiplies both the water saved and the array cost,
-so it cancels in cost per acre-foot: PRCC -0.03 at Mead. That much was predicted. The prediction
-that it would still drive absolute acre-feet was WRONG, and the PRCC on evap_saved_af is -0.03 as
-well. The reason is the right-sizing loop: a larger surface builds a larger array at the same
-coverage, which spills sooner, so the search stops at a lower coverage and gives back what the area
-gave. What actually sets the water saved is the tie, and line_share carries PRCC 0.98.
+Note on area, corrected twice. It multiplies both the water saved and the array cost, so it cancels
+in cost per acre-foot: PRCC -0.03 at Mead. That much was predicted. The prediction that it would
+still drive absolute acre-feet was WRONG, and the PRCC on evap_saved_af is -0.03 as well.
+
+Two mechanisms could produce that, and an earlier version of this note asserted the first as if the
+PRCC established it, which it did not:
+  (a) tie-bound feedback. A larger surface builds a larger array at the same coverage, which spills
+      sooner, so the right-sizing search stops at a lower coverage and gives back what area gave.
+  (b) grid quantisation. The search steps coverage in 0.25% increments, so a few per cent of area
+      might not change the selected coverage at all, damping sensitivity for numerical rather than
+      physical reasons. Raised by round 13's statistician as the real explanation.
+
+TESTED, and (b) is wrong. Refining the grid five-fold, from 0.25% to 0.05%, leaves the area PRCC on
+evap_saved_af at zero (-0.005 -> -0.000 at Mead, 600 draws). If quantisation were masking a real
+sensitivity, a finer grid would have exposed it. So (a) is the operative mechanism, consistent with
+line_share carrying PRCC 0.98 on the same output: what sets the water saved is the tie, not the
+lake. Reproduce with a coverage grid of 0.0005 in the run_reservoir search.
 
 Area does matter, linearly and without feedback, for acre-feet at a FIXED coverage, which is what
-fpv_coverage_scenarios.py computes. So sampling it was still right. It just tells us the opposite
-of what the first version of this note claimed.
+fpv_coverage_scenarios.py computes. So sampling it was still right.
 
 Outputs: outputs/fpv_uncertainty.json
 """
@@ -187,8 +197,14 @@ def sample(name, n=N):
     # Area: sigma from this model's OWN out-of-sample test against published full-pool area
     # (+5.5, +5.0, +7.5, -4.8% at the four testable reservoirs). Havasu is a static published
     # area on a reservoir held within 4 ft, so it is tighter than a fitted hypsometry.
+    # Centred on the MEASURED bias, not on 1.0. Round 13's statistician caught this: the four
+    # out-of-sample errors (+5.5, +5.0, +7.5, -4.8) have a mean of +3.3%, so the fitted hypsometry
+    # reads area systematically HIGH. Sampling the spread while centring at 1.0 keeps the noise and
+    # throws away the bias, which is the half we actually measured. Direction matters: a smaller
+    # true area means less water suppressed, so correcting this makes FPV look worse, not better.
+    AREA_BIAS = 1.0 / (1.0 + 0.033)
     area_sigma = 0.04 if p.get("area_swing_pct") is None else 0.06
-    area_mult = np.clip(RNG.normal(1.0, area_sigma, n), 0.75, 1.25)
+    area_mult = np.clip(RNG.normal(AREA_BIAS, area_sigma, n), 0.70, 1.20)
     solar_mult = np.clip(RNG.normal(1.0, 0.04, n), 0.85, 1.15)
     # One traded year standing in for a 25-year asset. Wider where the price SHAPE is transferred
     # from another node rather than measured at this one.
@@ -320,10 +336,13 @@ def main():
             load_coincidence="uniform(0.25, 1.00)",
             evaporation="flux sites normal(mu, 5-8%); Havasu uniform(5.2, 7.4); "
                         "Upper Basin normal(mu, 30%)",
-            surface_area="normal(1.00, 6%) on the modelled surface, 4% where the area is a static "
-                         "published figure. Sigma is this model's own out-of-sample error against "
-                         "published full-pool area (+5.5, +5.0, +7.5, -4.8% at the four testable "
-                         "reservoirs). Added 2026-08-10; previously treated as exact",
+            surface_area="normal(0.968, 6%) on the modelled surface, 4% where the area is a static "
+                         "published figure. Both the centre and the spread come from this model's "
+                         "own out-of-sample error against published full-pool area (+5.5, +5.0, "
+                         "+7.5, -4.8% at the four testable reservoirs): those average +3.3%, so "
+                         "the fitted hypsometry reads area high and the distribution is centred to "
+                         "remove that bias rather than at 1.0. Added 2026-08-10, re-centred after "
+                         "adversarial round 13",
             solar_resource="normal(1.00, 4%), interannual variability of annual irradiance "
                            "against the single PVGIS year",
             price_level="normal(1.00, 20%), or 30% where the price shape is transferred from "
