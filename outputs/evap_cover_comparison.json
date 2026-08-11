@@ -24,6 +24,18 @@
    "verdict": "Cheapest per acre-foot on paper and the least likely to work at scale."
   },
   {
+   "name": "Floating cover, raw water (Australian verified)",
+   "capex_per_acre": 65761,
+   "life_yr": 10,
+   "suppression_pct": 90,
+   "annual_cost_per_acre": 9692,
+   "af_per_acre_yr": 5.6,
+   "usd_per_af": 1731,
+   "basis": "VERIFIED, and the row this table said did not exist. University of Southern Queensland, 'Assessment of Evaporation Mitigation Technologies in Queensland', funded by the Queensland Government: continuous floating covers cost '$15/m2 to $35/m2 (May 2020 prices)', lifespan 5 to 10 years, repair and maintenance 'less than 0.5% of the installation cost', evaporative reduction >90% of the covered area. Midpoint A$25/m2 at 0.65 AUD/USD = $65,761/acre. Corroborated independently: EFI quotes HDPE floating cover material at $0.35-0.60/sq ft ($15,200-26,100/acre) and Spanish irrigation tenders run EUR 9-11.43/m2.",
+   "caveat": "THE SCALE LIMIT IS THE REAL FINDING. The same assessment puts the effective upper size limit of floating continuous and modular covers at 5 hectares. Lake Mead is about 30,900 hectares, roughly 6,000x that. This is a real price for a real product that has never been deployed at anything like reservoir scale, and the short 5-to-10-year life is why: debris, weed growth and rainwater drainage under an impermeable sheet all worsen with area.",
+   "verdict": "Cheaper per acre-foot than floating PV and far cheaper than the potable-water row below it, but bounded to storages three orders of magnitude smaller than the reservoirs in question."
+  },
+  {
    "name": "Shade balls (hollow HDPE spheres)",
    "capex_per_acre": 197143,
    "life_yr": 10,

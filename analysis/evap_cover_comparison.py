@@ -72,6 +72,30 @@ OPTIONS = [
                 "potable-water product and overstates what raw-water evaporation cover would cost.",
     ),
     dict(
+        name="Floating cover, raw water (Australian verified)",
+        capex_per_acre=25.0 * 4046.86 * 0.65,   # A$25/m2 midpoint of A$15-35, at 0.65 AUD/USD
+        life=10, suppression=0.90,
+        om_per_acre=0.005 * 25.0 * 4046.86 * 0.65,
+        basis="VERIFIED, and the row this table said did not exist. University of Southern "
+              "Queensland, 'Assessment of Evaporation Mitigation Technologies in Queensland', "
+              "funded by the Queensland Government: continuous floating covers cost "
+              "'$15/m2 to $35/m2 (May 2020 prices)', lifespan 5 to 10 years, repair and "
+              "maintenance 'less than 0.5% of the installation cost', evaporative reduction "
+              ">90% of the covered area. Midpoint A$25/m2 at 0.65 AUD/USD = $65,761/acre. "
+              "Corroborated independently: EFI quotes HDPE floating cover material at "
+              "$0.35-0.60/sq ft ($15,200-26,100/acre) and Spanish irrigation tenders run "
+              "EUR 9-11.43/m2.",
+        caveat="THE SCALE LIMIT IS THE REAL FINDING. The same assessment puts the effective "
+               "upper size limit of floating continuous and modular covers at 5 hectares. Lake "
+               "Mead is about 30,900 hectares, roughly 6,000x that. This is a real price for a "
+               "real product that has never been deployed at anything like reservoir scale, and "
+               "the short 5-to-10-year life is why: debris, weed growth and rainwater drainage "
+               "under an impermeable sheet all worsen with area.",
+        verdict="Cheaper per acre-foot than floating PV and far cheaper than the potable-water "
+                "row below it, but bounded to storages three orders of magnitude smaller than "
+                "the reservoirs in question.",
+    ),
+    dict(
         name="Floating PV (this model, baseline cost)",
         capex_per_acre=1.23e6 * MW_PER_ACRE,
         life=25, suppression=0.75, om_per_acre=25_000 * MW_PER_ACRE,
