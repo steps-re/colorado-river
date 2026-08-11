@@ -2,15 +2,17 @@
  "meta": {
   "question": "If a reservoir is covered anyway for thermal or biodiversity reasons, FPV substitutes for that cover and the avoided cost accrues to FPV. On VERIFIED raw-water cover prices, how much does that actually change FPV's answer?",
   "raised_by": "Upmanu Lall, ASU, personal communication 2026-08-11",
-  "answer": "Between 9% and 36% off FPV's cost per acre-foot. It does not reach the reuse or desalination band at any verified cover price.",
+  "answer": "Between 9% and 26% off FPV's cost per acre-foot. It does not reach the reuse or desalination band at any verified cover price.",
   "reversal": "The 11 Aug version of this analysis used only LADWP's potable-water quote and reported that FPV's water became free at 46% of it. Verified raw-water prices are 15-36x lower and the credit is worth tens of per cent, not an order of magnitude. That earlier conclusion is withdrawn.",
   "source": "University of Southern Queensland, 'Assessment of Evaporation Mitigation Technologies in Queensland', funded by the Queensland Government. Continuous floating covers A$15-35/m2 (May 2020), lifespan 5-10 years, repair and maintenance under 0.5% of installed cost per year, evaporative reduction >90% of the covered area.",
   "source_url": "https://evapadvisor.com/assets/reports/Assessment_of_Evaporation_Mitigation_Technologies_in_Queensland.pdf",
   "corroboration": "Independently, EFI (US manufacturer) quotes HDPE floating cover material at $0.35-0.60/sq ft = $15,200-26,100/acre, and Spanish irrigation-reservoir tenders run EUR 9-11.43/m2. Both sit inside the Australian band.",
   "price_vintage": "May 2020 AUD, not inflated to 2026; the real figure today is higher",
   "aud_usd": 0.65,
-  "scale_limit_ha": 5,
-  "scale_limit_note": "The same assessment puts the effective upper size limit of floating continuous and modular covers at 5 ha. Lake Mead is about 30,900 ha, roughly 6,000x that. No floating cover has been demonstrated at anything approaching reservoir scale, so the counterfactual this credit depends on is itself unestablished here.",
+  "scale_limit_ha": 2,
+  "disqualifier": "Not price and not size: the report states covers 'are not suitable for storages experiencing large water level fluctuations'. Mead is 189 ft below full pool and Powell 179 ft. Direct quotation, not an assumption.",
+  "source_reliability": "July 2020, not peer reviewed, farm-dam scope, prices not inflated. Self-inconsistent on life (5-10 vs 15 vs 35 yr) and size limit (2 vs 5 ha), and misstates LA Reservoir as 175 ha when it is 175 acres. Direction consistent, precision not.",
+  "scale_limit_note": "The same assessment puts the effective upper size limit of floating continuous and modular covers at 2 ha. Lake Mead is about 30,900 ha, roughly 6,000x that. No floating cover has been demonstrated at anything approaching reservoir scale, so the counterfactual this credit depends on is itself unestablished here.",
   "fpv_annual_cost_per_acre": 63397,
   "fpv_suppression": 0.75,
   "cover_suppression": 0.9,
@@ -29,22 +31,28 @@
    "fpv_usd_per_af": 13590
   },
   {
-   "scenario": "raw-water floating cover, cheap cover, 10-year life",
+   "scenario": "raw-water floating cover: executive summary, low",
    "basis": "A$15/m2 = $39,457/acre, 10-yr life",
    "avoided_annual_per_acre": 5815,
    "fpv_usd_per_af": 12343
   },
   {
-   "scenario": "raw-water floating cover, dear cover, 10-year life",
+   "scenario": "raw-water floating cover: executive summary, high",
    "basis": "A$35/m2 = $92,066/acre, 10-yr life",
    "avoided_annual_per_acre": 13568,
    "fpv_usd_per_af": 10681
   },
   {
-   "scenario": "raw-water floating cover, dear cover, 5-year life",
-   "basis": "A$35/m2 = $92,066/acre, 5-yr life",
-   "avoided_annual_per_acre": 22914,
-   "fpv_usd_per_af": 8678
+   "scenario": "raw-water floating cover: supplier, agricultural spec, installed",
+   "basis": "A$23/m2 = $60,501/acre, 15-yr life",
+   "avoided_annual_per_acre": 6945,
+   "fpv_usd_per_af": 12101
+  },
+  {
+   "scenario": "raw-water floating cover: supplier, INDUSTRIAL spec, installed \u2014 the relevant duty",
+   "basis": "A$75/m2 = $197,284/acre, 35-yr life",
+   "avoided_annual_per_acre": 16223,
+   "fpv_usd_per_af": 10112
   },
   {
    "scenario": "POTABLE-WATER cover (LADWP quote) \u2014 a ceiling, not a comparable product",

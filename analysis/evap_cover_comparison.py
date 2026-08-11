@@ -63,37 +63,40 @@ OPTIONS = [
               "food-grade, engineered to keep a treated drinking supply isolated. An evaporation "
               "cover on a raw-water reservoir is a different and cheaper product. Treat $1.43M/acre "
               "as a ceiling on this row, not as its price.",
-        caveat="Two estimates for this row have now been wrong in opposite directions. A research "
-               "agent put it at $140,000/acre, ten times too low. The verified quote is for a "
-               "higher-specification product than the application needs, so it is too high. No "
-               "published cost for a raw-water evaporation cover at reservoir scale was found. "
-               "This row should be read as unresolved rather than as a measurement.",
+        caveat="SUPERSEDED as a proxy for raw-water cover, and retained only as the potable-water "
+               "ceiling it actually is. This row previously carried the note that no published "
+               "cost for a raw-water cover could be found; a global scan on 2026-08-12 found "
+               "several, and they sit 8-22x below this quote. Use the industrial-spec row above "
+               "for raw-water duty. Two earlier estimates for this row were wrong in opposite "
+               "directions: a research agent put it at $140,000/acre, ten times too low, and this "
+               "quote prices a sealed food-grade product the application does not need.",
         verdict="Real technology, cost genuinely uncertain. The published anchor prices a "
                 "potable-water product and overstates what raw-water evaporation cover would cost.",
     ),
     dict(
-        name="Floating cover, raw water (Australian verified)",
-        capex_per_acre=25.0 * 4046.86 * 0.65,   # A$25/m2 midpoint of A$15-35, at 0.65 AUD/USD
-        life=10, suppression=0.90,
-        om_per_acre=0.005 * 25.0 * 4046.86 * 0.65,
-        basis="VERIFIED, and the row this table said did not exist. University of Southern "
-              "Queensland, 'Assessment of Evaporation Mitigation Technologies in Queensland', "
-              "funded by the Queensland Government: continuous floating covers cost "
-              "'$15/m2 to $35/m2 (May 2020 prices)', lifespan 5 to 10 years, repair and "
-              "maintenance 'less than 0.5% of the installation cost', evaporative reduction "
-              ">90% of the covered area. Midpoint A$25/m2 at 0.65 AUD/USD = $65,761/acre. "
-              "Corroborated independently: EFI quotes HDPE floating cover material at "
-              "$0.35-0.60/sq ft ($15,200-26,100/acre) and Spanish irrigation tenders run "
-              "EUR 9-11.43/m2.",
-        caveat="THE SCALE LIMIT IS THE REAL FINDING. The same assessment puts the effective "
-               "upper size limit of floating continuous and modular covers at 5 hectares. Lake "
-               "Mead is about 30,900 hectares, roughly 6,000x that. This is a real price for a "
-               "real product that has never been deployed at anything like reservoir scale, and "
-               "the short 5-to-10-year life is why: debris, weed growth and rainwater drainage "
-               "under an impermeable sheet all worsen with area.",
-        verdict="Cheaper per acre-foot than floating PV and far cheaper than the potable-water "
-                "row below it, but bounded to storages three orders of magnitude smaller than "
-                "the reservoirs in question.",
+        name="Floating cover, raw water (industrial spec)",
+        capex_per_acre=75.0 * 4046.86 * 0.65,   # A$75/m2 INSTALLED, industrial spec, at 0.65
+        life=35, suppression=0.90,
+        om_per_acre=0.005 * 75.0 * 4046.86 * 0.65,
+        basis="University of Southern Queensland / Queensland Government, 'Assessment of "
+              "Evaporation Mitigation Technologies in Queensland' (Schmidt, Pittaway & Scobie, "
+              "July 2020). The INDUSTRIAL specification is the relevant duty for a reservoir of "
+              "this size: '1,14mm membrane with a 35 year life and an installed cost of $75/m2'. "
+              "The agricultural spec is A$23/m2 installed over 15 years and the executive summary "
+              "gives A$15-35/m2, which bracket $1,000-2,900/AF across the report's own readings. "
+              "May 2020 Australian prices at 0.65 AUD/USD, NOT inflated to 2026.",
+        caveat="THE DISQUALIFIER IS LEVEL CHANGE, NOT COST. The same report: covers 'must be "
+               "tethered to avoid beaching and obstructing spillways' and 'are not suitable for "
+               "storages experiencing large water level fluctuations'. Mead sits 189 ft below "
+               "full pool and Powell 179 ft, which is the most extreme fluctuation case in the "
+               "basin. Deployment is also in rafts 'covering up to 1ha each', and floating covers "
+               "are described elsewhere in the same report as 'generally limited to small storages "
+               "less than 2 ha'. The source is internally inconsistent on size limit (2 vs 5 ha) "
+               "and service life (5-10 vs 15 vs 35 years), and it misstates LA Reservoir as 175 ha "
+               "when it is 175 acres, so treat its precision with care even where its direction is "
+               "clear.",
+        verdict="Far cheaper per acre-foot than floating PV and than the potable-water row, and "
+                "ruled out here by water-level fluctuation rather than by price.",
     ),
     dict(
         name="Floating PV (this model, baseline cost)",
