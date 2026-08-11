@@ -75,16 +75,23 @@ OPTIONS = [
     ),
     dict(
         name="Floating cover, raw water (industrial spec)",
-        capex_per_acre=75.0 * 4046.86 * 0.65,   # A$75/m2 INSTALLED, industrial spec, at 0.65
+        capex_per_acre=75.0 * 1.33 * 4046.86 * 0.65,   # A$75/m2 installed x1.33 escalation to 2026
         life=35, suppression=0.90,
-        om_per_acre=0.005 * 75.0 * 4046.86 * 0.65,
+        om_per_acre=0.005 * 75.0 * 1.33 * 4046.86 * 0.65,
         basis="University of Southern Queensland / Queensland Government, 'Assessment of "
               "Evaporation Mitigation Technologies in Queensland' (Schmidt, Pittaway & Scobie, "
               "July 2020). The INDUSTRIAL specification is the relevant duty for a reservoir of "
               "this size: '1,14mm membrane with a 35 year life and an installed cost of $75/m2'. "
               "The agricultural spec is A$23/m2 installed over 15 years and the executive summary "
               "gives A$15-35/m2, which bracket $1,000-2,900/AF across the report's own readings. "
-              "May 2020 Australian prices at 0.65 AUD/USD, NOT inflated to 2026.",
+              "May 2020 Australian prices at 0.65 AUD/USD, ESCALATED x1.33 to 2026: Australian "
+              "construction input PPI and global HDPE resin both up about 40% since mid-2020, US "
+              "construction cost indices up 25-27%, weighted 50/50 between polymer and "
+              "installation. A China-supplied cover is far cheaper: BPM Geoliner list "
+              "floating-cover-grade LLDPE/HDPE at USD 1.40-3.90/m2 material, which at this "
+              "report's own 3.1x material-to-installed ratio implies USD 4.30-12.00/m2 installed. "
+              "The true figure is bounded by a high-labour Australian market above and a Chinese "
+              "supply chain below, and that spread is roughly 5x.",
         caveat="THE DISQUALIFIER IS LEVEL CHANGE, NOT COST. The same report: covers 'must be "
                "tethered to avoid beaching and obstructing spillways' and 'are not suitable for "
                "storages experiencing large water level fluctuations'. Mead sits 189 ft below "
@@ -94,7 +101,12 @@ OPTIONS = [
                "less than 2 ha'. The source is internally inconsistent on size limit (2 vs 5 ha) "
                "and service life (5-10 vs 15 vs 35 years), and it misstates LA Reservoir as 175 ha "
                "when it is 175 acres, so treat its precision with care even where its direction is "
-               "clear.",
+               "clear. Independently, a scan for Chinese reservoir-cover deployments found NO "
+               "large-scale commercial installation, only pond and evaporator field tests, which "
+               "corroborates the scale objection from the country that manufactures most of the "
+               "world's geomembrane. Those Chinese field tests also measured 51-75% suppression "
+               "for solid and modular covers and 14-60% for spheres, against the 90% assumed "
+               "here, so this row's water yield may be optimistic.",
         verdict="Far cheaper per acre-foot than floating PV and than the potable-water row, and "
                 "ruled out here by water-level fluctuation rather than by price.",
     ),

@@ -63,6 +63,24 @@ COVER_READINGS = [(15.0, 10, "executive summary, low"),
                   (23.0, 15, "supplier, agricultural spec, installed"),
                   (75.0, 35, "supplier, INDUSTRIAL spec, installed — the relevant duty")]
 AUD_USD = 0.65                     # stated, not silently applied; May 2020 and 2026 are both ~0.65
+
+# MATERIAL AND LABOUR ESCALATION, May 2020 -> 2026. Previously omitted, which understated every
+# cover price by a third. Weighted 50/50 between polymer and installation: Australian construction
+# input PPI and global HDPE resin both up roughly 40%, US construction cost indices (ENR CCI,
+# Turner) up 25-27%. Central 1.33, plausible range 1.25-1.40. Direction matters: escalation makes
+# the avoided cover DEARER, which makes the substitution credit LARGER, so this cuts in FPV's
+# favour and is applied for that reason rather than despite it.
+ESCALATION = 1.33
+ESCALATION_RANGE = (1.25, 1.40)
+
+# A second supply chain, because Australia is a small, high-labour market and China makes most of
+# the world's geomembrane. BPM Geoliner list floating-cover-grade LLDPE/HDPE at USD 1.40-3.90/m2,
+# MATERIAL ONLY. The Australian report's own material-to-installed ratio is 7.5 -> 23 AUD/m2, about
+# 3.1x, so a China-supplied installed cover plausibly lands at USD 4.30-12.00/m2. That is far below
+# the escalated Australian figure and it is a vendor list price rather than a contracted project,
+# so it is carried as a LOWER bound rather than as the answer.
+CHINA_USD_M2_MATERIAL = (1.40, 3.90)
+CHINA_INSTALL_MULTIPLIER = 23.0 / 7.5
 COVER_OM_FRACTION = 0.005          # of installed cost per year
 COVER_SIZE_LIMIT_HA = 2   # "generally limited to small storages less than 2 ha"; the report also says 5 ha elsewhere
 PRICE_VINTAGE = "May 2020 AUD, not inflated to 2026; the real figure today is higher"
@@ -98,11 +116,21 @@ def fpv_net_per_af(avoided_annual_per_acre):
 rows = [dict(scenario="no cover avoided (status quo)", basis="—",
              avoided_annual_per_acre=0, fpv_usd_per_af=round(fpv_net_per_af(0)))]
 for aud, life, label in COVER_READINGS:
-    capex = usd_per_acre(aud)
+    capex = usd_per_acre(aud) * ESCALATION
     ann = annualised(capex, life)
     rows.append(dict(
         scenario=f"raw-water floating cover: {label}",
-        basis=f"A${aud:g}/m2 = ${round(capex):,}/acre, {life}-yr life",
+        basis=f"A${aud:g}/m2 x{ESCALATION} escalation = ${round(capex):,}/acre, {life}-yr life",
+        avoided_annual_per_acre=round(ann),
+        fpv_usd_per_af=round(fpv_net_per_af(ann))))
+# China-supplied lower bound, installed via the Australian report's own material-to-installed ratio.
+for usd_m2, label in ((CHINA_USD_M2_MATERIAL[0], "low"), (CHINA_USD_M2_MATERIAL[1], "high")):
+    capex = usd_m2 * CHINA_INSTALL_MULTIPLIER * M2_PER_ACRE
+    ann = annualised(capex, 20)
+    rows.append(dict(
+        scenario=f"raw-water floating cover: China-supplied, {label} (LOWER BOUND)",
+        basis=f"US${usd_m2}/m2 material x{CHINA_INSTALL_MULTIPLIER:.1f} install = "
+              f"${round(capex):,}/acre, 20-yr life",
         avoided_annual_per_acre=round(ann),
         fpv_usd_per_af=round(fpv_net_per_af(ann))))
 ladwp_ann = LADWP_CAPEX_PER_ACRE * crf(LADWP_LIFE) + 2_000

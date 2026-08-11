@@ -2,7 +2,7 @@
  "meta": {
   "question": "If a reservoir is covered anyway for thermal or biodiversity reasons, FPV substitutes for that cover and the avoided cost accrues to FPV. On VERIFIED raw-water cover prices, how much does that actually change FPV's answer?",
   "raised_by": "Upmanu Lall, ASU, personal communication 2026-08-11",
-  "answer": "Between 9% and 26% off FPV's cost per acre-foot. It does not reach the reuse or desalination band at any verified cover price.",
+  "answer": "Between 3% and 34% off FPV's cost per acre-foot. It does not reach the reuse or desalination band at any verified cover price.",
   "reversal": "The 11 Aug version of this analysis used only LADWP's potable-water quote and reported that FPV's water became free at 46% of it. Verified raw-water prices are 15-36x lower and the credit is worth tens of per cent, not an order of magnitude. That earlier conclusion is withdrawn.",
   "source": "University of Southern Queensland, 'Assessment of Evaporation Mitigation Technologies in Queensland', funded by the Queensland Government. Continuous floating covers A$15-35/m2 (May 2020), lifespan 5-10 years, repair and maintenance under 0.5% of installed cost per year, evaporative reduction >90% of the covered area.",
   "source_url": "https://evapadvisor.com/assets/reports/Assessment_of_Evaporation_Mitigation_Technologies_in_Queensland.pdf",
@@ -32,27 +32,39 @@
   },
   {
    "scenario": "raw-water floating cover: executive summary, low",
-   "basis": "A$15/m2 = $39,457/acre, 10-yr life",
-   "avoided_annual_per_acre": 5815,
-   "fpv_usd_per_af": 12343
+   "basis": "A$15/m2 x1.33 escalation = $52,478/acre, 10-yr life",
+   "avoided_annual_per_acre": 7734,
+   "fpv_usd_per_af": 11932
   },
   {
    "scenario": "raw-water floating cover: executive summary, high",
-   "basis": "A$35/m2 = $92,066/acre, 10-yr life",
-   "avoided_annual_per_acre": 13568,
-   "fpv_usd_per_af": 10681
+   "basis": "A$35/m2 x1.33 escalation = $122,448/acre, 10-yr life",
+   "avoided_annual_per_acre": 18046,
+   "fpv_usd_per_af": 9721
   },
   {
    "scenario": "raw-water floating cover: supplier, agricultural spec, installed",
-   "basis": "A$23/m2 = $60,501/acre, 15-yr life",
-   "avoided_annual_per_acre": 6945,
-   "fpv_usd_per_af": 12101
+   "basis": "A$23/m2 x1.33 escalation = $80,466/acre, 15-yr life",
+   "avoided_annual_per_acre": 9237,
+   "fpv_usd_per_af": 11610
   },
   {
    "scenario": "raw-water floating cover: supplier, INDUSTRIAL spec, installed \u2014 the relevant duty",
-   "basis": "A$75/m2 = $197,284/acre, 35-yr life",
-   "avoided_annual_per_acre": 16223,
-   "fpv_usd_per_af": 10112
+   "basis": "A$75/m2 x1.33 escalation = $262,388/acre, 35-yr life",
+   "avoided_annual_per_acre": 21577,
+   "fpv_usd_per_af": 8965
+  },
+  {
+   "scenario": "raw-water floating cover: China-supplied, low (LOWER BOUND)",
+   "basis": "US$1.4/m2 material x3.1 install = $17,375/acre, 20-yr life",
+   "avoided_annual_per_acre": 1727,
+   "fpv_usd_per_af": 13220
+  },
+  {
+   "scenario": "raw-water floating cover: China-supplied, high (LOWER BOUND)",
+   "basis": "US$3.9/m2 material x3.1 install = $48,400/acre, 20-yr life",
+   "avoided_annual_per_acre": 4811,
+   "fpv_usd_per_af": 12559
   },
   {
    "scenario": "POTABLE-WATER cover (LADWP quote) \u2014 a ceiling, not a comparable product",
