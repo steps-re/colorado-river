@@ -15,13 +15,13 @@
    "name": "Chemical monolayer (cetyl alcohol film)",
    "capex_per_acre": 200,
    "life_yr": 1,
-   "suppression_pct": 20,
+   "suppression_pct": 9,
    "annual_cost_per_acre": 214,
-   "af_per_acre_yr": 1.24,
-   "usd_per_af": 172,
-   "basis": "ESTIMATE, not verified against a large deployment.",
-   "caveat": "Wind disperses the film continuously so it needs constant reapplication, and field suppression is far below laboratory values. Repeatedly trialled and repeatedly abandoned on open reservoirs.",
-   "verdict": "Cheapest per acre-foot on paper and the least likely to work at scale."
+   "af_per_acre_yr": 0.56,
+   "usd_per_af": 382,
+   "basis": "Suppression is now the MEASURED field result, not an estimate. Lake Hefner, Oklahoma, 1958: a 1,011-hectare hexadecanol/octadecanol trial, the largest evaporation-suppression experiment ever run, achieved 9% reduction over 88 days. This row previously assumed 20%, which was more than double what the only large-scale field test delivered. Capex remains an estimate.",
+   "caveat": "It failed on WIND, which is the variable Lake Mead has most of. Successful film application had an upper wind limit of 13 mph, above which the film was driven to the lee shore, and replacing it took 6.5-8 times the application rate needed on an experimental pond. Modern practice restricts monolayers to storages under about 100 ha. Repeatedly trialled and repeatedly abandoned on open water.",
+   "verdict": "Cheapest per acre-foot on paper even at the measured 9%, and the one option here with a large-scale field trial that unambiguously failed."
   },
   {
    "name": "Floating cover, raw water (industrial spec)",
