@@ -1,0 +1,330 @@
+{
+  "meta": {
+    "what": "The error the annual evaporation product makes by ignoring within-year covariance between surface area and evaporation rate",
+    "why": "the paper claimed a bound on this with nothing computing it, and elsewhere said no seasonal series existed",
+    "identity": "seasonal/annual - 1, where the annual depth cancels; the term depends only on the area cycle against the rate cycle",
+    "shapes": {
+      "measured": "Lake Mead USGS monthly record, qualified years [2015, 2016, 2017, 2018, 2020, 2021, 2022, 2023], most probable column. Peaks in month 8, which is the heat-storage lag behind peak net radiation.",
+      "penman": "each reservoir's own Penman series from NASA POWER daily weather. No heat storage term, so it peaks two months early. Level unused, shape only."
+    },
+    "measured_monthly_shape_fraction": {
+      "1": 0.0499,
+      "2": 0.0479,
+      "3": 0.0539,
+      "4": 0.0709,
+      "5": 0.0924,
+      "6": 0.1067,
+      "7": 0.1077,
+      "8": 0.1097,
+      "9": 0.1083,
+      "10": 0.0968,
+      "11": 0.0867,
+      "12": 0.0692
+    },
+    "measured_peak_month": 8,
+    "static_area_reservoirs": [
+      "Lake Havasu"
+    ]
+  },
+  "reservoirs": {
+    "Lake Mead": {
+      "static_area": false,
+      "years": [
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "term_pct_measured_shape": {
+        "2015": -0.5,
+        "2016": -0.439,
+        "2017": -0.272,
+        "2018": -0.403,
+        "2019": -0.139,
+        "2020": -0.417,
+        "2021": -0.787,
+        "2022": -1.129,
+        "2023": 0.72,
+        "2024": -0.503,
+        "2025": -0.573
+      },
+      "term_pct_penman_shape": {
+        "2015": -0.483,
+        "2016": -0.479,
+        "2017": -0.174,
+        "2018": -0.252,
+        "2019": -0.001,
+        "2020": 0.031,
+        "2021": -0.329,
+        "2022": -0.771,
+        "2023": 0.043,
+        "2024": -0.165,
+        "2025": -0.48
+      },
+      "mean_pct_measured_shape": -0.404,
+      "mean_pct_penman_shape": -0.278,
+      "worst_abs_pct": 1.129,
+      "penman_peak_month": 6,
+      "intra_year_area_swing_pct": 7.1
+    },
+    "Lake Powell": {
+      "static_area": false,
+      "years": [
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "term_pct_measured_shape": {
+        "2015": 1.202,
+        "2016": 1.471,
+        "2017": 2.512,
+        "2018": -1.007,
+        "2019": 2.89,
+        "2020": 0.096,
+        "2021": -1.59,
+        "2022": 0.492,
+        "2023": 4.268,
+        "2024": 1.429,
+        "2025": -0.844
+      },
+      "term_pct_penman_shape": {
+        "2015": 0.804,
+        "2016": 1.287,
+        "2017": 1.872,
+        "2018": 0.615,
+        "2019": 1.083,
+        "2020": 1.236,
+        "2021": -0.158,
+        "2022": 0.626,
+        "2023": 2.864,
+        "2024": 1.016,
+        "2025": 0.389
+      },
+      "mean_pct_measured_shape": 0.993,
+      "mean_pct_penman_shape": 1.058,
+      "worst_abs_pct": 4.268,
+      "penman_peak_month": 6,
+      "intra_year_area_swing_pct": 21.5
+    },
+    "Lake Mohave": {
+      "static_area": false,
+      "years": [
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "term_pct_measured_shape": {
+        "2015": 0.001,
+        "2016": 0.001,
+        "2017": -0.001,
+        "2018": -0.001,
+        "2019": -0.001,
+        "2020": -0.001,
+        "2021": 0.001,
+        "2022": 0.001,
+        "2023": -0.0,
+        "2024": 0.0,
+        "2025": 0.001
+      },
+      "term_pct_penman_shape": {
+        "2015": 0.006,
+        "2016": 0.005,
+        "2017": 0.002,
+        "2018": 0.003,
+        "2019": 0.002,
+        "2020": 0.003,
+        "2021": 0.005,
+        "2022": 0.004,
+        "2023": 0.003,
+        "2024": 0.004,
+        "2025": 0.004
+      },
+      "mean_pct_measured_shape": 0.0,
+      "mean_pct_penman_shape": 0.004,
+      "worst_abs_pct": 0.006,
+      "penman_peak_month": 6,
+      "intra_year_area_swing_pct": 0.1
+    },
+    "Lake Havasu": {
+      "static_area": true,
+      "note": "Held within a few feet, so dV/dh is ill-posed and the model uses a static published area. A static area cannot covary with the rate, so the term is zero by construction, not by measurement.",
+      "penman_peak_month": 6
+    },
+    "Flaming Gorge": {
+      "static_area": false,
+      "years": [
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "term_pct_measured_shape": {
+        "2015": 0.649,
+        "2016": 0.404,
+        "2017": 0.902,
+        "2018": 0.58,
+        "2019": 0.646,
+        "2020": -0.016,
+        "2021": -0.237,
+        "2022": -0.251,
+        "2023": 2.17,
+        "2024": 0.202,
+        "2025": -0.012
+      },
+      "term_pct_penman_shape": {
+        "2015": 0.848,
+        "2016": 0.889,
+        "2017": 0.729,
+        "2018": 0.858,
+        "2019": 0.768,
+        "2020": 0.167,
+        "2021": 0.363,
+        "2022": 0.339,
+        "2023": 1.902,
+        "2024": 0.421,
+        "2025": 0.491
+      },
+      "mean_pct_measured_shape": 0.458,
+      "mean_pct_penman_shape": 0.707,
+      "worst_abs_pct": 2.17,
+      "penman_peak_month": 7,
+      "intra_year_area_swing_pct": 3.6
+    },
+    "Navajo Reservoir": {
+      "static_area": false,
+      "years": [
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "term_pct_measured_shape": {
+        "2015": 2.315,
+        "2016": -0.05,
+        "2017": 0.244,
+        "2018": -1.508,
+        "2019": 4.45,
+        "2020": -0.18,
+        "2021": -0.01,
+        "2022": 0.654,
+        "2023": 3.325,
+        "2024": 0.617,
+        "2025": -0.522
+      },
+      "term_pct_penman_shape": {
+        "2015": 1.803,
+        "2016": 1.269,
+        "2017": 1.803,
+        "2018": 1.122,
+        "2019": 4.147,
+        "2020": 1.617,
+        "2021": 1.434,
+        "2022": 1.263,
+        "2023": 4.353,
+        "2024": 1.358,
+        "2025": 0.179
+      },
+      "mean_pct_measured_shape": 0.849,
+      "mean_pct_penman_shape": 1.85,
+      "worst_abs_pct": 4.45,
+      "penman_peak_month": 6,
+      "intra_year_area_swing_pct": 12.6
+    },
+    "Blue Mesa": {
+      "static_area": false,
+      "years": [
+        2015,
+        2016,
+        2017,
+        2018,
+        2019,
+        2020,
+        2021,
+        2022,
+        2023,
+        2024,
+        2025
+      ],
+      "term_pct_measured_shape": {
+        "2015": 2.063,
+        "2016": 1.392,
+        "2017": 1.786,
+        "2018": -2.101,
+        "2019": 5.868,
+        "2020": -0.149,
+        "2021": -1.161,
+        "2022": 2.337,
+        "2023": 4.847,
+        "2024": 0.246,
+        "2025": -0.115
+      },
+      "term_pct_penman_shape": {
+        "2015": 2.93,
+        "2016": 2.248,
+        "2017": 2.468,
+        "2018": 1.161,
+        "2019": 5.378,
+        "2020": 1.793,
+        "2021": 1.734,
+        "2022": 3.902,
+        "2023": 5.676,
+        "2024": 0.792,
+        "2025": 1.59
+      },
+      "mean_pct_measured_shape": 1.365,
+      "mean_pct_penman_shape": 2.697,
+      "worst_abs_pct": 5.868,
+      "penman_peak_month": 6,
+      "intra_year_area_swing_pct": 18.2
+    }
+  },
+  "verdict": {
+    "basin_pct_measured_shape": 0.326,
+    "largest_mean_pct": 1.365,
+    "largest_mean_reservoir": "Blue Mesa",
+    "worst_single_year_abs_pct": 5.868,
+    "worst_single_year_reservoir": "Blue Mesa",
+    "shapes_agree_on_sign": true,
+    "sign_disagreement_at": [],
+    "favours_our_conclusion": true,
+    "statement": "Weighted by each reservoir's own evaporation volume, ignoring within-year seasonality moves basin evaporation by +0.3%. The largest per-reservoir mean is +1.4% at Blue Mesa, and the worst single year in the record is 5.9% at Blue Mesa. Both seasonal shapes agree on the direction at every reservoir, so the result does not rest on which shape is right.",
+    "direction_note": "The term is positive at every reservoir except Lake Mead: the surface is largest in summer when the rate is highest, so an annual product UNDERSTATES evaporation there. Understating evaporation understates the water floating solar could save, which raises its cost per acre-foot. That is the direction that flatters our own conclusion, which is why it is stated rather than buried. At +0.3% it is far inside the flux and area uncertainties the model already carries, and it changes no ranking."
+  }
+}

@@ -1,0 +1,90 @@
+{
+  "meta": {
+    "what": "per-lake evaporation-depth uncertainty, from the gap between probable minimum and probable maximum evaporation",
+    "why": "the Monte Carlo carried one sigma for both instrumented lakes; energy balance closes at Mead and does not at Mohave",
+    "source": "Earp, K.J., and Moreo, M.T., 2021, Evaporation from Lake Mead and Lake Mohave, Nevada and Arizona, 2010-2019: USGS Open-File Report 2021-1022, https://doi.org/10.3133/ofr20211022",
+    "report_says": {
+      "Lake Mead": "differences between minimum and most probable annual evaporation 'ranging from 25 to 86 mm ... or 1-5 percent of the annual evaporation'",
+      "Lake Mohave": "'the difference is greater, ranging from 16 to 383 mm (0.63 to 15.08 in.) or 1-22 percent of annual evaporation'"
+    },
+    "period_ebr": {
+      "Lake Mead": 0.98,
+      "Lake Mohave": 0.82
+    },
+    "mohave_transcription_check": {
+      "recomputed_period_means_mm": [
+        1531,
+        1718,
+        1905
+      ],
+      "report_period_means_mm": [
+        1531,
+        1718,
+        1905
+      ],
+      "agrees": true,
+      "recomputed_range_pct": [
+        1.0,
+        22.1
+      ],
+      "report_quoted_range_pct": [
+        1,
+        22
+      ]
+    }
+  },
+  "lakes": {
+    "Lake Mead": {
+      "provenance": "computed from the ScienceBase releases (all three columns published)",
+      "years": [
+        2015,
+        2016,
+        2017,
+        2018,
+        2020,
+        2021,
+        2022,
+        2023
+      ],
+      "half_spread_pct_by_year": {
+        "2015": 1.94,
+        "2016": 5.12,
+        "2017": 0.47,
+        "2018": 0.56,
+        "2020": 0.0,
+        "2021": 2.05,
+        "2022": 5.27,
+        "2023": 1.49
+      },
+      "mean_half_spread_pct": 2.11,
+      "max_half_spread_pct": 5.27
+    },
+    "Lake Mohave": {
+      "provenance": "OFR 2021-1022 table 9; no data release covers 2014-2018",
+      "years": [
+        2014,
+        2015,
+        2016,
+        2017,
+        2018
+      ],
+      "half_spread_pct_by_year": {
+        "2014": 5.62,
+        "2015": 17.45,
+        "2016": 22.07,
+        "2017": 7.86,
+        "2018": 0.98
+      },
+      "mean_half_spread_pct": 10.8,
+      "max_half_spread_pct": 22.07
+    }
+  },
+  "model_sigma": {
+    "Lake Mead": 0.05,
+    "Lake Mohave": 0.108
+  },
+  "verdict": {
+    "ratio_mohave_to_mead": 5.1,
+    "statement": "Closure uncertainty at Lake Mohave averages 11% of its annual evaporation against 2% at Lake Mead, 5 times as much, because a larger share of Mohave's measured turbulent flux comes off the surrounding desert (period energy balance ratio 0.82 against 0.98). The model now carries 11% at Mohave rather than the 5% it used to share with Mead."
+  }
+}

@@ -73,11 +73,15 @@ ORDER = [k for k in model if k != "meta"]
 ACRE_KM2 = 0.00404686
 AF_PER_KM2_PER_FT = 1e6 * 0.3048 / 1233.48
 
-# evaporation-rate uncertainty by provenance
+# evaporation-rate uncertainty by provenance. The two USGS flux sites are read from
+# analysis/evap_flux_uncertainty.py rather than assumed equal: energy balance closes at Mead
+# (period EBR 0.98) and does not at Mohave (0.82), so Mohave's depth is roughly five times less
+# certain and used to carry Mead's number.
+_FLUX = json.loads((ROOT / "outputs" / "evap_flux_uncertainty.json").read_text())["model_sigma"]
 EVAP_UNC = {
-    "Lake Mead":        ("flux", 0.05),
+    "Lake Mead":        ("flux", _FLUX["Lake Mead"]),
     "Lake Powell":      ("flux", 0.08),
-    "Lake Mohave":      ("flux", 0.05),
+    "Lake Mohave":      ("flux", _FLUX["Lake Mohave"]),
     "Lake Havasu":      ("bracket", (5.2, 7.4)),
     "Flaming Gorge":    ("screen", 0.30),
     "Navajo Reservoir": ("screen", 0.30),
@@ -334,8 +338,11 @@ def main():
             wacc="uniform(0.06, 0.09)",
             line_share="uniform(0.10, 1.00)",
             load_coincidence="uniform(0.25, 1.00)",
-            evaporation="flux sites normal(mu, 5-8%); Havasu uniform(5.2, 7.4); "
-                        "Upper Basin normal(mu, 30%)",
+            evaporation=(f"flux sites normal(mu, sigma) with sigma per lake from the measured "
+                         f"energy-balance closure: Mead {100 * EVAP_UNC['Lake Mead'][1]:.0f}%, "
+                         f"Mohave {100 * EVAP_UNC['Lake Mohave'][1]:.0f}%, "
+                         f"Powell {100 * EVAP_UNC['Lake Powell'][1]:.0f}%; "
+                         "Havasu uniform(5.2, 7.4); Upper Basin normal(mu, 30%)"),
             surface_area="normal(0.968, 6%) on the modelled surface, 4% where the area is a static "
                          "published figure. Both the centre and the spread come from this model's "
                          "own out-of-sample error against published full-pool area (+5.5, +5.0, "

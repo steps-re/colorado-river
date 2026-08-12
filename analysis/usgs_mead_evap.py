@@ -205,6 +205,11 @@ doc={"meta":{
                       "data are being collected, that no Lake Havasu flux measurement exists though "
                       "one is in planning, and that 2024-2025 Mead data should publish within months.",
         "releases":releases},
+     # The monthly series is published, not just the annual aggregate, because seasonality is
+     # exactly what the annual aggregate throws away and it is the only measured open-water
+     # seasonality in the basin. analysis/evap_seasonality.py consumes it.
+     "monthly_corrected_ft":{f"{y}-{m:02d}":round(v["corrected"],3)
+                             for (y,m),v in sorted(monthly.items())},
      "annual_ft":years,
      "period_mean_ft":means,
      "all_complete_years_mean_ft":means_all,

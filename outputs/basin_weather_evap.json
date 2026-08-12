@@ -1,0 +1,350 @@
+{
+ "meta": {
+  "start": "2015-01-01",
+  "end": "2026-08-08",
+  "source": "NASA POWER daily (MERRA-2 based), at each reservoir's own coordinates",
+  "method": "Penman (1948) open-water combination equation, albedo 0.06, no surface resistance, psychrometric constant adjusted for each reservoir's own elevation. Deliberately NOT FAO-56 ET0, which is defined for short grass with a fixed canopy resistance and a 0.23 albedo and is not a lake.",
+  "caveat": "This is an atmospheric-demand calculation with NO heat-storage term, and the literature is clear about what that does: models omitting lake heat storage overestimate in the warm season and underestimate in the cold one, with reported overestimates around 24-36%. Ours runs 30% high at Powell to 93% at Blue Mesa against measured rates, so it is behaving exactly as that literature predicts and must NOT be used as a level. Use it for the radiative/aerodynamic decomposition, which is a ratio and largely survives the bias, and take the level from measured flux.",
+  "level_source": "Lake Mead and Lake Mohave use USGS eddy-covariance plus energy-budget measurements (Nevada Water Science Center with Reclamation, 2010-2019, validated against Bowen-ratio energy budget at annual timescale). The energy-budget method is the accepted reference for open water, which is why those two reservoirs anchor the set and the rest are screening estimates.",
+  "references": [
+   "USGS SIR 2013-5229, Evaporation from Lake Mead, Nevada and Arizona",
+   "USGS, Evaporation from Lake Mead and Lake Mohave, 2010-2019",
+   "Journal of Hydrometeorology (2025), Global Lake Evaporation by Penman with equilibrium temperature: reports PM-ETA overestimating by 24-36%",
+   "McJannet et al., Water Resources Research 49 (2013), comparison of open-water evaporation techniques",
+   "McKuin et al., Nature Sustainability 4 (2021), canal-solar evaporation savings"
+  ]
+ },
+ "reservoirs": {
+  "Lake Mead": {
+   "penman_ft_per_yr": 9.584,
+   "model_ft_per_yr": 6.22,
+   "diff_pct": 54.1,
+   "aerodynamic_share": 0.473,
+   "radiative_share": 0.527,
+   "monthly_ft": {
+    "1": 0.412,
+    "2": 0.493,
+    "3": 0.705,
+    "4": 0.913,
+    "5": 1.084,
+    "6": 1.237,
+    "7": 1.215,
+    "8": 1.046,
+    "9": 0.871,
+    "10": 0.717,
+    "11": 0.506,
+    "12": 0.384
+   },
+   "peak_month": 6,
+   "precip_ft_per_yr": 0.451,
+   "correlations": {
+    "vpd": 0.86,
+    "radiation": 0.898,
+    "wind": 0.321,
+    "temperature": 0.856,
+    "humidity": -0.73
+   },
+   "circularity_note": "Penman E is a deterministic function of VPD, radiation and wind, so correlating it against them measures the equation, not the lake. Driver attribution here is the radiative/aerodynamic split; independent confirmation is the water-balance residual.",
+   "area_covariance": {
+    "r_area_evap": -0.14,
+    "mean_product_error_pct": 0.35
+   },
+   "water_balance": null,
+   "days": 4238
+  },
+  "Lake Powell": {
+   "penman_ft_per_yr": 7.764,
+   "model_ft_per_yr": 5.83,
+   "diff_pct": 33.2,
+   "aerodynamic_share": 0.385,
+   "radiative_share": 0.615,
+   "monthly_ft": {
+    "1": 0.276,
+    "2": 0.368,
+    "3": 0.563,
+    "4": 0.755,
+    "5": 0.923,
+    "6": 1.089,
+    "7": 1.029,
+    "8": 0.857,
+    "9": 0.726,
+    "10": 0.555,
+    "11": 0.363,
+    "12": 0.259
+   },
+   "peak_month": 6,
+   "precip_ft_per_yr": 0.696,
+   "correlations": {
+    "vpd": 0.89,
+    "radiation": 0.91,
+    "wind": 0.303,
+    "temperature": 0.883,
+    "humidity": -0.773
+   },
+   "circularity_note": "Penman E is a deterministic function of VPD, radiation and wind, so correlating it against them measures the equation, not the lake. Driver attribution here is the radiative/aerodynamic split; independent confirmation is the water-balance residual.",
+   "area_covariance": {
+    "r_area_evap": 0.094,
+    "mean_product_error_pct": -0.96
+   },
+   "water_balance": {
+    "annual_ft_per_yr": 3.233,
+    "n_months": 139,
+    "bank_storage_included": true,
+    "by_month_in_per_day": {
+     "1": 0.0288,
+     "2": 0.0335,
+     "3": 0.0527,
+     "4": 0.0868,
+     "5": 0.0989,
+     "6": 0.1595,
+     "7": 0.1873,
+     "8": 0.1922,
+     "9": 0.1782,
+     "10": 0.1199,
+     "11": 0.1197,
+     "12": 0.0929
+    }
+   },
+   "days": 4238
+  },
+  "Lake Mohave": {
+   "penman_ft_per_yr": 9.735,
+   "model_ft_per_yr": 5.64,
+   "diff_pct": 72.6,
+   "aerodynamic_share": 0.466,
+   "radiative_share": 0.534,
+   "monthly_ft": {
+    "1": 0.457,
+    "2": 0.527,
+    "3": 0.72,
+    "4": 0.912,
+    "5": 1.078,
+    "6": 1.218,
+    "7": 1.202,
+    "8": 1.032,
+    "9": 0.863,
+    "10": 0.745,
+    "11": 0.55,
+    "12": 0.431
+   },
+   "peak_month": 6,
+   "precip_ft_per_yr": 0.549,
+   "correlations": {
+    "vpd": 0.87,
+    "radiation": 0.905,
+    "wind": 0.204,
+    "temperature": 0.849,
+    "humidity": -0.728
+   },
+   "circularity_note": "Penman E is a deterministic function of VPD, radiation and wind, so correlating it against them measures the equation, not the lake. Driver attribution here is the radiative/aerodynamic split; independent confirmation is the water-balance residual.",
+   "area_covariance": {
+    "r_area_evap": 0.372,
+    "mean_product_error_pct": -0.0
+   },
+   "water_balance": null,
+   "days": 4238
+  },
+  "Lake Havasu": {
+   "penman_ft_per_yr": 10.082,
+   "model_ft_per_yr": 5.21,
+   "diff_pct": 93.5,
+   "aerodynamic_share": 0.467,
+   "radiative_share": 0.533,
+   "monthly_ft": {
+    "1": 0.5,
+    "2": 0.569,
+    "3": 0.765,
+    "4": 0.948,
+    "5": 1.104,
+    "6": 1.224,
+    "7": 1.22,
+    "8": 1.055,
+    "9": 0.879,
+    "10": 0.772,
+    "11": 0.581,
+    "12": 0.466
+   },
+   "peak_month": 6,
+   "precip_ft_per_yr": 0.435,
+   "correlations": {
+    "vpd": 0.864,
+    "radiation": 0.901,
+    "wind": 0.238,
+    "temperature": 0.844,
+    "humidity": -0.7
+   },
+   "circularity_note": "Penman E is a deterministic function of VPD, radiation and wind, so correlating it against them measures the equation, not the lake. Driver attribution here is the radiative/aerodynamic split; independent confirmation is the water-balance residual.",
+   "area_covariance": {
+    "r_area_evap": 0.386,
+    "mean_product_error_pct": -0.27
+   },
+   "water_balance": null,
+   "days": 4238
+  },
+  "Flaming Gorge": {
+   "penman_ft_per_yr": 5.961,
+   "model_ft_per_yr": 3.3,
+   "diff_pct": 80.6,
+   "aerodynamic_share": 0.358,
+   "radiative_share": 0.642,
+   "monthly_ft": {
+    "1": 0.181,
+    "2": 0.242,
+    "3": 0.385,
+    "4": 0.514,
+    "5": 0.659,
+    "6": 0.876,
+    "7": 0.899,
+    "8": 0.756,
+    "9": 0.606,
+    "10": 0.415,
+    "11": 0.252,
+    "12": 0.176
+   },
+   "peak_month": 7,
+   "precip_ft_per_yr": 0.735,
+   "correlations": {
+    "vpd": 0.898,
+    "radiation": 0.909,
+    "wind": -0.123,
+    "temperature": 0.91,
+    "humidity": -0.851
+   },
+   "circularity_note": "Penman E is a deterministic function of VPD, radiation and wind, so correlating it against them measures the equation, not the lake. Driver attribution here is the radiative/aerodynamic split; independent confirmation is the water-balance residual.",
+   "area_covariance": {
+    "r_area_evap": 0.216,
+    "mean_product_error_pct": -0.65
+   },
+   "water_balance": {
+    "annual_ft_per_yr": 1.866,
+    "n_months": 139,
+    "bank_storage_included": true,
+    "by_month_in_per_day": {
+     "1": 0.0188,
+     "2": 0.0253,
+     "3": 0.0371,
+     "4": 0.0553,
+     "5": 0.0849,
+     "6": 0.1068,
+     "7": 0.129,
+     "8": 0.1236,
+     "9": 0.1141,
+     "10": 0.0748,
+     "11": 0.0404,
+     "12": 0.0219
+    }
+   },
+   "days": 4238
+  },
+  "Navajo Reservoir": {
+   "penman_ft_per_yr": 6.439,
+   "model_ft_per_yr": 3.6,
+   "diff_pct": 78.9,
+   "aerodynamic_share": 0.296,
+   "radiative_share": 0.704,
+   "monthly_ft": {
+    "1": 0.216,
+    "2": 0.285,
+    "3": 0.458,
+    "4": 0.618,
+    "5": 0.767,
+    "6": 0.895,
+    "7": 0.87,
+    "8": 0.74,
+    "9": 0.608,
+    "10": 0.471,
+    "11": 0.302,
+    "12": 0.21
+   },
+   "peak_month": 6,
+   "precip_ft_per_yr": 1.483,
+   "correlations": {
+    "vpd": 0.912,
+    "radiation": 0.933,
+    "wind": 0.124,
+    "temperature": 0.895,
+    "humidity": -0.777
+   },
+   "circularity_note": "Penman E is a deterministic function of VPD, radiation and wind, so correlating it against them measures the equation, not the lake. Driver attribution here is the radiative/aerodynamic split; independent confirmation is the water-balance residual.",
+   "area_covariance": {
+    "r_area_evap": 0.243,
+    "mean_product_error_pct": -1.64
+   },
+   "water_balance": {
+    "annual_ft_per_yr": 12.276,
+    "n_months": 139,
+    "bank_storage_included": false,
+    "by_month_in_per_day": {
+     "1": 0.0282,
+     "2": 0.0589,
+     "3": 0.243,
+     "4": 0.8532,
+     "5": 1.0604,
+     "6": 1.3023,
+     "7": 1.4529,
+     "8": 1.3953,
+     "9": 0.8814,
+     "10": 0.2008,
+     "11": 0.0334,
+     "12": 0.0219
+    }
+   },
+   "days": 4238
+  },
+  "Blue Mesa": {
+   "penman_ft_per_yr": 5.234,
+   "model_ft_per_yr": 2.8,
+   "diff_pct": 86.9,
+   "aerodynamic_share": 0.254,
+   "radiative_share": 0.746,
+   "monthly_ft": {
+    "1": 0.162,
+    "2": 0.206,
+    "3": 0.353,
+    "4": 0.456,
+    "5": 0.587,
+    "6": 0.772,
+    "7": 0.758,
+    "8": 0.642,
+    "9": 0.523,
+    "10": 0.382,
+    "11": 0.236,
+    "12": 0.157
+   },
+   "peak_month": 6,
+   "precip_ft_per_yr": 1.411,
+   "correlations": {
+    "vpd": 0.92,
+    "radiation": 0.922,
+    "wind": -0.082,
+    "temperature": 0.898,
+    "humidity": -0.826
+   },
+   "circularity_note": "Penman E is a deterministic function of VPD, radiation and wind, so correlating it against them measures the equation, not the lake. Driver attribution here is the radiative/aerodynamic split; independent confirmation is the water-balance residual.",
+   "area_covariance": {
+    "r_area_evap": 0.237,
+    "mean_product_error_pct": -2.38
+   },
+   "water_balance": {
+    "annual_ft_per_yr": 1.399,
+    "n_months": 139,
+    "bank_storage_included": false,
+    "by_month_in_per_day": {
+     "1": 0.0192,
+     "2": 0.0271,
+     "3": 0.0326,
+     "4": 0.0457,
+     "5": 0.0602,
+     "6": 0.0677,
+     "7": 0.0797,
+     "8": 0.0649,
+     "9": 0.0479,
+     "10": 0.0317,
+     "11": 0.0191,
+     "12": 0.0181
+    }
+   },
+   "days": 4238
+  }
+ }
+}
