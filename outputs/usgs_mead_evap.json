@@ -35,9 +35,13 @@
       "confirmed": "USGS (Geoffrey Moret) personal communication, 2026-08-12, naming OFR 2021-1022 as the method used for the final Colorado River basin numbers and leaving the weighting to us.",
       "column": "Most probable. The OFR treats evaporation from measured latent-heat flux as a probable minimum and the energy-balance-closed value as a probable maximum, and states that 'most probable evaporation represents the average between minimum and maximum evaporation and is used for all monthly calculations in this study' (p. 17). That is the release's 'Corrected (most probable) evaporation' column.",
       "aggregation": "Unweighted mean of complete calendar years. The OFR's own annual table (table 8) runs January 2011 through December 2018 and reports the mean of those eight years; the partial years at either end of its record, 2010 and 2019, are excluded rather than scaled up. Years containing gap-filled months are kept at full weight, as gap filling is part of the published method: the OFR carries 2015 and 2016 at full weight despite multi-week outages in both.",
-      "closure_test": "A complete year is dropped only if the evaporation it reports disagrees with the latent-heat flux it reports by more than 5%. The two are presentations of one measurement, so a disagreement means one of the columns is wrong.",
+      "closure_test": "One test is ours and is NOT part of the OFR's method: a complete year is dropped only if the evaporation it reports disagrees with the latent-heat flux it reports by more than 5%. USGS prescribe no such rule and publish 2019 without qualification beyond its estimated-data flags. We add it because the two columns are presentations of one measurement, so a disagreement means one of them is wrong, and because the alternative is to average a year the release contradicts itself about. The threshold is ours too, and the table below shows every year's ratio so a reader can set it differently.",
       "closure_tolerance": 0.05
     },
+    "sciencebase_metadata_stale_for": [
+      "618579f2d34ec04fc9c1bd5f",
+      "68af8573d4be02645f9ab55b"
+    ],
     "source_note": "USGS confirmed (personal communication, 2026-08-10) that no new Lake Mohave data are being collected, that no Lake Havasu flux measurement exists though one is in planning, and that 2024-2025 Mead data should publish within months.",
     "releases": [
       {

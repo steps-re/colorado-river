@@ -31,16 +31,38 @@ M_PER_FT=0.3048
 
 def fetch(url,dest):
     if dest.exists() and dest.stat().st_size>0: return dest
+    if not url:
+        raise SystemExit(f"[mead-evap] {dest.name} is not cached and the cached catalog entry "
+                         "carries no download URL; re-run when ScienceBase is reachable")
     with urllib.request.urlopen(urllib.request.Request(url,headers=UA),timeout=120) as r:
         dest.write_bytes(r.read())
     return dest
 
+STALE_METADATA=[]
+
 def item(iid):
     """Resolve the .ods through the item API; the file URLs carry disk hashes that move
-    when a release is revised, so never hardcode them."""
-    with urllib.request.urlopen(urllib.request.Request(
-            f"https://www.sciencebase.gov/catalog/item/{iid}?format=json",headers=UA),timeout=90) as r:
-        meta=json.load(r)
+    when a release is revised, so never hardcode them.
+
+    ScienceBase goes down. The spreadsheets are already cached, so an outage should not be able
+    to block a rebuild, but falling back silently would hide a revised release behind stale
+    metadata. So the fallback is loud: it warns here, records itself in the output, and the
+    caller reports it."""
+    cache=CACHE/f"sciencebase_{iid}.json"
+    try:
+        with urllib.request.urlopen(urllib.request.Request(
+                f"https://www.sciencebase.gov/catalog/item/{iid}?format=json",headers=UA),timeout=90) as r:
+            meta=json.load(r)
+        cache.write_text(json.dumps(meta))
+    except Exception as e:
+        if not cache.exists():
+            raise SystemExit(f"[mead-evap] ScienceBase unreachable ({type(e).__name__}) and no "
+                             f"cached metadata for item {iid}; cannot proceed")
+        meta=json.loads(cache.read_text())
+        STALE_METADATA.append(iid)
+        print(f"[mead-evap] WARNING: ScienceBase unreachable ({type(e).__name__}). Using CACHED "
+              f"metadata for item {iid}. A revised release would not be noticed. Re-run when the "
+              f"catalog is back.",file=sys.stderr)
     ods=[f for f in meta.get("files",[]) if f.get("name","").lower().endswith(".ods")]
     if len(ods)!=1:
         raise SystemExit(f"[mead-evap] expected exactly one .ods in item {iid}, got {[f.get('name') for f in ods]}")
@@ -196,11 +218,17 @@ doc={"meta":{
                         "months are kept at full weight, as gap filling is part of the published "
                         "method: the OFR carries 2015 and 2016 at full weight despite multi-week "
                         "outages in both.",
-          "closure_test":f"A complete year is dropped only if the evaporation it reports disagrees "
-                         f"with the latent-heat flux it reports by more than "
-                         f"{CLOSURE_TOL*100:.0f}%. The two are presentations of one measurement, so "
-                         f"a disagreement means one of the columns is wrong.",
+          "closure_test":f"One test is ours and is NOT part of the OFR's method: a complete year is "
+                         f"dropped only if the evaporation it reports disagrees with the "
+                         f"latent-heat flux it reports by more than {CLOSURE_TOL*100:.0f}%. USGS "
+                         f"prescribe no such rule and publish 2019 without qualification beyond "
+                         f"its estimated-data flags. We add it because the two columns are "
+                         f"presentations of one measurement, so a disagreement means one of them "
+                         f"is wrong, and because the alternative is to average a year the release "
+                         f"contradicts itself about. The threshold is ours too, and the table "
+                         f"below shows every year's ratio so a reader can set it differently.",
           "closure_tolerance":CLOSURE_TOL},
+        "sciencebase_metadata_stale_for":STALE_METADATA,
         "source_note":"USGS confirmed (personal communication, 2026-08-10) that no new Lake Mohave "
                       "data are being collected, that no Lake Havasu flux measurement exists though "
                       "one is in planning, and that 2024-2025 Mead data should publish within months.",
