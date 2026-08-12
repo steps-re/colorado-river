@@ -174,8 +174,9 @@ for y,a in sorted(annual.items()):
 
 full=[y for y,v in years.items() if v["complete"]]
 qualified=[y for y,v in years.items() if v["qualified"]]
-excluded={y:(f"reported evaporation is {abs(1-v['closure_ratio'])*100:.0f}% away from what its own "
-             f"latent-heat flux implies ({v['qe_implied']:.2f} vs {v['measured']:.2f} ft measured), "
+excluded={y:(f"its own latent-heat flux implies {abs(1-v['closure_ratio'])*100:.0f}% more "
+             f"evaporation than it reports ({v['qe_implied']:.2f} against {v['measured']:.2f} ft "
+             f"measured, the gap taken relative to the reported figure), "
              f"and {v['estimated_months']} of its 12 months are flagged estimated")
           for y,v in years.items() if v["complete"] and not v["qualified"]}
 if not qualified: raise SystemExit("[mead-evap] no year passes the closure test; refusing to write a mean")
@@ -222,10 +223,12 @@ doc={"meta":{
                          f"dropped only if the evaporation it reports disagrees with the "
                          f"latent-heat flux it reports by more than {CLOSURE_TOL*100:.0f}%. USGS "
                          f"prescribe no such rule and publish 2019 without qualification beyond "
-                         f"its estimated-data flags. We add it because the two columns are "
-                         f"presentations of one measurement, so a disagreement means one of them "
-                         f"is wrong, and because the alternative is to average a year the release "
-                         f"contradicts itself about. The threshold is ours too, and the table "
+                         f"its estimated-data flags. We add it because the two columns are two "
+                         f"presentations of one measurement, so a disagreement of that size means "
+                         f"at least one of them is unreliable. Which one we cannot say from here: "
+                         f"both are outputs of a processing chain and the release does not expose "
+                         f"enough to attribute the error. The alternative is to average a year the "
+                         f"release contradicts itself about. The threshold is ours too, and the table "
                          f"below shows every year's ratio so a reader can set it differently.",
           "closure_tolerance":CLOSURE_TOL},
         "sciencebase_metadata_stale_for":STALE_METADATA,

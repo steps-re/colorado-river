@@ -109,13 +109,17 @@ doc = {
     "verdict": {
         "ratio_mohave_to_mead": round(moh_mean / mead_mean, 1),
         "statement": (
-            f"Closure uncertainty at Lake Mohave averages {100 * moh_mean:.0f}% of its annual "
-            f"evaporation against {100 * mead_mean:.0f}% at Lake Mead, "
+            f"Closure uncertainty at Lake Mohave averages {100 * moh_mean:.1f}% of its annual "
+            f"evaporation against {100 * mead_mean:.1f}% at Lake Mead, "
             f"{moh_mean / mead_mean:.0f} times as much, because a larger share of Mohave's "
             f"measured turbulent flux comes off the surrounding desert (period energy balance "
             f"ratio 0.82 against 0.98). The model now carries "
-            f"{100 * sigma['Lake Mohave']:.0f}% at Mohave rather than the "
-            f"{100 * MEAD_STATED:.0f}% it used to share with Mead.")}}
+            f"{100 * sigma['Lake Mohave']:.1f}% at Mohave rather than the "
+            f"{100 * MEAD_STATED:.0f}% it used to share with Mead. The sampled sigmas differ by "
+            f"less than that {moh_mean / mead_mean:.0f}x, because Mead's is held at "
+            f"{100 * MEAD_STATED:.0f}%: the report's own stated measurement uncertainty of 5-7% is "
+            f"wider than the {100 * mead_mean:.1f}% closure spread measured there, so it binds "
+            f"instead. At Mohave closure is the wider of the two and binds.")}}
 
 (OUT / "evap_flux_uncertainty.json").write_text(json.dumps(doc, indent=2))
 print(f"[evap-flux-unc] Mead   mean half-spread {100 * mead_mean:.1f}%  max {100 * mead_max:.1f}%  "

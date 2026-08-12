@@ -63,6 +63,10 @@ MEAD_EVAP_SRC = (
 # calibrates the LCRAS convention against measured eddy-covariance flux at the two lakes that have
 # it, so what comes back is an estimate OF a flux depth and is area-independent in the way a bare
 # quotient was not. Read rather than typed: it moves whenever the accounting series extends.
+# The suppression RANGE belongs to the Monte Carlo, which owns the distribution. Restating it here
+# is what let the published range sit at 0.60-0.90 for weeks after the floor moved to 0.30.
+_SUPP_RANGE = json.loads((OUT / "fpv_uncertainty.json").read_text())["meta"]["distributions"]["suppression"].split(";")[0]
+
 _HB = json.loads((OUT / "havasu_evap_bracket.json").read_text())
 HAVASU_EVAP_FT = _HB["havasu"]["calibrated_ft_per_yr"]
 HAVASU_EVAP_SRC = (
@@ -109,7 +113,10 @@ MW_PER_KM2 = 120.0          # FPV areal density (repo-wide constant)
 SUPPRESS = 0.75             # evaporation suppressed over the COVERED area. Cut from 0.90 after
                             # both external reviewers flagged it: edge exchange, altered albedo and
                             # reduced wind mixing pull the basin-wide net below the directly-shaded
-                            # figure. Range 0.60-0.90. Must stay in step with the page's JS.
+                            # figure. This is the MODE. The uncertainty range is owned by
+                            # fpv_uncertainty.py and read from it below, never restated here: the
+                            # floor was widened 0.60 -> 0.30 in round 6 and this file went on
+                            # publishing 0.60 for weeks. Must stay in step with the page's JS.
 AF_PER_KM2_PER_FT = 1e6 * 0.3048 / 1233.48   # 1 km2 x 1 ft -> AF
 ACRE_KM2 = 0.00404686
 
@@ -574,7 +581,8 @@ def main():
             "load rather than generators, and nodal prices already carry congestion and losses. "
             "Generator interconnection and local network upgrades ARE modelled, from Berkeley Lab "
             "project data, defaulting to the $30/kW median for completed projects.",
-            "Evaporation saved = coverage x 0.75 suppression x open-water rate x surface area (range 0.60-0.90).",
+            f"Evaporation saved = coverage x {SUPPRESS} suppression x open-water rate x surface "
+            f"area ({_SUPP_RANGE}).",
         ],
         caveats=[
             "Curtailment here is the SHARED-LINE ceiling only. It assumes the dam's full nameplate "

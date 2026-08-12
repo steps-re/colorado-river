@@ -28,14 +28,14 @@
       2023
     ],
     "excluded_years": {
-      "2019": "reported evaporation is 33% away from what its own latent-heat flux implies (7.17 vs 5.39 ft measured), and 6 of its 12 months are flagged estimated"
+      "2019": "its own latent-heat flux implies 33% more evaporation than it reports (7.17 against 5.39 ft measured, the gap taken relative to the reported figure), and 6 of its 12 months are flagged estimated"
     },
     "method": {
       "source": "Earp, K.J., and Moreo, M.T., 2021, Evaporation from Lake Mead and Lake Mohave, Nevada and Arizona, 2010-2019: USGS Open-File Report 2021-1022, https://doi.org/10.3133/ofr20211022",
       "confirmed": "USGS (Geoffrey Moret) personal communication, 2026-08-12, naming OFR 2021-1022 as the method used for the final Colorado River basin numbers and leaving the weighting to us.",
       "column": "Most probable. The OFR treats evaporation from measured latent-heat flux as a probable minimum and the energy-balance-closed value as a probable maximum, and states that 'most probable evaporation represents the average between minimum and maximum evaporation and is used for all monthly calculations in this study' (p. 17). That is the release's 'Corrected (most probable) evaporation' column.",
       "aggregation": "Unweighted mean of complete calendar years. The OFR's own annual table (table 8) runs January 2011 through December 2018 and reports the mean of those eight years; the partial years at either end of its record, 2010 and 2019, are excluded rather than scaled up. Years containing gap-filled months are kept at full weight, as gap filling is part of the published method: the OFR carries 2015 and 2016 at full weight despite multi-week outages in both.",
-      "closure_test": "One test is ours and is NOT part of the OFR's method: a complete year is dropped only if the evaporation it reports disagrees with the latent-heat flux it reports by more than 5%. USGS prescribe no such rule and publish 2019 without qualification beyond its estimated-data flags. We add it because the two columns are presentations of one measurement, so a disagreement means one of them is wrong, and because the alternative is to average a year the release contradicts itself about. The threshold is ours too, and the table below shows every year's ratio so a reader can set it differently.",
+      "closure_test": "One test is ours and is NOT part of the OFR's method: a complete year is dropped only if the evaporation it reports disagrees with the latent-heat flux it reports by more than 5%. USGS prescribe no such rule and publish 2019 without qualification beyond its estimated-data flags. We add it because the two columns are two presentations of one measurement, so a disagreement of that size means at least one of them is unreliable. Which one we cannot say from here: both are outputs of a processing chain and the release does not expose enough to attribute the error. The alternative is to average a year the release contradicts itself about. The threshold is ours too, and the table below shows every year's ratio so a reader can set it differently.",
       "closure_tolerance": 0.05
     },
     "sciencebase_metadata_stale_for": [

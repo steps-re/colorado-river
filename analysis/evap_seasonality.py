@@ -154,6 +154,26 @@ for n, v in moving.items():
     vol_t += a * d
 basin_pct = round(vol_w / vol_t, 3)
 
+# "It changes no ranking" was asserted. A reviewer was right that nothing demonstrated it, so it is
+# computed: the term shifts a reservoir's water saved by its own percentage, which shifts cost per
+# acre-foot by the same amount, so it can only reorder the table if the gap between two neighbours
+# is smaller than the terms that separate them.
+unc = json.loads((OUT / "fpv_uncertainty.json").read_text())
+# Every reservoir, including the static-area ones, which carry a term of zero by construction.
+# Leaving them out would compare a partial ordering and could miss exactly the swap being tested.
+terms = {n: (res[n]["mean_pct_measured_shape"] if not res[n]["static_area"] else 0.0)
+         for n in res if n in unc}
+ranked = sorted(((n, unc[n]["usd_per_af"]["p50"]) for n in terms), key=lambda kv: kv[1])
+gaps = [(ranked[i + 1][1] / ranked[i][1] - 1) * 100 for i in range(len(ranked) - 1)]
+min_gap = min(gaps) if gaps else None
+max_term = max(abs(t) for t in terms.values())
+# Do not stop at "the gap is smaller than the term, so it might reorder". Apply the terms and look.
+# Cost per acre-foot is inverse in water saved, so a +t% term divides it by (1 + t/100).
+adjusted = sorted(((n, v / (1 + terms[n] / 100)) for n, v in ranked), key=lambda kv: kv[1])
+order_before = [n for n, _ in ranked]
+order_after = [n for n, _ in adjusted]
+ranking_changes = order_before != order_after
+
 doc = {
     "meta": {
         "what": "The error the annual evaporation product makes by ignoring within-year "
@@ -200,7 +220,20 @@ doc = {
             "raises its cost per acre-foot. That is the direction that flatters our own "
             "conclusion, which is why it is stated rather than buried. At "
             f"{basin_pct:+.1f}% it is far inside the flux and area uncertainties the model already "
-            "carries, and it changes no ranking.")}}
+            "carries. Whether it reorders the reservoirs is not something the size of the term "
+            f"settles on its own: the closest two are only {min_gap:.1f}% apart in cost per "
+            f"acre-foot against a largest term of {max_term:.1f}%. Applying every term and "
+            + ("re-sorting DOES change the order, so the ranking near that pair is not robust to "
+               "seasonality and is reported with that caveat."
+               if ranking_changes else
+               "re-sorting leaves the order unchanged, so the ranking stands."))},
+     "ranking_check": {"ordered_by_usd_per_af_p50": order_before,
+                       "order_after_applying_terms": order_after,
+                       "min_adjacent_gap_pct": round(min_gap, 2) if min_gap is not None else None,
+                       "largest_term_pct": round(max_term, 2),
+                       "ranking_changes": ranking_changes,
+                       "note": "Static-area reservoirs are included with a term of zero, so this "
+                               "is the full ordering rather than a partial one."}}
 
 (OUT / "evap_seasonality.json").write_text(json.dumps(doc, indent=2))
 

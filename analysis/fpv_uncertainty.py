@@ -8,10 +8,13 @@ conclusions rest on.
 
 Parameters treated as uncertain, with the reason:
   evaporation rate   measured by eddy covariance at Mead/Mohave (~5% flux uncertainty); an area
-                     quotient at Havasu (bracket 5.2-7.4); unmeasured screening values in the
+                     quotient at Havasu, calibrated against measured flux (see havasu_evap_bracket.py);
+                     unmeasured screening values in the
                      Upper Basin (wide)
-  suppression        0.60-0.90; sub-linear in coverage because heat not lost as vapour mixes into
-                     the bulk water and raises evaporation on the surrounding open surface
+  suppression        triangular(0.30, 0.75, 0.90); sub-linear in coverage because heat not lost as
+                     vapour mixes into the bulk water and raises evaporation on the surrounding
+                     open surface. The floor was widened from 0.60 in round 6, because instrumented
+                     field results cluster at 30-60% rather than at the design assumption
   areal density      80-160 MW/km2 once mooring corridors, navigation and intake exclusion are
                      allowed for
   capex, O&M         $1.23-2.50/W and 1-3x O&M for deep dynamic mooring and quagga mussel fouling

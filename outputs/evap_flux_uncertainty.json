@@ -85,6 +85,6 @@
   },
   "verdict": {
     "ratio_mohave_to_mead": 5.1,
-    "statement": "Closure uncertainty at Lake Mohave averages 11% of its annual evaporation against 2% at Lake Mead, 5 times as much, because a larger share of Mohave's measured turbulent flux comes off the surrounding desert (period energy balance ratio 0.82 against 0.98). The model now carries 11% at Mohave rather than the 5% it used to share with Mead."
+    "statement": "Closure uncertainty at Lake Mohave averages 10.8% of its annual evaporation against 2.1% at Lake Mead, 5 times as much, because a larger share of Mohave's measured turbulent flux comes off the surrounding desert (period energy balance ratio 0.82 against 0.98). The model now carries 10.8% at Mohave rather than the 5% it used to share with Mead. The sampled sigmas differ by less than that 5x, because Mead's is held at 5%: the report's own stated measurement uncertainty of 5-7% is wider than the 2.1% closure spread measured there, so it binds instead. At Mohave closure is the wider of the two and binds."
   }
 }

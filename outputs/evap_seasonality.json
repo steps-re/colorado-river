@@ -325,6 +325,30 @@
     "sign_disagreement_at": [],
     "favours_our_conclusion": true,
     "statement": "Weighted by each reservoir's own evaporation volume, ignoring within-year seasonality moves basin evaporation by +0.3%. The largest per-reservoir mean is +1.4% at Blue Mesa, and the worst single year in the record is 5.9% at Blue Mesa. Both seasonal shapes agree on the direction at every reservoir, so the result does not rest on which shape is right.",
-    "direction_note": "The term is positive at every reservoir except Lake Mead: the surface is largest in summer when the rate is highest, so an annual product UNDERSTATES evaporation there. Understating evaporation understates the water floating solar could save, which raises its cost per acre-foot. That is the direction that flatters our own conclusion, which is why it is stated rather than buried. At +0.3% it is far inside the flux and area uncertainties the model already carries, and it changes no ranking."
+    "direction_note": "The term is positive at every reservoir except Lake Mead: the surface is largest in summer when the rate is highest, so an annual product UNDERSTATES evaporation there. Understating evaporation understates the water floating solar could save, which raises its cost per acre-foot. That is the direction that flatters our own conclusion, which is why it is stated rather than buried. At +0.3% it is far inside the flux and area uncertainties the model already carries. Whether it reorders the reservoirs is not something the size of the term settles on its own: the closest two are only 1.8% apart in cost per acre-foot against a largest term of 1.4%. Applying every term and re-sorting leaves the order unchanged, so the ranking stands."
+  },
+  "ranking_check": {
+    "ordered_by_usd_per_af_p50": [
+      "Lake Havasu",
+      "Lake Mohave",
+      "Lake Mead",
+      "Lake Powell",
+      "Navajo Reservoir",
+      "Flaming Gorge",
+      "Blue Mesa"
+    ],
+    "order_after_applying_terms": [
+      "Lake Havasu",
+      "Lake Mohave",
+      "Lake Mead",
+      "Lake Powell",
+      "Navajo Reservoir",
+      "Flaming Gorge",
+      "Blue Mesa"
+    ],
+    "min_adjacent_gap_pct": 1.79,
+    "largest_term_pct": 1.36,
+    "ranking_changes": false,
+    "note": "Static-area reservoirs are included with a term of zero, so this is the full ordering rather than a partial one."
   }
 }
