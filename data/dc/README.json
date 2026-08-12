@@ -1,0 +1,43 @@
+{
+  "what": "Underlying data for the Colorado River data-centre site scoreboard (site/data-center-sites.html)",
+  "generated_by": "analysis/publish_dc_dataset.py",
+  "files": {
+    "dc_dataset.json": {
+      "kb": 16,
+      "emails_redacted": 0
+    },
+    "costing.json": {
+      "kb": 108,
+      "emails_redacted": 0
+    },
+    "water_model.json": {
+      "kb": 8,
+      "emails_redacted": 0
+    },
+    "water_verify.json": {
+      "kb": 13,
+      "emails_redacted": 0
+    },
+    "echo_permits.json": {
+      "kb": 48,
+      "emails_redacted": 0
+    },
+    "sewer_permits.json": {
+      "kb": 30,
+      "emails_redacted": 4
+    },
+    "coords_final.json": {
+      "kb": 5,
+      "emails_redacted": 0
+    },
+    "water_geo.json": {
+      "kb": 44,
+      "emails_redacted": 0
+    }
+  },
+  "withheld": {
+    "ideas_*.md": "per-operator project menus; the page renders the five headlines from each, the bodies are business-development material rather than analysis",
+    "costing_raw/": "intermediate per-site scratch, superseded by costing.json"
+  },
+  "note": "Email addresses are stripped. They were public agency intake mailboxes, not personal addresses; this repository does not publish contact details anywhere else."
+}

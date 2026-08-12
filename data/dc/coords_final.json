@@ -1,0 +1,250 @@
+{
+  "Google, Mesa, AZ": {
+    "lat": 33.349,
+    "lon": -111.686,
+    "conf": "high",
+    "src": "verify",
+    "state_ok": true,
+    "state": "AZ"
+  },
+  "Meta, Mesa, AZ": {
+    "lat": 33.35488386,
+    "lon": -111.6357585,
+    "conf": "high",
+    "src": "geo",
+    "state_ok": true,
+    "state": "AZ"
+  },
+  "Microsoft, Goodyear & El Mirage, AZ": {
+    "lat": 33.4111,
+    "lon": -112.4033,
+    "conf": "high",
+    "src": "verify",
+    "state_ok": true,
+    "state": "AZ"
+  },
+  "CyrusOne, Chandler, AZ": {
+    "lat": 33.279,
+    "lon": -111.884,
+    "conf": "high",
+    "src": "geo",
+    "state_ok": true,
+    "state": "AZ"
+  },
+  "Vantage Data Centers, Goodyear, AZ": {
+    "lat": 33.4448,
+    "lon": -112.3883,
+    "conf": "high",
+    "src": "verify",
+    "state_ok": true,
+    "state": "AZ"
+  },
+  "Digital Realty, Chandler, AZ": {
+    "lat": 33.318,
+    "lon": -111.868,
+    "conf": "high",
+    "src": "geo",
+    "state_ok": true,
+    "state": "AZ"
+  },
+  "QTS Data Centers, Phoenix & Glendale, AZ": {
+    "lat": 33.50865,
+    "lon": -112.30005,
+    "conf": "high",
+    "src": "verify",
+    "state_ok": true,
+    "state": "AZ"
+  },
+  "Stream Data Centers, Goodyear, AZ": {
+    "lat": 33.4203,
+    "lon": -112.3865,
+    "conf": "high",
+    "src": "geo",
+    "state_ok": true,
+    "state": "AZ"
+  },
+  "Google, Henderson, NV": {
+    "lat": 36.03301,
+    "lon": -115.0333,
+    "conf": "high",
+    "src": "verify",
+    "state_ok": true,
+    "state": "NV"
+  },
+  "Switch, Las Vegas, NV": {
+    "lat": 36.0578,
+    "lon": -115.2143,
+    "conf": "high",
+    "src": "geo",
+    "state_ok": true,
+    "state": "NV"
+  },
+  "Flexential, North Las Vegas, NV": {
+    "lat": 36.27605,
+    "lon": -115.10316,
+    "conf": "high",
+    "src": "verify",
+    "state_ok": true,
+    "state": "NV"
+  },
+  "Meta, Eagle Mountain, UT": {
+    "lat": 40.2676,
+    "lon": -112.0176,
+    "conf": "high",
+    "src": "geo",
+    "state_ok": true,
+    "state": "UT"
+  },
+  "Novva Data Centers, West Jordan, UT": {
+    "lat": 40.63239,
+    "lon": -112.05187,
+    "conf": "high",
+    "src": "verify",
+    "state_ok": true,
+    "state": "UT"
+  },
+  "Aligned Data Centers, West Jordan, UT": {
+    "lat": 40.6053,
+    "lon": -111.968,
+    "conf": "high",
+    "src": "geo",
+    "state_ok": true,
+    "state": "UT"
+  },
+  "DataBank, Bluffdale, UT": {
+    "lat": 40.455658,
+    "lon": -111.932365,
+    "conf": "high",
+    "src": "verify",
+    "state_ok": true,
+    "state": "UT"
+  },
+  "QTS Data Centers, Eagle Mountain, UT": {
+    "lat": 40.3335,
+    "lon": -112.0035,
+    "conf": "medium",
+    "src": "geo",
+    "state_ok": true,
+    "state": "UT"
+  },
+  "Microsoft, Cheyenne, WY": {
+    "lat": 41.14,
+    "lon": -104.8197,
+    "conf": "medium",
+    "src": "geo",
+    "state_ok": true,
+    "state": "WY"
+  },
+  "QTS Data Centers, Aurora, CO": {
+    "lat": 39.7342,
+    "lon": -104.7085,
+    "conf": "high",
+    "src": "geo",
+    "state_ok": true,
+    "state": "CO"
+  },
+  "CoreSite (DE1 & DE2), Denver, CO": {
+    "lat": 39.745636,
+    "lon": -104.995636,
+    "conf": "high",
+    "src": "verify",
+    "state_ok": true,
+    "state": "CO"
+  },
+  "CoreSite (DE3), Denver, CO": {
+    "lat": 39.7865,
+    "lon": -104.9415,
+    "conf": "medium",
+    "src": "geo",
+    "state_ok": true,
+    "state": "CO"
+  },
+  "Novva Data Centers, Colorado Springs, CO": {
+    "lat": 38.9893,
+    "lon": -104.7075,
+    "conf": "high",
+    "src": "verify",
+    "state_ok": true,
+    "state": "CO"
+  },
+  "EdgeConneX (DEN01 & DEN02), Englewood/Centennial, CO": {
+    "lat": 39.561073,
+    "lon": -104.826671,
+    "conf": "high",
+    "src": "geo",
+    "state_ok": true,
+    "state": "CO"
+  },
+  "Google, Thornton, CO": {
+    "lat": 39.9224,
+    "lon": -104.9832,
+    "conf": "high",
+    "src": "verify",
+    "state_ok": true,
+    "state": "CO"
+  },
+  "Meta (Facebook), Los Lunas, NM": {
+    "lat": 34.8298,
+    "lon": -106.7785,
+    "conf": "high",
+    "src": "geo",
+    "state_ok": true,
+    "state": "NM"
+  },
+  "Project Jupiter (Oracle - Unconfirmed), Los Lunas, NM": {
+    "lat": 31.785,
+    "lon": -106.695,
+    "conf": "medium",
+    "src": "geo",
+    "state_ok": true,
+    "state": "NM"
+  },
+  "One Data Center America (ONT-1 & ONT-2), Ontario, CA": {
+    "lat": 34.056034,
+    "lon": -117.594353,
+    "conf": "high",
+    "src": "geo",
+    "state_ok": true,
+    "state": "CA"
+  },
+  "Iron Mountain, Riverside, CA": {
+    "lat": 33.9933,
+    "lon": -117.3015,
+    "conf": "high",
+    "src": "verify",
+    "state_ok": true,
+    "state": "CA"
+  },
+  "Lumen (formerly Level 3 / tw telecom), Ontario, CA": {
+    "lat": 34.056,
+    "lon": -117.5841,
+    "conf": "high",
+    "src": "geo",
+    "state_ok": true,
+    "state": "CA"
+  },
+  "Aecero (CBX), Corona, CA (Riverside County)": {
+    "lat": 33.845,
+    "lon": -117.955,
+    "conf": "high",
+    "src": "verify",
+    "state_ok": true,
+    "state": "CA"
+  },
+  "Digital Realty (Planned), Vernon, CA (near Inland Empire)": {
+    "lat": 34.0,
+    "lon": -118.229,
+    "conf": "high",
+    "src": "geo",
+    "state_ok": true,
+    "state": "CA"
+  },
+  "Imperial Valley Computer Manufacturing (Proposed), Imperial, CA (Imperial County)": {
+    "lat": 32.8355,
+    "lon": -115.6026,
+    "conf": "high",
+    "src": "verify",
+    "state_ok": true,
+    "state": "CA"
+  }
+}

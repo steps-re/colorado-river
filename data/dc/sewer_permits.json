@@ -1,0 +1,313 @@
+{
+ "Digital Realty, Chandler, AZ": {
+  "sewer_authority": "City of Chandler \u2013 Public Works & Utilities (municipal wastewater collection/treatment; regional disposal via the City of Chandler POTW/WRF system, not a separate regional sanitation district)",
+  "blowdown_to_sewer": null,
+  "industrial_user_permit": "unknown",
+  "permit_id_or_status": "not public",
+  "permitted_or_reported_discharge_gpd": null,
+  "source_url": "https://www.chandleraz.gov/government/departments/public-works-utilities/water-resources/wastewater",
+  "records_request": "City of Chandler Public Records Request (for wastewater pretreatment/industrial user/SIU records, permit applications, inspection files, and any cooling-tower blowdown approvals). If the City redirects treatment records, also request from City of Chandler Public Works & Utilities Water Resources (Wastewater Pretreatment Program) via the City public-records portal.",
+  "ref_url": "https://www.chandleraz.gov/"
+ },
+ "Meta, Mesa, AZ": {
+  "sewer_authority": "City of Mesa Water Resources Department / Mesa wastewater system (municipal sewer utility serving Mesa, AZ; exact outfall/collection connection for this site is not publicly confirmed in the sources found)",
+  "blowdown_to_sewer": null,
+  "industrial_user_permit": "unknown",
+  "permit_id_or_status": "not public",
+  "permitted_or_reported_discharge_gpd": null,
+  "source_url": "https://www.mesaaz.gov/residents/water/wastewater",
+  "records_request": "If the site\u2019s sewer connection, industrial user status, or any cooling-tower blowdown discharge records are needed, file a public-records request with the City of Mesa (Water Resources Department / City Clerk public records). If Mesa refers the matter to the pretreatment authority for industrial-user records, request from the City of Mesa Pretreatment Program / Water Resources Department. Publicly posted sources searched did not show a site-specific SIU permit or discharge-flow value for this Meta Mesa data center.",
+  "ref_url": "https://www.mesaaz.gov/"
+ },
+ "CyrusOne, Chandler, AZ": {
+  "sewer_authority": "City of Chandler Water Utilities Department / City of Chandler wastewater system (served by the City\u2019s public sewer collection and treatment system; no public record found in the sources reviewed tying this specific parcel to a regional sanitation district)",
+  "blowdown_to_sewer": null,
+  "industrial_user_permit": "unknown",
+  "permit_id_or_status": "not public",
+  "permitted_or_reported_discharge_gpd": null,
+  "source_url": "https://www.chandleraz.gov/government/departments/water-resources",
+  "records_request": "If you need site-specific sewer connection, pretreatment, SIU, or discharge-flow records for this CyrusOne Chandler parcel, file a public-records request with the City of Chandler Water Utilities Department / City Clerk (City of Chandler public records process). Ask specifically for: industrial user/pre-treatment permits, SIU determinations, wastewater discharge authorizations, and any reported process/cooling-tower blowdown flow records for the exact address at ~33.279,-111.884. Public SIU/pretreatment records were not located in the publicly available sources reviewed, so whether this operator has a permit and any gpd value is not publicly confirmed.",
+  "ref_url": "https://www.chandleraz.gov/"
+ },
+ "Stream Data Centers, Goodyear, AZ": {
+  "sewer_authority": "City of Goodyear Water Services / wastewater utility (local municipal sewer service for Goodyear, AZ; exact POTW receiving this parcel\u2019s flows is not publicly confirmed in the sources I could verify)",
+  "blowdown_to_sewer": null,
+  "industrial_user_permit": "unknown",
+  "permit_id_or_status": "not public",
+  "permitted_or_reported_discharge_gpd": null,
+  "source_url": "https://www.goodyearaz.gov/government/departments/water-services",
+  "records_request": "Request records from the City of Goodyear Water Services Department / Public Works (wastewater pretreatment program) and the City of Goodyear public records officer for any Industrial User / SIU permit, wastewater discharge authorization, or cooling-tower blowdown approval associated with Stream Data Centers in Goodyear, AZ. If the site discharges to a regional POTW, also file a request with the receiving wastewater utility/sanitation district for its SIU roster, permit file, and any reported discharge volumes.",
+  "ref_url": ""
+ },
+ "Switch, Las Vegas, NV": {
+  "sewer_authority": "Southern Nevada Water Authority (SNWA) / City of Las Vegas sanitary sewer service area, with treatment handled by the regional wastewater system operated through the Las Vegas Valley Water District / Clark County regional sewer arrangements; the exact receiving POTW for this specific parcel is not publicly confirmed in a single primary source",
+  "blowdown_to_sewer": null,
+  "industrial_user_permit": "unknown",
+  "permit_id_or_status": "not public",
+  "permitted_or_reported_discharge_gpd": null,
+  "source_url": null,
+  "records_request": "Public records request to the City of Las Vegas Public Works/Utilities (Wastewater) and Clark County Water Reclamation District (and, if the parcel is in unincorporated Clark County, also to Clark County Public Works). Ask for any Industrial User/Significant Industrial User pretreatment permit, inspection records, discharge monitoring reports, and any approved cooling-tower blowdown authorization for the Switch Las Vegas site at approx. 36.0578,-115.2143.",
+  "ref_url": ""
+ },
+ "Microsoft, Goodyear & El Mirage, AZ": {
+  "sewer_authority": "City of Goodyear",
+  "blowdown_to_sewer": true,
+  "industrial_user_permit": "yes",
+  "permit_id_or_status": "Significant Industrial User (SIU) designation for Microsoft Corporation PHX 10 under City of Goodyear AZPDES Permit No. AZ0022357",
+  "permitted_or_reported_discharge_gpd": 1200000,
+  "source_url": "https://www.aztechcouncil.org/microsoft-agrees-to-make-data-centers-air-cooled-amid-water-infrastructure-challenges-in-goodyear/",
+  "records_request": "While the SIU status and permitted capacity are public, the specific Industrial User Permit and discharge monitoring reports are not directly available online. A public records request should be filed with the City of Goodyear City Clerk's office for records held by the Industrial Pretreatment Program, which is part of the city's Development Services.",
+  "flow_note": "1.2 MGD capacity at full build-out (City of Goodyear 157th Ave WRF, AZPDES AZ0022357); Microsoft since agreed to air-cooled",
+  "ref_url": "https://www.aztechcouncil.org/"
+ },
+ "Vantage Data Centers, Goodyear, AZ": {
+  "sewer_authority": "City of Goodyear",
+  "blowdown_to_sewer": null,
+  "industrial_user_permit": "unknown",
+  "permit_id_or_status": "not public",
+  "permitted_or_reported_discharge_gpd": null,
+  "source_url": "https://legacy.azdeq.gov/environ/water/permits/download/az0025283f.pdf",
+  "records_request": "The permit and flow data are not publicly available. A public records request should be filed with the City of Goodyear City Clerk's Office for records from the Water Services Department's Industrial Pretreatment Program concerning any industrial user permit or Significant Industrial User (SIU) status and discharge reports for Vantage Data Centers at 33.4448, -112.3883.",
+  "ref_url": "https://legacy.azdeq.gov/"
+ },
+ "Google, Henderson, NV": {
+  "sewer_authority": "City of Henderson Department of Utility Services",
+  "blowdown_to_sewer": true,
+  "industrial_user_permit": "unknown",
+  "permit_id_or_status": "not public",
+  "permitted_or_reported_discharge_gpd": null,
+  "source_url": "https://www.cityofhenderson.com/government/departments/utility-services/pretreatment",
+  "records_request": "The permit and discharge flow data are not publicly available online. A public records request must be filed with the City of Henderson Department of Utility Services, Pretreatment Program. Requests can be made via the 'Contact Henderson' portal (https://www.cityofhenderson.com/living-in-henderson/contact-henderson), or by contacting the Pretreatment Program directly at [email removed] or 702-267-2603. [4, 12, 21]",
+  "ref_url": "https://www.cityofhenderson.com/"
+ },
+ "Meta, Eagle Mountain, UT": {
+  "sewer_authority": "Eagle Mountain City wastewater/sewer utility (city-operated wastewater collection and treatment service; local public-works/utility function)",
+  "blowdown_to_sewer": "unknown",
+  "industrial_user_permit": "unknown",
+  "permit_id_or_status": "not public",
+  "permitted_or_reported_discharge_gpd": null,
+  "source_url": "null",
+  "records_request": "Eagle Mountain City (Public Works/Utilities or City Recorder for public-records requests) and, if the city discharges to a regional treatment plant, the downstream POTW/operator for pretreatment records. I could not verify a public SIU/industrial-user list or permit for this specific site from accessible primary sources here; request any Industrial User/Significant Industrial User permit, discharge authorization, monitoring reports, and any cooling-tower blowdown sewer connection records from Eagle Mountain City under Utah GRAMA (and from the regional POTW if applicable).",
+  "ref_url": ""
+ },
+ "Aligned Data Centers, West Jordan, UT": {
+  "sewer_authority": "Jordan Basin Improvement District (regional wastewater conveyance/treatment authority serving West Jordan, UT; final treatment at Jordan Basin WRF / regional system)",
+  "blowdown_to_sewer": null,
+  "industrial_user_permit": "unknown",
+  "permit_id_or_status": "not public",
+  "permitted_or_reported_discharge_gpd": null,
+  "source_url": "https://jbid.org/",
+  "records_request": "If you need the site-specific sewer connection, Industrial User/pretreatment permit, or any reported cooling-tower blowdown flow, request it from Jordan Basin Improvement District (wastewater/pretreatment records) and, if the connection is billed/managed by the city for this parcel, also from West Jordan City Public Works/Utilities. Ask specifically for: (1) Industrial User or Significant Industrial User files for Aligned Data Centers / the West Jordan site, (2) any sewer discharge authorizations or sampling reports, and (3) any reported discharge flow in gallons/day. If those records are withheld, file a Utah GRAMA request with the records custodian for Jordan Basin Improvement District.",
+  "ref_url": "https://jbid.org/"
+ },
+ "Google, Mesa, AZ": {
+  "sewer_authority": "City of Mesa Water Resources Department, Industrial Pretreatment Section",
+  "blowdown_to_sewer": null,
+  "industrial_user_permit": "unknown",
+  "permit_id_or_status": "not public",
+  "permitted_or_reported_discharge_gpd": null,
+  "source_url": "https://www.mesaaz.gov/residents/water-wastewater/wastewater/discharge-permit-pretreatment-forms",
+  "records_request": "The permit and discharge flow data are not publicly available online. A request must be filed with the City of Mesa Water Resources Department. Submit a 'Water Records Information Request' for Industrial Pre-Treatment permits and discharge records for the facility at 33.349, -111.686. Contact the Industrial Pretreatment Section at [email removed] or 480-644-2484. [4, 8, 14]",
+  "ref_url": "https://www.mesaaz.gov/"
+ },
+ "QTS Data Centers, Eagle Mountain, UT": {
+  "sewer_authority": "Eagle Mountain City Public Works / wastewater collection; final regional treatment is through the Utah County service area that reports to the Utah Department of Environmental Quality (publicly accessible records did not clearly identify a separate on-site industrial POTW connection for this facility)",
+  "blowdown_to_sewer": null,
+  "industrial_user_permit": "unknown",
+  "permit_id_or_status": "not public",
+  "permitted_or_reported_discharge_gpd": null,
+  "source_url": null,
+  "records_request": "Request sewer/pretreatment records from Eagle Mountain City Public Works/Utilities and, if the site discharges to a regional POTW, from the relevant Utah County/DEQ pretreatment authority. Ask specifically for any Industrial User (IU), Significant Industrial User (SIU), pretreatment permit, cooling-tower blowdown authorization, and any reported sanitary/sewer discharge flow for QTS Data Centers at Eagle Mountain (approx. 40.3335,-112.0035). If Eagle Mountain City holds the records, submit a Utah Government Records Access and Management Act (GRAMA) request to Eagle Mountain City Records Officer/Public Works. If the regional POTW holds them, submit the same request to that utility or district.",
+  "ref_url": ""
+ },
+ "QTS Data Centers, Phoenix & Glendale, AZ": {
+  "sewer_authority": "City of Glendale Water Services Department",
+  "blowdown_to_sewer": null,
+  "industrial_user_permit": "unknown",
+  "permit_id_or_status": "not public",
+  "permitted_or_reported_discharge_gpd": null,
+  "source_url": "https://www.glendaleaz.com/live/city_services/water_services/commercial_services/pretreatment_program",
+  "records_request": "The permit and flow data are not publicly available. To obtain this information, file a public records request with the City of Glendale. The request should be for any Industrial User Permit, Significant Industrial User (SIU) permit, or wastewater discharge permit issued to QTS Data Centers at their Glendale locations, along with any reported or permitted discharge flow rates. The request can be submitted through the City of Glendale's public records request portal or directed to the City Clerk's office. The Pretreatment Division of the Water Services Department is the specific entity that manages these permits. [2]",
+  "ref_url": "https://www.glendaleaz.com/"
+ },
+ "QTS Data Centers, Aurora, CO": {
+  "sewer_authority": "City of Aurora / Aurora Water (wastewater collected by the municipal sewer system and treated at the Metro Water Recovery regional POTW serving Aurora)",
+  "blowdown_to_sewer": "unknown",
+  "industrial_user_permit": "unknown",
+  "permit_id_or_status": "not public",
+  "permitted_or_reported_discharge_gpd": null,
+  "source_url": "https://www.auroragov.org/business_services/water_and_sewer/wastewater_treatment",
+  "records_request": "If you need the site-specific industrial user/SIU permit status or any cooling-tower blowdown discharge allowance for QTS Data Centers in Aurora, CO, submit a Colorado Open Records Act (CORA) request to the City of Aurora Utilities Department / Aurora Water wastewater pretreatment program (and, if applicable, Metro Water Recovery for regional pretreatment records). Ask specifically for any industrial user permit, SIU designation, discharge authorization, monitoring reports, and any permitted daily flow limits for the QTS Aurora facility at approx. 39.7342,-104.7085.",
+  "ref_url": "https://www.auroragov.org/"
+ },
+ "CoreSite (DE3), Denver, CO": {
+  "sewer_authority": "Metro Wastewater Reclamation District (Denver metro regional wastewater utility; also serving the Denver Tech Center area where CoreSite DE3 is located)",
+  "blowdown_to_sewer": true,
+  "industrial_user_permit": "unknown",
+  "permit_id_or_status": "not public",
+  "permitted_or_reported_discharge_gpd": null,
+  "source_url": "https://www.metrowastewater.com/DocumentCenter/View/2264/2024-Annual-Report?bidId=",
+  "records_request": "The specific SIU/industrial user permit and any site-level discharge limit/flow for CoreSite DE3 do not appear to be publicly posted in the district annual report or public SIU lists. File a Colorado Open Records Act (CORA) request with Metro Wastewater Reclamation District (Records/Legal or Pretreatment Program) for any Industrial User permit, SIU designation, wastewater discharge authorization, and reported average/maximum sewer discharge flow for CoreSite DE3 (Denver, CO / 639 E 18th Ave? no; use the DE3 site address as known to CoreSite). Also, if the district does not hold it, request from Denver Water or the City and County of Denver Wastewater Management Division whether any local sewer discharge authorization exists.",
+  "ref_url": ""
+ },
+ "Flexential, North Las Vegas, NV": {
+  "sewer_authority": "City of North Las Vegas Utilities Department",
+  "blowdown_to_sewer": null,
+  "industrial_user_permit": "unknown",
+  "permit_id_or_status": "not public",
+  "permitted_or_reported_discharge_gpd": null,
+  "source_url": "https://www.cityofnorthlasvegas.com/departments/utilities/industrial-wastewater-pretreatment",
+  "records_request": "Permit status and discharge flow are not publicly available online. A public records request must be filed with the City of North Las Vegas City Clerk's Office for records held by the Utilities Department / Industrial Pretreatment Program, pursuant to Nevada Revised Statutes Chapter 239. Requests can be submitted online via the city's public records request portal.",
+  "ref_url": "https://www.cityofnorthlasvegas.com/"
+ },
+ "EdgeConneX (DEN01 & DEN02), Englewood/Centennial, CO": {
+  "sewer_authority": "Arapahoe County Water and Wastewater Authority (ACWWA) appears to be the local wastewater/sewer utility serving the Englewood/Centennial area near this site; I could not verify a site-specific sewer connection from public records alone.",
+  "blowdown_to_sewer": null,
+  "industrial_user_permit": "unknown",
+  "permit_id_or_status": "not public",
+  "permitted_or_reported_discharge_gpd": null,
+  "source_url": null,
+  "records_request": "If the site discharges cooling-tower blowdown or other process wastewater to sanitary sewer, the likely records holder is the Arapahoe County Water and Wastewater Authority (ACWWA) pretreatment program / wastewater operations, with possible coordination through the City of Englewood or City of Centennial if the connection is municipal. Request: (1) industrial user / SIU determinations, permits, and monitoring reports for EdgeConneX DEN01/DEN02 or the address coordinates; (2) any sewer connection or pretreatment approval records; and (3) any reported average/maximum daily discharge flow. If ACWWA says it does not regulate the connection, file the request with the local sewer provider identified in the site\u2019s utility billing or service agreement, and also ask the Colorado Open Records Act (CORA) custodian for the relevant city or district wastewater department.",
+  "ref_url": ""
+ },
+ "Microsoft, Cheyenne, WY": {
+  "sewer_authority": "City of Cheyenne Board of Public Utilities",
+  "blowdown_to_sewer": null,
+  "industrial_user_permit": "unknown",
+  "permit_id_or_status": "not public",
+  "permitted_or_reported_discharge_gpd": null,
+  "source_url": "https://www.cheyennebopu.org/Services-and-Programs/Industrial-Pretreatment-Program-IPP",
+  "records_request": "The permit and flow data are not public. To request these records, file a public records request with the City of Cheyenne Board of Public Utilities, specifically directed to the Industrial Pretreatment Program (IPP). Requests can be initiated by contacting the IPP team at [email removed] or by mail to: ATTN: IPP, Board of Public Utilities, 2416 Snyder Ave., Cheyenne, WY 82001.",
+  "ref_url": "https://www.cheyennebopu.org/"
+ },
+ "CoreSite (DE1 & DE2), Denver, CO": {
+  "sewer_authority": "Metro Water Recovery (formerly the Metro Wastewater Reclamation District), which manages the Industrial Pretreatment Program for the City and County of Denver's Wastewater Management Division.",
+  "blowdown_to_sewer": null,
+  "industrial_user_permit": "unknown",
+  "permit_id_or_status": "not public",
+  "permitted_or_reported_discharge_gpd": null,
+  "source_url": "https://www.metrowaterrecovery.com/business/pretreatment/industrial-pretreatment-program/",
+  "records_request": "Permit status and discharge data are not publicly available online. A request must be filed with Metro Water Recovery under the Colorado Open Records Act (CORA). Instructions and contact information for submitting a CORA request can be found on their website. [8, 18]",
+  "ref_url": "https://www.metrowaterrecovery.com/"
+ },
+ "Meta (Facebook), Los Lunas, NM": {
+  "sewer_authority": "Village of Los Lunas wastewater/sewer system (local municipal wastewater utility); any regional treatment may also involve the Albuquerque Bernalillo County Water Utility Authority (ABCWUA) as the broader water/wastewater authority for the area, but the specific publicly confirmable sewer authority for this site is not clearly published in accessible primary sources.",
+  "blowdown_to_sewer": null,
+  "industrial_user_permit": "unknown",
+  "permit_id_or_status": "not public",
+  "permitted_or_reported_discharge_gpd": null,
+  "source_url": null,
+  "records_request": "Request the records from the Village of Los Lunas Public Works/Utilities Department and, if the site is connected to the regional system, the Albuquerque Bernalillo County Water Utility Authority (ABCWUA) pretreatment/POTW program office. Ask specifically for: any Industrial User (IU), Significant Industrial User (SIU), pretreatment permit, wastewater discharge permit, cooling-tower blowdown authorization, and any reported average/maximum sewer discharge flow (gpd) for the Meta/Los Lunas data center site. If the Village handles sewer locally, file a New Mexico Inspection of Public Records Act (IPRA) request with the Village Clerk; if ABCWUA holds the records, file a public-records request with ABCWUA's records custodian/public information officer.",
+  "ref_url": ""
+ },
+ "Novva Data Centers, West Jordan, UT": {
+  "sewer_authority": "South Valley Water Reclamation Facility",
+  "blowdown_to_sewer": false,
+  "industrial_user_permit": "unknown",
+  "permit_id_or_status": "not public",
+  "permitted_or_reported_discharge_gpd": null,
+  "source_url": "https://www.svwater.com/, https://www.sltrib.com/news/2024/01/21/can-you-build-data-centers-desert/",
+  "records_request": "The permit status and discharge flow are not public. To obtain these records, file a Government Records Access and Management Act (GRAMA) request with the South Valley Water Reclamation Facility, Pretreatment Department. Contact information can be found on their website (svwater.com).",
+  "ref_url": "https://www.svwater.com/"
+ },
+ "One Data Center America (ONT-1 & ONT-2), Ontario, CA": {
+  "sewer_authority": "City of Ontario Municipal Utilities Company (wastewater collection) with regional treatment by Inland Empire Utilities Agency (IEUA) at the regional water reclamation plant level",
+  "blowdown_to_sewer": null,
+  "industrial_user_permit": "unknown",
+  "permit_id_or_status": "not public",
+  "permitted_or_reported_discharge_gpd": null,
+  "source_url": "https://www.ieua.org/wp-content/uploads/2024/03/2022-2023-Annual-Pretreatment-Program-Report.pdf",
+  "records_request": "File a California Public Records Act request with the City of Ontario Municipal Utilities Company (for any local industrial user/pretreatment sewer permit, discharge authorization, or billings) and with Inland Empire Utilities Agency (for any regional pretreatment/SIU records, permit status, and discharge monitoring tied to this site). If the site is outside the City of Ontario sewer service area, also request from the relevant local sewer agency identified by the City/IEUA service-area map.",
+  "ref_url": "https://www.ieua.org/"
+ },
+ "Lumen (formerly Level 3 / tw telecom), Ontario, CA": {
+  "sewer_authority": "City of Ontario Sewer Division / City of Ontario Public Works (local sewer collection), with wastewater treatment provided regionally through the Inland Empire Utilities Agency (IEUA) system",
+  "blowdown_to_sewer": null,
+  "industrial_user_permit": "unknown",
+  "permit_id_or_status": "not public",
+  "permitted_or_reported_discharge_gpd": null,
+  "source_url": "https://www.ontarioca.gov/publicworks/sewer",
+  "records_request": "City of Ontario Public Works/Sewer Division (for any local sewer connection records, industrial user/pretreatment approvals, and site-specific discharge authorizations); and Inland Empire Utilities Agency (IEUA) Pretreatment Program staff (for any regional POTW industrial-user/SIU permit records or discharge flow records). Request via the California Public Records Act (CPRA) from both agencies.",
+  "ref_url": "https://www.ontarioca.gov/"
+ },
+ "DataBank, Bluffdale, UT": {
+  "sewer_authority": "South Valley Sewer District (SVSD)",
+  "blowdown_to_sewer": null,
+  "industrial_user_permit": "unknown",
+  "permit_id_or_status": "not public",
+  "permitted_or_reported_discharge_gpd": null,
+  "source_url": "https://www.svsewer.com/pretreatment",
+  "records_request": "The permit and flow data are not publicly available. A request must be filed with the South Valley Sewer District under the Utah Government Records Access and Management Act (GRAMA). The request should be directed to the Industrial Pretreatment Coordinator, who can be reached at (385) 202-2777, for the industrial wastewater discharge permit and discharge flow records for the DataBank facility at 40.455658, -111.932365 in Bluffdale, UT. [3, 15, 19]",
+  "ref_url": "https://www.svsewer.com/"
+ },
+ "Novva Data Centers, Colorado Springs, CO": {
+  "sewer_authority": "Colorado Springs Utilities",
+  "blowdown_to_sewer": false,
+  "industrial_user_permit": "unknown",
+  "permit_id_or_status": "not public",
+  "permitted_or_reported_discharge_gpd": null,
+  "source_url": null,
+  "records_request": "The permit status and discharge flow are not publicly available. A Colorado Open Records Act (CORA) request must be filed with Colorado Springs Utilities. Requests can be submitted via their online portal. The request should ask for any 'Wastewater Discharge Questionnaire' or 'Wastewater Discharge Permit' and any associated discharge monitoring reports for the Novva Data Center located at 650 Sybilla Lane, Colorado Springs, CO 80921.",
+  "ref_url": ""
+ },
+ "Digital Realty (Planned), Vernon, CA (near Inland Empire)": {
+  "sewer_authority": "City of Vernon Public Works / Vernon Public Utilities sewer system (Vernon, CA); likely ultimately conveyed/treated under the regional Los Angeles County sanitation/wastewater system, but a site-specific industrial discharge connection/pretreatment record was not found in public sources",
+  "blowdown_to_sewer": null,
+  "industrial_user_permit": "unknown",
+  "permit_id_or_status": "not public",
+  "permitted_or_reported_discharge_gpd": null,
+  "source_url": "https://www.cityofvernon.org/government/public-works/wastewater",
+  "records_request": "If this site has a sewer connection, request the industrial user / pretreatment / sewer connection file from the City of Vernon Public Works (Vernon Public Utilities, Wastewater Division) and, if Vernon discharges into a regional system, also from the Los Angeles County Sanitation Districts (Pretreatment/Industrial Waste Program). Ask for: any Industrial Wastewater Discharge Permit, Significant Industrial User designation, grease/cooling-tower blowdown approvals, monitoring reports, and any reported discharge flow in gpd for the Vernon address.",
+  "ref_url": "https://www.cityofvernon.org/"
+ },
+ "Google, Thornton, CO": {
+  "sewer_authority": "Metro Water Recovery",
+  "blowdown_to_sewer": null,
+  "industrial_user_permit": "unknown",
+  "permit_id_or_status": "not public",
+  "permitted_or_reported_discharge_gpd": null,
+  "source_url": null,
+  "records_request": "The industrial user permit status and any permitted discharge flow for the Google data center are not publicly available online. To obtain this information, a Colorado Open Records Act (CORA) request must be filed with both the City of Thornton and Metro Water Recovery. Metro Water Recovery is the wastewater treatment authority for the region, including Thornton, and manages the Industrial Pretreatment Program. [2, 21] The City of Thornton operates the local wastewater collection system. [8] Requests for Metro Water Recovery can be submitted through their online CORA request portal. [27] Requests for the City of Thornton can be submitted via their online Public Records Request form, or by emailing the City Clerk's Office at [email removed] [23, 24]",
+  "ref_url": ""
+ },
+ "Project Jupiter (Oracle - Unconfirmed), Los Lunas, NM": {
+  "sewer_authority": "Village of Los Lunas Wastewater Division",
+  "blowdown_to_sewer": null,
+  "industrial_user_permit": "unknown",
+  "permit_id_or_status": "not public",
+  "permitted_or_reported_discharge_gpd": null,
+  "source_url": "https://www.loslunasnm.gov/58/Wastewater-Division",
+  "records_request": "The existence of an industrial user permit and associated discharge flow data is not publicly available. To obtain these records, file a request under the New Mexico Inspection of Public Records Act (IPRA) with the Village of Los Lunas Public Works Department, which oversees the Wastewater Division. Contact: Michael Jaramillo, Public Works Director. [5, 8]",
+  "ref_url": "https://www.loslunasnm.gov/"
+ },
+ "Aecero (CBX), Corona, CA (Riverside County)": {
+  "sewer_authority": "City of Corona Utilities Department",
+  "blowdown_to_sewer": null,
+  "industrial_user_permit": "unknown",
+  "permit_id_or_status": "not public",
+  "permitted_or_reported_discharge_gpd": null,
+  "source_url": "https://www.coronaca.gov/government/departments-divisions/utilities/forms-permits-and-applications",
+  "records_request": "The permit and discharge data are not publicly listed. To get this information, file a Public Records Act (PRA) request with the City of Corona. Address the request to the Utilities Department, which manages the industrial pretreatment program. [6, 9] The request should ask for any 'Industrial User Permit', 'Significant Industrial User (SIU) permit', or wastewater discharge permit for the Aecero (CBX) data center located at approximately 33.845, -117.955 in Corona, CA.",
+  "ref_url": "https://www.coronaca.gov/"
+ },
+ "Imperial Valley Computer Manufacturing (Proposed), Imperial, CA (Imperial County)": {
+  "sewer_authority": "City of Imperial, Department of Public Services",
+  "blowdown_to_sewer": null,
+  "industrial_user_permit": "unknown",
+  "permit_id_or_status": "As a 'proposed' project that has faced legal challenges and has not yet secured all necessary permits, it does not appear to have a public industrial user permit at this time. [43, 47] Planning documents indicate that sewer systems require future approval. [36]",
+  "permitted_or_reported_discharge_gpd": null,
+  "source_url": "https://www.cityofimperial.org/Public-Services",
+  "records_request": "Permit applications, industrial user surveys, and related documents for the 'Imperial Valley Computer Manufacturing' project are not publicly available online. A formal request for these records can be submitted to the City of Imperial through its Public Records Request portal. The request should be addressed to the City Clerk and the Department of Public Services. The portal can be found at: https://cityofimperial.nextrequest.com/",
+  "ref_url": "https://www.cityofimperial.org/"
+ },
+ "Iron Mountain, Riverside, CA": {
+  "sewer_authority": "City of Riverside, Public Works Department, Wastewater Division",
+  "blowdown_to_sewer": null,
+  "industrial_user_permit": "unknown",
+  "permit_id_or_status": "not public",
+  "permitted_or_reported_discharge_gpd": null,
+  "source_url": null,
+  "records_request": "The City of Riverside centralizes public records requests through the City Clerk's Office. To request records such as an Industrial User Permit, a list of Significant Industrial Users (SIUs), or wastewater discharge data for the Iron Mountain facility at 33.9933, -117.3015, you can submit a request through their online public records portal. The request should be directed to the Public Works Department and specifically ask for records from the Wastewater Division's industrial pretreatment/source control program.",
+  "ref_url": ""
+ }
+}

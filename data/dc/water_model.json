@@ -1,0 +1,405 @@
+{
+  "Google, Mesa, AZ": {
+    "mw": 138,
+    "cooling_class": "air",
+    "wue_band_gal_per_kwh": [
+      0.005,
+      0.05
+    ],
+    "est_lo_af": 23,
+    "est_hi_af": 232,
+    "reported_af": null,
+    "reported_source": null,
+    "label": "estimated"
+  },
+  "Meta, Mesa, AZ": {
+    "mw": 450,
+    "cooling_class": "unknown",
+    "wue_band_gal_per_kwh": [
+      0.05,
+      0.3
+    ],
+    "est_lo_af": 756,
+    "est_hi_af": 4537,
+    "reported_af": null,
+    "reported_source": null,
+    "label": "estimated"
+  },
+  "Microsoft, Goodyear & El Mirage, AZ": {
+    "mw": 143,
+    "cooling_class": "air",
+    "wue_band_gal_per_kwh": [
+      0.005,
+      0.05
+    ],
+    "est_lo_af": 24,
+    "est_hi_af": 240,
+    "reported_af": null,
+    "reported_source": null,
+    "label": "estimated"
+  },
+  "CyrusOne, Chandler, AZ": {
+    "mw": 169,
+    "cooling_class": "evap",
+    "wue_band_gal_per_kwh": [
+      0.25,
+      0.45
+    ],
+    "est_lo_af": 1420,
+    "est_hi_af": 2556,
+    "reported_af": null,
+    "reported_source": null,
+    "label": "estimated"
+  },
+  "Vantage Data Centers, Goodyear, AZ": {
+    "mw": 176,
+    "cooling_class": "unknown",
+    "wue_band_gal_per_kwh": [
+      0.05,
+      0.3
+    ],
+    "est_lo_af": 296,
+    "est_hi_af": 1774,
+    "reported_af": null,
+    "reported_source": null,
+    "label": "estimated"
+  },
+  "Digital Realty, Chandler, AZ": {
+    "mw": 54,
+    "cooling_class": "evap",
+    "wue_band_gal_per_kwh": [
+      0.25,
+      0.45
+    ],
+    "est_lo_af": 454,
+    "est_hi_af": 817,
+    "reported_af": null,
+    "reported_source": null,
+    "label": "estimated"
+  },
+  "QTS Data Centers, Phoenix & Glendale, AZ": {
+    "mw": 870,
+    "cooling_class": "unknown",
+    "wue_band_gal_per_kwh": [
+      0.05,
+      0.3
+    ],
+    "est_lo_af": 1462,
+    "est_hi_af": 8771,
+    "reported_af": null,
+    "reported_source": null,
+    "label": "estimated"
+  },
+  "Stream Data Centers, Goodyear, AZ": {
+    "mw": 40.5,
+    "cooling_class": "air",
+    "wue_band_gal_per_kwh": [
+      0.005,
+      0.05
+    ],
+    "est_lo_af": 7,
+    "est_hi_af": 68,
+    "reported_af": null,
+    "reported_source": null,
+    "label": "estimated"
+  },
+  "Google, Henderson, NV": {
+    "mw": 120,
+    "cooling_class": "evap",
+    "wue_band_gal_per_kwh": [
+      0.25,
+      0.45
+    ],
+    "est_lo_af": 1008,
+    "est_hi_af": 1815,
+    "reported_af": null,
+    "reported_source": null,
+    "label": "estimated"
+  },
+  "Switch, Las Vegas, NV": {
+    "mw": 315,
+    "cooling_class": "air",
+    "wue_band_gal_per_kwh": [
+      0.005,
+      0.05
+    ],
+    "est_lo_af": 53,
+    "est_hi_af": 529,
+    "reported_af": null,
+    "reported_source": null,
+    "label": "estimated"
+  },
+  "Flexential, North Las Vegas, NV": {
+    "mw": 9,
+    "cooling_class": "air",
+    "wue_band_gal_per_kwh": [
+      0.005,
+      0.05
+    ],
+    "est_lo_af": 2,
+    "est_hi_af": 15,
+    "reported_af": null,
+    "reported_source": null,
+    "label": "estimated"
+  },
+  "Meta, Eagle Mountain, UT": {
+    "mw": 114,
+    "cooling_class": "unknown",
+    "wue_band_gal_per_kwh": [
+      0.05,
+      0.3
+    ],
+    "est_lo_af": 192,
+    "est_hi_af": 1149,
+    "reported_af": null,
+    "reported_source": null,
+    "label": "estimated"
+  },
+  "Novva Data Centers, West Jordan, UT": {
+    "mw": 31,
+    "cooling_class": "air",
+    "wue_band_gal_per_kwh": [
+      0.005,
+      0.05
+    ],
+    "est_lo_af": 5,
+    "est_hi_af": 52,
+    "reported_af": null,
+    "reported_source": null,
+    "label": "estimated"
+  },
+  "Aligned Data Centers, West Jordan, UT": {
+    "mw": 234,
+    "cooling_class": "air",
+    "wue_band_gal_per_kwh": [
+      0.005,
+      0.05
+    ],
+    "est_lo_af": 39,
+    "est_hi_af": 393,
+    "reported_af": null,
+    "reported_source": null,
+    "label": "estimated"
+  },
+  "DataBank, Bluffdale, UT": {
+    "mw": 45.9,
+    "cooling_class": "unknown",
+    "wue_band_gal_per_kwh": [
+      0.05,
+      0.3
+    ],
+    "est_lo_af": 77,
+    "est_hi_af": 463,
+    "reported_af": null,
+    "reported_source": null,
+    "label": "estimated"
+  },
+  "QTS Data Centers, Eagle Mountain, UT": {
+    "mw": 177,
+    "cooling_class": "air",
+    "wue_band_gal_per_kwh": [
+      0.005,
+      0.05
+    ],
+    "est_lo_af": 30,
+    "est_hi_af": 297,
+    "reported_af": null,
+    "reported_source": null,
+    "label": "estimated"
+  },
+  "Microsoft, Cheyenne, WY": {
+    "mw": 250,
+    "cooling_class": "evap",
+    "wue_band_gal_per_kwh": [
+      0.25,
+      0.45
+    ],
+    "est_lo_af": 2100,
+    "est_hi_af": 3780,
+    "reported_af": null,
+    "reported_source": null,
+    "label": "estimated"
+  },
+  "QTS Data Centers, Aurora, CO": {
+    "mw": 160,
+    "cooling_class": "air",
+    "wue_band_gal_per_kwh": [
+      0.005,
+      0.05
+    ],
+    "est_lo_af": 27,
+    "est_hi_af": 269,
+    "reported_af": null,
+    "reported_source": null,
+    "label": "estimated"
+  },
+  "CoreSite (DE1 & DE2), Denver, CO": {
+    "mw": 18,
+    "cooling_class": "air",
+    "wue_band_gal_per_kwh": [
+      0.005,
+      0.05
+    ],
+    "est_lo_af": 3,
+    "est_hi_af": 30,
+    "reported_af": null,
+    "reported_source": null,
+    "label": "estimated"
+  },
+  "CoreSite (DE3), Denver, CO": {
+    "mw": 18,
+    "cooling_class": "evap",
+    "wue_band_gal_per_kwh": [
+      0.25,
+      0.45
+    ],
+    "est_lo_af": 151,
+    "est_hi_af": 272,
+    "reported_af": null,
+    "reported_source": null,
+    "label": "estimated"
+  },
+  "Novva Data Centers, Colorado Springs, CO": {
+    "mw": 40,
+    "cooling_class": "air",
+    "wue_band_gal_per_kwh": [
+      0.005,
+      0.05
+    ],
+    "est_lo_af": 7,
+    "est_hi_af": 67,
+    "reported_af": null,
+    "reported_source": null,
+    "label": "estimated"
+  },
+  "EdgeConneX (DEN01 & DEN02), Englewood/Centennial, CO": {
+    "mw": 27,
+    "cooling_class": "air",
+    "wue_band_gal_per_kwh": [
+      0.005,
+      0.05
+    ],
+    "est_lo_af": 5,
+    "est_hi_af": 45,
+    "reported_af": null,
+    "reported_source": null,
+    "label": "estimated"
+  },
+  "Google, Thornton, CO": {
+    "mw": null,
+    "cooling_class": "air",
+    "wue_band_gal_per_kwh": [
+      0.005,
+      0.05
+    ],
+    "est_lo_af": null,
+    "est_hi_af": null,
+    "reported_af": null,
+    "reported_source": null,
+    "label": "estimated"
+  },
+  "Meta (Facebook), Los Lunas, NM": {
+    "mw": 120,
+    "cooling_class": "evap",
+    "wue_band_gal_per_kwh": [
+      0.25,
+      0.45
+    ],
+    "est_lo_af": 1008,
+    "est_hi_af": 1815,
+    "reported_af": null,
+    "reported_source": null,
+    "label": "estimated"
+  },
+  "Project Jupiter (Oracle - Unconfirmed), Los Lunas, NM": {
+    "mw": 1000,
+    "cooling_class": "air",
+    "wue_band_gal_per_kwh": [
+      0.005,
+      0.05
+    ],
+    "est_lo_af": 168,
+    "est_hi_af": 1680,
+    "reported_af": null,
+    "reported_source": null,
+    "label": "estimated"
+  },
+  "One Data Center America (ONT-1 & ONT-2), Ontario, CA": {
+    "mw": 1.1,
+    "cooling_class": "unknown",
+    "wue_band_gal_per_kwh": [
+      0.05,
+      0.3
+    ],
+    "est_lo_af": 2,
+    "est_hi_af": 11,
+    "reported_af": null,
+    "reported_source": null,
+    "label": "estimated"
+  },
+  "Iron Mountain, Riverside, CA": {
+    "mw": null,
+    "cooling_class": "unknown",
+    "wue_band_gal_per_kwh": [
+      0.05,
+      0.3
+    ],
+    "est_lo_af": null,
+    "est_hi_af": null,
+    "reported_af": null,
+    "reported_source": null,
+    "label": "estimated"
+  },
+  "Lumen (formerly Level 3 / tw telecom), Ontario, CA": {
+    "mw": 0.27,
+    "cooling_class": "unknown",
+    "wue_band_gal_per_kwh": [
+      0.05,
+      0.3
+    ],
+    "est_lo_af": 0,
+    "est_hi_af": 3,
+    "reported_af": null,
+    "reported_source": null,
+    "label": "estimated"
+  },
+  "Aecero (CBX), Corona, CA (Riverside County)": {
+    "mw": 6,
+    "cooling_class": "unknown",
+    "wue_band_gal_per_kwh": [
+      0.05,
+      0.3
+    ],
+    "est_lo_af": 10,
+    "est_hi_af": 60,
+    "reported_af": null,
+    "reported_source": null,
+    "label": "estimated"
+  },
+  "Digital Realty (Planned), Vernon, CA (near Inland Empire)": {
+    "mw": 32,
+    "cooling_class": "unknown",
+    "wue_band_gal_per_kwh": [
+      0.05,
+      0.3
+    ],
+    "est_lo_af": 54,
+    "est_hi_af": 323,
+    "reported_af": null,
+    "reported_source": null,
+    "label": "estimated"
+  },
+  "Imperial Valley Computer Manufacturing (Proposed), Imperial, CA (Imperial County)": {
+    "mw": 330,
+    "cooling_class": "unknown",
+    "wue_band_gal_per_kwh": [
+      0.05,
+      0.3
+    ],
+    "est_lo_af": 554,
+    "est_hi_af": 3327,
+    "reported_af": null,
+    "reported_source": null,
+    "label": "estimated"
+  }
+}

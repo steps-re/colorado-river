@@ -1,0 +1,1574 @@
+{
+  "Meta, Mesa, AZ": [
+    {
+      "project": "On-Site Advanced Water Recycling",
+      "capex": "$15-35M",
+      "opex": "$0.3-1.0M/yr",
+      "timeline": "18-30 months",
+      "af_per_yr": "30-60",
+      "viability": "High",
+      "power_note": "Mesa is inside the broader Phoenix metro grid, where data centers can usually secure power but interconnection/timing can be the gating item; on-site recycling adds moderate load that is typically manageable given Arizona's strong solar resource and available utility-scale/onsite solar options.",
+      "water_note": "This is the most location-fit option because Mesa/WRP effluent is a real source and Arizona allows nonpotable reuse under ADEQ rules; the City of Mesa and nearby municipalities already operate wastewater systems that can supply reclaimed water, making true on-site recycling and reuse technically and administratively feasible."
+    },
+    {
+      "project": "Agricultural Efficiency Partnership for Volumetric Credits",
+      "capex": "$1-5M",
+      "opex": "$0.2-0.8M/yr",
+      "timeline": "12-24 months",
+      "af_per_yr": "20-50",
+      "viability": "Low",
+      "power_note": "Power is not the main constraint here; the challenge is that this is mostly a transaction/verification program with limited incremental electrical demand and Phoenix-area grid access is generally workable.",
+      "water_note": "This is weakly grounded in this specific location because a durable, bankable volumetric offset market for Colorado River agricultural savings is not an established Arizona municipal mechanism; CAP shortage rules and conservation programs exist, but counterparty, measurement, and credit permanence are the hard part, so offsets are uncertain and not as straightforward as reuse or DPR."
+    },
+    {
+      "project": "Public-Private Partnership for Municipal Direct Potable Reuse (DPR)",
+      "capex": "$25-80M",
+      "opex": "$0.8-2.5M/yr",
+      "timeline": "3-6 years",
+      "af_per_yr": "40-90",
+      "viability": "Medium",
+      "power_note": "The Phoenix metro grid can support DPR treatment loads, but the project would need interconnection and water-treatment power redundancy; Arizona solar is strong, but DPR still requires firm grid-backed power for continuous operation.",
+      "water_note": "Arizona has a real pathway for potable reuse, but this is a public-infrastructure project, not a simple private one: ADEQ has potable reuse regulations/frameworks, and Mesa has access to municipal wastewater, yet a new DPR partnership would require city utility participation, advanced treatment approval, and a long permitting/engineering path."
+    },
+    {
+      "project": "Conversion to 100% Air-Based Cooling",
+      "capex": "$20-60M",
+      "opex": "$1-4M/yr",
+      "timeline": "18-48 months",
+      "af_per_yr": "60-120",
+      "viability": "Medium",
+      "power_note": "Air cooling shifts the burden from water to electricity, which Mesa-area grid and Arizona solar can generally support, but peak summer cooling reliability, transformer capacity, and any extra IT-side power use must be checked carefully.",
+      "water_note": "This is physically feasible anywhere, but at Mesa's hot climate it is operationally challenging for a hyperscale data center; it can eliminate most evaporative demand, yet may require significant redesign, more compressor/fan energy, and possibly reduced economizer hours, so water savings are real but the performance tradeoff is large."
+    },
+    {
+      "project": "Brackish Groundwater Desalination and Aquifer Recharge",
+      "capex": "$30-90M",
+      "opex": "$1.5-4.0M/yr",
+      "timeline": "3-5 years",
+      "af_per_yr": "25-70",
+      "viability": "Low",
+      "power_note": "Energy demand is high for brackish desalination and recharge pumping, but the Phoenix-area grid can usually serve it if a suitable interconnection and backup supply are secured; solar can help offset cost but not the continuous treatment load.",
+      "water_note": "There is some brackish groundwater in Arizona, but siting, water rights, disposal of concentrate, and recharge permitting make this much less straightforward than reclaimed water in Mesa; it is technically possible in the region, yet not a natural fit for a data center-led offset because the brackish source and recharge project would need a very specific local hydrogeology and permits."
+    }
+  ],
+  "Digital Realty, Chandler, AZ": [
+    {
+      "project": "Fund Agricultural Fallowing for Water Benefit Credits",
+      "capex": "$2-8M upfront for a meaningful pilot/credit package; roughly $200-800/AF depending on contract term and transaction structure",
+      "opex": "$0.1-0.5M/yr for verification, administration, and credit purchases; plus annual credit payments if structured as recurring offsets",
+      "timeline": "12-36 months",
+      "af_per_yr": "50-300",
+      "viability": "Medium",
+      "power_note": "No material power requirement beyond transaction/monitoring, so Chandler\u2019s grid capacity is not a constraint; this is an offset project, not a load-serving project.",
+      "water_note": "Arizona has active agricultural fallowing/forbearance mechanisms tied to Colorado River conservation, but credits are policy- and counterparty-dependent and do not directly create local municipal supply; the 37% Colorado River exposure makes this a plausible offset, not a physical replacement."
+    },
+    {
+      "project": "Retrofit to Use 100% Municipal Recycled Water",
+      "capex": "$10-35M, or about $1,500-5,000/AF-year of firm service capacity depending on piping, storage, and treatment upgrades",
+      "opex": "$0.2-0.8M/yr for pumping, filtration/polishing, and backflow/water quality management",
+      "timeline": "18-48 months",
+      "af_per_yr": "228",
+      "viability": "Medium",
+      "power_note": "Chandler and the East Valley have strong grid access and the plant load is modest relative to metro infrastructure, so electrical interconnection is feasible; the main power issue is continuous pumping/treatment, not supply.",
+      "water_note": "Recycled effluent is actually available in this metro via municipal reclaimed-water systems, but 100% dedicated delivery to a data center depends on line proximity, purple-pipe capacity, utility permitting, and water-quality specs; this is more feasible than DPR here, but not trivial."
+    },
+    {
+      "project": "Invest in a Municipal Direct Potable Reuse (DPR) Project",
+      "capex": "$20-60M contribution/share of a larger utility DPR program; private cost is highly program-specific and typically much higher per AF than nonpotable reuse",
+      "opex": "$0.3-1.0M/yr share of advanced treatment, monitoring, and program administration",
+      "timeline": "36-72 months",
+      "af_per_yr": "228",
+      "viability": "Low",
+      "power_note": "The grid can support advanced treatment loads, but DPR depends on utility-scale infrastructure and long permitting timelines rather than local data-center power availability.",
+      "water_note": "Arizona allows reuse under a regulated framework, but potable reuse in the Phoenix-metro area is still utility-led and not a near-term bespoke option for a single industrial customer; there is no ready-made DPR supply at the Chandler site today."
+    },
+    {
+      "project": "On-Site Blackwater Treatment and Aquifer Recharge",
+      "capex": "$15-40M for treatment, storage, injection/recharge infrastructure, permitting, and monitoring",
+      "opex": "$0.5-1.5M/yr for operator labor, membrane/UV/disinfection, residuals handling, and water-quality monitoring",
+      "timeline": "24-60 months",
+      "af_per_yr": "228",
+      "viability": "Low",
+      "power_note": "The site\u2019s electrical service can likely support an onsite treatment plant, but that is not the limiting factor; the bottleneck is regulatory approval and hydrogeologic feasibility for recharge.",
+      "water_note": "Arizona recharge and reclaimed-water rules are real, but a data center blackwater-to-recharge scheme faces major permitting, siting, and groundwater-basin requirements; in a built-up Chandler context, this is unlikely to be the fastest or cleanest path to zero Colorado River dependence."
+    },
+    {
+      "project": "Fund Upstream Watershed Restoration in the Salt-Verde System",
+      "capex": "$1-10M initial funding, or roughly $50-300/AF-equivalent depending on watershed model and crediting assumptions",
+      "opex": "$50k-300k/yr for monitoring, stewardship, and program overhead",
+      "timeline": "12-48 months",
+      "af_per_yr": "20-200",
+      "viability": "Low",
+      "power_note": "Power availability is irrelevant; this is a nature-based offset, not a direct utility supply project.",
+      "water_note": "Salt-Verde watershed restoration can improve system resilience, but it does not generate a fungible, legally recognized Colorado River water entitlement for Chandler; crediting against a specific data-center withdrawal is uncertain and usually indirect."
+    },
+    {
+      "project": "Solar-Thermal Chiller",
+      "capex": "$216-432M for ~108 acres of collectors at roughly $2-4M/acre installed, excluding major storage, land assembly, and integration costs",
+      "opex": "$3-10M/yr for operations, maintenance, cleaning, controls, and thermal integration",
+      "timeline": "24-60 months",
+      "af_per_yr": "228",
+      "viability": "Low",
+      "power_note": "Arizona has excellent solar resource, but a solar-thermal cooling field sized for a ~54 MW site is land-intensive and adds major thermal/electrical integration complexity versus simply buying grid power or using dry cooling; the local grid can supply the load more directly.",
+      "water_note": "This does not solve water sourcing by itself and the required 108 acres is hard to assemble near a built-up Chandler data center; while some nearby desert parcels exist and solar irradiance is strong, the land footprint and capital intensity make it a poor fit for this specific site."
+    }
+  ],
+  "CyrusOne, Chandler, AZ": [
+    {
+      "project": "On-Site Water Capture for Operational Needs",
+      "capex": "$0.5-2M",
+      "opex": "$25k-100k/yr",
+      "timeline": "6-18 months",
+      "af_per_yr": "0.1-0.2",
+      "viability": "Low",
+      "power_note": "Power is not the constraint; Chandler sits in a strong Phoenix-area grid with ample utility service for this load, and onsite capture systems are small electrical loads. Solar resource is strong, but it does not materially change the economics here.",
+      "water_note": "This site already uses zero-water cooling and only about 180,000 gallons/yr for humidification, so there is very little water to capture or offset; Arizona reuse rules can support nonpotable reuse, but the volume available at this facility is too small to matter for net Colorado River reduction."
+    },
+    {
+      "project": "VWBA for Agricultural Fallowing",
+      "capex": "$150-400/AF of annualized water benefit",
+      "opex": "$50-200/AF/yr plus transaction/admin costs",
+      "timeline": "6-18 months",
+      "af_per_yr": "500-5,000+",
+      "viability": "High",
+      "power_note": "Grid capacity is not a limiting factor for a paper water-benefit contract; Chandler's desert-southwest grid is mature and this project is not power-intensive.",
+      "water_note": "Agricultural fallowing offsets are regionally plausible in Arizona because Colorado River water is heavily used in Central Arizona agriculture and the state has established water-rights/accounting pathways under ADWR/Colorado River management, though each deal needs a real counterparty and verification that the conserved water is actually reduced consumptive use."
+    },
+    {
+      "project": "Investment in Local Watershed Restoration",
+      "capex": "$200-800/AF of estimated benefit",
+      "opex": "$25k-150k/yr",
+      "timeline": "12-36 months",
+      "af_per_yr": "50-500",
+      "viability": "Medium",
+      "power_note": "Power availability is irrelevant to watershed restoration; Chandler's grid and strong solar resource do not affect feasibility.",
+      "water_note": "Restoration can improve local hydrology and resilience, but in Arizona it usually does not create a clean, durable, legally countable Colorado River consumptive-use offset unless paired with a defined accounting framework; reuse/DPR rules do not substitute for a verified river-offset counterparty."
+    },
+    {
+      "project": "Financing Local Turf-to-Xeriscape Conversions",
+      "capex": "$100-300/AF of estimated annual savings",
+      "opex": "$20k-100k/yr",
+      "timeline": "6-24 months",
+      "af_per_yr": "100-1,000",
+      "viability": "Medium",
+      "power_note": "This is not power constrained; the local grid can easily support administration/monitoring, and high solar resource is largely irrelevant to the water accounting.",
+      "water_note": "Arizona municipalities, including Chandler-area users, can implement landscape conversion programs, but the water saved is usually local potable/municipal demand reduction rather than a direct Colorado River entitlement transfer, so the project needs careful accounting to qualify as a net Colorado River benefit."
+    },
+    {
+      "project": "Capital Contribution to Municipal Aquifer Recharge",
+      "capex": "$300-1,200/AF of credited recharge",
+      "opex": "$10k-75k/yr",
+      "timeline": "18-48 months",
+      "af_per_yr": "200-2,000",
+      "viability": "High",
+      "power_note": "Grid capacity is ample for a financing/participation role, and the local solar resource is immaterial to the creditability of recharge.",
+      "water_note": "This is one of the most grounded options in the Phoenix metro because Arizona has active aquifer recharge/assured supply infrastructure and reclaimed-water systems, but the project must use approved recharge facilities and credit rules; it is most credible when tied to actual Arizona water banking or municipal reuse volumes rather than vague 'restoration' claims."
+    },
+    {
+      "project": "Solar-Thermal Chiller",
+      "capex": "$540-1,350M for ~338 acres at $2-4M/acre installed",
+      "opex": "$5M-20M/yr",
+      "timeline": "36-72 months",
+      "af_per_yr": "Negligible direct water; roughly 0.2-0.3 if replacing cooling tower makeup from humidification-equivalent needs",
+      "viability": "Low",
+      "power_note": "Chandler has very strong solar irradiance and the Phoenix metro grid can interconnect large loads, but a ~169 MW data center needing ~338 acres of collectors is land-hungry and operationally mismatched to a data center that already has zero-water cooling.",
+      "water_note": "Water is not the problem at this site: the data center already reports negligible cooling water use, and Arizona solar-thermal cooling would not create a meaningful additional Colorado River reduction; moreover, the land requirement is difficult near Chandler, where built-up parcels dominate and nearby desert parcels are limited."
+    }
+  ],
+  "Stream Data Centers, Goodyear, AZ": [
+    {
+      "project": "Fund Agricultural Fallowing (Water Benefit Agreement)",
+      "capex": "$2-8M initial buy-in or ~$1,500-4,000/AF-year of conserved Colorado River water",
+      "opex": "$0.2-0.8M/yr admin, verification, and payments",
+      "timeline": "6-18 months",
+      "af_per_yr": "500-2,000",
+      "viability": "Medium",
+      "power_note": "Power is not the constraint here; this is a financial water-rights/offset transaction, and Goodyear sits in the fast-growing West Valley with ample grid access but not a project-dependent electrical need.",
+      "water_note": "Arizona has active Colorado River conservation and Arizona Water Banking/tribal/irrigation programs, but a true one-for-one offset requires a willing counterparty with transferable conserved Colorado River consumptive use and durable accounting; that is feasible in principle in Arizona but not guaranteed locally and is more policy/contract dependent than physically water-supply dependent."
+    },
+    {
+      "project": "Invest in Local Watershed Restoration",
+      "capex": "$1-5M",
+      "opex": "$50k-250k/yr",
+      "timeline": "12-36 months",
+      "af_per_yr": "0-100",
+      "viability": "Low",
+      "power_note": "No meaningful power dependency, and Goodyear's grid/solar conditions do not materially improve a watershed-restoration offset because the project does not create firm water supply.",
+      "water_note": "This is not a credible path to zero net Colorado River water for an Arizona data center because watershed restoration typically yields uncertain, non-firm, and often non-transferable hydrologic benefits; Arizona water law does not treat generic restoration as a usable replacement for Colorado River consumptive use."
+    },
+    {
+      "project": "Sponsor Municipal Recycled Water Expansion",
+      "capex": "$10-40M contribution or $1,000-3,000/AF-year of firmed supply",
+      "opex": "$0.2-1.0M/yr",
+      "timeline": "2-5 years",
+      "af_per_yr": "300-1,500",
+      "viability": "Medium",
+      "power_note": "Grid availability is adequate for the data center, but reclaimed-water expansion is a municipal civil-works project, not a power-limited one; the main constraint is pipeline/service-area access and treatment capacity.",
+      "water_note": "Goodyear is in the Phoenix metro where reclaimed water exists and municipal reuse is common, but the utility service area, purple-pipe reach, and Arizona reclaimed-water rules mean a dedicated supply to this site would likely require new mains, agreements, and possibly indirect-use approvals; physically available in the region, but not instantly at this parcel."
+    },
+    {
+      "project": "Develop On-Site Blackwater to Potable Reuse",
+      "capex": "$20-60M+",
+      "opex": "$0.5-2.0M/yr",
+      "timeline": "3-7 years",
+      "af_per_yr": "20-150",
+      "viability": "Low",
+      "power_note": "The local grid can power the treatment plant, but this project is constrained by treatment complexity and permitting, not by electricity supply; interconnection is likely far easier than the water/wastewater approvals.",
+      "water_note": "Arizona permits potable reuse through ADWR and ADEQ pathways, but an on-site blackwater-to-potable system for a private data center is highly unusual, would face major public-health/permitting hurdles, and the site\u2019s current air-cooled configuration produces too little wastewater to make meaningful firm supply at scale."
+    },
+    {
+      "project": "Fund Brackish Groundwater Recharge Project",
+      "capex": "$8-25M",
+      "opex": "$0.3-1.5M/yr",
+      "timeline": "2-5 years",
+      "af_per_yr": "200-1,000",
+      "viability": "Low",
+      "power_note": "Power is available, but brackish groundwater projects are more limited by hydrogeology, treatment/disposal, and recharge permitting than by electricity or solar resource.",
+      "water_note": "There is brackish groundwater in parts of Arizona, but a recharge project only helps if there is a suitable aquifer, water-rights/accounting pathway, and an entity able to use the credits; at Goodyear, this is not a straightforward local offset because the site\u2019s immediate service area is on the CAP/municipal supply side rather than a simple brackish-aquifer banking market."
+    },
+    {
+      "project": "Solar-Thermal Chiller",
+      "capex": "$1.1B-2.2B for ~560 acres of collectors at $2-4M/acre; plus site/building integration",
+      "opex": "$8-20M/yr",
+      "timeline": "4-8 years",
+      "af_per_yr": "Potentially large on paper, but not a practical zero-water solution for this site",
+      "viability": "Low",
+      "power_note": "The West Valley has excellent solar resource, but a 280 MW data center would need an enormous collector field and thermal storage to match 24/7 cooling demand; grid interconnection for the load is possible in metro Phoenix, yet the solar-thermal plant would be a massive land- and capital-intensive adjunct rather than a simple site-scale solution.",
+      "water_note": "The immediate Goodyear/far-west Phoenix area does have strong solar insolation and available desert land in some corridors, but ~560 acres of contiguous collector field is a very large footprint for an exurban site, and solar-thermal cooling is not a normal, bankable way to offset Colorado River consumptive use in Arizona; it reduces electric load more than it directly solves the water accounting problem."
+    }
+  ],
+  "Switch, Las Vegas, NV": [
+    {
+      "project": "On-Site Blackwater Recycling and Aquifer Recharge",
+      "capex": "$20-60M",
+      "opex": "$0.2-0.6M/yr",
+      "timeline": "24-48 months",
+      "af_per_yr": "200-800",
+      "viability": "Medium",
+      "power_note": "LVVWD/Nevada has ample grid access in metro Las Vegas, and the desert solar resource is strong; the bigger issue is not power but the continuous electrical load and backup needed for advanced treatment, pumping, and monitoring.",
+      "water_note": "Las Vegas can use reclaimed water and Managed Aquifer Recharge is legally and physically supported in Southern Nevada, but true on-site blackwater-to-recharge is constrained by Nevada water-quality permitting and the need to keep recharge water compliant with SNWA/LVVWD and NDEP requirements; this is feasible only as a tightly controlled pilot, not a large-scale offset."
+    },
+    {
+      "project": "Financing SNWA Return-Flow Credits via Municipal Effluent",
+      "capex": "$1-5M",
+      "opex": "$0.05-0.2M/yr",
+      "timeline": "6-18 months",
+      "af_per_yr": "500-2,000",
+      "viability": "High",
+      "power_note": "Power is not the binding constraint; Las Vegas has strong utility-service availability and very good solar resource if any associated pumping or treatment is co-located with PV.",
+      "water_note": "This is one of the few real local offset pathways because SNWA/LVVWD already operate a mature reclaimed-water and return-flow-credit framework, and municipal effluent/reuse water is actually available in the Las Vegas Valley under existing reuse rules."
+    },
+    {
+      "project": "Volumetric Water Benefit Agreement (VWBA) for Agricultural Fallowing",
+      "capex": "$0.1-0.5M",
+      "opex": "$0.05-0.3M/yr",
+      "timeline": "6-24 months",
+      "af_per_yr": "1,000-10,000",
+      "viability": "Medium",
+      "power_note": "The local grid and solar resource are sufficient; this project is mostly a contracting/verification exercise rather than an energy-intensive one.",
+      "water_note": "The challenge is counterparty water availability, not local supply: Nevada has limited in-state agricultural offset opportunity at scale, so a credible VWBA would likely need Colorado River basin fallowing or conserved consumptive use outside the Las Vegas Valley, with rigorous additionality and accounting."
+    },
+    {
+      "project": "Full Conversion to Air-Cooled Systems via SNWA's WET Program",
+      "capex": "$50-150M",
+      "opex": "$2-6M/yr",
+      "timeline": "36-72 months",
+      "af_per_yr": "3,000-15,000",
+      "viability": "Low",
+      "power_note": "Las Vegas can physically support the electrical load only if the site secures large interconnection capacity and possibly on-site/contracted solar plus storage; however, air cooling materially increases peak demand in an already summer-stressed desert grid context.",
+      "water_note": "The Water Efficient Technologies (WET) program exists locally, but full conversion of a hyperscale campus from evaporative to air-cooled systems is usually operationally difficult in the Mojave heat and may shift, not eliminate, water demand by increasing power use; it is not a clean, guaranteed zero-net Colorado River water solution."
+    },
+    {
+      "project": "Investment in Las Vegas Wash Watershed Restoration",
+      "capex": "$0.5-3M",
+      "opex": "$0.05-0.2M/yr",
+      "timeline": "6-24 months",
+      "af_per_yr": "50-300",
+      "viability": "Low",
+      "power_note": "Power availability is essentially irrelevant here because this is a restoration finance project, not an infrastructure-heavy one.",
+      "water_note": "The Las Vegas Wash is a real local watershed and restoration target, but habitat/watershed restoration is not generally an accepted direct volumetric Colorado River water offset under Nevada/SNWA accounting, so it is weak for claiming zero-net water status even if it has environmental value."
+    }
+  ],
+  "Google, Mesa, AZ": [
+    {
+      "project": "On-Site Blackwater to Potable Reuse",
+      "capex": "$1,000-2,000/AF",
+      "opex": "Included in capex estimate as total water cost",
+      "timeline": "2-7 years",
+      "af_per_yr": "Dependent on facility water use, likely <100",
+      "viability": "Medium",
+      "power_note": "The project's moderate energy needs can be met by the local grid or on-site solar, which is abundant in Mesa. [18, 7]",
+      "water_note": "Arizona's regulations for Direct Potable Reuse (DPR), effective March 2025, allow for this type of project. [3, 5]"
+    },
+    {
+      "project": "Volumetric Agricultural Fallowing Agreement",
+      "capex": "$200-400/AF annually",
+      "opex": "n/a (capex is the annual payment)",
+      "timeline": "12-24 months to establish agreement",
+      "af_per_yr": "Scalable based on agreement size",
+      "viability": "High",
+      "power_note": "This project requires no significant power as it is a transactional water rights agreement.",
+      "water_note": "Fallowing agreements are an established practice in the region, with counterparties available in nearby irrigation districts using Colorado River water. [11, 47]"
+    },
+    {
+      "project": "Municipal Water Reuse Infrastructure Investment",
+      "capex": "$150M for 8,000 AF/yr (City of Mesa project)",
+      "opex": "n/a (covered by utility)",
+      "timeline": "3-5 years",
+      "af_per_yr": "8,000-10,000",
+      "viability": "High",
+      "power_note": "The City of Mesa's existing and planned infrastructure is supported by its own electric utility and power agreements. [13, 23]",
+      "water_note": "Mesa is actively expanding its reuse capacity, exchanging treated effluent with the Gila River Indian Community for potable water supplies. [14, 15, 24]"
+    },
+    {
+      "project": "Gila River Watershed Restoration",
+      "capex": "Varies greatly, ~$1.5M total project cost for recent grants",
+      "opex": "Monitoring & maintenance costs",
+      "timeline": "3-10+ years",
+      "af_per_yr": "Not directly quantifiable as water volume",
+      "viability": "Low",
+      "power_note": "This project has minimal power requirements, mainly for equipment during restoration activities.",
+      "water_note": "Collaborative restoration efforts are active on the Lower Gila River, but water yield benefits are indirect and not easily quantified for offset purposes. [33, 34]"
+    },
+    {
+      "project": "Brackish Groundwater Desalination for Aquifer Recharge",
+      "capex": "$1,500-2,000/AF",
+      "opex": "High, due to significant energy consumption",
+      "timeline": "5-10 years",
+      "af_per_yr": "10,000+",
+      "viability": "Medium",
+      "power_note": "The high energy demand (1-2.5 kWh/m\u00b3) would require significant new power generation or procurement, straining a grid that is already tightening. [9, 23, 2]",
+      "water_note": "Brackish groundwater is available in several Arizona planning areas, including near Mesa, but concentrate disposal is a major challenge. [8, 10, 37]"
+    }
+  ],
+  "Meta, Eagle Mountain, UT": [
+    {
+      "project": "On-Site Direct Potable Reuse (DPR) Loop",
+      "capex": "$8-20M",
+      "opex": "$0.25-0.60/gal treated ($80-200k/yr at small pilot scale)",
+      "timeline": "24-48 months",
+      "af_per_yr": "100-300",
+      "viability": "Medium",
+      "power_note": "Meta\u2019s Eagle Mountain campus can likely support a modular DPR plant electrically, and Utah has strong solar resource, but treatment/reliability gear still needs firm interconnection and backup power; the bigger issue is not electricity but regulatory/process complexity.",
+      "water_note": "Utah has a direct potable reuse framework, but an on-site DPR loop inside a data center is still highly permitting- and public-health-review intensive; this site does have collaboration with Eagle Mountain City, which helps, but it is not a trivial path to meaningful Colorado River offset volume."
+    },
+    {
+      "project": "Agricultural Efficiency Water Lease via Utah Water Bank",
+      "capex": "$0.5-2M",
+      "opex": "$25-75/AF delivered or conserved; program/admin costs often $50-150k/yr",
+      "timeline": "6-18 months",
+      "af_per_yr": "500-2,000",
+      "viability": "Low",
+      "power_note": "This option is essentially power-light and can be supported by the local grid easily; solar/power availability is not the constraint.",
+      "water_note": "Utah has water banking and transfer mechanisms, but Eagle Mountain/Utah County is not an active, large-scale Colorado River agricultural offset market like some Basin programs, and finding a durable counterparty with legally transferable consumptive-use savings is the hard part."
+    },
+    {
+      "project": "Municipal Recycled Water Swap",
+      "capex": "$3-10M",
+      "opex": "$0.30-1.00/1,000 gal plus conveyance; $50-250k/yr typical",
+      "timeline": "18-36 months",
+      "af_per_yr": "200-800",
+      "viability": "Medium",
+      "power_note": "Local electric service and Utah\u2019s strong solar profile can support pumping and treatment reuse infrastructure without difficulty.",
+      "water_note": "Eagle Mountain City has publicly indicated collaboration with Meta on water reuse, so a municipal reclaimed-water exchange is one of the more location-realistic options; however, the available volume depends on city wastewater flows and reuse infrastructure, which are still limited compared with large Colorado River offsets."
+    },
+    {
+      "project": "Brackish Groundwater Desalination",
+      "capex": "$20-60M",
+      "opex": "$1.00-3.00/1,000 gal plus brine disposal; often $1,500-4,000/AF",
+      "timeline": "24-48 months",
+      "af_per_yr": "300-1,500",
+      "viability": "Low",
+      "power_note": "The grid can serve a desal plant, but energy intensity is materially higher than reuse and the need for dependable pumping plus pretreatment favors a robust interconnection and backup supply.",
+      "water_note": "Brackish groundwater is not a clearly established, ready local offset source in Eagle Mountain at the scale needed; even if a brackish aquifer were developed, the key problem is whether the produced water is truly additional and legally countable as Colorado River offset."
+    },
+    {
+      "project": "Upper Basin Watershed Restoration for Volumetric Benefits",
+      "capex": "$1-8M",
+      "opex": "$100k-500k/yr",
+      "timeline": "12-60 months",
+      "af_per_yr": "50-500",
+      "viability": "Low",
+      "power_note": "Power availability is not the binding constraint; restoration projects are mostly labor/land/restoration funded rather than electricity constrained.",
+      "water_note": "Watershed restoration can produce uncertain, hard-to-verify volumetric benefits, and in the Upper Basin those benefits are often not legally straightforward Colorado River consumptive-use offsets; this makes it a weak fit for a firm zero-net claim in Utah."
+    }
+  ],
+  "Vantage Data Centers, Goodyear, AZ": [
+    {
+      "project": "Fund Agricultural Efficiency with Volumetric Water Credits",
+      "capex": "$630-$750/AF",
+      "opex": "n/a",
+      "timeline": "6-12 months",
+      "af_per_yr": "Scalable with investment",
+      "viability": "High",
+      "power_note": "This is a financial transaction and has no direct impact on local power infrastructure.",
+      "water_note": "Partnerships are feasible as state-funded programs to improve on-farm irrigation efficiency are active and oversubscribed in Arizona. [18, 22, 23]"
+    },
+    {
+      "project": "Invest in a City of Goodyear Recycled Water Project",
+      "capex": "Project-dependent, likely multi-million dollar contribution",
+      "opex": "Low (City operates)",
+      "timeline": "3-5 years",
+      "af_per_yr": "Dependent on project scale and investment level",
+      "viability": "High",
+      "power_note": "The project's power needs are part of the city's infrastructure planning and not a direct burden on the data center's interconnection.",
+      "water_note": "Goodyear has a robust recycled water program, produces A+ effluent, and is actively expanding its reclamation facilities and reuse capabilities. [2, 5, 14, 31, 35]"
+    },
+    {
+      "project": "Purchase and Retire Agricultural Water Rights",
+      "capex": "Highly variable; potentially $6,000-$12,000+/AF for senior rights",
+      "opex": "n/a",
+      "timeline": "12-24 months",
+      "af_per_yr": "Dependent on volume of rights purchased",
+      "viability": "Medium",
+      "power_note": "This is a legal/financial transaction with no direct impact on local power infrastructure.",
+      "water_note": "While transferable rights exist, the process is complex, requires ADWR approval, and may face opposition, making willing sellers and timely execution uncertain. [19, 26, 41]"
+    },
+    {
+      "project": "Fund Off-site Aquifer Recharge with Non-CR Water",
+      "capex": "Project-dependent, likely multi-million dollar contribution",
+      "opex": "Low to Medium (Pumping/maintenance costs)",
+      "timeline": "2-4 years",
+      "af_per_yr": "Dependent on project scale and water availability",
+      "viability": "Medium",
+      "power_note": "Pumping for recharge requires power, but it is a manageable load within the local grid's capabilities.",
+      "water_note": "Goodyear actively recharges the aquifer with surplus CAP water and effluent, indicating geological suitability and an existing operational framework. [2, 5, 14]"
+    },
+    {
+      "project": "Develop On-site Blackwater Treatment and Reuse",
+      "capex": "$3-7M for a small-scale commercial MBR system",
+      "opex": "$100k-300k annually (energy, maintenance, consumables)",
+      "timeline": "24-36 months",
+      "af_per_yr": "<15 AF/yr (estimated)",
+      "viability": "Low",
+      "power_note": "The system's power demand is negligible relative to the data center's total IT load.",
+      "water_note": "While Arizona's regulations are becoming more favorable for reuse, the volume of blackwater from staff is insignificant compared to the cooling demand of a 176MW data center. [10, 11, 33]"
+    },
+    {
+      "project": "SOLAR-THERMAL CHILLER",
+      "capex": "$700M - $1.4B (at $2-4M/acre for 352 acres)",
+      "opex": "High (solar field and chiller maintenance)",
+      "timeline": "4-6 years",
+      "af_per_yr": "High avoidance, but displaces existing low-water cooling system",
+      "viability": "Low",
+      "power_note": "The excellent solar resource in Goodyear is ideal, but the project primarily offsets thermal load, not the main grid interconnection capacity challenge. [9, 34, 46]",
+      "water_note": "The massive land requirement (352 acres) is a major obstacle, despite claims that land is 'likely' available and Vantage's current design already uses virtually no water for cooling. [6, 17, 21]"
+    }
+  ],
+  "QTS Data Centers, Phoenix & Glendale, AZ": [
+    {
+      "project": "Agricultural Water Offset",
+      "capex": "$140-$420/AF",
+      "opex": "n/a",
+      "timeline": "6-18 months",
+      "af_per_yr": "200",
+      "viability": "High",
+      "power_note": "This project has no direct power requirement, avoiding any new load on the local grid.",
+      "water_note": "Counterparties are available as agriculture uses over 70% of the region's Colorado River allocation, and established programs offer a framework for these agreements. [8, 14, 25, 47]"
+    },
+    {
+      "project": "On-Site Recycled Water Conversion",
+      "capex": "$1-3M",
+      "opex": "$500-$1,500/AF",
+      "timeline": "24-36 months",
+      "af_per_yr": "200",
+      "viability": "High",
+      "power_note": "The power required for on-site pumping and potential polishing treatment is minor and can be supported by existing grid connections or on-site solar. [7, 9]",
+      "water_note": "Both Phoenix and Glendale operate water reclamation facilities and encourage the use of recycled water for industrial purposes like cooling. [29, 33, 35, 39]"
+    },
+    {
+      "project": "Air-Cooled System Retrofit",
+      "capex": "$14-15M",
+      "opex": "Higher electricity cost",
+      "timeline": "18-30 months",
+      "af_per_yr": "200",
+      "viability": "Medium",
+      "power_note": "This significantly increases electricity demand, which the robust Phoenix-area grid and solar resources can support, but at a high operational cost. [22, 44, 45]",
+      "water_note": "This project eliminates the need for an external water source for cooling, directly achieving the water-saving goal on-site. [37, 42]"
+    },
+    {
+      "project": "Brackish Groundwater Desalination",
+      "capex": "$4-8M",
+      "opex": "$550-$2,200/AF",
+      "timeline": "36-60 months",
+      "af_per_yr": "200",
+      "viability": "Low",
+      "power_note": "The reverse osmosis process is energy-intensive, requiring a significant new power load that would likely necessitate a dedicated substation and increase operational costs. [4, 16]",
+      "water_note": "While brackish aquifers exist in the West Salt River Valley, permitting for wells and especially for the disposal of brine concentrate is complex, costly, and a major logistical hurdle in the region. [6, 19, 40, 51]"
+    }
+  ],
+  "Google, Henderson, NV": [
+    {
+      "project": "Cooling System Retrofit",
+      "capex": "$7M-$15M",
+      "opex": "Higher electricity cost, but potential for overall TCO reduction.",
+      "timeline": "12-24 months",
+      "af_per_yr": "~629",
+      "viability": "Medium",
+      "power_note": "A retrofit to air or closed-loop liquid cooling would increase electricity demand on a grid already strained by data center growth, though NV Energy is actively planning major expansions. [33, 43]",
+      "water_note": "This directly addresses the ~205 million gallons used for cooling and aligns with SNWA's ban on evaporative cooling for new data centers, making it a highly relevant solution. [33]"
+    },
+    {
+      "project": "SNWA Potable Reuse Program",
+      "capex": "Contribution-based (e.g., SNWA contributing $750M to a regional project)",
+      "opex": "n/a",
+      "timeline": "3-5+ years for new large-scale facilities",
+      "af_per_yr": "~1,080",
+      "viability": "High",
+      "power_note": "This municipal-level project has no direct power impact on the data center, though water recycling and pumping at this scale is energy-intensive for the utility. [20]",
+      "water_note": "SNWA is actively pursuing direct potable reuse, and Nevada has established regulations (Category A+) for it, making this a structurally sound and available long-term option. [29, 35]"
+    },
+    {
+      "project": "Acquisition of VWBAs",
+      "capex": "$150-$400/AF (market variable)",
+      "opex": "Annual purchase cost",
+      "timeline": "Immediate (contract-dependent)",
+      "af_per_yr": "~1,080",
+      "viability": "High",
+      "power_note": "This is a financial transaction with no direct impact on the data center's power consumption.",
+      "water_note": "VWBAs are an established market mechanism for offsetting water use, and organizations like the Bonneville Environmental Foundation facilitate such projects in the Colorado River basin. [21, 41, 48]"
+    },
+    {
+      "project": "On-Site Blackwater/Greywater Recycling",
+      "capex": "$1M-$3M for a commercial system",
+      "opex": "Annual maintenance and energy costs.",
+      "timeline": "18-24 months",
+      "af_per_yr": "< 5",
+      "viability": "Low",
+      "power_note": "The system requires additional power, but the load would be minor compared to the data center's total consumption.",
+      "water_note": "While Nevada has regulations for non-potable reuse, data centers generate minimal wastewater, making this approach insufficient to offset significant cooling or operational water use. [13, 19]"
+    },
+    {
+      "project": "Funding Las Vegas Wash Restoration",
+      "capex": "Contribution-based (e.g., portions of multi-million dollar federal grants)",
+      "opex": "n/a",
+      "timeline": "Ongoing (project-dependent)",
+      "af_per_yr": "~1,080",
+      "viability": "High",
+      "power_note": "This is a financial contribution to an external environmental project and has no direct power impact on the data center.",
+      "water_note": "The Las Vegas Wash is the primary mechanism for SNWA's return-flow credits, making investment here a direct and proven way to return water to Lake Mead. [4, 5, 6, 9]"
+    }
+  ],
+  "Aligned Data Centers, West Jordan, UT": [
+    {
+      "project": "Fund Local Water Recycling Expansion",
+      "capex": "$10-30M",
+      "opex": "$0.1-0.5M/yr",
+      "timeline": "2-5 years",
+      "af_per_yr": "145",
+      "viability": "Medium",
+      "power_note": "The Jordan Valley/Jordan River wastewater system is already grid-connected and utility-scale treatment is feasible in West Jordan, but this is a utility-dependent expansion rather than a power-limited project; local solar is not required.",
+      "water_note": "Yes\u2014Jordan Valley Water Conservancy District and regional wastewater plants are real local counterparties with an existing reuse pathway in the Salt Lake Valley, but incrementally getting 145 AF/yr of Colorado River-equivalent benefit depends on available treatment capacity, conveyance, and where the recycled water actually displaces potable demand."
+    },
+    {
+      "project": "VWBA Agricultural Fallowing Credits",
+      "capex": "$3-8M",
+      "opex": "$0.1-0.3M/yr",
+      "timeline": "1-3 years",
+      "af_per_yr": "145",
+      "viability": "Medium",
+      "power_note": "Power is not a material constraint because this is a contractual offset project, not a physical energy project; the local grid/solar conditions do not drive feasibility.",
+      "water_note": "Utah has real agricultural users and OpenET-based verification is workable, but finding enough willing fallowing acreage near the actual Colorado River basin accounting area is uncertain, so this is feasible only as a negotiated offset program rather than a guaranteed local water supply."
+    },
+    {
+      "project": "DPR Innovation Seed Funding",
+      "capex": "$2-10M",
+      "opex": "$0.2-0.8M/yr",
+      "timeline": "3-7 years",
+      "af_per_yr": "145",
+      "viability": "Medium",
+      "power_note": "West Jordan is electrically suitable for a pilot-scale advanced treatment facility, but a DPR pilot is not constrained by generation; the main issue is utility/treatment integration and permitting.",
+      "water_note": "Direct potable reuse is not an established full-scale pathway in Utah yet, but Utah has been moving on reuse policy and demonstration projects; the needed source water exists in municipal effluent, though converting it into credited Colorado River savings is a regulatory and accounting challenge."
+    },
+    {
+      "project": "On-Site Blackwater and Stormwater Recharge",
+      "capex": "$20-50M",
+      "opex": "$0.8-2.5M/yr",
+      "timeline": "3-6 years",
+      "af_per_yr": "145",
+      "viability": "Low",
+      "power_note": "The local grid can serve an advanced treatment plant, but the project\u2019s scale is dominated by treatment/recharge operations rather than power availability; solar is irrelevant.",
+      "water_note": "This is the weakest fit locally because aquifer recharge via injected treated effluent is heavily regulated and site-specific in Utah, and West Jordan\u2019s shallow groundwater/recharge permissions, monitoring, and water-quality approvals would make achieving credited Colorado River benefits difficult."
+    },
+    {
+      "project": "Provo River Watershed/River Restoration",
+      "capex": "$5-20M",
+      "opex": "$0.1-0.5M/yr",
+      "timeline": "1-4 years",
+      "af_per_yr": "145",
+      "viability": "Low",
+      "power_note": "No meaningful power constraint exists because this is a restoration/payment project, not an energy-intensive one.",
+      "water_note": "The Provo River is a real regional water source, but translating watershed restoration into defensible, additional Colorado River water benefits from West Jordan is indirect and highly attribution-dependent, so it is not a strong local offset mechanism compared with direct reuse or verified fallowing.",
+      "sources": "Utah water reuse/DPR policy context; Jordan Valley Water Conservancy District and regional wastewater/reuse infrastructure; OpenET-based voluntary benefit agreement structure; West Jordan is in the Salt Lake Valley with ample grid service and strong solar resource but limited nearby land for large solar-thermal deployment."
+    },
+    {
+      "project": "Solar-Thermal Chiller",
+      "capex": "$320-640M",
+      "opex": "$3-8M/yr",
+      "timeline": "4-8 years",
+      "af_per_yr": "145",
+      "viability": "Low",
+      "power_note": "Utah has good solar resource, but the site\u2019s nearby land is only partial and suburban; a roughly 160-acre solar-thermal field for an ~80 MW load is a poor fit for the local land base and would be difficult to permit and site.",
+      "water_note": "This does not solve a water-availability problem because the facility already uses closed-loop/waterless cooling; there is no meaningful local water source advantage, and the project is mainly limited by land, siting, and economics rather than water."
+    }
+  ],
+  "QTS Data Centers, Eagle Mountain, UT": [
+    {
+      "project": "VWBA agricultural efficiency",
+      "capex": "$1-5M per ~100-500 AF/yr offset; often structured as a payment rather than owned assets",
+      "opex": "$50k-250k/yr transaction, verification, and program administration",
+      "timeline": "6-18 months",
+      "af_per_yr": "0.5-2.0",
+      "viability": "Medium",
+      "power_note": "No meaningful power dependency, so local grid limits are not the constraint; Utah/UTS is a strong solar state but this project is mainly a finance/contracting exercise.",
+      "water_note": "This is the most plausible local offset path because Utah has active agricultural conservation/transfer opportunities in the Colorado River Basin, but it requires a willing counterparty and verified consumptive-use reduction rather than a physical water source on-site."
+    },
+    {
+      "project": "On-site blackwater/greywater recycling",
+      "capex": "$8-20M",
+      "opex": "$250k-800k/yr",
+      "timeline": "18-36 months",
+      "af_per_yr": "0.02-0.10",
+      "viability": "Low",
+      "power_note": "Power is not the main issue; Eagle Mountain can supply load, but any on-site treatment adds significant electrical and operational complexity to an already large data-center campus.",
+      "water_note": "Eagle Mountain City and Utah reuse rules make internal reuse feasible in principle, but a data center has very little blackwater/greywater to recycle and closed-loop cooling already minimizes demand, so the actual recoverable volume is tiny."
+    },
+    {
+      "project": "Local watershed restoration sponsorship",
+      "capex": "$0.5-3M",
+      "opex": "$50k-150k/yr",
+      "timeline": "3-12 months",
+      "af_per_yr": "0.0",
+      "viability": "Low",
+      "power_note": "No power dependence, but also no direct link to load or cooling demand, so it does not solve a physical water balance issue.",
+      "water_note": "Restoration in Utah can improve habitat, recharge, or stream conditions, but it generally does not count as a defendable Colorado River consumptive-use offset unless paired with a quantified, legally recognized water-right change."
+    },
+    {
+      "project": "Solar-thermal chiller",
+      "capex": "$480-960M for ~240 acres of collectors at $2-4M/acre",
+      "opex": "$8-20M/yr",
+      "timeline": "48-84 months",
+      "af_per_yr": "0.0-0.1",
+      "viability": "Low",
+      "power_note": "Utah's solar resource is strong, but a ~120 MW data-center cooling duty would require a very large collector field, thermal storage, and balancing infrastructure, and the site\u2019s actual cooling demand is likely far below a full 120 MW thermal requirement because it uses closed-loop cooling.",
+      "water_note": "There is no special local water source issue this solves; the problem is scale and practicality, not water availability, and the project would not create a meaningful Colorado River water offset."
+    }
+  ],
+  "Flexential, North Las Vegas, NV": [
+    {
+      "project": "Cooling System Upgrade to Waterless Technology",
+      "capex": "Up to 50% of project cost covered by SNWA incentive. Total cost varies, but can be comparable to water-cooled systems. [38, 39]",
+      "opex": "Reduced water cost, but potentially higher energy cost depending on climate and specific technology (vs. evaporative cooling). [19, 33]",
+      "timeline": "6-18 months for a facility retrofit. [14]",
+      "af_per_yr": "~62",
+      "viability": "High",
+      "power_note": "Air-cooled systems can use more energy than evaporative cooling, but the local grid, heavily supplied by natural gas and a growing solar portfolio, can support the load. [19, 23, 45]",
+      "water_note": "This project eliminates the need for process cooling water, making it highly viable in a water-scarce region. [33]"
+    },
+    {
+      "project": "Investment in SNWA's Return-Flow Credit Program",
+      "capex": "n/a (Financial transaction)",
+      "opex": "Cost is effectively the price of purchasing water credits; this is a financial tool, not a construction project.",
+      "timeline": "Immediate upon agreement with SNWA.",
+      "af_per_yr": "~62",
+      "viability": "High",
+      "power_note": "There is no direct power impact on the data center as this is a financial transaction leveraging existing municipal water treatment infrastructure. [15]",
+      "water_note": "The program is well-established; SNWA and its partners operate the wastewater treatment and return system that generates these credits. [15, 16]"
+    },
+    {
+      "project": "Volumetric Water-Benefit Agreement (VWBA) for Agricultural Conservation",
+      "capex": "$140-$417/AF. [1, 5, 8]",
+      "opex": "n/a (Typically a one-time or fixed-term payment for conservation actions).",
+      "timeline": "6-24 months to identify partner, execute agreement, and verify savings.",
+      "af_per_yr": "~62",
+      "viability": "High",
+      "power_note": "This is an off-site financial agreement for conservation, imposing no additional power demand on the North Las Vegas grid.",
+      "water_note": "Partnerships with agricultural water users in the Colorado River Basin are available, and this is considered a highly cost-effective method for conservation. [1, 5, 11]"
+    },
+    {
+      "project": "On-Site Brackish Groundwater Desalination Plant",
+      "capex": "$500 - $2,947 per m3/day of capacity (inflation-adjusted to 2020). [34] For ~62 AFY (~208 m3/day), this is roughly $0.1M - $0.6M.",
+      "opex": "$0.39 - $0.66 per m3, plus brine disposal costs. [34] Energy use is significant, approx. 1-2.5 kWh/m3. [7, 9]",
+      "timeline": "18-36 months for planning, permitting, and construction.",
+      "af_per_yr": "~62",
+      "viability": "Low",
+      "power_note": "Desalination is energy-intensive; while the local grid has capacity, the high consumption makes this a costly and power-demanding option. [6, 7, 23]",
+      "water_note": "Requires sourcing a local brackish groundwater supply and, critically, a permitted and viable method for brine concentrate disposal, which is a major challenge."
+    },
+    {
+      "project": "Funding for Las Vegas Wash Restoration",
+      "capex": "Contribution-based (e.g., projects range from hundreds of thousands to millions of dollars). [2, 4]",
+      "opex": "n/a (Typically a one-time or periodic contribution to the SNWA-managed program).",
+      "timeline": "Immediate upon contribution.",
+      "af_per_yr": "0 (direct); indirect benefit",
+      "viability": "Medium",
+      "power_note": "This is a financial contribution to an external environmental project and has no direct impact on the data center's power consumption.",
+      "water_note": "This project improves the quality of water for which SNWA earns return-flow credits but does not generate new water credits for the funder. [16, 27, 37]"
+    }
+  ],
+  "QTS Data Centers, Aurora, CO": [
+    {
+      "project": "On-Site Irrigation System Conversion to Reclaimed Water",
+      "capex": "$0.5-2M",
+      "opex": "$50k-200k/yr",
+      "timeline": "12-24 months",
+      "af_per_yr": "5-20",
+      "viability": "Medium",
+      "power_note": "Power is not the limiter here; Aurora/Front Range grid access is generally strong enough for pumps and controls, but this project is water-network limited, not electricity-limited.",
+      "water_note": "Aurora Water has a reclaimed-water system in the city, but actual service availability depends on whether the site can tie into reclaimed mains; Colorado reuse rules allow nonpotable irrigation use, yet the hard part is nearby reclaimed infrastructure and connection capacity, not source legality."
+    },
+    {
+      "project": "Agricultural Water Lease through a South Platte Water Bank",
+      "capex": "$1-5M",
+      "opex": "$0.1-0.5M/yr",
+      "timeline": "12-36 months",
+      "af_per_yr": "50-300",
+      "viability": "Medium",
+      "power_note": "No material power requirement beyond administration; the Front Range grid and Aurora service area do not constrain an offsite lease transaction.",
+      "water_note": "This is feasible because the South Platte Basin has existing water-rights markets and banks, but the offset must come from a real consumptive-use reduction or temporary interruptible supply agreement that survives Colorado water-court and augmentation requirements."
+    },
+    {
+      "project": "Investment in a Local Aquifer Recharge Project",
+      "capex": "$3-15M",
+      "opex": "$0.1-1M/yr",
+      "timeline": "24-60 months",
+      "af_per_yr": "20-200",
+      "viability": "Medium",
+      "power_note": "Power availability is not a major issue; recharge wells or basins are modest loads compared with data-center operations and the local grid is not the binding constraint.",
+      "water_note": "Aquifer recharge is legally possible in Colorado, but it requires a carefully permitted source of recharge water, accounting for return flows and injury analysis; the practical challenge is securing a legally reusable source rather than finding a place to inject it."
+    },
+    {
+      "project": "Corporate Partnership for Colorado River Headwaters Restoration",
+      "capex": "$0.5-5M",
+      "opex": "$50k-250k/yr",
+      "timeline": "6-24 months",
+      "af_per_yr": "5-100",
+      "viability": "Low",
+      "power_note": "Power is irrelevant here; this is a financial offset project rather than a physical water-supply project.",
+      "water_note": "This is the weakest fit for getting to zero net Colorado River water in Aurora because headwaters restoration is usually not a direct, quantifiable consumptive-use offset under Colorado water law and may not create a defensible, site-specific basin accounting benefit."
+    },
+    {
+      "project": "Funding for Stormwater Capture and Reuse for Irrigation",
+      "capex": "$1-4M",
+      "opex": "$50k-250k/yr",
+      "timeline": "12-30 months",
+      "af_per_yr": "10-60",
+      "viability": "Medium",
+      "power_note": "Local power availability is adequate for pumps and controls, and the project scale is small relative to the Aurora-area grid.",
+      "water_note": "Stormwater capture is workable in Aurora, but the dependable yield is limited and seasonal; it can reduce potable irrigation demand, yet it is not a large or fully reliable substitute unless paired with storage and permitted reuse infrastructure."
+    },
+    {
+      "project": "Solar-Thermal Chiller",
+      "capex": "$480-960M",
+      "opex": "$5-20M/yr",
+      "timeline": "48-96 months",
+      "af_per_yr": "0",
+      "viability": "Low",
+      "power_note": "Aurora has good solar insolation by Colorado standards, but a 120 MW data center would need roughly 240 acres of collectors and large thermal storage; the land may exist on the east edge, yet this is still a very large, complex, intermittency-prone cooling build with significant integration risk.",
+      "water_note": "This does not create a Colorado River water offset and does not solve the site's water accounting by itself; also, Colorado's dry, high-altitude climate helps solar resource but does not make solar-thermal cooling a practical substitute for conventional chilled-water systems at this scale."
+    }
+  ],
+  "CoreSite (DE3), Denver, CO": [
+    {
+      "project": "Recycled Water Cooling Conversion",
+      "capex": "$15-35M",
+      "opex": "+$0.3-1.0M/yr",
+      "timeline": "24-48 months",
+      "af_per_yr": "77-95",
+      "viability": "Medium",
+      "power_note": "Xcel Energy\u2019s Denver load zone is generally serviceable for a retrofit of this size, but any new pumps/treatment/controls add modest load; Denver has strong solar potential but onsite solar cannot materially offset cooling electricity on a 24/7 basis.",
+      "water_note": "Denver has treated wastewater reuse activity, but a true on-site/reliably firm recycled-water supply for DE3 is not guaranteed at this address, and Colorado reuse rules still require an actual contractable reclaimed-water source and utility delivery infrastructure; potable-to-recycled conversion is more a distribution/partnership problem than a technology problem."
+    },
+    {
+      "project": "Watershed Restoration Investment",
+      "capex": "$2-10M",
+      "opex": "$0.1-0.5M/yr",
+      "timeline": "12-36 months",
+      "af_per_yr": "10-50",
+      "viability": "Low",
+      "power_note": "Power availability is not the binding constraint here; this is a financial offset project with negligible grid dependence beyond program administration.",
+      "water_note": "In the Colorado Front Range, watershed and streamflow restoration can be legitimate mitigation, but converting it into zero-net Colorado River water is highly uncertain because the benefit is indirect, seasonal, and hard to quantify against Colorado River accounting; there is no local physical water source created, only an offset claim."
+    },
+    {
+      "project": "Agricultural Fallowing Water Credits",
+      "capex": "$0.5-3M",
+      "opex": "$0.2-1.5M/yr",
+      "timeline": "6-24 months",
+      "af_per_yr": "25-100",
+      "viability": "Medium",
+      "power_note": "Power is irrelevant except for program administration; the local grid can easily support this option.",
+      "water_note": "Colorado does have agricultural temporary-fallowing and leasing concepts, but a Denver-based data center needs a real, legally transferable, Colorado-River-basin-suitable counterparty and basin accounting to claim net zero; the main constraint is not water availability but finding willing irrigators and getting durable, legally recognized credits."
+    },
+    {
+      "project": "Closed-Loop/Hybrid Cooling Retrofit",
+      "capex": "$8-25M",
+      "opex": "-$0.5 to +$0.8M/yr",
+      "timeline": "18-36 months",
+      "af_per_yr": "60-110",
+      "viability": "High",
+      "power_note": "This is the most grid-friendly option because it reduces water pumping and tower makeup while only modestly changing electrical load; Denver\u2019s grid and solar resource can support the retrofit, though the facility will still rely on utility power for IT and cooling.",
+      "water_note": "This does not require a new water source; it directly reduces consumption from the current water-cooled chiller/cooling-tower setup, which is practical in Denver where potable water is available but costly to justify for large evaporative loads."
+    },
+    {
+      "project": "Direct Potable Reuse (DPR) Advancement",
+      "capex": "$20-60M",
+      "opex": "+$0.5-2.0M/yr",
+      "timeline": "36-72 months",
+      "af_per_yr": "77-95",
+      "viability": "Low",
+      "power_note": "Xcel can serve the electrical side, but DPR adds treatment energy and operational complexity; solar resource is good, yet it does not solve the need for continuous high-reliability power and advanced treatment redundancy.",
+      "water_note": "Colorado\u2019s current potable reuse framework is still evolving and DPR is highly utility- and permit-dependent; Denver has reuse experience, but a data-center-specific DPR supply for DE3 is not a realistic near-term dedicated source without a municipal partner, plant investment, and regulatory approvals."
+    }
+  ],
+  "Microsoft, Cheyenne, WY": [
+    {
+      "project": "Recycled Water for Cooling",
+      "capex": "$2-5M",
+      "opex": "$250-400k/yr",
+      "timeline": "24-48 months",
+      "af_per_yr": "200-400",
+      "viability": "Medium",
+      "power_note": "The local grid can support the additional pumping load, which is minor compared to data center demand.",
+      "water_note": "Cheyenne has a water reclamation program, but a recent contamination incident from a data center contractor has suspended industrial wastewater acceptance, complicating the timeline. [31, 36, 37, 41]"
+    },
+    {
+      "project": "Agricultural Water Offset",
+      "capex": "$400-800/AF annual lease",
+      "opex": "n/a",
+      "timeline": "12-24 months",
+      "af_per_yr": "200-400",
+      "viability": "High",
+      "power_note": "This project has no direct power requirement for the data center.",
+      "water_note": "Local partners like the Laramie County Conservation District exist to facilitate voluntary irrigation efficiency projects and water conservation with agricultural users. [26, 27, 28]"
+    },
+    {
+      "project": "Brackish Groundwater Desalination",
+      "capex": "$3-7M",
+      "opex": "$400-800k/yr",
+      "timeline": "36-60 months",
+      "af_per_yr": "200-400",
+      "viability": "Low",
+      "power_note": "High energy demand for reverse osmosis would require significant dedicated power infrastructure, though new large-scale generation is being developed in the area. [32]",
+      "water_note": "While deeper, poor-quality groundwater exists in Laramie County, its suitability is unconfirmed, and brine disposal presents a major environmental and regulatory hurdle. [33, 38]"
+    }
+  ],
+  "EdgeConneX (DEN01 & DEN02), Englewood/Centennial, CO": [
+    {
+      "project": "Off-Site Ag Water Conservation (VWBA credits)",
+      "capex": "$0.5-3M upfront; typically $800-2,500/AF of verified credit plus transaction/MRV costs",
+      "opex": "$50-200k/yr for monitoring, verification, and credit procurement",
+      "timeline": "6-18 months",
+      "af_per_yr": "10-100 AF/yr",
+      "viability": "Medium",
+      "power_note": "Power is not the limiting factor here: the Front Range grid can support an off-site credit strategy because it is mostly a financial/administrative procurement, not an interconnection-heavy load. Local grid constraints only matter if the project also adds major on-site pumps or treatment.",
+      "water_note": "Colorado has real agricultural consumptive-use reduction opportunities, but any VWBA-style offset must be durable and legally transferable; in Colorado that means complex water-rights administration and depletions accounting, not a simple purchase. This is feasible in principle on the Front Range, but it is not a guaranteed easy offset because legal water banking/administration and river-basin-specific accounting are tight."
+    },
+    {
+      "project": "Local Aquifer Storage and Recovery (ASR)",
+      "capex": "$3-15M+ depending on wells, treatment, pilot testing, and permitting",
+      "opex": "$100-500k/yr",
+      "timeline": "2-5 years",
+      "af_per_yr": "0-50 AF/yr",
+      "viability": "Low",
+      "power_note": "Power is generally available for pumping and controls, but ASR itself does not hinge on grid capacity; the bigger issue is whether a viable aquifer and water quality compatibility exist. Solar is ample on the Colorado Front Range, but it does not solve hydrogeologic or permitting barriers.",
+      "water_note": "ASR is possible in Colorado, but only where a suitable aquifer, injection/recovery chemistry, and water-rights framework exist; Denver-area hydrogeology is highly site-specific and not every utility allows it as a simple mitigation tool. There is no broad, ready-made brackish resource in Englewood/Centennial that makes ASR a straightforward offset."
+    },
+    {
+      "project": "Landscaping Retrofit + Recycled Water for Irrigation",
+      "capex": "$0.25-2M for xeriscape retrofit and purple-pipe connection, if nearby recycled supply exists",
+      "opex": "$25-150k/yr; recycled water purchase may add $200-800/AF equivalent",
+      "timeline": "12-36 months",
+      "af_per_yr": "1-20 AF/yr",
+      "viability": "Medium",
+      "power_note": "Grid capacity is not a major constraint; irrigation pumping and any small treatment/booster loads are modest. The region also has strong solar resource, but again the main limit is water-source proximity and utility service compatibility, not electricity.",
+      "water_note": "Recycled water is real on the Front Range, but access is location-dependent: Denver Water has nonpotable and recycled-water programs, yet service lines are not universally available to every parcel in Englewood/Centennial. For a data center footprint, irrigation demand is usually too small to produce much Colorado River offset, so this is more a local demand-reduction measure than a large water-neutrality solution."
+    },
+    {
+      "project": "Headwaters Restoration Fund Contribution",
+      "capex": "$0.2-2M donation/grant-style contribution; often modeled as $500-3,000/AF equivalent",
+      "opex": "$0/yr to minimal administrative oversight",
+      "timeline": "3-12 months",
+      "af_per_yr": "5-50 AF/yr equivalent, depending on fund methodology",
+      "viability": "Medium",
+      "power_note": "Power availability is largely irrelevant because this is a financial contribution rather than a load-changing project. The Colorado Front Range grid and solar resource do not materially affect feasibility.",
+      "water_note": "Headwaters/restoration funds exist in the West, but whether they count as credible Colorado River water neutrality depends on the fund\u2019s accounting standard, permanence, and basin linkage. In Colorado, the hardest part is proving that ecological restoration translates into a real, defensible consumptive-use offset rather than a general environmental benefit."
+    },
+    {
+      "project": "100% Closed-Loop and On-Site Water Reuse",
+      "capex": "$10-40M+ for cooling-system redesign, water treatment, storage, heat rejection, and possible chiller upgrades",
+      "opex": "$200k-1.5M/yr depending on water chemistry, treatment energy, maintenance, and replacement parts",
+      "timeline": "18-48 months",
+      "af_per_yr": "10-80 AF/yr",
+      "viability": "Medium",
+      "power_note": "The Front Range grid can support the electrical load of higher-efficiency chillers, pumps, and water treatment, and the area has good solar resource if the owner wants to pair with on-site PV or PPAs. The bigger practical issue is that closed-loop systems often raise electric demand even as they cut water use, so interconnection and backup power sizing must be checked carefully.",
+      "water_note": "This is the most technically direct way to reduce potable demand, but for an existing air-cooled/N+1 CRAC site it may be limited by the current thermal architecture and by winter freeze, blowdown, and water-quality constraints. Colorado does allow reuse pathways, but a truly closed-loop retrofit at an operating edge data center is usually capital-intensive and site-specific rather than a simple Denver Water service swap."
+    }
+  ],
+  "Novva Data Centers, Colorado Springs, CO": [
+    {
+      "project": "Solar-Thermal Chiller",
+      "capex": "$800M - $1.6B",
+      "opex": "High (maintenance, replacement parts)",
+      "timeline": "4-7 years",
+      "af_per_yr": "0 (potentially negative)",
+      "viability": "Low",
+      "power_note": "The project requires significant land and capital but does not generate electricity; it consumes it for pumps and fans, while the primary 200 MW data center load remains on the grid. [23, 25]",
+      "water_note": "This project is counterproductive, as absorption chillers require a wet cooling tower for heat rejection, which would introduce significant water consumption to a facility currently using water-free cooling. [11, 37]"
+    },
+    {
+      "project": "Water Rights Acquisition (Instream Flow)",
+      "capex": "$52,000 - $85,000 per AF/yr (one-time)",
+      "opex": "Low (legal/administrative fees)",
+      "timeline": "12-24 months",
+      "af_per_yr": "20 (scalable, based on assumed non-cooling water use)",
+      "viability": "Medium",
+      "power_note": "This project has no impact on the data center's power consumption or the local grid.",
+      "water_note": "Water rights in the Colorado Front Range are extremely expensive and transactions are complex, but it is a well-established market for permanently offsetting consumption. [29, 46, 47]"
+    },
+    {
+      "project": "Agricultural Efficiency Offset",
+      "capex": "$140 - $510 per AF/yr (annual or one-time funding)",
+      "opex": "n/a",
+      "timeline": "6-18 months",
+      "af_per_yr": "20 (scalable, based on assumed non-cooling water use)",
+      "viability": "High",
+      "power_note": "This project has no impact on the data center's power consumption or the local grid.",
+      "water_note": "Funding agricultural efficiency is a cost-effective and established method for water conservation in Colorado, with programs paying farmers to fallow land or upgrade irrigation. [44, 45]"
+    },
+    {
+      "project": "Municipal Recycled Water Partnership",
+      "capex": "Variable (e.g., $500k - $5M+ to fund specific infrastructure)",
+      "opex": "n/a",
+      "timeline": "24-48 months",
+      "af_per_yr": "20 (scalable, based on assumed non-cooling water use)",
+      "viability": "Medium",
+      "power_note": "This project has no direct impact on the data center's power needs, but water recycling facilities are energy-intensive for the utility.",
+      "water_note": "Colorado Springs Utilities is actively developing direct potable reuse (DPR) and has a large non-potable system, creating partnership opportunities to fund expansion in exchange for offsets. [13, 14, 18, 20]"
+    }
+  ],
+  "DataBank, Bluffdale, UT": [
+    {
+      "project": "Volumetric Water Benefit Credits",
+      "capex": "n/a",
+      "opex": "$5,000 - $15,000",
+      "timeline": "< 3 months",
+      "af_per_yr": "23.6",
+      "viability": "High",
+      "power_note": "This project has no impact on facility power consumption or the local grid.",
+      "water_note": "Verified water offset markets, such as Bonneville Environmental Foundation's Water Restoration Certificates, exist for the Colorado River Basin, offering a contractual and immediate path to zero net water. [18, 23, 24]"
+    },
+    {
+      "project": "Recycled Water Infrastructure",
+      "capex": "$1-3M contribution",
+      "opex": "n/a (or cost of recycled water)",
+      "timeline": "18-36 months",
+      "af_per_yr": "23.6",
+      "viability": "High",
+      "power_note": "The additional energy for pumping recycled water represents a minor, manageable load for the local grid.",
+      "water_note": "The South Valley Water Reclamation Facility is located in Bluffdale and serves the area, making a 'purple pipe' connection geographically feasible under established state non-potable reuse regulations. [34, 38]"
+    },
+    {
+      "project": "Waterless Cooling Upgrade",
+      "capex": "$5-15M+",
+      "opex": "Reduced water utility costs",
+      "timeline": "24-48 months",
+      "af_per_yr": "23.6",
+      "viability": "Medium",
+      "power_note": "This may increase electricity use, posing a challenge given that Utah's grid is strained by data center growth, leading to long interconnection queues and a turn toward private power generation. [9, 20, 32]",
+      "water_note": "This project permanently eliminates the need for 23.6 acre-feet of external water for cooling, offering the highest on-site water certainty."
+    },
+    {
+      "project": "Direct Potable Reuse Sponsorship",
+      "capex": "$2-5M+ contribution",
+      "opex": "n/a",
+      "timeline": "3-7 years",
+      "af_per_yr": "23.6",
+      "viability": "Low",
+      "power_note": "Sponsoring a DPR facility would support an energy-intensive project, adding a significant future load to the strained local power grid. [9, 20]",
+      "water_note": "This project is contingent on the finalization of statewide Direct Potable Reuse (DPR) regulations; the nearby Pure SoJo project is a demonstration facility helping to inform these future rules. [7, 16, 26]"
+    },
+    {
+      "project": "On-site Stormwater Recharge",
+      "capex": "$500,000 - $2M",
+      "opex": "<$20,000 for annual maintenance",
+      "timeline": "12-24 months",
+      "af_per_yr": "Variable, unlikely to meet the full 23.6 AF target annually",
+      "viability": "Medium",
+      "power_note": "This gravity-fed project requires no operational power, avoiding any impact on the grid.",
+      "water_note": "Success is dependent on Bluffdale's variable annual precipitation (approx. 14-19 inches) and may not reliably offset the facility's full water use every year. [2, 3, 6]"
+    }
+  ],
+  "Novva Data Centers, West Jordan, UT": [
+    {
+      "project": "On-Site Wastewater Treatment and Reuse",
+      "capex": "$1-3M",
+      "opex": "$50-150k/yr",
+      "timeline": "24-36 months",
+      "af_per_yr": "3-9",
+      "viability": "Medium",
+      "power_note": "The power requirement is minor and can be easily supported by the local grid.",
+      "water_note": "Utah DEQ regulations approve on-site reuse for non-potable uses like dust control and toilet flushing, making the 1M gallons of operational water (~3 AF) reusable. [14, 26]"
+    },
+    {
+      "project": "Agricultural Fallowing for Volumetric Water Benefits",
+      "capex": "$390/AF",
+      "opex": "n/a",
+      "timeline": "6-12 months",
+      "af_per_yr": "Variable",
+      "viability": "High",
+      "power_note": "This project has no power requirements.",
+      "water_note": "Utah has an active pilot program for fallowing, and willing agricultural partners exist in the region, making offset agreements feasible. [7, 17]"
+    },
+    {
+      "project": "Campus-Wide Xeriscaping and Smart Irrigation Conversion",
+      "capex": "$8-16/sqft",
+      "opex": "Reduced water costs",
+      "timeline": "6-12 months",
+      "af_per_yr": "4-6",
+      "viability": "High",
+      "power_note": "Smart irrigation controllers have minimal power needs easily met by existing infrastructure.",
+      "water_note": "This project directly reduces the 2M gallons (~6 AF) used for landscaping; Utah offers financial incentives for these conversions. [12, 43]"
+    },
+    {
+      "project": "Stormwater Capture and Aquifer Storage",
+      "capex": "$150-2000/AF (highly variable)",
+      "opex": "Variable, includes pumping and maintenance",
+      "timeline": "36-60 months",
+      "af_per_yr": "Variable",
+      "viability": "Low",
+      "power_note": "Pumps for injection wells would require a moderate amount of power, likely requiring coordination with Rocky Mountain Power.",
+      "water_note": "Utah law restricts rainwater collection to 2,500 gallons per parcel and has complex permitting for aquifer recharge, making large-scale capture difficult. [38, 44, 48]"
+    },
+    {
+      "project": "Funding Municipal Recycled Water Infrastructure",
+      "capex": "Variable contribution",
+      "opex": "n/a",
+      "timeline": "24-48 months",
+      "af_per_yr": "Proportional to funding",
+      "viability": "Medium",
+      "power_note": "The power infrastructure would be managed by the municipal utility as part of the larger project.",
+      "water_note": "The local South Valley Water Reclamation Facility treats wastewater and neighboring South Jordan has a water reuse demonstration project, indicating potential partnership opportunities. [41, 50, 52]"
+    },
+    {
+      "project": "Solar-Thermal Chiller",
+      "capex": "$800M - $1.6B",
+      "opex": "High (maintenance on large collector field)",
+      "timeline": "5-8 years",
+      "af_per_yr": "900-1200 (hypothetical)",
+      "viability": "Low",
+      "power_note": "While Utah has a strong solar resource, this project's viability is constrained by land availability, not power. [19, 25, 37]",
+      "water_note": "Finding the required ~400 acres of contiguous land in suburban West Jordan is a major, likely insurmountable, obstacle. [3, 4, 9]"
+    }
+  ],
+  "Meta (Facebook), Los Lunas, NM": [
+    {
+      "project": "Fund Municipal Recycled Water Infrastructure",
+      "capex": "$25-60M (utility-side; ~$1,200-3,000/AF-yr for a 20-50 MGD recycling buildout share)",
+      "opex": "$0.4-1.2M/yr",
+      "timeline": "3-7 years",
+      "af_per_yr": "500-1,500",
+      "viability": "Medium",
+      "power_note": "The Albuquerque/Los Lunas load area is on the PNM grid with a strong solar resource, but recycled-water delivery is mostly a pumping/conveyance problem rather than a bulk-power problem; utility-side interconnection is straightforward compared with new data-center generation.",
+      "water_note": "This is plausible locally because Los Lunas is served by the Village of Los Lunas/ABCWUA system and the region already has municipal wastewater infrastructure, but New Mexico reuse is governed by state discharge/reuse permitting and any direct nonpotable reuse needs a real treatment/distribution project, not just a contract. ABCWUA and the South Valley/San Juan-Chama context make reclaimed water more realistic than brackish supply, but available volumes are limited and not all effluent is legally or physically recoverable."
+    },
+    {
+      "project": "Convert to Hybrid Air-Cooled Systems",
+      "capex": "$8-20M",
+      "opex": "$0.3-1.0M/yr (higher fan energy; lower water purchases/treatment)",
+      "timeline": "12-30 months",
+      "af_per_yr": "600-1,200",
+      "viability": "Medium",
+      "power_note": "Los Lunas has good solar and a normal utility grid, so the additional fan/chiller-electric load of hybrid cooling is workable; the bigger constraint is peak summer power quality and redundancy rather than energy availability.",
+      "water_note": "This directly reduces dependence on potable supply, which is important because the local water system is not unlimited; however, it does not require a special local water source, only engineering changes, and in hot NM summers hybrid systems can still need some make-up water for extreme conditions."
+    },
+    {
+      "project": "Sponsor an Aquifer Storage and Recovery (ASR) Project",
+      "capex": "$10-30M",
+      "opex": "$0.2-0.8M/yr",
+      "timeline": "4-8 years",
+      "af_per_yr": "300-1,000",
+      "viability": "Low",
+      "power_note": "ASR requires modest pumping power and the grid can support it, but the project is not power-limited; the issue is hydrogeology, permitting, and treatment reliability.",
+      "water_note": "ASR is hard here because New Mexico ASR projects need a suitable aquifer, water right, and state approvals, and the Rio Grande basin is heavily regulated; there may be no easy, unused offset counterparty at scale near Los Lunas, and injected water quality/compatibility is a major constraint. This makes it much less certain than in states with mature ASR markets."
+    },
+    {
+      "project": "Lease Water Rights via Verified Agricultural Fallowing",
+      "capex": "$1-5M (transaction, compensation, monitoring)",
+      "opex": "$0.2-1.5M/yr",
+      "timeline": "1-3 years",
+      "af_per_yr": "400-1,200",
+      "viability": "Medium",
+      "power_note": "Power is not a binding constraint; this is a legal/market transaction rather than an energy-intensive project, so the local grid and solar resource are largely irrelevant.",
+      "water_note": "This can work in the Middle Rio Grande if a real, verified water-rights holder is willing to fallow land and the transfer conserves consumptive use under New Mexico rules, but the market is thin and highly constrained by basin administration, acequia/community concerns, and interstate/rio Grande accounting. It is feasible in principle, but scale and timing are uncertain."
+    },
+    {
+      "project": "Develop On-Site Wastewater Reuse",
+      "capex": "$6-18M",
+      "opex": "$0.3-0.9M/yr",
+      "timeline": "18-36 months",
+      "af_per_yr": "200-700",
+      "viability": "High",
+      "power_note": "The local grid and solar resource can easily support tertiary treatment, UV, pumps, controls, and storage; on-site reuse is power-light compared with a new generation or transmission project.",
+      "water_note": "This is the most site-controlled option and does not depend on finding an outside offset counterparty; New Mexico generally allows industrial water reuse through permitting and engineering controls, and on-site reuse can offset potable make-up demand directly. The limitation is quantity, because a data center's wastewater volume is usually much smaller than its cooling make-up need, so it helps but will not fully zero out water use by itself."
+    }
+  ],
+  "One Data Center America (ONT-1 & ONT-2), Ontario, CA": [
+    {
+      "project": "Cooling System Retrofit to Eliminate Water Use",
+      "capex": "$20-60M+",
+      "opex": "likely +$1-4M/yr",
+      "timeline": "24-48 months",
+      "af_per_yr": "0.8-1.8",
+      "viability": "Low",
+      "power_note": "Ontario is in a strong-grid, high-solar-resource part of the Inland Empire, but a true zero-water retrofit usually means air-cooled or hybrid-to-dry cooling that materially increases power demand and peak load; SCE transmission/service exists, but large incremental electric load can still face utility interconnection and substation lead times.",
+      "water_note": "This is technically available anywhere, but for a hyperscale-style data center in hot Inland Empire conditions it is the least practical path to zero Colorado River water because it trades water for major energy use and efficiency penalties; it does not depend on local recycled-water rules or offset counterparty availability."
+    },
+    {
+      "project": "Switch to 100% Recycled Water for Cooling Needs",
+      "capex": "$2-8M",
+      "opex": "roughly flat to +$0.2-0.8M/yr",
+      "timeline": "12-36 months",
+      "af_per_yr": "0.8-1.8",
+      "viability": "High",
+      "power_note": "Power availability is favorable for keeping water-cooled systems in place because this option avoids large added electrical load; the local grid is robust for the Inland Empire and solar resource is excellent for onsite/offsite renewable support, though that does not remove water-supply permitting needs.",
+      "water_note": "This area has real recycled-water infrastructure through Inland Empire Utilities Agency and regional wastewater reuse in the Chino Basin/Western Riverside basin, but whether Ontario/IEUA can deliver reliable nonpotable recycled water to the site depends on proximity, pipeline connection, pressure, and contract capacity; California recycled-water use is permitted and encouraged, but service is location-specific."
+    },
+    {
+      "project": "Investment in the Chino Basin Groundwater Recharge Program",
+      "capex": "$1-10M",
+      "opex": "$50k-300k/yr",
+      "timeline": "6-18 months",
+      "af_per_yr": "0.5-2.0",
+      "viability": "Medium",
+      "power_note": "This is not power-intensive and therefore fits the local grid easily; Ontario/Inland Empire has strong utility infrastructure and solar resource, so the limiting factor is not electricity but whether a recharge/offset structure can be contracted and verified.",
+      "water_note": "The Chino Basin is a real managed groundwater basin with active recharge and groundwater management, but using recharge as a direct Colorado River water offset requires a legally recognized accounting pathway and a willing local program sponsor; it is feasible in this basin, yet crediting is not the same as a guaranteed on-site water supply."
+    },
+    {
+      "project": "On-Site Stormwater Capture and Reuse System",
+      "capex": "$1-5M",
+      "opex": "$25k-150k/yr",
+      "timeline": "9-24 months",
+      "af_per_yr": "0.05-0.3",
+      "viability": "Low",
+      "power_note": "Power is not the constraint; pumps and treatment are small loads relative to a data center, and the regional grid/solar resource are adequate.",
+      "water_note": "Ontario can physically capture stormwater, but Inland Empire rainfall is limited and highly seasonal, so on-site runoff volume is usually too small and too variable to materially offset cooling demand; California allows stormwater capture and reuse, but the available yield here is modest."
+    },
+    {
+      "project": "Purchase of Voluntary Water Benefit Agreement (VWBA) Credits",
+      "capex": "$0.1-1M",
+      "opex": "n/a or +$0.1-0.5M/yr",
+      "timeline": "3-12 months",
+      "af_per_yr": "0.5-2.0",
+      "viability": "Medium",
+      "power_note": "Power availability is largely irrelevant because this is a market/contract instrument rather than an energy project; the local grid and solar resource do not constrain credit purchase, only the ability to verify and retire credits.",
+      "water_note": "VWBA-style credits can exist where watershed projects generate quantified benefits, but the Inland Empire is not a simple one-to-one Colorado River offset market and credits must be sourced from real, additional, and properly verified projects; availability is possible but counterparty quality and additionality are the main risks."
+    }
+  ],
+  "CoreSite (DE1 & DE2), Denver, CO": [
+    {
+      "project": "On-Site Water Treatment and Reuse",
+      "capex": "$1.8M - $2.5M",
+      "opex": "~$91,000/yr",
+      "timeline": "24-36 months",
+      "af_per_yr": "263",
+      "viability": "High",
+      "power_note": "The energy required for advanced treatment is manageable within the existing grid, especially with Denver's high solar potential which could support onsite generation. [4, 12, 29]",
+      "water_note": "Colorado's 2022 Direct Potable Reuse (DPR) rule allows for this, and on-site wastewater from cooling tower blowdown provides a consistent source. [2, 3, 5, 6, 8, 39]"
+    },
+    {
+      "project": "Fund Recycled Water Infrastructure Extension",
+      "capex": "Highly variable; dependent on distance to Denver Water's recycled water lines.",
+      "opex": "Lower water purchase cost than potable, but includes pumping costs.",
+      "timeline": "36-60 months",
+      "af_per_yr": "263",
+      "viability": "Medium",
+      "power_note": "Power for pumping is required, but the local grid, which is undergoing significant expansion, can support it. [16, 24, 41]",
+      "water_note": "Denver Water has a recycled water program, but availability depends on the proximity of existing infrastructure to the data center sites. [5]"
+    },
+    {
+      "project": "Aquifer Storage and Recovery (ASR) Partnership",
+      "capex": "$7M+ for new wells, or partnership with an existing system.",
+      "opex": "Energy for injection and recovery pumping is a major cost. [30, 33, 35]",
+      "timeline": "24-48 months for new build; less for partnership.",
+      "af_per_yr": "263",
+      "viability": "High",
+      "power_note": "Pumping is energy-intensive, but ASR is a priority for regional water providers, and grid upgrades are planned to accommodate new loads. [16, 30, 46]",
+      "water_note": "The Denver Basin has vast storage potential, and entities like Denver Water and South Metro Water are actively developing ASR projects. [19, 21, 32, 43, 47]"
+    },
+    {
+      "project": "Purchase Water Credits from Agricultural Conservation",
+      "capex": "$52,000 - $85,000 per AF (one-time for permanent right)",
+      "opex": "n/a",
+      "timeline": "6-18 months",
+      "af_per_yr": "263",
+      "viability": "Medium",
+      "power_note": "This project has no direct power requirement, making it independent of grid capacity.",
+      "water_note": "Active water markets exist for Colorado Front Range water rights, though prices are high and reflect a permanent transfer from agriculture. [10, 18, 34, 49]"
+    },
+    {
+      "project": "Direct Funding of South Platte River Restoration",
+      "capex": "Contribution to a larger project fund (e.g., WATR Program at $550M+ total). [9, 13]",
+      "opex": "n/a",
+      "timeline": "Ongoing",
+      "af_per_yr": "263 (as an offset)",
+      "viability": "Low",
+      "power_note": "This project has no direct power requirement, making it independent of grid capacity.",
+      "water_note": "While major restoration projects are underway, quantifying a direct acre-foot-for-acre-foot offset for data center use is legally and technically complex. [7, 9, 11, 17, 20]"
+    }
+  ],
+  "Lumen (formerly Level 3 / tw telecom), Ontario, CA": [
+    {
+      "project": "Convert to Recycled Water for Cooling",
+      "capex": "$3-12M",
+      "opex": "$150k-500k/yr",
+      "timeline": "18-36 months",
+      "af_per_yr": "20-120",
+      "viability": "Medium",
+      "power_note": "Ontario/IEUA sits in a strong Southern California grid area with ample solar resource, but recycled-water cooling still depends on existing utility interties, pumping, treatment, and cooling-tower controls more than on raw grid capacity.",
+      "water_note": "This is the most location-fit offset because Inland Empire Utilities Agency supplies recycled water in the Ontario area, but actual delivery depends on pipe access, pressure, and water-quality compatibility for cooling systems."
+    },
+    {
+      "project": "Fund Local Groundwater Recharge",
+      "capex": "$0.5-5M",
+      "opex": "$50k-300k/yr",
+      "timeline": "12-48 months",
+      "af_per_yr": "5-50",
+      "viability": "Low",
+      "power_note": "Power is not the main constraint; the area can support pumping and monitoring loads easily, but that does not solve the harder physical and regulatory recharge-facility constraint.",
+      "water_note": "Groundwater recharge in this basin is real and managed locally, but a private data-center-funded offset is only credible if it is tied to an approved recharge project with measurable accounting; there is no simple one-to-one onsite depletion replacement."
+    },
+    {
+      "project": "Purchase Agricultural Water Conservation Credits",
+      "capex": "$50k-500k",
+      "opex": "$100k-1M/yr",
+      "timeline": "6-24 months",
+      "af_per_yr": "10-100",
+      "viability": "Low",
+      "power_note": "Power availability in the Inland Empire does not materially help this project; the binding issue is whether a real, bankable counterparty exists.",
+      "water_note": "Agricultural conservation credits are not a standard, liquid offset market in Ontario/IEUA/MWD for zero-net accounting, so any credit would need a bespoke, legally durable arrangement rather than an ordinary local purchase."
+    },
+    {
+      "project": "Upgrade to Waterless Cooling Technology",
+      "capex": "$8-30M",
+      "opex": "$0-250k/yr",
+      "timeline": "12-30 months",
+      "af_per_yr": "20-150",
+      "viability": "Medium",
+      "power_note": "The site\u2019s Southern California grid access and strong solar resource can support higher electric load from air-cooled or liquid/immersion systems, though peak-demand charges and utility interconnection study could be material.",
+      "water_note": "This avoids the need for local substitute water entirely, which is attractive because the Inland Empire does have recycled water but not unlimited low-cost supply at every site; the tradeoff is much higher electricity use."
+    },
+    {
+      "project": "Sponsor Local Watershed Restoration",
+      "capex": "$100k-2M",
+      "opex": "$25k-250k/yr",
+      "timeline": "6-36 months",
+      "af_per_yr": "1-20",
+      "viability": "Low",
+      "power_note": "Power is essentially irrelevant here; the question is whether restoration actions can be quantified as a durable water offset, which is difficult.",
+      "water_note": "Watershed restoration can improve local hydrology and habitat, but it is generally not accepted as a direct acre-foot-for-acre-foot replacement for a data center\u2019s consumptive use in California water accounting."
+    }
+  ],
+  "Digital Realty (Planned), Vernon, CA (near Inland Empire)": [],
+  "Google, Thornton, CO": [
+    {
+      "project": "On-Site Recycled Water System for Cooling",
+      "capex": "$1.5-6M",
+      "opex": "$0.20-0.50/m3 treated",
+      "timeline": "24-36 months",
+      "af_per_yr": "400-500",
+      "viability": "High",
+      "power_note": "The additional power load is manageable for the local grid, and on-site solar could offset a portion of the energy required for treatment. [11, 24]",
+      "water_note": "The City of Thornton has an established reclaimed water program (Regulation 84), and Google can treat its own process water for direct reuse in cooling systems. [2]"
+    },
+    {
+      "project": "Aquifer Storage and Recovery (ASR) in the Denver Basin",
+      "capex": "$7-15M",
+      "opex": "Pump energy costs, monitoring",
+      "timeline": "36-60 months",
+      "af_per_yr": "500+",
+      "viability": "High",
+      "power_note": "Energy is required for injection and recovery pumps, but this load is flexible and can be scheduled during off-peak hours, which is compatible with Xcel's grid. [14, 15]",
+      "water_note": "The data center sits above the Denver Basin aquifers, and ASR is a proven, legally supported strategy in the region for storing water. [10, 15, 18, 22]"
+    },
+    {
+      "project": "Voluntary Water Benefit Agreement (VWBA) via Agricultural Fallowing",
+      "capex": "$150-500/AF annually",
+      "opex": "n/a",
+      "timeline": "3-6 months to establish annual agreement",
+      "af_per_yr": "500+",
+      "viability": "Medium",
+      "power_note": "This project has no direct power requirement, making it independent of grid constraints.",
+      "water_note": "Finding willing agricultural partners in the South Platte Basin for temporary fallowing is feasible, but competition and water right complexities can pose challenges. [37, 41]"
+    },
+    {
+      "project": "Funding for South Platte River Restoration",
+      "capex": "Contribution-based (e.g., $5-10M)",
+      "opex": "n/a",
+      "timeline": "Ongoing (project dependent)",
+      "af_per_yr": "Indirect/modeled benefit",
+      "viability": "Medium",
+      "power_note": "This project has no direct power requirement for Google.",
+      "water_note": "Large-scale restoration projects are underway on the South Platte, offering partnership opportunities, though quantifying direct acre-foot benefits to Google is complex. [38, 42, 43]"
+    },
+    {
+      "project": "Advanced On-Site Water Generation and Reuse",
+      "capex": "$5-10M+",
+      "opex": "High energy costs, filter replacement",
+      "timeline": "24-48 months",
+      "af_per_yr": "10-500 (varies by tech)",
+      "viability": "Low",
+      "power_note": "Atmospheric water generation is extremely energy-intensive, and while direct potable reuse is possible, its power demands are significant and may strain local grid resources without dedicated generation. [47, 48]",
+      "water_note": "While Colorado approved direct potable reuse (DPR) in 2022, implementation requires extensive design and regulatory approval; atmospheric generation is low-yield for the cost in this semi-arid climate. [2, 3, 5, 7]"
+    }
+  ],
+  "Project Jupiter (Oracle - Unconfirmed), Los Lunas, NM": [
+    {
+      "project": "Brackish Water Desalination",
+      "capex": "$35-115M for a 1-5 MGD plant",
+      "opex": "~$1,100 - $1,300/AF",
+      "timeline": "3-5 years for siting, permitting, and construction",
+      "af_per_yr": "1,120 - 5,600",
+      "viability": "Medium",
+      "power_note": "The local grid has significant existing and planned solar capacity, some built specifically for large industrial users, making it capable of supporting the energy-intensive desalination process. [9, 37, 38]",
+      "water_note": "Brackish water is available in the Albuquerque Basin, but site-specific exploration is required to confirm quantity and quality. [39, 40, 45]"
+    },
+    {
+      "project": "Purchase & Retire Agri. Water Rights",
+      "capex": "~$15,000/AF (based on 2012 data)",
+      "opex": "n/a",
+      "timeline": "12-24 months per transaction",
+      "af_per_yr": "Scalable based on investment",
+      "viability": "High",
+      "power_note": "This project has no significant power requirements.",
+      "water_note": "An active, though informal, market exists for water rights in the Middle Rio Grande, with a history of ag-to-urban transfers. [13, 48]"
+    },
+    {
+      "project": "Voluntary Agricultural Fallowing",
+      "capex": "~$2M to establish a pilot program",
+      "opex": "$100 - $300/AF per year (lease rate)",
+      "timeline": "12-18 months to establish program and enroll participants",
+      "af_per_yr": "Scalable based on enrollment",
+      "viability": "High",
+      "power_note": "This project has no significant power requirements.",
+      "water_note": "Pilot programs are being actively studied in New Mexico, and the Middle Rio Grande Conservancy District has a large agricultural user base that could participate. [5, 35, 48]"
+    },
+    {
+      "project": "Aquifer Storage and Recovery (ASR)",
+      "capex": "$8-10M for a small to medium-scale project",
+      "opex": ">$20/AF (monitoring) plus energy for pumping",
+      "timeline": "5-7 years for permitting and construction",
+      "af_per_yr": "3,000+",
+      "viability": "Medium",
+      "power_note": "Pumping for injection and recovery is energy-intensive, but the local grid is robust and supported by significant renewable generation. [9, 17, 38]",
+      "water_note": "The local aquifer is a candidate, but a key constraint is securing a source water for injection, such as treated effluent from the Village of Los Lunas or ABCWUA. [3, 14, 17, 25]"
+    },
+    {
+      "project": "Rio Grande Water Fund Contribution",
+      "capex": "~$700 per acre of watershed restored",
+      "opex": "n/a",
+      "timeline": "Immediate (contribution); 20-year restoration plan",
+      "af_per_yr": "Indirect benefit; improves long-term yield and resilience of the Rio Grande",
+      "viability": "High",
+      "power_note": "This project has no significant power requirements.",
+      "water_note": "The fund's upstream restoration work is designed to directly enhance the quantity and quality of the water source for Los Lunas and the entire Middle Rio Grande region. [6, 10, 21]"
+    }
+  ],
+  "Imperial Valley Computer Manufacturing (Proposed), Imperial, CA (Imperial County)": [
+    {
+      "project": "On-Site Brackish Water Desalination",
+      "capex": "$8M-$18M",
+      "opex": "$0.5M-$1.5M annually",
+      "timeline": "24-48 months",
+      "af_per_yr": "881",
+      "viability": "Medium",
+      "power_note": "The IID grid has capacity for new projects, but large loads (>20MW) require special tariffs and funding for infrastructure upgrades. [25, 36]",
+      "water_note": "Brackish groundwater is available in Imperial Valley, but its specific location and suitability for this project would require further hydrogeological study."
+    },
+    {
+      "project": "Agricultural Fallowing Offset Program",
+      "capex": "$264,300-$378,830 annually",
+      "opex": "n/a",
+      "timeline": "3-6 months",
+      "af_per_yr": "881",
+      "viability": "High",
+      "power_note": "This project has no significant power requirements.",
+      "water_note": "The Imperial Irrigation District has multiple active, voluntary fallowing and conservation programs with established payment rates, recently ranging from $300 to $430 per acre-foot. [17, 19, 21]"
+    },
+    {
+      "project": "Investment in Municipal Recycled Water Infrastructure",
+      "capex": "$20M-$50M+",
+      "opex": "$1M-$3M annually",
+      "timeline": "3-5 years",
+      "af_per_yr": "881",
+      "viability": "Low",
+      "power_note": "Advanced water treatment is energy-intensive and would add a significant load to the IID grid, likely requiring system upgrades. [7]",
+      "water_note": "While nearby El Centro has a wastewater treatment plant, it is not currently set up for recycled water distribution, and new regulations for direct potable reuse are extensive and costly to implement. [4, 42, 49]"
+    },
+    {
+      "project": "Advanced Hybrid Cooling System Conversion",
+      "capex": "$15M-$30M",
+      "opex": "Potentially higher energy costs",
+      "timeline": "18-24 months",
+      "af_per_yr": "up to 790",
+      "viability": "High",
+      "power_note": "While potentially increasing the facility's power demand, the IID grid is actively upgrading and can accommodate new, large loads with proper planning and tariffs. [25, 37]",
+      "water_note": "This project reduces water demand by up to 90% rather than requiring a new source, making it a highly viable internal solution."
+    },
+    {
+      "project": "Colorado River Tributary Restoration Partnership",
+      "capex": "Highly variable, likely $500-$2000/AF",
+      "opex": "n/a",
+      "timeline": "2-5+ years",
+      "af_per_yr": "881",
+      "viability": "Low",
+      "power_note": "This project has no power requirements.",
+      "water_note": "While restoration projects exist, quantifying and transferring the specific water savings to an out-of-state data center is a complex legal and administrative process with no clear precedent. [14, 18, 22]"
+    },
+    {
+      "project": "Solar-Thermal Chiller",
+      "capex": "$1.3B-$2.6B",
+      "opex": "$10M-$25M annually (maintenance)",
+      "timeline": "4-6 years",
+      "af_per_yr": "881",
+      "viability": "Low",
+      "power_note": "The project generates its own thermal energy for cooling, reducing electrical grid load, and Imperial County has abundant solar resources and land designated for renewable energy. [23, 39]",
+      "water_note": "This technology drastically reduces water consumption for cooling, but the extremely high capital cost and large land requirement make it economically unviable for this specific application."
+    }
+  ],
+  "Microsoft, Goodyear & El Mirage, AZ": [
+    {
+      "project": "Cooling System Retrofits",
+      "capex": "$1.7M per 1 MW of cooling capacity",
+      "opex": "Reduced annual energy and maintenance costs",
+      "timeline": "6-18 months",
+      "af_per_yr": "56-179 (estimated based on 56M gallon reported use)",
+      "viability": "High",
+      "power_note": "The local grid, supported by abundant solar resources and new battery storage, can handle the increased power load from air-cooled systems. [8, 24]",
+      "water_note": "This project eliminates the need for a water source for cooling, aligning with Microsoft's agreement with the City of Goodyear. [30]"
+    },
+    {
+      "project": "Local Direct Potable Reuse (DPR)",
+      "capex": "$1B for a 60 MGD facility (Phoenix example)",
+      "opex": "Significant, includes energy for advanced treatment",
+      "timeline": "5-7 years (design, permitting, construction)",
+      "af_per_yr": "Varies with investment; a 60 MGD plant yields ~67,000 AF/yr",
+      "viability": "Medium",
+      "power_note": "DPR is energy-intensive, requiring significant and reliable power from a grid already supporting numerous data centers and a growing population. [33, 8]",
+      "water_note": "Goodyear is expanding its wastewater reclamation facilities, and Arizona's new AWP rules (effective March 2025) provide a clear regulatory path for DPR projects. [18, 3, 9, 14]"
+    },
+    {
+      "project": "Agricultural Fallowing Credits",
+      "capex": "$150-400/AF (based on various programs)",
+      "opex": "Annual payments to agricultural partners",
+      "timeline": "12-24 months to establish agreements",
+      "af_per_yr": "Scalable based on number of agreements",
+      "viability": "High",
+      "power_note": "This project has no direct impact on local power infrastructure as it is a financial and water management transaction.",
+      "water_note": "Active fallowing programs exist within the Central Arizona Project and with parties like the Gila River Indian Community, making counterparties available."
+    },
+    {
+      "project": "On-Site Blackwater/Graywater Reuse",
+      "capex": "$1.2M for a 4,000 GPD system (SFPUC example)",
+      "opex": "<$5,000 annually for maintenance and testing",
+      "timeline": "18-36 months",
+      "af_per_yr": "1-5 (dependent on building scale and occupancy)",
+      "viability": "Low",
+      "power_note": "The power demand is minimal and easily supported by existing site infrastructure and the local grid. [29]",
+      "water_note": "While technically feasible, the small water yield makes it a low-impact solution for a data center's large-scale water-use mitigation goals. [38, 44]"
+    },
+    {
+      "project": "Watershed Restoration",
+      "capex": "~$2,500/acre for thinning (yields ~0.07 AF/acre)",
+      "opex": "N/A (typically project-based investment)",
+      "timeline": "Ongoing, with benefits realized over many years",
+      "af_per_yr": "~0.07 AF per acre treated in the first year",
+      "viability": "Medium",
+      "power_note": "This project has no direct impact on the Goodyear power grid.",
+      "water_note": "Partnerships with entities like SRP are available, but the water yield per acre is low, transient, and geographically dispersed, making it difficult to quantify for a specific offset. [4, 6, 7]"
+    }
+  ],
+  "Iron Mountain, Riverside, CA": [
+    {
+      "project": "Recycled Water for Cooling",
+      "capex": "$0.5-1.5M",
+      "opex": "$300-600/AF",
+      "timeline": "12-24 months",
+      "af_per_yr": "100 (assumed)",
+      "viability": "High",
+      "power_note": "This project has a negligible impact on power consumption, which the local grid can easily support. [40]",
+      "water_note": "Riverside has an established recycled water program suitable for industrial cooling, making the source viable assuming proximity to distribution lines. [8, 47, 48]"
+    },
+    {
+      "project": "Agricultural Fallowing Water Offset",
+      "capex": "n/a",
+      "opex": "$400-800/AF annually",
+      "timeline": "3-6 months",
+      "af_per_yr": "100 (assumed)",
+      "viability": "High",
+      "power_note": "This contractual project has no impact on the data center's power requirements or the local grid.",
+      "water_note": "Metropolitan Water District and other entities facilitate water transfer and offset programs, making a counterparty in a nearby irrigation district plausible. [42]"
+    },
+    {
+      "project": "On-site Liquid Cooling Retrofit",
+      "capex": "$2-5M",
+      "opex": "Net annual energy savings",
+      "timeline": "18-36 months",
+      "af_per_yr": "100 (assumed)",
+      "viability": "High",
+      "power_note": "The improved energy efficiency of liquid cooling reduces the overall load, which is a benefit to the grid being upgraded by the Riverside Transmission Reliability Project. [15, 40]",
+      "water_note": "This project creates a closed-loop system that virtually eliminates the need for an ongoing external water source for cooling. [19]"
+    },
+    {
+      "project": "Brackish Groundwater Desalination",
+      "capex": "$80,000-250,000",
+      "opex": "$500-900/AF",
+      "timeline": "24-48 months",
+      "af_per_yr": "100 (assumed)",
+      "viability": "Medium",
+      "power_note": "The small energy load for a plant of this size is easily supported by the local grid and the region's high potential for on-site solar generation. [4, 29]",
+      "water_note": "The Inland Empire has known brackish groundwater aquifers and the Inland Empire Brine Line is available for concentrate disposal, making the project technically feasible. [13, 23, 31]"
+    }
+  ],
+  "Aecero (CBX), Corona, CA (Riverside County)": [
+    {
+      "project": "Air Cooling Retrofit",
+      "capex": "$5,000-$15,000 per rack",
+      "opex": "Higher annual electricity cost vs. water cooling",
+      "timeline": "12-24 months",
+      "af_per_yr": "150",
+      "viability": "Medium",
+      "power_note": "Air cooling is more energy-intensive, increasing load on a Southern California Edison grid already facing a 5 GW data center queue, though the area has excellent solar resources. [50, 8, 19]",
+      "water_note": "This project eliminates the need for on-site water for cooling, directly addressing the goal of zero water use. [51]"
+    },
+    {
+      "project": "On-site Recycled Water Plant",
+      "capex": "$1-5M",
+      "opex": "$200-500k annual",
+      "timeline": "24-48 months",
+      "af_per_yr": "150",
+      "viability": "High",
+      "power_note": "The project's power needs are moderate and can be met by the local grid or supplemented with on-site solar, which is highly viable in Corona. [8, 13, 39]",
+      "water_note": "The City of Corona has an extensive reclaimed water system with 44 miles of purple pipe, making connection and supply feasible. [4, 7, 14]"
+    },
+    {
+      "project": "Brackish Groundwater Desalination",
+      "capex": "$350-$800/AF (production cost)",
+      "opex": "High, due to energy intensity",
+      "timeline": "36-60 months",
+      "af_per_yr": "150",
+      "viability": "Medium",
+      "power_note": "Desalination is highly energy-intensive, posing a significant new load on the SCE grid, which could be challenging given current interconnection queues. [16, 21, 50]",
+      "water_note": "The nearby Chino Basin has active brackish water desalter authorities and projects, indicating potential for a local brackish source. [6, 11, 18, 20]"
+    },
+    {
+      "project": "Agricultural Water Offset",
+      "capex": "n/a",
+      "opex": "$250-$700/AF annually",
+      "timeline": "6-12 months (agreement negotiation)",
+      "af_per_yr": "150",
+      "viability": "High",
+      "power_note": "This project has no direct impact on the data center's power consumption or the local grid. [37]",
+      "water_note": "Paying for irrigation efficiency in nearby agricultural districts like those in Imperial or Riverside Counties is a common water transfer mechanism to offset Colorado River water use. [38, 44]"
+    }
+  ]
+}

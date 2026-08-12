@@ -1,0 +1,1924 @@
+{
+  "Google, Mesa, AZ": [
+    {
+      "fac_name": "STONE APPLICATIONS",
+      "city": "MARICOPA COUNTY",
+      "dist_km": 0.51,
+      "registry_id": "110071640426",
+      "npdes_ids": "AZC115179",
+      "air_ids": "AZMCA000000F048975",
+      "naics": "518210",
+      "is_datacenter_naics": true
+    },
+    {
+      "fac_name": "STONE APPLICATIONS",
+      "city": "MESA",
+      "dist_km": 0.91,
+      "registry_id": "110072011959",
+      "npdes_ids": "",
+      "air_ids": "",
+      "naics": "518210",
+      "is_datacenter_naics": true
+    },
+    {
+      "fac_name": "MCDONALD'S POWER & ELLIOT",
+      "city": "MESA",
+      "dist_km": 0.08,
+      "registry_id": "110071898701",
+      "npdes_ids": "AZC107329 AZC111338",
+      "air_ids": "",
+      "naics": "",
+      "is_datacenter_naics": false
+    },
+    {
+      "fac_name": "POWER ROAD SELF-STORAGE",
+      "city": "MESA",
+      "dist_km": 0.34,
+      "registry_id": "110071404520",
+      "npdes_ids": "AZC098100",
+      "air_ids": "",
+      "naics": "",
+      "is_datacenter_naics": false
+    },
+    {
+      "fac_name": "JDA POWER 42",
+      "city": "UNKNOWN",
+      "dist_km": 0.56,
+      "registry_id": "110071322564",
+      "npdes_ids": "AZCN95764",
+      "air_ids": "",
+      "naics": "",
+      "is_datacenter_naics": false
+    },
+    {
+      "fac_name": "SRP ANDERSON SUBSTATION",
+      "city": "UNKNOWN",
+      "dist_km": 1.1,
+      "registry_id": "110071275933",
+      "npdes_ids": "AZC099746 AZCN94201 AZCN96069",
+      "air_ids": "",
+      "naics": "",
+      "is_datacenter_naics": false
+    }
+  ],
+  "Meta, Mesa, AZ": [
+    {
+      "fac_name": "ACADIA BEHAVIORAL HEALTH HOSPITAL",
+      "city": "UNKNOWN",
+      "dist_km": 0.09,
+      "registry_id": "110071711127",
+      "npdes_ids": "AZCN97012",
+      "air_ids": "",
+      "naics": "",
+      "is_datacenter_naics": false
+    },
+    {
+      "fac_name": "DISCOUNT TIRE #67",
+      "city": "MESA",
+      "dist_km": 0.13,
+      "registry_id": "110072130939",
+      "npdes_ids": "AZC112669",
+      "air_ids": "",
+      "naics": "",
+      "is_datacenter_naics": false
+    },
+    {
+      "fac_name": "COMARCH PHOENIX DATA CENTER",
+      "city": "UNKNOWN",
+      "dist_km": 0.2,
+      "registry_id": "110071275876",
+      "npdes_ids": "AZCN89779",
+      "air_ids": "",
+      "naics": "",
+      "is_datacenter_naics": false
+    },
+    {
+      "fac_name": "PETERSON AND ELLSWORTH SHOPS",
+      "city": "UNKNOWN",
+      "dist_km": 0.32,
+      "registry_id": "110071898791",
+      "npdes_ids": "AZC107366 AZC107425 AZC110057 AZC111817 AZC111918",
+      "air_ids": "",
+      "naics": "",
+      "is_datacenter_naics": false
+    },
+    {
+      "fac_name": "ELLIOT 94 PH1",
+      "city": "UNKNOWN",
+      "dist_km": 0.56,
+      "registry_id": "110071278631",
+      "npdes_ids": "AZCN94719",
+      "air_ids": "",
+      "naics": "",
+      "is_datacenter_naics": false
+    },
+    {
+      "fac_name": "AMKOR - 96TH AVE ACCESS RD",
+      "city": "UNKNOWN",
+      "dist_km": 0.7,
+      "registry_id": "110071279097",
+      "npdes_ids": "AZC103334 AZC113807 AZC115984 AZCN94687",
+      "air_ids": "",
+      "naics": "",
+      "is_datacenter_naics": false
+    }
+  ],
+  "Microsoft, Goodyear & El Mirage, AZ": [
+    {
+      "fac_name": "NEXT LEVEL STEEL - GOODYEAR",
+      "city": "GOODYEAR",
+      "dist_km": 0.4,
+      "registry_id": "110072144940",
+      "npdes_ids": "AZI114252",
+      "air_ids": "",
+      "naics": "",
+      "is_datacenter_naics": false
+    },
+    {
+      "fac_name": "AF LORTS MFG CO INC",
+      "city": "GOODYEAR",
+      "dist_km": 0.4,
+      "registry_id": "110000471711",
+      "npdes_ids": "",
+      "air_ids": "AZMCA004013X000969",
+      "naics": "33712 32518 337122 325181 325611 325998 325612",
+      "is_datacenter_naics": false
+    },
+    {
+      "fac_name": "SARIVAL UG FDR",
+      "city": "UNKNOWN",
+      "dist_km": 0.54,
+      "registry_id": "110071545151",
+      "npdes_ids": "AZC101982 AZC101990",
+      "air_ids": "",
+      "naics": "",
+      "is_datacenter_naics": false
+    },
+    {
+      "fac_name": "PLUTO BESS FACILITY",
+      "city": "UNKNOWN",
+      "dist_km": 0.66,
+      "registry_id": "110071848308",
+      "npdes_ids": "AZC105592",
+      "air_ids": "",
+      "naics": "",
+      "is_datacenter_naics": false
+    },
+    {
+      "fac_name": "VIAWEST GOODYEAR BUILDING D",
+      "city": "UNKNOWN",
+      "dist_km": 0.68,
+      "registry_id": "110071513934",
+      "npdes_ids": "AZC099901",
+      "air_ids": "",
+      "naics": "",
+      "is_datacenter_naics": false
+    },
+    {
+      "fac_name": "CITY OF GOODYEAR - 157TH AVE WWTP",
+      "city": "GOODYEAR",
+      "dist_km": 1.02,
+      "registry_id": "110071220678",
+      "npdes_ids": "AZDM90319 AZDM90355 AZMS92108",
+      "air_ids": "",
+      "naics": "",
+      "is_datacenter_naics": false
+    }
+  ],
+  "CyrusOne, Chandler, AZ": [
+    {
+      "fac_name": "CYRUSONE - CHANDLER",
+      "city": "MARICOPA COUNTY",
+      "dist_km": 0.49,
+      "registry_id": "110066858323",
+      "npdes_ids": "",
+      "air_ids": "AZMCA004013X132941",
+      "naics": "518210",
+      "is_datacenter_naics": true
+    },
+    {
+      "fac_name": "DIGITAL REALTY TRUST CHANDLER, LLC",
+      "city": "CHANDLER",
+      "dist_km": 0.71,
+      "registry_id": "110055586236",
+      "npdes_ids": "",
+      "air_ids": "AZMCA004013X051073",
+      "naics": "518210",
+      "is_datacenter_naics": true
+    },
+    {
+      "fac_name": "LINCOLN RACKHOUSE",
+      "city": "CHANDLER",
+      "dist_km": 2.2,
+      "registry_id": "110000471089",
+      "npdes_ids": "",
+      "air_ids": "AZMCA004013X031585",
+      "naics": "518210 31332 336413 313320",
+      "is_datacenter_naics": true
+    },
+    {
+      "fac_name": "DOBSON & GERMANN SHOPS",
+      "city": "CHANDLER",
+      "dist_km": 0.83,
+      "registry_id": "110071645417",
+      "npdes_ids": "AZC102280",
+      "air_ids": "",
+      "naics": "",
+      "is_datacenter_naics": false
+    },
+    {
+      "fac_name": "EVERHOME SUITES",
+      "city": "UNKNOWN",
+      "dist_km": 1.06,
+      "registry_id": "110071425673",
+      "npdes_ids": "AZC098901 AZC099044 AZC100457 AZC113808",
+      "air_ids": "",
+      "naics": "",
+      "is_datacenter_naics": false
+    },
+    {
+      "fac_name": "ALIGNED PHX06",
+      "city": "UNKNOWN",
+      "dist_km": 1.09,
+      "registry_id": "110071276282",
+      "npdes_ids": "AZC099361 AZC100039 AZC111183 AZC111186 AZCN94543 AZCN94928 AZCN95237 AZCN95907 AZCN98088",
+      "air_ids": "",
+      "naics": "",
+      "is_datacenter_naics": false
+    }
+  ],
+  "Vantage Data Centers, Goodyear, AZ": [
+    {
+      "fac_name": "COMPASS DATACENTERS PHX I",
+      "city": "MARICOPA COUNTY",
+      "dist_km": 1.22,
+      "registry_id": "110070550338",
+      "npdes_ids": "",
+      "air_ids": "AZMCA004013X138847",
+      "naics": "518210",
+      "is_datacenter_naics": true
+    },
+    {
+      "fac_name": "CENTERRA PHASE 1",
+      "city": "GOODYEAR",
+      "dist_km": 0.62,
+      "registry_id": "110071277094",
+      "npdes_ids": "AZCN90497",
+      "air_ids": "",
+      "naics": "",
+      "is_datacenter_naics": false
+    },
+    {
+      "fac_name": "RUSH FUNPLEX",
+      "city": "UNKNOWN",
+      "dist_km": 0.83,
+      "registry_id": "110072073445",
+      "npdes_ids": "AZD110996",
+      "air_ids": "",
+      "naics": "",
+      "is_datacenter_naics": false
+    },
+    {
+      "fac_name": "THE DOUGLAS AT GOODYEAR AIRPORT COMMONS",
+      "city": "UNKNOWN",
+      "dist_km": 0.91,
+      "registry_id": "110071319773",
+      "npdes_ids": "AZCN95768 AZCN96534",
+      "air_ids": "",
+      "naics": "",
+      "is_datacenter_naics": false
+    },
+    {
+      "fac_name": "COMPASS DATACENTERS - PHX 1 PHASE 3 BLDG 4",
+      "city": "UNKNOWN",
+      "dist_km": 0.99,
+      "registry_id": "110071275145",
+      "npdes_ids": "AZC100365 AZCN83207 AZCN83301",
+      "air_ids": "",
+      "naics": "",
+      "is_datacenter_naics": false
+    },
+    {
+      "fac_name": "BALLPARK VILLAGE",
+      "city": "UNKNOWN",
+      "dist_km": 1.21,
+      "registry_id": "110071400107",
+      "npdes_ids": "AZC098105",
+      "air_ids": "",
+      "naics": "",
+      "is_datacenter_naics": false
+    }
+  ],
+  "Digital Realty, Chandler, AZ": [
+    {
+      "fac_name": "CITY OF CHANDLER ALLEY REHAB - SEGMENT 1",
+      "city": "CHANDLER",
+      "dist_km": 0.55,
+      "registry_id": "110071662629",
+      "npdes_ids": "AZC102791",
+      "air_ids": "",
+      "naics": "",
+      "is_datacenter_naics": false
+    },
+    {
+      "fac_name": "ARROWHEAD WPF REHABILITATION",
+      "city": "CHANDLER",
+      "dist_km": 0.8,
+      "registry_id": "110071275763",
+      "npdes_ids": "AZCN92392",
+      "air_ids": "",
+      "naics": "",
+      "is_datacenter_naics": false
+    },
+    {
+      "fac_name": "QUIKTRIP #1523",
+      "city": "CHANDLER",
+      "dist_km": 0.84,
+      "registry_id": "110071881545",
+      "npdes_ids": "AZC106145 AZC111071",
+      "air_ids": "",
+      "naics": "",
+      "is_datacenter_naics": false
+    },
+    {
+      "fac_name": "QUAIL CREEK CONNECTION - QUAIL CROSSING BLVD EXTENSION",
+      "city": "UNKNOWN",
+      "dist_km": 0.98,
+      "registry_id": "110071276187",
+      "npdes_ids": "AZCN91924",
+      "air_ids": "",
+      "naics": "",
+      "is_datacenter_naics": false
+    },
+    {
+      "fac_name": "PORSCHE ARROWHEAD",
+      "city": "UNKNOWN",
+      "dist_km": 0.98,
+      "registry_id": "110071781410",
+      "npdes_ids": "AZC104178",
+      "air_ids": "",
+      "naics": "",
+      "is_datacenter_naics": false
+    },
+    {
+      "fac_name": "LAS CAMPANAS LOTS 160-200",
+      "city": "UNKNOWN",
+      "dist_km": 0.98,
+      "registry_id": "110071276818",
+      "npdes_ids": "AZCN83944 AZCN91540",
+      "air_ids": "",
+      "naics": "",
+      "is_datacenter_naics": false
+    }
+  ],
+  "QTS Data Centers, Phoenix & Glendale, AZ": [
+    {
+      "fac_name": "UNKNOWN",
+      "city": "UNKNOWN",
+      "dist_km": 0.84,
+      "registry_id": "110064605645",
+      "npdes_ids": "AZ0022896",
+      "air_ids": "",
+      "naics": "",
+      "is_datacenter_naics": false
+    },
+    {
+      "fac_name": "CAMELBACK RD. & SR 303",
+      "city": "UNKNOWN",
+      "dist_km": 1.17,
+      "registry_id": "110071275905",
+      "npdes_ids": "AZCN83060 AZCN84059 AZCN90616",
+      "air_ids": "",
+      "naics": "",
+      "is_datacenter_naics": false
+    },
+    {
+      "fac_name": "PLANT 5 - CAMELBACK",
+      "city": "GLENDALE",
+      "dist_km": 1.34,
+      "registry_id": "110071278127",
+      "npdes_ids": "AZMS81189",
+      "air_ids": "",
+      "naics": "",
+      "is_datacenter_naics": false
+    },
+    {
+      "fac_name": "PLANT 5 - CAMELBACK",
+      "city": "GLENDALE",
+      "dist_km": 1.35,
+      "registry_id": "110071946292",
+      "npdes_ids": "AZI108810",
+      "air_ids": "",
+      "naics": "",
+      "is_datacenter_naics": false
+    },
+    {
+      "fac_name": "TRAINING FACILITY AT TREE FARM",
+      "city": "UNKNOWN",
+      "dist_km": 1.39,
+      "registry_id": "110071275370",
+      "npdes_ids": "AZC104280 AZC111208 AZC112527 AZC114031 AZC115784 AZCN86336 AZCN93851 AZCN96307 AZCN97968 AZD102296",
+      "air_ids": "",
+      "naics": "",
+      "is_datacenter_naics": false
+    },
+    {
+      "fac_name": "CITY OF GLENDALE - WEST AREA WATER RECLAMATION FACILITY",
+      "city": "GLENDALE",
+      "dist_km": 1.62,
+      "registry_id": "110015961823",
+      "npdes_ids": "AZI108758 AZMS81178",
+      "air_ids": "",
+      "naics": "221320",
+      "is_datacenter_naics": false
+    }
+  ],
+  "Stream Data Centers, Goodyear, AZ": [
+    {
+      "fac_name": "PROLOGIS - AIRPARK 4 & 5",
+      "city": "UNKNOWN",
+      "dist_km": 0.33,
+      "registry_id": "110071539357",
+      "npdes_ids": "AZC115317",
+      "air_ids": "",
+      "naics": "",
+      "is_datacenter_naics": false
+    },
+    {
+      "fac_name": "FIRSTSTREET AT BALLPARK VILLAGE",
+      "city": "UNKNOWN",
+      "dist_km": 0.34,
+      "registry_id": "110071711121",
+      "npdes_ids": "AZCN90575",
+      "air_ids": "",
+      "naics": "",
+      "is_datacenter_naics": false
+    },
+    {
+      "fac_name": "THE VERGE AT BALLPARK",
+      "city": "UNKNOWN",
+      "dist_km": 0.57,
+      "registry_id": "110072004352",
+      "npdes_ids": "AZC110525 AZC111940",
+      "air_ids": "",
+      "naics": "",
+      "is_datacenter_naics": false
+    },
+    {
+      "fac_name": "REVOLVE AT BALLPARK VILLAGE",
+      "city": "GOODYEAR",
+      "dist_km": 0.72,
+      "registry_id": "110071512958",
+      "npdes_ids": "AZC100002 AZC100910 AZC111999",
+      "air_ids": "",
+      "naics": "",
+      "is_datacenter_naics": false
+    },
+    {
+      "fac_name": "WEST COAST WASH STATION - GOODYEAR AIRPORT",
+      "city": "GOODYEAR",
+      "dist_km": 1.01,
+      "registry_id": "110071944637",
+      "npdes_ids": "AZI108937",
+      "air_ids": "",
+      "naics": "",
+      "is_datacenter_naics": false
+    },
+    {
+      "fac_name": "2500-14; PHOENIX-GOODYEAR AIRPORT INFIELD PAVING PHASE II",
+      "city": "UNKNOWN",
+      "dist_km": 1.01,
+      "registry_id": "110072130089",
+      "npdes_ids": "AZC113858 AZC113992",
+      "air_ids": "",
+      "naics": "",
+      "is_datacenter_naics": false
+    }
+  ],
+  "Google, Henderson, NV": [
+    {
+      "fac_name": "ARCO AM/PM-GIBSON & WIGWAM",
+      "city": "HENDERSON",
+      "dist_km": 0.35,
+      "registry_id": "110070055190",
+      "npdes_ids": "NVCS43209",
+      "air_ids": "",
+      "naics": "",
+      "is_datacenter_naics": false
+    },
+    {
+      "fac_name": "MD FABRICATION, INC.",
+      "city": "HENDERSON",
+      "dist_km": 0.39,
+      "registry_id": "110070673024",
+      "npdes_ids": "NVIS07664",
+      "air_ids": "",
+      "naics": "",
+      "is_datacenter_naics": false
+    },
+    {
+      "fac_name": "EMERALD LAS VEGAS, LLC",
+      "city": "HENDERSON",
+      "dist_km": 0.57,
+      "registry_id": "110072176965",
+      "npdes_ids": "NVPIU001Q",
+      "air_ids": "",
+      "naics": "",
+      "is_datacenter_naics": false
+    },
+    {
+      "fac_name": "CCSD - FACILITY SERVICE CENTER",
+      "city": "HENDERSON",
+      "dist_km": 0.58,
+      "registry_id": "110069581045",
+      "npdes_ids": "NVCS42495",
+      "air_ids": "",
+      "naics": "611110",
+      "is_datacenter_naics": false
+    },
+    {
+      "fac_name": "WIGWAM LOFTS",
+      "city": "HENDERSON",
+      "dist_km": 0.62,
+      "registry_id": "110070373868",
+      "npdes_ids": "NVCS45030 NVCS45496",
+      "air_ids": "",
+      "naics": "",
+      "is_datacenter_naics": false
+    },
+    {
+      "fac_name": "TH FOODS INC.",
+      "city": "HENDERSON",
+      "dist_km": 0.68,
+      "registry_id": "110072178166",
+      "npdes_ids": "NVPIU001Y",
+      "air_ids": "",
+      "naics": "",
+      "is_datacenter_naics": false
+    }
+  ],
+  "Switch, Las Vegas, NV": [
+    {
+      "fac_name": "SWITCH LTD.",
+      "city": "LAS VEGAS",
+      "dist_km": 0.63,
+      "registry_id": "110069326599",
+      "npdes_ids": "",
+      "air_ids": "NVCCH00032003A1630",
+      "naics": "518210",
+      "is_datacenter_naics": true
+    },
+    {
+      "fac_name": "SWITCH NAP 11",
+      "city": "LAS VEGAS",
+      "dist_km": 0.21,
+      "registry_id": "110070048239",
+      "npdes_ids": "NVCS43114",
+      "air_ids": "",
+      "naics": "",
+      "is_datacenter_naics": false
+    },
+    {
+      "fac_name": "SWITCH NAP 8",
+      "city": "LAS VEGAS",
+      "dist_km": 0.22,
+      "registry_id": "110059824221",
+      "npdes_ids": "NVCS23280",
+      "air_ids": "",
+      "naics": "",
+      "is_datacenter_naics": false
+    },
+    {
+      "fac_name": "WARM SPRINGS CORPORATE PARK",
+      "city": "LAS VEGAS",
+      "dist_km": 0.34,
+      "registry_id": "110070382671",
+      "npdes_ids": "NVCS45340",
+      "air_ids": "",
+      "naics": "",
+      "is_datacenter_naics": false
+    },
+    {
+      "fac_name": "PTS GOLD",
+      "city": "LAS VEGAS",
+      "dist_km": 0.59,
+      "registry_id": "110070146984",
+      "npdes_ids": "NVCS43942",
+      "air_ids": "",
+      "naics": "",
+      "is_datacenter_naics": false
+    },
+    {
+      "fac_name": "BELTWAY BUSINESS PARK BLDG F1, F3 & F4",
+      "city": "LAS VEGAS",
+      "dist_km": 0.75,
+      "registry_id": "110059827530",
+      "npdes_ids": "NVCS08031",
+      "air_ids": "",
+      "naics": "",
+      "is_datacenter_naics": false
+    }
+  ],
+  "Flexential, North Las Vegas, NV": [
+    {
+      "fac_name": "CIELO VISTA",
+      "city": "NORTH LAS VEGAS",
+      "dist_km": 0.3,
+      "registry_id": "110070382249",
+      "npdes_ids": "NVCS45350",
+      "air_ids": "",
+      "naics": "",
+      "is_datacenter_naics": false
+    },
+    {
+      "fac_name": "NORTH 15 LOGISTICS",
+      "city": "NORTH LAS VEGAS",
+      "dist_km": 0.3,
+      "registry_id": "110070544874",
+      "npdes_ids": "NVCS46014",
+      "air_ids": "",
+      "naics": "",
+      "is_datacenter_naics": false
+    },
+    {
+      "fac_name": "RIDGECREST",
+      "city": "NORTH LAS VEGAS",
+      "dist_km": 0.4,
+      "registry_id": "110070145643",
+      "npdes_ids": "NVCS43929",
+      "air_ids": "",
+      "naics": "",
+      "is_datacenter_naics": false
+    },
+    {
+      "fac_name": "CENTENNIAL VALLEY",
+      "city": "NORTH LAS VEGAS",
+      "dist_km": 0.4,
+      "registry_id": "110069576989",
+      "npdes_ids": "NVCS41735",
+      "air_ids": "",
+      "naics": "",
+      "is_datacenter_naics": false
+    },
+    {
+      "fac_name": "PECOS & CENTENNIAL COMMERCIAL CENTER",
+      "city": "NORTH LAS VEGAS",
+      "dist_km": 0.41,
+      "registry_id": "110070050491",
+      "npdes_ids": "NVCS43188",
+      "air_ids": "",
+      "naics": "",
+      "is_datacenter_naics": false
+    },
+    {
+      "fac_name": "SOUTHWEST GAS GIR / VSP CRAIG ROAD EAST PHASE 1 AND 2",
+      "city": "NORTH LAS VEGAS",
+      "dist_km": 0.51,
+      "registry_id": "110070669420",
+      "npdes_ids": "NVCS46863",
+      "air_ids": "",
+      "naics": "",
+      "is_datacenter_naics": false
+    }
+  ],
+  "Meta, Eagle Mountain, UT": [
+    {
+      "fac_name": "EAG DATA CENTER",
+      "city": "EAGLE MOUNTAIN",
+      "dist_km": 0.19,
+      "registry_id": "110070707950",
+      "npdes_ids": "UTR387191 UTRC03849",
+      "air_ids": "",
+      "naics": "",
+      "is_datacenter_naics": false
+    },
+    {
+      "fac_name": "EAGLE MOUNTAIN DATA CENTER",
+      "city": "EAGLE MOUNTAIN",
+      "dist_km": 0.19,
+      "registry_id": "110071358387",
+      "npdes_ids": "UTRC06065 UTRC11355",
+      "air_ids": "",
+      "naics": "",
+      "is_datacenter_naics": false
+    },
+    {
+      "fac_name": "QTS EAGLE MOUNTAIN DATA CENTER SUBSTATION PROJECT",
+      "city": "EAGLE MOUNTAIN",
+      "dist_km": 0.99,
+      "registry_id": "110071814311",
+      "npdes_ids": "UTRC09346 UTRC11977",
+      "air_ids": "",
+      "naics": "",
+      "is_datacenter_naics": false
+    },
+    {
+      "fac_name": "META DATA CENTER OFFSITE ROAD IMPROVEMENT",
+      "city": "EAGLE MOUNTAIN",
+      "dist_km": 1.07,
+      "registry_id": "110071310579",
+      "npdes_ids": "UTRC05482",
+      "air_ids": "",
+      "naics": "",
+      "is_datacenter_naics": false
+    },
+    {
+      "fac_name": "PROJECT BURST",
+      "city": "EAGLE MOUNTAIN",
+      "dist_km": 1.12,
+      "registry_id": "110072105277",
+      "npdes_ids": "UTRC12014",
+      "air_ids": "",
+      "naics": "",
+      "is_datacenter_naics": false
+    },
+    {
+      "fac_name": "QTS-SLC-DC1",
+      "city": "EAGLE MOUNTAIN",
+      "dist_km": 1.4,
+      "registry_id": "110071707118",
+      "npdes_ids": "UTRC08700 UTRC11607",
+      "air_ids": "",
+      "naics": "",
+      "is_datacenter_naics": false
+    }
+  ],
+  "Novva Data Centers, West Jordan, UT": [
+    {
+      "fac_name": "SKY RANCH",
+      "city": "WEST JORDAN",
+      "dist_km": 0.39,
+      "registry_id": "110071180426",
+      "npdes_ids": "UTRC04121",
+      "air_ids": "",
+      "naics": "",
+      "is_datacenter_naics": false
+    },
+    {
+      "fac_name": "RUGER",
+      "city": "WEST VALLEY CITY",
+      "dist_km": 0.58,
+      "registry_id": "110071814659",
+      "npdes_ids": "UTRH08402",
+      "air_ids": "",
+      "naics": "",
+      "is_datacenter_naics": false
+    },
+    {
+      "fac_name": "406 WOOD HOLLOW",
+      "city": "WEST VALLEY CITY",
+      "dist_km": 0.58,
+      "registry_id": "110072003173",
+      "npdes_ids": "UTRH10179",
+      "air_ids": "",
+      "naics": "",
+      "is_datacenter_naics": false
+    },
+    {
+      "fac_name": "HUSSEY RESIDENCE",
+      "city": "WEST VALLEY CITY",
+      "dist_km": 0.59,
+      "registry_id": "110071503635",
+      "npdes_ids": "UTRH07039",
+      "air_ids": "",
+      "naics": "",
+      "is_datacenter_naics": false
+    },
+    {
+      "fac_name": "405 WOOD HOLLOW",
+      "city": "WEST VALLEY CITY",
+      "dist_km": 0.6,
+      "registry_id": "110071323278",
+      "npdes_ids": "UTRC05574",
+      "air_ids": "",
+      "naics": "",
+      "is_datacenter_naics": false
+    },
+    {
+      "fac_name": "ZONE 4 NEW BINGHAM HWY 4MG RESERVOIR",
+      "city": "WEST JORDAN",
+      "dist_km": 0.61,
+      "registry_id": "110070710506",
+      "npdes_ids": "UTR387423",
+      "air_ids": "",
+      "naics": "",
+      "is_datacenter_naics": false
+    }
+  ],
+  "Aligned Data Centers, West Jordan, UT": [
+    {
+      "fac_name": "MAVERIK #648 WEST JORDAN",
+      "city": "WEST JORDAN",
+      "dist_km": 0.47,
+      "registry_id": "110071075603",
+      "npdes_ids": "UTRC03180",
+      "air_ids": "",
+      "naics": "",
+      "is_datacenter_naics": false
+    },
+    {
+      "fac_name": "BIG O TIRES WEST JORDAN",
+      "city": "WEST JORDAN",
+      "dist_km": 0.52,
+      "registry_id": "110070816319",
+      "npdes_ids": "UTRC00764",
+      "air_ids": "",
+      "naics": "",
+      "is_datacenter_naics": false
+    },
+    {
+      "fac_name": "SPILL AT DRY CLEANERS",
+      "city": "WEST JORDAN",
+      "dist_km": 0.53,
+      "registry_id": "110028186237",
+      "npdes_ids": "UTU000526",
+      "air_ids": "",
+      "naics": "",
+      "is_datacenter_naics": false
+    },
+    {
+      "fac_name": "ORCHARD HEIGHTS",
+      "city": "WEST JORDAN",
+      "dist_km": 0.8,
+      "registry_id": "110070710137",
+      "npdes_ids": "UTR384829",
+      "air_ids": "",
+      "naics": "",
+      "is_datacenter_naics": false
+    },
+    {
+      "fac_name": "WOODS WEST SUBDIVISION",
+      "city": "WEST JORDAN",
+      "dist_km": 0.82,
+      "registry_id": "110070710162",
+      "npdes_ids": "UTR380239",
+      "air_ids": "",
+      "naics": "",
+      "is_datacenter_naics": false
+    },
+    {
+      "fac_name": "COTTAGES AT APPLECROSS",
+      "city": "WEST JORDAN",
+      "dist_km": 0.83,
+      "registry_id": "110070711948",
+      "npdes_ids": "UTR380557",
+      "air_ids": "",
+      "naics": "",
+      "is_datacenter_naics": false
+    }
+  ],
+  "DataBank, Bluffdale, UT": [
+    {
+      "fac_name": "THE GROVE",
+      "city": "BLUFFDALE",
+      "dist_km": 0.33,
+      "registry_id": "110072145103",
+      "npdes_ids": "UTRC12384",
+      "air_ids": "",
+      "naics": "",
+      "is_datacenter_naics": false
+    },
+    {
+      "fac_name": "BRINGHURST STATION BUILDING D",
+      "city": "BLUFFDALE",
+      "dist_km": 0.34,
+      "registry_id": "110071814445",
+      "npdes_ids": "UTRC09332",
+      "air_ids": "",
+      "naics": "",
+      "is_datacenter_naics": false
+    },
+    {
+      "fac_name": "BRINGHURST STATION",
+      "city": "BLUFFDALE",
+      "dist_km": 0.36,
+      "registry_id": "110070711121",
+      "npdes_ids": "UTR389663 UTR393853",
+      "air_ids": "",
+      "naics": "",
+      "is_datacenter_naics": false
+    },
+    {
+      "fac_name": "BRINGHURST STATION PHASE 1",
+      "city": "BLUFFDALE",
+      "dist_km": 0.39,
+      "registry_id": "110070818010",
+      "npdes_ids": "UTRC00753",
+      "air_ids": "",
+      "naics": "",
+      "is_datacenter_naics": false
+    },
+    {
+      "fac_name": "BRINGHURST STATION PASE II",
+      "city": "BLUFFDALE",
+      "dist_km": 0.63,
+      "registry_id": "110071205669",
+      "npdes_ids": "UTRC04180",
+      "air_ids": "",
+      "naics": "",
+      "is_datacenter_naics": false
+    },
+    {
+      "fac_name": "MIDAS CREEK WEST TRAIL",
+      "city": "HERRIMAN",
+      "dist_km": 0.7,
+      "registry_id": "110070711755",
+      "npdes_ids": "UTR398855",
+      "air_ids": "",
+      "naics": "",
+      "is_datacenter_naics": false
+    }
+  ],
+  "QTS Data Centers, Eagle Mountain, UT": [
+    {
+      "fac_name": "GLENMAR RANCHES LOT 4",
+      "city": "EAGLE MOUNTAIN",
+      "dist_km": 0.51,
+      "registry_id": "110071309404",
+      "npdes_ids": "UTRH05666",
+      "air_ids": "",
+      "naics": "",
+      "is_datacenter_naics": false
+    },
+    {
+      "fac_name": "PILI RESIDENCE",
+      "city": "EAGLE MOUNTAIN",
+      "dist_km": 0.51,
+      "registry_id": "110071667908",
+      "npdes_ids": "UTRH07856",
+      "air_ids": "",
+      "naics": "",
+      "is_datacenter_naics": false
+    },
+    {
+      "fac_name": "GLENMAR RANCHES",
+      "city": "EAGLE MOUNTAIN",
+      "dist_km": 0.52,
+      "registry_id": "110070706326",
+      "npdes_ids": "UTR380167",
+      "air_ids": "",
+      "naics": "",
+      "is_datacenter_naics": false
+    },
+    {
+      "fac_name": "LOT 2 GLEMAR RANCHES",
+      "city": "EAGLE MOUNTAIN",
+      "dist_km": 0.57,
+      "registry_id": "110070693070",
+      "npdes_ids": "UTRH00029",
+      "air_ids": "",
+      "naics": "",
+      "is_datacenter_naics": false
+    },
+    {
+      "fac_name": "PETERSON RESIDENCE",
+      "city": "EAGLE MOUNTAIN",
+      "dist_km": 0.63,
+      "registry_id": "110070712433",
+      "npdes_ids": "UTRH98411",
+      "air_ids": "",
+      "naics": "",
+      "is_datacenter_naics": false
+    },
+    {
+      "fac_name": "GLENMAR PLAT B-1",
+      "city": "EAGLE MOUNTAIN",
+      "dist_km": 0.67,
+      "registry_id": "110070708496",
+      "npdes_ids": "UTR394181",
+      "air_ids": "",
+      "naics": "",
+      "is_datacenter_naics": false
+    }
+  ],
+  "Microsoft, Cheyenne, WY": [
+    {
+      "fac_name": "STATE CAPITOL REHABILITATION AND RESTORATION/CAPITOL SQUARE PROJECT",
+      "city": "UNKNOWN",
+      "dist_km": 0.13,
+      "registry_id": "110069594335",
+      "npdes_ids": "WYG740557",
+      "air_ids": "",
+      "naics": "",
+      "is_datacenter_naics": false
+    },
+    {
+      "fac_name": "MT. SINAI SUMP",
+      "city": "CHEYENNE",
+      "dist_km": 0.34,
+      "registry_id": "110071920587",
+      "npdes_ids": "WYG940039",
+      "air_ids": "",
+      "naics": "",
+      "is_datacenter_naics": false
+    },
+    {
+      "fac_name": "REIMAN CORP-ST MARY CONVENT",
+      "city": "CHEYENNE",
+      "dist_km": 0.34,
+      "registry_id": "110020761601",
+      "npdes_ids": "",
+      "air_ids": "WY0000005602100060",
+      "naics": "611110",
+      "is_datacenter_naics": false
+    },
+    {
+      "fac_name": "EDWARDS CONTRACTORS AMER. NAT. BANK",
+      "city": "CHEYENNE",
+      "dist_km": 0.48,
+      "registry_id": "110039624751",
+      "npdes_ids": "",
+      "air_ids": "WY0000005602100004",
+      "naics": "562910",
+      "is_datacenter_naics": false
+    },
+    {
+      "fac_name": "CAPITOL BASIN 26TH STREET INTERCEPTOR STORM SEWER",
+      "city": "UNKNOWN",
+      "dist_km": 0.49,
+      "registry_id": "110055190859",
+      "npdes_ids": "WYG740600 WYG740808 WYG940028 WYR104357",
+      "air_ids": "",
+      "naics": "",
+      "is_datacenter_naics": false
+    },
+    {
+      "fac_name": "WEST 5TH STREET BRIDGE REPLACEMENT",
+      "city": "CHEYENNE",
+      "dist_km": 0.56,
+      "registry_id": "110072112379",
+      "npdes_ids": "WYTW10019",
+      "air_ids": "",
+      "naics": "",
+      "is_datacenter_naics": false
+    }
+  ],
+  "QTS Data Centers, Aurora, CO": [
+    {
+      "fac_name": "QTS AURORA LLC - QTS DEN1",
+      "city": "AURORA",
+      "dist_km": 0.64,
+      "registry_id": "110071767620",
+      "npdes_ids": "",
+      "air_ids": "CO0000000800501777",
+      "naics": "518210",
+      "is_datacenter_naics": true
+    },
+    {
+      "fac_name": "JPMORGAN CHASE - PROJECT SYCAMORE AURORA",
+      "city": "AURORA",
+      "dist_km": 1.06,
+      "registry_id": "110071176595",
+      "npdes_ids": "",
+      "air_ids": "CO0000000800501711",
+      "naics": "518210",
+      "is_datacenter_naics": true
+    },
+    {
+      "fac_name": "AURORA CROSSROADS",
+      "city": "AURORA",
+      "dist_km": 0.24,
+      "registry_id": "110071527968",
+      "npdes_ids": "COG080823",
+      "air_ids": "",
+      "naics": "",
+      "is_datacenter_naics": false
+    },
+    {
+      "fac_name": "QTS DEN1 - PHASE 1",
+      "city": "AURORA",
+      "dist_km": 0.29,
+      "registry_id": "110071348589",
+      "npdes_ids": "COR418198",
+      "air_ids": "",
+      "naics": "",
+      "is_datacenter_naics": false
+    },
+    {
+      "fac_name": "CROSSROADS OVERLOT GRADING PROJECT",
+      "city": "AURORA",
+      "dist_km": 0.39,
+      "registry_id": "110071073563",
+      "npdes_ids": "COR413104",
+      "air_ids": "",
+      "naics": "",
+      "is_datacenter_naics": false
+    },
+    {
+      "fac_name": "FIRST CREEK DETENTION POND UPSTREAM OF I-70",
+      "city": "AURORA",
+      "dist_km": 0.55,
+      "registry_id": "110072148351",
+      "npdes_ids": "COG081442",
+      "air_ids": "",
+      "naics": "",
+      "is_datacenter_naics": false
+    }
+  ],
+  "CoreSite (DE1 & DE2), Denver, CO": [
+    {
+      "fac_name": "CORESITE - DE1",
+      "city": "DENVER",
+      "dist_km": 0.03,
+      "registry_id": "110070507501",
+      "npdes_ids": "",
+      "air_ids": "CO0000000803102371",
+      "naics": "518210",
+      "is_datacenter_naics": true
+    },
+    {
+      "fac_name": "SUNGARD AVAILABILITY - 900 BANNOCK ST",
+      "city": "DENVER",
+      "dist_km": 1.73,
+      "registry_id": "110056438877",
+      "npdes_ids": "",
+      "air_ids": "CO0000000803102173",
+      "naics": "518210",
+      "is_datacenter_naics": true
+    },
+    {
+      "fac_name": "CRUSOE ENERGY SYSTEMS, INC. - SURPRISE S4",
+      "city": "DENVER",
+      "dist_km": 0.36,
+      "registry_id": "110071232148",
+      "npdes_ids": "",
+      "air_ids": "",
+      "naics": "518210",
+      "is_datacenter_naics": true
+    },
+    {
+      "fac_name": "910 GENERATION COMPANY - DENVER GAS & EL",
+      "city": "DENVER",
+      "dist_km": 0.03,
+      "registry_id": "110017380500",
+      "npdes_ids": "",
+      "air_ids": "CO0000000803101920",
+      "naics": "221112",
+      "is_datacenter_naics": false
+    },
+    {
+      "fac_name": "TELEPORT COMMUNICATIONSAMERICA - AT&T",
+      "city": "DENVER",
+      "dist_km": 0.08,
+      "registry_id": "110038443379",
+      "npdes_ids": "",
+      "air_ids": "CO0000000803102017",
+      "naics": "517311 517111 517110",
+      "is_datacenter_naics": false
+    },
+    {
+      "fac_name": "TELEGLOBE",
+      "city": "DENVER",
+      "dist_km": 0.09,
+      "registry_id": "110071724190",
+      "npdes_ids": "",
+      "air_ids": "CO0000000803101915",
+      "naics": "211130 211111",
+      "is_datacenter_naics": false
+    }
+  ],
+  "CoreSite (DE3), Denver, CO": [
+    {
+      "fac_name": "CORESITE REAL ESTATE DE3 - CORESITE DE3",
+      "city": "DENVER",
+      "dist_km": 1.82,
+      "registry_id": "110071782121",
+      "npdes_ids": "COR423465",
+      "air_ids": "CO0000000803102609",
+      "naics": "518210",
+      "is_datacenter_naics": true
+    },
+    {
+      "fac_name": "NOTEBOOKS INC",
+      "city": "DENVER",
+      "dist_km": 0.12,
+      "registry_id": "110038622933",
+      "npdes_ids": "",
+      "air_ids": "CO0000000803100533",
+      "naics": "326199",
+      "is_datacenter_naics": false
+    },
+    {
+      "fac_name": "ANGLEBOARD PLASTIC PACKAGING",
+      "city": "DENVER",
+      "dist_km": 0.13,
+      "registry_id": "110070152676",
+      "npdes_ids": "COR901400",
+      "air_ids": "",
+      "naics": "",
+      "is_datacenter_naics": false
+    },
+    {
+      "fac_name": "ITW PLASTIC PACKAGING",
+      "city": "DENVER COUNTY",
+      "dist_km": 0.13,
+      "registry_id": "110046324704",
+      "npdes_ids": "COR900617",
+      "air_ids": "",
+      "naics": "",
+      "is_datacenter_naics": false
+    },
+    {
+      "fac_name": "PAXTON HARDWOODS, LLC - JACKSON ST",
+      "city": "DENVER",
+      "dist_km": 0.21,
+      "registry_id": "110002373681",
+      "npdes_ids": "",
+      "air_ids": "CO0000000803101865",
+      "naics": "444110 423310",
+      "is_datacenter_naics": false
+    },
+    {
+      "fac_name": "TIME SQUARE CLOTHING",
+      "city": "DENVER",
+      "dist_km": 0.21,
+      "registry_id": "110038611419",
+      "npdes_ids": "",
+      "air_ids": "CO0000000803101201",
+      "naics": "323113",
+      "is_datacenter_naics": false
+    }
+  ],
+  "Novva Data Centers, Colorado Springs, CO": [
+    {
+      "fac_name": "FIRST BAPTIST CHURCH OF BLACK FOREST",
+      "city": "COLORADO SPRINGS",
+      "dist_km": 0.62,
+      "registry_id": "110069997354",
+      "npdes_ids": "COR03Q236",
+      "air_ids": "",
+      "naics": "",
+      "is_datacenter_naics": false
+    },
+    {
+      "fac_name": "WOLF RANCH",
+      "city": "COLORADO SPRINGS",
+      "dist_km": 0.86,
+      "registry_id": "110062660721",
+      "npdes_ids": "COG074924 COR034734 COR03F994 COR03F996 COR03P143 COR401353",
+      "air_ids": "",
+      "naics": "",
+      "is_datacenter_naics": false
+    },
+    {
+      "fac_name": "VILLAGES AT WOLF RANCH FIL 2, 4, 12",
+      "city": "COLORADO SPRINGS",
+      "dist_km": 0.86,
+      "registry_id": "110070545058",
+      "npdes_ids": "COR401916 COR404847",
+      "air_ids": "",
+      "naics": "",
+      "is_datacenter_naics": false
+    },
+    {
+      "fac_name": "OUR LADY OF THE PINES CATHOLIC CHURCH",
+      "city": "BLACK FOREST",
+      "dist_km": 0.89,
+      "registry_id": "110069422422",
+      "npdes_ids": "COR03P848",
+      "air_ids": "",
+      "naics": "",
+      "is_datacenter_naics": false
+    },
+    {
+      "fac_name": "ENCLAVE IV AT WOLF RANCH",
+      "city": "COLORADO SPRINGS",
+      "dist_km": 1.04,
+      "registry_id": "110071906375",
+      "npdes_ids": "COR426439",
+      "air_ids": "",
+      "naics": "",
+      "is_datacenter_naics": false
+    },
+    {
+      "fac_name": "HIGHLINE WOLF AT TAPESTRY FILING 1",
+      "city": "COLORADO SPRINGS",
+      "dist_km": 1.22,
+      "registry_id": "110071880615",
+      "npdes_ids": "COR425514",
+      "air_ids": "",
+      "naics": "",
+      "is_datacenter_naics": false
+    }
+  ],
+  "EdgeConneX (DEN01 & DEN02), Englewood/Centennial, CO": [
+    {
+      "fac_name": "QWEST CORP - ENGLEWOOD CYBER CENTER",
+      "city": "ENGLEWOOD",
+      "dist_km": 0.51,
+      "registry_id": "110040490340",
+      "npdes_ids": "",
+      "air_ids": "CO0000000803500712",
+      "naics": "517111 517110 518210 517311",
+      "is_datacenter_naics": true
+    },
+    {
+      "fac_name": "ONENECK IT-DENVER DATA CENTER",
+      "city": "PARKER AREA",
+      "dist_km": 0.55,
+      "registry_id": "110071176548",
+      "npdes_ids": "",
+      "air_ids": "CO0000000803500770",
+      "naics": "518210",
+      "is_datacenter_naics": true
+    },
+    {
+      "fac_name": "VIAWEST INC - ENGLEWOOD DATA CENTER",
+      "city": "PARKER AREA",
+      "dist_km": 1.11,
+      "registry_id": "110069566945",
+      "npdes_ids": "",
+      "air_ids": "CO0000000803500754",
+      "naics": "518210",
+      "is_datacenter_naics": true
+    },
+    {
+      "fac_name": "FLEXENTIAL PARKER",
+      "city": "PARKER",
+      "dist_km": 1.35,
+      "registry_id": "110071944213",
+      "npdes_ids": "COR427164",
+      "air_ids": "",
+      "naics": "",
+      "is_datacenter_naics": true
+    },
+    {
+      "fac_name": "HIGHFIELD 6 AND 7",
+      "city": "ENGLEWOOD",
+      "dist_km": 0.14,
+      "registry_id": "110070102859",
+      "npdes_ids": "COR03R701 COR401091",
+      "air_ids": "",
+      "naics": "",
+      "is_datacenter_naics": false
+    },
+    {
+      "fac_name": "HIGHFIELD BUSINESS PARK BLDG 8 + 9",
+      "city": "ENGLEWOOD",
+      "dist_km": 0.14,
+      "registry_id": "110070567262",
+      "npdes_ids": "COR405991",
+      "air_ids": "",
+      "naics": "",
+      "is_datacenter_naics": false
+    }
+  ],
+  "Google, Thornton, CO": [
+    {
+      "fac_name": "GOOGLE, INC",
+      "city": "THORNTON",
+      "dist_km": 0.12,
+      "registry_id": "110039573850",
+      "npdes_ids": "",
+      "air_ids": "CO0000000800101861",
+      "naics": "51821 511210 513210",
+      "is_datacenter_naics": true
+    },
+    {
+      "fac_name": "DOUBLE CLICK",
+      "city": "THORNTON",
+      "dist_km": 0.12,
+      "registry_id": "110032622963",
+      "npdes_ids": "",
+      "air_ids": "080000000800101695",
+      "naics": "999999",
+      "is_datacenter_naics": false
+    },
+    {
+      "fac_name": "CUMMINS RKY MTN - RG6466 PORT. GENERATOR",
+      "city": "THORNTON",
+      "dist_km": 0.12,
+      "registry_id": "110055598198",
+      "npdes_ids": "",
+      "air_ids": "CO0000000877703608",
+      "naics": "423610",
+      "is_datacenter_naics": false
+    },
+    {
+      "fac_name": "CUMMINS RKY MTN - RG2147 PORT. GENERATOR",
+      "city": "THORNTON",
+      "dist_km": 0.12,
+      "registry_id": "110055598205",
+      "npdes_ids": "",
+      "air_ids": "CO0000000877703609",
+      "naics": "423610",
+      "is_datacenter_naics": false
+    },
+    {
+      "fac_name": "DENVER PREMIUM OUTLETS",
+      "city": "THORNTON",
+      "dist_km": 0.14,
+      "registry_id": "110070072716",
+      "npdes_ids": "COG075895 COR03R809 COR403679",
+      "air_ids": "",
+      "naics": "",
+      "is_datacenter_naics": false
+    },
+    {
+      "fac_name": "ROLLING HILLS",
+      "city": "THORNTON",
+      "dist_km": 0.14,
+      "registry_id": "110070713069",
+      "npdes_ids": "COR408122",
+      "air_ids": "",
+      "naics": "",
+      "is_datacenter_naics": false
+    }
+  ],
+  "Meta (Facebook), Los Lunas, NM": [
+    {
+      "fac_name": "HUNING STATION",
+      "city": "LOS LUNAS",
+      "dist_km": 0.14,
+      "registry_id": "110070066912",
+      "npdes_ids": "NMR1000GK",
+      "air_ids": "",
+      "naics": "",
+      "is_datacenter_naics": false
+    },
+    {
+      "fac_name": "PROJECT ANTELOPE",
+      "city": "LOS LUNAS",
+      "dist_km": 0.23,
+      "registry_id": "110070066799",
+      "npdes_ids": "NMR1000CX NMR10019S NMR1002F7 NMR10040C NMR1004SL NMR1004SM NMR1004TM",
+      "air_ids": "",
+      "naics": "236220",
+      "is_datacenter_naics": false
+    },
+    {
+      "fac_name": "HUNING SOLAR SITE",
+      "city": "LOS LUNAS",
+      "dist_km": 0.57,
+      "registry_id": "110070079686",
+      "npdes_ids": "NMR1000IH NMR1000LL",
+      "air_ids": "",
+      "naics": "",
+      "is_datacenter_naics": false
+    },
+    {
+      "fac_name": "PNM HUNING RANCH SUBSTATION",
+      "city": "LOS LUNAS",
+      "dist_km": 0.74,
+      "registry_id": "110070079703",
+      "npdes_ids": "NMR1000J2",
+      "air_ids": "",
+      "naics": "",
+      "is_datacenter_naics": false
+    },
+    {
+      "fac_name": "6084-506 LOS LUNAS, NM WAL-MART DISTRIBUTION CENTER",
+      "city": "LOS LUNAS",
+      "dist_km": 0.91,
+      "registry_id": "110070917649",
+      "npdes_ids": "NMR1003N7 NMR1003QS NMR1004I5 NMR1004MU",
+      "air_ids": "",
+      "naics": "",
+      "is_datacenter_naics": false
+    },
+    {
+      "fac_name": "06084-1007 LOS LUNAS, NM WALMART DISTRIBUTION CENTER",
+      "city": "LOS LUNAS",
+      "dist_km": 0.91,
+      "registry_id": "110071951579",
+      "npdes_ids": "NMR10077P",
+      "air_ids": "",
+      "naics": "",
+      "is_datacenter_naics": false
+    }
+  ],
+  "Project Jupiter (Oracle - Unconfirmed), Los Lunas, NM": [
+    {
+      "fac_name": "FRANKLIN MOUNTAIN PAPER BTS",
+      "city": "SANTA TERESA",
+      "dist_km": 0.74,
+      "registry_id": "110071409502",
+      "npdes_ids": "NMR1005JT",
+      "air_ids": "",
+      "naics": "",
+      "is_datacenter_naics": false
+    },
+    {
+      "fac_name": "COAST ALUMINUM",
+      "city": "SANTA TERESA",
+      "dist_km": 0.79,
+      "registry_id": "110071399744",
+      "npdes_ids": "NMR1005GP",
+      "air_ids": "",
+      "naics": "",
+      "is_datacenter_naics": false
+    },
+    {
+      "fac_name": "SANTA TERESA BORDER INDUSTRIAL",
+      "city": "SANTA TERESA",
+      "dist_km": 0.85,
+      "registry_id": "110070926626",
+      "npdes_ids": "NMR1003RE NMR1003RG",
+      "air_ids": "",
+      "naics": "",
+      "is_datacenter_naics": false
+    },
+    {
+      "fac_name": "NMBA PARKING LOT",
+      "city": "SANTA TERESA",
+      "dist_km": 1.31,
+      "registry_id": "110071943755",
+      "npdes_ids": "NMR100758 NMR10075A",
+      "air_ids": "",
+      "naics": "",
+      "is_datacenter_naics": false
+    },
+    {
+      "fac_name": "NMBA PARKING FACILITY",
+      "city": "SANTA TERESA",
+      "dist_km": 1.32,
+      "registry_id": "110072177480",
+      "npdes_ids": "NMR1007W4 NMR1007W5",
+      "air_ids": "",
+      "naics": "",
+      "is_datacenter_naics": false
+    },
+    {
+      "fac_name": "CCRUA-BRATF",
+      "city": "LA MESA",
+      "dist_km": 1.94,
+      "registry_id": "110071335486",
+      "npdes_ids": "NMR10052B",
+      "air_ids": "",
+      "naics": "",
+      "is_datacenter_naics": false
+    }
+  ],
+  "One Data Center America (ONT-1 & ONT-2), Ontario, CA": [
+    {
+      "fac_name": "ONTARIO INTERNATIONAL AIRPORT AUTHORITY",
+      "city": "ONTARIO",
+      "dist_km": 0.54,
+      "registry_id": "110070097056",
+      "npdes_ids": "CAZ479771",
+      "air_ids": "",
+      "naics": "",
+      "is_datacenter_naics": false
+    },
+    {
+      "fac_name": "ONTARIO INT AIRPORT",
+      "city": "ONTARIO",
+      "dist_km": 0.62,
+      "registry_id": "110009000455",
+      "npdes_ids": "CAA000398",
+      "air_ids": "",
+      "naics": "",
+      "is_datacenter_naics": false
+    },
+    {
+      "fac_name": "RUSSELL SIGLER INCORPORATED",
+      "city": "ONTARIO",
+      "dist_km": 0.92,
+      "registry_id": "110070096249",
+      "npdes_ids": "CAZ469709",
+      "air_ids": "",
+      "naics": "",
+      "is_datacenter_naics": false
+    },
+    {
+      "fac_name": "PBY PLASTICS",
+      "city": "ONTARIO",
+      "dist_km": 0.95,
+      "registry_id": "110070555723",
+      "npdes_ids": "CAZ509021",
+      "air_ids": "",
+      "naics": "339113 56299",
+      "is_datacenter_naics": false
+    },
+    {
+      "fac_name": "NEW FLYER OF AMERICA",
+      "city": "ONTARIO",
+      "dist_km": 0.96,
+      "registry_id": "110065396360",
+      "npdes_ids": "CAW442139",
+      "air_ids": "",
+      "naics": "336120",
+      "is_datacenter_naics": false
+    },
+    {
+      "fac_name": "YLLUCK",
+      "city": "ONTARIO",
+      "dist_km": 1.01,
+      "registry_id": "110070249300",
+      "npdes_ids": "CAZ498531",
+      "air_ids": "",
+      "naics": "",
+      "is_datacenter_naics": false
+    }
+  ],
+  "Iron Mountain, Riverside, CA": [
+    {
+      "fac_name": "BEST PLUMBING SERVICES",
+      "city": "RIVERSIDE",
+      "dist_km": 0.55,
+      "registry_id": "110070085950",
+      "npdes_ids": "CAW441108",
+      "air_ids": "",
+      "naics": "",
+      "is_datacenter_naics": false
+    },
+    {
+      "fac_name": "FONTAI METAL AND EQUIPMENT INC",
+      "city": "RIVERSIDE",
+      "dist_km": 0.55,
+      "registry_id": "110070086367",
+      "npdes_ids": "CAW469805",
+      "air_ids": "",
+      "naics": "",
+      "is_datacenter_naics": false
+    },
+    {
+      "fac_name": "ACRA INDUSTRIES, INC",
+      "city": "RIVERSIDE",
+      "dist_km": 0.55,
+      "registry_id": "110071321680",
+      "npdes_ids": "CAW552730",
+      "air_ids": "",
+      "naics": "",
+      "is_datacenter_naics": false
+    },
+    {
+      "fac_name": "MARLBOROUGH INDUSTRIAL",
+      "city": "RIVERSIDE",
+      "dist_km": 0.55,
+      "registry_id": "110071252584",
+      "npdes_ids": "CAW549154",
+      "air_ids": "",
+      "naics": "",
+      "is_datacenter_naics": false
+    },
+    {
+      "fac_name": "METRO DISTRIBUTORS, INC.",
+      "city": "RIVERSIDE",
+      "dist_km": 0.55,
+      "registry_id": "110070213359",
+      "npdes_ids": "CAW496262",
+      "air_ids": "",
+      "naics": "",
+      "is_datacenter_naics": false
+    },
+    {
+      "fac_name": "SFI \u00c2\u0096 SMR, LLC",
+      "city": "RIVERSIDE",
+      "dist_km": 0.55,
+      "registry_id": "110064602354",
+      "npdes_ids": "CAF001382",
+      "air_ids": "",
+      "naics": "",
+      "is_datacenter_naics": false
+    }
+  ],
+  "Lumen (formerly Level 3 / tw telecom), Ontario, CA": [
+    {
+      "fac_name": "PREZERO US INC",
+      "city": "ONTARIO",
+      "dist_km": 0.83,
+      "registry_id": "110070091109",
+      "npdes_ids": "CAZ402927",
+      "air_ids": "",
+      "naics": "",
+      "is_datacenter_naics": false
+    },
+    {
+      "fac_name": "UPS ONTARIO CAEJS",
+      "city": "ONTARIO",
+      "dist_km": 0.87,
+      "registry_id": "110070094779",
+      "npdes_ids": "CAZ459325",
+      "air_ids": "",
+      "naics": "",
+      "is_datacenter_naics": false
+    },
+    {
+      "fac_name": "STORM,ONTARIO",
+      "city": "ONTARIO",
+      "dist_km": 0.91,
+      "registry_id": "110037256536",
+      "npdes_ids": "CA8000295",
+      "air_ids": "",
+      "naics": "",
+      "is_datacenter_naics": false
+    },
+    {
+      "fac_name": "UNITED PARCEL SERVICE",
+      "city": "ONTARIO",
+      "dist_km": 0.91,
+      "registry_id": "110002929029",
+      "npdes_ids": "CAZ213263",
+      "air_ids": "",
+      "naics": "492110 49211",
+      "is_datacenter_naics": false
+    },
+    {
+      "fac_name": "NEW FLYER OF AMERICA",
+      "city": "ONTARIO",
+      "dist_km": 1.01,
+      "registry_id": "110065396360",
+      "npdes_ids": "CAW442139",
+      "air_ids": "",
+      "naics": "336120",
+      "is_datacenter_naics": false
+    },
+    {
+      "fac_name": "PACIFIC COAST WAREHOUSE CO",
+      "city": "ONTARIO",
+      "dist_km": 1.2,
+      "registry_id": "110065677752",
+      "npdes_ids": "CAZ518918",
+      "air_ids": "",
+      "naics": "",
+      "is_datacenter_naics": false
+    }
+  ],
+  "Aecero (CBX), Corona, CA (Riverside County)": [
+    {
+      "fac_name": "THE LEGACY PRINTING",
+      "city": "ANAHEIM",
+      "dist_km": 0.26,
+      "registry_id": "110071068827",
+      "npdes_ids": "CAW536805",
+      "air_ids": "",
+      "naics": "",
+      "is_datacenter_naics": false
+    },
+    {
+      "fac_name": "KDM MACHINE INC",
+      "city": "ANAHEIM",
+      "dist_km": 0.26,
+      "registry_id": "110071066135",
+      "npdes_ids": "CAW537010",
+      "air_ids": "",
+      "naics": "",
+      "is_datacenter_naics": false
+    },
+    {
+      "fac_name": "STORM,ANAHEIM",
+      "city": "ANAHEIM",
+      "dist_km": 0.26,
+      "registry_id": "110070084391",
+      "npdes_ids": "CAV158523",
+      "air_ids": "",
+      "naics": "",
+      "is_datacenter_naics": false
+    },
+    {
+      "fac_name": "DF O'BRIEN & ASSOCIATES",
+      "city": "ANAHEIM",
+      "dist_km": 0.26,
+      "registry_id": "110070939368",
+      "npdes_ids": "CAW535298",
+      "air_ids": "",
+      "naics": "",
+      "is_datacenter_naics": false
+    },
+    {
+      "fac_name": "TOMORROW WATER BKT",
+      "city": "ANAHEIM",
+      "dist_km": 0.26,
+      "registry_id": "110071073903",
+      "npdes_ids": "CAW537802",
+      "air_ids": "",
+      "naics": "",
+      "is_datacenter_naics": false
+    },
+    {
+      "fac_name": "ADVANCED WATERJET & ENGRAVING",
+      "city": "ANAHEIM",
+      "dist_km": 0.26,
+      "registry_id": "110071069497",
+      "npdes_ids": "CAW537069",
+      "air_ids": "",
+      "naics": "",
+      "is_datacenter_naics": false
+    }
+  ],
+  "Digital Realty (Planned), Vernon, CA (near Inland Empire)": [
+    {
+      "fac_name": "PRIME DATA CENTERS",
+      "city": "VERNON",
+      "dist_km": 0.51,
+      "registry_id": "110071391315",
+      "npdes_ids": "",
+      "air_ids": "",
+      "naics": "518210 51821 236210",
+      "is_datacenter_naics": true
+    },
+    {
+      "fac_name": "CORESITE REAL ESTATE LA5 LP",
+      "city": "LOS ANGELES",
+      "dist_km": 0.94,
+      "registry_id": "110072139421",
+      "npdes_ids": "",
+      "air_ids": "",
+      "naics": "541513",
+      "is_datacenter_naics": true
+    },
+    {
+      "fac_name": "CORESITE REAL ESTATE LA5 LP",
+      "city": "LOS ANGELES",
+      "dist_km": 1.09,
+      "registry_id": "110072120587",
+      "npdes_ids": "",
+      "air_ids": "",
+      "naics": "541513",
+      "is_datacenter_naics": true
+    },
+    {
+      "fac_name": "IVY HILL CORP",
+      "city": "LOS ANGELES",
+      "dist_km": 0.13,
+      "registry_id": "110002778272",
+      "npdes_ids": "",
+      "air_ids": "CASCA0000603700058",
+      "naics": "322230 322291 323110 32311 323111 322212",
+      "is_datacenter_naics": false
+    },
+    {
+      "fac_name": "ACE PLEATING & STITCHING INC",
+      "city": "VERNON",
+      "dist_km": 0.15,
+      "registry_id": "110070695303",
+      "npdes_ids": "CAZ518072",
+      "air_ids": "",
+      "naics": "",
+      "is_datacenter_naics": false
+    },
+    {
+      "fac_name": "CONSOLIDATED FABRICATORS CORP",
+      "city": "VERNON",
+      "dist_km": 0.19,
+      "registry_id": "110002139445",
+      "npdes_ids": "CAZ191736",
+      "air_ids": "",
+      "naics": "332116 333319 3321",
+      "is_datacenter_naics": false
+    }
+  ],
+  "Imperial Valley Computer Manufacturing (Proposed), Imperial, CA (Imperial County)": [
+    {
+      "fac_name": "VISTA DEL VALLE",
+      "city": "IMPERIAL",
+      "dist_km": 1.16,
+      "registry_id": "110070091334",
+      "npdes_ids": "CAZ409877",
+      "air_ids": "",
+      "naics": "",
+      "is_datacenter_naics": false
+    },
+    {
+      "fac_name": "SEVEN UP RC BOTTLING COMPANY INC",
+      "city": "IMPERIAL",
+      "dist_km": 2.02,
+      "registry_id": "110070094716",
+      "npdes_ids": "CAZ458732",
+      "air_ids": "",
+      "naics": "",
+      "is_datacenter_naics": false
+    },
+    {
+      "fac_name": "IMPERIAL COUNTY/EMERG RESPONSE ONLY",
+      "city": "--",
+      "dist_km": 1.86,
+      "registry_id": "110070430622",
+      "npdes_ids": "",
+      "air_ids": "",
+      "naics": "56299",
+      "is_datacenter_naics": false
+    },
+    {
+      "fac_name": "MARK 1 TRANSPORTATION SERVICES",
+      "city": "IMPERIAL",
+      "dist_km": 1.99,
+      "registry_id": "110002925755",
+      "npdes_ids": "",
+      "air_ids": "",
+      "naics": "",
+      "is_datacenter_naics": false
+    },
+    {
+      "fac_name": "ADMANI FAMILY TRUST",
+      "city": "IMPERIAL",
+      "dist_km": 2.15,
+      "registry_id": "110072056737",
+      "npdes_ids": "",
+      "air_ids": "",
+      "naics": "56299",
+      "is_datacenter_naics": false
+    },
+    {
+      "fac_name": "CURRIER PROPERTIES",
+      "city": "IMPERIAL",
+      "dist_km": 2.18,
+      "registry_id": "110070798768",
+      "npdes_ids": "",
+      "air_ids": "",
+      "naics": "311119",
+      "is_datacenter_naics": false
+    }
+  ]
+}
