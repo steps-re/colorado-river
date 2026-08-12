@@ -38,6 +38,27 @@ ROOT = Path(__file__).resolve().parent.parent
 OUT = ROOT / "outputs"; CACHE = ROOT / "cache"
 OUT.mkdir(exist_ok=True); CACHE.mkdir(exist_ok=True)
 
+# The corroboration sentence in Mead's evaporation provenance is built from the ingest output
+# rather than typed, because it moves every time USGS publish another year. Missing file is
+# fatal: a provenance string that silently drops its corroboration reads as never having had one.
+_ME = json.loads((OUT / "usgs_mead_evap.json").read_text())
+_MEC = _ME["published_depth_check"]
+MEAD_EVAP_SRC = (
+    "USGS DIRECT FLUX (eddy covariance + energy balance, Moreo & Swancar; Earp & Moreo 2021): "
+    "1,896 mm/yr = 6.22 ft/yr. This is a measured DEPTH, independent of surface area, so it is "
+    "valid to apply to a separately-measured area. Reclamation HDB 2017-2021 implies 6.21 ft/yr "
+    "over their larger area, which agrees. Corroborated against the two later USGS data releases "
+    "(2015-2020 and 2021-2023, ScienceBase doi:10.5066/P99GWPPG and doi:10.5066/P15HFPHB), which "
+    f"extend the record from 2019 to {max(int(y) for y in _ME['annual_ft'])}. Aggregated the way "
+    f"OFR 2021-1022 aggregates (most probable column, unweighted mean of complete calendar years), "
+    f"{_MEC['n_years']} qualifying years give {_MEC['recomputed_corrected_ft']:.2f} ft/yr, "
+    f"{abs(_MEC['delta_pct']):.1f}% {'above' if _MEC['delta_pct'] >= 0 else 'below'} the published "
+    "depth and well inside the 5-8% flux uncertainty already carried. "
+    + " ".join(f"{y} is held out because {r}." for y, r in sorted(_ME["meta"]["excluded_years"].items()))
+    + " The published depth is kept because a peer-reviewed OFR value is stronger provenance than "
+      "a mean we recompute off a data release; see outputs/usgs_mead_evap.json "
+      "(analysis/usgs_mead_evap.py).")
+
 SOLAR_YEAR = 2015           # PVGIS-NSRDB radiation year used across the repo
 PRICE_YEAR = 2024
 # Both reviewers flagged pricing seven reservoirs off one California node. Palo Verde is the
@@ -93,7 +114,7 @@ RES = {
         dam="Hoover Dam", lat=36.016, lon=-114.737, tie_mw=2080.0,
         annual_gwh=4000.0,
         surface_acres=83634, surface_src="Reclamation HDB 2017-2021 average surface area (LCR Evaporation Report 2023, Table 7)",
-        evap_ft=6.22, evap_src="USGS DIRECT FLUX (eddy covariance + energy balance, Moreo & Swancar; Earp & Moreo 2021): 1,896 mm/yr = 6.22 ft/yr. This is a measured DEPTH, independent of surface area, so it is valid to apply to a separately-measured area. Reclamation HDB 2017-2021 implies 6.21 ft/yr over their larger area, which agrees. Corroborated 2026-08-10 against the two later USGS data releases (2015-2020 and 2021-2023, ScienceBase doi:10.5066/P99GWPPG and doi:10.5066/P15HFPHB), which extend the record from 2019 to 2023: nine complete years give an energy-balance-corrected mean of 6.10 ft/yr, 1.9% below the published depth and well inside the 5-8% flux uncertainty already carried. The published depth is kept because a peer-reviewed OFR value is stronger provenance than a mean we recompute off a data release; see outputs/usgs_mead_evap.json (analysis/usgs_mead_evap.py).",
+        evap_ft=6.22, evap_src=MEAD_EVAP_SRC,
         evap_measured=True, hydro_provenance="synthetic load-following (no public sub-daily tailrace gage below Hoover)",
         onsite_load_mw=0.0,
         surface_status="NPS Lake Mead National Recreation Area",

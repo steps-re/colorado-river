@@ -17,6 +17,27 @@
       2022,
       2023
     ],
+    "qualified_years": [
+      2015,
+      2016,
+      2017,
+      2018,
+      2020,
+      2021,
+      2022,
+      2023
+    ],
+    "excluded_years": {
+      "2019": "reported evaporation is 33% away from what its own latent-heat flux implies (7.17 vs 5.39 ft measured), and 6 of its 12 months are flagged estimated"
+    },
+    "method": {
+      "source": "Earp, K.J., and Moreo, M.T., 2021, Evaporation from Lake Mead and Lake Mohave, Nevada and Arizona, 2010-2019: USGS Open-File Report 2021-1022, https://doi.org/10.3133/ofr20211022",
+      "confirmed": "USGS (Geoffrey Moret) personal communication, 2026-08-12, naming OFR 2021-1022 as the method used for the final Colorado River basin numbers and leaving the weighting to us.",
+      "column": "Most probable. The OFR treats evaporation from measured latent-heat flux as a probable minimum and the energy-balance-closed value as a probable maximum, and states that 'most probable evaporation represents the average between minimum and maximum evaporation and is used for all monthly calculations in this study' (p. 17). That is the release's 'Corrected (most probable) evaporation' column.",
+      "aggregation": "Unweighted mean of complete calendar years. The OFR's own annual table (table 8) runs January 2011 through December 2018 and reports the mean of those eight years; the partial years at either end of its record, 2010 and 2019, are excluded rather than scaled up. Years containing gap-filled months are kept at full weight, as gap filling is part of the published method: the OFR carries 2015 and 2016 at full weight despite multi-week outages in both.",
+      "closure_test": "A complete year is dropped only if the evaporation it reports disagrees with the latent-heat flux it reports by more than 5%. The two are presentations of one measurement, so a disagreement means one of the columns is wrong.",
+      "closure_tolerance": 0.05
+    },
     "source_note": "USGS confirmed (personal communication, 2026-08-10) that no new Lake Mohave data are being collected, that no Lake Havasu flux measurement exists though one is in planning, and that 2024-2025 Mead data should publish within months.",
     "releases": [
       {
@@ -42,77 +63,128 @@
       "measured": 6.55,
       "corrected": 6.43,
       "ebr_adjusted": 6.3,
+      "qe_implied": 6.553,
       "months": 12,
-      "estimated_months": 0
+      "estimated_months": 0,
+      "closure_ratio": 1.0004,
+      "closes": true,
+      "complete": true,
+      "qualified": true
     },
     "2016": {
       "measured": 6.78,
       "corrected": 6.44,
       "ebr_adjusted": 6.12,
+      "qe_implied": 6.775,
       "months": 12,
-      "estimated_months": 0
+      "estimated_months": 0,
+      "closure_ratio": 0.9993,
+      "closes": true,
+      "complete": true,
+      "qualified": true
     },
     "2017": {
       "measured": 6.37,
       "corrected": 6.37,
       "ebr_adjusted": 6.31,
+      "qe_implied": 6.351,
       "months": 12,
-      "estimated_months": 0
+      "estimated_months": 0,
+      "closure_ratio": 0.997,
+      "closes": true,
+      "complete": true,
+      "qualified": true
     },
     "2018": {
       "measured": 6.2,
       "corrected": 6.2,
       "ebr_adjusted": 6.13,
+      "qe_implied": 6.204,
       "months": 12,
-      "estimated_months": 0
+      "estimated_months": 0,
+      "closure_ratio": 1.0006,
+      "closes": true,
+      "complete": true,
+      "qualified": true
     },
     "2019": {
       "measured": 5.39,
       "corrected": 4.94,
       "ebr_adjusted": 4.45,
+      "qe_implied": 7.169,
       "months": 12,
-      "estimated_months": 6
+      "estimated_months": 6,
+      "closure_ratio": 1.33,
+      "closes": false,
+      "complete": true,
+      "qualified": false
     },
     "2020": {
       "measured": 6.28,
       "corrected": 6.28,
       "ebr_adjusted": 6.28,
+      "qe_implied": 6.279,
       "months": 12,
-      "estimated_months": 0
+      "estimated_months": 0,
+      "closure_ratio": 0.9998,
+      "closes": true,
+      "complete": true,
+      "qualified": true
     },
     "2021": {
       "measured": 5.975,
       "corrected": 6.102,
       "ebr_adjusted": 6.225,
+      "qe_implied": 5.98,
       "months": 12,
-      "estimated_months": 1
+      "estimated_months": 1,
+      "closure_ratio": 1.0009,
+      "closes": true,
+      "complete": true,
+      "qualified": true
     },
     "2022": {
       "measured": 5.988,
       "corrected": 6.323,
       "ebr_adjusted": 6.655,
+      "qe_implied": 6.0,
       "months": 12,
-      "estimated_months": 0
+      "estimated_months": 0,
+      "closure_ratio": 1.0019,
+      "closes": true,
+      "complete": true,
+      "qualified": true
     },
     "2023": {
       "measured": 5.93,
       "corrected": 5.845,
       "ebr_adjusted": 5.756,
+      "qe_implied": 5.935,
       "months": 12,
-      "estimated_months": 3
+      "estimated_months": 3,
+      "closure_ratio": 1.0008,
+      "closes": true,
+      "complete": true,
+      "qualified": true
     }
   },
   "period_mean_ft": {
+    "measured": 6.259,
+    "corrected": 6.249,
+    "ebr_adjusted": 6.222
+  },
+  "all_complete_years_mean_ft": {
     "measured": 6.163,
     "corrected": 6.103,
     "ebr_adjusted": 6.025
   },
   "published_depth_check": {
     "model_uses_ft": 6.22,
-    "model_source": "Earp & Moreo 2021, OFR 2021-1022 (2010-2019), 1,896 mm/yr",
-    "recomputed_corrected_ft": 6.103,
-    "delta_ft": -0.117,
-    "delta_pct": -1.88,
+    "model_source": "Earp & Moreo 2021, OFR 2021-1022 (2011-2018 annual table), 1,896 mm/yr",
+    "recomputed_corrected_ft": 6.249,
+    "n_years": 8,
+    "delta_ft": 0.029,
+    "delta_pct": 0.47,
     "flux_uncertainty_pct": 8.0,
     "corroborates": true,
     "verdict": "The extended record sits inside the flux uncertainty the model already carries, so it corroborates the published depth rather than replacing it."
