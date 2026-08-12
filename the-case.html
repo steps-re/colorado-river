@@ -1,0 +1,857 @@
+<nav class="sitenav" aria-label="Site"><div class="nbwrap"><a href="index.html" class="nb-home">Colorado River</a><a href="start.html" class="nb-start">Start here</a><a href="technical.html">The evidence</a><a href="proposal.html">The fix</a><a href="water-capital.html">Who pays</a><a href="reservoir-solar-explorer.html">Reservoir solar</a><a href="https://github.com/steps-re/colorado-river" target="_blank" rel="noopener">Data &amp; code</a></div></nav>
+<style>
+/* ---- shared chrome: navigation ---- */
+.sitenav{position:sticky;top:0;z-index:40;background:var(--deep,#123137);
+-webkit-backdrop-filter:saturate(140%) blur(6px);backdrop-filter:saturate(140%) blur(6px)}
+.nbwrap{max-width:1100px;margin:0 auto;padding:0 16px;display:flex;flex-wrap:wrap;
+align-items:center;gap:2px}
+.sitenav a{display:inline-block;padding:11px 12px;color:#CFE0E2;text-decoration:none;
+font-size:13.5px;line-height:1;border-bottom:2px solid transparent}
+.sitenav a:hover{color:#fff;border-bottom-color:#3E8E9C}
+.sitenav a.on{color:#fff;border-bottom-color:var(--rust,#A8432B);font-weight:600}
+.sitenav a.nb-home{font-weight:700;color:#fff;padding-left:0}
+.sitenav a.nb-start{color:#F0B49A}
+.sitenav a:focus-visible{outline:2px solid #8FD3DE;outline-offset:-2px}
+@media(max-width:640px){.sitenav a{padding:9px 8px;font-size:12.5px}}
+
+/* ---- shared chrome: section strip ---- */
+.secstrip{max-width:1100px;margin:0 auto;padding:9px 16px;display:flex;flex-wrap:wrap;
+align-items:baseline;gap:4px 14px;border-bottom:1px solid var(--line,#C6BBA4);
+background:var(--stone,#E7E1D4)}
+.secttl{font-size:11px;text-transform:uppercase;letter-spacing:.07em;color:var(--muted,#5B6A6A);
+font-weight:700;margin-right:4px}
+.secstrip a{font-size:13px;color:var(--water,#2C7A87);text-decoration:none}
+.secstrip a:hover{text-decoration:underline}
+.secstrip a.here{color:var(--deep,#123137);font-weight:700}
+
+/* ---- shared chrome: figures ---- */
+figure.fig{margin:1.5em 0;background:#fff;border:1px solid var(--line,#C6BBA4);
+border-radius:6px;padding:10px}
+figure.fig .zoom{display:block;position:relative;cursor:zoom-in}
+figure.fig img{width:100%;max-width:100%;height:auto;display:block;border-radius:3px}
+figure.fig .zoomhint{position:absolute;right:8px;bottom:8px;background:rgba(18,49,55,.82);
+color:#fff;font-size:10.5px;letter-spacing:.04em;padding:3px 8px;border-radius:3px;opacity:0;
+transition:opacity .15s;pointer-events:none}
+figure.fig .zoom:hover .zoomhint,figure.fig .zoom:focus-visible .zoomhint{opacity:1}
+figure.fig figcaption{font-size:12.5px;color:var(--muted,#5B6A6A);margin-top:8px;line-height:1.5}
+
+/* ---- shared chrome: lightbox ---- */
+#lbox{position:fixed;inset:0;z-index:100;background:rgba(10,22,25,.93);display:none;
+align-items:center;justify-content:center;padding:24px;cursor:zoom-out}
+#lbox.open{display:flex}
+#lbox img{max-width:100%;max-height:100%;object-fit:contain;border-radius:4px;
+box-shadow:0 12px 48px rgba(0,0,0,.5)}
+#lbox .lbclose{position:absolute;top:14px;right:18px;color:#fff;background:none;border:0;
+font-size:30px;line-height:1;cursor:pointer;padding:6px 12px}
+#lbox .lbclose:focus-visible{outline:2px solid #8FD3DE}
+@media (prefers-reduced-motion:reduce){figure.fig .zoomhint{transition:none}}
+</style>
+<script>
+/* Click any figure to open the full-resolution original. Escape or click closes. */
+document.addEventListener('DOMContentLoaded',function(){
+  var box=document.createElement('div'); box.id='lbox';
+  box.innerHTML='<button class="lbclose" aria-label="Close">&times;</button><img alt="">';
+  document.body.appendChild(box);
+  var img=box.querySelector('img');
+  function close(){box.classList.remove('open');img.src='';document.body.style.overflow='';}
+  box.addEventListener('click',close);
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});
+  document.querySelectorAll('a.zoom').forEach(function(a){
+    a.addEventListener('click',function(e){
+      e.preventDefault();
+      img.src=a.getAttribute('href');
+      img.alt=(a.querySelector('img')||{}).alt||'';
+      box.classList.add('open'); document.body.style.overflow='hidden';
+      box.querySelector('.lbclose').focus();
+    });
+  });
+});
+</script>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>The full case | Colorado River | Steps Ventures</title>
+<style>
+:root{--stone:#E7E1D4;--paper:#F4F0E7;--plate:#FCFAF5;--ink:#1E2B2E;--deep:#123137;--muted:#5B6A6A;
+--water:#2C7A87;--rust:#A8432B;--amber:#9C7A2E;--line:#C6BBA4;
+--serif:"Iowan Old Style","Palatino Linotype",Palatino,Georgia,serif;
+--sans:-apple-system,BlinkMacSystemFont,system-ui,"Segoe UI",sans-serif;--mono:ui-monospace,"SF Mono",Menlo,Consolas,monospace;}
+*{box-sizing:border-box}
+body{margin:0;background:var(--stone);color:var(--ink);font-family:var(--sans);font-size:17px;line-height:1.62;-webkit-font-smoothing:antialiased}
+.wrap{max-width:940px;margin:0 auto;padding:0 24px} .col{max-width:80ch;margin-inline:auto}
+.col>p,.col>ul,.col>ol,.col>.key,.col>.callout{max-width:66ch} .col>p.lede{max-width:74ch}
+.chap{background:var(--deep);color:var(--paper);padding:40px 0 34px;border-top:3px solid var(--rust)}
+.chap .wrap{max-width:940px} .chap .num{font-family:var(--mono);text-transform:uppercase;letter-spacing:.18em;font-size:.72rem;color:#D8B49E;display:block;margin-bottom:.6em}
+.chap h2{color:#F4F0E7;font-size:clamp(1.7rem,4vw,2.4rem);margin:0} .chap p{color:#C9D6D6;max-width:60ch;margin:.5em 0 0;font-size:1.02rem}
+.toc{background:var(--plate);border:1px solid var(--line);border-radius:6px;padding:6px;text-transform:none;letter-spacing:normal;font-family:var(--sans)}
+.toc a{display:grid;grid-template-columns:auto minmax(0,1fr);column-gap:14px;row-gap:3px;align-items:baseline;padding:14px 15px;text-decoration:none;border-bottom:1px solid #EAE3D3}
+.toc a:last-child{border-bottom:0} .toc a:hover{background:#F0EBDF}
+.toc .tn{grid-row:1 / span 2;align-self:start;font-family:var(--mono);color:var(--rust);font-size:1.05rem;font-weight:700;padding-top:2px}
+.toc .tt{font-family:var(--serif);color:var(--deep);font-size:1.16rem;line-height:1.25}
+.toc .td{font-family:var(--sans);color:var(--muted);font-size:.9rem;line-height:1.4}
+h1,h2,h3{font-family:var(--serif);color:var(--deep);text-wrap:balance;font-weight:600;line-height:1.13}
+h2{font-size:1.72rem;margin:0 0 .25em} h3{font-size:1.28rem;margin:0 0 .35em} p{margin:0 0 1em}
+a{color:var(--water)} a.c{font-size:.62em;vertical-align:super;text-decoration:none;color:var(--water);font-family:var(--mono);margin-left:1px}
+.eyebrow{font-family:var(--mono);text-transform:uppercase;letter-spacing:.14em;font-size:.72rem;color:var(--rust);margin:0 0 1.1em;display:block}
+.mono{font-family:var(--mono);font-variant-numeric:tabular-nums}
+header{background:var(--deep);color:var(--paper);overflow:hidden;position:relative}
+#hero{display:block;width:100%;height:300px}
+.hero-txt{position:absolute;inset:0;display:flex;flex-direction:column;justify-content:flex-end;padding:34px 24px;max-width:940px;margin:0 auto;left:0;right:0;pointer-events:none}
+.hero-txt .eyebrow{color:#D8B49E} .hero-txt h1{color:#F4F0E7;font-size:clamp(2.1rem,5.6vw,3.4rem);margin:0;max-width:18ch}
+.hero-txt .dek{font-family:var(--serif);font-style:italic;color:#C9D6D6;font-size:1.15rem;margin:.5em 0 0;max-width:46ch}
+.heroctas{pointer-events:auto;display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.herocta{background:var(--water);color:#fff;font-family:var(--mono);font-size:.74rem;text-transform:uppercase;letter-spacing:.06em;padding:12px 20px;border-radius:4px;text-decoration:none;white-space:nowrap} .herocta:hover{background:#25646f}
+.herocta.ghost{background:transparent;border:1px solid #7fa3a6;color:#E7EEEE} .herocta.ghost:hover{background:rgba(255,255,255,.08)}
+nav{position:sticky;top:0;z-index:9;background:rgba(231,225,212,.94);backdrop-filter:blur(6px);border-bottom:1px solid var(--line);font-family:var(--mono);font-size:.7rem;text-transform:uppercase;letter-spacing:.08em}
+nav{position:sticky;top:0} nav::after{content:"";position:absolute;right:0;top:0;bottom:0;width:34px;pointer-events:none;background:linear-gradient(to right,transparent,var(--stone))}
+nav .wrap{display:flex;gap:20px;padding:11px 24px;overflow-x:auto;scrollbar-width:thin} nav a{color:var(--muted);text-decoration:none;white-space:nowrap} nav a:hover{color:var(--rust)}
+section{padding:54px 0} .waterline{height:0;border-top:1px solid var(--line);box-shadow:0 2px 0 -1px rgba(168,68,43,.28);max-width:940px;margin:0 auto}
+.lede{font-family:var(--serif);font-size:1.32rem;line-height:1.5;color:var(--deep)}
+#energy h3{margin-top:1.8em} #energy .col{margin-top:0} #energy figure{max-width:760px;margin:24px auto 0}
+.reading{display:grid;grid-template-columns:1fr;gap:26px;margin:0 0 8px}
+@media(min-width:760px){.reading{grid-template-columns:1.05fr 1fr;align-items:center} .reading.flip .txt{order:2}}
+.stat{font-family:var(--mono);font-variant-numeric:tabular-nums;color:var(--rust);font-size:clamp(2.5rem,6.6vw,3.8rem);line-height:.95;letter-spacing:-.02em;margin:0 0 .1em}
+.stat .u{font-size:.3em;color:var(--muted);letter-spacing:.01em;margin-left:.28em;font-weight:600;font-family:var(--sans);vertical-align:baseline}
+.stat small{display:block;font-family:var(--sans);font-size:.98rem;color:#3a4746;letter-spacing:0;margin-top:.45em;text-transform:none;line-height:1.5}
+figure{margin:0;background:var(--plate);border:1px solid var(--line);border-radius:3px;padding:12px} figure img{width:100%;height:auto;display:block}
+figcaption{font-family:var(--mono);font-size:.68rem;color:var(--muted);margin-top:8px}
+.tablewrap{overflow-x:auto;border:1px solid var(--line);border-radius:3px;background:var(--plate);margin:6px 0}
+table{border-collapse:collapse;width:100%;font-size:.82rem;min-width:640px}
+th,td{text-align:left;padding:9px 11px;border-bottom:1px solid #E4DCCB;vertical-align:top}
+thead th{font-family:var(--mono);font-size:.64rem;text-transform:uppercase;letter-spacing:.05em;color:var(--muted);font-weight:600;background:#EFEADF}
+tbody td:first-child{font-weight:600;color:var(--deep);font-family:var(--serif);font-size:.92rem}
+.num{font-family:var(--mono);font-variant-numeric:tabular-nums;white-space:nowrap}
+.mk{font-family:var(--mono);font-weight:700} .hit{color:var(--water)} .part{color:var(--amber)} .miss{color:var(--rust)}
+.recs{display:grid;gap:2px;background:var(--line);border:1px solid var(--line);border-radius:3px;overflow:hidden}
+.rec{background:var(--paper);padding:20px 22px;display:grid;grid-template-columns:auto 1fr;gap:16px}
+.rec .n{font-family:var(--mono);font-size:1.4rem;color:var(--rust);font-weight:700} .rec p{margin:0;color:#33403f;font-size:.96rem}
+.rec .who{font-family:var(--mono);font-size:.68rem;text-transform:uppercase;letter-spacing:.05em;color:var(--water);margin-top:.6em;display:block}
+.callout{background:var(--deep);color:var(--paper);border-radius:4px;padding:26px 28px;margin:8px 0}
+.callout .big{font-family:var(--mono);font-size:clamp(1.8rem,5vw,2.6rem);color:#8FD0DA;letter-spacing:-.01em} .callout p{margin:.3em 0 0;color:#C9D6D6}
+.grid2{display:grid;gap:22px} @media(min-width:720px){.grid2{grid-template-columns:1fr 1fr}}
+.coal{background:var(--plate);border:1px solid var(--line);border-left:3px solid var(--water);border-radius:3px;padding:16px 18px}
+.coal h3{font-size:1.02rem;margin:0 0 .3em} .coal p{margin:0;font-size:.9rem;color:#3a4746} .coal .g{font-family:var(--mono);font-size:.66rem;color:var(--rust);text-transform:uppercase;letter-spacing:.05em;display:block;margin-top:.5em}
+.interro{background:#14343b;color:#C9D6D6;border-radius:4px;padding:24px 26px} .interro h3{color:#F4F0E7} .interro a{color:#8FD0DA}
+.interro ul{margin:.4em 0 0;padding-left:1.1em} .interro li{margin:.35em 0;font-size:.92rem}
+.refs{columns:2;column-gap:34px;font-size:.8rem;color:#3a4746} @media(max-width:680px){.refs{columns:1}}
+.refs div{break-inside:avoid;margin:0 0 .7em} .refs .rn{font-family:var(--mono);color:var(--rust);font-weight:700;margin-right:5px} .refs a{word-break:break-word}
+.key{font-family:var(--mono);font-size:.72rem;color:var(--muted);margin:12px 0 0}
+.foot{background:var(--deep);color:#AEC0C0;padding:42px 0;font-size:.85rem} .foot a{color:#8FD0DA}
+:focus-visible{outline:2px solid var(--water);outline-offset:2px}
+@media(prefers-reduced-motion:no-preference){.reveal{opacity:0;transform:translateY(14px);transition:opacity .7s,transform .7s} .reveal.in{opacity:1;transform:none}}
+figure img,img[src^="data:image"]{cursor:zoom-in}
+#lb{position:fixed;inset:0;z-index:99;display:none;align-items:center;justify-content:center;flex-direction:column;gap:14px;background:rgba(18,49,55,.93);padding:24px;cursor:zoom-out}
+#lb.on{display:flex}
+#lb img{max-width:96vw;max-height:90vh;box-shadow:0 12px 44px rgba(0,0,0,.55);border-radius:5px;background:var(--plate)}
+#lb .cap{color:#C9D6D6;font-family:var(--mono);font-size:.72rem;text-align:center;max-width:70ch}
+#lb .x{position:fixed;top:16px;right:22px;color:#C9D6D6;font-family:var(--mono);font-size:1.4rem;line-height:1}
+</style>
+
+<header>
+  <canvas id="hero" width="1880" height="600" aria-hidden="true"></canvas>
+  <div class="hero-txt">
+    <span class="eyebrow">Steps Ventures Research &middot; Independent analysis &middot; July 2026</span>
+    <h1>Basin 2.0, costed.</h1>
+    <p class="dek">The accounting is the crisis, the water is measurable, and the fix pencils. A data-and-ROI companion to designing the next Colorado River.</p>
+    <div class="heroctas"><a class="herocta" href="proposal.html">Read the $100B proposal &rarr;</a><a class="herocta ghost" href="coalition.html">The coalition plan</a><a class="herocta ghost" href="start.html">New here? Start simple</a></div>
+  </div>
+</header>
+
+
+<section id="move" style="background:var(--deep);color:var(--paper);padding:54px 0;border-bottom:3px solid var(--rust)"><div class="wrap col">
+  <span class="eyebrow" style="color:#D8B49E">The one move</span>
+  <p style="font-family:var(--serif);font-size:clamp(1.7rem,3.6vw,2.5rem);line-height:1.26;color:#F4F0E7;margin:0 0 .55em">Big Tech is about to drop <strong style="color:#E7A48C">$100 billion</strong> into data centers and chip fabs across the desert Southwest. Everyone&rsquo;s furious about it.</p>
+  <p style="font-family:var(--serif);font-size:clamp(1.7rem,3.6vw,2.5rem);line-height:1.26;color:#F4F0E7;margin:0 0 .9em">Flip it. Use that same buildout to <strong style="color:#8FD0DA">refill the Colorado River.</strong></p>
+  <p style="color:#C9D6D6;font-size:1.08rem;max-width:62ch;margin:0 0 .8em">The dams are losing power as the reservoirs fall, and the desert Southwest is short of grid. The hyperscalers are already building their own solar and storage to run the data centers, so site that build to do triple duty. Power for the data centers. Replacement for the fading dams. And enough surplus daytime solar left over to <strong style="color:#F4F0E7">make water</strong>. Reuse, desalination, and recharge are flexible loads. They run when the sun is up and idle when it isn&rsquo;t, so they soak up intermittent power without paying to store or firm it.</p>
+  <p style="color:#C9D6D6;font-size:1.08rem;max-width:62ch;margin:0 0 1em">Not charity. Not offsets. A build whose biggest tier pays for itself, whose public-goods tier is priced honestly, and that makes the whole basin measurably better, acre-foot by acre-foot, in public. The companies blamed for draining the desert become the ones who refilled the river.</p>
+  <p style="font-family:var(--serif);font-size:1.55rem;color:#F4F0E7;margin:.2em 0 1em">That&rsquo;s the move. Who&rsquo;s in?</p>
+  <a class="cta primary" href="proposal.html" style="background:var(--water);color:#fff">Read the $100B proposal &rarr;</a>
+  <a class="cta ghost" href="#toc" style="border:1px solid #6b8f92;color:#C9D6D6">See the evidence first</a>
+</div></section>
+<section id="toc" style="padding:44px 0"><div class="wrap col">
+  <span class="eyebrow">How to read this</span>
+  <h2 style="margin-bottom:.35em">On this page</h2>
+  <p style="color:var(--muted);margin-bottom:18px">This is a long argument, so it is built as six chapters. Read straight through or jump to one. Each chapter ends where you can interrogate the numbers behind it.</p>
+  <nav class="toc" aria-label="Chapters">
+   <a href="#ch1"><span class="tn">01</span><span class="tt">The crisis is physical, the fight is the accounting</span><span class="td">Four numbers, fifty years of the ledger</span></a>
+   <a href="#ch2"><span class="tn">02</span><span class="tt">Why today&rsquo;s plans fall short</span><span class="td">What every post-2026 proposal misses</span></a>
+   <a href="#ch3"><span class="tn">03</span><span class="tt">The fix, a costed portfolio</span><span class="td">Rebuild the buffer, ten solutions, build your own</span></a>
+   <a href="#ch4"><span class="tn">04</span><span class="tt">Energy, the ignored lever</span><span class="td">The dams, the grid, who loses</span></a>
+   <a href="#ch5"><span class="tn">05</span><span class="tt">The money and the coalition</span><span class="td">Return, stress test, prior art, the path</span></a>
+   <a href="#ch6"><span class="tn">06</span><span class="tt">Interrogate this</span><span class="td">Methods, reviewers, every source</span></a>
+  </nav>
+  <h2 style="margin:30px 0 .35em">Deeper dives</h2>
+  <p style="color:var(--muted);margin-bottom:18px">Eighteen companion pages, each a standalone piece. The site map, in full.</p>
+  <nav class="toc" aria-label="Companion pages">
+   <a href="start.html"><span class="tn">&rarr;</span><span class="tt">Start here</span><span class="td">Plain-English overview</span></a>
+   <a href="ee-measured.html"><span class="tn">&rarr;</span><span class="tt">Measured from orbit</span><span class="td">The basin from satellites, on Earth Engine <strong style="color:var(--rust)">(new)</strong></span></a>
+   <a href="data-centers.html"><span class="tn">&rarr;</span><span class="tt">Data centers &amp; the river</span><span class="td">31 sites, a good-faith playbook <strong style="color:var(--rust)">(new)</strong></span></a>
+   <a href="measured-conservation.html"><span class="tn">&rarr;</span><span class="tt">Efficiency isn't conservation</span><span class="td">Measured: efficiency, ET, phantom water <strong style="color:var(--rust)">(new)</strong></span></a>
+   <a href="reservoir-solar.html"><span class="tn">&rarr;</span><span class="tt">Solar on the reservoirs</span><span class="td">Floating solar, modeled hour by hour</span></a>
+   <a href="reservoir-solar-explorer.html"><span class="tn">&rarr;</span><span class="tt">Reservoir coverage explorer</span><span class="td">Interactive: seven reservoirs, one slider, and what the water actually costs <strong style="color:var(--rust)">(new)</strong></span></a>
+   <a href="reservoir-solar-paper.html"><span class="tn">&rarr;</span><span class="tt">Technical paper</span><span class="td">The formal version: uncertainty bounds, validation, referee findings <strong style="color:var(--rust)">(new)</strong></span></a>
+   <a href="water-capital.html"><span class="tn">&rarr;</span><span class="tt">Where basin capital can go</span><span class="td">Every way to add an acre-foot, and what makes each one financeable <strong style="color:var(--rust)">(new)</strong></span></a>
+   <a href="funders.html#instrument"><span class="tn">&rarr;</span><span class="tt">The bankable acre-foot</span><span class="td">The finance brief: water's missing contract, now in Who Pays Now</span></a>
+   <a href="funders.html"><span class="tn">&rarr;</span><span class="tt">Who pays now</span><span class="td">The hyperscaler bridge, fundable projects</span></a>
+   <a href="records.html"><span class="tn">&rarr;</span><span class="tt">The documented record</span><span class="td">Real prices and formal positions</span></a>
+   <a href="stakeholders.html"><span class="tn">&rarr;</span><span class="tt">Stakeholder map</span><span class="td">328 entities, reaction-mapped</span></a>
+   <a href="governance.html"><span class="tn">&rarr;</span><span class="tt">Governance</span><span class="td">Who signs off on what</span></a>
+   <a href="manufactured-water.html"><span class="tn">&rarr;</span><span class="tt">Manufactured water</span><span class="td">Reuse and desal reality</span></a>
+   <a href="objections.html"><span class="tn">&rarr;</span><span class="tt">Objections</span><span class="td">Eight hard questions, answered straight</span></a>
+   <a href="technical.html"><span class="tn">&rarr;</span><span class="tt">Technical appendix</span><span class="td">Methods and models</span></a>
+   <a href="proposal.html"><span class="tn">&rarr;</span><span class="tt">The $100B proposal</span><span class="td">The costed plan, staged from a pilot</span></a>
+   <a href="coalition.html"><span class="tn">&rarr;</span><span class="tt">Coalition</span><span class="td">Who must agree</span></a>
+  </nav>
+  <p class="key" style="margin-top:16px"><strong style="color:var(--rust)">New:</strong> <a href="funders.html">who pays now</a>, the hyperscaler bridge. The basin&rsquo;s biggest new water users are its most motivated funders, and the accounting to pay them already exists. Named, fundable projects at the real price from <a href="records.html">the record</a>.</p>
+</div></section>
+<div class="waterline"></div>
+
+<section><div class="wrap col">
+  <p class="lede">The Colorado River is having its worst water year on record in the same year its rulebook expires. The water world is openly debating a &ldquo;Basin 2.0&rdquo; redesign for a climate the 1922 Compact never imagined. This is the quantitative backbone for that argument: the four most-contested numbers, computed from public data, then turned into a costed, financeable portfolio.</p>
+  <p>The thesis in one line: the river carries far less than it was promised, so demand has to come down, and that part is settled physics. The fights over <em>how</em> are <strong>accounting fights</strong>, the disputed quantities are already measurable, and agreed measurement is the cheapest lever nobody is pulling. Every figure below links to its primary source, and the <a href="https://github.com/steps-re/colorado-river" target="_blank" rel="noopener">data and code are on GitHub</a>, so you can confirm and extend rather than take our word.</p>
+</div></section>
+<div class="waterline"></div>
+
+<div class="chap" id="ch1"><div class="wrap"><span class="num">Chapter 1</span><h2>The crisis is physical, the fight is the accounting</h2><p>The river carries less than it promises and demand has to fall. But the fights that decide who gives up what are fights over numbers. Here are the four that matter, computed from public data, and fifty years of the ledger.</p></div></div>
+<section id="summary"><div class="wrap col">
+  <span class="eyebrow">The 60-second version</span>
+  <div style="background:var(--plate);border:1px solid var(--line);border-left:3px solid var(--rust);border-radius:4px;padding:8px 26px">
+  <ul style="line-height:1.55">
+   <li><strong>Four numbers, from public data.</strong> Reservoir evaporation and conveyance losses run about 1.2 to 1.5 million acre-feet a year, and no apportionment fully carries them. They are the larger part of what is called the structural deficit. Satellite gravimetry puts basin terrestrial water storage down roughly 46 km&sup3; since 2002, in line with the published ~52. That is a change in stored water across reservoirs, soil and groundwater rather than a consumptive-use ledger, and part of it is drought rather than permanent loss. The groundwater component is the part no accounting tracks. Lower Basin forage grows the river&rsquo;s lowest-value-per-drop crop, and the Glen Canyon release now stays above the bass-spawning threshold for months each year (mid-June to October in 2022), where it almost never did before.</li>
+   <li><strong>Every post-2026 proposal shares one blind spot.</strong> They have started to price evaporation, but not one accounts for the groundwater drain, the loss no meter sees.</li>
+   <li><strong>Measurement is the cheapest first move.</strong> A shared satellite-and-sensor ledger does not decide who absorbs the cut, that is the political fight, but it is the low-cost, low-regret step that makes every other fight tractable.</li>
+   <li><strong>Everything below the recommendations</strong> is a clearly-labeled exploratory model of costed solutions and financing, useful for scale and structure, but built on softer, editable assumptions than the measured findings.</li>
+  </ul></div>
+  <p style="font-size:.9rem;color:var(--muted);margin-top:14px">Why physical first, then accounting? Peer-reviewed modeling of United States water stress finds that what a river can deliver is set by its dams and canals as much as by its runoff, and that accounting for conveyance and storage cuts modeled water stress by more than half. <a class="c" href="https://doi.org/10.1016/j.gloenvcha.2022.102468" target="_blank" rel="noopener" title="Rising, Josset, Troy &amp; Lall 2022, Global Environmental Change: infrastructure &amp; national demand shape US water stress (AWASH)">[1]</a> On a fully plumbed river like the Colorado, the shortfall we measure is what remains after the infrastructure has already done its work, so the unresolved fight is over the ledger, not the pipes.</p>
+  <p style="font-size:.86rem;color:var(--muted);margin-top:12px">This asset is computed by AI from public data and is seeking review from named water-sector experts before formal publication. See <a href="#reviewers">who we are asking</a>.</p>
+</div></section>
+<div class="waterline"></div>
+
+<section id="findings"><div class="wrap">
+  <span class="eyebrow">The evidence &middot; four measured findings</span>
+  <div class="reading reveal"><div class="txt col">
+    <p class="stat">1.2&ndash;1.5<span class="u">MAF / year</span><small>Reservoir evaporation and system losses, charged to no state&rsquo;s allocation <a class="c" href="https://www.usgs.gov/centers/nevada-water-science-center/science/evaporation-lake-mead-and-lake-mohave-lower-colorado" target="_blank" rel="noopener" title="USGS Lake Mead/Mohave evaporation">[2]</a><a class="c" href="https://pubs.usgs.gov/sir/2022/5017/sir20225017.pdf" target="_blank" rel="noopener" title="USGS SIR 2022-5017 (Powell area-capacity)">[3]</a></small></p>
+    <h3>The loss no one was charged for</h3>
+    <p>Since <em>Arizona v. California</em> (1964), Lower Basin evaporation and system losses have been booked to neither state and simply drained the reservoirs <a class="c" href="https://www.usbr.gov/ColoradoRiverBasin/" target="_blank" rel="noopener" title="USBR Colorado River Basin">[4]</a>. Charging them, as the Upper Basin proposes <a class="c" href="http://www.ucrcommission.com/upper-division-states-submit-alternative-for-post-2026-operations-of-lake-powell-and-lake-mead/" target="_blank" rel="noopener" title="Upper Div. States alternative (UCRC)">[5]</a>, moves over a million acre-feet of cut onto Arizona and California first. The measurement is not optional.</p>
+  </div><figure><a href="figures/m1_whopays.png" class="zoom" aria-label="Open full-resolution figure"><img src="figures/web/m1_whopays.webp" alt="Who absorbs the cut under four accounting rules" loading="lazy" decoding="async"><span class="zoomhint">Click to enlarge</span></a><figcaption>How a 1.2 to 1.5 million acre-foot cut lands on each state under four different accounting rules. Charging evaporation to the Lower Basin, which the Upper Basin wants, puts most of it on Arizona and California.</figcaption></figure></div>
+  <div class="reading flip reveal"><div class="txt col">
+    <p class="stat">&minus;1.5<span class="u">MAF / year</span><small>Total water storage lost, across reservoirs, soil, and unmeasured groundwater <a class="c" href="https://podaac.jpl.nasa.gov/dataset/TELLUS_GRAC-GRFO_MASCON_GRID_RL06.3_V4" target="_blank" rel="noopener" title="NASA JPL GRACE-FO Mascon RL06.3">[6]</a><a class="c" href="https://doi.org/10.1029/2025GL115593" target="_blank" rel="noopener" title="Geophysical Research Letters 2025">[7]</a></small></p>
+    <h3>The larger loss no proposal counts</h3>
+    <p>GRACE satellites show roughly <strong>46 km&sup3;</strong> (37.6 MAF) of water gone since 2002, in line with the published ~52 km&sup3; benchmark, draining far faster now. We ran the decomposition directly against GLDAS soil-moisture and snow plus reservoir accounting: of the ~1.5 MAF/yr lost, <strong>reservoir drawdown is the largest visible piece</strong>, soil moisture and snow another share, and groundwater a smaller but deeply uncertain residual, our method lands near 10&ndash;30%, the published literature near two-thirds <a class="c" href="https://agupubs.onlinelibrary.wiley.com/doi/10.1002/2014GL061055" target="_blank" rel="noopener" title="Castle et al. 2014, GRL: Colorado River groundwater depletion">[8]</a>. The methods disagree, and honestly so: the groundwater signal is a residual that amplifies every error. What is <em>not</em> in doubt is that groundwater is a real, largely unrecoverable loss the surface-water accounting of the Law of the River cannot see, and that no allocation proposal tracks it.</p>
+  </div><figure><a href="figures/m3_grace_tws.png" class="zoom" aria-label="Open full-resolution figure"><img src="figures/web/m3_grace_tws.webp" alt="GRACE basin water storage 2002-2026" loading="lazy" decoding="async"><span class="zoomhint">Click to enlarge</span></a><figcaption>Satellite gravity data showing the total water stored in the basin falling steadily since 2002, roughly 1.5 million acre-feet lost every year that the surface-water books never see.</figcaption></figure></div>
+  <div class="reading reveal"><div class="txt col">
+    <p class="stat">~10&times;<span class="u">value gap</span><small>The same acre-foot of water grows ~$360 of forage or ~$3,750 of produce <a class="c" href="https://www.nass.usda.gov/Research_and_Science/Cropland/SARS1a.php" target="_blank" rel="noopener" title="USDA NASS Cropland Data Layer">[9]</a><a class="c" href="https://www.nature.com/articles/s43247-024-01291-0" target="_blank" rel="noopener" title="Richter et al. 2024, Comms Earth &amp; Environ">[10]</a></small></p>
+    <h3>The scarcest water grows the cheapest crop</h3>
+    <p>In four Lower Basin counties, forage consumes ~2.05 MAF while returning only ~$360/acre-foot of <em>gross</em> crop output <a class="c" href="https://www.iid.com/water" target="_blank" rel="noopener" title="Imperial Irrigation District">[11]</a>, produce returns roughly ten times that. (Gross output overstates the water&rsquo;s own value, which nets out land and labor, so read the gap as directional, not exact.) The point holds: compensated fallowing of low-value forage is the cheapest large block of water, and conservation should be paid on measured consumptive use <a class="c" href="https://openetdata.org/" target="_blank" rel="noopener" title="OpenET">[12]</a>, not diversions.</p>
+  </div><figure><a href="figures/m2_value_per_af.png" class="zoom" aria-label="Open full-resolution figure"><img src="figures/web/m2_value_per_af.webp" alt="Value per acre-foot by crop" loading="lazy" decoding="async"><span class="zoomhint">Click to enlarge</span></a><figcaption>What an acre-foot of water is worth by how it is used. Low-value forage, grown on senior water rights, sits far below what cities and industry would pay for the same water.</figcaption></figure></div>
+  <div class="reading flip reveal"><div class="txt col">
+    <p class="stat">months<span class="u">per year</span><small>The dam release now exceeds the 16&deg;C bass-spawning threshold, versus almost never before 2015 <a class="c" href="https://waterdata.usgs.gov/monitoring-location/09380000/" target="_blank" rel="noopener" title="USGS gauge 09380000 (Lees Ferry)">[13]</a></small></p>
+    <h3>A national park run by power revenue</h3>
+    <p>As Lake Powell fell, the dam released warmer water. Bass-suitable days rose from ~2 to ~41 a year (11,654 USGS readings), and smallmouth bass now pass into the last humpback-chub stronghold <a class="c" href="https://www.nps.gov/articles/000/smallmouth-bass-threat.htm" target="_blank" rel="noopener" title="NPS: smallmouth bass threat">[14]</a><a class="c" href="https://www.gcmrc.gov/" target="_blank" rel="noopener" title="USGS Grand Canyon Monitoring &amp; Research Center">[15]</a>. Cool-mix flows work but are contested by hydropower <a class="c" href="https://www.usbr.gov/newsroom/news-release/5205" target="_blank" rel="noopener" title="USBR 'Cool Mix' flows">[16]</a>. The physics is predictable, so the trade-off can be priced.</p>
+  </div><figure><a href="figures/m4_thermal.png" class="zoom" aria-label="Open full-resolution figure"><img src="figures/web/m4_thermal.webp" alt="Water temperature below Glen Canyon Dam" loading="lazy" decoding="async"><span class="zoomhint">Click to enlarge</span></a><figcaption>Water temperature released below Glen Canyon Dam. As the reservoir drops, releases warm past the line where invasive bass can spawn and native fish struggle.</figcaption></figure></div>
+</div></section>
+<div class="waterline"></div>
+
+
+<section id="fiftyyr"><div class="wrap col">
+  <span class="eyebrow">The ledger, over fifty years</span>
+  <h2>Half a century of Reclamation&rsquo;s own accounting</h2>
+  <p>We parsed Reclamation&rsquo;s 1971 to 2024 consumptive-use dataset. The record is more nuanced than the headlines, and it points conservation at a very specific place <a class="c" href="https://www.usbr.gov/lc/region/g4000/wtracct.html" target="_blank" rel="noopener" title="USBR Lower Colorado Water Accounting (Decree &amp; CUL data)">[17]</a>.</p>
+</div><div class="wrap"><div class="grid2">
+  <figure><a href="figures/lcras_state_trends.png" class="zoom" aria-label="Open full-resolution figure"><img src="figures/web/lcras_state_trends.webp" alt="State consumptive use 1971-2024" loading="lazy" decoding="async"><span class="zoomhint">Click to enlarge</span></a><figcaption>California ran a three-decade overuse era (peak 5.33 MAF in 1974) that ended in a single year after the 2003 QSA. Arizona&rsquo;s CAP absorbed the recent shortage cuts.</figcaption></figure>
+  <figure><a href="figures/lcras_sector_trends.png" class="zoom" aria-label="Open full-resolution figure"><img src="figures/web/lcras_sector_trends.webp" alt="Sector split of use over time" loading="lazy" decoding="async"><span class="zoomhint">Click to enlarge</span></a><figcaption>Where the water goes. Agriculture dominates. Cities and power are a small share, so conservation volume has to come from farms and California&rsquo;s exports, not from data centers.</figcaption></figure>
+  <figure><a href="figures/lcras_deficit_accounting.png" class="zoom" aria-label="Open full-resolution figure"><img src="figures/web/lcras_deficit_accounting.webp" alt="Use vs apportionment 1971-2024" loading="lazy" decoding="async"><span class="zoomhint">Click to enlarge</span></a><figcaption>Lower Basin use against its 7.5 MAF apportionment. For 44 of 54 years the basin was under its cap. The ledger only looks balanced today because the reservoirs physically shrank.</figcaption></figure>
+  <figure><a href="figures/lcras_use_vs_hydrology.png" class="zoom" aria-label="Open full-resolution figure"><img src="figures/web/lcras_use_vs_hydrology.webp" alt="Use vs reservoir levels" loading="lazy" decoding="async"><span class="zoomhint">Click to enlarge</span></a><figcaption>Use stayed flat near 7 MAF from 2003 to 2021 while Lake Mead&rsquo;s surface roughly halved. The 2021 to 2024 cuts were triggered by shortage-tier thresholds tied to Lake Mead elevation, so they track policy tiers layered on hydrology and can be relaxed when levels recover. They are policy-contingent, not durable.</figcaption></figure>
+</div>
+  <div class="callout"><div class="big">The real gap is ~1 MAF of unapportioned evaporation, and one IID deal covers most of the conservable volume</div>
+  <p>Reservoir evaporation of roughly 1 MAF a year sits on top of a 9.0 MAF entitlement stack that no one apportioned. And the conservable water is concentrated: Imperial plus Palo Verde plus Yuma hold about 98% of the top-ten conservable agricultural volume, so a single Imperial agreement covers roughly 80% of it. The negotiation is smaller than it looks.</p></div>
+</div></section>
+<div class="waterline"></div>
+
+<div class="chap" id="ch2"><div class="wrap"><span class="num">Chapter 2</span><h2>Why today&rsquo;s plans fall short</h2><p>Every proposal on the post-2026 table is silent on the three things the science says to do. Account for the losses, route cuts to the lowest-value water, and price the dam trade-off.</p></div></div>
+<section id="proposals"><div class="wrap col">
+  <span class="eyebrow">What the proposals miss</span>
+  <h2>Ten proposals on the table, scored against the data</h2>
+  <p>We scored every post-2026 proposal <a class="c" href="https://www.usbr.gov/ColoradoRiverBasin/post2026/" target="_blank" rel="noopener" title="USBR Post-2026 Operations">[18]</a> against the four findings. They have started to price evaporation. None address the unmeasured loss, groundwater, and the operating rules run on a separate track from the ecological emergency.</p>
+</div><div class="wrap"><div class="tablewrap" role="region" aria-label="Proposal scoring" tabindex="0"><table>
+  <thead><tr><th>Proposal</th><th>Max LB cut</th><th>Sufficient</th><th>Evap</th><th>Groundwater</th><th>Value/drop</th><th>Thermal</th></tr></thead>
+  <tbody>
+  <tr><td>DEIS No Action</td><td class="num">0.6</td><td><span class="mk miss">&#9675;</span></td><td><span class="mk miss">&#9675;</span></td><td><span class="mk miss">&#9675;</span></td><td><span class="mk miss">&#9675;</span></td><td><span class="mk miss">&#9675;</span></td></tr>
+  <tr><td>DEIS Basic Coordination</td><td class="num">1.48</td><td><span class="mk miss">&#9675;</span></td><td><span class="mk miss">&#9675;</span></td><td><span class="mk miss">&#9675;</span></td><td><span class="mk miss">&#9675;</span></td><td><span class="mk miss">&#9675;</span></td></tr>
+  <tr><td>DEIS Enhanced Coord.</td><td class="num">1.3&ndash;3.0</td><td><span class="mk part">&#9682;</span></td><td><span class="mk part">&#9682;</span></td><td><span class="mk miss">&#9675;</span></td><td><span class="mk miss">&#9675;</span></td><td><span class="mk part">&#9682;</span></td></tr>
+  <tr><td>DEIS Max Flexibility</td><td class="num">up to 4.0</td><td><span class="mk hit">&#9679;</span></td><td><span class="mk part">&#9682;</span></td><td><span class="mk miss">&#9675;</span></td><td><span class="mk miss">&#9675;</span></td><td><span class="mk part">&#9682;</span></td></tr>
+  <tr><td>DEIS Supply Driven</td><td class="num">up to 2.1</td><td><span class="mk part">&#9682;</span></td><td><span class="mk part">&#9682;</span></td><td><span class="mk miss">&#9675;</span></td><td><span class="mk miss">&#9675;</span></td><td><span class="mk part">&#9682;</span></td></tr>
+  <tr><td>Upper Basin (UDS)</td><td class="num">1.5 to LB</td><td><span class="mk part">&#9682;</span></td><td><span class="mk hit">&#9679;</span></td><td><span class="mk miss">&#9675;</span></td><td><span class="mk miss">&#9675;</span></td><td><span class="mk part">&#9682;</span></td></tr>
+  <tr><td>Lower Basin bridge</td><td class="num">1.25 + 1.0</td><td><span class="mk part">&#9682;</span></td><td><span class="mk hit">&#9679;</span></td><td><span class="mk miss">&#9675;</span></td><td><span class="mk miss">&#9675;</span></td><td><span class="mk part">&#9682;</span></td></tr>
+  <tr><td>Federal 10-yr framework</td><td class="num">up to 3.0</td><td><span class="mk hit">&#9679;</span></td><td><span class="mk part">&#9682;</span></td><td><span class="mk miss">&#9675;</span></td><td><span class="mk miss">&#9675;</span></td><td><span class="mk miss">&#9675;</span></td></tr>
+  <tr><td>Minute 330 successor</td><td class="num">~0.1 MX</td><td><span class="mk miss">, </span></td><td><span class="mk part">&#9682;</span></td><td><span class="mk miss">&#9675;</span></td><td><span class="mk miss">&#9675;</span></td><td><span class="mk miss">&#9675;</span></td></tr>
+  <tr><td>NAIWRSA (tribal)</td><td class="num">settles rights</td><td><span class="mk miss">, </span></td><td><span class="mk miss">&#9675;</span></td><td><span class="mk hit">&#9679;</span></td><td><span class="mk miss">&#9675;</span></td><td><span class="mk miss">&#9675;</span></td></tr>
+  </tbody></table></div>
+  <p class="key">&#9679; addresses &#9682; partial &#9675; misses &middot; cuts in MAF/yr <a class="c" href="https://www.usbr.gov/ColoradoRiverBasin/post2026/" target="_blank" rel="noopener" title="USBR Post-2026 Operations">[18]</a><a class="c" href="http://www.ucrcommission.com/upper-division-states-submit-alternative-for-post-2026-operations-of-lake-powell-and-lake-mead/" target="_blank" rel="noopener" title="Upper Div. States alternative (UCRC)">[5]</a><a class="c" href="https://www.kelly.senate.gov/newsroom/press-releases/kelly-introduces-bipartisan-bicameral-legislation-to-ratify-and-fund-historic-navajo-tribes-water-rights-settlement/" target="_blank" rel="noopener" title="NAIWRSA settlement (US Senate)">[19]</a>. Every allocation proposal marks &#9675; on groundwater, that column is the story.</p>
+</div></section>
+<div class="waterline"></div>
+
+
+<div class="chap" id="ch3"><div class="wrap"><span class="num">Chapter 3</span><h2>The fix, a costed portfolio</h2><p>No single sector closes the gap. Rebuild the buffer with a stack of real, measured supplies, cheapest first. Then move the sliders and build your own path.</p></div></div>
+<section id="basin2"><div class="wrap col">
+  <span class="eyebrow">Colorado River finance and data</span>
+  <h2>Rebuilding the buffer, not just closing the gap</h2>
+  <p class="lede">The real task is bigger than covering a single bad year. The river lost its cushion. Mead and Powell have both fallen far from full, and the aquifers that once helped steady the system are down by about 28 MAF since 2002. That slow drain pulls on river flow too. The goal is to refill storage, restore operating room, and keep the basin from running on empty.</p>
+  <p>Mead holds 26.1 MAF when full and Powell 24.3 MAF. Both are now near a third full. That is not a normal operating posture. It is a warning that the system needs deliberate replenishment. Our energy-decoupling and recharge work serves that goal directly. It is not only about reducing demand. It is about rebuilding the buffer that lets the basin absorb drought, delay, and error. <a href="figures/water_batteries.png" class="zoom" aria-label="Open full-resolution figure"><img src="figures/web/water_batteries.webp" alt="batteries" loading="lazy" decoding="async"><span class="zoomhint">Click to enlarge</span></a></p>
+
+  <div class="callout">
+    <div class="big">A basin-scale fix needs a portfolio.</div>
+    <p>No single sector can deliver the scale Kloos targets, which is roughly 4 MAF, a full-basin <a href="technical.html#shortfall">stabilization target</a> at or just above Reclamation&rsquo;s ~3 to 3.5 MAF/yr stabilizing cut, not a fourth kind of deficit. Farms, cities, industry, groundwater, and operations all have to contribute. Our own verified consumptive-use conservation starts at about $400 per acre-foot <em>paid to the user</em>. Load in measurement, verification, legally shepherding the water to Lake Mead, and a durability premium, and the all-in delivered cost runs closer to $600 to $1,000 per acre-foot, still the cheapest real supply in the basin. The water is conserved, shepherded through the system, measured, and paired with a holdback so it actually stays available. The point is not one silver bullet. It is a coordinated stack of real, auditable supplies. <a href="figures/portfolio_4maf.png" class="zoom" aria-label="Open full-resolution figure"><img src="figures/web/portfolio_4maf.webp" alt="portfolio" loading="lazy" decoding="async"><span class="zoomhint">Click to enlarge</span></a></p>
+  </div>
+
+  <p>That makes the economics easier to see. Stabilizing the river is cheap protection on a huge asset. The basin generates roughly $1.5 trillion each year. Even a large intervention is a tiny share of that value, far less than one percent. The cost of acting is small compared with the cost of letting the system keep eroding. <a href="figures/insurance_premium.png" class="zoom" aria-label="Open full-resolution figure"><img src="figures/web/insurance_premium.webp" alt="insurance" loading="lazy" decoding="async"><span class="zoomhint">Click to enlarge</span></a></p>
+
+  <div class="grid2">
+    <div class="coal">
+      <h3>Policy reform</h3>
+      <p>The old prior-appropriation rule, especially the logic behind "use it or lose it," punishes saving water. A durable fix needs return-flow protection and legal shepherding so conserved water really makes it to Mead and Powell. It also needs an accounting rule that credits verified new supply, including reuse and desal. The post-2026 renegotiation is the opening to write those rules into practice.</p>
+    </div>
+    <div class="coal">
+      <h3>Tribal water</h3>
+      <p>Thirty tribes hold often-senior rights, but many are still unquantified or not fully delivered. A durable fix means quantifying those rights, funding the infrastructure to move water where it is needed, and giving tribes a real seat in the decisions. The 2022 CRIT off-reservation leasing authority is the working template for how this can be done.</p>
+    </div>
+  </div>
+
+  <p>One important exchange sits at the edge of the basin. Coastal California or Baja desalination can be funded partly from outside California, while coastal cities take desal water and leave their Colorado River share in Lake Mead for Arizona and Nevada. In June 2026, Reclamation and the Arizona, California, and Nevada agencies signed an MOU that sets up this paper transfer framework, with no new inland pipeline needed. Costs run about $2,000 to $3,500 per acre-foot. The realistic path starts near 10,000 acre-feet, can scale toward about 100,000, and Kloos argues it could eventually reach 1 to 2 MAF at full scale <a class="c" href="https://www.burntislandventures.com/blog/ccxau0i33drirds8u2gyufdxl338hh" target="_blank" rel="noopener" title="Kloos, "The Colorado River: Designing Basin 2.0"">[20]</a>. That makes it a natural fit for outside capital, including a corporate coalition. <a href="figures/desal_exchange.png" class="zoom" aria-label="Open full-resolution figure"><img src="figures/web/desal_exchange.webp" alt="desalx" loading="lazy" decoding="async"><span class="zoomhint">Click to enlarge</span></a></p>
+
+  <div class="box">
+    <p><strong>Great Salt Lake as a testbed.</strong> Utah has a faster-moving, single-state setting next door. It is already trying compensated leasing, shepherding, turf replacement, and return-flow protection. That makes it a useful testbed for how parts of this basin strategy might work in practice. It is not yet a proof.</p>
+  </div>
+
+  <div class="box">
+    <p><strong>What could break this.</strong> The 4 MAF target may be politically out of reach. Some levers may be dead on arrival. Desal can fail under financing, energy, and permitting limits. Tribal delivery can stall. Policy reform may not happen in time. We stress-tested all of it, and the full teardown is in our honest-odds review.</p>
+  </div>
+</div></section>
+<div class="waterline"></div>
+
+<section id="pbuild"><div class="wrap col">
+  <span class="eyebrow">Interactive &middot; build the portfolio</span>
+  <h2>Build your own path to stabilization</h2>
+  <p>Move the sliders. Each lever frees water at a different cost. Watch the total against the deficit and Kloos&rsquo;s ~4 MAF stabilization target, the annual cost, and the insurance premium against the basin&rsquo;s $1.5 trillion economy.</p>
+</div><div class="wrap"><div style="background:var(--plate);border:1px solid var(--line);border-radius:6px;padding:22px 24px">
+  <div id="pbrows"></div>
+  <div style="height:22px;background:var(--stone);border-radius:11px;overflow:hidden;margin:18px 0 6px;position:relative">
+    <div id="pbfill" style="height:100%;width:0;background:var(--rust);transition:width .12s"></div>
+    <div style="position:absolute;left:37.5%;top:0;bottom:0;border-left:2px dashed var(--deep)"></div>
+  </div>
+  <div style="display:flex;justify-content:space-between;font-family:var(--mono);font-size:.66rem;color:var(--muted)"><span>0</span><span>deficit ~1.5 MAF</span><span style="margin-left:auto">~4 MAF stabilization target</span></div>
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:14px;margin-top:20px">
+    <div><div style="font-family:var(--mono);font-size:1.7rem;color:var(--rust)" id="pbtot">0</div><div style="font-size:.8rem;color:var(--muted)">MAF/yr freed or made</div></div>
+    <div><div style="font-family:var(--mono);font-size:1.7rem;color:var(--water)" id="pbcost">$0</div><div style="font-size:.8rem;color:var(--muted)">annual cost</div></div>
+    <div><div style="font-family:var(--mono);font-size:1.7rem;color:var(--deep)" id="pbprem">0%</div><div style="font-size:.8rem;color:var(--muted)">of the $1.5T basin economy</div></div>
+    <div><div style="font-family:var(--mono);font-size:1.7rem" id="pbavg">$0</div><div style="font-size:.8rem;color:var(--muted)">blended $/AF</div></div>
+  </div>
+  <p style="font-family:var(--mono);font-size:.7rem;color:var(--muted);margin-top:14px">Cheap conservation gets you to the deficit near a 0.1% premium. Leaning on reuse and desal buys more water but costs more. That tradeoff is the whole design problem.</p>
+</div></div></section>
+<div class="waterline"></div>
+<script>
+(function(){
+  var L=[["Compensated ag fallowing",1300,2500,400],["Ag efficiency / deficit irrigation",450,800,600],
+   ["Municipal turf + leak reduction",400,600,700],["Advanced reuse (OCWD model)",800,1300,1500],
+   ["Brackish desalination",350,500,1000],["Groundwater management / ASR banking",400,800,500],
+   ["Coastal seawater exchange",900,2000,2800]];
+  var host=document.getElementById("pbrows");
+  L.forEach(function(l,i){
+    var r=document.createElement("div");
+    r.style.cssText="display:grid;grid-template-columns:minmax(0,1fr) 148px 76px;gap:12px;align-items:center;padding:7px 0;border-bottom:1px solid #E4DCCB";
+    r.innerHTML='<span style="font-size:.9rem;color:var(--ink)">'+l[0]+' <span style="color:var(--muted);font-family:var(--mono);font-size:.72rem">~$'+l[3]+'/AF</span></span>'+
+     '<input type="range" min="0" max="'+l[1]+'" value="'+Math.round(l[1]*0.55)+'" data-c="'+l[3]+'" style="width:100%">'+
+     '<span class="pbv" style="font-family:var(--mono);font-size:.8rem;color:var(--rust);text-align:right"></span>';
+    host.appendChild(r);
+  });
+  var S=host.querySelectorAll('input[type=range]');
+  function fmt(n){return n>=1000?'$'+(n/1000).toFixed(1)+'B':'$'+n.toFixed(0)+'M';}
+  function upd(){
+    var maf=0,cost=0;
+    S.forEach(function(s){var v=+s.value/1000,c=+s.dataset.c;maf+=v;cost+=v*c;
+      s.parentNode.querySelector('.pbv').textContent=v.toFixed(2)+' MAF';});
+    document.getElementById("pbtot").textContent=maf.toFixed(2);
+    document.getElementById("pbcost").textContent=fmt(cost);
+    document.getElementById("pbprem").textContent=(cost/1000/1500*100).toFixed(2)+'%';
+    document.getElementById("pbavg").textContent=maf>0?'$'+Math.round(cost*1e6/(maf*1e6)):'$0';
+    var f=document.getElementById("pbfill");f.style.width=Math.min(100,maf/4*100)+'%';
+    f.style.background=maf>=1.5?'var(--good)':'var(--rust)';
+  }
+  S.forEach(function(s){s.addEventListener("input",upd);});upd();
+})();
+</script>
+<section id="solutions"><div class="wrap col">
+  <span class="eyebrow">Ten solutions &middot; each under $50B</span>
+  <h2>The menu, costed from real projects</h2>
+  <p>Thirteen candidates were costed from comparable projects, then modeled together as a portfolio, with a fairness constraint across stakeholders and 300 simulated runs that vary every cost and yield. The ten strongest are below. The <strong>no-regret</strong> score is the plain-English payoff test: how often each measure lands in the best package across those 300 runs. A high score means it is worth doing almost no matter how the future turns out.</p>
+</div><div class="wrap"><div class="tablewrap" role="region" aria-label="Solution options" tabindex="0"><table>
+  <thead><tr><th>Solution</th><th>10-yr cost</th><th>Water</th><th>$/AF</th><th>BCR</th><th>No-regret</th></tr></thead>
+  <tbody>
+  <tr><td>Measurement &amp; accounting ledger</td><td class="num">$0.6B</td><td>enables rest</td><td class="num">n/a</td><td class="num">enabler</td><td class="num hit">100%</td></tr>
+  <tr><td>Consumptive-use conservation market</td><td class="num">$3B</td><td class="num">0.50 MAF</td><td class="num">~$400</td><td class="num hit">2.2</td><td class="num hit">99%</td></tr>
+  <tr><td>Agricultural efficiency at scale</td><td class="num">$3.9B</td><td class="num">0.12 MAF</td><td class="num">~$2,600</td><td class="num">0.5</td><td class="num">poor buy</td></tr>
+  <tr><td>Glen Canyon temp + outlet retrofit</td><td class="num">$0.5&ndash;3B</td><td>ecology + hydropower, no new water</td><td class="num">n/a*</td><td class="num">public good</td><td class="num hit">100%</td></tr>
+  <tr><td>Cloud seeding + snow monitoring</td><td class="num">$0.55B</td><td>~0 (research)*</td><td class="num">n/a</td><td class="num">n/a</td><td class="num">research</td></tr>
+  <tr><td>Phreatophyte / tamarisk control</td><td class="num">$1.25B</td><td>~0 (habitat)*</td><td class="num">n/a</td><td class="num">0.2</td><td class="num">habitat</td></tr>
+  <tr><td>Dust-on-snow source control</td><td class="num">$15B</td><td>unverified*</td><td class="num">~$2,500</td><td class="num">0.1</td><td class="num">excluded</td></tr>
+  <tr><td>Desalination exchange</td><td class="num">$4.5B</td><td class="num">0.18 MAF</td><td class="num">~$2,250</td><td class="num">0.4</td><td class="num">high cost</td></tr>
+  <tr><td>Managed aquifer recharge</td><td class="num">$10B</td><td>0.40 MAF net*</td><td class="num">~$1,900</td><td class="num">0.6</td><td>regional</td></tr>
+  <tr><td>Tribal infrastructure + leasing</td><td class="num">$28.5B</td><td class="num">0.60 MAF</td><td class="num">~$2,850</td><td class="num">0.5</td><td>equity</td></tr>
+  </tbody></table></div>
+  <p class="key">$/AF and BCR (benefit-cost ratio): water valued at $1,500/AF, 5% discount, 30-yr <a class="c" href="https://www.coloradoriverdistrict.org/cloud-seeding/" target="_blank" rel="noopener" title="Colorado River District: cloud seeding">[21]</a><a class="c" href="https://www.sdcwa.org/" target="_blank" rel="noopener" title="SDCWA Carlsbad desalination">[22]</a>. Water is <strong>verified, additional consumptive-use reduction</strong>, not face-value diversion savings, after additionality, diversion-vs-consumptive, and a 25% uncertainty holdback. *Tamarisk and cloud seeding carry ~zero bankable water (USGS, Wyoming trials) and are funded as habitat/research grants. The Glen Canyon retrofit creates no new water. Aquifer recharge is shown net of ~75% recovery. These honest haircuts follow an adversarial technical review. Costings in the downloadable data.</p>
+  <div class="grid2" style="margin-top:26px">
+    <figure><a href="figures/sol_efficiency.png" class="zoom" aria-label="Open full-resolution figure"><img src="figures/web/sol_efficiency.webp" alt="Cost vs water efficiency frontier" loading="lazy" decoding="async"><span class="zoomhint">Click to enlarge</span></a><figcaption>Cost vs. water, by $/AF (ring = in optimal package)</figcaption></figure>
+    <figure><a href="figures/sol_noregret.png" class="zoom" aria-label="Open full-resolution figure"><img src="figures/web/sol_noregret.webp" alt="No-regret frequency under uncertainty" loading="lazy" decoding="async"><span class="zoomhint">Click to enlarge</span></a><figcaption>No-regret core under 300-trial uncertainty</figcaption></figure>
+  </div>
+  <div class="callout"><div class="big">~$15.7B &rarr; ~1 MAF/yr verified, ~0.6 MAF/yr shepherded to storage</div>
+  <p>Not a claim to erase a ~1.2&ndash;1.5 MAF structural deficit, a real, defensible dent in it. The defensible core is five measures: the measurement ledger, a verified consumptive-use conservation market (about $400/AF paid to users, ~$600 to $1,000 all-in with shepherding, still the cheapest supply), the genuine-consumptive slice of ag efficiency, the Glen Canyon retrofit (funded as a public good for ecology and hydropower, not water), and managed aquifer recharge for regional reserve. Tamarisk, cloud seeding, and dust-on-snow are out of the water math, the science doesn&rsquo;t support banking their yield. Tribal infrastructure stays on its own equity track. These numbers survived an adversarial technical review. The earlier, larger headline did not.</p></div>
+</div></section>
+<div class="waterline"></div>
+
+<div class="chap" id="ch4"><div class="wrap"><span class="num">Chapter 4</span><h2>Energy, the ignored lever</h2><p>The dams are losing power as the reservoirs fall, and the desert Southwest is short of grid. Cheap solar the hyperscalers are already building can backfill that power and make water. And yes, someone loses.</p></div></div>
+<section id="energy"><div class="wrap col">
+  <span class="eyebrow">The energy&ndash;water nexus &middot; power, the dams, and abundant solar</span>
+  <h2>Energy is the lever the water fight keeps ignoring</h2>
+  <p class="lede">The dams are losing power as the reservoirs fall, the desert Southwest is short of grid, and abundant solar the hyperscalers are already building can both backfill that power and manufacture water. Because water-making is a flexible load, it can chase the sun instead of paying to firm it, which is what keeps the cost down. Treat energy and water as one system and moves open up that neither side sees alone.</p>
+</div><div class="wrap">
+  <div class="col">
+  <h3>Why we&rsquo;re not proposing floating solar</h3>
+  <p>We are <strong>not</strong> proposing floating solar on Lake Mead or Lake Powell in any meaningful amount. Siting millions of panels in deep, canyon-bound reservoirs with 500-foot depths and 100-to-180-foot water-level swings runs into hard structural, anchoring, and mooring problems. And a realistic, recreation-compatible 10% coverage saves only about <strong>60 to 75 thousand acre-feet a year per reservoir</strong>, a tiny fraction of the deficit. So we keep floating solar out of the water-conservation core.</p>
+  <p><strong>Canal-top solar</strong> remains a pragmatic, niche alternative, such as the Gila River Indian Community's Casa Blanca canal (2024) or California's Project Nexus, which cut evaporation from the canal surface and reduce weed growth <a class="c" href="https://www.usbr.gov/newsroom/news-release/4707" target="_blank" rel="noopener" title="USBR: Gila River Indian Community canal solar">[23]</a><a class="c" href="https://www.tid.org/project-nexus/" target="_blank" rel="noopener" title="Turlock ID: Project Nexus canal solar">[24]</a>. However, the water saved is minimal (canals are a tiny share of basin-wide evaporation), and water authorities like the Central Arizona Project have declined canal-top solar because the physical structures block crucial visual canal inspections. Floating or canal-top solar remains a minor resilience play for tribal or local canal operators, not a basin-scale solution.</p>
+  </div>
+  <div class="col">
+  <h3>Replacing lost hydropower with land-based solar and batteries</h3>
+  <p>As the reservoirs fall, Hoover (2,080 &rarr; ~1,600 MW) and Glen Canyon (1,320 &rarr; ~800 MW, and it stops entirely below elevation 3,490 ft) are losing firm, cheap, dispatchable power and the grid services that come with it. <strong>Utility-scale land-based solar-plus-storage, photovoltaic panels (PV) paired with battery energy storage (BESS), is the definitive answer.</strong> By co-siting <strong>large-scale, land-based solar arrays and Battery Energy Storage Systems (BESS) co-located directly at the dams' existing transmission nodes</strong>, we can produce abundant, water-blind electricity. This reuses the dams' massive transmission lines with <strong>$0 in grid costs</strong>, fully backfills the lost hydropower, and decouples reservoir releases from peak electrical grid demands. Once solar-plus-storage carries the firm power, releases no longer have to be timed for the evening peak, allowing operators to release water purely for delivery, ecology, and downstream temperature control (the fix to the Grand Canyon bass problem) with zero power-revenue penalties.</p>
+  <p><strong>Pumped hydro</strong> is a complement, not a substitute: it is a net energy <em>consumer</em> (70&ndash;80% round-trip), so it firms and shifts power but needs solar to charge it. Real proposals exist (Daybreak&rsquo;s 2.2 GW Navajo Energy Storage near Powell, an LADWP project at Hoover), but open-loop designs add a <em>new</em> evaporating reservoir, ~3,000 acre-feet a year for a 500-acre pond, a water cost in a basin that can&rsquo;t afford one. Closed-loop avoids most of that but costs more. Net: lead with PV+BESS at the dams, and use pumped hydro only closed-loop, for long-duration firming.</p>
+  <p><strong>What the last 25 years would have looked like.</strong> We backtested it. Because Glen Canyon and Hoover releases are set by water-delivery law (a narrow ~7.5&ndash;8.2 MAF band), their generation fell not because less water moved but because the reservoirs dropped and the <em>head</em> collapsed, combined dam output is down about <strong>26% since 2000</strong>, a cumulative <strong>~39 TWh</strong> of lost generation. A flat 1.8 GW of PV on the dams&rsquo; existing interconnects (~4.6 TWh/yr, water-blind) would have <strong>covered that shortfall roughly 1.8&times;</strong> if built in 2010, displacing the market gas WAPA buys during drought (~1.8 MtCO&sub2;/yr). It would not have changed the <em>volume</em> released, that is fixed by delivery law, but it would have made every hard call of the drought era (steady flows for the Grand Canyon, cool-water bypass for the native fish, letting Powell fall below the power pool) a water decision instead of a power-revenue sacrifice.</p>
+  </div>
+  <figure><a href="figures/pv_backtest.png" class="zoom" aria-label="Open full-resolution figure"><img src="figures/web/pv_backtest.webp" alt="Dam hydropower decline vs flat 1.8 GW PV backfill 2000-2024" loading="lazy" decoding="async"><span class="zoomhint">Click to enlarge</span></a><figcaption>Backtest: dam hydropower fell with reservoir head (release stayed in its water-law band); 1.8 GW of PV backfills it flat and water-blind <a class="c" href="https://www.eia.gov/electricity/data/eia923/" target="_blank" rel="noopener" title="EIA-923: power-plant generation data">[25]</a>.</figcaption></figure>
+  <div class="col" style="margin-top:30px">
+  <h3>The transmission is not empty, and that changes the play</h3>
+  <p>An early version of this work claimed ~3.5 GW of stranded transmission at the dams. An interconnection review corrected that, and we are keeping the correction visible. Here is the honest version. Hoover and Glen Canyon carry firm hydropower contracted to utilities across seven states through 2057, plus the ancillary services that keep the Southwest grid stable, so their lines are not idle. But as the reservoirs fall the dams generate less, and the region has to import replacement power <a class="c" href="https://www.wapa.gov/" target="_blank" rel="noopener" title="Western Area Power Administration">[26]</a>. Solar that <strong>backfills the lost hydropower, on the order of ~1 GW</strong> across the two dams, uses the interconnection capacity the shrinking hydro freed and cuts the imported gas. Oversize the array past the line limit and route the midday excess into storage instead of clipping it, and the battery carries it through the evening peak, the hours the strained grid needs most and exactly when the dams used to be dispatched. That part is real, though it is non-firm and six-hour storage does not cover a deep overnight or a winter lull. What is <em>not</em> real is the larger 3.5 GW figure, which counted capacity that is not free. Beyond the backfill, the one repurposable corridor is the retired Navajo Generating Station&rsquo;s ~800 miles of 500-kV line, already contested by a 2.2 GW pumped-storage project and a 750 MW solar project and controlled by the Navajo Nation <a class="c" href="https://en.wikipedia.org/wiki/Navajo_Generating_Station" target="_blank" rel="noopener" title="Navajo Generating Station &amp; 500-kV transmission">[27]</a><a class="c" href="https://www.daybreakpower.com/" target="_blank" rel="noopener" title="Daybreak Power: Navajo Energy Storage Station">[28]</a>. So the honest play is a ~1 GW backfill at the dams, plus new solar co-located with the data-center load, competing for a seat at NGS as a partner, not a discovery of empty transmission.</p>
+  <p>The regulatory key is <strong>FERC&rsquo;s surplus interconnection service</strong> (Order 845): co-locate solar and storage at a derated generator&rsquo;s existing interconnection and use its headroom on an expedited study, months, not the five-plus years of the standard queue, where only ~14% of projects ever finish <a class="c" href="https://www.ferc.gov/media/order-no-845" target="_blank" rel="noopener" title="FERC Order 845: surplus interconnection service">[29]</a>. It has been done on retiring coal (Comanche, Sherco) and gas. The catch is honest: surplus service is often non-firm (curtailed first in congestion, which the battery softens), and it needs agreements with WAPA, the Navajo Nation, and the plant&rsquo;s ownership consortium.</p>
+  <h3>Sized to the load, with new interconnection on a real queue</h3>
+  <p>Take it as an illustration of scale, not a shovel-ready plan. A build on the order of <strong>~5 GW of solar with six-hour storage, roughly $12B</strong>, co-located with data-center load and new or repurposed interconnection, would throw off about <strong>13 TWh a year</strong>. That is enough to replace the dams&rsquo; fading output (~4.6 TWh), carry ~700 MW of round-the-clock data-center load, and still leave <strong>~2.2 TWh</strong> to pump, treat, and bank water. The catch is the one the transmission review makes plain: this capacity is not sitting free on the dams&rsquo; existing lines. It needs new interconnection on a multi-year Western queue, or co-location with the load, or a negotiated partnership at the retired Navajo plant. Energy is the easy part. Grid access is the hard part <a class="c" href="https://www.ferc.gov/media/order-no-845" target="_blank" rel="noopener" title="FERC Order 845: surplus interconnection service">[29]</a><a class="c" href="https://www.daybreakpower.com/" target="_blank" rel="noopener" title="Daybreak Power: Navajo Energy Storage Station">[28]</a>.</p>
+  </div>
+  <figure><a href="figures/pv_deploy.png" class="zoom" aria-label="Open full-resolution figure"><img src="figures/web/pv_deploy.webp" alt="Monthly energy through the lines and the energy cascade" loading="lazy" decoding="async"><span class="zoomhint">Click to enlarge</span></a><figcaption>Left: seasonality, May&ndash;June peak, the July&ndash;August monsoon dip, December trough. Right: where the 13 TWh goes.</figcaption></figure>
+  <div class="col">
+  <p><strong>Seasonality is the catch, and water is the answer.</strong> Desert solar runs ~34% capacity in June and ~13% in December, and batteries smooth the day but not the season. Flexible water loads, aquifer recharge, CAP pumping into Lake Pleasant, groundwater and desalination that can ramp, soak up the summer surplus and <em>bank it underground as water</em>, covering the winter dip that no battery can. Water infrastructure becomes the seasonal store <a class="c" href="https://www.azwater.gov/" target="_blank" rel="noopener" title="Arizona DWR: brackish groundwater inventory">[30]</a><a class="c" href="https://www.usbr.gov/lc/yuma/" target="_blank" rel="noopener" title="USBR: Yuma Desalting Plant / Yuma Area Office">[31]</a>.</p>
+  <p><strong>And it lands where it&rsquo;s needed most.</strong> The Navajo Generating Station&rsquo;s 2019 closure cost the Navajo Nation ~$40M a year and up to 80% of the Hopi general fund, and ~800&ndash;1,000 coal jobs. Rebuilding on their own transmission, on the already-disturbed mine and plant land, which sidesteps the desert-tortoise conflict and earns the IRA &ldquo;energy community&rdquo; 10% bonus, turns a stranded coal asset into ~28,000 construction jobs, tens of millions a year in tribal revenue, and ~5 MtCO&sub2; avoided <a class="c" href="https://en.wikipedia.org/wiki/Navajo_Generating_Station" target="_blank" rel="noopener" title="Navajo Generating Station &amp; 500-kV transmission">[27]</a><a class="c" href="https://www.irs.gov/pub/irs-drop/n-26-39.pdf" target="_blank" rel="noopener" title="IRS Notice 2026-39: energy-community bonus credit">[32]</a>.</p>
+  <h3 style="margin-top:1.4em">And the same abundant solar can <em>make</em> water</h3>
+  <p>Abundant carbon-free PV is not only a power source, it is a water source, water and energy substitute at the margin, and in the desert the sun is the cheap input. <strong>One gigawatt of desert PV can desalinate on the order of 876,000 acre-feet of brackish or drainage water a year</strong> (~2,500 kWh/AF), and at ~$0.10/kWh the energy cost of reuse or brackish desal falls to ~$100&ndash;250/AF <a class="c" href="https://www.usbr.gov/lc/yuma/" target="_blank" rel="noopener" title="USBR: Yuma Desalting Plant / Yuma Area Office">[31]</a><a class="c" href="https://www.azwater.gov/" target="_blank" rel="noopener" title="Arizona DWR: brackish groundwater inventory">[30]</a><a class="c" href="https://www.nature.com/articles/s44221-023-00181-7" target="_blank" rel="noopener" title="Volk et al. 2024, Nature Water: OpenET accuracy assessment">[33]</a>. Ranked by water per unit of cheap energy:</p>
+  </div>
+  <div class="tablewrap" role="region" aria-label="Water per unit of cheap energy" tabindex="0"><table>
+    <thead><tr><th>Use of cheap solar</th><th>Energy (kWh/AF)</th><th>Adds or frees</th><th>Realistic scale</th></tr></thead><tbody>
+    <tr><td>Aquifer-recharge recovery / groundwater pumping</td><td class="num">300&ndash;600</td><td>frees / accesses</td><td>capped by aquifer yield</td></tr>
+    <tr><td>Ag-drainage &amp; saline return-flow desal (Yuma, Salton Sea)</td><td class="num">~2,500</td><td class="hit">adds, drought-proof</td><td class="num">300&ndash;500k AF/yr</td></tr>
+    <tr><td>Brackish groundwater desal (AZ: 530&ndash;700M AF in place)</td><td class="num">650&ndash;2,600</td><td class="hit">adds</td><td>100s of k AF/yr</td></tr>
+    <tr><td>Potable reuse</td><td class="num">1,000&ndash;2,500</td><td class="hit">adds local supply</td><td>city-scale</td></tr>
+    <tr><td>Seawater desal on the coast, exchanged for river water</td><td class="num">3,700&ndash;7,400</td><td>frees river water</td><td class="num">100&ndash;800k AF/yr</td></tr>
+    </tbody></table></div>
+  <div class="col">
+  <p>Put together, solar-powered desalination, reuse, and drainage treatment could <strong>add or free 0.3&ndash;0.5 MAF a year</strong>, the same order as the whole conservation program, with energy as the input instead of someone&rsquo;s forgone water. Brine disposal is the binding inland constraint. The coastal exchange sidesteps it but needs interstate and binational deals. The binding constraints are permitting and brine disposal, not energy, and the credible near-term number is far smaller than the long-run ceiling (see <a href="manufactured-water.html">the engineering reality</a>). This is the thread that ties the hyperscalers&rsquo; energy build-out to the basin&rsquo;s water: the PV they need for their own load, on transmission that already exists, throws off cheap power that backfills the dams, frees their operation for temperature and ecology, and manufactures water.</p>
+  <h3 style="margin-top:1.4em">The biggest drought-proof source is the water we already threw away</h3>
+  <p>The flagship use of firm solar-plus-storage is <strong>wastewater reuse and aquifer recharge</strong>, the Orange County model. OCWD purifies 134,000 acre-feet a year of sewage that used to go to the ocean, recharges it into the aquifer, and delivers it <em>cheaper than imported water</em> ($487&ndash;1,073/AF vs $1,130&ndash;1,600), and it is <strong>drought-proof</strong>, because wastewater flows whether or not it snows <a class="c" href="https://www.ocwd.com/gwrs/" target="_blank" rel="noopener" title="Orange County Water District: Groundwater Replenishment System">[34]</a>. Scaled across the basin, a UCLA analysis finds lifting reuse to 40% would create ~900,000 AF a year of new supply and 50% would create 1.3 MAF. Metropolitan&rsquo;s Pure Water Southern California alone targets 168,000 AF <a class="c" href="https://www.mwdh2o.com/" target="_blank" rel="noopener" title="Metropolitan: Pure Water Southern California">[35]</a>. The honest catch: net-new counts only where effluent is currently <em>discharged</em>, Southern California&rsquo;s ocean outfalls are the prize. Las Vegas already credits its return flow to Lake Mead and Phoenix already recycles 97%.</p>
+  <p>As a portfolio, the surplus energy buys a credible <strong>1.5&ndash;3 MAF a year</strong> of new-or-saved water: reuse-to-recharge (firm power), plus cheap flexible wins that barely touch the surplus, precision and deficit irrigation (a 26&ndash;65% cut on the 70&ndash;80% of water agriculture uses, often at a net <em>energy</em> saving), aquifer storage and recovery (Arizona&rsquo;s water bank already holds 4.4M AF of credits), and AI leak detection. Energy stops being the limit. Capture infrastructure, capital, and brine are.</p>
+  </div>
+  <figure><a href="figures/lcras_evap.png" class="zoom" aria-label="Open full-resolution figure"><img src="figures/web/lcras_evap.webp" alt="Reservoir evaporation from Reclamation Lower Colorado accounting 1971-2024" loading="lazy" decoding="async"><span class="zoomhint">Click to enlarge</span></a><figcaption>Reservoir evaporation, authoritative from Reclamation&rsquo;s Lower Colorado accounting (1971&ndash;2024). Per-reservoir loss falls as surface area shrinks with the drought, Lake Mead ~876k AF in 2000, ~466k in 2024 <a class="c" href="https://www.usbr.gov/lc/region/g4000/wtracct.html" target="_blank" rel="noopener" title="USBR Lower Colorado Water Accounting (Decree &amp; CUL data)">[17]</a><a class="c" href="https://data.usbr.gov/" target="_blank" rel="noopener" title="USBR RISE: reservoir evaporation &amp; storage data">[36]</a>.</figcaption></figure>
+</div></section>
+<div class="waterline"></div>
+
+<section id="watercost"><div class="wrap col">
+  <span class="eyebrow">The cost of water &middot; every option on one axis</span>
+  <h2>Covering a reservoir is the most expensive water on the river</h2>
+  <p>Covering reservoirs to stop evaporation keeps coming up, usually as floating solar: shade the water,
+  make clean power, solve two problems at once. On the water it does not work. <b>Covering water to stop it
+  evaporating costs ten to fifty times what it costs to pay a farmer not to irrigate</b> &mdash; whichever
+  cover you choose, at whatever size.</p>
+</div><div class="wrap">
+  <figure><a href="figures/water_cost_ladder.png" class="zoom" aria-label="Open full-resolution figure"><img src="figures/web/water_cost_ladder.webp" alt="Cost per acre-foot of every way to get water on the Colorado River, log scale" loading="lazy" decoding="async"><span class="zoomhint">Click to enlarge</span></a>
+  <figcaption>Every option annualised at 7% over its own service life, so a ten-year shade ball and a
+  twenty-five-year solar array are comparable. Cover costs are anchored to real deployments: the shade-ball
+  figure is LADWP&rsquo;s actual 2015 project ($34.5M over 175 acres) and the floating-cover figure is
+  LADWP&rsquo;s own quote for the same reservoir ($250M over 175 acres).</figcaption></figure>
+</div><div class="wrap col">
+  <p><b>The surprise in that chart is desalination.</b> Desal is the expensive option in every water
+  conversation, and it still beats every reservoir cover. The reason is areal productivity, and it is worth
+  stating because it generalises. <b>A cover&rsquo;s yield is capped by physics:</b> an acre of covered water
+  saves only what would have evaporated off it, about 5.6 acre-feet a year in the Lower Basin, and no
+  engineering improves that. A desalination plant has no such ceiling &mdash; Carlsbad produces roughly 56,000
+  acre-feet a year from a footprint of a few acres, on the order of a thousand times more water per acre.
+  Covers spread industrial capital cost across enormous areas to harvest a thin layer. That is the whole
+  story, and it is why the category loses.</p>
+  <p><b>What this means for floating solar.</b> It is not the cheapest way to stop evaporation and should not
+  be argued as one. Its case rests on the energy &mdash; specifically on backfilling the hydropower the basin
+  is losing as the reservoirs fall, which is a different and stronger argument than midday solar &mdash; with
+  suppressed evaporation as a co-benefit that rides along.</p>
+  <p><a href="water-capital.html"><b>Where basin capital can actually go &rarr;</b></a> The same chart read as
+  an allocation question: which of these can carry capital, which cannot, and why the answer turns on who
+  is allowed to own the water rather than on what it costs.</p>
+  <p><a href="reservoir-solar-explorer.html"><b>Explore it yourself &rarr;</b></a> Pick a reservoir, drag a
+  coverage slider, and watch the water saved and the sellable energy come apart. Seven reservoirs, real
+  shorelines, hour by hour.</p>
+</div></section>
+
+<div class="waterline"></div>
+
+<section id="tradeoffs"><div class="wrap col">
+  <span class="eyebrow">Who loses &middot; name them, or be ambushed</span>
+  <h2>A plan this big makes losers. Here are ours.</h2>
+  <p>Every acre-foot and megawatt this creates is revenue someone else used to earn. A proposal that hides that gets killed by the people it surprised, so we name them, and mark who becomes a partner.</p>
+</div><div class="wrap"><div class="tablewrap" role="region" aria-label="Who is negatively affected" tabindex="0"><table>
+  <thead><tr><th>Who loses</th><th>How</th><th>How much</th><th>Convert to partner?</th></tr></thead><tbody>
+  <tr><td>Gas peaker plants</td><td>solar+storage takes the evening peak they exist for</td><td>AZ ~16 peakers (11 units &lt;3% capacity factor), NV 5, already barely run</td><td class="hit">yes, their utility owners build the PV</td></tr>
+  <tr><td>Existing generators, incl. solar</td><td>midday glut / duck curve suppresses wholesale prices</td><td>solar &ldquo;capture ratios&rdquo; fall. Midday prices go toward zero</td><td>BESS + flexible water loads soak the glut</td></tr>
+  <tr><td>Remaining coal</td><td>pushed off the dispatch stack</td><td>Four Corners 1,540 MW, Springerville 1,766 MW, already retiring 2027&ndash;32</td><td>already dying</td></tr>
+  <tr><td>Utilities&rsquo; new gas</td><td>stranded-asset risk</td><td>SRP +2,000 MW, TEP +400 MW of planned gas</td><td class="hit">redirect that capex into PV+BESS</td></tr>
+  <tr><td>Imported-water wholesalers</td><td>local reuse/desal shrinks their sales</td><td>MWD FY24 ~$429M shortfall, lowest sales since the 1940s. CAP owes $55&ndash;59M/yr regardless</td><td>bring in as offtakers</td></tr>
+  <tr><td>Senior ag rights (IID)</td><td>new supply erodes the scarcity value of their water</td><td>IID earns ~$194&ndash;280M/yr selling conserved water to cities</td><td>paradox: also the top conservation <em>winner</em>, deal design decides</td></tr>
+  <tr><td>Other solar developers</td><td>surplus interconnection jumps the queue</td><td>2,000+ GW stuck in 3&ndash;7 yr interconnection queues</td><td>phased allocation</td></tr>
+  <tr><td>Fossil workers &amp; communities</td><td>plant closures cut jobs and the tax base</td><td>Cholla, Springerville, Four Corners/Navajo</td><td class="hit">the just-transition build is the answer</td></tr>
+  </tbody></table></div>
+  <div class="callout"><div class="big">Seat them, or they fund the opposition</div>
+  <p>The genuine losers are merchant gas peakers and gas suppliers, that is the political opposition to plan for. The utilities (APS, SRP, NV Energy, TEP) own the transmission and can build the solar, so they flip from opponents to partners. The water incumbents (MWD, CAP, IID) can be offtakers and conservation sellers, or, left out, the fiercest resistance, because their business models run on scarcity. Whoever is not at the table funds the campaign against it.</p></div>
+  <div class="col" style="margin-top:26px"><div style="background:var(--plate);border:1px solid var(--line);border-left:3px solid var(--rust);border-radius:3px;padding:20px 24px">
+    <span class="eyebrow" style="margin-bottom:.5em">New &middot; the documented record</span>
+    <p style="margin:0 0 .9em;max-width:66ch">Where does everyone at that table actually stand, and what does the water actually trade for? We pulled the receipts: real transaction prices and formal post-2026 positions, straight from board packets and USBR scoping letters, every row linked to its source. It pairs with the <a href="stakeholders.html">stakeholder map</a>.</p>
+    <a class="herocta" href="records.html">See the documented record &rarr;</a>
+  </div></div>
+</div></section>
+<div class="waterline"></div>
+
+<div class="chap" id="ch5"><div class="wrap"><span class="num">Chapter 5</span><h2>The money and the coalition</h2><p>What it returns, how it holds up under a stress test, who has already tried pieces of it, and the coalition that could actually build it.</p></div></div>
+<section id="opportunity"><div class="wrap col">
+  <span class="eyebrow">The opportunity &middot; what actually pays</span>
+  <h2>Who actually pays for a plan this big</h2>
+  <p>The number is what scares people, so start here. <strong>Nobody writes a $100 billion check.</strong> That figure is the whole build, and most of it is private capital already committed to data centers and the power to run them. What the basin itself has to fund, the water, is a small slice, and it runs on instruments cities use every week. Here is the stack, by who pays and with what.</p>
+</div><div class="wrap">
+  <div class="tablewrap" role="region" aria-label="Who finances each piece of the build" tabindex="0"><table>
+    <thead><tr><th>Piece of the build</th><th>Who finances it</th><th>With what instrument</th><th>New money?</th></tr></thead>
+    <tbody>
+    <tr><td>Data centers and the solar-plus-storage that powers them</td><td>Hyperscalers and power developers</td><td>Their own capital, power-purchase agreements, federal clean-energy tax credits</td><td class="hit">Already being spent</td></tr>
+    <tr><td>Water reuse, aquifer recharge, desalination</td><td>Water utilities and their ratepayers</td><td>Municipal revenue bonds, WIFIA federal loans, state revolving funds</td><td>Proven market, ~$46B issued in 2025</td></tr>
+    <tr><td>Conservation payments to water users</td><td>Federal government and the states</td><td>Inflation Reduction Act drought funds already put ~$4B toward the Colorado</td><td>Largely appropriated</td></tr>
+    <tr><td>Public goods: the Glen Canyon retrofit and the measurement ledger</td><td>Federal, plus a small beneficiary assessment</td><td>Appropriations and a ~$18 per-acre-foot surcharge on a 30-year bond</td><td class="part">The one genuinely new ask</td></tr>
+    </tbody></table></div>
+  <p style="max-width:66ch;margin-inline:auto;font-size:1.06rem"><strong>&ldquo;$100 billion&rdquo; is not a bill sent to one payer.</strong> It is a stack, and every layer already has an owner with a budget and a financing tool that works. The largest layer pays for itself through power sales to buyers who are spending the money regardless. The only genuinely new ask is small, and it buys the cheap, high-integrity core.</p>
+  <div class="col"><h3>One tier pays for itself, the rest is public goods</h3>
+  <p>Honest finance beats a flattering headline. <strong>Conservation is the winner.</strong> The ~$400 per acre-foot recent basin deals paid is the payment to the user, not the all-in cost. With measurement, verification, and shepherding to Lake Mead, durable conserved water runs closer to $600 to $1,000 per acre-foot, still the cheapest high-integrity water in the basin, and genuinely investable if a buyer (say, a corporate replenishment commitment) anchors the offtake. The capital-heavy pieces, the Glen Canyon retrofit, aquifer recharge, ag efficiency, do <em>not</em> pencil as private infrastructure at any honest water value. They are public goods, and they should be funded as grants and public debt, not sold as equity promising double-digit returns. There is no 54% internal rate of return (IRR) here. There is a cheap, real conservation win and a clear-eyed public-goods bill.</p></div>
+</div><div class="wrap">
+  <figure style="max-width:720px;margin:0 auto"><a href="figures/fin_bcr_irr.png" class="zoom" aria-label="Open full-resolution figure"><img src="figures/web/fin_bcr_irr.webp" alt="Benefit-cost ratio and IRR by option" loading="lazy" decoding="async"><span class="zoomhint">Click to enlarge</span></a><figcaption>Benefit-cost ratio &amp; IRR (teal = privately investable)</figcaption></figure>
+  <div class="col" style="margin-top:26px"><h3>Can the beneficiaries finance it, not appropriations?</h3>
+  <p>Partly, and here is the honest split. Of the ~$15.7B of capital, the <strong>$12.2B on revenue-capable options</strong> (metered recharge and reuse, conservation offtake, measurement fees) can service its own debt if a buyer anchors the demand. The remaining <strong>$3.5B is public goods</strong>, principally the Glen Canyon retrofit, with no cash flow, repaid by a small beneficiary assessment <a class="c" href="https://www.worldbank.org/en/news/press-release/2018/10/29/seychelles-launches-worlds-first-sovereign-blue-bond" target="_blank" rel="noopener" title="World Bank: Seychelles blue bond">[37]</a><a class="c" href="https://www.epa.gov/wifia" target="_blank" rel="noopener" title="EPA WIFIA">[38]</a>:</p></div>
+  <div class="tablewrap" role="region" aria-label="Financing structure" tabindex="0"><table>
+    <thead><tr><th>Portion of the $15.7B capital</th><th>How it is repaid</th><th>Per-acre-foot cost</th></tr></thead>
+    <tbody>
+    <tr><td>Revenue-backed, <strong>$12.2B</strong></td><td>metered flows, conservation offtake, fees</td><td class="num hit">covered</td></tr>
+    <tr><td>Assessment-backed, <strong>$3.5B</strong></td><td>beneficiary surcharge on a 30-yr bond</td><td class="num">~$18/AF</td></tr>
+    </tbody></table></div>
+  <p class="key">Dropping the unverified megaprojects (dust-on-snow) and pricing conservation honestly cut the beneficiary surcharge from ~$105/AF to <strong>~$18/AF</strong> (5%, across ~13 MAF of basin use), trivial for cities (&gt;$1,000/AF), modest for agriculture. The catch is real: even $18/AF needs an <strong>issuer with basin-wide assessment authority that does not yet exist</strong>, or a coalition that grants the public-good core outright. The instrument is proven. The governance vehicle is the gap. We do <em>not</em> count the water&rsquo;s social value as collectible revenue.</p>
+  <div class="col" style="margin-top:24px"><h3>How it actually gets financed</h3>
+  <p>Not one mega-bond, but a stack of proven instruments: <strong>WIFIA</strong> federal loans cover up to 49% of eligible cost at Treasury rates, 35-year, with a 5-year repayment deferral <a class="c" href="https://www.epa.gov/wifia" target="_blank" rel="noopener" title="EPA WIFIA">[38]</a>. The balance as tax-exempt revenue and assessment bonds into a US water and sewer muni market that issued $46B in 2025 alone <a class="c" href="https://www.sifma.org/research/statistics/us-municipal-bonds-statistics" target="_blank" rel="noopener" title="SIFMA US municipal bond statistics">[39]</a>. And <strong>Environmental Impact Bonds</strong> (the DC Water model) that pay investors on verified acre-feet saved, turning the measurement ledger into the settlement layer <a class="c" href="https://www.quantifiedventures.com/dc-water" target="_blank" rel="noopener" title="DC Water Environmental Impact Bond (Quantified Ventures)">[40]</a>. Labeled blue bonds already raise several billion a year, so a staged Colorado River program sits well within market appetite <a class="c" href="https://www.worldbank.org/en/news/press-release/2018/10/29/seychelles-launches-worlds-first-sovereign-blue-bond" target="_blank" rel="noopener" title="World Bank: Seychelles blue bond">[37]</a>.</p></div>
+</div></section>
+<div class="waterline"></div>
+
+<section id="sandbox"><style>
+.sbw{max-width:940px;margin:0 auto;padding:0 24px}
+.sbgrid{display:grid;gap:22px;align-items:start}@media(min-width:820px){.sbgrid{grid-template-columns:1.05fr 1fr}}
+.sbpanel{background:#FCFAF5;border:1px solid #C6BBA4;border-radius:4px;padding:18px 20px}
+.sbctrl{margin:0 0 13px}
+.sbctrl label{display:flex;justify-content:space-between;font-family:ui-monospace,Menlo,monospace;font-size:.7rem;text-transform:uppercase;letter-spacing:.05em;color:#5B6A6A;margin-bottom:4px}
+.sbctrl .v{color:#A8432B;font-weight:700}
+.sbctrl input[type=range]{width:100%;accent-color:#2C7A87}
+.sbopts{display:grid;gap:3px;margin-top:8px;max-height:320px;overflow-y:auto}
+.sbopt{display:flex;align-items:center;gap:8px;font-size:.82rem;cursor:pointer;padding:4px 5px;border-radius:3px}
+.sbopt:hover{background:#EFEADF}.sbopt input{accent-color:#2C7A87}
+.sbopt .oc{margin-left:auto;font-family:ui-monospace,Menlo,monospace;font-size:.68rem;color:#5B6A6A}
+.sbbtn{font-family:ui-monospace,Menlo,monospace;font-size:.68rem;text-transform:uppercase;letter-spacing:.06em;padding:8px 12px;border:1px solid #2C7A87;background:#2C7A87;color:#fff;border-radius:3px;cursor:pointer;margin:0 8px 8px 0}
+.sbbtn.alt{background:transparent;color:#2C7A87}
+.sbout{display:grid;grid-template-columns:1fr 1fr;gap:20px 12px}
+.sbm{background:#fff;border:1px solid #C6BBA4;border-radius:3px;padding:11px 13px}
+.sbm .k{font-family:ui-monospace,Menlo,monospace;font-size:.58rem;text-transform:uppercase;letter-spacing:.06em;color:#5B6A6A}
+.sbm .val{font-family:ui-monospace,Menlo,monospace;font-size:1.45rem;color:#123137;font-variant-numeric:tabular-nums;line-height:1.15}
+.sbm .val.good{color:#2C7A87}.sbm .val.bad{color:#A8432B}
+.sbstake{margin-top:13px}.sbstake .row{display:flex;align-items:center;gap:8px;font-size:.7rem;margin:3px 0}
+.sbstake .lab{font-family:ui-monospace,Menlo,monospace;width:96px;color:#5B6A6A}
+.sbstake .bar{flex:1;height:7px;background:#E4DCCB;border-radius:4px;overflow:hidden}.sbstake .bar i{display:block;height:100%}
+.sbverd{font-family:"Iowan Old Style",Palatino,Georgia,serif;font-size:1.02rem;margin-top:12px;padding:10px 14px;border-radius:3px}
+.sbverd.ok{background:#DCEAE8;color:#12343b}.sbverd.no{background:#F3E0D9;color:#7a2e1a}
+</style>
+<div class="sbw col"><span class="eyebrow">Build your own &middot; interactive model</span>
+<h2>Design your own package</h2>
+<p>Pick the measures, set what water is worth, the discount and bond rates, and the budget. The model recomputes water freed, returns, blue-bond coverage, and whether every stakeholder still clears, live, in your browser. Or let it optimize under your budget. This is the same model as above. Nothing leaves the page.</p></div>
+<div class="sbw"><div class="sbgrid">
+ <div class="sbpanel">
+  <div class="sbctrl"><label>Budget ceiling, 10-yr program <span class="v" id="sbBudgetV">$50B</span></label><input type="range" id="sbBudget" min="5" max="90" step="1" value="50"></div>
+  <div class="sbctrl"><label>Value of water, $/AF <span class="v" id="sbWvalV">$1,500</span></label><input type="range" id="sbWval" min="400" max="2500" step="50" value="1500"></div>
+  <div class="sbctrl"><label>Discount rate <span class="v" id="sbDiscV">5%</span></label><input type="range" id="sbDisc" min="3" max="8" step="0.5" value="5"></div>
+  <div class="sbctrl"><label>Bond interest rate <span class="v" id="sbBrateV">5%</span></label><input type="range" id="sbBrate" min="3" max="8" step="0.5" value="5"></div>
+  <div><button class="sbbtn" id="sbOpt">Optimize under budget</button><button class="sbbtn alt" id="sbReset">Reset</button></div>
+  <div class="sbopts" id="sbOpts"></div>
+ </div>
+ <div class="sbpanel">
+  <div class="sbout">
+   <div class="sbm"><div class="k">Water freed</div><div class="val" id="mFreed">&ndash;</div></div>
+   <div class="sbm"><div class="k">10-yr cost</div><div class="val" id="mCost">&ndash;</div></div>
+   <div class="sbm"><div class="k">NPV, 30yr</div><div class="val" id="mNpv">&ndash;</div></div>
+   <div class="sbm"><div class="k">Benefit-cost</div><div class="val" id="mBcr">&ndash;</div></div>
+   <div class="sbm"><div class="k">Bond surcharge</div><div class="val" id="mSurch">&ndash;</div></div>
+   <div class="sbm"><div class="k">Bond coverage</div><div class="val" id="mCover">&ndash;</div></div>
+  </div>
+  <div class="sbstake" id="sbStake"></div>
+  <div class="sbverd" id="sbVerd"></div>
+ </div>
+</div>
+<p class="key" style="margin-top:14px">Additive water credits new supply / demand reduction / avoided loss in full, storage at a third, keystones (measurement, Glen Canyon) at zero acre-feet. Stakeholder floor = each of seven groups clears a minimum benefit score. Bond = package capital. Surcharge spread across ~13 MAF of basin use.</p>
+</div></section><div class="waterline"></div>
+<script>
+const OPTS=[{"n": "Measurement & accounting ledger", "c10": 0.6, "cx": 0.1, "ox": 0.05, "waf": 350000, "ty": "enabling", "cob": 0.0, "fb": 1, "fs": 3, "inv": 1, "st": [3, 3, 3, 3, 2, 3, 2]}, {"n": "Consumptive-use conservation market", "c10": 13.0, "cx": 0.3, "ox": 1.3, "waf": 2000000, "ty": "demand", "cob": 0.0, "fb": 1, "fs": 4, "inv": 1, "st": [2, 3, 3, 2, 2, 1, 1]}, {"n": "Agricultural efficiency at scale", "c10": 3.75, "cx": 3.75, "ox": 0.11, "waf": 800000, "ty": "demand", "cob": 0.0, "fb": 2, "fs": 8, "inv": 1, "st": [2, 3, 2, 2, 1, 2, 1]}, {"n": "Glen Canyon temp + outlet retrofit", "c10": 3.5, "cx": 3.5, "ox": 0.1, "waf": 0, "ty": "protective", "cob": 1.0, "fb": 4, "fs": 10, "inv": 0, "st": [3, 2, 3, 3, 3, 3, 2]}, {"n": "Cloud seeding + snow monitoring", "c10": 0.4, "cx": 0.05, "ox": 0.05, "waf": 800000, "ty": "new_supply", "cob": 0.0, "fb": 1, "fs": 3, "inv": 0, "st": [3, 2, 2, 1, 2, 1, 1]}, {"n": "Phreatophyte / tamarisk control", "c10": 2.7, "cx": 2.4, "ox": 0.05, "waf": 270000, "ty": "loss_avoid", "cob": 0.05, "fb": 1, "fs": 5, "inv": 0, "st": [1, 2, 1, 1, 1, 2, 2]}, {"n": "Dust-on-snow source control", "c10": 15.0, "cx": 15.0, "ox": 0.3, "waf": 600000, "ty": "new_supply", "cob": 0.1, "fb": 3, "fs": 10, "inv": 0, "st": [3, 2, 2, 2, 2, 2, 1]}, {"n": "Desalination exchange", "c10": 4.5, "cx": 4.5, "ox": 0.2, "waf": 200000, "ty": "new_supply", "cob": 0.0, "fb": 5, "fs": 10, "inv": 1, "st": [1, 1, 2, 1, 1, 1, 2]}, {"n": "Managed aquifer recharge", "c10": 10.0, "cx": 8.0, "ox": 0.2, "waf": 2500000, "ty": "storage", "cob": 0.0, "fb": 3, "fs": 10, "inv": 1, "st": [1, 2, 3, 2, 1, 2, 1]}, {"n": "Tribal infrastructure + leasing", "c10": 28.5, "cx": 28.5, "ox": 0.2, "waf": 1000000, "ty": "realloc", "cob": 0.2, "fb": 4, "fs": 12, "inv": 1, "st": [1, 2, 2, 3, 1, 1, 1]}, {"n": "Urban turf buyback + reuse", "c10": 30.0, "cx": 22.0, "ox": 0.5, "waf": 717500, "ty": "demand", "cob": 0.0, "fb": 2, "fs": 10, "inv": 1, "st": [1, 1, 3, 1, 1, 1, 1]}, {"n": "Direct potable reuse buildout", "c10": 22.0, "cx": 20.0, "ox": 0.4, "waf": 500000, "ty": "new_supply", "cob": 0.0, "fb": 5, "fs": 10, "inv": 1, "st": [1, 1, 3, 1, 1, 2, 1]}, {"n": "Reservoir evap + floating solar", "c10": 30.7, "cx": 28.0, "ox": 0.4, "waf": 734000, "ty": "loss_avoid", "cob": 0.3, "fb": 3, "fs": 10, "inv": 1, "st": [2, 2, 2, 1, 3, 1, 1]}];
+const DEFAULT=[0,1,2,3,4,5,6,8];
+const STK=["Upper Basin","LB ag","Cities","Tribes","Hydropower","Environment","Mexico"], FLOOR=4, BASIN=13.0;
+let checked=OPTS.map((o,i)=>DEFAULT.indexOf(i)>=0);
+const D=id=>document.getElementById(id);
+const ADD={new_supply:1,demand:1,loss_avoid:1,realloc:1};
+function wcr(o){return ADD[o.ty]?o.waf:(o.ty=="storage"?0.3*o.waf:0);}   // "water freed" metric (enabling/protective=0)
+function ben(o){return o.ty=="protective"?0:(o.ty=="storage"?0.3*o.waf:o.waf);}  // benefit-driving water for NPV (enabling counts)
+function pvc(o,r){let s=0;for(let y=1;y<=o.fs;y++)s+=(o.cx/o.fs)/Math.pow(1+r,y);for(let y=o.fb;y<=30;y++)s+=o.ox/Math.pow(1+r,y);return s;}
+function pvw(o,r){let s=0;for(let y=o.fb;y<=30;y++){let rp=Math.min(1,(y-o.fb+1)/Math.max(1,o.fs-o.fb+1));s+=rp*(ben(o)/1e9)/Math.pow(1+r,y);}return s;}
+function pvcob(o,r){let s=0;for(let y=o.fb;y<=30;y++){let rp=Math.min(1,(y-o.fb+1)/Math.max(1,o.fs-o.fb+1));s+=rp*o.cob/Math.pow(1+r,y);}return s;}
+function pmt(P,r,n){return P*r/(1-Math.pow(1+r,-n));}
+function npvSel(sel,wv,r){return sel.reduce((a,o)=>a+pvw(o,r)*wv+pvcob(o,r)-pvc(o,r),0);}
+function fmtB(x){return (x>=0?"+$":"-$")+Math.abs(x).toFixed(0)+"B";}
+function buildOpts(){D("sbOpts").innerHTML=OPTS.map((o,i)=>'<label class="sbopt"><input type="checkbox" data-i="'+i+'"'+(checked[i]?" checked":"")+'>'+o.n+'<span class="oc">$'+o.c10+'B</span></label>').join("");
+ D("sbOpts").querySelectorAll("input").forEach(el=>el.addEventListener("change",e=>{checked[+e.target.dataset.i]=e.target.checked;render();}));}
+function sync(){D("sbOpts").querySelectorAll("input").forEach(el=>{el.checked=checked[+el.dataset.i];});}
+function render(){
+ const wv=+D("sbWval").value,disc=+D("sbDisc").value/100,br=+D("sbBrate").value/100,budget=+D("sbBudget").value;
+ D("sbWvalV").textContent="$"+wv.toLocaleString();D("sbDiscV").textContent=D("sbDisc").value+"%";D("sbBrateV").textContent=D("sbBrate").value+"%";D("sbBudgetV").textContent="$"+budget+"B";
+ let sel=OPTS.filter((o,i)=>checked[i]);
+ let cost10=sel.reduce((a,o)=>a+o.c10,0),capex=sel.reduce((a,o)=>a+o.cx,0),freed=sel.reduce((a,o)=>a+wcr(o),0)/1e6;
+ let pvb=sel.reduce((a,o)=>a+pvw(o,disc)*wv+pvcob(o,disc),0),pcost=sel.reduce((a,o)=>a+pvc(o,disc),0);
+ let npv=pvb-pcost,bcr=pcost>0?pvb/pcost:0,cob=sel.reduce((a,o)=>a+o.cob,0);
+ let ds=capex>0?pmt(capex,br,30):0,surch=ds>0?ds*1e9/(BASIN*1e6):0,cover=ds>0?(freed*wv/1000+cob)/ds:0;
+ let stake=[0,0,0,0,0,0,0];sel.forEach(o=>o.st.forEach((v,k)=>stake[k]+=v));
+ let cleared=sel.length>0&&stake.every(v=>v>=FLOOR),over=cost10>budget+1e-6;
+ D("mFreed").textContent=freed.toFixed(2)+" MAF";
+ D("mCost").textContent="$"+cost10.toFixed(1)+"B";D("mCost").className="val"+(over?" bad":"");
+ D("mNpv").textContent=fmtB(npv);D("mNpv").className="val "+(npv>=0?"good":"bad");
+ D("mBcr").textContent=bcr.toFixed(1)+"\u00d7";D("mBcr").className="val "+(bcr>=1?"good":"bad");
+ D("mSurch").textContent="$"+Math.round(surch)+"/AF";
+ D("mCover").textContent=cover.toFixed(1)+"\u00d7";D("mCover").className="val "+(cover>=1?"good":"bad");
+ D("sbStake").innerHTML=STK.map((s,k)=>'<div class="row"><span class="lab">'+s+'</span><span class="bar"><i style="width:'+Math.min(100,stake[k]/8*100)+'%;background:'+(stake[k]>=FLOOR?"#2C7A87":"#A8432B")+'"></i></span></div>').join("");
+ let v=D("sbVerd");
+ if(sel.length==0){v.className="sbverd no";v.textContent="Pick at least one measure.";}
+ else if(over){v.className="sbverd no";v.textContent="Over budget by $"+(cost10-budget).toFixed(1)+"B \u2014 trim the package or raise the ceiling.";}
+ else if(!cleared){v.className="sbverd no";v.textContent="Leaves a stakeholder short (red bar) \u2014 not politically durable.";}
+ else{v.className="sbverd ok";v.textContent="Clears every stakeholder. Frees "+freed.toFixed(2)+" MAF for $"+cost10.toFixed(0)+"B, bond self-financing at "+cover.toFixed(1)+"\u00d7 coverage.";}
+}
+D("sbOpt").addEventListener("click",()=>{const budget=+D("sbBudget").value,n=OPTS.length;let best=null;
+ for(let m=1;m<(1<<n);m++){let idx=[],c=0;for(let i=0;i<n;i++)if(m>>i&1){idx.push(i);c+=OPTS[i].c10;}if(c>budget)continue;
+  let st=[0,0,0,0,0,0,0];idx.forEach(i=>OPTS[i].st.forEach((v,k)=>st[k]+=v));if(!st.every(v=>v>=FLOOR))continue;
+  let w=idx.reduce((a,i)=>a+wcr(OPTS[i]),0)/1e6,sc=w+0.12*st.reduce((a,b)=>a+b,0)/10;
+  if(!best||sc>best.sc)best={sc,idx};}
+ if(best){checked=OPTS.map((o,i)=>best.idx.indexOf(i)>=0);sync();render();}
+ else{D("sbVerd").className="sbverd no";D("sbVerd").textContent="No package clears all stakeholders under $"+budget+"B \u2014 raise the budget.";}});
+D("sbReset").addEventListener("click",()=>{checked=OPTS.map((o,i)=>DEFAULT.indexOf(i)>=0);["sbBudget","sbWval","sbDisc","sbBrate"].forEach((id,k)=>D(id).value=[50,1500,5,5][k]);sync();render();});
+["sbWval","sbDisc","sbBrate","sbBudget"].forEach(id=>D(id).addEventListener("input",render));
+buildOpts();render();
+</script>
+
+<section id="stress"><div class="wrap col">
+  <span class="eyebrow">Stress test &middot; and the cost of inaction</span>
+  <h2>It holds under pressure. Inaction costs far more.</h2>
+  <p>A grounded adversarial review refereed every cost and yield against comparable projects and the primary literature, and forced real cuts (see how the numbers changed below). What survives is robust: the <strong>conservation tier stays benefit-cost positive</strong> even at a pessimistic $800/AF and a 7% discount, because at ~$400/AF it beats every alternative supply. The capital-heavy public goods do not clear a water-only test at any rate, their justification is avoided cost of inaction, not private return. (Model results on grounded cost priors, not audited estimates. Class 4/5 engineering estimates are the next step.)</p>
+</div><div class="wrap">
+  <div class="grid2">
+    <figure><a href="figures/scn_breakeven.png" class="zoom" aria-label="Open full-resolution figure"><img src="figures/web/scn_breakeven.webp" alt="Break-even water value per option" loading="lazy" decoding="async"><span class="zoomhint">Click to enlarge</span></a><figcaption>What water must be worth for each option to pay for itself</figcaption></figure>
+    <figure><a href="figures/scn_bond_heatmap.png" class="zoom" aria-label="Open full-resolution figure"><img src="figures/web/scn_bond_heatmap.png" alt="Social benefit vs debt service heatmap" loading="lazy" decoding="async"><span class="zoomhint">Click to enlarge</span></a><figcaption>Social benefit vs. debt service across rate &times; water value, context, not collectible coverage</figcaption></figure>
+  </div>
+  <div class="callout" style="margin-top:24px"><div class="big">~$1.0B/yr to insure against ~$6B/yr, and a $143B severe year</div>
+  <p>The package&rsquo;s annual debt service (~$1.0B at 5% over 30 years) is a fraction of the damages already accruing (Glen Canyon hydropower ~$0.15&ndash;0.3B/yr, agriculture ~$5B, recreation ~$1.1B <a class="c" href="https://www.nps.gov/nature/customcf/nps_data_visualization/docs/NPS_2024_Visitor_Spending_Effects.pdf" target="_blank" rel="noopener" title="NPS 2024 Visitor Spending Effects">[41]</a>), and a rounding error against the ~$143B in gross economic activity and 1.6 million jobs a single 10%-shortfall year would put at risk <a class="c" href="https://www.sciencedirect.com/science/article/pii/S2212428425000118" target="_blank" rel="noopener" title="Economic value of water in the Colorado River Basin (2025)">[42]</a>. Shortage damage is non-linear, it accelerates as cuts bite into high-value uses, so even ~1 MAF/yr of verified reduction, shepherded to storage, buffers a meaningful slice of that exposure. The case was never a high private return. It is cheap insurance on a $1.5 trillion economy.</p></div>
+  <figure style="max-width:720px;margin:22px auto 0"><a href="figures/inaction_var.png" class="zoom" aria-label="Open full-resolution figure"><img src="figures/web/inaction_var.webp" alt="Value at risk versus the package cost" loading="lazy" decoding="async"><span class="zoomhint">Click to enlarge</span></a><figcaption>Annual value-at-risk vs. the cost of the fix</figcaption></figure>
+</div></section>
+<div class="waterline"></div>
+
+<section id="prior"><div class="wrap col">
+  <span class="eyebrow">Prior art &middot; what&rsquo;s actually new</span>
+  <h2>We integrate what already exists</h2>
+  <p>Nearly every piece of this is already built or funded somewhere, some of it quite mature. The honest claim is not a new idea. It is the first time these pieces are assembled into one system for the Colorado River, plus one genuinely new instrument. Here is the map, with credit where it is due.</p>
+</div><div class="wrap"><div class="tablewrap" role="region" aria-label="Prior art and differentiation" tabindex="0"><table>
+  <thead><tr><th>Ingredient</th><th>Already built / funded by</th><th>What this proposal adds</th></tr></thead>
+  <tbody>
+  <tr><td>Measurement ledger</td><td>OpenET (NASA, DRI, EDF, Google) + Reclamation &amp; UCRC eddy-covariance towers</td><td>Turns a public consumptive-use dataset into a verification layer for settlement, with a 25% uncertainty holdback and shepherding, not raw ET</td></tr>
+  <tr><td>Credit accounting</td><td>VWBA 2.0 (WRI, LimnoTech, Bonneville) &amp; the Gold Standard Water Benefit Standard <a class="c" href="https://www.wri.org/" target="_blank" rel="noopener" title="WRI: Volumetric Water Benefit Accounting">[43]</a></td><td>Applies it to Colorado consumptive-use at scale, tied to reservoir delivery, not corporate reporting</td></tr>
+  <tr><td>Pay-for-conservation to storage</td><td>Lower Basin 2023 plan + ICS, System Conservation Pilot <a class="c" href="http://www.ucrcommission.com/" target="_blank" rel="noopener" title="Upper Colorado River Commission: System Conservation Pilot">[44]</a>; tribal leasing (Gila River, CRIT)</td><td>A standing market with a corporate demand anchor, not one-off, federally-funded contracts</td></tr>
+  <tr><td>Corporate basin money</td><td>Bonneville &ldquo;Change the Course&rdquo; / Business for Water Stewardship <a class="c" href="https://www.bef.org/" target="_blank" rel="noopener" title="Bonneville Environmental Foundation: Change the Course">[45]</a>, Water Resilience Coalition, Walton / Water Funder Initiative</td><td>Coordinated at basin scale and pledged forward, not scattered per-company offsets</td></tr>
+  <tr><td>The finance</td><td>IRA Reclamation conservation funds, philanthropy</td><td>An Advance Market Commitment + blue-bond stack, a durable demand signal, not annual appropriations</td></tr>
+  </tbody></table></div>
+  <div class="callout" style="margin-top:24px"><div class="big">The one genuinely new instrument: an Advance Market Commitment for water</div>
+  <p>Frontier put $1B+ behind future carbon removal <a class="c" href="https://frontierclimate.com/" target="_blank" rel="noopener" title="Frontier: advance market commitment for carbon removal">[46]</a>; LEAF mobilized $1.5B for forests <a class="c" href="https://leafcoalition.org/" target="_blank" rel="noopener" title="LEAF Coalition: forests advance market commitment">[47]</a>. No one has built the equivalent forward-purchase commitment for <em>water</em>, not on the Colorado, not anywhere. That demand signal is the piece that turns a patchwork of pilots into a market. Everything else here already works in fragments. This is what connects them.</p></div>
+  <div class="grid2" style="margin-top:24px">
+    <div class="coal"><h3>Two things we are not pretending, 1. Shepherding</h3><p>Saved water is <em>not</em> yet legally protected downstream to Lake Powell, &ldquo;conservation pools&rdquo; are proposed but unbuilt, and need unanimous state agreement. So this starts in the <strong>Lower Basin</strong>, where conserved water already stays in Lake Mead through the ICS mechanism. Prove it where the plumbing works, then extend.</p></div>
+    <div class="coal"><h3>2. The market skeptics</h3><p>The basin&rsquo;s largest funder, the Walton Family Foundation, has reportedly stepped back from water markets toward watershed health. The most sophisticated money has doubts. Our answer is not more enthusiasm, it is <strong>integrity</strong> (verified, additional, shepherded) plus a <strong>demand anchor</strong> that de-risks exactly the market mechanism they lost faith in.</p></div>
+  </div>
+</div></section>
+<div class="waterline"></div>
+
+<section id="coalition"><div class="wrap col">
+  <span class="eyebrow">The coalition &middot; who must move</span>
+  <h2>The Grand Compromise: a package, not a menu</h2>
+  <p>No actor can pass this alone. It works as a sequenced deal where each party contributes and each gains. Timeline: cloud seeding, conservation, and ag efficiency deliver in 1&ndash;2 years, measurement in 5&ndash;7, the Glen Canyon retrofit is the 10&ndash;15 year long-pole. The critical-path bottleneck is political consensus on the interstate conservation market, and the post-2026 guidelines are the venue.</p>
+</div><div class="wrap"><div class="grid2">
+  <div class="coal"><h3>Federal (Reclamation, Interior)</h3><p>Avoids systemic collapse, endless litigation, and having to impose draconian cuts unilaterally. Gets an administrable long-term framework.</p><span class="g">gives: funding + authority</span></div>
+  <div class="coal"><h3>Lower Basin cities &amp; ag</h3><p>Cities get reliability without $2,500/AF desal. Farmers get paid for measured savings and keep the value through leasing rather than losing it to a mandated cut.</p><span class="g">gives: measured conservation</span></div>
+  <div class="coal"><h3>Upper Basin states</h3><p>Evaporation finally booked, a Compact Call averted, and cloud-seeding + measurement investment aimed at their headwaters.</p><span class="g">gives: participation, not a blank check</span></div>
+  <div class="coal"><h3>Tribes</h3><p>Full parties to the measurement ledger, settlement infrastructure funded, and leasing authority that turns ~1 MAF of unused senior water into income.</p><span class="g">gives: senior-right certainty</span></div>
+  <div class="coal"><h3>Environmental / Grand Canyon</h3><p>A downstream temperature target, cool-mix flows protected, and phreatophyte restoration, the ecosystem gets a seat in the operating rules.</p><span class="g">gives: legitimacy + science</span></div>
+  <div class="coal"><h3>Capital (water-tech investor lens)</h3><p>The measurement, conservation-market, and efficiency layers are the high-BCR, revenue-bondable core, innovation over legacy capital, financed by a blue bond.</p><span class="g">gives: the money, de-risked</span></div>
+</div></div></section>
+<div class="waterline"></div>
+
+<section id="private"><div class="wrap col">
+  <span class="eyebrow">A private-led path &middot; faster than the compact</span>
+  <h2>How capital leads while the states stay deadlocked</h2>
+  <p>The interstate process owns the questions only it can answer, allocation, the Compact, environmental standards, and it is stuck. But the highest-leverage, fastest-moving pieces need no interstate consensus. Private capital can build them now and, in doing so, de-risk the public deal rather than wait for it. That is Basin 2.0&rsquo;s operating model, and much of it is already underway.</p>
+</div><div class="wrap"><div class="grid2">
+  <div class="coal"><h3>Fund the measurement layer, unilaterally</h3><p>A consortium can deploy satellite ET, sensors, and a public data platform without anyone&rsquo;s permission. Deciding who gets charged for what the data shows is the political fight, and that still needs the states and Interior, but the instrumentation does not wait on them. The Walton Family Foundation already funds basin data, and a mature water-tech field (leak detection, smart metering, satellite ET) supplies the instrumentation. Cheapest, fastest, highest-leverage, it creates the shared truth the negotiation lacks.</p><span class="g">deployable now</span></div>
+  <div class="coal"><h3>Stand up the conservation &amp; leasing market</h3><p>Willing-seller deals already work: IID and Coachella deficit-irrigation, the Jicarilla Apache Nation leasing 20,000 AF, the Ten Tribes Partnership&rsquo;s water-bank push. Private capital can fund and scale these transactions between farmers, tribes, and cities today.</p><span class="g">willing sellers, now</span></div>
+  <div class="coal"><h3>Aggregate corporate water demand</h3><p>Microsoft (with Trout Unlimited), PepsiCo, Intel, and Coca-Cola already fund basin restoration against their footprints. A fund can aggregate these buyers into durable demand for verified acre-feet, priced through volumetric water-benefit accounting.</p><span class="g">deep-pocketed, motivated</span></div>
+  <div class="coal"><h3>Finance ahead of any public issuer</h3><p>Blended capital moves before a basin authority exists: impact funds, WIFIA, Environmental Impact Bonds <a class="c" href="https://www.quantifiedventures.com/dc-water" target="_blank" rel="noopener" title="DC Water Environmental Impact Bond (Quantified Ventures)">[40]</a>, and Walton-style de-risking grants. Xylem already issued the first US corporate blue bond. The revenue-bondable core carries a real return.</p><span class="g">yield + impact</span></div>
+  <div class="coal"><h3>Deploy the water-tech</h3><p>On willing customers, no regulator required: Rubicon automation saved a Palo Verde farmer 43% on a field. Irrigreen and Yuma&rsquo;s automated gates stretch supply. This is water-tech&rsquo;s core competence, pointed at the basin.</p><span class="g">ship it to customers</span></div>
+  <div class="coal" style="border-left-color:#A8432B"><h3>The trap to avoid</h3><p>Water speculation. Greenstone&rsquo;s Cibola-to-Queen Creek sale drew lawsuits. Colorado is tightening anti-speculation law. Structure everything as conservation-with-community-benefit and in genuine tribal partnership (Jicarilla, Cocopah), not extraction, or the backlash kills it.</p><span class="g">community benefit, or bust</span></div>
+</div>
+  <p class="key" style="margin-top:16px">The move: a Basin 2.0 coalition that funds measurement, seeds the conservation market, aggregates corporate buyers, and finances the revenue core, front-running the compact and handing the states a working mechanism instead of a blank page.</p>
+  <p style="margin-top:18px"><a class="c" style="font-size:1rem;vertical-align:baseline;font-family:var(--mono);text-transform:uppercase;letter-spacing:.05em;background:var(--water);color:#fff;padding:11px 18px;border-radius:4px;text-decoration:none" href="coalition.html">Read the Coalition proposal &rarr;</a> &nbsp; a hyperscaler-led rescue, costed and financed.</p>
+</div></section>
+<div class="waterline"></div>
+
+<div class="chap" id="ch6"><div class="wrap"><span class="num">Chapter 6</span><h2>Interrogate this</h2><p>The methods and assumptions, the named experts who should check it, and every source behind the numbers.</p></div></div>
+<section id="verify"><div class="wrap col">
+  <span class="eyebrow">Interrogate this</span>
+  <div class="interro"><h3>Confirm it, don&rsquo;t take our word</h3>
+  <p>Every number here is computed from public data on public-cloud credits and checked against the literature by a grounded AI review (four of six claim clusters confirmed, precision revisions applied). It has <strong>not yet been reviewed by a named human expert</strong>, that is the next step (see reviewers below). The inputs are open:</p>
+  <ul>
+   <li><strong>Groundwater (M3):</strong> NASA JPL GRACE-FO mascons, <a href="https://podaac.jpl.nasa.gov/dataset/TELLUS_GRAC-GRFO_MASCON_GRID_RL06.3_V4" target="_blank" rel="noopener">PO.DAAC dataset</a>, in line with the published ~52 km&sup3; <a class="c" href="https://doi.org/10.1029/2025GL115593" target="_blank" rel="noopener" title="Geophysical Research Letters 2025">[7]</a>.</li>
+   <li><strong>Ecology (M4):</strong> the raw temperature record, <a href="https://waterdata.usgs.gov/monitoring-location/09380000/" target="_blank" rel="noopener">USGS gauge 09380000</a>.</li>
+   <li><strong>Agriculture (M2):</strong> live <a href="https://www.nass.usda.gov/Research_and_Science/Cropland/SARS1a.php" target="_blank" rel="noopener">USDA Cropland Data Layer</a> + <a href="https://openetdata.org/" target="_blank" rel="noopener">OpenET</a>.</li>
+   <li><strong>Evaporation (M1):</strong> <a href="https://www.usgs.gov/centers/nevada-water-science-center/science/evaporation-lake-mead-and-lake-mohave-lower-colorado" target="_blank" rel="noopener">USGS measured evaporation</a> + <a href="https://pubs.usgs.gov/sir/2022/5017/sir20225017.pdf" target="_blank" rel="noopener">Powell area-capacity</a>.</li>
+   <li><strong>Method, code, costings, and the ROI / blue-bond model</strong> are public on <a href="https://github.com/steps-re/colorado-river" target="_blank" rel="noopener">GitHub</a>: every analysis script, the computed numbers, the portfolio optimizer, the finance model, and a full <a href="technical.html">methodology with an assumptions ledger</a>. Clone it and run it.</li>
+  </ul>
+  <p style="margin-top:1em;font-size:.85rem">Assumptions worth pressure-testing: water valued at $1,500/AF (range $800&ndash;2,500 modeled); the groundwater share is genuinely uncertain, our direct GLDAS-plus-reservoir decomposition puts it near 10&ndash;30% (reservoir drawdown dominates the visible loss) while the published literature puts it near two-thirds, and we report both rather than pick one. The GRACE basin polygon is approximate. Solution costs are grounded priors, Monte-Carlo-stressed, not engineering estimates. All are stated in the data, not hidden.</p></div>
+</div></section>
+
+<section id="reviewers"><div class="wrap col">
+  <span class="eyebrow">Review &middot; who we are asking</span>
+  <h2>This is AI-computed. Here is who should check it.</h2>
+  <p>Every finding is traceable to public data, but an asset for researchers and policymakers needs named human expertise. We are seeking review or co-authorship from:</p>
+</div><div class="wrap"><div class="tablewrap" role="region" aria-label="Candidate reviewers" tabindex="0"><table>
+   <thead><tr><th>Expert</th><th>Affiliation</th><th>Would validate</th></tr></thead>
+   <tbody>
+    <tr><td>Brad Udall</td><td>CSU Colorado Water Center</td><td>Hot-drought &amp; evaporation (M1)</td></tr>
+    <tr><td>Jonathan Overpeck</td><td>University of Michigan</td><td>Aridification / climate-flow</td></tr>
+    <tr><td>Anne Castle</td><td>CU Getches-Wilkinson (ex-Interior)</td><td>Policy recommendations &amp; finance</td></tr>
+    <tr><td>Robert Glennon</td><td>University of Arizona Law</td><td>Water markets, groundwater economics</td></tr>
+    <tr><td>John Fleck</td><td>University of New Mexico</td><td>Governance &amp; economic assumptions</td></tr>
+    <tr><td>Stephanie Castle</td><td>UC Irvine</td><td>GRACE groundwater (M3)</td></tr>
+   </tbody></table></div>
+  <p class="key">Until a named expert has signed off, treat the modeled economics as exploratory. The measured findings (M1&ndash;M4) stand on their own public-data validation.</p>
+</div></section>
+<div class="waterline"></div>
+
+<section id="refs"><div class="wrap col">
+  <span class="eyebrow">Sources</span>
+  <h2>Verified references</h2>
+  <p style="font-size:.9rem;color:#3a4746">Every link below was URL-verified July 2026. Fabricated or stale links returned by automated search were discarded during verification. A few open normally in a browser but block automated checkers.</p>
+</div><div class="wrap"><div class="refs">
+<div id="ref1"><span class="rn">1</span> Rising, Josset, Troy &amp; Lall 2022, Global Environmental Change: infrastructure &amp; national demand shape US water stress (AWASH). <a href="https://doi.org/10.1016/j.gloenvcha.2022.102468" target="_blank" rel="noopener">link</a></div>
+<div id="ref2"><span class="rn">2</span> USGS Lake Mead/Mohave evaporation. <a href="https://www.usgs.gov/centers/nevada-water-science-center/science/evaporation-lake-mead-and-lake-mohave-lower-colorado" target="_blank" rel="noopener">link</a></div>
+<div id="ref3"><span class="rn">3</span> USGS SIR 2022-5017 (Powell area-capacity). <a href="https://pubs.usgs.gov/sir/2022/5017/sir20225017.pdf" target="_blank" rel="noopener">link</a></div>
+<div id="ref4"><span class="rn">4</span> USBR Colorado River Basin. <a href="https://www.usbr.gov/ColoradoRiverBasin/" target="_blank" rel="noopener">link</a></div>
+<div id="ref5"><span class="rn">5</span> Upper Div. States alternative (UCRC). <a href="http://www.ucrcommission.com/upper-division-states-submit-alternative-for-post-2026-operations-of-lake-powell-and-lake-mead/" target="_blank" rel="noopener">link</a></div>
+<div id="ref6"><span class="rn">6</span> NASA JPL GRACE-FO Mascon RL06.3. <a href="https://podaac.jpl.nasa.gov/dataset/TELLUS_GRAC-GRFO_MASCON_GRID_RL06.3_V4" target="_blank" rel="noopener">link</a></div>
+<div id="ref7"><span class="rn">7</span> Geophysical Research Letters 2025. <a href="https://doi.org/10.1029/2025GL115593" target="_blank" rel="noopener">link</a></div>
+<div id="ref8"><span class="rn">8</span> Castle et al. 2014, GRL: Colorado River groundwater depletion. <a href="https://agupubs.onlinelibrary.wiley.com/doi/10.1002/2014GL061055" target="_blank" rel="noopener">link</a></div>
+<div id="ref9"><span class="rn">9</span> USDA NASS Cropland Data Layer. <a href="https://www.nass.usda.gov/Research_and_Science/Cropland/SARS1a.php" target="_blank" rel="noopener">link</a></div>
+<div id="ref10"><span class="rn">10</span> Richter et al. 2024, Comms Earth &amp; Environ. <a href="https://www.nature.com/articles/s43247-024-01291-0" target="_blank" rel="noopener">link</a></div>
+<div id="ref11"><span class="rn">11</span> Imperial Irrigation District. <a href="https://www.iid.com/water" target="_blank" rel="noopener">link</a></div>
+<div id="ref12"><span class="rn">12</span> OpenET. <a href="https://openetdata.org/" target="_blank" rel="noopener">link</a></div>
+<div id="ref13"><span class="rn">13</span> USGS gauge 09380000 (Lees Ferry). <a href="https://waterdata.usgs.gov/monitoring-location/09380000/" target="_blank" rel="noopener">link</a></div>
+<div id="ref14"><span class="rn">14</span> NPS: smallmouth bass threat. <a href="https://www.nps.gov/articles/000/smallmouth-bass-threat.htm" target="_blank" rel="noopener">link</a></div>
+<div id="ref15"><span class="rn">15</span> USGS Grand Canyon Monitoring &amp; Research Center. <a href="https://www.gcmrc.gov/" target="_blank" rel="noopener">link</a></div>
+<div id="ref16"><span class="rn">16</span> USBR 'Cool Mix' flows. <a href="https://www.usbr.gov/newsroom/news-release/5205" target="_blank" rel="noopener">link</a></div>
+<div id="ref17"><span class="rn">17</span> USBR Lower Colorado Water Accounting (Decree &amp; CUL data). <a href="https://www.usbr.gov/lc/region/g4000/wtracct.html" target="_blank" rel="noopener">link</a></div>
+<div id="ref18"><span class="rn">18</span> USBR Post-2026 Operations. <a href="https://www.usbr.gov/ColoradoRiverBasin/post2026/" target="_blank" rel="noopener">link</a></div>
+<div id="ref19"><span class="rn">19</span> NAIWRSA settlement (US Senate). <a href="https://www.kelly.senate.gov/newsroom/press-releases/kelly-introduces-bipartisan-bicameral-legislation-to-ratify-and-fund-historic-navajo-tribes-water-rights-settlement/" target="_blank" rel="noopener">link</a></div>
+<div id="ref20"><span class="rn">20</span> Kloos, "The Colorado River: Designing Basin 2.0". <a href="https://www.burntislandventures.com/blog/ccxau0i33drirds8u2gyufdxl338hh" target="_blank" rel="noopener">link</a></div>
+<div id="ref21"><span class="rn">21</span> Colorado River District: cloud seeding. <a href="https://www.coloradoriverdistrict.org/cloud-seeding/" target="_blank" rel="noopener">link</a></div>
+<div id="ref22"><span class="rn">22</span> SDCWA Carlsbad desalination. <a href="https://www.sdcwa.org/" target="_blank" rel="noopener">link</a></div>
+<div id="ref23"><span class="rn">23</span> USBR: Gila River Indian Community canal solar. <a href="https://www.usbr.gov/newsroom/news-release/4707" target="_blank" rel="noopener">link</a></div>
+<div id="ref24"><span class="rn">24</span> Turlock ID: Project Nexus canal solar. <a href="https://www.tid.org/project-nexus/" target="_blank" rel="noopener">link</a></div>
+<div id="ref25"><span class="rn">25</span> EIA-923: power-plant generation data. <a href="https://www.eia.gov/electricity/data/eia923/" target="_blank" rel="noopener">link</a></div>
+<div id="ref26"><span class="rn">26</span> Western Area Power Administration. <a href="https://www.wapa.gov/" target="_blank" rel="noopener">link</a></div>
+<div id="ref27"><span class="rn">27</span> Navajo Generating Station &amp; 500-kV transmission. <a href="https://en.wikipedia.org/wiki/Navajo_Generating_Station" target="_blank" rel="noopener">link</a></div>
+<div id="ref28"><span class="rn">28</span> Daybreak Power: Navajo Energy Storage Station. <a href="https://www.daybreakpower.com/" target="_blank" rel="noopener">link</a></div>
+<div id="ref29"><span class="rn">29</span> FERC Order 845: surplus interconnection service. <a href="https://www.ferc.gov/media/order-no-845" target="_blank" rel="noopener">link</a></div>
+<div id="ref30"><span class="rn">30</span> Arizona DWR: brackish groundwater inventory. <a href="https://www.azwater.gov/" target="_blank" rel="noopener">link</a></div>
+<div id="ref31"><span class="rn">31</span> USBR: Yuma Desalting Plant / Yuma Area Office. <a href="https://www.usbr.gov/lc/yuma/" target="_blank" rel="noopener">link</a></div>
+<div id="ref32"><span class="rn">32</span> IRS Notice 2026-39: energy-community bonus credit. <a href="https://www.irs.gov/pub/irs-drop/n-26-39.pdf" target="_blank" rel="noopener">link</a></div>
+<div id="ref33"><span class="rn">33</span> Volk et al. 2024, Nature Water: OpenET accuracy assessment. <a href="https://www.nature.com/articles/s44221-023-00181-7" target="_blank" rel="noopener">link</a></div>
+<div id="ref34"><span class="rn">34</span> Orange County Water District: Groundwater Replenishment System. <a href="https://www.ocwd.com/gwrs/" target="_blank" rel="noopener">link</a></div>
+<div id="ref35"><span class="rn">35</span> Metropolitan: Pure Water Southern California. <a href="https://www.mwdh2o.com/" target="_blank" rel="noopener">link</a></div>
+<div id="ref36"><span class="rn">36</span> USBR RISE: reservoir evaporation &amp; storage data. <a href="https://data.usbr.gov/" target="_blank" rel="noopener">link</a></div>
+<div id="ref37"><span class="rn">37</span> World Bank: Seychelles blue bond. <a href="https://www.worldbank.org/en/news/press-release/2018/10/29/seychelles-launches-worlds-first-sovereign-blue-bond" target="_blank" rel="noopener">link</a></div>
+<div id="ref38"><span class="rn">38</span> EPA WIFIA. <a href="https://www.epa.gov/wifia" target="_blank" rel="noopener">link</a></div>
+<div id="ref39"><span class="rn">39</span> SIFMA US municipal bond statistics. <a href="https://www.sifma.org/research/statistics/us-municipal-bonds-statistics" target="_blank" rel="noopener">link</a></div>
+<div id="ref40"><span class="rn">40</span> DC Water Environmental Impact Bond (Quantified Ventures). <a href="https://www.quantifiedventures.com/dc-water" target="_blank" rel="noopener">link</a></div>
+<div id="ref41"><span class="rn">41</span> NPS 2024 Visitor Spending Effects. <a href="https://www.nps.gov/nature/customcf/nps_data_visualization/docs/NPS_2024_Visitor_Spending_Effects.pdf" target="_blank" rel="noopener">link</a></div>
+<div id="ref42"><span class="rn">42</span> Economic value of water in the Colorado River Basin (2025). <a href="https://www.sciencedirect.com/science/article/pii/S2212428425000118" target="_blank" rel="noopener">link</a></div>
+<div id="ref43"><span class="rn">43</span> WRI: Volumetric Water Benefit Accounting. <a href="https://www.wri.org/" target="_blank" rel="noopener">link</a></div>
+<div id="ref44"><span class="rn">44</span> Upper Colorado River Commission: System Conservation Pilot. <a href="http://www.ucrcommission.com/" target="_blank" rel="noopener">link</a></div>
+<div id="ref45"><span class="rn">45</span> Bonneville Environmental Foundation: Change the Course. <a href="https://www.bef.org/" target="_blank" rel="noopener">link</a></div>
+<div id="ref46"><span class="rn">46</span> Frontier: advance market commitment for carbon removal. <a href="https://frontierclimate.com/" target="_blank" rel="noopener">link</a></div>
+<div id="ref47"><span class="rn">47</span> LEAF Coalition: forests advance market commitment. <a href="https://leafcoalition.org/" target="_blank" rel="noopener">link</a></div>
+</div></div></section>
+
+<section id="contact" style="background:var(--deep);color:var(--paper)"><div class="wrap col" style="text-align:center">
+  <span class="eyebrow" style="display:inline-block;color:#D8B49E">Get in touch</span>
+  <h2 style="color:#F4F0E7">Want to help build this, or poke holes in it?</h2>
+  <p style="color:#C9D6D6;margin-inline:auto">This is independent, open work. If you work on the basin, or want to fund it, partner on it, or pressure-test the numbers, reach out.</p>
+  <p><a href="mailto:mike@stepsventures.com" style="font-family:var(--mono);font-size:1.05rem;background:var(--water);color:#fff;padding:13px 24px;border-radius:4px;text-decoration:none;display:inline-block">mike@stepsventures.com</a></p>
+</div></section>
+<footer class="foot"><div class="wrap col">
+  <p>Computed by AI on Google-for-Startups cloud credits and cross-checked against primary sources. Human expert review is being sought. Numbers are decision-grade, not final engineering estimates. <strong style="color:#F4F0E7">Steps Ventures</strong> &middot; independent analysis &middot; July 2026.</p>
+  <p style="font-size:.82rem"><a href="https://github.com/steps-re/colorado-river" target="_blank" rel="noopener">Data &amp; code on GitHub</a> &middot; <a href="technical.html">Methodology &amp; assumptions</a> &middot; <a href="stakeholders.html">Stakeholder map</a> &middot; <a href="records.html">The documented record</a></p>
+</div></footer>
+
+<script>
+(function(){
+  var c=document.getElementById('hero');
+  if(c){
+  var x=c.getContext('2d');
+  var W=c.width,H=c.height;
+   var bg=x.createLinearGradient(0,0,0,H);bg.addColorStop(0,'#0e2a2f');bg.addColorStop(1,'#12333a');x.fillStyle=bg;x.fillRect(0,0,W,H);
+   x.strokeStyle='rgba(143,196,206,.06)';x.lineWidth=2;
+   for(var k=0;k<6;k++){var yb=H*0.12+k*H*0.08;x.beginPath();for(var i=0;i<=W;i+=8){var y=yb+Math.sin(i/W*6.283+k*0.8)*16+Math.sin(i/W*18.8)*5;i===0?x.moveTo(i,y):x.lineTo(i,y);}x.stroke();}
+   var wg=x.createLinearGradient(0,H*0.5,0,H);wg.addColorStop(0,'rgba(44,122,135,0)');wg.addColorStop(1,'rgba(44,122,135,.32)');x.fillStyle=wg;x.fillRect(0,H*0.5,W,H*0.5);
+   var sc=x.createLinearGradient(0,H*0.15,0,H);sc.addColorStop(0,'rgba(14,42,47,0)');sc.addColorStop(1,'rgba(14,42,47,.66)');x.fillStyle=sc;x.fillRect(0,H*0.15,W,H*0.85);
+  }
+  if(matchMedia('(prefers-reduced-motion:no-preference)').matches){
+    var io=new IntersectionObserver(function(es){es.forEach(function(e){if(e.isIntersecting)e.target.classList.add('in');});},{threshold:.12});
+    document.querySelectorAll('.reveal').forEach(function(n){io.observe(n);});
+  }else{document.querySelectorAll('.reveal').forEach(function(n){n.classList.add('in');});}
+})();
+(function(){
+  var lb=document.createElement('div');lb.id='lb';
+  lb.innerHTML='<span class="x">esc ✕</span><img alt=""><div class="cap"></div>';
+  document.body.appendChild(lb);
+  var im=lb.querySelector('img'),cap=lb.querySelector('.cap');
+  function open(src,txt){im.src=src;cap.textContent=txt||'';lb.classList.add('on');}
+  function close(){lb.classList.remove('on');im.removeAttribute('src');}
+  document.querySelectorAll('img[src^="data:image"]').forEach(function(g){
+    g.setAttribute('tabindex','0');g.setAttribute('role','button');g.setAttribute('aria-label','Enlarge chart');
+    var fc=g.parentNode.querySelector('figcaption'),t=fc?fc.textContent:(g.getAttribute('alt')||'');
+    g.addEventListener('click',function(){open(g.currentSrc||g.src,t);});
+    g.addEventListener('keydown',function(e){if(e.key==='Enter'||e.key===' '){e.preventDefault();open(g.currentSrc||g.src,t);}});
+  });
+  lb.addEventListener('click',close);
+  document.addEventListener('keydown',function(e){if(e.key==='Escape')close();});
+})();
+</script>
