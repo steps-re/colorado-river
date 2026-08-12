@@ -4730,10 +4730,10 @@
    "surface_src": "MEASURED: Sentinel-2 MNDWI summer water extent, 2024-2026 mean. Retained here because this reservoir is held within a few feet, so its hypsometry cannot be recovered from the elevation record.",
    "published_acres": 18864,
    "published_src": "Reclamation LCRAS 2017-2021 average (LCR Evaporation Report 2023, Table 10)",
-   "evap_ft": 7.0,
-   "evap_src": "LCRAS quotient, corrected 2026-08-09. The previous rate of 5.21 ft/yr was derived from an LCRAS volume of 98,246 AF that does NOT appear anywhere in Reclamation's own 1971-2024 accounting series, which runs 126,000-135,000 AF with a mean of 130,664 and is validated against Decree Accounting. The 2019-2024 mean of 131,992 AF over 18,864 acres gives 7.00 ft/yr. Still a quotient rather than a flux measurement, and still the weakest rate in the set, but it now sits on a figure the source actually contains. Note the direction: a higher evaporation depth means MORE water saved per acre covered, so this correction improves Havasu rather than penalising it.",
+   "evap_ft": 7.52,
+   "evap_src": "DERIVED from Reclamation's LCRAS accounting, calibrated against measured flux. There is no Lake Havasu flux station and USGS confirmed (2026-08-10) that one is only in planning, so the depth cannot be measured directly. LCRAS reports Mead, Mohave and Havasu on one convention and two of those three have eddy-covariance depths, so the convention is calibrated where it is checkable. Reclamation's published areas match the mean of their own daily record to 0.2% at Mead and 0.5% at Mohave, so the denominator is sound; the quotient nonetheless runs -6.8% and -5.8% below measured flux at the two lakes, and the gap is precipitation, which consumptive-use accounting nets out. At Mead the mean gap is 0.42 ft/yr against 0.45 ft/yr of rain. The correction is therefore additive and physical rather than a fitted factor. Lake Havasu's evaporation depth is 7.52 ft/yr, bracketed 7.05-7.99. The accounting volume over Reclamation's own area gives 7.00 ft/yr net of rain; adding the 0.43 ft/yr that falls on the lake gives 7.43 gross, and the calibration's own bias against measured flux at Mead and Mohave is -0.09 ft/yr with a per-year spread of 0.23. This supersedes an asserted 5.2-7.4 bracket. A higher depth means more water saved per acre covered, so this raises Lake Havasu's standing rather than lowering it. Havasu is already the reservoir this work rates highest, so the correction cuts against our own conclusion and is reported for that reason. See outputs/havasu_evap_bracket.json (analysis/havasu_evap_bracket.py).",
    "evap_measured": true,
-   "evap_total_af": 107310,
+   "evap_total_af": 115282,
    "hydro_provenance": "synthetic load-following (no public sub-daily tailrace gage below Parker)",
    "onsite_load_mw": 300.0,
    "onsite_load_src": "CAP Mark Wilmer Pumping Plant: six 66,000 hp pumps, ~50 MW each, drawing from Lake Havasu; ~80% of CAP's ~2.8M MWh/yr. MWD's Whitsett Pumping Plant draws from the same reservoir.",
@@ -4774,7 +4774,7 @@
     "revenue_musd": 0.72,
     "annual_cost_musd": 2.43,
     "net_musd": -1.71,
-    "evap_saved_af": 201
+    "evap_saved_af": 216
    },
    {
     "coverage_pct": 0.5,
@@ -4789,7 +4789,7 @@
     "revenue_musd": 1.44,
     "annual_cost_musd": 4.86,
     "net_musd": -3.42,
-    "evap_saved_af": 402
+    "evap_saved_af": 432
    },
    {
     "coverage_pct": 0.75,
@@ -4804,7 +4804,7 @@
     "revenue_musd": 2.17,
     "annual_cost_musd": 7.29,
     "net_musd": -5.12,
-    "evap_saved_af": 604
+    "evap_saved_af": 648
    },
    {
     "coverage_pct": 1.0,
@@ -4819,7 +4819,7 @@
     "revenue_musd": 2.89,
     "annual_cost_musd": 9.72,
     "net_musd": -6.83,
-    "evap_saved_af": 805
+    "evap_saved_af": 865
    },
    {
     "coverage_pct": 1.25,
@@ -4834,7 +4834,7 @@
     "revenue_musd": 3.61,
     "annual_cost_musd": 12.15,
     "net_musd": -8.54,
-    "evap_saved_af": 1006
+    "evap_saved_af": 1081
    },
    {
     "coverage_pct": 1.5,
@@ -4849,7 +4849,7 @@
     "revenue_musd": 4.33,
     "annual_cost_musd": 14.58,
     "net_musd": -10.25,
-    "evap_saved_af": 1207
+    "evap_saved_af": 1297
    },
    {
     "coverage_pct": 1.75,
@@ -4864,7 +4864,7 @@
     "revenue_musd": 5.05,
     "annual_cost_musd": 17.01,
     "net_musd": -11.95,
-    "evap_saved_af": 1408
+    "evap_saved_af": 1513
    },
    {
     "coverage_pct": 2.0,
@@ -4879,7 +4879,7 @@
     "revenue_musd": 5.78,
     "annual_cost_musd": 19.44,
     "net_musd": -13.66,
-    "evap_saved_af": 1610
+    "evap_saved_af": 1729
    },
    {
     "coverage_pct": 2.25,
@@ -4894,7 +4894,7 @@
     "revenue_musd": 6.5,
     "annual_cost_musd": 21.87,
     "net_musd": -15.37,
-    "evap_saved_af": 1811
+    "evap_saved_af": 1945
    },
    {
     "coverage_pct": 2.5,
@@ -4909,7 +4909,7 @@
     "revenue_musd": 7.22,
     "annual_cost_musd": 24.3,
     "net_musd": -17.08,
-    "evap_saved_af": 2012
+    "evap_saved_af": 2162
    },
    {
     "coverage_pct": 2.75,
@@ -4924,7 +4924,7 @@
     "revenue_musd": 7.94,
     "annual_cost_musd": 26.73,
     "net_musd": -18.78,
-    "evap_saved_af": 2213
+    "evap_saved_af": 2378
    },
    {
     "coverage_pct": 3.0,
@@ -4939,7 +4939,7 @@
     "revenue_musd": 8.66,
     "annual_cost_musd": 29.16,
     "net_musd": -20.49,
-    "evap_saved_af": 2414
+    "evap_saved_af": 2594
    },
    {
     "coverage_pct": 3.25,
@@ -4954,7 +4954,7 @@
     "revenue_musd": 9.39,
     "annual_cost_musd": 31.59,
     "net_musd": -22.2,
-    "evap_saved_af": 2616
+    "evap_saved_af": 2810
    },
    {
     "coverage_pct": 3.5,
@@ -4969,7 +4969,7 @@
     "revenue_musd": 10.11,
     "annual_cost_musd": 34.02,
     "net_musd": -23.91,
-    "evap_saved_af": 2817
+    "evap_saved_af": 3026
    },
    {
     "coverage_pct": 3.75,
@@ -4984,7 +4984,7 @@
     "revenue_musd": 10.83,
     "annual_cost_musd": 36.45,
     "net_musd": -25.62,
-    "evap_saved_af": 3018
+    "evap_saved_af": 3242
    },
    {
     "coverage_pct": 4.0,
@@ -4999,7 +4999,7 @@
     "revenue_musd": 11.55,
     "annual_cost_musd": 38.87,
     "net_musd": -27.32,
-    "evap_saved_af": 3219
+    "evap_saved_af": 3458
    },
    {
     "coverage_pct": 4.25,
@@ -5014,7 +5014,7 @@
     "revenue_musd": 12.27,
     "annual_cost_musd": 41.3,
     "net_musd": -29.03,
-    "evap_saved_af": 3421
+    "evap_saved_af": 3675
    },
    {
     "coverage_pct": 4.5,
@@ -5029,7 +5029,7 @@
     "revenue_musd": 13.0,
     "annual_cost_musd": 43.73,
     "net_musd": -30.74,
-    "evap_saved_af": 3622
+    "evap_saved_af": 3891
    },
    {
     "coverage_pct": 4.75,
@@ -5044,7 +5044,7 @@
     "revenue_musd": 13.72,
     "annual_cost_musd": 46.16,
     "net_musd": -32.45,
-    "evap_saved_af": 3823
+    "evap_saved_af": 4107
    },
    {
     "coverage_pct": 5.0,
@@ -5059,7 +5059,7 @@
     "revenue_musd": 14.44,
     "annual_cost_musd": 48.59,
     "net_musd": -34.15,
-    "evap_saved_af": 4024
+    "evap_saved_af": 4323
    },
    {
     "coverage_pct": 5.25,
@@ -5074,7 +5074,7 @@
     "revenue_musd": 15.16,
     "annual_cost_musd": 51.02,
     "net_musd": -35.86,
-    "evap_saved_af": 4225
+    "evap_saved_af": 4539
    },
    {
     "coverage_pct": 5.5,
@@ -5089,7 +5089,7 @@
     "revenue_musd": 15.88,
     "annual_cost_musd": 53.45,
     "net_musd": -37.57,
-    "evap_saved_af": 4427
+    "evap_saved_af": 4755
    },
    {
     "coverage_pct": 5.75,
@@ -5104,7 +5104,7 @@
     "revenue_musd": 16.61,
     "annual_cost_musd": 55.88,
     "net_musd": -39.28,
-    "evap_saved_af": 4628
+    "evap_saved_af": 4972
    },
    {
     "coverage_pct": 6.0,
@@ -5119,7 +5119,7 @@
     "revenue_musd": 17.33,
     "annual_cost_musd": 58.31,
     "net_musd": -40.99,
-    "evap_saved_af": 4829
+    "evap_saved_af": 5188
    },
    {
     "coverage_pct": 6.25,
@@ -5134,7 +5134,7 @@
     "revenue_musd": 18.04,
     "annual_cost_musd": 60.74,
     "net_musd": -42.7,
-    "evap_saved_af": 5030
+    "evap_saved_af": 5404
    },
    {
     "coverage_pct": 6.5,
@@ -5149,7 +5149,7 @@
     "revenue_musd": 18.74,
     "annual_cost_musd": 63.17,
     "net_musd": -44.43,
-    "evap_saved_af": 5231
+    "evap_saved_af": 5620
    },
    {
     "coverage_pct": 6.75,
@@ -5164,7 +5164,7 @@
     "revenue_musd": 19.37,
     "annual_cost_musd": 65.6,
     "net_musd": -46.23,
-    "evap_saved_af": 5433
+    "evap_saved_af": 5836
    },
    {
     "coverage_pct": 7.0,
@@ -5179,7 +5179,7 @@
     "revenue_musd": 19.92,
     "annual_cost_musd": 68.03,
     "net_musd": -48.11,
-    "evap_saved_af": 5634
+    "evap_saved_af": 6052
    },
    {
     "coverage_pct": 7.25,
@@ -5194,7 +5194,7 @@
     "revenue_musd": 20.42,
     "annual_cost_musd": 70.46,
     "net_musd": -50.04,
-    "evap_saved_af": 5835
+    "evap_saved_af": 6268
    },
    {
     "coverage_pct": 7.5,
@@ -5209,7 +5209,7 @@
     "revenue_musd": 20.86,
     "annual_cost_musd": 72.89,
     "net_musd": -52.03,
-    "evap_saved_af": 6036
+    "evap_saved_af": 6485
    },
    {
     "coverage_pct": 7.75,
@@ -5224,7 +5224,7 @@
     "revenue_musd": 21.27,
     "annual_cost_musd": 75.32,
     "net_musd": -54.05,
-    "evap_saved_af": 6237
+    "evap_saved_af": 6701
    },
    {
     "coverage_pct": 8.0,
@@ -5239,7 +5239,7 @@
     "revenue_musd": 21.66,
     "annual_cost_musd": 77.75,
     "net_musd": -56.09,
-    "evap_saved_af": 6439
+    "evap_saved_af": 6917
    },
    {
     "coverage_pct": 8.25,
@@ -5254,7 +5254,7 @@
     "revenue_musd": 22.02,
     "annual_cost_musd": 80.18,
     "net_musd": -58.16,
-    "evap_saved_af": 6640
+    "evap_saved_af": 7133
    },
    {
     "coverage_pct": 8.5,
@@ -5269,7 +5269,7 @@
     "revenue_musd": 22.36,
     "annual_cost_musd": 82.61,
     "net_musd": -60.25,
-    "evap_saved_af": 6841
+    "evap_saved_af": 7349
    },
    {
     "coverage_pct": 8.75,
@@ -5284,7 +5284,7 @@
     "revenue_musd": 22.68,
     "annual_cost_musd": 85.04,
     "net_musd": -62.36,
-    "evap_saved_af": 7042
+    "evap_saved_af": 7565
    },
    {
     "coverage_pct": 9.0,
@@ -5299,7 +5299,7 @@
     "revenue_musd": 22.98,
     "annual_cost_musd": 87.47,
     "net_musd": -64.49,
-    "evap_saved_af": 7243
+    "evap_saved_af": 7782
    },
    {
     "coverage_pct": 9.25,
@@ -5314,7 +5314,7 @@
     "revenue_musd": 23.26,
     "annual_cost_musd": 89.9,
     "net_musd": -66.64,
-    "evap_saved_af": 7445
+    "evap_saved_af": 7998
    },
    {
     "coverage_pct": 9.5,
@@ -5329,7 +5329,7 @@
     "revenue_musd": 23.52,
     "annual_cost_musd": 92.33,
     "net_musd": -68.8,
-    "evap_saved_af": 7646
+    "evap_saved_af": 8214
    },
    {
     "coverage_pct": 9.75,
@@ -5344,7 +5344,7 @@
     "revenue_musd": 23.77,
     "annual_cost_musd": 94.76,
     "net_musd": -70.99,
-    "evap_saved_af": 7847
+    "evap_saved_af": 8430
    },
    {
     "coverage_pct": 10.0,
@@ -5359,7 +5359,7 @@
     "revenue_musd": 24.01,
     "annual_cost_musd": 97.19,
     "net_musd": -73.18,
-    "evap_saved_af": 8048
+    "evap_saved_af": 8646
    },
    {
     "coverage_pct": 10.25,
@@ -5374,7 +5374,7 @@
     "revenue_musd": 24.23,
     "annual_cost_musd": 99.62,
     "net_musd": -75.38,
-    "evap_saved_af": 8249
+    "evap_saved_af": 8862
    },
    {
     "coverage_pct": 10.5,
@@ -5389,7 +5389,7 @@
     "revenue_musd": 24.45,
     "annual_cost_musd": 102.05,
     "net_musd": -77.59,
-    "evap_saved_af": 8451
+    "evap_saved_af": 9078
    },
    {
     "coverage_pct": 10.75,
@@ -5404,7 +5404,7 @@
     "revenue_musd": 24.67,
     "annual_cost_musd": 104.48,
     "net_musd": -79.81,
-    "evap_saved_af": 8652
+    "evap_saved_af": 9295
    },
    {
     "coverage_pct": 11.0,
@@ -5419,7 +5419,7 @@
     "revenue_musd": 24.88,
     "annual_cost_musd": 106.91,
     "net_musd": -82.03,
-    "evap_saved_af": 8853
+    "evap_saved_af": 9511
    },
    {
     "coverage_pct": 11.25,
@@ -5434,7 +5434,7 @@
     "revenue_musd": 25.07,
     "annual_cost_musd": 109.34,
     "net_musd": -84.26,
-    "evap_saved_af": 9054
+    "evap_saved_af": 9727
    },
    {
     "coverage_pct": 11.5,
@@ -5449,7 +5449,7 @@
     "revenue_musd": 25.26,
     "annual_cost_musd": 111.77,
     "net_musd": -86.51,
-    "evap_saved_af": 9256
+    "evap_saved_af": 9943
    },
    {
     "coverage_pct": 11.75,
@@ -5464,7 +5464,7 @@
     "revenue_musd": 25.43,
     "annual_cost_musd": 114.19,
     "net_musd": -88.76,
-    "evap_saved_af": 9457
+    "evap_saved_af": 10159
    },
    {
     "coverage_pct": 12.0,
@@ -5479,7 +5479,7 @@
     "revenue_musd": 25.6,
     "annual_cost_musd": 116.62,
     "net_musd": -91.03,
-    "evap_saved_af": 9658
+    "evap_saved_af": 10375
    },
    {
     "coverage_pct": 12.25,
@@ -5494,7 +5494,7 @@
     "revenue_musd": 25.76,
     "annual_cost_musd": 119.05,
     "net_musd": -93.3,
-    "evap_saved_af": 9859
+    "evap_saved_af": 10592
    },
    {
     "coverage_pct": 12.5,
@@ -5509,7 +5509,7 @@
     "revenue_musd": 25.91,
     "annual_cost_musd": 121.48,
     "net_musd": -95.57,
-    "evap_saved_af": 10060
+    "evap_saved_af": 10808
    },
    {
     "coverage_pct": 12.75,
@@ -5524,7 +5524,7 @@
     "revenue_musd": 26.06,
     "annual_cost_musd": 123.91,
     "net_musd": -97.85,
-    "evap_saved_af": 10262
+    "evap_saved_af": 11024
    },
    {
     "coverage_pct": 13.0,
@@ -5539,7 +5539,7 @@
     "revenue_musd": 26.21,
     "annual_cost_musd": 126.34,
     "net_musd": -100.13,
-    "evap_saved_af": 10463
+    "evap_saved_af": 11240
    },
    {
     "coverage_pct": 13.25,
@@ -5554,7 +5554,7 @@
     "revenue_musd": 26.35,
     "annual_cost_musd": 128.77,
     "net_musd": -102.42,
-    "evap_saved_af": 10664
+    "evap_saved_af": 11456
    },
    {
     "coverage_pct": 13.5,
@@ -5569,7 +5569,7 @@
     "revenue_musd": 26.48,
     "annual_cost_musd": 131.2,
     "net_musd": -104.72,
-    "evap_saved_af": 10865
+    "evap_saved_af": 11672
    },
    {
     "coverage_pct": 13.75,
@@ -5584,7 +5584,7 @@
     "revenue_musd": 26.62,
     "annual_cost_musd": 133.63,
     "net_musd": -107.02,
-    "evap_saved_af": 11066
+    "evap_saved_af": 11888
    },
    {
     "coverage_pct": 14.0,
@@ -5599,7 +5599,7 @@
     "revenue_musd": 26.74,
     "annual_cost_musd": 136.06,
     "net_musd": -109.32,
-    "evap_saved_af": 11268
+    "evap_saved_af": 12105
    },
    {
     "coverage_pct": 14.25,
@@ -5614,7 +5614,7 @@
     "revenue_musd": 26.86,
     "annual_cost_musd": 138.49,
     "net_musd": -111.64,
-    "evap_saved_af": 11469
+    "evap_saved_af": 12321
    },
    {
     "coverage_pct": 14.5,
@@ -5629,7 +5629,7 @@
     "revenue_musd": 26.97,
     "annual_cost_musd": 140.92,
     "net_musd": -113.95,
-    "evap_saved_af": 11670
+    "evap_saved_af": 12537
    },
    {
     "coverage_pct": 14.75,
@@ -5644,7 +5644,7 @@
     "revenue_musd": 27.07,
     "annual_cost_musd": 143.35,
     "net_musd": -116.28,
-    "evap_saved_af": 11871
+    "evap_saved_af": 12753
    },
    {
     "coverage_pct": 15.0,
@@ -5659,7 +5659,7 @@
     "revenue_musd": 27.18,
     "annual_cost_musd": 145.78,
     "net_musd": -118.6,
-    "evap_saved_af": 12072
+    "evap_saved_af": 12969
    },
    {
     "coverage_pct": 15.25,
@@ -5674,7 +5674,7 @@
     "revenue_musd": 27.28,
     "annual_cost_musd": 148.21,
     "net_musd": -120.93,
-    "evap_saved_af": 12274
+    "evap_saved_af": 13185
    },
    {
     "coverage_pct": 15.5,
@@ -5689,7 +5689,7 @@
     "revenue_musd": 27.37,
     "annual_cost_musd": 150.64,
     "net_musd": -123.27,
-    "evap_saved_af": 12475
+    "evap_saved_af": 13402
    },
    {
     "coverage_pct": 15.75,
@@ -5704,7 +5704,7 @@
     "revenue_musd": 27.46,
     "annual_cost_musd": 153.07,
     "net_musd": -125.61,
-    "evap_saved_af": 12676
+    "evap_saved_af": 13618
    },
    {
     "coverage_pct": 16.0,
@@ -5719,7 +5719,7 @@
     "revenue_musd": 27.55,
     "annual_cost_musd": 155.5,
     "net_musd": -127.95,
-    "evap_saved_af": 12877
+    "evap_saved_af": 13834
    },
    {
     "coverage_pct": 16.25,
@@ -5734,7 +5734,7 @@
     "revenue_musd": 27.63,
     "annual_cost_musd": 157.93,
     "net_musd": -130.3,
-    "evap_saved_af": 13078
+    "evap_saved_af": 14050
    },
    {
     "coverage_pct": 16.5,
@@ -5749,7 +5749,7 @@
     "revenue_musd": 27.72,
     "annual_cost_musd": 160.36,
     "net_musd": -132.64,
-    "evap_saved_af": 13280
+    "evap_saved_af": 14266
    },
    {
     "coverage_pct": 16.75,
@@ -5764,7 +5764,7 @@
     "revenue_musd": 27.8,
     "annual_cost_musd": 162.79,
     "net_musd": -134.99,
-    "evap_saved_af": 13481
+    "evap_saved_af": 14482
    },
    {
     "coverage_pct": 17.0,
@@ -5779,7 +5779,7 @@
     "revenue_musd": 27.88,
     "annual_cost_musd": 165.22,
     "net_musd": -137.34,
-    "evap_saved_af": 13682
+    "evap_saved_af": 14698
    },
    {
     "coverage_pct": 17.25,
@@ -5794,7 +5794,7 @@
     "revenue_musd": 27.96,
     "annual_cost_musd": 167.65,
     "net_musd": -139.69,
-    "evap_saved_af": 13883
+    "evap_saved_af": 14915
    },
    {
     "coverage_pct": 17.5,
@@ -5809,7 +5809,7 @@
     "revenue_musd": 28.03,
     "annual_cost_musd": 170.08,
     "net_musd": -142.04,
-    "evap_saved_af": 14084
+    "evap_saved_af": 15131
    },
    {
     "coverage_pct": 17.75,
@@ -5824,7 +5824,7 @@
     "revenue_musd": 28.11,
     "annual_cost_musd": 172.51,
     "net_musd": -144.4,
-    "evap_saved_af": 14286
+    "evap_saved_af": 15347
    },
    {
     "coverage_pct": 18.0,
@@ -5839,7 +5839,7 @@
     "revenue_musd": 28.18,
     "annual_cost_musd": 174.94,
     "net_musd": -146.76,
-    "evap_saved_af": 14487
+    "evap_saved_af": 15563
    },
    {
     "coverage_pct": 18.25,
@@ -5854,7 +5854,7 @@
     "revenue_musd": 28.25,
     "annual_cost_musd": 177.37,
     "net_musd": -149.11,
-    "evap_saved_af": 14688
+    "evap_saved_af": 15779
    },
    {
     "coverage_pct": 18.5,
@@ -5869,7 +5869,7 @@
     "revenue_musd": 28.32,
     "annual_cost_musd": 179.8,
     "net_musd": -151.47,
-    "evap_saved_af": 14889
+    "evap_saved_af": 15995
    },
    {
     "coverage_pct": 18.75,
@@ -5884,7 +5884,7 @@
     "revenue_musd": 28.39,
     "annual_cost_musd": 182.23,
     "net_musd": -153.83,
-    "evap_saved_af": 15091
+    "evap_saved_af": 16212
    },
    {
     "coverage_pct": 19.0,
@@ -5899,7 +5899,7 @@
     "revenue_musd": 28.46,
     "annual_cost_musd": 184.66,
     "net_musd": -156.19,
-    "evap_saved_af": 15292
+    "evap_saved_af": 16428
    },
    {
     "coverage_pct": 19.25,
@@ -5914,7 +5914,7 @@
     "revenue_musd": 28.53,
     "annual_cost_musd": 187.09,
     "net_musd": -158.56,
-    "evap_saved_af": 15493
+    "evap_saved_af": 16644
    },
    {
     "coverage_pct": 19.5,
@@ -5929,7 +5929,7 @@
     "revenue_musd": 28.6,
     "annual_cost_musd": 189.51,
     "net_musd": -160.92,
-    "evap_saved_af": 15694
+    "evap_saved_af": 16860
    },
    {
     "coverage_pct": 19.75,
@@ -5944,7 +5944,7 @@
     "revenue_musd": 28.66,
     "annual_cost_musd": 191.94,
     "net_musd": -163.28,
-    "evap_saved_af": 15895
+    "evap_saved_af": 17076
    },
    {
     "coverage_pct": 20.0,
@@ -5959,7 +5959,7 @@
     "revenue_musd": 28.73,
     "annual_cost_musd": 194.37,
     "net_musd": -165.65,
-    "evap_saved_af": 16097
+    "evap_saved_af": 17292
    },
    {
     "coverage_pct": 20.25,
@@ -5974,7 +5974,7 @@
     "revenue_musd": 28.79,
     "annual_cost_musd": 196.8,
     "net_musd": -168.02,
-    "evap_saved_af": 16298
+    "evap_saved_af": 17508
    },
    {
     "coverage_pct": 20.5,
@@ -5989,7 +5989,7 @@
     "revenue_musd": 28.85,
     "annual_cost_musd": 199.23,
     "net_musd": -170.39,
-    "evap_saved_af": 16499
+    "evap_saved_af": 17725
    },
    {
     "coverage_pct": 20.75,
@@ -6004,7 +6004,7 @@
     "revenue_musd": 28.91,
     "annual_cost_musd": 201.66,
     "net_musd": -172.76,
-    "evap_saved_af": 16700
+    "evap_saved_af": 17941
    },
    {
     "coverage_pct": 21.0,
@@ -6019,7 +6019,7 @@
     "revenue_musd": 28.96,
     "annual_cost_musd": 204.09,
     "net_musd": -175.13,
-    "evap_saved_af": 16901
+    "evap_saved_af": 18157
    },
    {
     "coverage_pct": 21.25,
@@ -6034,7 +6034,7 @@
     "revenue_musd": 29.02,
     "annual_cost_musd": 206.52,
     "net_musd": -177.5,
-    "evap_saved_af": 17103
+    "evap_saved_af": 18373
    },
    {
     "coverage_pct": 21.5,
@@ -6049,7 +6049,7 @@
     "revenue_musd": 29.07,
     "annual_cost_musd": 208.95,
     "net_musd": -179.88,
-    "evap_saved_af": 17304
+    "evap_saved_af": 18589
    },
    {
     "coverage_pct": 21.75,
@@ -6064,7 +6064,7 @@
     "revenue_musd": 29.12,
     "annual_cost_musd": 211.38,
     "net_musd": -182.26,
-    "evap_saved_af": 17505
+    "evap_saved_af": 18805
    },
    {
     "coverage_pct": 22.0,
@@ -6079,7 +6079,7 @@
     "revenue_musd": 29.17,
     "annual_cost_musd": 213.81,
     "net_musd": -184.64,
-    "evap_saved_af": 17706
+    "evap_saved_af": 19022
    },
    {
     "coverage_pct": 22.25,
@@ -6094,7 +6094,7 @@
     "revenue_musd": 29.22,
     "annual_cost_musd": 216.24,
     "net_musd": -187.02,
-    "evap_saved_af": 17907
+    "evap_saved_af": 19238
    },
    {
     "coverage_pct": 22.5,
@@ -6109,7 +6109,7 @@
     "revenue_musd": 29.27,
     "annual_cost_musd": 218.67,
     "net_musd": -189.4,
-    "evap_saved_af": 18109
+    "evap_saved_af": 19454
    },
    {
     "coverage_pct": 22.75,
@@ -6124,7 +6124,7 @@
     "revenue_musd": 29.31,
     "annual_cost_musd": 221.1,
     "net_musd": -191.79,
-    "evap_saved_af": 18310
+    "evap_saved_af": 19670
    },
    {
     "coverage_pct": 23.0,
@@ -6139,7 +6139,7 @@
     "revenue_musd": 29.36,
     "annual_cost_musd": 223.53,
     "net_musd": -194.17,
-    "evap_saved_af": 18511
+    "evap_saved_af": 19886
    },
    {
     "coverage_pct": 23.25,
@@ -6154,7 +6154,7 @@
     "revenue_musd": 29.4,
     "annual_cost_musd": 225.96,
     "net_musd": -196.56,
-    "evap_saved_af": 18712
+    "evap_saved_af": 20102
    },
    {
     "coverage_pct": 23.5,
@@ -6169,7 +6169,7 @@
     "revenue_musd": 29.44,
     "annual_cost_musd": 228.39,
     "net_musd": -198.94,
-    "evap_saved_af": 18913
+    "evap_saved_af": 20318
    },
    {
     "coverage_pct": 23.75,
@@ -6184,7 +6184,7 @@
     "revenue_musd": 29.49,
     "annual_cost_musd": 230.82,
     "net_musd": -201.33,
-    "evap_saved_af": 19115
+    "evap_saved_af": 20535
    },
    {
     "coverage_pct": 24.0,
@@ -6199,7 +6199,7 @@
     "revenue_musd": 29.53,
     "annual_cost_musd": 233.25,
     "net_musd": -203.72,
-    "evap_saved_af": 19316
+    "evap_saved_af": 20751
    },
    {
     "coverage_pct": 24.25,
@@ -6214,7 +6214,7 @@
     "revenue_musd": 29.57,
     "annual_cost_musd": 235.68,
     "net_musd": -206.11,
-    "evap_saved_af": 19517
+    "evap_saved_af": 20967
    },
    {
     "coverage_pct": 24.5,
@@ -6229,7 +6229,7 @@
     "revenue_musd": 29.61,
     "annual_cost_musd": 238.11,
     "net_musd": -208.49,
-    "evap_saved_af": 19718
+    "evap_saved_af": 21183
    },
    {
     "coverage_pct": 24.75,
@@ -6244,7 +6244,7 @@
     "revenue_musd": 29.65,
     "annual_cost_musd": 240.54,
     "net_musd": -210.88,
-    "evap_saved_af": 19919
+    "evap_saved_af": 21399
    },
    {
     "coverage_pct": 25.0,
@@ -6259,7 +6259,7 @@
     "revenue_musd": 29.69,
     "annual_cost_musd": 242.97,
     "net_musd": -213.27,
-    "evap_saved_af": 20121
+    "evap_saved_af": 21615
    }
   ],
   "hourly": {

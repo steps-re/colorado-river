@@ -82,7 +82,8 @@ EVAP_UNC = {
     "Lake Mead":        ("flux", _FLUX["Lake Mead"]),
     "Lake Powell":      ("flux", 0.08),
     "Lake Mohave":      ("flux", _FLUX["Lake Mohave"]),
-    "Lake Havasu":      ("bracket", (5.2, 7.4)),
+    "Lake Havasu":      ("bracket", tuple(json.loads(
+        (ROOT / "outputs" / "havasu_evap_bracket.json").read_text())["havasu"]["bracket_ft_per_yr"])),
     "Flaming Gorge":    ("screen", 0.30),
     "Navajo Reservoir": ("screen", 0.30),
     "Blue Mesa":        ("screen", 0.30),
@@ -342,7 +343,9 @@ def main():
                          f"energy-balance closure: Mead {100 * EVAP_UNC['Lake Mead'][1]:.0f}%, "
                          f"Mohave {100 * EVAP_UNC['Lake Mohave'][1]:.0f}%, "
                          f"Powell {100 * EVAP_UNC['Lake Powell'][1]:.0f}%; "
-                         "Havasu uniform(5.2, 7.4); Upper Basin normal(mu, 30%)"),
+                         f"Havasu uniform{EVAP_UNC['Lake Havasu'][1]}, derived by calibrating the "
+                         "LCRAS accounting convention against measured flux; "
+                         "Upper Basin normal(mu, 30%)"),
             surface_area="normal(0.968, 6%) on the modelled surface, 4% where the area is a static "
                          "published figure. Both the centre and the spread come from this model's "
                          "own out-of-sample error against published full-pool area (+5.5, +5.0, "

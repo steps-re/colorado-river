@@ -32,8 +32,8 @@
     "reservoir": "Lake Havasu",
     "coverage_pct": 8.5,
     "array_mw": 633,
-    "evap_saved_af": 6841,
-    "usd_per_af_p50": 18850
+    "evap_saved_af": 7349,
+    "usd_per_af_p50": 15854
    },
    {
     "reservoir": "Flaming Gorge",
@@ -57,7 +57,7 @@
     "usd_per_af_p50": 41360
    }
   ],
-  "total_evap_saved_af": 49357,
+  "total_evap_saved_af": 49865,
   "total_array_mw": 5316
  },
  "reuse": {
@@ -78,7 +78,7 @@
  },
  "shortfall_af": 3000000,
  "ratios": {
-  "reuse50_over_fpv": 26.3,
-  "fpv_share_of_shortfall": 0.01645
+  "reuse50_over_fpv": 26.1,
+  "fpv_share_of_shortfall": 0.01662
  }
 }

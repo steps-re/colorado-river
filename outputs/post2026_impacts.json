@@ -13,7 +13,11 @@
    "Lake Powell": 8.0,
    "Lake Mead": 3.0
   },
-  "ub_voluntary_kaf": 200
+  "ub_voluntary_kaf": 200,
+  "term": "10 years through 2036, operating guidelines at 2-year intervals unless a consensus agreement provides longer",
+  "framework": "adaptive decision framework of operational principles and sideboards, not a fixed schedule",
+  "verification": "VERIFIED 2026-08-09 against the Department of the Interior release and Reclamation's post-2026 Final EIS page: Powell sideboards 5.0-12.0 maf, Lower Basin shortage up to 3.0 maf, conservation storage 8.0 maf Powell and 3.0 maf Mead, Upper Basin voluntary up to 200 kaf. The earlier caveat that these came from grounded research rather than the document is now discharged for those figures.",
+  "still_unverified": "The 8.0/7.0 maf Powell release tiers keyed to 3,540 ft are a 2007-Guidelines style construct. The post-2026 framework is expressed as SIDEBOARDS with two-yearly guidelines, so those tiers should not be attributed to it without a citation to the document itself."
  },
  "measured_pool_maf": 2.916325,
  "shortage_costs": {
@@ -92,7 +96,7 @@
   }
  },
  "caveats": [
-  "Final EIS figures came from grounded research, not the document itself. Verify before publication.",
+  "Final EIS headline figures verified against the DOI release on 2026-08-09. Release tiers keyed to 3,540 ft are NOT verified as part of the new framework.",
   "Demand curve prices are GROSS crop output per acre-foot, an upper bound on the reservation price; net margin is lower, so real acquisition may be cheaper.",
   "Scope is four measured Lower Basin ag counties, not the whole basin.",
   "Generation scales the 2015 hourly release shape; it ignores head effects, which would reduce output further at low pool."

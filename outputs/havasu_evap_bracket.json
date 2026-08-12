@@ -1,0 +1,199 @@
+{
+  "meta": {
+    "what": "Lake Havasu gross open-water evaporation, derived by calibrating Reclamation's LCRAS accounting convention against measured flux at the two lakes that have it",
+    "why": "no Havasu flux measurement exists or is expected soon, and the published figure was an uncalibrated quotient carried as an asserted 5.2-7.4 ft/yr bracket",
+    "sources": {
+      "lcras": "USBR Lower Colorado CUL dataset 1971-2024 (usbr.gov/lc/region/g4000), Mainstream_Reservoirs",
+      "flux": "Lake Mead from the ScienceBase releases; Lake Mohave from OFR 2021-1022 table 9",
+      "precipitation": "NASA POWER daily at each reservoir's own coordinates",
+      "areas": "Reclamation daily elevation and storage through a fitted hypsometry"
+    },
+    "havasu_is_level_controlled": {
+      "havasu_elevation_range_ft": 3.8,
+      "mead_elevation_range_ft": 58.2,
+      "note": "Havasu is held for delivery, so a fixed surface area is appropriate there in a way it is not at a reservoir that draws down."
+    }
+  },
+  "step1_published_areas_are_real": {
+    "lakes": {
+      "Lake Mead": {
+        "published_acres": 83634,
+        "daily_mean_acres": 83818,
+        "ratio": 0.9978
+      },
+      "Lake Mohave": {
+        "published_acres": 27022,
+        "daily_mean_acres": 26894,
+        "ratio": 1.0048
+      }
+    },
+    "all_within_2pct": true,
+    "finding": "Reclamation's reported surface area matches the mean of its own daily record at both lakes, so the LCRAS denominator is not the source of the discrepancy and the open question to Reclamation is not the binding one."
+  },
+  "step2_and_3_calibration": {
+    "lakes": {
+      "Lake Mead": {
+        "precip_ft_per_yr": 0.451,
+        "years": [
+          2015,
+          2016,
+          2017,
+          2018,
+          2020,
+          2021,
+          2022,
+          2023
+        ],
+        "rows": [
+          {
+            "year": 2015,
+            "lcras_net_ft": 5.815,
+            "measured_ft": 6.43,
+            "gap_ft": 0.615,
+            "precip_ft": 0.451,
+            "residual_ft": 0.164
+          },
+          {
+            "year": 2016,
+            "lcras_net_ft": 5.685,
+            "measured_ft": 6.44,
+            "gap_ft": 0.755,
+            "precip_ft": 0.451,
+            "residual_ft": 0.304
+          },
+          {
+            "year": 2017,
+            "lcras_net_ft": 5.866,
+            "measured_ft": 6.37,
+            "gap_ft": 0.504,
+            "precip_ft": 0.451,
+            "residual_ft": 0.053
+          },
+          {
+            "year": 2018,
+            "lcras_net_ft": 5.797,
+            "measured_ft": 6.2,
+            "gap_ft": 0.403,
+            "precip_ft": 0.451,
+            "residual_ft": -0.048
+          },
+          {
+            "year": 2020,
+            "lcras_net_ft": 5.987,
+            "measured_ft": 6.28,
+            "gap_ft": 0.293,
+            "precip_ft": 0.451,
+            "residual_ft": -0.158
+          },
+          {
+            "year": 2021,
+            "lcras_net_ft": 5.854,
+            "measured_ft": 6.102,
+            "gap_ft": 0.248,
+            "precip_ft": 0.451,
+            "residual_ft": -0.203
+          },
+          {
+            "year": 2022,
+            "lcras_net_ft": 5.877,
+            "measured_ft": 6.323,
+            "gap_ft": 0.446,
+            "precip_ft": 0.451,
+            "residual_ft": -0.005
+          },
+          {
+            "year": 2023,
+            "lcras_net_ft": 5.733,
+            "measured_ft": 5.845,
+            "gap_ft": 0.112,
+            "precip_ft": 0.451,
+            "residual_ft": -0.339
+          }
+        ],
+        "mean_gap_ft": 0.422,
+        "mean_residual_ft": -0.029,
+        "quotient_vs_measured_pct": -6.75
+      },
+      "Lake Mohave": {
+        "precip_ft_per_yr": 0.549,
+        "years": [
+          2015,
+          2016,
+          2017,
+          2018
+        ],
+        "rows": [
+          {
+            "year": 2015,
+            "lcras_net_ft": 5.165,
+            "measured_ft": 5.62,
+            "gap_ft": 0.456,
+            "precip_ft": 0.549,
+            "residual_ft": -0.093
+          },
+          {
+            "year": 2016,
+            "lcras_net_ft": 5.363,
+            "measured_ft": 5.692,
+            "gap_ft": 0.329,
+            "precip_ft": 0.549,
+            "residual_ft": -0.22
+          },
+          {
+            "year": 2017,
+            "lcras_net_ft": 5.528,
+            "measured_ft": 6.115,
+            "gap_ft": 0.587,
+            "precip_ft": 0.549,
+            "residual_ft": 0.038
+          },
+          {
+            "year": 2018,
+            "lcras_net_ft": 5.533,
+            "measured_ft": 5.499,
+            "gap_ft": -0.035,
+            "precip_ft": 0.549,
+            "residual_ft": -0.584
+          }
+        ],
+        "mean_gap_ft": 0.334,
+        "mean_residual_ft": -0.215,
+        "quotient_vs_measured_pct": -5.83
+      }
+    },
+    "pooled_n": 12,
+    "mean_residual_ft": -0.091,
+    "residual_sd_ft": 0.235,
+    "finding": "The gap between the accounting quotient and measured flux is precipitation on the lake surface, which consumptive-use accounting nets out. The correction is therefore additive and transfers to a lake with different rainfall."
+  },
+  "havasu": {
+    "lcras_years": [
+      2019,
+      2020,
+      2021,
+      2022,
+      2023,
+      2024
+    ],
+    "lcras_mean_af": 131992,
+    "area_acres": 18864,
+    "net_ft_per_yr": 6.997,
+    "precip_ft_per_yr": 0.435,
+    "gross_ft_per_yr": 7.432,
+    "calibrated_ft_per_yr": 7.52,
+    "bracket_ft_per_yr": [
+      7.05,
+      7.99
+    ],
+    "superseded_bracket_ft_per_yr": [
+      5.2,
+      7.4
+    ],
+    "width_ft": 0.94
+  },
+  "verdict": {
+    "statement": "Lake Havasu's evaporation depth is 7.52 ft/yr, bracketed 7.05-7.99. The accounting volume over Reclamation's own area gives 7.00 ft/yr net of rain; adding the 0.43 ft/yr that falls on the lake gives 7.43 gross, and the calibration's own bias against measured flux at Mead and Mohave is -0.09 ft/yr with a per-year spread of 0.23.",
+    "replaces": "an asserted 5.2-7.4 ft/yr bracket 2.3 times wider, whose ends were two different readings of the same quotient rather than a measured range",
+    "direction_note": "A higher depth means more water saved per acre covered, so this raises Lake Havasu's standing rather than lowering it. Havasu is already the reservoir this work rates highest, so the correction cuts against our own conclusion and is reported for that reason."
+  }
+}

@@ -59,6 +59,28 @@ MEAD_EVAP_SRC = (
       "a mean we recompute off a data release; see outputs/usgs_mead_evap.json "
       "(analysis/usgs_mead_evap.py).")
 
+# Lake Havasu's depth is no longer a raw accounting quotient. analysis/havasu_evap_bracket.py
+# calibrates the LCRAS convention against measured eddy-covariance flux at the two lakes that have
+# it, so what comes back is an estimate OF a flux depth and is area-independent in the way a bare
+# quotient was not. Read rather than typed: it moves whenever the accounting series extends.
+_HB = json.loads((OUT / "havasu_evap_bracket.json").read_text())
+HAVASU_EVAP_FT = _HB["havasu"]["calibrated_ft_per_yr"]
+HAVASU_EVAP_SRC = (
+    "DERIVED from Reclamation's LCRAS accounting, calibrated against measured flux. There is no "
+    "Lake Havasu flux station and USGS confirmed (2026-08-10) that one is only in planning, so the "
+    "depth cannot be measured directly. LCRAS reports Mead, Mohave and Havasu on one convention "
+    "and two of those three have eddy-covariance depths, so the convention is calibrated where it "
+    "is checkable. Reclamation's published areas match the mean of their own daily record to 0.2% "
+    "at Mead and 0.5% at Mohave, so the denominator is sound; the quotient nonetheless runs "
+    f"{_HB['step2_and_3_calibration']['lakes']['Lake Mead']['quotient_vs_measured_pct']:.1f}% and "
+    f"{_HB['step2_and_3_calibration']['lakes']['Lake Mohave']['quotient_vs_measured_pct']:.1f}% "
+    "below measured flux at the two lakes, and the gap is precipitation, which consumptive-use "
+    "accounting nets out. At Mead the mean gap is 0.42 ft/yr against 0.45 ft/yr of rain. The "
+    "correction is therefore additive and physical rather than a fitted factor. "
+    f"{_HB['verdict']['statement']} This supersedes an asserted 5.2-7.4 bracket. "
+    f"{_HB['verdict']['direction_note']} See outputs/havasu_evap_bracket.json "
+    "(analysis/havasu_evap_bracket.py).")
+
 SOLAR_YEAR = 2015           # PVGIS-NSRDB radiation year used across the repo
 PRICE_YEAR = 2024
 # Both reviewers flagged pricing seven reservoirs off one California node. Palo Verde is the
@@ -147,7 +169,7 @@ RES = {
         dam="Parker Dam", lat=34.30, lon=-114.14, tie_mw=120.0,
         annual_gwh=457.0,
         surface_acres=18864, surface_src="Reclamation LCRAS 2017-2021 average (LCR Evaporation Report 2023, Table 10)",
-        evap_ft=7.00, evap_src="LCRAS quotient, corrected 2026-08-09. The previous rate of 5.21 ft/yr was derived from an LCRAS volume of 98,246 AF that does NOT appear anywhere in Reclamation's own 1971-2024 accounting series, which runs 126,000-135,000 AF with a mean of 130,664 and is validated against Decree Accounting. The 2019-2024 mean of 131,992 AF over 18,864 acres gives 7.00 ft/yr. Still a quotient rather than a flux measurement, and still the weakest rate in the set, but it now sits on a figure the source actually contains. Note the direction: a higher evaporation depth means MORE water saved per acre covered, so this correction improves Havasu rather than penalising it.",
+        evap_ft=HAVASU_EVAP_FT, evap_src=HAVASU_EVAP_SRC,
         evap_measured=True, hydro_provenance="synthetic load-following (no public sub-daily tailrace gage below Parker)",
         onsite_load_mw=300.0,
         onsite_load_src="CAP Mark Wilmer Pumping Plant: six 66,000 hp pumps, ~50 MW each, drawing from Lake Havasu; ~80% of CAP's ~2.8M MWh/yr. MWD's Whitsett Pumping Plant draws from the same reservoir.",
