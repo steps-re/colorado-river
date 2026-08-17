@@ -17,7 +17,7 @@ Outputs:
   outputs/ee_fpv_envelope.json
   outputs/ee_fpv_envelope_masks/*.png  (persistent vs max extent, for the site)
 
-Runs on Earth Engine via the Airloom GfS project. ZERO LLM tokens.
+Runs on Earth Engine via the configured project. ZERO LLM tokens.
 """
 from __future__ import annotations
 
@@ -28,7 +28,7 @@ from pathlib import Path
 
 import ee
 
-EE_PROJECT = os.environ.get("EE_PROJECT", "ai-engineering-team-491520")
+EE_PROJECT = os.environ.get("EE_PROJECT", "")
 OUT = Path(os.path.expanduser("~/code/steps/colorado-river/outputs"))
 IMG = OUT / "ee_fpv_envelope_masks"
 IMG.mkdir(parents=True, exist_ok=True)

@@ -29,13 +29,13 @@ import ee
 
 def ee_init():
     """Initialise Earth Engine against whichever project the current ADC can actually
-    use. The ADC identity flips between Mike's Airloom and Steps accounts depending on
-    which one last ran `gcloud auth application-default login`, and each can only reach
-    its own org's EE-enabled project."""
+    use. The ADC identity can flip between accounts depending on which one last ran
+    `gcloud auth application-default login`, and each can only reach its own
+    org's EE-enabled project."""
     import ee as _ee
     last = None
     for proj in [p for p in [os.environ.get("EE_PROJECT"),
-                             "ai-engineering-team-491520",
+                             os.environ.get("EE_PROJECT_FALLBACK"),
                              "forge-steps-ventures"] if p]:
         try:
             _ee.Initialize(project=proj)
@@ -46,7 +46,7 @@ def ee_init():
             last = f"{proj}: {str(e)[:70]}"
     raise RuntimeError(f"no usable Earth Engine project. last error {last}")
 
-EE_PROJECT = os.environ.get("EE_PROJECT", "ai-engineering-team-491520")
+EE_PROJECT = os.environ.get("EE_PROJECT", "")
 OUT = os.path.expanduser("~/code/steps/colorado-river/outputs")
 YEARS = list(range(2014, 2027))
 MIN_PIXELS = 400            # below this a year is untrustworthy at 120 m

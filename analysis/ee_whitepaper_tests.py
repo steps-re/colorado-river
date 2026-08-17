@@ -20,7 +20,7 @@ C. THE THERMAL CLAIM. The draft argues declining Powell elevations brought the w
 D. ECOLOGICAL BASELINE. NDCI chlorophyll proxy per reservoir, so any array has a
    pre-installation baseline to be measured against.
 
-Each test is independent and failure-isolated. Runs on the Airloom GfS project.
+Each test is independent and failure-isolated. Runs on the configured Earth Engine project.
 ZERO LLM tokens.
 """
 from __future__ import annotations
@@ -31,7 +31,7 @@ from pathlib import Path
 
 import ee
 
-EE_PROJECT = os.environ.get("EE_PROJECT", "ai-engineering-team-491520")
+EE_PROJECT = os.environ.get("EE_PROJECT", "")
 OUT = Path(os.path.expanduser("~/code/steps/colorado-river/outputs"))
 M2_ACRE = 4046.8564
 ACRES_PER_GWP = 2471.0
