@@ -21,6 +21,7 @@ ul{margin:.4em 0 .5em 1.1em}li{margin:.25em 0}
 a{color:var(--water)} small{color:var(--muted)}
 .card{background:#fff;border:1px solid var(--line);border-radius:8px;padding:16px 18px;margin:1em 0}
 </style>
+
 <style>
 /* ---- shared chrome: navigation ---- */
 .sitenav{position:sticky;top:0;z-index:40;background:var(--deep,#123137);
@@ -89,6 +90,25 @@ document.addEventListener('DOMContentLoaded',function(){
   });
 });
 </script>
+
+
+
+
+
+<!--base-->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23123137'/%3E%3Cpath d='M16 6c4 6 6.5 9.2 6.5 12.3A6.5 6.5 0 0 1 16 25a6.5 6.5 0 0 1-6.5-6.7C9.5 15.2 12 12 16 6z' fill='%232C7A87'/%3E%3C/svg%3E">
+<style>
+/* A phone is where most of this traffic reads. Two rules carry that: images never exceed
+   their column, and any table too wide for the screen scrolls inside its own box instead of
+   pushing the whole page sideways. Four unwrapped figures were making the-case 1452px wide
+   against a 390px viewport, and two tables on post-2026 were simply cut off. */
+img{max-width:100%;height:auto}
+/* One citation prints its full URL as the link text, which is unbreakable and pushed
+   funders.html 23px past the viewport. Break only where a word would otherwise overflow. */
+body{overflow-wrap:break-word}
+.scrollx{overflow-x:auto;-webkit-overflow-scrolling:touch;max-width:100%}
+</style>
+<!--/base-->
 <!--meta:start--><meta name="description" content="More efficient irrigation does not return water to the river unless someone leaves it there. We measured that with satellite evapotranspiration data."><link rel="canonical" href="https://steps-re.github.io/colorado-river/measured-conservation.html"><meta property="og:type" content="article"><meta property="og:site_name" content="Colorado River | Steps Ventures Research"><meta property="og:title" content="Efficiency isn't conservation — a measured brief"><meta property="og:description" content="More efficient irrigation does not return water to the river unless someone leaves it there. We measured that with satellite evapotranspiration data."><meta property="og:url" content="https://steps-re.github.io/colorado-river/measured-conservation.html"><meta property="og:image" content="https://steps-re.github.io/colorado-river/figures/ee_jevons.png"><meta property="og:image:alt" content="Efficiency isn't conservation — a measured brief"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="Efficiency isn't conservation — a measured brief"><meta name="twitter:description" content="More efficient irrigation does not return water to the river unless someone leaves it there. We measured that with satellite evapotranspiration data."><meta name="twitter:image" content="https://steps-re.github.io/colorado-river/figures/ee_jevons.png"><!--meta:end--></head><body><nav class="sitenav" aria-label="Site"><div class="nbwrap"><a href="index.html" class="nb-home">Colorado River</a><a href="start.html" class="nb-start">Start here</a><a href="technical.html" class="on">The evidence</a><a href="proposal.html">The fix</a><a href="water-capital.html">Who pays</a><a href="reservoir-solar-explorer.html">Reservoir solar</a><a href="https://github.com/steps-re/colorado-river" target="_blank" rel="noopener">Data &amp; code</a></div></nav><div class="secstrip"><span class="secttl">The evidence</span><a href="technical.html">Methodology</a><a href="records.html">The priced record</a><a href="ee-measured.html">Measured from orbit</a><a href="measured-conservation.html" class=here>Measured conservation</a><a href="stakeholders.html">Who is affected</a></div><div class=wrap>
 
 <span class=tag>STEPS VENTURES · BASIN 2.0 · MEASUREMENT BRIEF</span>
@@ -129,12 +149,12 @@ low-value forage.</p>
 <figure><a href="figures/ee_m2_measured_use.png" class="zoom" aria-label="Open full-resolution figure"><img src="figures/web/ee_m2_measured_use.webp" alt="Measured consumptive use by county" loading="lazy" decoding="async"><span class="zoomhint">Click to enlarge</span></a>
 <figcaption>Satellite-measured consumptive use, four Lower Basin counties, and water depth consumed per acre.
 Full basin ET map and method on <a href="https://steps-re.github.io/colorado-river/ee-measured.html">the measured layer</a>.</figcaption></figure>
-<table>
+<div class="scrollx"><table>
 <tr><th>Use</th><th>Gross output per acre-foot</th></tr>
 <tr><td>Alfalfa / forage</td><td>~$360</td></tr>
 <tr><td>Produce</td><td>~$3,750</td></tr>
 <tr><td>Urban</td><td>~$1,200</td></tr>
-</table>
+</table></div>
 <p><small>Gross output overstates the water's own value (it nets out land and labor), so read the spread as
 directional. The point holds: the cheapest large block of conserved water is the low-value forage, and it
 should be priced on measured consumptive use, not diversions.</small></p>

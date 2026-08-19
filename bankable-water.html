@@ -1,15 +1,123 @@
 <!doctype html><html lang=en><head><meta charset=utf-8>
 <meta name=viewport content="width=device-width,initial-scale=1">
-<title>Moved: the bankable acre-foot</title>
-<link rel="canonical" href="funders.html">
-<meta http-equiv="refresh" content="0; url=funders.html#instrument">
-<style>body{margin:0;font:16px/1.6 "Helvetica Neue",Helvetica,Arial,sans-serif;
-background:#F4F0E7;color:#1E2B2E}
-.w{max-width:640px;margin:14vh auto;padding:0 20px}a{color:#2C7A87}</style>
-</head><body><div class=w>
-<h1 style="color:#123137;font-size:22px">This page has moved</h1>
-<p>The finance material that was here is now part of
-<a href="funders.html#instrument">Who pays now</a>, where it sits alongside the priced record it
-depends on.</p>
-<p>If you are not redirected, <a href="funders.html#instrument">follow this link</a>.</p>
+<title>The bankable acre-foot — a Basin 2.0 finance brief</title>
+<style>
+:root{--paper:#F4F0E7;--stone:#E7E1D4;--ink:#1E2B2E;--deep:#123137;--muted:#5B6A6A;
+--water:#2C7A87;--rust:#A8432B;--amber:#9C7A2E;--line:#C6BBA4}
+*{box-sizing:border-box}body{margin:0;background:var(--paper);color:var(--ink);
+font:16px/1.55 "Helvetica Neue",Helvetica,Arial,sans-serif}
+.wrap{max-width:820px;margin:0 auto;padding:30px 20px 70px}
+.tag{display:inline-block;background:var(--deep);color:var(--paper);font-size:11px;padding:2px 8px;border-radius:10px;letter-spacing:.05em}
+h1{font-size:29px;line-height:1.14;color:var(--deep);margin:.3em 0 .1em}
+h2{font-size:19px;color:var(--deep);margin:1.7em 0 .3em;border-bottom:2px solid var(--line);padding-bottom:5px}
+.lede{font-size:17px;color:var(--muted);margin:.2em 0 0}
+.quote{border-left:3px solid var(--water);padding:2px 0 2px 14px;color:var(--deep);font-style:italic;margin:1em 0}
+table{border-collapse:collapse;width:100%;font-size:14px;margin:.6em 0}
+th{text-align:left;background:var(--stone);color:var(--deep);padding:7px 9px;border:1px solid var(--line);font-size:12.5px}
+td{padding:7px 9px;border:1px solid var(--line);vertical-align:top}
+.done{color:var(--water);font-weight:bold}.gap{color:var(--rust);font-weight:bold}
+.card{background:#fff;border:1px solid var(--line);border-radius:8px;padding:16px 18px;margin:1em 0}
+.k{font-size:26px;color:var(--deep);font-weight:bold}
+ul{margin:.4em 0 .4em 1.1em}li{margin:.2em 0}
+a{color:var(--water)} small{color:var(--muted)}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:14px}@media(max-width:620px){.two{grid-template-columns:1fr}}
+</style></head><body><div class=wrap>
+
+<span class=tag>STEPS VENTURES · BASIN 2.0 · FINANCE BRIEF</span>
+<h1>The bankable acre-foot</h1>
+<p class=lede>Your framework from the panel, with the numbers behind each leg. The basin doesn't have a
+technology problem. It has a missing contract. Here is what is already built, what the gap is, and the
+instrument that closes it.</p>
+
+<h2>The three legs, and where each one stands</h2>
+<div class=quote>"Verifiable, credit-worthy, long-dated. We have the first two. The one we're missing is the
+long-dated contract, and that's the whole ballgame."</div>
+<table>
+<tr><th>Leg</th><th>Status</th><th>The evidence</th></tr>
+<tr><td><b>1. Verifiable water</b><br>a saved acre-foot is real and auditable, not a paper claim</td>
+<td class=done>BUILT</td>
+<td>Field-level satellite ET (OpenET) for the basin's ag counties gives measured consumptive use, not
+diversions. Imperial ~1.4 MAF/yr, measured, and it isn't falling despite two decades of efficiency spend.
+<a href="https://steps-re.github.io/colorado-river/ee-measured.html">the measured layer</a></td></tr>
+<tr><td><b>2. Credit-worthy counterparty</b></td>
+<td class=done>EXISTS</td>
+<td>MWD, IID, SNWA and the federal government are all investment-grade. Not the constraint.</td></tr>
+<tr><td><b>3. Long-dated contract</b></td>
+<td class=gap>THE GAP</td>
+<td>No one has written the multi-year, financeable water-for-water offtake. Every deal is a one-year
+panic buy. This is the entire opportunity.</td></tr>
+</table>
+
+<h2>The instrument that closes it: a federal water option (AMC)</h2>
+<p>Your proposal, structured. The federal government buys an option from an entity like Metropolitan to hold
+up to 1 MAF behind Lake Mead. It earns the premium whether or not it is exercised, and it has to be
+<b>financeable</b> — the feds can count on the water, not "we'll leave it only if we want to."</p>
+<div class=card>
+  <div class=two>
+    <div>
+      <b>Term-sheet sketch</b>
+      <ul>
+        <li><b>Underlying:</b> up to 1 MAF held in Lake Mead, verified by lake elevation</li>
+        <li><b>Buyer:</b> Reclamation (credit-worthy offtaker)</li>
+        <li><b>Seller:</b> MWD / holder of the conserved water</li>
+        <li><b>Premium:</b> annual $/AF, paid on the option, not the full volume</li>
+        <li><b>Trigger:</b> elevation threshold; exercisable, not discretionary</li>
+        <li><b>Term:</b> 10&ndash;20 years (the missing tenor)</li>
+      </ul>
+    </div>
+    <div>
+      <b>Why it is financeable now</b>
+      <ul>
+        <li>The strike is <b>observable</b>: lake elevation, not a paper right (leg 1).</li>
+        <li>The price is <b>already set</b>: Reclamation is paying MWD <b>$325/AF</b> (up to $65M) to keep
+        conserved water in Lake Mead this year, and $400/AF on the 2023&ndash;26 fallowing agreements.</li>
+        <li>The proof works: it just needs the durable tenor instead of a one-year buy.</li>
+      </ul>
+      <small>$325/AF Reclamation&ndash;MWD in 2026 (up to $65M), $400/AF on 2023&ndash;26 fallowing; both in the price record below.</small>
+    </div>
+  </div>
+</div>
+
+<h2>The arbitrage, and the real cost</h2>
+<p>The spread you named is the biggest in the basin, and the fact that capital can't trade across it is what
+is broken.</p>
+<table>
+<tr><th></th><th>$/AF</th><th>Note</th></tr>
+<tr><td>Imperial fallowing (paid to user)</td><td>~$700</td><td>federal payment, single year</td></tr>
+<tr><td>Conserved water, <b>all-in</b></td><td>~$600&ndash;1,000</td><td>+ measurement, verification, shepherding; still the cheapest real supply</td></tr>
+<tr><td>Reclamation &rarr; MWD, in Lake Mead</td><td>$325&ndash;400</td><td>$325/AF in 2026 (up to $65M); $400/AF on 2023&ndash;26 fallowing</td></tr>
+<tr><td>San Diego seawater desal</td><td>~$3,500</td><td>Carlsbad</td></tr>
+</table>
+<p>Conserved water clears at roughly one-fifth the cost of manufactured water. The instrument above is how a
+financier captures that spread with a bankable contract instead of a spot purchase.</p>
+
+<h2>The pricing engine you asked for</h2>
+<p>You called for a publicly-owned, transaction-grade price series so counterparties trust it. We built the
+first cut: <b>26 real, documented conserved-water transactions</b> pulled from board packets and federal
+letters, each linked to its source, from ~$220/AF to ~$965/AF. <a href="https://steps-re.github.io/colorado-river/records.html">the price record</a></p>
+
+<h2>The asset class: reuse + verified conservation</h2>
+<div class=two>
+  <div class=card><div class=k>&gt;300k AF</div><small>LADWP Hyperion (~175 MGD, 2035) + MWD Pure Water
+  Southern California (~150 MGD) — real new supply, below imported cost, financeable against a long-dated
+  offtake.</small></div>
+  <div class=card><div class=k>31 sites</div><small>Data centers drawing Colorado River water are the
+  motivated demand side: volumetric water-benefit credits (VWBA), measured on the same ET layer.
+  <a href="https://steps-re.github.io/colorado-river/data-centers.html">the playbook</a> · <a href="https://steps-re.github.io/colorado-river/funders.html">who pays now</a></small></div>
+</div>
+
+<h2>What Steps brings to the table</h2>
+<ul>
+  <li><b>The verification layer</b> (leg 1): field-level measured consumptive use, so a credit is real.</li>
+  <li><b>The price data</b> (the engine): the documented $/AF series, growing.</li>
+  <li><b>The structuring</b>: mapping the AMC / option to a specific counterparty pair and volume.</li>
+</ul>
+<p>Every piece exists in fragments. The missing move is the first forward commitment that turns the patchwork
+of pilots into a market. That is the piece worth building together.</p>
+
+<p style="margin-top:2em"><small>Independent analysis by Steps Ventures, not affiliated with any operator,
+utility, or agency. Figures linked to primary sources or labeled as estimates; see the
+<a href="https://steps-re.github.io/colorado-river/data-centers.html">methodology notes</a> and <a href="https://steps-re.github.io/colorado-river/records.html">documented record</a>.
+Prepared July 2026.</small></p>
+
 </div></body></html>

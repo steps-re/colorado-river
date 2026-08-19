@@ -1,4 +1,27 @@
-<!--meta:start--><meta name="description" content="A brief for AWS water sustainability. Where the highest-integrity acre-feet in the Colorado basin are, what they cost, and what makes each one defensible."><link rel="canonical" href="https://steps-re.github.io/colorado-river/aws.html"><meta property="og:type" content="article"><meta property="og:site_name" content="Colorado River | Steps Ventures Research"><meta property="og:title" content="For AWS Water Sustainability — the highest-integrity acre-feet in the basin"><meta property="og:description" content="A brief for AWS water sustainability. Where the highest-integrity acre-feet in the Colorado basin are, what they cost, and what makes each one defensible."><meta property="og:url" content="https://steps-re.github.io/colorado-river/aws.html"><meta property="og:image" content="https://steps-re.github.io/colorado-river/figures/ee_reservoir_shrink.png"><meta property="og:image:alt" content="For AWS Water Sustainability — the highest-integrity acre-feet in the basin"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="For AWS Water Sustainability — the highest-integrity acre-feet in the basin"><meta name="twitter:description" content="A brief for AWS water sustainability. Where the highest-integrity acre-feet in the Colorado basin are, what they cost, and what makes each one defensible."><meta name="twitter:image" content="https://steps-re.github.io/colorado-river/figures/ee_reservoir_shrink.png"><!--meta:end--><nav class="sitenav" aria-label="Site"><div class="nbwrap"><a href="index.html" class="nb-home">Colorado River</a><a href="start.html" class="nb-start">Start here</a><a href="technical.html">The evidence</a><a href="proposal.html">The fix</a><a href="water-capital.html" class="on">Who pays</a><a href="reservoir-solar-explorer.html">Reservoir solar</a><a href="https://github.com/steps-re/colorado-river" target="_blank" rel="noopener">Data &amp; code</a></div></nav><div class="secstrip"><span class="secttl">Who pays</span><a href="water-capital.html">Where capital can go</a><a href="funders.html">Who pays now</a><a href="data-centers.html">Data centres</a><a href="data-center-sites.html">Site scoreboard</a><a href="aws.html" class=here>The hyperscaler overlap</a><a href="coalition.html">The coalition</a></div>
+<!--base-->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23123137'/%3E%3Cpath d='M16 6c4 6 6.5 9.2 6.5 12.3A6.5 6.5 0 0 1 16 25a6.5 6.5 0 0 1-6.5-6.7C9.5 15.2 12 12 16 6z' fill='%232C7A87'/%3E%3C/svg%3E">
+<style>
+/* A phone is where most of this traffic reads. Two rules carry that: images never exceed
+   their column, and any table too wide for the screen scrolls inside its own box instead of
+   pushing the whole page sideways. Four unwrapped figures were making the-case 1452px wide
+   against a 390px viewport, and two tables on post-2026 were simply cut off. */
+img{max-width:100%;height:auto}
+/* One citation prints its full URL as the link text, which is unbreakable and pushed
+   funders.html 23px past the viewport. Break only where a word would otherwise overflow. */
+body{overflow-wrap:break-word}
+.scrollx{overflow-x:auto;-webkit-overflow-scrolling:touch;max-width:100%}
+</style>
+<!--/base-->
+<nav class="sitenav" aria-label="Site"><div class="nbwrap"><a href="index.html" class="nb-home">Colorado River</a><a href="start.html" class="nb-start">Start here</a><a href="technical.html">The evidence</a><a href="proposal.html">The fix</a><a href="water-capital.html" class="on">Who pays</a><a href="reservoir-solar-explorer.html">Reservoir solar</a><a href="https://github.com/steps-re/colorado-river" target="_blank" rel="noopener">Data &amp; code</a></div></nav><div class="secstrip"><span class="secttl">Who pays</span><a href="water-capital.html">Where capital can go</a><a href="funders.html">Who pays now</a><a href="data-centers.html">Data centres</a><a href="data-center-sites.html">Site scoreboard</a><a href="aws.html" class=here>The hyperscaler overlap</a><a href="coalition.html">The coalition</a></div>
+
+
+
+
+
+
+
+
+<!doctype html><html lang="en"><!--meta:start--><meta name="description" content="A brief for AWS water sustainability. Where the highest-integrity acre-feet in the Colorado basin are, what they cost, and what makes each one defensible."><link rel="canonical" href="https://steps-re.github.io/colorado-river/aws.html"><meta property="og:type" content="article"><meta property="og:site_name" content="Colorado River | Steps Ventures Research"><meta property="og:title" content="For AWS Water Sustainability — the highest-integrity acre-feet in the basin"><meta property="og:description" content="A brief for AWS water sustainability. Where the highest-integrity acre-feet in the Colorado basin are, what they cost, and what makes each one defensible."><meta property="og:url" content="https://steps-re.github.io/colorado-river/aws.html"><meta property="og:image" content="https://steps-re.github.io/colorado-river/figures/ee_reservoir_shrink.png"><meta property="og:image:alt" content="For AWS Water Sustainability — the highest-integrity acre-feet in the basin"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="For AWS Water Sustainability — the highest-integrity acre-feet in the basin"><meta name="twitter:description" content="A brief for AWS water sustainability. Where the highest-integrity acre-feet in the Colorado basin are, what they cost, and what makes each one defensible."><meta name="twitter:image" content="https://steps-re.github.io/colorado-river/figures/ee_reservoir_shrink.png"><!--meta:end-->
 <style>
 /* ---- shared chrome: navigation ---- */
 .sitenav{position:sticky;top:0;z-index:40;background:var(--deep,#123137);
@@ -161,7 +184,7 @@ nav .wrap{display:flex;gap:20px;padding:11px 24px;overflow-x:auto} nav a{color:v
 <section id="team"><div class="wrap">
   <span class="eyebrow">What your team will ask, and the answer</span>
   <div class="col"><p>We ran this proposal through a simulated adversarial review, written in the voices of water-tech investors, membrane-process engineers, and basin hydrologists, told to find every fatal flaw. Then we rebuilt it around what they found. Here is the short version of that stress test, so your team&rsquo;s first questions already have answers.</p></div>
-  <div class="tblwrap"><table class="tbl">
+  <div class="tblwrap"><div class="scrollx"><table class="tbl">
     <tr><th>The objection</th><th>Our answer</th></tr>
     <tr><td class="q">&ldquo;Saved water isn&rsquo;t deliverable, the river&rsquo;s not a pipe.&rdquo;</td><td>Correct. AWS doesn&rsquo;t receive wet water. It funds a verified reduction shepherded to system storage and takes the replenishment credit. No claim of private delivery.</td></tr>
     <tr><td class="q">&ldquo;Efficiency savings are double-counted return flow.&rdquo;</td><td>We pay for retired <em>consumptive use</em> only, not efficiency upgrades. That&rsquo;s the whole design.</td></tr>
@@ -169,7 +192,7 @@ nav .wrap{display:flex;gap:20px;padding:11px 24px;overflow-x:auto} nav a{color:v
     <tr><td class="q">&ldquo;Tamarisk removal and cloud seeding don&rsquo;t yield water.&rdquo;</td><td>Removed from the water math entirely. USGS and the Wyoming trials are clear. They&rsquo;re habitat/research line items, not supply.</td></tr>
     <tr><td class="q">&ldquo;54% IRR is a fantasy for water infrastructure.&rdquo;</td><td>Gone. Conservation returns a real benefit-cost above 2 at ~$400/AF. The capital-heavy public goods are funded as grants, not sold as equity.</td></tr>
     <tr><td class="q">&ldquo;This reads as Big Tech buying the river.&rdquo;</td><td>Which is why it leads with visible, local, community and tribal benefit, on a public ledger, conservation-with-community-benefit, in the open.</td></tr>
-  </table></div>
+  </table></div></div>
   <p class="key">The full seven-objection review and the before/after changes are documented and available to your team on request.</p>
 </div></section>
 <div class="waterline"></div>
@@ -177,14 +200,14 @@ nav .wrap{display:flex;gap:20px;padding:11px 24px;overflow-x:auto} nav a{color:v
 <section id="numbers"><div class="wrap col">
   <span class="eyebrow">The honest numbers</span>
   <p>We are deliberately not showing you a headline that collapses under scrutiny. Here is the real shape of it:</p>
-  <div class="tblwrap"><table class="tbl">
+  <div class="tblwrap"><div class="scrollx"><table class="tbl">
     <tr><th>Metric</th><th>Value</th><th>Note</th></tr>
     <tr><td>Conservation anchor cost</td><td class="mono">~$400 / verified AF</td><td>Cheapest high-integrity replenishment available</td></tr>
     <tr><td>Conservation benefit-cost</td><td class="mono">2.15</td><td>Water at $1,500/AF avoided supply, 5% discount, 30&nbsp;yr</td></tr>
     <tr><td>Full package capital</td><td class="mono">~$15.7B</td><td>Ledger + conservation + ag + Glen Canyon + recharge</td></tr>
     <tr><td>Verified water, full package</td><td class="mono">~1.0 MAF/yr</td><td>~0.6 MAF/yr shepherded to storage. Balance is regional recharge</td></tr>
     <tr><td>Public-good pieces</td><td class="mono">grant-funded</td><td>Dam retrofit, habitat, no fake private return</td></tr>
-  </table></div>
+  </table></div></div>
   <p>The conservation market is where AWS money does the most good per dollar and carries the least risk. The rest of the package is what the basin needs, financed by public and philanthropic capital, AWS doesn&rsquo;t have to underwrite it to lead it.</p>
 </div></section>
 <div class="waterline"></div>

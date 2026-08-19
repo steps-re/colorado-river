@@ -139,6 +139,29 @@ document.addEventListener('DOMContentLoaded',function(){
   });
 });
 </script>
+
+
+
+
+
+
+
+
+
+<!--base-->
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%23123137'/%3E%3Cpath d='M16 6c4 6 6.5 9.2 6.5 12.3A6.5 6.5 0 0 1 16 25a6.5 6.5 0 0 1-6.5-6.7C9.5 15.2 12 12 16 6z' fill='%232C7A87'/%3E%3C/svg%3E">
+<style>
+/* A phone is where most of this traffic reads. Two rules carry that: images never exceed
+   their column, and any table too wide for the screen scrolls inside its own box instead of
+   pushing the whole page sideways. Four unwrapped figures were making the-case 1452px wide
+   against a 390px viewport, and two tables on post-2026 were simply cut off. */
+img{max-width:100%;height:auto}
+/* One citation prints its full URL as the link text, which is unbreakable and pushed
+   funders.html 23px past the viewport. Break only where a word would otherwise overflow. */
+body{overflow-wrap:break-word}
+.scrollx{overflow-x:auto;-webkit-overflow-scrolling:touch;max-width:100%}
+</style>
+<!--/base-->
 <!--meta:start--><meta name="description" content="Drag one slider to see how much of a reservoir floating solar should cover. Water saved keeps rising while saleable energy stops. Interactive, seven reservoirs."><link rel="canonical" href="https://steps-re.github.io/colorado-river/reservoir-solar-explorer.html"><meta property="og:type" content="article"><meta property="og:site_name" content="Colorado River | Steps Ventures Research"><meta property="og:title" content="How much of a reservoir should floating solar cover?"><meta property="og:description" content="Drag one slider to see how much of a reservoir floating solar should cover. Water saved keeps rising while saleable energy stops. Interactive, seven reservoirs."><meta property="og:url" content="https://steps-re.github.io/colorado-river/reservoir-solar-explorer.html"><meta property="og:image" content="https://steps-re.github.io/colorado-river/figures/fpv_scale.png"><meta property="og:image:alt" content="How much of a reservoir should floating solar cover?"><meta name="twitter:card" content="summary_large_image"><meta name="twitter:title" content="How much of a reservoir should floating solar cover?"><meta name="twitter:description" content="Drag one slider to see how much of a reservoir floating solar should cover. Water saved keeps rising while saleable energy stops. Interactive, seven reservoirs."><meta name="twitter:image" content="https://steps-re.github.io/colorado-river/figures/fpv_scale.png"><!--meta:end--></head><body><nav class="sitenav" aria-label="Site"><div class="nbwrap"><a href="index.html" class="nb-home">Colorado River</a><a href="start.html" class="nb-start">Start here</a><a href="technical.html">The evidence</a><a href="proposal.html">The fix</a><a href="water-capital.html">Who pays</a><a href="reservoir-solar-explorer.html" class="on">Reservoir solar</a><a href="https://github.com/steps-re/colorado-river" target="_blank" rel="noopener">Data &amp; code</a></div></nav><div class="secstrip"><span class="secttl">Reservoir solar</span><a href="reservoir-solar-explorer.html" class=here>Coverage explorer</a><a href="reservoir-solar.html">What the numbers say</a><a href="reservoir-solar-paper.html">Technical paper</a><a href="reservoir-solar-method.html">Methods and review</a></div><div class=wrap>
 
 
@@ -301,7 +324,7 @@ Mead because Hoover's 2,080 MW line now runs at a capacity factor near 0.22. Eve
 sooner. Spill starts well below these figures at every reservoir: this is where it becomes serious, not
 where it begins. Taking the coverage at which spill first passes 10%:</p>
 
-<table>
+<div class="scrollx"><table>
 <tr><td>Lake Havasu</td><td class=num>8.50%</td></tr>
 <tr><td>Lake Mead</td><td class=num>7.25%</td></tr>
 <tr><td>Lake Powell</td><td class=num>4.25%</td></tr>
@@ -309,7 +332,7 @@ where it begins. Taking the coverage at which spill first passes 10%:</p>
 <tr><td>Lake Mohave</td><td class=num>1.00%</td></tr>
 <tr><td>Flaming Gorge</td><td class=num>1.00%</td></tr>
 <tr><td>Navajo</td><td class=num>0.50%</td></tr>
-</table>
+</table></div>
 
 <p>Reservoirs with large surfaces behind small powerplants are the worst candidates, which is the opposite
 of what a surface-area screen selects. The spread is more than tenfold, so a single basin-wide coverage
@@ -320,7 +343,7 @@ at each bus could establish those.</p>
 <h3>Where the numbers come from</h3>
 <p>Every figure on this page is computed from public data at build time. The sources that decide
 the answer, and what each one fixed:</p>
-<table>
+<div class="scrollx"><table>
 <tr><th>Quantity</th><th>Source</th></tr>
 <tr><td>Reservoir surface area</td><td>Reclamation daily elevation and storage, area taken as the
 derivative of a fitted hypsometry. Replaced our own satellite measurement, which read low at every
@@ -334,14 +357,14 @@ Basin reservoirs use a shape transfer, labelled as such wherever it appears.</td
 elsewhere. Driver split from Penman on NASA POWER daily weather.</td></tr>
 <tr><td>Canals and other water</td><td>OpenStreetMap centrelines and the National Hydrography
 Dataset's surveyed polygons.</td></tr>
-</table>
+</table></div>
 <p>Full method, every caveat and the review history are on the
 <a href="reservoir-solar-paper.html">technical paper</a> and
 <a href="reservoir-solar-method.html">methods page</a>.</p>
 
 <h3>How big an array actually fits</h3>
 <p>The largest array that still sells nearly everything it makes:</p>
-<table>
+<div class="scrollx"><table>
 <tr><th>Reservoir</th><th>All idle line<br><small>generous</small></th><th>25% of idle line<br><small>plausible</small></th><th>10% of idle line<br><small>non-firm</small></th></tr>
 <tr><td>Lake Mead</td><td class=num>2,376 MW</td><td class=num>594 MW</td><td class=num>238 MW</td></tr>
 <tr><td>Lake Powell</td><td class=num>1,379 MW</td><td class=num>345 MW</td><td class=num>138 MW</td></tr>
@@ -350,7 +373,7 @@ Dataset's surveyed polygons.</td></tr>
 <tr><td>Flaming Gorge</td><td class=num>131 MW</td><td class=num>33 MW</td><td class=num>13 MW</td></tr>
 <tr><td>Blue Mesa</td><td class=num>69 MW</td><td class=num>17 MW</td><td class=num>7 MW</td></tr>
 <tr><td>Navajo Reservoir</td><td class=num>15 MW</td><td class=num>4 MW</td><td class=num>2 MW</td></tr>
-</table>
+</table></div>
 
 <p>Those megawatts are a stricter test than the coverage percentages above, and the two answer
 different questions, so they should not be read against each other directly. The percentages ask
@@ -396,7 +419,7 @@ evaporation, cheaper covers exist &mdash; they simply have no revenue, which is 
 water per dollar. Every option below is annualised at the same 7% cost of capital over its own service
 life, so a ten-year shade ball and a twenty-five-year array are comparable.</p>
 
-<table>
+<div class="scrollx"><table>
 <tr><th>Option</th><th>Capex per acre</th><th>Life</th><th>Suppression</th><th>Cost per acre-foot</th></tr>
 <tr><td>Chemical monolayer film</td><td>$200</td><td>1 yr</td><td>20%</td><td>$172</td></tr>
 <tr><td><b>Shade balls</b></td><td>$197,143</td><td>10 yr</td><td>90%</td><td><b>$5,014</b></td></tr>
@@ -405,7 +428,7 @@ life, so a ten-year shade ball and a twenty-five-year array are comparable.</p>
 <tr><td>Floating solar, high cost case</td><td>$1,214,058</td><td>25 yr</td><td>75%</td><td>$30,139</td></tr>
 <tr><td colspan=4><i>Pay a Colorado River farmer to conserve</i></td><td><i>$325&ndash;700</i></td></tr>
 <tr><td colspan=4><i>Desalination</i></td><td><i>$2,500&ndash;3,500</i></td></tr>
-</table>
+</table></div>
 
 <p>These figures assume panels suppress 75% of evaporation over the water they cover. That is already
 below the directly-shaded figure, because a cover does not simply switch evaporation off: heat that would
