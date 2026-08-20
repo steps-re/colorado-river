@@ -13,11 +13,6 @@ body{overflow-wrap:break-word}
 </style>
 <!--/base-->
 <nav class="sitenav" aria-label="Site"><div class="nbwrap"><a href="index.html" class="nb-home">Colorado River</a><a href="start.html" class="nb-start">Start here</a><a href="technical.html">The evidence</a><a href="proposal.html" class="on">The fix</a><a href="water-capital.html">Who pays</a><a href="reservoir-solar-explorer.html">Reservoir solar</a><a href="https://github.com/steps-re/colorado-river" target="_blank" rel="noopener">Data &amp; code</a></div></nav><div class="secstrip"><span class="secttl">The fix</span><a href="proposal.html">The proposal</a><a href="governance.html" class=here>Law of the River</a><a href="post-2026.html">After 2026</a><a href="manufactured-water.html">Making water</a><a href="objections.html">Objections answered</a></div>
-
-
-
-
-
 <style>
 /* ---- shared chrome: navigation ---- */
 .sitenav{position:sticky;top:0;z-index:40;background:var(--deep,#123137);
@@ -124,6 +119,15 @@ header{background:var(--deep);color:var(--paper);overflow:hidden;position:relati
 .heroctas{pointer-events:auto;display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
 .herocta{background:var(--water);color:#fff;font-family:var(--mono);font-size:.74rem;text-transform:uppercase;letter-spacing:.06em;padding:12px 20px;border-radius:4px;text-decoration:none;white-space:nowrap} .herocta:hover{background:#25646f}
 .herocta.ghost{background:transparent;border:1px solid #7fa3a6;color:#E7EEEE} .herocta.ghost:hover{background:rgba(255,255,255,.08)}
+/* The hero text is absolutely positioned inside a 300px canvas, and the header hides its
+   overflow. On a phone the headline wraps past 300px, so the eyebrow and the H1 were clipped
+   clean off the top and the page opened on the italic subtitle. Below this width the header
+   sizes to its own text and the canvas drops behind it. */
+@media(max-width:720px){
+  header{position:relative}
+  #hero{position:absolute;inset:0;width:100%;height:100%}
+  .hero-txt{position:relative;inset:auto;padding:26px 20px 30px}
+}
 nav{position:sticky;top:0;z-index:9;background:rgba(231,225,212,.94);backdrop-filter:blur(6px);border-bottom:1px solid var(--line);font-family:var(--mono);font-size:.7rem;text-transform:uppercase;letter-spacing:.08em}
 nav{position:sticky;top:0} nav::after{content:"";position:absolute;right:0;top:0;bottom:0;width:34px;pointer-events:none;background:linear-gradient(to right,transparent,var(--stone))}\nnav .wrap{display:flex;gap:20px;padding:11px 24px;overflow-x:auto;scrollbar-width:thin} nav a{color:var(--muted);text-decoration:none;white-space:nowrap} nav a:hover{color:var(--rust)}
 section{padding:54px 0} .waterline{height:0;border-top:1px solid var(--line);box-shadow:0 2px 0 -1px rgba(168,68,43,.28);max-width:940px;margin:0 auto}
